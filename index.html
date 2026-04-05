@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STQ Capital Partners — Tax-Aware Wealth Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ========== RESET & BASE ========== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy: #1B2E4B;
+  --navy-light: #2a4570;
+  --navy-dark: #0f1e33;
+  --cream: #F0EFEB;
+  --cream-dark: #E6E4DE;
+  --cream-mid: #DAD8D1;
+  --white: #FFFFFF;
+  --text-primary: #1B2E4B;
+  --text-secondary: #5a6a7e;
+  --text-light: rgba(240, 239, 235, 0.7);
+  --font-heading: 'Chakra Petch', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(27, 46, 75, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 46, 75, 0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 64px); position: relative; z-index: 1; }
+.section-label {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 20px;
+}
+.section-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 10px;
+  height: 1px;
+  background: var(--navy);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scaleY(0.95); }
+  to { opacity: 1; transform: scaleY(1); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ========== NAV ========== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(240, 239, 235, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(27, 46, 75, 0.08);
+  transition: background 0.3s ease;
+}
+.nav-inner {
+  max-width: 100%;
+  margin: 0;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.nav-logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--navy);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-links { display: flex; gap: 36px; margin-right: auto; margin-left: 48px; }
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  letter-spacing: 0.01em;
+}
+.nav-links a:hover { color: var(--navy); }
+
+.btn {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s var(--ease);
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27, 46, 75, 0.25); }
+.btn-secondary:hover { border-color: var(--navy); background: rgba(27, 46, 75, 0.04); }
+.btn-white { background: var(--cream); color: var(--navy); }
+.btn-white:hover { background: var(--white); transform: translateY(-1px); }
+.btn-outline-white { background: transparent; color: var(--cream); border: 1px solid rgba(240, 239, 235, 0.3); }
+.btn-outline-white:hover { border-color: var(--cream); background: rgba(240, 239, 235, 0.08); }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--navy); transition: all 0.3s ease; }
+
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.nav-client-login {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-decoration: none;
+  border: 1px solid rgba(27, 46, 75, 0.2);
+  border-radius: 4px;
+  padding: 12px 28px;
+  display: inline-flex;
+  align-items: center;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.nav-client-login:hover { border-color: rgba(27, 46, 75, 0.5); background: rgba(27, 46, 75, 0.03); }
+
+/* ========== HERO ========== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 50px;
+}
+.hero-watermark {
+  position: absolute;
+  right: 15%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(9rem, 16vw, 19rem);
+  color: rgba(27, 46, 75, 0.06);
+  line-height: 0.8;
+  letter-spacing: -0.03em;
+  user-select: none;
+  pointer-events: none;
+}
+.hero .container { max-width: 100%; margin: 0; padding: 0 60px; }
+.hero-content { max-width: 680px; }
+.hero-tag {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+  animation: slideUp 0.8s var(--ease-out) 0.2s both;
+}
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 7vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 28px;
+  animation: slideUp 0.8s var(--ease-out) 0.35s both;
+}
+.hero-sub {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin-bottom: 48px;
+  animation: slideUp 0.8s var(--ease-out) 0.5s both;
+}
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: slideUp 0.8s var(--ease-out) 0.65s both;
+}
+
+/* ========== STATS STRIP ========== */
+.stats {
+  background: var(--cream);
+  padding: 56px 0;
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(27, 46, 75, 0.12);
+  border-bottom: 1px solid rgba(27, 46, 75, 0.12);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.stat-item {
+  text-align: center;
+  padding: 8px 24px;
+  position: relative;
+}
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background: rgba(27, 46, 75, 0.12);
+}
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.stat-label {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--navy);
+  opacity: 0.45;
+  line-height: 1.5;
+}
+
+/* ========== SOLUTIONS HOVER LIST ========== */
+.solutions-hover {
+  display: flex;
+  min-height: 600px;
+}
+.sol-left {
+  flex: 0 0 50%;
+  background: var(--cream);
+  padding: 80px 48px 80px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid rgba(27,46,75,0.10);
+}
+.sol-heading {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 40px;
+}
+.sol-heading::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 10px;
+  height: 1.5px;
+  background: currentColor;
+  opacity: 0.5;
+}
+.sol-item {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(27,46,75,0.08);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.sol-item::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 50%;
+  width: 3px;
+  height: 0;
+  background: var(--navy);
+  transform: translateY(-50%);
+  transition: height 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.sol-item:hover::before, .sol-item.active::before { height: 60%; }
+.sol-num {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(27,46,75,0.20);
+  transition: color 0.3s ease;
+  min-width: 28px;
+}
+.sol-title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(27,46,75,0.40);
+  transition: color 0.3s ease;
+  line-height: 1.4;
+}
+.sol-tag {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(27,46,75,0.25);
+  transition: color 0.3s ease;
+  margin-left: auto;
+  white-space: nowrap;
+}
+.sol-item:hover .sol-title, .sol-item.active .sol-title { color: var(--navy); }
+.sol-item:hover .sol-num, .sol-item.active .sol-num { color: rgba(27,46,75,0.5); }
+.sol-item:hover .sol-tag, .sol-item.active .sol-tag { color: rgba(27,46,75,0.4); }
+.sol-right {
+  flex: 0 0 50%;
+  background: #fff;
+  padding: 48px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.sol-panel { display: none; animation: solSlideIn 0.4s ease; }
+.sol-panel.active { display: block; }
+@keyframes solSlideIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.sol-panel-num {
+  font-family: var(--font-heading);
+  font-size: 56px;
+  font-weight: 700;
+  color: rgba(27,46,75,0.05);
+  line-height: 1;
+  margin-bottom: -8px;
+}
+.sol-panel-title {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+.sol-panel-text {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #4a5a6a;
+  max-width: 440px;
+}
+.sol-panel-line { width: 48px; height: 2px; background: var(--navy); margin-top: 32px; opacity: 0.2; }
+.sol-panel-tag {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(27,46,75,0.35);
+  border: 1px solid rgba(27,46,75,0.12);
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+
+/* ========== TAX CHART ========== */
+.tax-chart-section {
+  background: var(--cream-dark);
+  padding: 120px 0;
+  position: relative;
+  z-index: 1;
+}
+.tax-chart-header { text-align: center; margin-bottom: 64px; }
+.tax-chart-header h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.tax-chart-header p { font-size: 1.0625rem; color: var(--text-secondary); max-width: 480px; margin: 0 auto; line-height: 1.7; }
+.chart-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: 8px;
+  padding: 48px;
+  border: 1px solid rgba(27, 46, 75, 0.06);
+}
+.chart-visual {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 140px;
+  height: 340px;
+  position: relative;
+  padding-bottom: 60px;
+  margin-bottom: 32px;
+}
+.chart-visual::before {
+  content: '';
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(27, 46, 75, 0.1);
+}
+.chart-bar-group { display: flex; flex-direction: column; align-items: center; gap: 12px; position: relative; }
+.chart-bar { width: 100px; border-radius: 4px 4px 0 0; position: relative; }
+.chart-bar-taxable {
+  height: 140px;
+  background: linear-gradient(180deg, rgba(27, 46, 75, 0.25) 0%, rgba(27, 46, 75, 0.12) 100%);
+  border: 1px solid rgba(27, 46, 75, 0.15);
+  border-bottom: none;
+}
+.chart-bar-taxaware {
+  height: 260px;
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-light) 100%);
+}
+.chart-bar-value {
+  position: absolute;
+  top: -36px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  white-space: nowrap;
+}
+.chart-bar-taxable .chart-bar-value { color: var(--text-secondary); }
+.chart-bar-taxaware .chart-bar-value { color: var(--navy); }
+.chart-bar-label {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.5;
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.chart-footnote { text-align: center; font-size: 0.75rem; color: var(--text-secondary); opacity: 0.7; margin-top: 72px; }
+.chart-diff { text-align: center; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(27, 46, 75, 0.08); }
+.chart-diff-number { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--navy); letter-spacing: -0.02em; }
+.chart-diff-label { font-size: 0.875rem; color: var(--text-secondary); margin-top: 4px; }
+
+/* ========== STEPPER ========== */
+.stepper-section { padding: 100px 0; }
+.stepper-container { max-width: 100%; padding: 0 64px; }
+.stepper-header { margin-bottom: 48px; }
+.stepper-title { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--navy); margin-top: 16px; letter-spacing: -0.5px; }
+.stepper-nav { display: flex; align-items: center; justify-content: center; margin-bottom: 48px; padding: 0 40px; }
+.stepper-step { display: flex; flex-direction: column; align-items: center; cursor: pointer; position: relative; z-index: 1; }
+.stepper-circle {
+  width: 52px; height: 52px; border-radius: 50%;
+  border: 2px solid rgba(27,46,75,0.2);
+  background: transparent;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading); font-size: 20px; font-weight: 700;
+  color: rgba(27,46,75,0.3);
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.stepper-step.active .stepper-circle { background: var(--navy); border-color: var(--navy); color: var(--cream); transform: scale(1.08); box-shadow: 0 4px 20px rgba(27,46,75,0.2); }
+.stepper-step.completed .stepper-circle { background: rgba(27,46,75,0.08); border-color: rgba(27,46,75,0.25); color: var(--navy); }
+.stepper-word { font-family: var(--font-heading); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--navy); opacity: 0.25; margin-top: 12px; transition: opacity 0.3s ease; }
+.stepper-step.active .stepper-word { opacity: 0.7; }
+.stepper-step.completed .stepper-word { opacity: 0.4; }
+.stepper-connector { flex: 1; height: 2px; background: rgba(27,46,75,0.1); position: relative; margin: 0 -4px; margin-bottom: 28px; }
+.stepper-fill { position: absolute; inset: 0; background: rgba(27,46,75,0.25); transform-origin: left; transform: scaleX(0); transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+.stepper-connector.filled .stepper-fill { transform: scaleX(1); }
+.stepper-content { background: var(--cream-dark); border-radius: 20px; padding: 56px; position: relative; overflow: hidden; min-height: 260px; }
+.stepper-watermark { position: absolute; right: -20px; bottom: -40px; font-family: var(--font-heading); font-size: 240px; font-weight: 700; color: var(--navy); opacity: 0.03; line-height: 1; pointer-events: none; }
+.stepper-body { opacity: 0; transform: translateY(16px); transition: all 0.5s cubic-bezier(0.4,0,0.2,1); }
+.stepper-body.visible { opacity: 1; transform: translateY(0); }
+.stepper-pill { display: inline-block; font-family: var(--font-heading); font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); opacity: 0.3; border: 1px solid rgba(27,46,75,0.15); border-radius: 20px; padding: 6px 16px; margin-bottom: 24px; }
+.stepper-content-title { font-family: var(--font-heading); font-size: 32px; font-weight: 700; color: var(--navy); margin-bottom: 20px; letter-spacing: -0.5px; }
+.stepper-bar { width: 40px; height: 2.5px; background: var(--navy); opacity: 0.15; margin-bottom: 20px; }
+.stepper-desc { font-size: 16px; line-height: 1.8; color: var(--navy); opacity: 0.6; max-width: 560px; }
+
+/* ========== SPLIT / ABOUT ========== */
+.split-section { padding: 120px 0; }
+.split-grid { display: grid; grid-template-columns: 240px 1fr; gap: 80px; align-items: start; }
+.split-label { padding-top: 8px; position: sticky; top: 100px; }
+.about-text { font-size: 1.0625rem; line-height: 1.9; color: var(--text-secondary); max-width: 640px; }
+
+/* ========== WHY US ========== */
+.why-section { padding: 120px 0; background: var(--cream); }
+.why-header { text-align: center; margin-bottom: 64px; }
+.why-header h2 { font-family: var(--font-heading); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; }
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+.why-card { padding: 40px 28px; border: 1px solid rgba(27, 46, 75, 0.08); border-radius: 6px; background: rgba(255, 255, 255, 0.4); transition: all 0.4s var(--ease); }
+.why-card:hover { background: var(--white); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(27, 46, 75, 0.06); }
+.why-card h3 { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; letter-spacing: 0.01em; }
+.why-card p { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+
+/* ========== CTA ========== */
+.cta-section {
+  background: var(--navy);
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.cta-section::before {
+  content: 'STQ';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 20rem;
+  color: rgba(240, 239, 235, 0.02);
+  pointer-events: none;
+}
+.cta-section h2 { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 700; color: var(--cream); margin-bottom: 20px; letter-spacing: -0.02em; }
+.cta-section p { font-size: 1.0625rem; color: var(--text-light); max-width: 520px; margin: 0 auto 40px; line-height: 1.7; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ========== NEWSLETTER ========== */
+.newsletter-section { padding: 80px 0; background: var(--cream-dark); position: relative; z-index: 1; }
+.newsletter-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+.newsletter-inner h3 { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--navy); letter-spacing: -0.01em; }
+.newsletter-inner p { font-size: 0.9375rem; color: var(--text-secondary); margin-top: 8px; }
+.newsletter-form { display: flex; gap: 12px; }
+.newsletter-form input {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  padding: 14px 20px;
+  border: 1px solid rgba(27, 46, 75, 0.15);
+  border-radius: 4px;
+  background: var(--white);
+  color: var(--navy);
+  width: 300px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.newsletter-form input::placeholder { color: var(--text-secondary); opacity: 0.6; }
+.newsletter-form input:focus { border-color: var(--navy); }
+
+/* ========== FOOTER ========== */
+footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative; z-index: 1; }
+.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 1px solid rgba(240, 239, 235, 0.08); flex-wrap: wrap; gap: 24px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); letter-spacing: 0.03em; }
+.footer-logo span { font-weight: 400; color: rgba(240, 239, 235, 0.5); }
+.footer-links { display: flex; gap: 32px; }
+.footer-links a { font-size: 0.8125rem; color: rgba(240, 239, 235, 0.5); text-decoration: none; transition: color 0.2s ease; }
+.footer-links a:hover { color: var(--cream); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240, 239, 235, 0.35); }
+.footer-disclaimer { margin-top: 24px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240, 239, 235, 0.2); max-width: 900px; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .split-grid { grid-template-columns: 1fr; gap: 32px; }
+  .split-label { position: static; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .stat-item:nth-child(2)::after { display: none; }
+}
+@media (max-width: 800px) {
+  .solutions-hover { flex-direction: column; }
+  .sol-left, .sol-right { flex: none; padding: 48px 24px; }
+  .sol-right { min-height: 320px; }
+}
+@media (max-width: 768px) {
+  .nav-links, .nav-client-login, .nav-cta-desktop { display: none; }
+  .nav-toggle { display: flex; }
+  .hero h1 { font-size: 2.5rem; }
+  .why-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr; gap: 24px; }
+  .stat-item::after { display: none !important; }
+  .chart-visual { gap: 40px; height: 280px; }
+  .chart-bar { width: 80px; }
+  .chart-bar-taxable { height: 110px; }
+  .chart-bar-taxaware { height: 210px; }
+  .chart-wrapper { padding: 32px 24px; }
+  .newsletter-inner { flex-direction: column; text-align: center; align-items: center; }
+  .newsletter-form { flex-direction: column; width: 100%; }
+  .newsletter-form input { width: 100%; }
+  .footer-main { flex-direction: column; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+  .hero-buttons { flex-direction: column; align-items: flex-start; }
+  .cta-buttons { flex-direction: column; align-items: center; }
+  .split-section { padding: 80px 0; }
+  .why-section { padding: 80px 0; }
+  .stepper-container { padding: 0 24px; }
+  .stepper-content { padding: 40px 28px; }
+}
+
+/* Mobile nav */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--cream);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.mobile-nav.active { display: flex; opacity: 1; }
+.mobile-nav a { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+.mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">STQ <span>/ Capital Partners</span></a>
+    <div class="nav-links">
+      <a href="#solutions">Solutions</a>
+      <a href="#about">About</a>
+      <a href="#insights">Insights</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="#" class="nav-client-login nav-cta-desktop">
+        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" style="margin-right:6px;vertical-align:-1px;">
+          <rect x="1" y="6" width="10" height="6" rx="1.5" stroke="currentColor" stroke-width="1.3" fill="none"/>
+          <path d="M3.5 6V4a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>Client Login
+      </a>
+      <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary nav-cta-desktop">Schedule a Meeting</a>
+    </div>
+    <button class="nav-toggle" onclick="document.querySelector('.mobile-nav').classList.add('active')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="mobile-nav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('active')">✕</button>
+  <a href="#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
+  <a href="#about" onclick="this.parentElement.classList.remove('active')">About</a>
+  <a href="#insights" onclick="this.parentElement.classList.remove('active')">Insights</a>
+  <a href="#contact" onclick="this.parentElement.classList.remove('active')">Contact</a>
+  <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Meeting</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-watermark">STQ</div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-tag">Quantitative Wealth Advisory</div>
+      <h1>You've earned it.<br>Let's protect it.</h1>
+      <p class="hero-sub">Tax-aware portfolio design, institutional-grade thinking, and a relentless focus on helping you keep more of what you've built.</p>
+      <div class="hero-buttons">
+        <a href="#solutions" class="btn btn-primary">Our Solutions</a>
+        <a href="/cdn-cgi/l/email-protection#e283898b9483cc858e83988790918d8ca2919693818392cc818d8fdd91978088878196dfb28d9096848d8e8b8dc7d0d2a68b83858c8d91968b81c7d0d2b0879397879196" class="btn btn-secondary">Portfolio Diagnostic →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- SOLUTIONS -->
+<section class="solutions-hover" id="solutions">
+  <div class="sol-left">
+    <h2 class="sol-heading reveal">Our Solutions</h2>
+    <div class="sol-item active" data-idx="0"><span class="sol-num">01</span><span class="sol-title">Asset Location Optimization</span></div>
+    <div class="sol-item" data-idx="1"><span class="sol-num">02</span><span class="sol-title">Strategic Asset Allocation</span></div>
+    <div class="sol-item" data-idx="2"><span class="sol-num">03</span><span class="sol-title">Tactical Asset Allocation</span></div>
+    <div class="sol-item" data-idx="3"><span class="sol-num">04</span><span class="sol-title">Tax Loss Harvesting</span></div>
+    <div class="sol-item" data-idx="4"><span class="sol-num">05</span><span class="sol-title">Derivative Strategies</span></div>
+    <div class="sol-item" data-idx="5"><span class="sol-num">06</span><span class="sol-title">Alternative Investments</span></div>
+    <div class="sol-item" data-idx="6"><span class="sol-num">07</span><span class="sol-title">Enhanced Cash Management</span></div>
+    <div class="sol-item" data-idx="7"><span class="sol-num">08</span><span class="sol-title">Estate & Philanthropic Strategies</span></div>
+    <div class="sol-item" data-idx="8"><span class="sol-num">09</span><span class="sol-title">Synthetic Portfolio Borrowing</span></div>
+  </div>
+  <div class="sol-right">
+    <div class="sol-panel active" data-desc="0">
+      <div class="sol-panel-num">01</div>
+      <h3 class="sol-panel-title">Asset Location Optimization</h3>
+      <p class="sol-panel-text">Strategically placing investments across taxable, tax-deferred, and tax-exempt accounts to minimize drag and maximize after-tax compounding. The single most overlooked source of alpha in wealth management.</p>
+      <div class="sol-panel-line"></div>
+      <div class="sol-panel-tag">Tax Optimization</div>
+    </div>
+    <div class="sol-panel" data-desc="1">
+      <div class="sol-panel-num">02</div>
+      <h3 class="sol-panel-title">Strategic Asset Allocation</h3>
+      <p class="sol-panel-text">Long-horizon portfolio construction informed by macro research, structural market dynamics, and your full financial picture — investments, real estate, business income, and estate plan working together.</p>
+      <div class="sol-panel-line"></div>
+      <div class="sol-panel-tag">Core Strategy</div>
+    </div>
+    <div class="sol-panel" data-desc="2">
+      <div class="sol-panel-num">03</div>
+      <h3 class="sol-panel-title">Tactical Asset Allocation</h3>
+      <p class="sol-panel-text">Tactical asset allocation adjusts portfolio exposures in response to changing market conditions — shifting between asset classes, geographies, and sectors based on valuation, momentum, and macro signals. Where strategic allocation sets the destination, tactical allocation navigates the road. At STQ, every tactical adjustment is evaluated through a tax lens first: we don't generate a taxable event to make a move that doesn't clear the after-tax hurdle.</p>
+      <div class="sol-panel-line"></div>
+      <div class="sol-panel-tag">Portfolio Management</div>
+    </div>
+    <div class="sol-panel" data-desc="3">
+      <div class="sol-panel-num">04</div>
+      <h3 class="sol-panel-title">Tax Loss Harvesting</h3>
+      <p class="sol-panel-text">Beyond simple periodic harvesting — advanced techniques including long-short strategies create a richer opportunity set for realizing losses to offset gains from real estate, business sales, concentrated stock, and more. Harvested losses never expire.</p>
+      <div class="sol-panel-line"></div>
+      <div class="sol-panel-tag">Tax Alpha</div>
+    </div>
+    <div class="sol-panel" data-desc="4">
+      <div class="sol-panel-num">05</div>
+      <h3 class="sol-panel-title">Derivative Strategies</h3>
+      <p class="sol-panel-text">Options overlays that protect downside, generate income, and reshape return profiles — including the STQ Fortress Trade, protective put spreads, and cash-secured put writing. Tax-efficient exposure adjustments without selling underlying holdings.</p>
+      <div class="sol-panel-line"></div>
+      <div class="sol-panel-tag">Options Overlay</div>
+    </div>
+    <div class="sol-panel" data-desc="5">
+      <div class="sol-panel-num">06</div>
+      <h3 class="sol-panel-title">Alternative Investments</h3>
+      <p class="sol-panel-text">Tax-aware placement of alternatives in the right accounts — private credit, venture, real estate, hedge funds — optimized for after-tax outcomes. Compelling return potential without the punishing tax drag of incorrect placement.</p>
+      <div class="sol-panel-line"></div>
+      <div class="sol-panel-tag">Alternatives</div>
+    </div>
+    <div class="sol-panel" data-desc="6">
+      <div class="sol-panel-num">07</div>
+      <h3 class="sol-panel-title">Enhanced Cash Management</h3>
+      <p class="sol-panel-text">Your idle cash should work harder. Tax-advantaged yield strategies including box spread ETFs and structured cash alternatives that outperform money markets with better tax treatment.</p>
+      <div class="sol-panel-line"></div>
+      <div class="sol-panel-tag">Yield Enhancement</div>
+    </div>
+    <div class="sol-panel" data-desc="7">
+      <div class="sol-panel-num">08</div>
+      <h3 class="sol-panel-title">Estate & Philanthropic Strategies</h3>
+      <p class="sol-panel-text">Coordinated estate strategies including donor-advised funds, step-up planning, and tax-efficient wealth transfer — in collaboration with your attorney and CPA.</p>
+      <div class="sol-panel-line"></div>
+      <div class="sol-panel-tag">Wealth Transfer</div>
+    </div>
+    <div class="sol-panel" data-desc="8">
+      <div class="sol-panel-num">09</div>
+      <h3 class="sol-panel-title">Synthetic Portfolio Borrowing</h3>
+      <p class="sol-panel-text">Borrow against your portfolio at near-Treasury rates through box spreads. No bank approval, no credit check, tax-deductible interest. Stay fully invested while accessing the liquidity you need.</p>
+      <div class="sol-panel-line"></div>
+      <div class="sol-panel-tag">Liquidity</div>
+    </div>
+  </div>
+</section>
+
+<!-- TAX CHART -->
+<section class="tax-chart-section">
+  <div class="container">
+    <div class="tax-chart-header reveal">
+      <h2>The Power of Tax Aware</h2>
+      <p>Tax-aware portfolios drive significantly stronger long-term growth.</p>
+    </div>
+    <div class="chart-wrapper reveal">
+      <div class="chart-visual">
+        <div class="chart-bar-group">
+          <div class="chart-bar chart-bar-taxable">
+            <div class="chart-bar-value">$6.3M</div>
+            <div class="chart-bar-label">10% return, taxable<br><span style="font-size:0.6875rem;opacity:0.7">37% CA rate</span></div>
+          </div>
+        </div>
+        <div class="chart-bar-group">
+          <div class="chart-bar chart-bar-taxaware">
+            <div class="chart-bar-value">$17.4M</div>
+            <div class="chart-bar-label">10% return, tax-aware<br><span style="font-size:0.6875rem;opacity:0.7">Deferred & optimized</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="chart-footnote">Hypothetical growth of $1M over 30 years. For illustrative purposes only.</p>
+      <div class="chart-diff">
+        <div class="chart-diff-number">+$11.2M</div>
+        <div class="chart-diff-label">Additional wealth preserved through tax-aware management</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STQ FRAMEWORK -->
+<section class="stepper-section" id="framework">
+  <div class="stepper-container">
+    <div class="stepper-header">
+      <div class="section-label reveal">Our Framework</div>
+      <h2 class="stepper-title">Three pillars. One unified strategy.</h2>
+    </div>
+    <div class="stepper-nav">
+      <div class="stepper-step active" data-step="0" onclick="goStep(0)">
+        <div class="stepper-circle">S</div>
+        <div class="stepper-word">Strategic</div>
+      </div>
+      <div class="stepper-connector" id="conn0"><div class="stepper-fill"></div></div>
+      <div class="stepper-step" data-step="1" onclick="goStep(1)">
+        <div class="stepper-circle">T</div>
+        <div class="stepper-word">Tactical</div>
+      </div>
+      <div class="stepper-connector" id="conn1"><div class="stepper-fill"></div></div>
+      <div class="stepper-step" data-step="2" onclick="goStep(2)">
+        <div class="stepper-circle">Q</div>
+        <div class="stepper-word">Quantitative</div>
+      </div>
+    </div>
+    <div class="stepper-content">
+      <div class="stepper-watermark" id="stepperWatermark">S.</div>
+      <div class="stepper-body" id="stepperBody">
+        <div class="stepper-pill" id="stepperPill">The Foundation</div>
+        <div class="stepper-content-title" id="stepperTitle">Strategic</div>
+        <div class="stepper-bar"></div>
+        <div class="stepper-desc" id="stepperDesc">Tax-aware portfolio construction designed around your full financial picture — investments, real estate, business income, and estate plan working together.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="split-section" id="about">
+  <div class="container">
+    <div class="split-grid">
+      <div class="split-label">
+        <div class="section-label reveal">About</div>
+      </div>
+      <div class="about-text reveal">
+        <p>Akiva Glazerson spent over a decade at the highest levels of institutional finance — including PIMCO, Royal Bank of Canada, UBS, Deutsche Bank, and a $45B+ RIA where he served as Head of Risk and Investments — building and optimizing multi-asset portfolios for the world's largest investors.</p>
+        <br>
+        <p>He founded STQ Capital Partners on a simple observation: the strategies that protect institutional wealth are rarely applied to individual investors. Most advisors charge 1% to buy three ETFs. STQ charges less to build tax-aware, options-enhanced, institutionally-constructed portfolios custom-fit to your tax return.</p>
+        <br>
+        <p>Akiva holds a B.S. from Yeshiva University, FINRA Series 7, 63, and 65 licenses, the CSRIC designation, and the CAIA alternatives credential. He's also a Brazilian Jiu-Jitsu black belt — because discipline on the mat translates to discipline in the portfolio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY STQ -->
+<section class="why-section">
+  <div class="container">
+    <div class="why-header reveal">
+      <h2>Why STQ</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <h3>Independence</h3>
+        <p>No PE ownership, no product quotas, no conflicts. We sit on the same side of the table as you.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <h3>Integrity</h3>
+        <p>Open architecture, full transparency, fiduciary at all times. We don't build products or guide clients into anything that serves us.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <h3>Innovation</h3>
+        <p>Technology-forward operations, cutting-edge tax products, and strategies most advisors can't execute.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <h3>Individuality</h3>
+        <p>Every portfolio is tailored to your tax situation, income, liquidity, and objectives. No cookie cutters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMON QUESTIONS -->
+<section style="padding: 80px 0; background: var(--cream-dark); position: relative; z-index: 1;">
+  <div class="container">
+    <div class="split-grid">
+      <div class="split-label">
+        <div class="section-label reveal">Common Questions</div>
+      </div>
+      <div class="reveal" style="font-size: 1.0625rem; line-height: 1.9; color: var(--text-secondary); max-width: 640px; font-style: italic;">
+        Yes, fiduciary. Always. No PE ownership, no product shelf, no home office telling me what to recommend. I coordinate with your CPA — proactively, not reactively. Every portfolio is built around your tax return, not a model. And no, there's no arbitrary minimum — there's a fit. If the math works for both of us, we work together.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="reveal">
+      <h2>Let's Connect.</h2>
+      <p>Whether you're ready to work together or just want to learn more, we'd love to hear from you.</p>
+      <div style="margin: 32px 0 24px; color: rgba(240,239,235,0.7); font-size: 15px; line-height: 2;">
+        <a href="/cdn-cgi/l/email-protection#20414b4956410e474c415a4552534f4e605354514341500e434f4d" style="color: #F0EFEB; text-decoration: none;"><span class="__cf_email__" data-cfemail="583933312e39763f3439223d2a2b3736182b2c293b3928763b3735">[email&#160;protected]</span></a><br>
+        <a href="tel:3107303981" style="color: #F0EFEB; text-decoration: none;">310-730-3981</a>
+      </div>
+      <div class="cta-buttons">
+        <a href="/cdn-cgi/l/email-protection#b7d6dcdec1d699d0dbd6cdd2c5c4d8d9f7c4c3c6d4d6c799d4d8da88c4c2d5ddd2d4c38ae7d8c5c3d1d8dbded8928587f3ded6d0d9d8c4c3ded4928587e5d2c6c2d2c4c3" class="btn btn-white">Portfolio Diagnostic</a>
+        <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-outline-white">Schedule a Meeting</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section" id="insights">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div>
+        <h3>Stay Informed</h3>
+        <p>Tax-aware insights and market perspectives, delivered daily.</p>
+      </div>
+      <form class="newsletter-form" id="newsletter-form" onsubmit="handleSubscribe(event)">
+        <input type="email" id="newsletter-email" placeholder="your@email.com" aria-label="Email address" required>
+        <button type="submit" class="btn btn-primary" id="newsletter-btn">Subscribe</button>
+      </form>
+      <p id="newsletter-msg" style="display:none; font-size:0.875rem; margin-top:12px;"></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-logo">STQ <span>/ Capital Partners</span></div>
+      <div class="footer-links">
+        <a href="https://linkedin.com/in/akiva-glazerson" target="_blank">LinkedIn</a>
+        <a href="#insights">Newsletter</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Client Login</a>
+      </div>
+      <div class="footer-copy">© 2026 STQ Capital Partners</div>
+    </div>
+    <div class="footer-disclaimer">
+      Advisory services are offered through STQ Capital Partners ("STQ"), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable. *Hypothetical illustration for educational purposes only.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var pwd = sessionStorage.getItem('stq_auth');
+  if (pwd !== 'granted') {
+    var input = prompt('Enter password to access STQ Capital Partners:');
+    if (input !== 'Hello123') {
+      document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:Arial,sans-serif;color:#1B2E4B;font-size:1rem;">Access denied. <a href="" style="margin-left:8px;color:#1B2E4B;">Try again</a></div>';
+      return;
+    }
+    sessionStorage.setItem('stq_auth', 'granted');
+  }
+})();
+</script>
+<script>
+(function() {
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+})();
+
+// Stepper
+const stepperPillars = [
+  { letter: 'S', title: 'Strategic', pill: 'The Foundation', desc: 'Strategic asset allocation defines the long-term blueprint — the target mix of equities, fixed income, alternatives, and cash that reflects your risk tolerance, time horizon, and financial goals. It\'s the anchor that keeps a portfolio from drifting with headlines. At STQ, strategic allocation goes deeper than a risk questionnaire: we map your investments alongside your real estate, business income, concentrated positions, and estate plan to build a structure that holds up across market cycles and tax environments.' },
+  { letter: 'T', title: 'Tactical', pill: 'The Opportunistic', desc: 'Tactical asset allocation adjusts portfolio exposures in response to changing market conditions — shifting between asset classes, geographies, and sectors based on valuation, momentum, and macro signals. Where strategic allocation sets the destination, tactical allocation navigates the road. At STQ, every tactical adjustment is evaluated through a tax lens first: we don\'t generate a taxable event to make a move that doesn\'t clear the after-tax hurdle.' },
+  { letter: 'Q', title: 'Quantitative', pill: 'The Differentiator', desc: 'This is where STQ is different. Most advisors manage to a gross return. We manage to an after-tax return — and we can prove the difference. Every allocation decision, every options overlay, every harvesting move is run through a quantitative framework that measures what you actually keep. Our background is institutional: factor research, risk attribution, scenario analysis. That toolkit doesn\'t disappear when you work with an individual investor. It just finally gets applied to someone who can actually benefit from it.' }
+];
+let currentStep = 0;
+const stepEls = document.querySelectorAll('.stepper-step');
+const connEls = [document.getElementById('conn0'), document.getElementById('conn1')];
+const stepBody = document.getElementById('stepperBody');
+
+function goStep(index) {
+  currentStep = index;
+  stepEls.forEach((s, i) => {
+    s.classList.remove('active', 'completed');
+    if (i === index) s.classList.add('active');
+    else if (i < index) s.classList.add('completed');
+  });
+  connEls.forEach((c, i) => { if(c) c.classList.toggle('filled', i < index); });
+  stepBody.classList.remove('visible');
+  setTimeout(() => {
+    const p = stepperPillars[index];
+    document.getElementById('stepperPill').textContent = p.pill;
+    document.getElementById('stepperTitle').textContent = p.title;
+    document.getElementById('stepperDesc').textContent = p.desc;
+    document.getElementById('stepperWatermark').textContent = p.letter + '.';
+    stepBody.classList.add('visible');
+  }, 250);
+}
+setTimeout(() => stepBody.classList.add('visible'), 300);
+
+// Mailerlite newsletter subscription
+async function handleSubscribe(e) {
+  e.preventDefault();
+  const email = document.getElementById('newsletter-email').value;
+  const btn = document.getElementById('newsletter-btn');
+  const msg = document.getElementById('newsletter-msg');
+
+  btn.textContent = 'Subscribing...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMmM2OTZhNDU2YmFiZDU4MzEyMmRhYjMwMDA5MDEyZTFmNzE4MTJjMTg0OTA1ODg4MmZjMDQ3MTI4YzU4ZmRiOTQ4NDRhZGFiMWMxOTgxZGIiLCJpYXQiOjE3NzUzNzU0NzguMTQyMDk3LCJuYmYiOjE3NzUzNzU0NzguMTQyMSwiZXhwIjo0OTMxMDQ5MDc4LjEzNzg4Miwic3ViIjoiMjI2NTM2NyIsInNjb3BlcyI6W119.ZdViQ4RRQTgYCmiJyPuhFhpf6e5Okmf75gggIsHrxgG5xmeuxRCmkMCkhRmgY4_zevSlEe6tYpwTui1hVmLO1NlHP4uBmgoJ9dGSFciCjBxs5Y9EtEvYwrVqv5KV8aVK8fXy6h1pSA-Y8kHIekfnTha-Gs_wddrV5U36x6XNbtQq6HhIfnyDEXXCkdOLl5jL4K5G3nPjjROrBKEmkzpaGjL0bI2VJouU3VXN9BKSUEQgVz0RcyGWlsPbPuVoQNYfnGvX6H5HDU6V8t9m6lzO-woI1byNRm_T9j90y1WuZmPe3s1hQNOFEYIvWIMNJaw_GozfJdS4e9t-1sn0E8jULWycSZM0kdklAyXDx-IJ3srznQMGBGgpEqGD6O24aUIQ-nzD8kxnMqWhDSqFOeu-p9ETrFUPKdTL7XpHnV4_AnqzsFRGdpUy_PXyVldVgkOOm_pM_HPP-w5FuUfNv2J6XlU9zSLiC-DHZ608Hw0JPi9yt7jCEwOeDaS87dvX0R8X09GYNMcTVBgPSV8PLvOcQVaIqDPNqU5_d8pPmiX1GtRlJQL3Yf4DugYrmhmITzufU9zOtgsSr-jv2eAUOuw9n_fnEHBw5jFJ3pEs8yl5NjBDN2SSdllkkq_LWDczAs914PfugL2a1t4vk2gx7xZsdg7Y3w__YlKTzBHVMjBbJ-8'
+      },
+      body: JSON.stringify({ email: email })
+    });
+
+    if (res.ok || res.status === 201 || res.status === 200) {
+      msg.style.display = 'block';
+      msg.style.color = '#1B2E4B';
+      msg.textContent = "You're in. First issue hits first thing.";
+      document.getElementById('newsletter-email').value = '';
+      btn.textContent = 'Subscribed ✓';
+    } else {
+      throw new Error('Subscription failed');
+    }
+  } catch (err) {
+    msg.style.display = 'block';
+    msg.style.color = '#991B1B';
+    msg.textContent = 'Something went wrong. Email <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="75141e1c03145b1219140f1007061a1b350601041614055b161a18">[email&#160;protected]</a> to subscribe.';
+    btn.textContent = 'Subscribe';
+    btn.disabled = false;
+  }
+}
+
+const solItems = document.querySelectorAll('.sol-item');
+const solPanels = document.querySelectorAll('.sol-panel');
+function activateSol(idx) {
+  solItems.forEach(i => i.classList.remove('active'));
+  solPanels.forEach(p => p.classList.remove("active"));
+  if (solItems[idx]) solItems[idx].classList.add("active");
+  if (solPanels[idx]) solPanels[idx].classList.add("active");
+}
+solItems.forEach(item => {
+  item.addEventListener("mouseenter", () => activa
