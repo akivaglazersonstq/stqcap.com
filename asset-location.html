@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asset Location: The Most Overlooked Source of Alpha — STQ Capital Partners</title>
+<meta name="description" content="A comprehensive guide to asset location optimization — the tax strategy that can add $11.2M to a $1M portfolio over 30 years. By STQ Capital Partners.">
+<meta name="keywords" content="asset location optimization, tax-aware investing, asset location strategy, tax-efficient investing, California RIA, tax alpha, after-tax returns, box spread RIA">
+<meta property="og:title" content="Asset Location: The Most Overlooked Source of Alpha">
+<meta property="og:description" content="Most advisors ignore asset location. Here's what it costs you — and how to fix it.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://stqcap.com/publications/asset-location.html">
+<link rel="canonical" href="https://stqcap.com/publications/asset-location.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy: #1B2E4B;
+  --navy-light: #2a4570;
+  --navy-dark: #0f1e33;
+  --cream: #F0EFEB;
+  --cream-dark: #E6E4DE;
+  --white: #FFFFFF;
+  --text-primary: #1B2E4B;
+  --text-secondary: #5a6a7e;
+  --text-light: rgba(240, 239, 235, 0.7);
+  --font-heading: 'Chakra Petch', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(240, 239, 235, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(27, 46, 75, 0.08);
+}
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 64px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.nav-logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--navy);
+  text-decoration: none;
+}
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-back {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s ease;
+}
+.nav-back:hover { color: var(--navy); }
+.nav-back::before { content: '←'; }
+.nav-cta {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  border-radius: 4px;
+  background: var(--navy);
+  color: var(--cream);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.nav-cta:hover { background: var(--navy-light); }
+
+/* PUBLICATION HERO */
+.pub-hero {
+  background: var(--navy);
+  padding: 140px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+.pub-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(240, 239, 235, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(240, 239, 235, 0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+.pub-hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 64px);
+  position: relative;
+  z-index: 1;
+}
+.pub-series {
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(240, 239, 235, 0.5);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pub-series::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: rgba(240, 239, 235, 0.3);
+}
+.pub-hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+.pub-hero-sub {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text-light);
+  max-width: 640px;
+  margin-bottom: 40px;
+}
+.pub-meta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.pub-meta-item {
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(240, 239, 235, 0.4);
+}
+.pub-meta-item span {
+  color: rgba(240, 239, 235, 0.7);
+  margin-left: 6px;
+}
+
+/* CONTENT LAYOUT */
+.pub-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 64px);
+}
+
+/* TABLE OF CONTENTS */
+.pub-toc {
+  background: var(--cream);
+  border-left: 3px solid var(--navy);
+  padding: 32px 36px;
+  margin: 56px 0;
+  border-radius: 0 4px 4px 0;
+}
+.pub-toc-title {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+.pub-toc ol {
+  list-style: none;
+  counter-reset: toc;
+}
+.pub-toc li {
+  counter-increment: toc;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(27, 46, 75, 0.06);
+}
+.pub-toc li:last-child { border-bottom: none; }
+.pub-toc a {
+  font-size: 0.9375rem;
+  color: var(--navy);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: color 0.2s ease;
+}
+.pub-toc a:hover { color: var(--navy-light); }
+.pub-toc a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: rgba(27, 46, 75, 0.25);
+  min-width: 24px;
+}
+
+/* BODY TYPOGRAPHY */
+.pub-section {
+  padding: 64px 0 0;
+}
+.pub-section-num {
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pub-section-num::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--navy);
+  opacity: 0.3;
+}
+.pub-section h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+  margin-bottom: 28px;
+  line-height: 1.2;
+}
+.pub-section h3 {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+.pub-section p {
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: #2a3a4a;
+  margin-bottom: 20px;
+}
+.pub-section p:last-child { margin-bottom: 0; }
+
+/* PULL QUOTE */
+.pub-quote {
+  border-left: 3px solid var(--navy);
+  padding: 20px 28px;
+  margin: 36px 0;
+  background: var(--cream);
+}
+.pub-quote p {
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.65;
+  color: var(--navy);
+  font-style: italic;
+  margin: 0;
+}
+
+/* DATA CALLOUT */
+.pub-callout {
+  background: var(--navy);
+  color: var(--cream);
+  padding: 40px 44px;
+  margin: 40px 0;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.pub-callout::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(240, 239, 235, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(240, 239, 235, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.pub-callout-inner { position: relative; z-index: 1; }
+.pub-callout-number {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--cream);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.pub-callout-label {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  max-width: 480px;
+}
+.pub-callout-footnote {
+  font-size: 0.75rem;
+  color: rgba(240, 239, 235, 0.3);
+  margin-top: 16px;
+  font-style: italic;
+}
+
+/* COMPARISON TABLE */
+.pub-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 32px 0;
+  font-size: 0.9375rem;
+}
+.pub-table th {
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--navy);
+  padding: 14px 20px;
+  text-align: left;
+}
+.pub-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--cream-dark);
+  color: #2a3a4a;
+  line-height: 1.5;
+}
+.pub-table tr:nth-child(even) td { background: var(--cream); }
+.pub-table tr:last-child td { border-bottom: none; }
+.pub-table .highlight td {
+  background: rgba(27, 46, 75, 0.05);
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* FRAMEWORK BOX */
+.pub-framework {
+  border: 1px solid rgba(27, 46, 75, 0.12);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 32px 0;
+}
+.pub-framework-header {
+  background: var(--cream-dark);
+  padding: 16px 24px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.pub-framework-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-bottom: 1px solid rgba(27, 46, 75, 0.08);
+}
+.pub-framework-row:last-child { border-bottom: none; }
+.pub-framework-cell {
+  padding: 20px 24px;
+  border-right: 1px solid rgba(27, 46, 75, 0.08);
+}
+.pub-framework-cell:last-child { border-right: none; }
+.pub-framework-cell-label {
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+.pub-framework-cell-content {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #2a3a4a;
+}
+.pub-framework-cell.good { background: rgba(22, 101, 52, 0.04); }
+.pub-framework-cell.bad { background: rgba(153, 27, 27, 0.04); }
+.pub-framework-cell.neutral { background: rgba(27, 46, 75, 0.02); }
+
+/* DISCLAIMER */
+.pub-disclaimer {
+  margin: 64px 0 0;
+  padding: 28px 0;
+  border-top: 1px solid var(--cream-dark);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* CTA SECTION */
+.pub-cta {
+  background: var(--cream);
+  padding: 64px clamp(24px, 5vw, 64px);
+  margin: 64px 0 0;
+  text-align: center;
+  position: relative;
+}
+.pub-cta h2 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.pub-cta p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+.pub-cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s var(--ease);
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+}
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27, 46, 75, 0.25); }
+.btn-secondary:hover { border-color: var(--navy); }
+
+/* MORE PUBLICATIONS */
+.more-pubs {
+  background: var(--navy-dark);
+  padding: 64px clamp(24px, 5vw, 64px);
+}
+.more-pubs h3 {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(240, 239, 235, 0.4);
+  margin-bottom: 32px;
+}
+.more-pubs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.more-pub-card {
+  background: rgba(240, 239, 235, 0.04);
+  border: 1px solid rgba(240, 239, 235, 0.08);
+  border-radius: 6px;
+  padding: 24px 20px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.more-pub-card:hover { background: rgba(240, 239, 235, 0.08); }
+.more-pub-tag {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(240, 239, 235, 0.35);
+  margin-bottom: 10px;
+}
+.more-pub-title {
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--cream);
+  line-height: 1.4;
+}
+.more-pub-soon {
+  font-size: 0.75rem;
+  color: rgba(240, 239, 235, 0.25);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* FOOTER */
+footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px solid rgba(240,239,235,0.06); }
+.footer-main { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 64px); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1rem; color: var(--cream); }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.5); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.3); }
+
+@media (max-width: 768px) {
+  .pub-framework-row { grid-template-columns: 1fr; }
+  .pub-framework-cell { border-right: none; }
+  .more-pubs-grid { grid-template-columns: 1fr; }
+  .pub-callout { padding: 28px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">STQ <span>/ Capital Partners</span></a>
+    <a href="/insights.html" class="nav-back">All Publications</a>
+    <a href="mailto:akiva.glazerson@stqcap.com?subject=Portfolio%20Diagnostic%20Request" class="nav-cta">Portfolio Diagnostic</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="pub-hero">
+  <div class="pub-hero-inner">
+    <div class="pub-series">STQ Research — Asset Allocation Series</div>
+    <h1>Asset Location:<br>The Most Overlooked<br>Source of Alpha</h1>
+    <p class="pub-hero-sub">Most advisors spend their time picking investments. The best ones spend it deciding where to hold them. The difference, over 30 years, is $11.2 million.</p>
+    <div class="pub-meta">
+      <div class="pub-meta-item">Author <span>Akiva Glazerson</span></div>
+      <div class="pub-meta-item">Published <span>April 2026</span></div>
+      <div class="pub-meta-item">Read time <span>12 minutes</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="pub-content">
+
+  <!-- TABLE OF CONTENTS -->
+  <nav class="pub-toc">
+    <div class="pub-toc-title">Contents</div>
+    <ol>
+      <li><a href="#what-is-it">What Asset Location Actually Is</a></li>
+      <li><a href="#the-math">The Math: Why It Matters More Than You Think</a></li>
+      <li><a href="#the-three-buckets">The Three Buckets — And What Goes In Each</a></li>
+      <li><a href="#california">The California Multiplier</a></li>
+      <li><a href="#common-mistakes">The Five Mistakes Advisors Make</a></li>
+      <li><a href="#stq-approach">The STQ Approach</a></li>
+    </ol>
+  </nav>
+
+  <!-- SECTION 1 -->
+  <section class="pub-section" id="what-is-it">
+    <div class="pub-section-num">Section 01</div>
+    <h2>What Asset Location Actually Is</h2>
+
+    <p>Asset location is not asset allocation. This distinction matters, and most investors — and many advisors — confuse the two.</p>
+
+    <p><strong>Asset allocation</strong> is the decision of what to own: stocks, bonds, real estate, alternatives, cash. It's the strategic mix that reflects your risk tolerance, time horizon, and financial goals.</p>
+
+    <p><strong>Asset location</strong> is the decision of where to hold each asset: in a taxable brokerage account, a tax-deferred account like a traditional IRA or 401(k), or a tax-exempt account like a Roth IRA.</p>
+
+    <p>The insight behind asset location is simple: different assets generate different types of returns, and different types of returns are taxed differently. By placing the right assets in the right accounts, you can dramatically reduce the tax drag on your portfolio without changing what you own or how much risk you take.</p>
+
+    <div class="pub-quote">
+      <p>"Asset location is the only investment strategy I know of that adds return without adding risk. It's pure alpha — generated entirely by tax efficiency, not market exposure."</p>
+    </div>
+
+    <p>Despite this, asset location is one of the least consistently applied strategies in wealth management. The reason is structural: most advisors manage a single account for each client, or manage accounts in silos without considering the full picture. When you can't see all the buckets at once, you can't optimize across them.</p>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="pub-section" id="the-math">
+    <div class="pub-section-num">Section 02</div>
+    <h2>The Math: Why It Matters More Than You Think</h2>
+
+    <p>Let's make this concrete. Consider two investors. Both start with $1 million. Both earn a 10% gross annual return. Both invest for 30 years. The only difference: one invests tax-inefficiently, the other uses systematic asset location.</p>
+
+    <div class="pub-callout">
+      <div class="pub-callout-inner">
+        <div class="pub-callout-number">$11.2M</div>
+        <div class="pub-callout-label">The difference in ending wealth between a tax-inefficient portfolio and a tax-aware portfolio, starting with $1M over 30 years at a 10% gross return for a California investor.</div>
+        <div class="pub-callout-footnote">Hypothetical illustration. Assumes 37% federal + California combined marginal rate on ordinary income and short-term gains, 23.8% on qualified dividends and long-term gains, for the taxable portfolio. Tax-aware portfolio assumes full deferral optimization. For illustrative purposes only.</div>
+      </div>
+    </div>
+
+    <p>The tax-inefficient investor — holding taxable bonds, high-turnover equity funds, and REITs in a taxable account — ends up with approximately $6.3 million after taxes. The tax-aware investor, holding those same assets in the optimal account types, ends up with approximately $17.4 million.</p>
+
+    <p>This is not a small rounding error. It is the difference between financial independence and generational wealth. And it requires no additional risk, no exotic strategies, and no market timing. It requires only one thing: intentional placement.</p>
+
+    <h3>Where the Drag Comes From</h3>
+
+    <p>Tax drag compounds over time in ways that are easy to underestimate. A 2% annual tax drag on a $1 million portfolio sounds manageable — $20,000 per year. But that $20,000 isn't just lost today. It's also not compounding for the next 30 years. Over a long horizon, each dollar of tax paid today costs you not one dollar but many.</p>
+
+    <p>Morningstar's research estimates that tax-efficient strategies add 0.50% or more annually in after-tax returns. Vanguard's analysis of asset location specifically attributes 0.50 to 1.00% in additional annual returns from systematic location optimization. For a $2 million portfolio, that's $10,000 to $20,000 per year — compounding.</p>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="pub-section" id="the-three-buckets">
+    <div class="pub-section-num">Section 03</div>
+    <h2>The Three Buckets — And What Goes In Each</h2>
+
+    <p>Every investor has access to three types of accounts, each with a distinct tax character. The goal of asset location is to match each asset to the account where its tax treatment is most favorable.</p>
+
+    <div class="pub-framework">
+      <div class="pub-framework-header">Asset Location Framework — What Goes Where</div>
+
+      <div class="pub-framework-row">
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Account Type</div>
+          <div class="pub-framework-cell-content" style="font-weight:700;color:var(--navy);">Taxable Brokerage</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Tax Character</div>
+          <div class="pub-framework-cell-content">Gains and income taxed annually. Long-term gains at preferential rates. Step-up in basis at death.</div>
+        </div>
+        <div class="pub-framework-cell good">
+          <div class="pub-framework-cell-label">Best For</div>
+          <div class="pub-framework-cell-content">Buy-and-hold equities, index funds, ETFs, municipal bonds, tax-loss harvesting strategies, direct indexing SMAs</div>
+        </div>
+      </div>
+
+      <div class="pub-framework-row">
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Account Type</div>
+          <div class="pub-framework-cell-content" style="font-weight:700;color:var(--navy);">Tax-Deferred (IRA, 401k)</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Tax Character</div>
+          <div class="pub-framework-cell-content">Contributions pre-tax. Growth untaxed. Withdrawals taxed as ordinary income. RMDs required at 73.</div>
+        </div>
+        <div class="pub-framework-cell good">
+          <div class="pub-framework-cell-label">Best For</div>
+          <div class="pub-framework-cell-content">Taxable bonds, REITs, high-yield fixed income, alternatives generating ordinary income, high-turnover active strategies</div>
+        </div>
+      </div>
+
+      <div class="pub-framework-row">
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Account Type</div>
+          <div class="pub-framework-cell-content" style="font-weight:700;color:var(--navy);">Tax-Exempt (Roth IRA)</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Tax Character</div>
+          <div class="pub-framework-cell-content">Contributions after-tax. Growth tax-free. Withdrawals tax-free. No RMDs. Most valuable account type.</div>
+        </div>
+        <div class="pub-framework-cell good">
+          <div class="pub-framework-cell-label">Best For</div>
+          <div class="pub-framework-cell-content">Highest-growth assets — small cap equities, venture, crypto, options strategies, assets you expect to compound significantly</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>The Logic Behind Each Placement</h3>
+
+    <p><strong>Taxable accounts</strong> should hold assets that are inherently tax-efficient: broad equity index funds and ETFs that generate minimal distributions, buy-and-hold positions that defer gains indefinitely, and municipal bonds whose interest is already tax-exempt. Critically, taxable accounts are also where tax-loss harvesting strategies live — the continuous realization of losses to offset gains elsewhere.</p>
+
+    <p><strong>Tax-deferred accounts</strong> are best used for assets that generate ordinary income — taxable bonds, REITs, high-yield credit, and actively managed strategies with high turnover. These assets would be heavily taxed in a taxable account; sheltered inside a traditional IRA or 401(k), their income compounds without annual tax friction. The eventual withdrawal tax is a known, deferred cost, not an annual drag.</p>
+
+    <p><strong>Tax-exempt Roth accounts</strong> are the most powerful account type available to most investors, and the most frequently misused. Because growth is entirely tax-free, the Roth should hold your highest-expected-return assets — the things you most want to compound without interference. Putting conservative fixed income in a Roth is a waste of your most valuable tax shelter.</p>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section class="pub-section" id="california">
+    <div class="pub-section-num">Section 04</div>
+    <h2>The California Multiplier</h2>
+
+    <p>Asset location matters everywhere. It matters more in California than anywhere else in the country.</p>
+
+    <p>California has the highest state income tax rate in the United States at 13.3% — and unlike the federal government, California does not offer a preferential rate for long-term capital gains. Every dollar of gain in California is taxed as ordinary income, regardless of how long you held the asset.</p>
+
+    <div class="pub-callout">
+      <div class="pub-callout-inner">
+        <div class="pub-callout-number">50.3%</div>
+        <div class="pub-callout-label">The combined federal and California marginal rate on short-term capital gains and ordinary income for a top-bracket California investor. Every dollar of tax-inefficient income costs you fifty cents.</div>
+        <div class="pub-callout-footnote">Federal rate 37% + California 13.3% = 50.3% combined marginal rate. Does not include Net Investment Income Tax (3.8%) for applicable taxpayers.</div>
+      </div>
+    </div>
+
+    <p>This has several practical implications:</p>
+
+    <p>First, the value of tax deferral is higher in California than in any other state. Moving a taxable bond from a brokerage account to an IRA shelters income that would otherwise face a 50%+ combined rate. The annual savings from this single move on a $500,000 fixed income allocation can exceed $15,000.</p>
+
+    <p>Second, California's treatment of capital gains means that tax-loss harvesting is more valuable here. Harvested losses offset gains at the full combined rate, not just the federal rate. A $100,000 harvested loss is worth $50,300 in California versus $23,800 for a federal-only investor.</p>
+
+    <p>Third, Roth conversions — converting traditional IRA assets to Roth — require particularly careful analysis in California. The conversion is taxable at ordinary income rates in the year of conversion. Done strategically in low-income years, the long-term benefit is significant. Done carelessly, it can trigger unnecessary state tax.</p>
+
+    <div class="pub-quote">
+      <p>"California doesn't give you a break on capital gains. That changes the math on everything — which account you hold things in, when you harvest losses, when you convert to Roth. Every decision has a California tax dimension."</p>
+    </div>
+  </section>
+
+  <!-- SECTION 5 -->
+  <section class="pub-section" id="common-mistakes">
+    <div class="pub-section-num">Section 05</div>
+    <h2>The Five Mistakes Advisors Make</h2>
+
+    <p>In my experience managing institutional and individual portfolios, the same asset location errors appear repeatedly. They are not subtle. They are not edge cases. They are systematic failures that cost clients real money every year.</p>
+
+    <h3>1. Holding Bonds in Taxable Accounts</h3>
+    <p>Taxable bonds generate ordinary income — the least tax-efficient return type. Holding them in a taxable brokerage account subjects that income to combined rates exceeding 50% in California. The fix is simple: move bonds to an IRA. Most advisors don't do this because they manage each account separately and don't see the full picture.</p>
+
+    <h3>2. Holding REITs in Taxable Accounts</h3>
+    <p>REIT distributions are generally taxed as ordinary income, not at the qualified dividend rate. They are among the least tax-efficient assets available, and they belong in an IRA or Roth, not a brokerage account. Yet most model portfolios place REITs in taxable accounts by default.</p>
+
+    <h3>3. Putting Conservative Assets in the Roth</h3>
+    <p>The Roth IRA is your most powerful account because growth is permanently tax-free. Filling it with conservative bonds or money market funds wastes that shelter. The Roth should hold your highest-conviction, highest-expected-return positions — the assets you most want to compound without a tax drag.</p>
+
+    <h3>4. Ignoring the 401(k)</h3>
+    <p>Many advisors manage a client's IRA and brokerage account but ignore the 401(k) entirely — either because they can't bill on it or because they don't have access. The result is an uncoordinated overall portfolio that misses major location opportunities. STQ uses Pontera to manage 401(k) assets alongside the rest of the portfolio, ensuring the full picture is optimized.</p>
+
+    <h3>5. Not Coordinating with the CPA</h3>
+    <p>Asset location is a tax strategy, and tax strategy requires coordination with the client's tax preparer. Without knowing the client's marginal rates, projected income, anticipated Roth conversion opportunities, and tax situation in the year of a major liquidity event, the location decisions are incomplete. We don't operate in a silo from your CPA. We work with them proactively.</p>
+  </section>
+
+  <!-- SECTION 6 -->
+  <section class="pub-section" id="stq-approach">
+    <div class="pub-section-num">Section 06</div>
+    <h2>The STQ Approach</h2>
+
+    <p>At STQ, asset location is not a feature. It is the foundation. Before we discuss what to own, we map the full account structure — taxable, tax-deferred, and tax-exempt accounts across every custodian — and build a location framework that governs every placement decision going forward.</p>
+
+    <p>This process begins with your tax return. We look at your marginal rates, your sources of income, your existing asset mix, and your anticipated liquidity events. From there, we model the optimal location for each asset class in your portfolio and construct a transition plan that improves location over time without triggering unnecessary tax events in the process.</p>
+
+    <p>We also integrate tax-loss harvesting directly into the location strategy. The taxable account is where losses live — and our long-short SMA strategies ensure we can generate losses continuously, regardless of market direction, to offset gains from real estate sales, business income, concentrated stock positions, and more.</p>
+
+    <p>Finally, we coordinate everything with your CPA. Location decisions affect your tax return. Roth conversion decisions require income projections. Gain realization decisions require knowledge of your carryforward losses. This is not optional. It is how institutional portfolios are managed, and it is how we manage yours.</p>
+
+    <div class="pub-quote">
+      <p>"The strategies that protect institutional wealth are rarely applied to individual investors. Asset location is the clearest example — it's standard practice at every endowment and pension fund in the country, and most individual investors have never heard of it."</p>
+    </div>
+
+  </section>
+
+  <div class="pub-disclaimer">
+    <strong>Disclaimer:</strong> This publication is for informational and educational purposes only. It does not constitute personalized investment, tax, or legal advice. The hypothetical illustrations presented are for illustrative purposes only and do not represent actual investment results. Past performance is no guarantee of future results. Investments involve risk, including the potential loss of principal. Tax laws are subject to change. Please consult with a qualified tax, legal, or financial professional regarding your specific situation. Advisory services offered through STQ Capital Partners, an investment adviser registered with the state of California.
+  </div>
+
+</div>
+
+<!-- CTA -->
+<section class="pub-cta">
+  <h2>See What Asset Location<br>Could Do for Your Portfolio.</h2>
+  <p>We'll analyze your full account structure and show you exactly where the tax drag is — and what fixing it is worth.</p>
+  <div class="pub-cta-buttons">
+    <a href="mailto:akiva.glazerson@stqcap.com?subject=Portfolio%20Diagnostic%20Request" class="btn btn-primary">Portfolio Diagnostic</a>
+    <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-secondary">Schedule a Call</a>
+  </div>
+</section>
+
+<!-- MORE PUBLICATIONS -->
+<section class="more-pubs">
+  <div style="max-width:800px;margin:0 auto;">
+    <h3>More from STQ Research</h3>
+    <div class="more-pubs-grid">
+      <a href="#" class="more-pub-card">
+        <div class="more-pub-tag">Box Spreads</div>
+        <div class="more-pub-title">The Box Spread Guide: Borrowing at Treasury Rates Without a Bank</div>
+        <div class="more-pub-soon">Coming soon</div>
+      </a>
+      <a href="#" class="more-pub-card">
+        <div class="more-pub-tag">Real Estate</div>
+        <div class="more-pub-title">Tax Loss Harvesting for Real Estate Investors</div>
+        <div class="more-pub-soon">Coming soon</div>
+      </a>
+      <a href="#" class="more-pub-card">
+        <div class="more-pub-tag">Options</div>
+        <div class="more-pub-title">The Fortress Trade: Defined Downside Protection with Section 1256 Tax Treatment</div>
+        <div class="more-pub-soon">Coming soon</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-logo">STQ <span>/ Capital Partners</span></div>
+    <div class="footer-copy">© 2026 STQ Capital Partners — stqcap.com</div>
+  </div>
+</footer>
+
+</body>
+</html>
