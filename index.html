@@ -1011,6 +1011,16 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
     }
     sessionStorage.setItem('stq_auth', 'granted');
   }
+  // Force reveal elements visible after auth clears
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      document.querySelectorAll('.reveal').forEach(function(el) {
+        el.classList.add('visible');
+      });
+      var sb = document.getElementById('stepperBody');
+      if (sb) sb.classList.add('visible');
+    }, 400);
+  });
 })();
 </script>
 <script>
