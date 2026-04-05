@@ -316,12 +316,11 @@ nav {
 /* ========== SOLUTIONS HOVER LIST ========== */
 .solutions-hover {
   display: flex;
-  min-height: 600px;
 }
 .sol-left {
   flex: 0 0 50%;
   background: var(--cream);
-  padding: 80px 48px 80px 64px;
+  padding: 40px 48px 40px 64px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -336,7 +335,7 @@ nav {
   color: var(--text-secondary);
   position: relative;
   padding-left: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .sol-heading::before {
   content: '';
@@ -352,7 +351,7 @@ nav {
   display: flex;
   align-items: baseline;
   gap: 16px;
-  padding: 16px 0;
+  padding: 10px 0;
   border-bottom: 1px solid rgba(27,46,75,0.08);
   cursor: pointer;
   transition: all 0.3s ease;
@@ -403,7 +402,7 @@ nav {
 .sol-right {
   flex: 0 0 50%;
   background: #fff;
-  padding: 48px 64px;
+  padding: 40px 64px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1017,28 +1016,127 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
   </div>
 </footer>
 
+<style>
+#stq-gate {
+  position: fixed; inset: 0; z-index: 99999;
+  background: #1B2E4B;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  font-family: 'Chakra Petch', Arial, sans-serif;
+}
+#stq-gate-inner {
+  text-align: center;
+  padding: 48px;
+}
+#stq-gate-logo {
+  font-size: 1.5rem; font-weight: 700; color: #F0EFEB;
+  letter-spacing: 0.03em; margin-bottom: 40px;
+}
+#stq-gate-logo span { font-weight: 400; color: rgba(240,239,235,0.4); }
+#stq-gate h2 {
+  font-size: 1rem; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; color: rgba(240,239,235,0.5);
+  margin-bottom: 28px;
+}
+#stq-gate input {
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 1rem; padding: 14px 24px;
+  border: 1px solid rgba(240,239,235,0.2);
+  border-radius: 4px;
+  background: rgba(240,239,235,0.06);
+  color: #F0EFEB; width: 280px;
+  outline: none; text-align: center;
+  letter-spacing: 0.1em;
+  display: block; margin: 0 auto 16px;
+  transition: border-color 0.2s ease;
+}
+#stq-gate input:focus { border-color: rgba(240,239,235,0.5); }
+#stq-gate input::placeholder { color: rgba(240,239,235,0.25); letter-spacing: 0.05em; }
+#stq-gate button {
+  font-family: 'Chakra Petch', Arial, sans-serif;
+  font-size: 0.8125rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 13px 40px; border-radius: 4px;
+  background: #F0EFEB; color: #1B2E4B;
+  border: none; cursor: pointer;
+  transition: background 0.2s ease;
+}
+#stq-gate button:hover { background: #fff; }
+#stq-gate-error {
+  color: rgba(240,239,235,0.5); font-size: 0.8125rem;
+  margin-top: 16px; display: none;
+  font-family: 'DM Sans', Arial, sans-serif;
+}
+</style>
+
+<div id="stq-gate">
+  <div id="stq-gate-inner">
+    <div id="stq-gate-logo">STQ <span>/ Capital Partners</span></div>
+    <h2>Enter Password</h2>
+    <input type="password" id="stq-gate-input" placeholder="••••••••" autocomplete="off" />
+    <button onclick="stqCheckPassword()">Enter</button>
+    <div id="stq-gate-error">Incorrect password. Try again.</div>
+  </div>
+</div>
+
 <script>
-(function() {
-  var pwd = sessionStorage.getItem('stq_auth');
-  if (pwd !== 'granted') {
-    var input = prompt('Enter password to access STQ Capital Partners:');
-    if (input !== 'Hello123') {
-      document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:Arial,sans-serif;color:#1B2E4B;font-size:1rem;">Access denied. <a href="" style="margin-left:8px;color:#1B2E4B;">Try again</a></div>';
-      return;
-    }
+function stqCheckPassword() {
+  var input = document.getElementById('stq-gate-input').value;
+  if (input === 'Hello123') {
     sessionStorage.setItem('stq_auth', 'granted');
+    var gate = document.getElementById('stq-gate');
+    gate.style.opacity = '0';
+    gate.style.transition = 'opacity 0.4s ease';
+    setTimeout(function() { gate.style.display = 'none'; initSite(); }, 400);
+  } else {
+    document.getElementById('stq-gate-error').style.display = 'block';
+    document.getElementById('stq-gate-input').value = '';
+    document.getElementById('stq-gate-input').focus();
   }
-  // Force reveal elements visible after auth clears
-  document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(function() {
+}
+document.addEventListener('DOMContentLoaded', function() {
+  var pwd = sessionStorage.getItem('stq_auth');
+  if (pwd === 'granted') {
+    document.getElementById('stq-gate').style.display = 'none';
+    initSite();
+  } else {
+    document.getElementById('stq-gate-input').focus();
+    document.getElementById('stq-gate-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') stqCheckPassword();
+    });
+  }
+});
+
+function initSite() {
+  setTimeout(function() {
       document.querySelectorAll('.reveal').forEach(function(el) {
         el.classList.add('visible');
       });
       var sb = document.getElementById('stepperBody');
       if (sb) sb.classList.add('visible');
+
+      // Render homepage issues
+      const issues = [
+        { title: "Your Advisor's Firm Just Got Acquired. Here's What That Means for You.", date: "April 4, 2026", preview: "Private equity bought your advisor's firm. They didn't do it for your benefit.", tag: "Anti-Wirehouse", url: "/insights.html" },
+        { title: "I Don't Compete With Your Bank. I Make Them Irrelevant.", date: "April 5, 2026", preview: "Your portfolio is a bank. Box spreads let you borrow at near-Treasury rates with no credit check.", tag: "Box Spreads", url: "/insights.html" },
+        { title: "He Sold a Rental. Paid $180K in Taxes. His Advisor Never Mentioned This.", date: "April 7, 2026", preview: "Tax-loss harvesting for real estate investors — the most valuable tool you've never used.", tag: "Real Estate", url: "/insights.html" },
+      ];
+      const grid = document.getElementById('homepage-issues');
+      if (grid) {
+        grid.innerHTML = issues.map(issue => `
+          <a href="${issue.url}" style="background:var(--white);border:1px solid rgba(27,46,75,0.08);border-radius:6px;padding:28px 24px;text-decoration:none;display:block;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 20px 60px rgba(27,46,75,0.08)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+              <span style="font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);background:var(--cream-dark);padding:3px 8px;border-radius:3px;">${issue.tag}</span>
+              <span style="font-family:var(--font-heading);font-size:0.6875rem;color:var(--text-secondary);">${issue.date}</span>
+            </div>
+            <div style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:10px;">${issue.title}</div>
+            <div style="font-size:0.875rem;line-height:1.65;color:var(--text-secondary);margin-bottom:20px;">${issue.preview}</div>
+            <div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);">Read →</div>
+          </a>
+        `).join('');
+      }
     }, 400);
-  });
-})();
+}
 </script>
 <script>
 (function() {
@@ -1123,27 +1221,6 @@ async function handleSubscribe(e) {
   }
 }
 
-// Homepage insights preview
-(function() {
-  const issues = [
-    { title: "Your Advisor's Firm Just Got Acquired. Here's What That Means for You.", date: "April 4, 2026", preview: "Private equity bought your advisor's firm. They didn't do it for your benefit.", tag: "Anti-Wirehouse", url: "/insights.html" },
-    { title: "I Don't Compete With Your Bank. I Make Them Irrelevant.", date: "April 5, 2026", preview: "Your portfolio is a bank. Box spreads let you borrow at near-Treasury rates with no credit check.", tag: "Box Spreads", url: "/insights.html" },
-    { title: "He Sold a Rental. Paid $180K in Taxes. His Advisor Never Mentioned This.", date: "April 7, 2026", preview: "Tax-loss harvesting for real estate investors — the most valuable tool you've never used.", tag: "Real Estate", url: "/insights.html" },
-  ];
-  const grid = document.getElementById('homepage-issues');
-  if (!grid) return;
-  grid.innerHTML = issues.map(issue => `
-    <a href="${issue.url}" style="background:var(--white);border:1px solid rgba(27,46,75,0.08);border-radius:6px;padding:28px 24px;text-decoration:none;display:block;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 20px 60px rgba(27,46,75,0.08)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
-        <span style="font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);background:var(--cream-dark);padding:3px 8px;border-radius:3px;">${issue.tag}</span>
-        <span style="font-family:var(--font-heading);font-size:0.6875rem;color:var(--text-secondary);">${issue.date}</span>
-      </div>
-      <div style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:10px;">${issue.title}</div>
-      <div style="font-size:0.875rem;line-height:1.65;color:var(--text-secondary);margin-bottom:20px;">${issue.preview}</div>
-      <div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);">Read →</div>
-    </a>
-  `).join('');
-})();
 
 const solItems = document.querySelectorAll('.sol-item');
 const solPanels = document.querySelectorAll('.sol-panel');
