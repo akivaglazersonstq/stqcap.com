@@ -942,6 +942,22 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
   </div>
 </section>
 
+<!-- INSIGHTS PREVIEW -->
+<section style="padding: 100px 0; background: var(--cream-dark); position: relative; z-index: 1;">
+  <div class="container">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; flex-wrap: wrap; gap: 16px;">
+      <div>
+        <div class="section-label reveal">Latest Insights</div>
+        <h2 style="font-family: var(--font-heading); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin-top: 12px;">What your advisor isn't telling you.</h2>
+      </div>
+      <a href="/insights.html" style="font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--navy); padding-bottom: 2px; white-space: nowrap;">View All Insights →</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;" id="homepage-issues">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
 <!-- COMMON QUESTIONS -->
 <section style="padding: 80px 0; background: var(--cream-dark); position: relative; z-index: 1;">
   <div class="container">
@@ -1115,6 +1131,28 @@ async function handleSubscribe(e) {
     btn.disabled = false;
   }
 }
+
+// Homepage insights preview
+(function() {
+  const issues = [
+    { title: "Your Advisor's Firm Just Got Acquired. Here's What That Means for You.", date: "April 4, 2026", preview: "Private equity bought your advisor's firm. They didn't do it for your benefit.", tag: "Anti-Wirehouse", url: "/insights.html" },
+    { title: "I Don't Compete With Your Bank. I Make Them Irrelevant.", date: "April 5, 2026", preview: "Your portfolio is a bank. Box spreads let you borrow at near-Treasury rates with no credit check.", tag: "Box Spreads", url: "/insights.html" },
+    { title: "He Sold a Rental. Paid $180K in Taxes. His Advisor Never Mentioned This.", date: "April 7, 2026", preview: "Tax-loss harvesting for real estate investors — the most valuable tool you've never used.", tag: "Real Estate", url: "/insights.html" },
+  ];
+  const grid = document.getElementById('homepage-issues');
+  if (!grid) return;
+  grid.innerHTML = issues.map(issue => `
+    <a href="${issue.url}" style="background:var(--white);border:1px solid rgba(27,46,75,0.08);border-radius:6px;padding:28px 24px;text-decoration:none;display:block;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 20px 60px rgba(27,46,75,0.08)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+        <span style="font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);background:var(--cream-dark);padding:3px 8px;border-radius:3px;">${issue.tag}</span>
+        <span style="font-family:var(--font-heading);font-size:0.6875rem;color:var(--text-secondary);">${issue.date}</span>
+      </div>
+      <div style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:10px;">${issue.title}</div>
+      <div style="font-size:0.875rem;line-height:1.65;color:var(--text-secondary);margin-bottom:20px;">${issue.preview}</div>
+      <div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);">Read →</div>
+    </a>
+  `).join('');
+})();
 
 const solItems = document.querySelectorAll('.sol-item');
 const solPanels = document.querySelectorAll('.sol-panel');
