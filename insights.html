@@ -399,10 +399,11 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
   <div class="nav-inner">
     <a href="/" class="nav-logo">STQ <span>/ Capital Partners</span></a>
     <div class="nav-links">
-      <a href="/#solutions">Solutions</a>
-      <a href="/#about">About</a>
+      <a href="/#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
+      <a href="/#about" onclick="this.parentElement.classList.remove('active')">About</a>
       <a href="/insights.html" class="active">Insights</a>
-      <a href="/#contact">Contact</a>
+      <a href="/research.html">Research</a>
+      <a href="/#contact" onclick="this.parentElement.classList.remove('active')">Contact</a>
     </div>
     <div class="nav-actions">
       <a href="#" class="nav-client-login nav-cta-desktop">
