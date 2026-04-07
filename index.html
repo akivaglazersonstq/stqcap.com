@@ -611,7 +611,7 @@ nav {
 .why-header { text-align: center; margin-bottom: 64px; }
 .why-header h2 { font-family: var(--font-heading); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; }
 .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
-.why-card { padding: 24px 20px; border: 0.5px solid rgba(27, 46, 75, 0.08); border-left: 3px solid #1B2E4B; border-radius: 0 6px 6px 0; background: var(--white); transition: all 0.4s var(--ease); }
+.why-card { padding: 24px 20px; border: 0.5px solid rgba(27, 46, 75, 0.08); border-left: 3px solid #1B2E4B; border-radius: 0 6px 6px 0; background: var(--white); transition: all 0.4s var(--ease); position: relative; overflow: hidden; }
 .why-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(27, 46, 75, 0.06); }
 .why-card h3 { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; letter-spacing: 0.01em; }
 .why-card p { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
@@ -874,7 +874,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
 <section class="tax-chart-section">
   <div class="container">
     <div class="tax-chart-header reveal">
-      <h2>Why We're Relentlessly Tax-Aware</h2>
+      <h2>Why We're Relentlessly Tax-Aware.</h2>
       <p>Same portfolio. Same risk. The difference is tax structure.</p>
     </div>
     <div class="chart-wrapper reveal">
@@ -971,22 +971,26 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
 <section class="why-section">
   <div class="container">
     <div class="why-header reveal">
-      <h2>Why STQ</h2>
+      <h2>Why STQ.</h2>
     </div>
     <div class="why-grid">
       <div class="why-card reveal">
+        <div style="position:absolute;right:8px;bottom:-8px;font-family:'Chakra Petch',sans-serif;font-size:72px;font-weight:700;color:rgba(27,46,75,0.04);line-height:1;pointer-events:none;">01</div>
         <h3>Independence</h3>
-        <p>No PE ownership, no product quotas, no conflicts. We sit on the same side of the table as you.</p>
+        <p>No outside ownership, no product quotas, no conflicts of interest. We answer to one party — you.</p>
       </div>
       <div class="why-card reveal reveal-delay-1">
+        <div style="position:absolute;right:8px;bottom:-8px;font-family:'Chakra Petch',sans-serif;font-size:72px;font-weight:700;color:rgba(27,46,75,0.04);line-height:1;pointer-events:none;">02</div>
         <h3>Integrity</h3>
         <p>Open architecture, full transparency, fiduciary at all times. We don't build products or guide clients into anything that serves us.</p>
       </div>
       <div class="why-card reveal reveal-delay-2">
+        <div style="position:absolute;right:8px;bottom:-8px;font-family:'Chakra Petch',sans-serif;font-size:72px;font-weight:700;color:rgba(27,46,75,0.04);line-height:1;pointer-events:none;">03</div>
         <h3>Innovation</h3>
         <p>Technology-forward operations, cutting-edge tax products, and strategies most advisors can't execute.</p>
       </div>
       <div class="why-card reveal reveal-delay-3">
+        <div style="position:absolute;right:8px;bottom:-8px;font-family:'Chakra Petch',sans-serif;font-size:72px;font-weight:700;color:rgba(27,46,75,0.04);line-height:1;pointer-events:none;">04</div>
         <h3>Individuality</h3>
         <p>Every portfolio is tailored to your tax situation, income, liquidity, and objectives. No cookie cutters.</p>
       </div>
