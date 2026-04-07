@@ -467,22 +467,54 @@ nav {
 }
 .tax-chart-header p { font-size: 1.0625rem; color: var(--text-secondary); max-width: 480px; margin: 0 auto; line-height: 1.7; }
 .chart-wrapper {
-  max-width: 800px;
+  max-width: 1100px;
   margin: 0 auto;
   background: var(--white);
   border-radius: 8px;
-  padding: 48px;
+  padding: 64px;
   border: 1px solid rgba(27, 46, 75, 0.06);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.chart-text-side h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.chart-text-side p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+}
+.chart-big-number {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.chart-big-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
 }
 .chart-visual {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: 140px;
-  height: 340px;
+  gap: 40px;
+  height: 280px;
   position: relative;
   padding-bottom: 60px;
-  margin-bottom: 32px;
 }
 .chart-visual::before {
   content: '';
@@ -494,45 +526,46 @@ nav {
   background: rgba(27, 46, 75, 0.1);
 }
 .chart-bar-group { display: flex; flex-direction: column; align-items: center; gap: 12px; position: relative; }
-.chart-bar { width: 100px; border-radius: 4px 4px 0 0; position: relative; }
+.chart-bar { width: 72px; border-radius: 4px 4px 0 0; position: relative; }
 .chart-bar-taxable {
-  height: 200px;
+  height: 155px;
   background: linear-gradient(180deg, rgba(27, 46, 75, 0.25) 0%, rgba(27, 46, 75, 0.12) 100%);
   border: 1px solid rgba(27, 46, 75, 0.15);
   border-bottom: none;
 }
 .chart-bar-taxaware {
-  height: 260px;
+  height: 220px;
   background: linear-gradient(180deg, var(--navy) 0%, var(--navy-light) 100%);
 }
 .chart-bar-value {
   position: absolute;
-  top: -36px;
+  top: -30px;
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1rem;
   white-space: nowrap;
 }
 .chart-bar-taxable .chart-bar-value { color: var(--text-secondary); }
 .chart-bar-taxaware .chart-bar-value { color: var(--navy); }
 .chart-bar-label {
   font-family: var(--font-body);
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   color: var(--text-secondary);
   text-align: center;
   line-height: 1.5;
   position: absolute;
-  bottom: -60px;
+  bottom: -56px;
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
 }
-.chart-footnote { text-align: center; font-size: 0.75rem; color: var(--text-secondary); opacity: 0.7; margin-top: 72px; }
-.chart-diff { text-align: center; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(27, 46, 75, 0.08); }
-.chart-diff-number { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--navy); letter-spacing: -0.02em; }
-.chart-diff-label { font-size: 0.875rem; color: var(--text-secondary); margin-top: 4px; }
+.chart-footnote { font-size: 0.6875rem; color: var(--text-secondary); opacity: 0.6; margin-top: 16px; text-align: center; }
+.chart-diff { display: none; }
+@media (max-width: 768px) {
+  .chart-wrapper { grid-template-columns: 1fr; }
+}
 
 /* ========== STEPPER ========== */
 .stepper-section { padding: 100px 0; }
@@ -559,7 +592,7 @@ nav {
 .stepper-fill { position: absolute; inset: 0; background: rgba(27,46,75,0.25); transform-origin: left; transform: scaleX(0); transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
 .stepper-connector.filled .stepper-fill { transform: scaleX(1); }
 .stepper-content { background: var(--cream-dark); border-radius: 20px; padding: 56px; position: relative; overflow: hidden; min-height: 260px; }
-.stepper-watermark { position: absolute; right: -20px; bottom: -40px; font-family: var(--font-heading); font-size: 240px; font-weight: 700; color: var(--navy); opacity: 0.03; line-height: 1; pointer-events: none; }
+.stepper-watermark { position: absolute; right: 0px; bottom: -20px; font-family: var(--font-heading); font-size: 240px; font-weight: 700; color: var(--navy); opacity: 0.03; line-height: 1; pointer-events: none; }
 .stepper-body { opacity: 0; transform: translateY(16px); transition: all 0.5s cubic-bezier(0.4,0,0.2,1); }
 .stepper-body.visible { opacity: 1; transform: translateY(0); }
 .stepper-pill { display: inline-block; font-family: var(--font-heading); font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); opacity: 0.3; border: 1px solid rgba(27,46,75,0.15); border-radius: 20px; padding: 6px 16px; margin-bottom: 24px; }
@@ -578,8 +611,8 @@ nav {
 .why-header { text-align: center; margin-bottom: 64px; }
 .why-header h2 { font-family: var(--font-heading); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; }
 .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
-.why-card { padding: 40px 28px; border: 1px solid rgba(27, 46, 75, 0.08); border-radius: 6px; background: rgba(255, 255, 255, 0.4); transition: all 0.4s var(--ease); }
-.why-card:hover { background: var(--white); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(27, 46, 75, 0.06); }
+.why-card { padding: 24px 20px; border: 0.5px solid rgba(27, 46, 75, 0.08); border-left: 3px solid #1B2E4B; border-radius: 0 6px 6px 0; background: var(--white); transition: all 0.4s var(--ease); }
+.why-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(27, 46, 75, 0.06); }
 .why-card h3 { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; letter-spacing: 0.01em; }
 .why-card p { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
 
@@ -842,27 +875,33 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
   <div class="container">
     <div class="tax-chart-header reveal">
       <h2>Why We're Relentlessly Tax-Aware</h2>
-      <p>Tax drag is silent. The math isn't.</p>
+      <p>Same portfolio. Same risk. The difference is tax structure.</p>
     </div>
     <div class="chart-wrapper reveal">
-      <div class="chart-visual">
-        <div class="chart-bar-group">
-          <div class="chart-bar chart-bar-taxable">
-            <div class="chart-bar-value">$8.9M</div>
-            <div class="chart-bar-label">10% return, taxable<br><span style="font-size:0.6875rem;opacity:0.7">24% tax rate</span></div>
-          </div>
-        </div>
-        <div class="chart-bar-group">
-          <div class="chart-bar chart-bar-taxaware">
-            <div class="chart-bar-value">$17.4M</div>
-            <div class="chart-bar-label">10% return, tax-aware<br><span style="font-size:0.6875rem;opacity:0.7">Deferred & optimized</span></div>
-          </div>
-        </div>
+      <!-- Left: text side -->
+      <div class="chart-text-side">
+        <h3>Tax drag is silent.<br>The math isn't.</h3>
+        <p>Two portfolios. Same investments. Same gross return. One pays taxes annually on every gain and dividend. The other defers, optimizes, and compounds without interruption.</p>
+        <div class="chart-big-number">+$8.5M</div>
+        <div class="chart-big-label">Additional wealth over 30 years — from tax structure alone, not market performance.</div>
       </div>
-      <p class="chart-footnote">Hypothetical growth of $1M over 30 years. For illustrative purposes only.</p>
-      <div class="chart-diff">
-        <div class="chart-diff-number">+$8.5M</div>
-        <div class="chart-diff-label">Additional wealth preserved through tax-aware management</div>
+      <!-- Right: chart side -->
+      <div>
+        <div class="chart-visual">
+          <div class="chart-bar-group">
+            <div class="chart-bar chart-bar-taxable">
+              <div class="chart-bar-value">$8.9M</div>
+              <div class="chart-bar-label">Taxable<br><span style="font-size:0.6875rem;opacity:0.7">24% tax rate</span></div>
+            </div>
+          </div>
+          <div class="chart-bar-group">
+            <div class="chart-bar chart-bar-taxaware">
+              <div class="chart-bar-value" style="color:var(--navy);font-weight:700;">$17.4M</div>
+              <div class="chart-bar-label">Tax-aware<br><span style="font-size:0.6875rem;opacity:0.7">Optimized</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="chart-footnote">Hypothetical growth of $1M over 30 years. For illustrative purposes only.</p>
       </div>
     </div>
   </div>
@@ -985,7 +1024,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
 
       <!-- Featured paper -->
       <a href="/asset-location.html" style="background:var(--navy);border-radius:6px;padding:32px 28px;text-decoration:none;display:block;transition:all 0.3s ease;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 20px 60px rgba(27,46,75,0.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-        <div style="position:absolute;right:-10px;bottom:-30px;font-family:'Chakra Petch',sans-serif;font-size:100px;font-weight:700;color:rgba(240,239,235,0.04);line-height:1;pointer-events:none;">01</div>
+        <div style="position:absolute;right:8px;bottom:0px;font-family:'Chakra Petch',sans-serif;font-size:80px;font-weight:700;color:rgba(240,239,235,0.04);line-height:1;pointer-events:none;">STQ</div>
         <div style="font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(240,239,235,0.4);margin-bottom:14px;">Tax Strategy</div>
         <div style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--cream);line-height:1.4;margin-bottom:12px;">Asset Location: The Most Overlooked Source of Alpha</div>
         <div style="font-size:0.875rem;line-height:1.65;color:rgba(240,239,235,0.6);margin-bottom:24px;">The single strategy that adds $8.5M to a $1M portfolio over 30 years — without changing what you own.</div>
