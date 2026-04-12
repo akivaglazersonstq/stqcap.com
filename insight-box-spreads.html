@@ -3,370 +3,293 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light only">
-<title>Stop Borrowing From Banks. Your Portfolio Can Do It Better. — STQ Capital Partners</title>
-<meta name="description" content="High-income investors are borrowing against their portfolios the expensive, inefficient way. Box spreads offer a better path — near-Treasury rates, no credit check, no forced selling.">
-<meta property="og:title" content="Stop Borrowing From Banks. Your Portfolio Can Do It Better.">
-<meta property="og:description" content="High-income investors are borrowing against their portfolios the expensive, inefficient way. Box spreads offer a better path.">
+
+<!-- PRIMARY SEO -->
+<title>Stop Borrowing From Banks. Your Portfolio Can Do It Better. | STQ Capital Partners</title>
+<meta name="description" content="Most investors use lines of credit when they need liquidity. Box spreads offer a better path — near-Treasury rates, no credit check, no forced selling, and potentially tax-deductible interest.">
+<meta name="keywords" content="box spread borrowing, synthetic borrowing, portfolio liquidity, box spread RIA, tax-deductible interest, investment borrowing strategy">
+<meta name="author" content="Akiva Glazerson, STQ Capital Partners">
+<link rel="canonical" href="https://stqcap.com/insight-box-spreads.html">
+<meta name="robots" content="index, follow">
+
+<!-- OPEN GRAPH -->
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://stqcap.com/insight-box-spreads.html">
-<link rel="canonical" href="https://stqcap.com/insight-box-spreads.html">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%231B2E4B'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='22' fill='%23F0EFEB' letter-spacing='-1'>STQ</text></svg>">
+<meta property="og:title" content="Stop Borrowing From Banks. Your Portfolio Can Do It Better.">
+<meta property="og:description" content="Most investors use lines of credit when they need liquidity. Box spreads offer a better path — near-Treasury rates, no credit check, no forced selling.">
+<meta property="og:site_name" content="STQ Capital Partners">
+<meta property="article:published_time" content="2026-04-05T05:00:00-07:00">
+<meta property="article:author" content="Akiva Glazerson">
+<meta property="article:section" content="Box Spreads">
+
+<!-- TWITTER -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stop Borrowing From Banks. Your Portfolio Can Do It Better.">
+<meta name="twitter:description" content="Your portfolio can do what your bank does — at better rates, with no application, and no one who can change the terms on you.">
+
+<!-- SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Stop Borrowing From Banks. Your Portfolio Can Do It Better.",
+  "description": "Most investors use lines of credit when they need liquidity. Box spreads offer a better path — near-Treasury rates, no credit check, no forced selling, and potentially tax-deductible interest.",
+  "datePublished": "2026-04-05T05:00:00-07:00",
+  "dateModified": "2026-04-05T05:00:00-07:00",
+  "author": {
+    "@type": "Person",
+    "name": "Akiva Glazerson",
+    "jobTitle": "Founder & Chief Investment Officer",
+    "url": "https://www.linkedin.com/in/akiva-g-5ba463a3",
+    "worksFor": {
+      "@type": "FinancialService",
+      "name": "STQ Capital Partners",
+      "url": "https://stqcap.com"
+    }
+  },
+  "publisher": {
+    "@type": "FinancialService",
+    "name": "STQ Capital Partners",
+    "url": "https://stqcap.com"
+  },
+  "mainEntityOfPage": "https://stqcap.com/insight-box-spreads.html",
+  "articleSection": "Box Spreads",
+  "keywords": "box spread, synthetic borrowing, portfolio liquidity, tax-deductible interest, wealth management"
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
   --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
-  --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF;
-  --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7);
-  --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
-  --ease: cubic-bezier(0.25,0.46,0.45,0.94);
+  --cream: #F0EFEB; --cream-dark: #E6E4DE; --cream-mid: #DAD8D1;
+  --white: #FFFFFF; --text-primary: #1B2E4B; --text-secondary: #5a6a7e;
+  --text-light: rgba(240,239,235,0.7);
+  --font-heading: 'Chakra Petch', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --ease-out: cubic-bezier(0.16,1,0.3,1);
 }
-html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
+html { scroll-behavior: smooth; font-size: 16px; }
 body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(27,46,75,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
-.container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
-
-/* NAV */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+body::before {
+  content: ''; position: fixed; inset: 0;
+  background-image: linear-gradient(rgba(27,46,75,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(27,46,75,0.03) 1px, transparent 1px);
+  background-size: 80px 80px; pointer-events: none; z-index: 0;
+}
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
 .nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; }
 .nav-logo span { font-weight: 400; color: var(--text-secondary); }
-.nav-links { display: flex; gap: 36px; margin-right: auto; margin-left: 48px; }
-.nav-links a { font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
-.nav-links a:hover, .nav-links a.active { color: var(--navy); }
-.nav-actions { display: flex; align-items: center; gap: 12px; }
-.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 12px 28px; border-radius: 4px; text-decoration: none; transition: all 0.3s var(--ease); cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
+.nav-back { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+.nav-back:hover { color: var(--navy); }
+.nav-back svg { transition: transform 0.2s; }
+.nav-back:hover svg { transform: translateX(-3px); }
+.issue-hero { padding: 140px 0 72px; background: var(--navy); position: relative; overflow: hidden; }
+.issue-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(240,239,235,0.03) 1px, transparent 1px); background-size: 60px 60px; }
+.hero-watermark { position: absolute; right: -40px; top: 50%; transform: translateY(-50%); font-family: var(--font-heading); font-weight: 700; font-size: clamp(10rem,20vw,22rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.hero-container { max-width: 1100px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+.issue-meta { display: flex; align-items: center; gap: 14px; margin-top: 24px; flex-wrap: wrap; }
+.meta-category { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.6); border: 1px solid rgba(240,239,235,0.2); padding: 4px 12px; border-radius: 3px; }
+.meta-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(240,239,235,0.2); }
+.meta-date { font-family: var(--font-heading); font-size: 0.7rem; color: rgba(240,239,235,0.3); letter-spacing: 0.08em; }
+.issue-hero h1 { font-family: var(--font-heading); font-size: clamp(2.2rem,5vw,3.75rem); font-weight: 700; color: var(--cream); line-height: 1.08; letter-spacing: -0.02em; max-width: 720px; margin-bottom: 24px; animation: slideUp 0.7s var(--ease-out) 0.2s both; }
+.issue-subhead { font-size: 1.125rem; color: var(--text-light); max-width: 600px; line-height: 1.75; animation: slideUp 0.7s var(--ease-out) 0.3s both; }
+.issue-content { max-width: 720px; margin: 0 auto; padding: 72px clamp(24px,5vw,48px) 120px; position: relative; z-index: 1; }
+.author-block { display: flex; align-items: center; gap: 16px; padding: 24px 0; border-bottom: 1px solid rgba(27,46,75,0.1); margin-bottom: 48px; }
+.author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; color: var(--cream); flex-shrink: 0; }
+.author-name { font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--navy); letter-spacing: 0.02em; }
+.author-title { font-size: 0.8rem; color: var(--text-secondary); margin-top: 3px; }
+.read-time { margin-left: auto; font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(27,46,75,0.3); }
+.issue-intro { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); font-style: italic; margin-bottom: 36px; padding-left: 20px; border-left: 3px solid rgba(27,46,75,0.15); }
+.issue-body p { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 24px; }
+.issue-body p strong { color: var(--text-primary); font-weight: 600; }
+.issue-body h2 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--navy); margin: 44px 0 16px; letter-spacing: 0.01em; }
+.comparison-split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 32px 0; }
+.comp-side { border-radius: 6px; padding: 24px; }
+.comp-wrong { background: var(--white); border: 1px solid rgba(27,46,75,0.1); }
+.comp-right { background: var(--navy); }
+.comp-side-label { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 16px; }
+.comp-wrong .comp-side-label { color: rgba(27,46,75,0.35); }
+.comp-right .comp-side-label { color: rgba(240,239,235,0.4); }
+.comp-side-title { font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; margin-bottom: 16px; }
+.comp-wrong .comp-side-title { color: var(--navy); }
+.comp-right .comp-side-title { color: var(--cream); }
+.comp-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid; font-size: 0.875rem; }
+.comp-wrong .comp-row { border-color: rgba(27,46,75,0.07); color: var(--text-secondary); }
+.comp-right .comp-row { border-color: rgba(240,239,235,0.08); color: rgba(240,239,235,0.7); }
+.comp-row:last-child { border-bottom: none; }
+.comp-account { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; }
+.comp-wrong .comp-account { color: rgba(27,46,75,0.4); }
+.comp-right .comp-account { color: rgba(240,239,235,0.5); }
+.data-callout { background: var(--cream-dark); border-left: 3px solid var(--navy); border-radius: 0 6px 6px 0; padding: 24px 28px; margin: 32px 0; }
+.data-callout-label { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 8px; opacity: 0.7; }
+.data-callout-value { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--navy); letter-spacing: -0.02em; line-height: 1.1; }
+.data-callout-sub { font-size: 0.875rem; color: var(--text-secondary); margin-top: 8px; line-height: 1.6; }
+.pull-quote { background: var(--navy); border-radius: 6px; padding: 36px 40px; margin: 40px 0; position: relative; overflow: hidden; }
+.pull-quote::before { content: '"'; position: absolute; top: -20px; left: 24px; font-family: var(--font-heading); font-size: 100px; font-weight: 700; color: rgba(240,239,235,0.05); line-height: 1; }
+.pull-quote-text { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 600; color: var(--cream); line-height: 1.6; letter-spacing: 0.01em; position: relative; z-index: 1; }
+.issue-cta { background: var(--cream-dark); border-radius: 6px; padding: 36px 40px; margin: 48px 0 0; text-align: center; }
+.issue-cta p { font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.75; max-width: 480px; margin-left: auto; margin-right: auto; }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 28px; border-radius: 4px; text-decoration: none; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
 .btn-primary { background: var(--navy); color: var(--cream); }
 .btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
-.btn-white { background: var(--cream); color: var(--navy); }
-.btn-white:hover { background: var(--white); transform: translateY(-1px); }
-.nav-client-login { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; transition: border-color 0.2s ease, background 0.2s ease; }
-.nav-client-login:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
-
-/* ARTICLE HERO */
-.article-hero {
-  padding: 160px 0 80px;
-  border-bottom: 1px solid rgba(27,46,75,0.08);
-  position: relative;
-  z-index: 1;
-}
-.article-meta {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 28px;
-}
-.article-tag {
-  font-family: var(--font-heading);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--navy);
-  background: var(--cream-dark);
-  padding: 4px 10px;
-  border-radius: 3px;
-}
-.article-date {
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-}
-.article-hero h1 {
-  font-family: var(--font-heading);
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  max-width: 800px;
-  margin-bottom: 24px;
-}
-.article-hero .subhead {
-  font-size: 1.1875rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  max-width: 640px;
-}
-
-/* ARTICLE BODY */
-.article-body {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 80px clamp(24px,5vw,64px) 100px;
-  position: relative;
-  z-index: 1;
-}
-.article-body p {
-  font-size: 1.0625rem;
-  line-height: 1.85;
-  color: #3a4a5c;
-  margin-bottom: 24px;
-}
-.article-body p:last-child { margin-bottom: 0; }
-.article-body strong { color: var(--navy); font-weight: 600; }
-.article-pull {
-  border-left: 3px solid var(--navy);
-  padding: 20px 28px;
-  margin: 40px 0;
-  background: var(--white);
-  border-radius: 0 6px 6px 0;
-}
-.article-pull p {
-  font-family: var(--font-heading);
-  font-size: 1.125rem;
-  line-height: 1.5;
-  color: var(--navy);
-  font-weight: 600;
-  margin-bottom: 0;
-}
-.article-divider {
-  width: 48px;
-  height: 2px;
-  background: var(--navy);
-  opacity: 0.15;
-  margin: 40px 0;
-}
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  text-decoration: none;
-  margin-bottom: 48px;
-  transition: color 0.2s ease;
-}
-.back-link:hover { color: var(--navy); }
-.back-link::before { content: '←'; }
-
-/* CTA SECTION */
-.article-cta {
-  background: var(--navy);
-  padding: 80px 0;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
-.article-cta::before {
-  content: 'STQ';
-  position: absolute;
-  left: 50%; top: 50%;
-  transform: translate(-50%,-50%);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 16rem;
-  color: rgba(240,239,235,0.02);
-  pointer-events: none;
-}
-.cta-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-.cta-inner h2 {
-  font-family: var(--font-heading);
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--cream);
-  letter-spacing: -0.01em;
-  margin-bottom: 8px;
-}
-.cta-inner p {
-  font-size: 0.9375rem;
-  color: var(--text-light);
-  max-width: 400px;
-  line-height: 1.7;
-}
-.cta-actions { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
-.signup-form { display: flex; gap: 12px; }
-.signup-form input {
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  padding: 14px 20px;
-  border: 1px solid rgba(240,239,235,0.2);
-  border-radius: 4px;
-  background: rgba(240,239,235,0.08);
-  color: var(--cream);
-  width: 260px;
-  outline: none;
-  transition: border-color 0.2s ease;
-}
-.signup-form input::placeholder { color: rgba(240,239,235,0.4); }
-.signup-form input:focus { border-color: rgba(240,239,235,0.5); }
-.cta-or { font-family: var(--font-heading); font-size: 0.75rem; color: rgba(240,239,235,0.3); letter-spacing: 0.1em; }
-.btn-outline-white { background: transparent; color: var(--cream); border: 1px solid rgba(240,239,235,0.3); }
-.btn-outline-white:hover { border-color: var(--cream); background: rgba(240,239,235,0.08); }
-
-/* FOOTER */
-footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative; z-index: 1; }
-.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 28px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 20px; }
+.btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); margin-left: 12px; }
+.btn-secondary:hover { border-color: var(--navy); }
+.tomorrow { margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(27,46,75,0.1); }
+.tomorrow-label { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(27,46,75,0.3); margin-bottom: 10px; }
+.tomorrow-text { font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.7; }
+.tomorrow-text strong { color: var(--text-primary); }
+footer { background: var(--navy-dark); padding: 48px 0 32px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); }
+.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 24px; }
 .footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); }
-.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.5); }
-.footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
-.footer-links a { font-size: 0.8125rem; color: rgba(240,239,235,0.5); text-decoration: none; transition: color 0.2s ease; }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.4); }
+.footer-links { display: flex; gap: 32px; }
+.footer-links a { font-size: 0.8125rem; color: rgba(240,239,235,0.4); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--cream); }
-.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.35); }
-.footer-disclaimer { margin-top: 20px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 900px; }
-
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.25); }
+.footer-disclaimer { margin-top: 24px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.18); max-width: 900px; }
+@keyframes slideUp { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 768px) {
-  .nav-links, .nav-client-login, .nav-cta-desktop { display: none; }
   .nav-inner { padding: 0 24px; }
-  .article-hero { padding: 120px 0 60px; }
-  .cta-inner { flex-direction: column; }
-  .signup-form { flex-direction: column; width: 100%; }
-  .signup-form input { width: 100%; }
-  .footer-main { flex-direction: column; text-align: center; }
-  .footer-links { justify-content: center; }
+  .issue-hero h1 { font-size: 2rem; }
+  .issue-content { padding: 48px 24px 80px; }
+  .comparison-split { grid-template-columns: 1fr; }
+  .pull-quote { padding: 24px 28px; }
+  .pull-quote-text { font-size: 1.05rem; }
+  .btn-secondary { margin-left: 0; margin-top: 12px; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-logo">STQ <span>/ Capital Partners</span></a>
-    <div class="nav-links">
-      <a href="/#solutions">Solutions</a>
-      <a href="/#about">About</a>
-      <a href="/insights.html" class="active">Insights</a>
-      <a href="/research.html">Research</a>
-      <a href="/#contact">Contact</a>
-    </div>
-    <div class="nav-actions">
-      <a href="https://client.schwab.com/Areas/Access/Login" target="_blank" class="nav-client-login nav-cta-desktop">
-        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" style="margin-right:6px;vertical-align:-1px;"><rect x="1" y="6" width="10" height="6" rx="1.5" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M3.5 6V4a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>Client Login
-      </a>
-      <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary nav-cta-desktop">Schedule a Meeting</a>
-    </div>
+    <a href="/insights.html" class="nav-back">
+      <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+        <path d="M6 1L1 5M1 5L6 9M1 5H13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      All Issues
+    </a>
   </div>
 </nav>
 
-<!-- ARTICLE HERO -->
-<section class="article-hero">
-  <div class="container">
-    <a href="/insights.html" class="back-link">All Insights</a>
-    <div class="article-meta">
-      <span class="article-tag">Box Spreads</span>
-      <span class="article-date">April 5, 2026</span>
-    </div>
+<section class="issue-hero">
+  <div class="hero-watermark">STQ</div>
+  <div class="hero-container">
     <h1>Stop Borrowing From Banks.<br>Your Portfolio Can Do It Better.</h1>
-    <p class="subhead">Your portfolio is already a bank. You just haven't been using it like one.</p>
+    <p class="issue-subhead">Your portfolio is already a bank. You just haven't been using it like one.</p>
+    <div class="issue-meta">
+      <span class="meta-category">Box Spreads</span>
+      <span class="meta-dot"></span>
+      <span class="meta-date">April 5, 2026</span>
+    </div>
   </div>
 </section>
 
-<!-- ARTICLE BODY -->
-<div class="article-body">
+<div class="issue-content">
 
-  <p>When high-income investors need liquidity, most of them do what their advisor told them to do years ago: they call the bank. They take out a line of credit, pledge some assets, pay the rate the bank sets, and move on. It feels routine. It isn't.</p>
-
-  <p>What you're actually doing is handing a bank a chunk of your net worth as collateral, letting them decide what it's worth, and paying them a spread on top of whatever rate they feel like charging that quarter. You have no real negotiating power. The terms can change. And if markets move the wrong way, they can call the loan.</p>
-
-  <p>There is a better way. It's called a box spread — and most investors have never heard of it, because most advisors can't execute it.</p>
-
-  <div class="article-pull">
-    <p>A box spread lets you borrow against your portfolio at near-Treasury rates — with no bank, no credit check, and no one who can change the terms on you.</p>
+  <div class="author-block">
+    <div class="author-avatar">AG</div>
+    <div>
+      <div class="author-name">Akiva Glazerson</div>
+      <div class="author-title">Founder, STQ Capital Partners</div>
+    </div>
+    <div class="read-time">5 min read</div>
   </div>
 
-  <p>Here's the mechanics in plain terms. A box spread is a four-leg options position on a broad index. When structured correctly, it creates a perfectly hedged position with a known, fixed payoff at expiration. The difference between what you collect today and what you owe at expiration is, effectively, the interest rate. That rate is set by the market — not by a bank — and it tracks closely to Treasury rates, often coming in well below what any lender would offer you.</p>
+  <p class="issue-intro">When high-income investors need liquidity, most of them do what their advisor told them years ago: call the bank. Take out a line of credit, pledge some assets, pay whatever rate the bank sets, and move on. It feels routine. It isn't.</p>
 
-  <p>You collect the proceeds upfront. You stay fully invested. You don't sell a single share. And when the position expires, you settle the difference. That's the loan. No application. No approval committee. No covenant that lets someone else decide when to pull the plug.</p>
+  <div class="issue-body">
 
-  <div class="article-divider"></div>
+    <p>What you're actually doing is handing a bank a chunk of your net worth as collateral, letting them decide what it's worth, and paying them a spread on top of whatever rate they feel like charging that quarter. <strong>You have no real negotiating power.</strong> The terms can change. And if markets move the wrong way, they can call the loan.</p>
 
-  <p><strong>Why does this matter for high earners specifically?</strong> Because the tax treatment is favorable. The interest on a box spread is potentially deductible as investment interest expense — a meaningful advantage at California's combined marginal rates. And because you're not selling anything to raise capital, you're not triggering gains. Your appreciated positions keep compounding. Your loss bank stays intact.</p>
+    <p>There is a better way. It's called a box spread — and most investors have never heard of it, because most advisors can't execute it.</p>
 
-  <p>Compare that to a traditional line of credit. The interest is often not deductible at all — or only partially. You may have to pledge specific assets. The rate floats. And the psychological weight of having a bank involved in your portfolio decisions is real, even if you never think about it consciously.</p>
+    <h2>How It Works</h2>
 
-  <p><strong>The objection I hear most often is: isn't this complicated?</strong> The mechanics are. The experience doesn't have to be. At STQ, we implement box spreads through established platforms on the Schwab marketplace. You don't touch the options. You don't manage the legs. You receive the proceeds and we handle the rest.</p>
+    <p>A box spread is a four-leg options structure on a broad index. When structured correctly, it creates a <strong>perfectly hedged position with a known, fixed payoff at expiration</strong>. The difference between what you collect today and what you owe at expiration is, effectively, the interest rate.</p>
 
-  <p>Your portfolio has been sitting there for years, doing one job. It can do two. The bank knew that. They just didn't tell you.</p>
+    <p>That rate is set by the market — not by a bank — and it tracks closely to Treasury rates, often coming in well below what any lender would offer you.</p>
+
+    <div class="data-callout">
+      <div class="data-callout-label">The Rate Advantage</div>
+      <div class="data-callout-value">Near-Treasury rates</div>
+      <div class="data-callout-sub">Set by the market, not a bank. No credit check. No approval committee. No covenant that lets someone else pull the plug.</div>
+    </div>
+
+    <p>You collect the proceeds upfront. You stay fully invested. You don't sell a single share. And when the position expires, you settle the difference. That's the loan.</p>
+
+    <h2>Box Spread vs. Line of Credit</h2>
+
+    <div class="comparison-split">
+      <div class="comp-side comp-wrong">
+        <div class="comp-side-label">Line of Credit</div>
+        <div class="comp-side-title">The Bank's Terms</div>
+        <div class="comp-row"><span>Rate</span><span class="comp-account">Bank sets it</span></div>
+        <div class="comp-row"><span>Approval</span><span class="comp-account">Credit check required</span></div>
+        <div class="comp-row"><span>Terms</span><span class="comp-account">Can change anytime</span></div>
+        <div class="comp-row"><span>Recall risk</span><span class="comp-account">Yes</span></div>
+        <div class="comp-row"><span>Interest</span><span class="comp-account">Often not deductible</span></div>
+      </div>
+      <div class="comp-side comp-right">
+        <div class="comp-side-label">Box Spread</div>
+        <div class="comp-side-title">Market Terms</div>
+        <div class="comp-row"><span>Rate</span><span class="comp-account">Market-determined</span></div>
+        <div class="comp-row"><span>Approval</span><span class="comp-account">None needed</span></div>
+        <div class="comp-row"><span>Terms</span><span class="comp-account">Fixed at execution</span></div>
+        <div class="comp-row"><span>Recall risk</span><span class="comp-account">None</span></div>
+        <div class="comp-row"><span>Interest</span><span class="comp-account">Potentially deductible</span></div>
+      </div>
+    </div>
+
+    <h2>Why It Matters for High Earners</h2>
+
+    <p>The tax treatment is favorable. The interest on a box spread is <strong>potentially deductible as investment interest expense</strong> — a meaningful advantage at high marginal tax rates. And because you're not selling anything to raise capital, you're not triggering gains. Your appreciated positions keep compounding. Your loss bank stays intact.</p>
+
+    <div class="pull-quote">
+      <div class="pull-quote-text">The bank knew your portfolio could do this. They just didn't tell you.</div>
+    </div>
+
+    <p>The objection I hear most often is: isn't this complicated? The mechanics are. The experience doesn't have to be. At STQ, we implement box spreads through established platforms on the Schwab marketplace. You don't touch the options. You don't manage the legs. You receive the proceeds and we handle the rest.</p>
+
+    <p>Your portfolio has been sitting there for years, doing one job. It can do two.</p>
+
+  </div>
+
+  <div class="issue-cta">
+    <p>Want to know if synthetic borrowing makes sense for your situation? The Portfolio Diagnostic includes a full liquidity analysis — we'll show you exactly what's available and what it would cost.</p>
+    <a href="#" onclick="window.location.href='mailto:akiva.glazerson@stqcap.com?subject=Portfolio%20Diagnostic%20Request';return false;" class="btn btn-primary">Get Your Diagnostic</a>
+    <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-secondary">Schedule a Call</a>
+  </div>
+
+  <div class="tomorrow">
+    <div class="tomorrow-label">Next Issue</div>
+    <p class="tomorrow-text"><strong>Asset location: the most overlooked source of alpha.</strong> Which assets you own matters. Where you own them matters more. Done right, asset location adds 50–100 basis points annually — with zero additional market risk.</p>
+  </div>
 
 </div>
 
-<!-- CTA -->
-<section class="article-cta">
-  <div class="container">
-    <div class="cta-inner">
-      <div>
-        <h2>Get the Next One First.</h2>
-        <p>Daily insights on tax-aware investing, delivered at 5 AM. No fluff — just the strategies that move the needle.</p>
-      </div>
-      <div class="cta-actions">
-        <form class="signup-form" id="article-signup-form" onsubmit="handleSubscribe(event)">
-          <input type="email" id="article-email" placeholder="your@email.com" required>
-          <button type="submit" class="btn btn-white" id="article-btn">Subscribe</button>
-        </form>
-        <p id="article-msg" style="display:none;color:var(--cream);font-size:0.875rem;"></p>
-        <span class="cta-or">or</span>
-        <a href="mailto:akiva.glazerson@stqcap.com?subject=Portfolio%20Diagnostic%20Request" class="btn btn-outline-white">Request a Portfolio Diagnostic</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <div class="container">
+  <div class="footer-inner">
     <div class="footer-main">
       <div class="footer-logo">STQ <span>/ Capital Partners</span></div>
       <div class="footer-links">
         <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
-        <a href="/insights.html">Insights</a>
+        <a href="/insights.html">Newsletter</a>
+        <a href="/research.html">Research</a>
         <a href="/#contact">Contact</a>
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="https://client.schwab.com/Areas/Access/Login" target="_blank">Client Login</a>
       </div>
       <div class="footer-copy">© 2026 STQ Capital Partners</div>
     </div>
-    <div class="footer-disclaimer">Advisory services are offered through STQ Capital Partners ("STQ"), an investment adviser registered with the state of California. The information contained herein is for informational purposes only and should not be construed as personalized investment advice. Past performance is no guarantee of future results.</div>
+    <div class="footer-disclaimer">Advisory services are offered through STQ Capital Partners ("STQ"), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable. The information on this site is provided "AS IS" and without warranties either express or implied and the information may not be free from error. Your use of the information provided is at your sole risk.</div>
   </div>
 </footer>
-
-<script>
-async function handleSubscribe(e) {
-  e.preventDefault();
-  const email = document.getElementById('article-email').value;
-  const btn = document.getElementById('article-btn');
-  const msg = document.getElementById('article-msg');
-  btn.textContent = 'Subscribing...';
-  btn.disabled = true;
-  try {
-    const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMmM2OTZhNDU2YmFiZDU4MzEyMmRhYjMwMDA5MDEyZTFmNzE4MTJjMTg0OTA1ODg4MmZjMDQ3MTI4YzU4ZmRiOTQ4NDRhZGFiMWMxOTgxZGIiLCJpYXQiOjE3NzUzNzU0NzguMTQyMDk3LCJuYmYiOjE3NzUzNzU0NzguMTQyMSwiZXhwIjo0OTMxMDQ5MDc4LjEzNzg4Miwic3ViIjoiMjI2NTM2NyIsInNjb3BlcyI6W119.ZdViQ4RRQTgYCmiJyPuhFhpf6e5Okmf75gggIsHrxgG5xmeuxRCmkMCkhRmgY4_zevSlEe6tYpwTui1hVmLO1NlHP4uBmgoJ9dGSFciCjBxs5Y9EtEvYwrVqv5KV8aVK8fXy6h1pSA-Y8kHIekfnTha-Gs_wddrV5U36x6XNbtQq6HhIfnyDEXXCkdOLl5jL4K5G3nPjjROrBKEmkzpaGjL0bI2VJouU3VXN9BKSUEQgVz0RcyGWlsPbPuVoQNYfnGvX6H5HDU6V8t9m6lzO-woI1byNRm_T9j90y1WuZmPe3s1hQNOFEYIvWIMNJaw_GozfJdS4e9t-1sn0E8jULWycSZM0kdklAyXDx-IJ3srznQMGBGgpEqGD6O24aUIQ-nzD8kxnMqWhDSqFOeu-p9ETrFUPKdTL7XpHnV4_AnqzsFRGdpUy_PXyVldVgkOOm_pM_HPP-w5FuUfNv2J6XlU9zSLiC-DHZ608Hw0JPi9yt7jCEwOeDaS87dvX0R8X09GYNMcTVBgPSV8PLvOcQVaIqDPNqU5_d8pPmiX1GtRlJQL3Yf4DugYrmhmITzufU9zOtgsSr-jv2eAUOuw9n_fnEHBw5jFJ3pEs8yl5NjBDN2SSdllkkq_LWDczAs914PfugL2a1t4vk2gx7xZsdg7Y3w__YlKTzBHVMjBbJ-8'
-      },
-      body: JSON.stringify({ email })
-    });
-    if (res.ok || res.status === 200 || res.status === 201) {
-      msg.style.display = 'block';
-      msg.textContent = "You're in. First issue hits first thing.";
-      document.getElementById('article-email').value = '';
-      btn.textContent = 'Subscribed ✓';
-    } else { throw new Error(); }
-  } catch {
-    msg.style.display = 'block';
-    msg.textContent = 'Something went wrong. Email akiva.glazerson@stqcap.com to subscribe.';
-    btn.textContent = 'Subscribe';
-    btn.disabled = false;
-  }
-}
-</script>
 
 </body>
 </html>
