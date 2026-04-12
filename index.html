@@ -79,7 +79,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .sol-left { flex: 0 0 50%; background: var(--cream); padding: 40px 48px 40px 64px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid rgba(27,46,75,0.10); }
 .sol-heading { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); position: relative; padding-left: 20px; margin-bottom: 16px; }
 .sol-heading::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1.5px; background: currentColor; opacity: 0.5; }
-.sol-sub-headline { font-family: var(--font-heading); font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 700; color: var(--navy); letter-spacing: -0.5px; margin-bottom: 32px; line-height: 1.2; }
+.sol-sub-headline { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--navy); letter-spacing: -0.5px; margin-bottom: 32px; line-height: 1.2; }
 .sol-item { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(27,46,75,0.08); cursor: pointer; transition: all 0.3s ease; position: relative; }
 .sol-item::before { content: ''; position: absolute; left: -24px; top: 50%; width: 3px; height: 0; background: var(--navy); transform: translateY(-50%); transition: height 0.3s cubic-bezier(0.25,0.46,0.45,0.94); }
 .sol-item:hover::before, .sol-item.active::before { height: 60%; }
@@ -238,7 +238,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
     <div class="hero-content">
       <div class="hero-tag">Quantitative Investment and Wealth Advisory</div>
       <h1 id="hero-headline">&nbsp;</h1>
-      <p class="hero-sub" id="hero-sub" style="opacity:0;transition:opacity 1.2s ease;">We build sophisticated, tax-aware portfolios with institutional precision and complete independence — no conflicts, no compromises.</p>
+      <p class="hero-sub" id="hero-sub" style="opacity:0;transition:opacity 1.2s ease;">We build tax-aware portfolios with institutional-grade rigor and complete independence — no conflicts, no compromises.</p>
       <div class="hero-buttons">
         <a href="#solutions" class="btn btn-primary">Our Solutions</a>
         <a href="#" onclick="window.location.href='mailto:akiva.glazerson@stqcap.com?subject=Portfolio%20Diagnostic%20Request';return false;" class="btn btn-secondary">Portfolio Diagnostic →</a>
@@ -270,7 +270,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
     <div class="sol-panel active" data-desc="0">
       <div class="sol-panel-num">01</div>
       <h3 class="sol-panel-title">Asset Location Optimization</h3>
-      <p class="sol-panel-text">Optimizing asset location is the most powerful tax lever most investors never pull.<br><br>Most focus on asset allocation — what to own, how much, and in what mix. Far fewer think carefully about where each investment actually lives. But placement matters just as much as selection. A REIT in a taxable account generates ordinary income taxed at your highest rate. The same REIT in a tax-deferred account compounds untouched for decades. The investment is identical. The outcome is not.<br><br>At STQ, asset location is the foundation of every portfolio we build — because getting it right can add hundreds of thousands of dollars over a lifetime without changing a single holding.</p>
+      <p class="sol-panel-text">Optimizing asset location is the most powerful tax lever most investors never pull.<br><br>Most focus on asset allocation — what to own, how much, and in what mix. Far fewer think carefully about where each investment actually lives. But placement matters just as much as selection. A REIT in a taxable account generates ordinary income taxed at your highest rate. The same REIT in a tax-deferred account compounds untouched for decades. The investment is identical. The outcome is not.<br><br>At STQ, asset location is the foundation of every portfolio we build — because getting it right can be the difference between a good portfolio and a great one — without changing a single holding.</p>
       <div class="sol-panel-line"></div><div class="sol-panel-tag">Tax Optimization</div>
     </div>
     <div class="sol-panel" data-desc="1">
@@ -282,7 +282,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
     <div class="sol-panel" data-desc="2">
       <div class="sol-panel-num">03</div>
       <h3 class="sol-panel-title">Synthetic Portfolio Borrowing</h3>
-      <p class="sol-panel-text">Need liquidity without selling? Box spreads offer a compelling path. By selling a short box spread on index options, you effectively borrow at near-Treasury rates — with no credit check, no bank approval, and no forced selling of appreciated positions. The interest is potentially tax-deductible, and you stay fully invested while accessing the capital you need.<br><br>At STQ, we implement synthetic borrowing through established platforms on the Schwab marketplace — giving you access to a liquidity tool that is both sophisticated and practical.</p>
+      <p class="sol-panel-text">Most investors don't realize their portfolio can function as a source of liquidity — without selling a single position. Box spreads are a four-leg options structure on a broad index that create a fully hedged position with a known payoff at expiration. The difference between what you collect today and what you owe at expiration is, effectively, the interest rate — set by the market, not a bank, and typically close to Treasury rates.<br><br>The result: access to capital at competitive rates, with no credit check, no bank approval, and no forced selling of appreciated positions. The interest is potentially tax-deductible, and your portfolio stays fully invested throughout.<br><br>At STQ, we implement synthetic borrowing through established platforms on the Schwab marketplace — giving you access to a tool that most advisors can't execute.</p>
       <div class="sol-panel-line"></div><div class="sol-panel-tag">Liquidity</div>
     </div>
     <div class="sol-panel" data-desc="3">
@@ -294,7 +294,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
     <div class="sol-panel" data-desc="4">
       <div class="sol-panel-num">05</div>
       <h3 class="sol-panel-title">Tax Loss Harvesting</h3>
-      <p class="sol-panel-text">Tax-loss harvesting turns market volatility into a tax advantage — strategically realizing losses to offset capital gains and reduce your tax bill, without disrupting your long-term investment strategy.<br><br>At STQ, we use advanced techniques — including long-short strategies — that continuously generate losses regardless of market direction. This creates a growing loss bank that can offset gains from real estate sales, business exits, concentrated stock positions, and more.<br><br>Harvested losses never expire. The earlier you start building the bank, the more powerful the tool becomes.</p>
+      <p class="sol-panel-text">Tax-loss harvesting turns market volatility into a tax advantage — strategically realizing losses to offset capital gains and reduce your tax bill, without disrupting your long-term investment strategy.<br><br>Think of it as a loss piggy bank. Every time a position dips below your cost basis, we harvest that loss and bank it. Those banked losses don't expire. They sit there, accumulating, ready to be deployed against gains whenever you need them — a real estate sale, a business exit, a concentrated stock position, an RSU vest.<br><br>At STQ, we use advanced techniques — including long-short strategies — that continuously generate losses regardless of market direction. The earlier you start building the bank, the more powerful the tool becomes.</p>
       <div class="sol-panel-line"></div><div class="sol-panel-tag">Tax Alpha</div>
     </div>
     <div class="sol-panel" data-desc="5">
@@ -318,7 +318,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
     <div class="sol-panel" data-desc="8">
       <div class="sol-panel-num">09</div>
       <h3 class="sol-panel-title">Enhanced Cash Management</h3>
-      <p class="sol-panel-text">Idle cash has a cost. Every dollar sitting in a low-yield account is a dollar losing ground to inflation and taxes.<br><br>At STQ, we put your cash to work. Box spread ETFs offer near-Treasury yields with superior tax treatment — returns accrue as long-term capital gains rather than ordinary income, a meaningful advantage for high earners in California. We also use structured cash alternatives and short-duration strategies to maximize yield without taking on unnecessary risk.<br><br>Your idle cash should earn. We make sure it does.</p>
+      <p class="sol-panel-text">Idle cash has a cost. Every dollar sitting in a low-yield account is a dollar losing ground to inflation and taxes.<br><br>At STQ, we put your cash to work. Box spread ETFs offer near-Treasury yields with superior tax treatment — returns accrue as long-term capital gains rather than ordinary income, a meaningful advantage for anyone in a high tax bracket. We also use structured cash alternatives and short-duration strategies to maximize yield without taking on unnecessary risk.<br><br>Your idle cash should earn. We make sure it does.</p>
       <div class="sol-panel-line"></div><div class="sol-panel-tag">Yield Enhancement</div>
     </div>
     <div class="sol-panel" data-desc="9">
@@ -330,7 +330,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
     <div class="sol-panel" data-desc="10">
       <div class="sol-panel-num">11</div>
       <h3 class="sol-panel-title">Roth Conversion Strategies</h3>
-      <p class="sol-panel-text">A Roth conversion — moving assets from a traditional IRA or 401(k) into a Roth account — is one of the most powerful tax planning tools available to high earners, but timing and sizing matter enormously.<br><br>The goal is to convert in years when your marginal rate is lower than it will be in the future — filling up lower tax brackets deliberately, before required minimum distributions or Social Security income push you into a higher one. Done right, a Roth conversion strategy can shift millions of dollars into a permanently tax-free environment.<br><br>At STQ, we model conversion scenarios across your full financial picture — current income, future RMDs, estate objectives, and California-specific considerations — to identify the optimal conversion path for your situation.</p>
+      <p class="sol-panel-text">A Roth conversion — moving assets from a traditional IRA or 401(k) into a Roth account — is one of the most powerful tax planning tools available to high earners, but timing and sizing matter enormously.<br><br>The goal is to convert in years when your marginal rate is lower than it will be in the future — filling up lower tax brackets deliberately, before required minimum distributions or Social Security income push you into a higher one. Done right, a Roth conversion strategy can shift millions of dollars into a permanently tax-free environment.<br><br>At STQ, we model conversion scenarios across your full financial picture — current income, future RMDs, estate objectives, and state-specific tax considerations — to identify the optimal conversion path for your situation.</p>
       <div class="sol-panel-line"></div><div class="sol-panel-tag">Tax Planning</div>
     </div>
     <div class="sol-panel" data-desc="11">
@@ -365,7 +365,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
           <div class="chart-bar-group">
             <div class="chart-bar chart-bar-taxable">
               <div class="chart-bar-value">$6.3M</div>
-              <div class="chart-bar-label">Taxable<br><span style="font-size:0.6875rem;opacity:0.7">37% CA rate</span></div>
+              <div class="chart-bar-label">Taxable<br><span style="font-size:0.6875rem;opacity:0.7">37% tax rate</span></div>
             </div>
           </div>
           <div class="chart-bar-group">
@@ -375,7 +375,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
             </div>
           </div>
         </div>
-        <p class="chart-footnote">Hypothetical growth of $1M over 30 years. 10% gross return; taxable assumes 37% combined CA rate applied annually. Illustrative only.</p>
+        <p class="chart-footnote">Hypothetical growth of $1M over 30 years. 10% gross return; taxable assumes 37% combined tax rate applied annually. Illustrative only.</p>
       </div>
     </div>
   </div>
