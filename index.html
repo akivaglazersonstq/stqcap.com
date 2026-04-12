@@ -661,4 +661,16 @@ function handleSubscribe(e) {
     body: JSON.stringify({ email: email })
   }).then(function(res) {
     if (res.ok || res.status === 201 || res.status === 200) {
-      ms
+           msg.style.display = 'block'; msg.style.color = '#1B2E4B';
+      msg.textContent = "You're in. First issue hits first thing.";
+      document.getElementById('newsletter-email').value = ''; btn.textContent = 'Subscribed ✓';
+    } else { throw new Error(); }
+  }).catch(function() {
+    msg.style.display = 'block'; msg.style.color = '#991B1B';
+    msg.textContent = 'Something went wrong. Email akiva.glazerson@stqcap.com to subscribe.';
+    btn.textContent = 'Subscribe'; btn.disabled = false;
+  });
+}
+</script>
+</body>
+</html>
