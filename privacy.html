@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Privacy Policy — STQ Capital Partners</title>
+<meta name="description" content="STQ Capital Partners privacy policy — how we collect, use, and protect your personal information.">
+<link rel="canonical" href="https://stqcap.com/privacy.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%231B2E4B'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='22' fill='%23F0EFEB' letter-spacing='-1'>STQ</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
+  --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF;
+  --text-primary: #1B2E4B; --text-secondary: #5a6a7e;
+  --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
+}
+html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(27,46,75,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+.nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; white-space: nowrap; }
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-links { display: flex; gap: 36px; margin-right: auto; margin-left: 48px; }
+.nav-links a { font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
+.nav-links a:hover { color: var(--navy); }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 12px 28px; border-radius: 4px; text-decoration: none; transition: all 0.3s ease; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.nav-client-login { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; transition: border-color 0.2s ease, background 0.2s ease; }
+.nav-client-login:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--navy); }
+@media (max-width: 768px) { .nav-links, .nav-client-login, .nav-cta-desktop { display: none; } .nav-toggle { display: flex; } .nav-inner { padding: 0 24px; } }
+
+/* MOBILE NAV */
+.mobile-nav { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; transition: opacity 0.3s ease; }
+.mobile-nav.active { display: flex; opacity: 1; }
+.mobile-nav a { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+.mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
+
+/* CONTENT */
+.privacy-header {
+  background: var(--navy);
+  padding: 160px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+.privacy-header::before {
+  content: 'STQ';
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+  font-family: var(--font-heading); font-weight: 700; font-size: 20rem;
+  color: rgba(240,239,235,0.02); pointer-events: none;
+}
+.privacy-header .container { position: relative; z-index: 1; }
+.privacy-header h1 {
+  font-family: var(--font-heading); font-size: clamp(2rem,4vw,3rem);
+  font-weight: 700; color: var(--cream); letter-spacing: -0.02em; margin-bottom: 16px;
+}
+.privacy-header p { font-size: 1rem; color: rgba(240,239,235,0.6); }
+
+.privacy-body {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 80px clamp(24px,5vw,64px) 120px;
+  position: relative; z-index: 1;
+}
+.privacy-body h2 {
+  font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700;
+  color: var(--navy); letter-spacing: 0.01em; margin-top: 48px; margin-bottom: 16px;
+}
+.privacy-body h2:first-child { margin-top: 0; }
+.privacy-body p { font-size: 1rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 16px; }
+.privacy-body ul { margin: 12px 0 16px 24px; }
+.privacy-body ul li { font-size: 1rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 8px; }
+.privacy-divider { width: 40px; height: 2px; background: var(--navy); opacity: 0.15; margin: 48px 0; }
+
+/* FOOTER */
+footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative; z-index: 1; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 24px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); letter-spacing: 0.03em; }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.5); }
+.footer-links { display: flex; gap: 32px; flex-wrap: wrap; }
+.footer-links a { font-size: 0.8125rem; color: rgba(240,239,235,0.5); text-decoration: none; transition: color 0.2s ease; }
+.footer-links a:hover { color: var(--cream); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.35); }
+.footer-disclaimer { margin-top: 24px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 900px; }
+@media (max-width: 768px) { .footer-main { flex-direction: column; text-align: center; } .footer-links { justify-content: center; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="https://stqcap.com" class="nav-logo">STQ <span>/ Capital Partners</span></a>
+    <div class="nav-links">
+      <a href="/#solutions">Solutions</a>
+      <a href="/#about">About</a>
+      <a href="/insights.html">Insights</a>
+      <a href="/research.html">Research</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="https://client.schwab.com/Areas/Access/Login" target="_blank" class="nav-client-login nav-cta-desktop">
+        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" style="margin-right:6px;vertical-align:-1px;"><rect x="1" y="6" width="10" height="6" rx="1.5" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M3.5 6V4a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>Client Login
+      </a>
+      <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary nav-cta-desktop">Schedule a Meeting</a>
+    </div>
+    <button class="nav-toggle" onclick="document.querySelector('.mobile-nav').classList.add('active')" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="mobile-nav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('active')">✕</button>
+  <a href="/#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
+  <a href="/#about" onclick="this.parentElement.classList.remove('active')">About</a>
+  <a href="/insights.html" onclick="this.parentElement.classList.remove('active')">Insights</a>
+  <a href="/research.html" onclick="this.parentElement.classList.remove('active')">Research</a>
+  <a href="/#contact" onclick="this.parentElement.classList.remove('active')">Contact</a>
+  <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Meeting</a>
+</div>
+
+<!-- HEADER -->
+<div class="privacy-header">
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p>STQ Capital Partners, LLC — Effective April 2026</p>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="privacy-body">
+
+  <p>STQ Capital Partners, LLC ("STQ") recognizes that our relationships with current and prospective clients are based on integrity and trust. We work hard to maintain your privacy and to preserve the private nature of our relationship with you. We place the highest value on the information you share with us. We want our clients to understand what information we collect, how we use it, and how we protect your personal information.</p>
+
+  <div class="privacy-divider"></div>
+
+  <h2>Why We Collect Your Information</h2>
+  <p>We gather information about you so that we can:</p>
+  <ul>
+    <li>Help design and implement the investment and financial planning related services we provide you; and</li>
+    <li>Comply with the Federal and State laws and regulations that govern us.</li>
+  </ul>
+
+  <h2>What Information We Collect and Maintain</h2>
+  <p>We may collect the following types of "nonpublic personal information" about you:</p>
+  <ul>
+    <li>Information from our initial meeting or subsequent consultations about your identity, such as your name, contact information, social security number, date of birth, and financial information;</li>
+    <li>Information that we generate to service your financial needs; and</li>
+    <li>Information that we may receive from third parties in connection with the services we provide you.</li>
+  </ul>
+
+  <h2>What Information We Disclose</h2>
+  <p>We are permitted by law to disclose nonpublic personal information about you to unaffiliated third parties in certain circumstances. STQ may disclose client's nonpublic personal information:</p>
+  <ul>
+    <li>To individuals and/or entities not affiliated with STQ, including but not limited to third parties that assist in the supervision or management of your account(s) (i.e., sub-advisers, account custodian, record keeper, attorney, etc.);</li>
+    <li>To service providers contracted by us in order for us to perform the duties in furtherance of the client's engagement with STQ (i.e. client management systems, archiving technology vendors, cloud service providers, etc.);</li>
+    <li>To your authorized representative or power of attorney;</li>
+    <li>When we receive your prior consent;</li>
+    <li>In connection with a proposed or actual sale, merger, or transfer of all or a portion of our business; and</li>
+    <li>As otherwise permitted to do so in accordance with the parameters of applicable federal and/or state privacy regulations.</li>
+  </ul>
+  <p>We will not sell your personal information. No contact information, including phone numbers and email addresses, will be shared with third parties or affiliates for marketing or promotional purposes. In the event that STQ has a change to its client privacy policy that would allow it to disclose nonpublic personal information not covered under applicable law, STQ will allow its clients the opportunity to opt-out of such disclosure.</p>
+
+  <h2>How We Protect Your Personal Information</h2>
+  <p>We restrict and limit access to client information only to those who need to carry out their business functions. We safeguard client information by preventing its unauthorized access, disclosure, or use. We maintain physical, electronic, and procedural safeguards to protect your confidential personal information. Arrangements with companies or independent contractors not affiliated with STQ will be subject to confidentiality agreements.</p>
+
+  <h2>Former Clients</h2>
+  <p>Even if we cease to provide you with financial services, our Privacy Policy will continue to apply to you, and we will continue to treat your nonpublic personal information with strict confidentiality. We maintain all records regarding all former clients for the retention period required by law.</p>
+
+  <div class="privacy-divider"></div>
+
+  <p>Clients are encouraged to discuss any questions regarding privacy policies and procedures directly with Akiva Glazerson, Chief Compliance Officer of STQ. Please contact Akiva Glazerson at <a href="tel:3107303981" style="color:var(--navy);">310-730-3981</a>.</p>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-logo">STQ <span>/ Capital Partners</span></div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
+        <a href="/insights.html">Newsletter</a>
+        <a href="/#contact">Contact</a>
+        <a href="https://client.schwab.com/Areas/Access/Login" target="_blank">Client Login</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="https://adviserinfo.sec.gov/" target="_blank">Form ADV</a>
+      </div>
+      <div class="footer-copy">© 2026 STQ Capital Partners</div>
+    </div>
+    <div class="footer-disclaimer">Advisory services are offered through STQ Capital Partners ("STQ"), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable. The information on this site is provided "AS IS" and without warranties either express or implied and the information may not be free from error. Your use of the information provided is at your sole risk. The information linked to on third-party sites is being provided strictly as a courtesy and convenience. When you link to any of the websites provided here, you are leaving this website. We make no representations as to the completeness or accuracy of information provided at these websites. When you access these websites, you are leaving our website and assume any and all responsibility and risk for use of the web sites you are visiting.</div>
+  </div>
+</footer>
+
+</body>
+</html>
