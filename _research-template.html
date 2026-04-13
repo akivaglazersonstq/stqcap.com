@@ -156,8 +156,34 @@ footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px sol
   </div>
 </nav>
 
+<section class="pub-hero">
+  <div class="hero-watermark">STQ</div>
+  <div class="pub-hero-inner">
+    <div class="pub-series">STQ Research — {{SERIES}}</div>
+    <h1>{{ARTICLE_TITLE}}</h1>
+    <p class="pub-hero-sub">{{ARTICLE_SUBHEAD}}</p>
+    <div class="pub-meta">
+      <div class="pub-meta-item">Author <span>Akiva Glazerson</span></div>
+      <div class="pub-meta-item">Published <span>{{DATE}}</span></div>
+      <div class="pub-meta-item">Read time <span>{{READ_TIME}}</span></div>
+    </div>
+  </div>
+</section>
 
-  <section class="pub-section" id="section-1">
+<div class="pub-content">
+
+  <nav class="pub-toc">
+    <div class="pub-toc-title">Contents</div>
+    <ol>
+      <li><a href="#section-1">{{TOC_1}}</a></li>
+      <li><a href="#section-2">{{TOC_2}}</a></li>
+      <li><a href="#section-3">{{TOC_3}}</a></li>
+      <li><a href="#section-4">{{TOC_4}}</a></li>
+      <li><a href="#section-5">{{TOC_5}}</a></li>
+    </ol>
+  </nav>
+
+    <section class="pub-section" id="section-1">
     <div class="pub-section-num">Section 01</div>
     <h2>{{SECTION_1_TITLE}}</h2>
     <p>{{SECTION_1_BODY_P1}}</p>
@@ -243,10 +269,8 @@ footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px sol
     <p>{{SECTION_5_BODY_P3}}</p>
   </section>
 
-
-
   <div class="pub-disclaimer">
-    <strong>Disclaimer:</strong> This publication is for informational and educational purposes only. It does not constitute personalized investment, tax, or legal advice. The hypothetical illustrations presented are for illustrative purposes only and do not represent actual investment results. Past performance is no guarantee of future results. Investments involve risk, including the potential loss of principal. Tax laws are subject to change. Please consult with a qualified tax, legal, or financial professional regarding your specific situation. Advisory services offered through STQ Capital Partners, an investment adviser registered with the state of California.
+    <strong>Disclaimer:</strong> {{DISCLAIMER}}
   </div>
 
 </div>
@@ -264,14 +288,15 @@ footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px sol
   <div style="max-width:800px;margin:0 auto;">
     <h3>More from STQ Research</h3>
     <div class="more-pubs-grid">
-      <a href="{{MORE_PUB_1_URL}}" class="more-pub-card">
-        <div class="more-pub-tag">{{MORE_PUB_1_TAG}}</div>
-        <div class="more-pub-title">{{MORE_PUB_1_TITLE}}</div>
+      <a href="/insight-direct-indexing.html" class="more-pub-card">
+        <div class="more-pub-tag">Tax Alpha</div>
+        <div class="more-pub-title">Index Investing Is Smart. Direct Indexing Is Smarter.</div>
       </a>
-      <a href="{{MORE_PUB_2_URL}}" class="more-pub-card">
-        <div class="more-pub-tag">{{MORE_PUB_2_TAG}}</div>
-        <div class="more-pub-title">{{MORE_PUB_2_TITLE}}</div>
-      </a>
+      <div class="more-pub-card">
+        <div class="more-pub-tag">Box Spreads</div>
+        <div class="more-pub-title">The Box Spread Guide: Borrowing at Treasury Rates Without a Bank</div>
+        <div class="more-pub-soon">Coming soon</div>
+      </div>
     </div>
   </div>
 </section>
