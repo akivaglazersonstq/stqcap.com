@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
-<title>STQ Capital Partners — Tax-Aware Wealth Management | Box Spread RIA</title>
+<title>STQ Capital Partners — Tax-Aware Investment Strategies</title>
 <meta name="description" content="STQ Capital Partners is a California-registered RIA specializing in tax-aware portfolio management, box spread borrowing, and institutional-grade wealth strategies for high-income investors.">
 <meta name="keywords" content="box spread RIA, tax-aware wealth management, tax loss harvesting, asset location optimization, box spread lending, synthetic borrowing, options overlay, California RIA, independent fiduciary">
-<meta property="og:title" content="STQ Capital Partners — Tax-Aware Wealth Management">
+<meta property="og:title" content="STQ Capital Partners — Tax-Aware Investment Strategies">
 <meta property="og:description" content="Institutional-grade tax-aware portfolios for California's highest earners. Box spread lending, advanced TLH, and options strategies your current advisor probably can't execute.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://stqcap.com">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="STQ Capital Partners — Tax-Aware Wealth Management">
+<meta name="twitter:title" content="STQ Capital Partners — Tax-Aware Investment Strategies">
 <meta name="twitter:description" content="Institutional-grade tax-aware portfolios for California's highest earners.">
 <link rel="canonical" href="https://stqcap.com">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%231B2E4B'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='22' fill='%23F0EFEB' letter-spacing='-1'>STQ</text></svg>">
@@ -21,6 +21,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+@font-face { font-family: "Chakra Petch"; font-display: swap; }
+@font-face { font-family: "DM Sans"; font-display: swap; }
 :root {
   --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
   --cream: #F0EFEB; --cream-dark: #E6E4DE; --cream-mid: #DAD8D1; --white: #FFFFFF;
@@ -87,7 +89,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .sol-title { font-family: var(--font-heading); font-size: 15px; font-weight: 500; color: rgba(27,46,75,0.40); transition: color 0.3s ease; line-height: 1.4; }
 .sol-item:hover .sol-title, .sol-item.active .sol-title { color: var(--navy); }
 .sol-item:hover .sol-num, .sol-item.active .sol-num { color: rgba(27,46,75,0.5); }
-.sol-right { flex: 0 0 50%; background: #fff; padding: 24px 64px 56px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+.sol-right { flex: 0 0 50%; background: #fff; padding: 40px 64px 56px; display: flex; flex-direction: column; justify-content: flex-start; position: relative; overflow: hidden; }
 .sol-panel { display: none; animation: solSlideIn 0.4s ease; }
 .sol-panel.active { display: block; }
 @keyframes solSlideIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
@@ -238,6 +240,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
     <div class="hero-content">
       <div class="hero-tag">Quantitative Investment and Wealth Advisory</div>
       <h1 id="hero-headline">&nbsp;</h1>
+      <noscript><h1 style="font-family:'Chakra Petch',sans-serif;font-size:clamp(3.5rem,7vw,5.5rem);font-weight:700;line-height:1.05;letter-spacing:-0.02em;color:#1B2E4B;margin-bottom:28px;">You've earned it.<br>Let's protect it.</h1></noscript>
       <p class="hero-sub" id="hero-sub" style="opacity:0;transition:opacity 1.2s ease;">We build tax-aware portfolios with institutional-grade rigor and complete independence — no conflicts, no compromises.</p>
       <div class="hero-buttons">
         <a href="#solutions" class="btn btn-primary">Our Solutions</a>
@@ -251,7 +254,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
 <section class="solutions-hover" id="solutions">
   <div class="sol-left">
     <h2 class="sol-heading">Our Solutions</h2>
-    <p class="sol-sub-headline">Our full toolkit.<br>Applied to you.</p>
+    <p class="sol-sub-headline">Institutional strategies. Personal application.</p>
     <div class="sol-item active" data-idx="0"><span class="sol-num">01</span><span class="sol-title">Asset Location Optimization</span></div>
     <div class="sol-item" data-idx="1"><span class="sol-num">02</span><span class="sol-title">Portfolio Construction &amp; Allocation</span></div>
     <div class="sol-item" data-idx="2"><span class="sol-num">03</span><span class="sol-title">Synthetic Portfolio Borrowing</span></div>
@@ -262,8 +265,6 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
     <div class="sol-item" data-idx="7"><span class="sol-num">08</span><span class="sol-title">Alternative Investments</span></div>
     <div class="sol-item" data-idx="8"><span class="sol-num">09</span><span class="sol-title">Enhanced Cash Management</span></div>
     <div class="sol-item" data-idx="9"><span class="sol-num">10</span><span class="sol-title">Estate &amp; Philanthropic Strategies</span></div>
-    <div class="sol-item" data-idx="10"><span class="sol-num">11</span><span class="sol-title">Roth Conversion Strategies</span></div>
-    <div class="sol-item" data-idx="11"><span class="sol-num">12</span><span class="sol-title">Tax-Smart Rebalancing</span></div>
   </div>
   <div class="sol-right">
     <div style="position:absolute;right:40px;bottom:40px;font-family:'Chakra Petch',sans-serif;font-size:120px;font-weight:700;color:rgba(27,46,75,0.04);line-height:1;letter-spacing:-4px;pointer-events:none;user-select:none;">STQ</div>
@@ -279,7 +280,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
       <div class="sol-panel-num">02</div>
       
       <h3 class="sol-panel-title">Portfolio Construction &amp; Allocation</h3>
-      <p style="font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:20px;opacity:0.65;">A portfolio built around your life, not a risk questionnaire.</p>
+      <p style="font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:20px;opacity:0.65;">A portfolio engineered around your objectives, constraints, and tax position.</p>
       <p class="sol-panel-text">Strategic allocation is the architecture of the portfolio — the long-term blueprint across asset classes, geographies, and market exposures built around your specific investment objectives, constraints, and financial picture. Every structural decision is calibrated to you.<br><br>But at STQ, portfolio construction goes beyond a standard mix of stocks and bonds. We incorporate your full financial picture — your income, real estate holdings, business interests, concentrated positions, and estate plan — to build a portfolio that reflects your actual life, not a generic risk profile.<br><br>And portfolios must adapt. Markets move. Valuations shift. Macro conditions change. Every tactical adjustment we make is evaluated on an after-tax basis first — because a move that makes sense on paper but triggers a large tax bill may not clear the hurdle.</p>
       <div class="sol-panel-line"></div><div class="sol-panel-tag">Core Strategy</div>
     </div>
@@ -288,7 +289,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
       
       <h3 class="sol-panel-title">Synthetic Portfolio Borrowing</h3>
       <p style="font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:20px;opacity:0.65;">Your portfolio is a bank. Start using it like one.</p>
-      <p class="sol-panel-text">Most investors don't realize their portfolio can function as a source of liquidity — without selling a single position. Box spreads are a four-leg options structure on a broad index that create a fully hedged position with a known payoff at expiration. The difference between what you collect today and what you owe at expiration is, effectively, the interest rate — set by the market, not a bank, and typically close to Treasury rates.<br><br>The result: access to capital at competitive rates, with no credit check, no bank approval, and no forced selling of appreciated positions. The interest is potentially tax-deductible, and your portfolio stays fully invested throughout.<br><br>At STQ, we implement synthetic borrowing through established platforms on the Schwab marketplace — giving you access to a tool that most advisors can't execute.</p>
+      <p class="sol-panel-text">Most investors don't realize their portfolio can function as a source of liquidity — without selling a single position. Box spreads are a four-leg options structure on a broad index that create a fully hedged position with a known payoff at expiration. The difference between what you collect today and what you owe at expiration is, effectively, the interest rate — set by the market, not a bank, and typically close to Treasury rates.<br><br>The result: access to capital at competitive rates, with no credit check, no bank approval, and no forced selling of appreciated positions. The interest is potentially tax-deductible, and your portfolio stays fully invested throughout.<br><br>At STQ, we implement synthetic borrowing through established institutional platforms — giving you access to a tool that most advisors can't execute.</p>
       <div class="sol-panel-line"></div><div class="sol-panel-tag">Liquidity</div>
     </div>
     <div class="sol-panel" data-desc="3">
@@ -311,7 +312,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
       <div class="sol-panel-num">06</div>
       
       <h3 class="sol-panel-title">Concentrated Position Management</h3>
-      <p style="font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:20px;opacity:0.65;">One position. Multiple solutions. We find the right one for you.</p>
+      <p style="font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:20px;opacity:0.65;">Concentration is both your greatest asset and your greatest risk. We manage both.</p>
       <p class="sol-panel-text">A concentrated position — whether from company stock, RSUs, a business sale, or an inheritance — is both an asset and a risk. Managing it requires balancing your desire to preserve upside, your need to diversify, and the tax cost of doing either.<br><br>At STQ, we build tailored strategies for each client's situation. Options overlays can create downside protection without a taxable sale. Systematic diversification over time can spread the tax impact across years. Tax-loss harvesting elsewhere in the portfolio can offset gains realized on the position. Prepaid variable forwards allow you to monetize a concentrated position — receiving cash upfront while deferring the tax event — without an outright sale. And in the right circumstances, charitable vehicles can eliminate the tax burden entirely.<br><br>There is no one-size-fits-all answer to a concentrated position. There is only the right answer for you.</p>
       <div class="sol-panel-line"></div><div class="sol-panel-tag">Risk Management</div>
     </div>
@@ -319,7 +320,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
       <div class="sol-panel-num">07</div>
       
       <h3 class="sol-panel-title">Derivative-Based Strategies</h3>
-      <p style="font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:20px;opacity:0.65;">Options aren't just for speculation. In the right hands, they're precision tools.</p>
+      <p style="font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:20px;opacity:0.65;">Options don't add risk. Properly structured, they remove it.</p>
       <p class="sol-panel-text">Options aren't just for speculation. In the right hands, they're precision instruments for managing risk, generating income, and adjusting portfolio exposures without triggering taxable sales.<br><br>At STQ, we use options overlays to protect against significant downside, generate yield on existing positions, and reshape return profiles for clients with concentrated stock or large unrealized gains. Every structure is evaluated through a tax lens — because a hedge that triggers a taxable event may not be worth implementing.<br><br>Strategies include protective put spreads, cash-secured put writing, and covered calls — each deployed thoughtfully within your broader portfolio context.</p>
       <div class="sol-panel-line"></div><div class="sol-panel-tag">Options Overlay</div>
     </div>
@@ -336,7 +337,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
       
       <h3 class="sol-panel-title">Enhanced Cash Management</h3>
       <p style="font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:20px;opacity:0.65;">Every dollar sitting idle is losing ground. We put yours to work.</p>
-      <p class="sol-panel-text">Idle cash has a cost. Every dollar sitting in a low-yield account is a dollar losing ground to inflation and taxes.<br><br>At STQ, we put your cash to work. Box spread ETFs offer near-Treasury yields with superior tax treatment — returns accrue as long-term capital gains rather than ordinary income, a meaningful advantage for anyone in a high tax bracket. We also use structured cash alternatives and short-duration strategies to maximize yield without taking on unnecessary risk.<br><br>Your idle cash should earn. We make sure it does.</p>
+      <p class="sol-panel-text">Idle cash has a cost. Every dollar sitting in a low-yield account is a dollar losing ground to inflation and taxes.<br><br>At STQ, we put your cash to work. Long box spreads — fully hedged, market-neutral options structures with a known, fixed payoff — offer near-Treasury yields with superior tax treatment. Returns accrue as long-term capital gains rather than ordinary income, a meaningful advantage for anyone in a high tax bracket. Because the position is perfectly hedged, there is no directional market exposure. We also use structured cash alternatives and short-duration strategies to maximize yield without taking on unnecessary risk.<br><br>Your idle cash should earn. We make sure it does.</p>
       <div class="sol-panel-line"></div><div class="sol-panel-tag">Yield Enhancement</div>
     </div>
     <div class="sol-panel" data-desc="9">
@@ -347,21 +348,6 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
       <p class="sol-panel-text">Wealth transfer is a tax problem as much as a planning problem. Without coordination, a lifetime of careful investing can be significantly eroded by estate taxes, income taxes on inherited assets, and inefficient gifting.<br><br>At STQ, we work in close collaboration with your attorney and CPA to implement strategies that preserve and transfer wealth efficiently — donor-advised funds for charitable giving, step-up in basis planning, trust structures, and asset location decisions made with the next generation in mind.<br><br>We don't replace your estate attorney. We make sure your investment strategy and your estate plan are actually talking to each other.</p>
       <div class="sol-panel-line"></div><div class="sol-panel-tag">Wealth Transfer</div>
     </div>
-    <div class="sol-panel" data-desc="10">
-      <div class="sol-panel-num">11</div>
-      
-      <h3 class="sol-panel-title">Roth Conversion Strategies</h3>
-      <p style="font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:20px;opacity:0.65;">The best time to pay taxes is when your rate is lowest. We find that window.</p>
-      <p class="sol-panel-text">A Roth conversion — moving assets from a traditional IRA or 401(k) into a Roth account — is one of the most powerful tax planning tools available to high earners, but timing and sizing matter enormously.<br><br>The goal is to convert in years when your marginal rate is lower than it will be in the future — filling up lower tax brackets deliberately, before required minimum distributions or Social Security income push you into a higher one. Done right, a Roth conversion strategy can shift millions of dollars into a permanently tax-free environment.<br><br>At STQ, we model conversion scenarios across your full financial picture — current income, future RMDs, estate objectives, and state-specific tax considerations — to identify the optimal conversion path for your situation.</p>
-      <div class="sol-panel-line"></div><div class="sol-panel-tag">Tax Planning</div>
-    </div>
-    <div class="sol-panel" data-desc="11">
-      <div class="sol-panel-num">12</div>
-      
-      <h3 class="sol-panel-title">Tax-Smart Rebalancing</h3>
-      <p style="font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:20px;opacity:0.65;">Every portfolio drifts. The tax cost of fixing it poorly is avoidable.</p>
-      <p class="sol-panel-text">Every portfolio drifts. As markets move, your allocation shifts away from target — and restoring it requires trading. But trading has a tax cost, and that cost is often ignored.<br><br>At STQ, every rebalancing decision is evaluated through a tax lens first. We use new contributions to rebalance where possible, avoiding sales entirely. When we do sell, we harvest losses alongside gains to minimize net tax impact. And we sequence trades across accounts to take advantage of the different tax treatment each one offers.<br><br>Rebalancing is inevitable. The tax cost of doing it poorly is not.</p>
-      <div class="sol-panel-line"></div><div class="sol-panel-tag">Tax Efficiency</div>
     </div>
   </div>
 </section>
@@ -378,28 +364,34 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
         <h3>Tax drag is silent.<br>The math isn't.</h3>
         <p>Two portfolios. Same investments. Same gross return. One pays taxes annually on every gain and dividend. The other defers, optimizes, and compounds without interruption.</p>
         <div class="chart-big-number" id="ticker-number">+$0</div>
-        <div class="chart-big-label">Additional wealth over 30 years — from tax structure alone, not market performance.</div>
+        <div class="chart-big-label" id="ticker-label">Additional wealth over 30 years — from tax structure alone, not market performance.</div>
         <div style="margin-top:32px;padding-top:32px;border-top:1px solid rgba(27,46,75,0.08);">
           <p style="font-size:0.9375rem;color:var(--text-secondary);margin-bottom:16px;"><strong>Curious what tax drag is costing you?</strong></p>
           <a href="#" onclick="window.location.href='mailto:akiva.glazerson@stqcap.com?subject=Portfolio%20Diagnostic%20Request';return false;" class="btn btn-primary" style="display:inline-flex;">Request a Portfolio Diagnostic →</a>
         </div>
       </div>
       <div>
-        <div class="chart-visual">
+        <!-- TIME HORIZON TOGGLE -->
+        <div style="display:flex;gap:8px;justify-content:center;margin-bottom:64px;">
+          <button onclick="setHorizon(10, this)" style="font-family:var(--font-heading);font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:8px 20px;border-radius:4px;border:1px solid rgba(27,46,75,0.2);background:transparent;color:var(--text-secondary);cursor:pointer;transition:all 0.2s ease;">10 yrs</button>
+          <button onclick="setHorizon(20, this)" style="font-family:var(--font-heading);font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:8px 20px;border-radius:4px;border:1px solid rgba(27,46,75,0.2);background:transparent;color:var(--text-secondary);cursor:pointer;transition:all 0.2s ease;">20 yrs</button>
+          <button onclick="setHorizon(30, this)" id="btn-30" style="font-family:var(--font-heading);font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:8px 20px;border-radius:4px;border:1px solid var(--navy);background:var(--navy);color:var(--cream);cursor:pointer;transition:all 0.2s ease;">30 yrs</button>
+        </div>
+        <div class="chart-visual" id="chart-visual">
           <div class="chart-bar-group">
-            <div class="chart-bar chart-bar-taxable">
-              <div class="chart-bar-value">$6.3M</div>
+            <div class="chart-bar chart-bar-taxable" id="bar-taxable">
+              <div class="chart-bar-value" id="val-taxable">$6.3M</div>
               <div class="chart-bar-label">Taxable<br><span style="font-size:0.6875rem;opacity:0.7">37% tax rate</span></div>
             </div>
           </div>
           <div class="chart-bar-group">
-            <div class="chart-bar chart-bar-taxaware">
-              <div class="chart-bar-value">$17.4M</div>
+            <div class="chart-bar chart-bar-taxaware" id="bar-taxaware">
+              <div class="chart-bar-value" id="val-taxaware">$17.4M</div>
               <div class="chart-bar-label">Tax-aware<br><span style="font-size:0.6875rem;opacity:0.7">Optimized</span></div>
             </div>
           </div>
         </div>
-        <p class="chart-footnote">Hypothetical growth of $1M over 30 years. 10% gross return; taxable assumes 37% combined tax rate applied annually. Illustrative only.</p>
+        <p class="chart-footnote" id="chart-footnote">Hypothetical growth of $1M over 30 years. 10% gross return; taxable assumes 37% combined tax rate applied annually. Illustrative only.</p>
       </div>
     </div>
   </div>
@@ -477,7 +469,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
       </div>
       <a href="/insights.html" style="font-family:var(--font-heading);font-size:0.8125rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--navy);padding-bottom:2px;white-space:nowrap;">View All Insights →</a>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;max-width:720px;" id="homepage-issues"></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;max-width:100%;" id="homepage-issues"></div>
   </div>
 </section>
 
@@ -554,7 +546,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // TYPEWRITER
 (function() {
   var el = document.getElementById('hero-headline');
@@ -585,6 +577,52 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
   }
   setTimeout(typeLine, 400);
 })();
+
+
+// TIME HORIZON TOGGLE
+var horizonData = {
+  10: { taxable: 2.4, taxaware: 4.0, diff: 1.6, taxableH: 85, taxawareH: 140 },
+  20: { taxable: 4.1, taxaware: 9.8, diff: 5.7, taxableH: 115, taxawareH: 175 },
+  30: { taxable: 6.3, taxaware: 17.4, diff: 11.1, taxableH: 155, taxawareH: 220 }
+};
+var currentHorizon = 30;
+var horizonAnimated = false;
+
+function setHorizon(years, btn) {
+  currentHorizon = years;
+  document.querySelectorAll('.tax-chart-section button').forEach(function(b) {
+    b.style.background = 'transparent';
+    b.style.color = 'var(--text-secondary)';
+    b.style.borderColor = 'rgba(27,46,75,0.2)';
+  });
+  btn.style.background = 'var(--navy)';
+  btn.style.color = 'var(--cream)';
+  btn.style.borderColor = 'var(--navy)';
+
+  var d = horizonData[years];
+  var barT = document.getElementById('bar-taxable');
+  var barA = document.getElementById('bar-taxaware');
+  barT.style.height = d.taxableH + 'px';
+  barA.style.height = d.taxawareH + 'px';
+  document.getElementById('val-taxable').textContent = '$' + d.taxable.toFixed(1) + 'M';
+  document.getElementById('val-taxaware').textContent = '$' + d.taxaware.toFixed(1) + 'M';
+  document.getElementById('ticker-label').textContent = 'Additional wealth over ' + years + ' years — from tax structure alone, not market performance.';
+  document.getElementById('chart-footnote').textContent = 'Hypothetical growth of $1M over ' + years + ' years. 10% gross return; taxable assumes 37% combined tax rate applied annually. Illustrative only.';
+
+  var target = d.diff * 1000000;
+  var duration = 1500;
+  var start = performance.now();
+  var tickerEl = document.getElementById('ticker-number');
+  function tick(now) {
+    var p = Math.min((now - start) / duration, 1);
+    var ease = 1 - Math.pow(1 - p, 3);
+    var val = Math.round(ease * target / 100000) * 100000;
+    tickerEl.textContent = '+' + (val >= 1000000 ? '$' + (val/1000000).toFixed(1) + 'M' : '$' + Math.round(val/1000) + 'K');
+    if (p < 1) requestAnimationFrame(tick);
+    else tickerEl.textContent = '+$' + d.diff.toFixed(1) + 'M';
+  }
+  requestAnimationFrame(tick);
+}
 
 // BAR CHART ANIMATION
 (function() {
@@ -659,7 +697,9 @@ document.querySelectorAll('.stepper-step').forEach(function(s) { s.addEventListe
 // INSIGHTS CARDS
 (function() {
   var issues = [
-    { title: "Stop Borrowing From Banks. Your Portfolio Can Do It Better.", date: "April 5, 2026", preview: "Lines of credit are expensive, bank-controlled, and unnecessary. Your portfolio can do the same job better — at near-Treasury rates, with no application and no forced selling.", tag: "Box Spreads", url: "/insight-box-spreads.html" }
+    { title: "You Don't Have Yale's Tax Status. Stop Investing Like You Do.", date: "April 1, 2026", preview: "The endowment model is built for institutions that pay no taxes. You do. Copying it without accounting for your tax situation isn't sophisticated — it's expensive.", tag: "Portfolio Construction", url: "/insight-endowment-model.html" },
+    { title: "Stop Borrowing From Banks. Your Portfolio Can Do It Better.", date: "April 2, 2026", preview: "Lines of credit are expensive, bank-controlled, and unnecessary. Your portfolio can do the same job better — at near-Treasury rates, with no application and no forced selling.", tag: "Box Spreads", url: "/insight-box-spreads.html" },
+    { title: "Location. Location. Location.", date: "April 3, 2026", preview: "In real estate, location determines value. In investing, it determines how much of your return you actually keep. Most investors obsess over what to own. The smarter question is where.", tag: "Tax Strategy", url: "/insight-asset-location.html" }
   ];
   var grid = document.getElementById('homepage-issues');
   if (!grid) return;
@@ -679,9 +719,9 @@ function handleSubscribe(e) {
   var btn = document.getElementById('newsletter-btn');
   var msg = document.getElementById('newsletter-msg');
   btn.textContent = 'Subscribing...'; btn.disabled = true;
-  fetch('https://connect.mailerlite.com/api/subscribers', {
+  fetch('/.netlify/functions/subscribe', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMmM2OTZhNDU2YmFiZDU4MzEyMmRhYjMwMDA5MDEyZTFmNzE4MTJjMTg0OTA1ODg4MmZjMDQ3MTI4YzU4ZmRiOTQ4NDRhZGFiMWMxOTgxZGIiLCJpYXQiOjE3NzUzNzU0NzguMTQyMDk3LCJuYmYiOjE3NzUzNzU0NzguMTQyMSwiZXhwIjo0OTMxMDQ5MDc4LjEzNzg4Miwic3ViIjoiMjI2NTM2NyIsInNjb3BlcyI6W119.ZdViQ4RRQTgYCmiJyPuhFhpf6e5Okmf75gggIsHrxgG5xmeuxRCmkMCkhRmgY4_zevSlEe6tYpwTui1hVmLO1NlHP4uBmgoJ9dGSFciCjBxs5Y9EtEvYwrVqw5KV8aVK8fXy6h1pSA-Y8kHIekfnTha-Gs_wddrV5U36x6XNbtQq6HhIfnyDEXXCkdOLl5jL4K5G3nPjjROrBKEmkzpaGjL0bI2VJouU3VXN9BKSUEQgVz0RcyGWlsPbPuVoQNYfnGvX6H5HDU6V8t9m6lzO-woI1byNRm_T9j90y1WuZmPe3s1hQNOFEYIvWIMNJaw_GozfJdS4e9t-1sn0E8jULWycSZM0kdklAyXDx-IJ3srznQMGBGgpEqGD6O24aUIQ-nzD8kxnMqWhDSqFOeu-p9ETrFUPKdTL7XpHnV4_AnqzsFRGdpUy_PXyVldVgkOOm_pM_HPP-w5FuUfNv2J6XlU9zSLiC-DHZ608Hw0JPi9yt7jCEwOeDaS87dvX0R8X09GYNMcTVBgPSV8PLvOcQVaIqDPNqU5_d8pPmiX1GtRlJQL3Yf4DugYrmhmITzufU9zOtgsSr-jv2eAUOuw9n_fnEHBw5lFJ3pEs8yl5NjBDN2SSdllkkq_LWDczAs914PfugL2a1t4vk2gx7xZsdg7Y3w__YlKTzBHVMjBbJ-8' },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email: email })
   }).then(function(res) {
     if (res.ok || res.status === 201 || res.status === 200) {
