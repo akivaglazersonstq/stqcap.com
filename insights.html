@@ -47,7 +47,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 /* HERO */
 .page-hero { padding: 140px 0 72px; background: var(--navy); position: relative; overflow: hidden; border-bottom: 1px solid rgba(27,46,75,0.08); }
 .page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
-.hero-watermark { position: absolute; right: -40px; top: 50%; transform: translateY(-50%); font-family: var(--font-heading); font-weight: 700; font-size: clamp(10rem,20vw,22rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
 .page-hero-inner { position: relative; z-index: 1; }
 .page-hero-tag { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,239,235,0.4); margin-bottom: 20px; position: relative; padding-left: 20px; }
 .page-hero-tag::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: rgba(240,239,235,0.3); }
@@ -88,7 +88,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 /* NEWSLETTER */
 .insights-signup { background: var(--navy); padding: 80px 0; position: relative; z-index: 1; overflow: hidden; }
 .insights-signup::before { content: 'STQ'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-family: var(--font-heading); font-weight: 700; font-size: 16rem; color: rgba(240,239,235,0.02); pointer-events: none; }
-.signup-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+.signup-inner { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
 .signup-inner h2 { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; color: var(--cream); letter-spacing: -0.01em; }
 .signup-inner p { font-size: 0.9375rem; color: var(--text-light); margin-top: 8px; }
 .signup-form { display: flex; gap: 12px; }
@@ -180,7 +180,7 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
     <div class="signup-inner">
       <div>
         <h2>Get It First.</h2>
-        <p>Daily at 5 AM. Tax-aware insights that actually move the needle.</p>
+        <p>Institutional strategies. Plain English. Every morning.</p>
       </div>
       <form class="signup-form" id="insights-signup-form" onsubmit="handleInsightsSubscribe(event)">
         <input type="email" id="insights-email" placeholder="your@email.com" required>
