@@ -90,7 +90,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .nav-back:hover svg { transform: translateX(-3px); }
 .issue-hero { padding: 140px 0 72px; background: var(--navy); position: relative; overflow: hidden; }
 .issue-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(240,239,235,0.03) 1px, transparent 1px); background-size: 60px 60px; }
-.hero-watermark { position: absolute; right: -40px; top: 50%; transform: translateY(-50%); font-family: var(--font-heading); font-weight: 700; font-size: clamp(10rem,20vw,22rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
 .hero-container { max-width: 1100px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
 .issue-meta { display: flex; align-items: center; gap: 14px; margin-top: 24px; flex-wrap: wrap; }
 .meta-category { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.6); border: 1px solid rgba(240,239,235,0.2); padding: 4px 12px; border-radius: 3px; }
@@ -104,7 +104,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .author-name { font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--navy); letter-spacing: 0.02em; }
 .author-title { font-size: 0.8rem; color: var(--text-secondary); margin-top: 3px; }
 .read-time { margin-left: auto; font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(27,46,75,0.3); }
-.issue-intro { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); font-style: italic; margin-bottom: 36px; padding-left: 20px; border-left: 3px solid rgba(27,46,75,0.15); }
+
 .issue-body p { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 24px; }
 .issue-body p strong { color: var(--text-primary); font-weight: 600; }
 .issue-body h2 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--navy); margin: 44px 0 16px; letter-spacing: 0.01em; }
@@ -129,9 +129,9 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .data-callout-label { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 8px; opacity: 0.7; }
 .data-callout-value { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--navy); letter-spacing: -0.02em; line-height: 1.1; }
 .data-callout-sub { font-size: 0.875rem; color: var(--text-secondary); margin-top: 8px; line-height: 1.6; }
-.pull-quote { background: var(--navy); border-radius: 6px; padding: 36px 40px; margin: 40px 0; position: relative; overflow: hidden; }
-.pull-quote::before { content: '"'; position: absolute; top: -20px; left: 24px; font-family: var(--font-heading); font-size: 100px; font-weight: 700; color: rgba(240,239,235,0.05); line-height: 1; }
-.pull-quote-text { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 600; color: var(--cream); line-height: 1.6; letter-spacing: 0.01em; position: relative; z-index: 1; }
+
+
+
 .issue-cta { background: var(--cream-dark); border-radius: 6px; padding: 36px 40px; margin: 48px 0 0; text-align: center; }
 .issue-cta p { font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.75; max-width: 480px; margin-left: auto; margin-right: auto; }
 .btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 28px; border-radius: 4px; text-decoration: none; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
@@ -159,8 +159,8 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
   .issue-hero h1 { font-size: 2rem; }
   .issue-content { padding: 48px 24px 80px; }
   .comparison-split { grid-template-columns: 1fr; }
-  .pull-quote { padding: 24px 28px; }
-  .pull-quote-text { font-size: 1.05rem; }
+  
+  
   .btn-secondary { margin-left: 0; margin-top: 12px; }
 }
 </style>
@@ -182,7 +182,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
 <section class="issue-hero">
   <div class="hero-watermark">STQ</div>
   <div class="hero-container">
-    <h1>Stop Borrowing From Banks.<br>Your Portfolio Can Do It Better.</h1>
+    <h1>{{ARTICLE_TITLE}}</h1>
     <p class="issue-subhead">{{ARTICLE_SUBHEAD}}</p>
     <div class="issue-meta">
       <span class="meta-category">{{CATEGORY}}</span>
@@ -203,62 +203,50 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
     <div class="read-time">{{READ_TIME}}</div>
   </div>
 
-  <p class="issue-intro">When high-income investors need liquidity, most of them do what their advisor told them years ago: call the bank. Take out a line of credit, pledge some assets, pay whatever rate the bank sets, and move on. It feels routine. It isn't.</p>
+    <div class="issue-body">
 
-  <div class="issue-body">
+    <p>{{ARTICLE_BODY_PARAGRAPH_1}}</p>
 
-    <p>What you're actually doing is handing a bank a chunk of your net worth as collateral, letting them decide what it's worth, and paying them a spread on top of whatever rate they feel like charging that quarter. <strong>You have no real negotiating power.</strong> The terms can change. And if markets move the wrong way, they can call the loan.</p>
+    <p>{{ARTICLE_BODY_PARAGRAPH_2}}</p>
 
-    <p>There is a better way. It's called a box spread — and most investors have never heard of it, because most advisors can't execute it.</p>
+    <h2>{{SECTION_HEADING_1}}</h2>
 
-    <h2>How It Works</h2>
+    <p>{{ARTICLE_BODY_PARAGRAPH_3}}</p>
 
-    <p>A box spread is a four-leg options structure on a broad index. When structured correctly, it creates a <strong>perfectly hedged position with a known, fixed payoff at expiration</strong>. The difference between what you collect today and what you owe at expiration is, effectively, the interest rate.</p>
-
-    <p>That rate is set by the market — not by a bank — and it tracks closely to Treasury rates, often coming in well below what any lender would offer you.</p>
+    <p>{{ARTICLE_BODY_PARAGRAPH_4}}</p>
 
     <div class="data-callout">
-      <div class="data-callout-label">The Rate Advantage</div>
-      <div class="data-callout-value">Near-Treasury rates</div>
-      <div class="data-callout-sub">Set by the market, not a bank. No credit check. No approval committee. No covenant that lets someone else pull the plug.</div>
+      <div class="data-callout-label">{{CALLOUT_LABEL}}</div>
+      <div class="data-callout-value">{{CALLOUT_VALUE}}</div>
+      <div class="data-callout-sub">{{CALLOUT_SUB}}</div>
     </div>
 
-    <p>You collect the proceeds upfront. You stay fully invested. You don't sell a single share. And when the position expires, you settle the difference. That's the loan.</p>
+    <h2>{{SECTION_HEADING_2}}</h2>
 
-    <h2>Box Spread vs. Line of Credit</h2>
+    <p>{{ARTICLE_BODY_PARAGRAPH_5}}</p>
 
     <div class="comparison-split">
       <div class="comp-side comp-wrong">
-        <div class="comp-side-label">Line of Credit</div>
-        <div class="comp-side-title">The Bank's Terms</div>
-        <div class="comp-row"><span>Rate</span><span class="comp-account">Bank sets it</span></div>
-        <div class="comp-row"><span>Approval</span><span class="comp-account">Credit check required</span></div>
-        <div class="comp-row"><span>Terms</span><span class="comp-account">Can change anytime</span></div>
-        <div class="comp-row"><span>Recall risk</span><span class="comp-account">Yes</span></div>
-        <div class="comp-row"><span>Interest</span><span class="comp-account">Often not deductible</span></div>
+        <div class="comp-side-label">{{COMP_LEFT_LABEL}}</div>
+        <div class="comp-side-title">{{COMP_LEFT_TITLE}}</div>
+        <div class="comp-row"><span>{{ROW_1_KEY}}</span><span class="comp-account">{{ROW_1_LEFT}}</span></div>
+        <div class="comp-row"><span>{{ROW_2_KEY}}</span><span class="comp-account">{{ROW_2_LEFT}}</span></div>
+        <div class="comp-row"><span>{{ROW_3_KEY}}</span><span class="comp-account">{{ROW_3_LEFT}}</span></div>
       </div>
       <div class="comp-side comp-right">
-        <div class="comp-side-label">Box Spread</div>
-        <div class="comp-side-title">Market Terms</div>
-        <div class="comp-row"><span>Rate</span><span class="comp-account">Market-determined</span></div>
-        <div class="comp-row"><span>Approval</span><span class="comp-account">None needed</span></div>
-        <div class="comp-row"><span>Terms</span><span class="comp-account">Fixed at execution</span></div>
-        <div class="comp-row"><span>Recall risk</span><span class="comp-account">None</span></div>
-        <div class="comp-row"><span>Interest</span><span class="comp-account">Potentially deductible</span></div>
+        <div class="comp-side-label">{{COMP_RIGHT_LABEL}}</div>
+        <div class="comp-side-title">{{COMP_RIGHT_TITLE}}</div>
+        <div class="comp-row"><span>{{ROW_1_KEY}}</span><span class="comp-account">{{ROW_1_RIGHT}}</span></div>
+        <div class="comp-row"><span>{{ROW_2_KEY}}</span><span class="comp-account">{{ROW_2_RIGHT}}</span></div>
+        <div class="comp-row"><span>{{ROW_3_KEY}}</span><span class="comp-account">{{ROW_3_RIGHT}}</span></div>
       </div>
     </div>
 
-    <h2>Why It Matters for High Earners</h2>
+    <h2>{{SECTION_HEADING_3}}</h2>
 
-    <p>The tax treatment is favorable. The interest on a box spread is <strong>potentially deductible as investment interest expense</strong> — a meaningful advantage at high marginal tax rates. And because you're not selling anything to raise capital, you're not triggering gains. Your appreciated positions keep compounding. Your loss bank stays intact.</p>
+    <p>{{ARTICLE_BODY_PARAGRAPH_6}}</p>
 
-    <div class="pull-quote">
-      <div class="pull-quote-text">The bank knew your portfolio could do this. They just didn't tell you.</div>
-    </div>
-
-    <p>The objection I hear most often is: isn't this complicated? The mechanics are. The experience doesn't have to be. At STQ, we implement box spreads through established platforms on the Schwab marketplace. You don't touch the options. You don't manage the legs. You receive the proceeds and we handle the rest.</p>
-
-    <p>Your portfolio has been sitting there for years, doing one job. It can do two.</p>
+    <p>{{ARTICLE_BODY_PARAGRAPH_7}}</p>
 
   </div>
 
