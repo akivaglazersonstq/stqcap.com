@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
 <style>:root{color-scheme:light only;}</style>
-<title>Research — STQ Capital Partners | Tax-Aware Wealth Management</title>
+<title>Research — STQ Capital Partners | Tax-Aware Investment Strategies</title>
 <meta name="description" content="Institutional-grade research on tax-aware investing, box spread lending, asset location, and options strategies from STQ Capital Partners.">
 <meta name="keywords" content="box spread RIA, asset location research, tax loss harvesting guide, tax-aware investing, California RIA research, covered call strategy, fortress trade, synthetic borrowing">
 <meta property="og:title" content="Research — STQ Capital Partners">
@@ -15,48 +15,27 @@
 <link rel="canonical" href="https://stqcap.com/research.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+@font-face { font-family: "Chakra Petch"; font-display: swap; }
+@font-face { font-family: "DM Sans"; font-display: swap; }
 
 :root {
-  --navy: #1B2E4B;
-  --navy-light: #2a4570;
-  --navy-dark: #0f1e33;
-  --cream: #F0EFEB;
-  --cream-dark: #E6E4DE;
-  --white: #FFFFFF;
-  --text-primary: #1B2E4B;
-  --text-secondary: #5a6a7e;
-  --text-light: rgba(240, 239, 235, 0.7);
-  --font-heading: 'Chakra Petch', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
+  --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF;
+  --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7);
+  --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.25,0.46,0.45,0.94); --ease-out: cubic-bezier(0.16,1,0.3,1);
 }
 
 html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
 body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: linear-gradient(rgba(27, 46, 75, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(27, 46, 75, 0.03) 1px, transparent 1px);
-  background-size: 80px 80px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 64px); position: relative; z-index: 1; }
+body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(27,46,75,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
 
 /* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: rgba(240, 239, 235, 0.85);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(27, 46, 75, 0.08);
-}
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
 .nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; }
 .nav-logo span { font-weight: 400; color: var(--text-secondary); }
@@ -67,158 +46,50 @@ nav {
 .btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 12px 28px; border-radius: 4px; text-decoration: none; transition: all 0.3s var(--ease); cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
 .btn-primary { background: var(--navy); color: var(--cream); }
 .btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
-.nav-client-login { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27, 46, 75, 0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; transition: border-color 0.2s ease, background 0.2s ease; }
-.nav-client-login:hover { border-color: rgba(27, 46, 75, 0.5); background: rgba(27, 46, 75, 0.03); }
+.nav-client-login { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; transition: border-color 0.2s ease, background 0.2s ease; }
+.nav-client-login:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
 
 /* PAGE HERO */
-.page-hero { padding: 120px 0 40px; position: relative; z-index: 1; border-bottom: 1px solid rgba(27, 46, 75, 0.08); }
-.page-hero-tag { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 20px; position: relative; padding-left: 20px; }
-.page-hero-tag::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: var(--navy); }
-.page-hero h1 { font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 20px; line-height: 1.1; }
-.page-hero p { font-size: 1.125rem; color: var(--text-secondary); max-width: 560px; line-height: 1.7; }
-
-/* FILTER BAR */
-.filter-bar { padding: 32px 0; position: relative; z-index: 1; border-bottom: 1px solid rgba(27, 46, 75, 0.08); }
-.filter-inner { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-.filter-label { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); margin-right: 8px; }
-.filter-btn { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 8px 18px; border-radius: 4px; border: 1px solid rgba(27, 46, 75, 0.15); background: transparent; color: var(--text-secondary); cursor: pointer; transition: all 0.2s ease; }
-.filter-btn:hover, .filter-btn.active { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+.page-hero { padding: 140px 0 72px; background: var(--navy); position: relative; overflow: hidden; border-bottom: 1px solid rgba(27,46,75,0.08); }
+.page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
+.hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.page-hero-inner { position: relative; z-index: 1; }
+.page-hero-tag { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,239,235,0.4); margin-bottom: 20px; position: relative; padding-left: 20px; }
+.page-hero-tag::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: rgba(240,239,235,0.3); }
+.page-hero h1 { font-family: var(--font-heading); font-size: clamp(2.5rem,5vw,4rem); font-weight: 700; color: var(--cream); letter-spacing: -0.02em; margin-bottom: 20px; line-height: 1.1; }
+.page-hero p { font-size: 1.125rem; color: var(--text-light); max-width: 560px; line-height: 1.7; }
 
 /* FEATURED */
-.featured-section { padding: 56px 0 0; position: relative; z-index: 1; }
+.featured-section { padding: 64px 0 0; position: relative; z-index: 1; }
 .featured-label { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); position: relative; padding-left: 20px; margin-bottom: 32px; }
 .featured-label::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: var(--navy); }
 
-/* FEATURED CARD */
-.featured-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  background: var(--white);
-  border: 1px solid rgba(27, 46, 75, 0.08);
-  border-radius: 6px;
-  overflow: hidden;
-  margin-bottom: 24px;
-  text-decoration: none;
-  transition: all 0.3s var(--ease);
-}
-.featured-card:hover { transform: translateY(-3px); box-shadow: 0 24px 64px rgba(27, 46, 75, 0.08); }
-.featured-card-left {
-  background: var(--navy);
-  padding: 48px 44px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.featured-card-left::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(rgba(240,239,235,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(240,239,235,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-.featured-card-watermark {
-  position: absolute;
-  right: -20px;
-  bottom: -40px;
-  font-family: var(--font-heading);
-  font-size: 160px;
-  font-weight: 700;
-  color: rgba(240,239,235,0.04);
-  line-height: 1;
-  pointer-events: none;
-}
-.featured-card-tag {
-  font-family: var(--font-heading);
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: rgba(240,239,235,0.4);
-  margin-bottom: 16px;
-  position: relative;
-  z-index: 1;
-}
-.featured-card-title {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--cream);
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-  position: relative;
-  z-index: 1;
-}
-.featured-card-read {
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(240,239,235,0.5);
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 32px;
-}
+.featured-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--white); border: 1px solid rgba(27,46,75,0.08); border-radius: 6px; overflow: hidden; margin-bottom: 24px; text-decoration: none; transition: all 0.3s var(--ease); }
+.featured-card:hover { transform: translateY(-3px); box-shadow: 0 24px 64px rgba(27,46,75,0.08); }
+.featured-card-left { background: var(--navy); padding: 48px 44px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
+.featured-card-left::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
+.featured-card-watermark { position: absolute; right: -20px; bottom: -40px; font-family: var(--font-heading); font-size: 160px; font-weight: 700; color: rgba(240,239,235,0.04); line-height: 1; pointer-events: none; }
+.featured-card-tag { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.4); margin-bottom: 16px; position: relative; z-index: 1; }
+.featured-card-title { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--cream); line-height: 1.3; letter-spacing: -0.01em; position: relative; z-index: 1; }
+.featured-card-read { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(240,239,235,0.5); position: relative; z-index: 1; display: flex; align-items: center; gap: 8px; margin-top: 32px; }
 .featured-card-read::after { content: '→'; }
 .featured-card-right { padding: 48px 44px; display: flex; flex-direction: column; justify-content: center; }
 .featured-card-desc { font-size: 1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 24px; }
 .featured-card-meta { display: flex; gap: 20px; flex-wrap: wrap; }
 .featured-card-meta-item { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(27,46,75,0.35); }
 .featured-card-meta-item span { color: var(--text-secondary); margin-left: 6px; }
-.featured-card-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--cream-dark);
-  border-radius: 4px;
-  padding: 6px 12px;
-  font-family: var(--font-heading);
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  margin-bottom: 20px;
-  width: fit-content;
-}
+.featured-card-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--cream-dark); border-radius: 4px; padding: 6px 12px; font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 20px; width: fit-content; }
 
 /* RESEARCH GRID */
 .research-section { padding: 48px 0 120px; position: relative; z-index: 1; }
-.research-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-
-.research-card {
-  background: var(--white);
-  border: 1px solid rgba(27, 46, 75, 0.08);
-  border-radius: 6px;
-  padding: 32px 28px;
-  text-decoration: none;
-  display: block;
-  transition: all 0.3s var(--ease);
-  position: relative;
-  overflow: hidden;
-}
-.research-card::before {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--navy);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s var(--ease);
-}
-.research-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(27, 46, 75, 0.08); }
+.research-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.research-card { background: var(--white); border: 1px solid rgba(27,46,75,0.08); border-radius: 6px; padding: 32px 28px; text-decoration: none; display: block; transition: all 0.3s var(--ease); position: relative; overflow: hidden; }
+.research-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--navy); transform: scaleX(0); transform-origin: left; transition: transform 0.3s var(--ease); }
+.research-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(27,46,75,0.08); }
 .research-card:hover::before { transform: scaleX(1); }
 .research-card.coming-soon { opacity: 0.6; cursor: default; }
 .research-card.coming-soon:hover { transform: none; box-shadow: none; }
 .research-card.coming-soon::before { display: none; }
-
 .card-tag { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy); background: var(--cream-dark); padding: 4px 10px; border-radius: 3px; display: inline-block; margin-bottom: 16px; }
 .card-title { font-family: var(--font-heading); font-size: 1.0625rem; font-weight: 700; color: var(--navy); line-height: 1.4; margin-bottom: 12px; letter-spacing: -0.01em; }
 .card-desc { font-size: 0.875rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 20px; }
@@ -229,26 +100,9 @@ nav {
 .card-soon { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(27,46,75,0.25); font-style: italic; }
 
 /* CTA */
-.research-cta {
-  background: var(--navy);
-  padding: 80px 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-.research-cta::before {
-  content: 'STQ';
-  position: absolute;
-  left: 50%; top: 50%;
-  transform: translate(-50%, -50%);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 20rem;
-  color: rgba(240,239,235,0.02);
-  pointer-events: none;
-}
-.research-cta h2 { font-family: var(--font-heading); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; color: var(--cream); margin-bottom: 16px; letter-spacing: -0.02em; }
+.research-cta { background: var(--navy); padding: 80px 0; text-align: center; position: relative; overflow: hidden; z-index: 1; }
+.research-cta::before { content: 'STQ'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-family: var(--font-heading); font-weight: 700; font-size: 20rem; color: rgba(240,239,235,0.02); pointer-events: none; }
+.research-cta h2 { font-family: var(--font-heading); font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 700; color: var(--cream); margin-bottom: 16px; letter-spacing: -0.02em; }
 .research-cta p { font-size: 1rem; color: var(--text-light); max-width: 480px; margin: 0 auto 36px; line-height: 1.7; }
 .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .btn-white { background: var(--cream); color: var(--navy); }
@@ -257,22 +111,23 @@ nav {
 .btn-outline-white:hover { border-color: var(--cream); background: rgba(240,239,235,0.08); }
 
 /* FOOTER */
-footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative; z-index: 1; }
-.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 24px; }
+footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative; z-index: 1; }
+.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 28px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 20px; }
 .footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); }
 .footer-logo span { font-weight: 400; color: rgba(240,239,235,0.5); }
-.footer-links { display: flex; gap: 32px; }
+.footer-links { display: flex; gap: 28px; }
 .footer-links a { font-size: 0.8125rem; color: rgba(240,239,235,0.5); text-decoration: none; transition: color 0.2s ease; }
 .footer-links a:hover { color: var(--cream); }
 .footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.35); }
-.footer-disclaimer { margin-top: 24px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 900px; }
+.footer-disclaimer { margin-top: 20px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 900px; }
 
-@media (max-width: 1024px) { .research-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1024px) { .research-grid { grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 768px) {
   .nav-links, .nav-client-login, .nav-cta-desktop { display: none; }
   .featured-card { grid-template-columns: 1fr; }
   .research-grid { grid-template-columns: 1fr; }
   .nav-inner { padding: 0 24px; }
+  .page-hero { padding: 120px 0 60px; }
 }
 </style>
 </head>
@@ -289,11 +144,8 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
       <a href="/#contact">Contact</a>
     </div>
     <div class="nav-actions">
-      <a href="#" class="nav-client-login nav-cta-desktop">
-        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" style="margin-right:6px;vertical-align:-1px;">
-          <rect x="1" y="6" width="10" height="6" rx="1.5" stroke="currentColor" stroke-width="1.3" fill="none"/>
-          <path d="M3.5 6V4a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/>
-        </svg>Client Login
+      <a href="https://client.schwab.com/Areas/Access/Login" target="_blank" class="nav-client-login nav-cta-desktop">
+        <svg width="12" height="13" viewBox="0 0 12 13" fill="none" style="margin-right:6px;vertical-align:-1px;"><rect x="1" y="6" width="10" height="6" rx="1.5" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M3.5 6V4a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>Client Login
       </a>
       <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary nav-cta-desktop">Schedule a Meeting</a>
     </div>
@@ -302,34 +154,35 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
 
 <!-- PAGE HERO -->
 <section class="page-hero">
+  <div class="hero-watermark">STQ</div>
   <div class="container">
-    <div class="page-hero-tag">STQ Research</div>
-    <h1>Institutional Thinking.<br>Applied to Your Portfolio.</h1>
-    <p>In-depth guides on the strategies that separate institutional portfolios from everyone else's — written for investors who want to understand what they own and why.</p>
+    <div class="page-hero-inner">
+      <div class="page-hero-tag">STQ Research</div>
+      <h1>Institutional-Grade Research. No Paywall. No Agenda.</h1>
+      <p>In-depth guides on the strategies that separate a good portfolio from a great one.</p>
+    </div>
   </div>
 </section>
-
-
 
 <!-- FEATURED -->
 <section class="featured-section">
   <div class="container">
     <div class="featured-label">Featured Publication</div>
-    <a href="/asset-location.html" class="featured-card" data-tag="Tax Strategy">
+    <a href="/research-direct-indexing.html" class="featured-card" data-tag="Tax Alpha">
       <div class="featured-card-left">
         <div>
-          <div class="featured-card-tag">Tax Strategy — Asset Allocation Series</div>
-          <div class="featured-card-title">Asset Location: The Most Overlooked Source of Alpha</div>
+          <div class="featured-card-tag">Tax Alpha — Direct Indexing Series</div>
+          <div class="featured-card-title">Index Investing Is Smart. Direct Indexing Is Smarter.</div>
         </div>
         <div class="featured-card-watermark">01</div>
         <div class="featured-card-read">Read publication</div>
       </div>
       <div class="featured-card-right">
         <div class="featured-card-badge">✓ Available Now</div>
-        <div class="featured-card-desc">Most advisors spend their time picking investments. The best ones spend it deciding where to hold them. The difference, over 30 years and $1M invested, is $11.2 million — generated entirely by tax efficiency, not market exposure.</div>
+        <div class="featured-card-desc">Index funds are one of the best things to happen to individual investors. Direct indexing is the next step — same exposure, more control, and the ability to harvest losses at the individual stock level regardless of what the market does.</div>
         <div class="featured-card-meta">
           <div class="featured-card-meta-item">Author <span>Akiva Glazerson</span></div>
-          <div class="featured-card-meta-item">Read time <span>12 min</span></div>
+          <div class="featured-card-meta-item">Read time <span>10 min</span></div>
           <div class="featured-card-meta-item">Published <span>April 2026</span></div>
         </div>
       </div>
@@ -344,8 +197,9 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
 
       <a href="/asset-location.html" class="research-card" data-tag="Tax Strategy">
         <div class="card-tag">Tax Strategy</div>
-        <div class="card-title">Asset Location: The Most Overlooked Source of Alpha</div>
+        <div class="card-title">All the Right Things in All the Wrong Places.</div>
         <div class="card-desc">Why where you hold your investments matters as much as what you hold — and how to optimize across all three account types.</div>
+        <p style="font-family:var(--font-heading);font-size:0.6rem;color:rgba(27,46,75,0.3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">March 2026</p>
         <div class="card-meta">
           <span class="card-read-time">12 min read</span>
           <span class="card-arrow">Read</span>
@@ -355,31 +209,9 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
       <div class="research-card coming-soon" data-tag="Box Spreads">
         <div class="card-tag">Box Spreads</div>
         <div class="card-title">The Box Spread Guide: Borrowing at Treasury Rates Without a Bank</div>
-        <div class="card-desc">How to use defined options structures to access liquidity at near-Treasury rates — no credit check, no bank approval, tax-deductible interest.</div>
+        <div class="card-desc">How to use defined options structures to access liquidity at near-Treasury rates — no credit check, no bank approval, potentially tax-deductible interest.</div>
         <div class="card-meta">
           <span class="card-read-time">~10 min read</span>
-          <span class="card-soon">Coming soon</span>
-        </div>
-      </div>
-
-
-
-      <div class="research-card coming-soon" data-tag="Options">
-        <div class="card-tag">Options</div>
-        <div class="card-title">The Fortress Trade: Defined Downside Protection with Section 1256 Tax Treatment</div>
-        <div class="card-desc">A deep dive into the STQ Fortress Trade structure — how it works, what it costs, and why Section 1256 tax treatment changes the math.</div>
-        <div class="card-meta">
-          <span class="card-read-time">~12 min read</span>
-          <span class="card-soon">Coming soon</span>
-        </div>
-      </div>
-
-      <div class="research-card coming-soon" data-tag="Tax Strategy">
-        <div class="card-tag">Tax Strategy</div>
-        <div class="card-title">The Ossification Problem: Why Long-Only TLH Dies After Year Three</div>
-        <div class="card-desc">Why traditional tax-loss harvesting stops working — and how long-short strategies solve it permanently.</div>
-        <div class="card-meta">
-          <span class="card-read-time">~8 min read</span>
           <span class="card-soon">Coming soon</span>
         </div>
       </div>
@@ -391,10 +223,10 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
 <!-- CTA -->
 <section class="research-cta">
   <div class="container">
-    <h2>Put It to Work<br>in Your Portfolio.</h2>
+    <h2>Put It to Work in Your Portfolio.</h2>
     <p>Reading about these strategies is step one. Applying them to your specific tax situation is what moves the needle.</p>
     <div class="cta-buttons">
-      <a href="/cdn-cgi/l/email-protection#4d2c26243b2c632a212c37283f3e22230d3e393c2e2c3d632e2220723e382f27282e39701d223f392b22212422687f7d09242c2a23223e39242e687f7d1f283c38283e39" class="btn btn-white">Portfolio Diagnostic</a>
+      <a href="#" onclick="window.location.href='mailto:akiva.glazerson@stqcap.com?subject=Portfolio%20Diagnostic%20Request';return false;" class="btn btn-white">Portfolio Diagnostic</a>
       <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-outline-white">Schedule a Meeting</a>
     </div>
   </div>
@@ -410,8 +242,13 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
         <a href="/insights.html">Insights</a>
         <a href="/research.html">Research</a>
         <a href="/#contact">Contact</a>
+        <a href="https://client.schwab.com/Areas/Access/Login" target="_blank">Client Login</a>
       </div>
       <div class="footer-copy">© 2026 STQ Capital Partners</div>
     </div>
-    <div class="footer-disclaimer">
-      Advisory services are offered through STQ Capital Partners ("STQ"), an investment adviser registered with the state of California. The information contained herein is for informational purposes only and should not be construed as personalized investment advice. Past perfor
+    <div class="footer-disclaimer">Advisory services are offered through STQ Capital Partners ("STQ"), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable. The information on this site is provided "AS IS" and without warranties either express or implied and the information may not be free from error. Your use of the information provided is at your sole risk.</div>
+  </div>
+</footer>
+
+</body>
+</html>
