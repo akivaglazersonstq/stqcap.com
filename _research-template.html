@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<style>:root{color-scheme:light only;}</style>
+<title>{{ARTICLE_TITLE}} — STQ Capital Partners</title>
+<meta name="description" content="{{META_DESCRIPTION}}">
+<meta name="keywords" content="{{META_KEYWORDS}}">
+<meta property="og:title" content="{{ARTICLE_TITLE}}">
+<meta property="og:description" content="{{META_DESCRIPTION}}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://stqcap.com/{{ARTICLE_SLUG}}.html">
+<link rel="canonical" href="https://stqcap.com/{{ARTICLE_SLUG}}.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+@font-face { font-family: "Chakra Petch"; font-display: swap; }
+@font-face { font-family: "DM Sans"; font-display: swap; }
+
+:root {
+  --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
+  --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF;
+  --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7);
+  --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+.nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; }
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-back { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s ease; }
+.nav-back:hover { color: var(--navy); }
+.nav-back::before { content: '←'; }
+.nav-cta { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 10px 24px; border-radius: 4px; background: var(--navy); color: var(--cream); text-decoration: none; transition: background 0.2s ease; }
+.nav-cta:hover { background: var(--navy-light); }
+
+/* HERO */
+.pub-hero { background: var(--navy); padding: 140px 0 80px; position: relative; overflow: hidden; }
+.pub-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; }
+.hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.pub-hero-inner { max-width: 800px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+.pub-series { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,239,235,0.5); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+.pub-series::before { content: ''; width: 24px; height: 1px; background: rgba(240,239,235,0.3); }
+.pub-hero h1 { font-family: var(--font-heading); font-size: clamp(2rem,4vw,3rem); font-weight: 700; color: var(--cream); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 24px; }
+.pub-hero-sub { font-size: 1.125rem; line-height: 1.7; color: var(--text-light); max-width: 640px; margin-bottom: 40px; }
+.pub-meta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.pub-meta-item { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(240,239,235,0.4); }
+.pub-meta-item span { color: rgba(240,239,235,0.7); margin-left: 6px; }
+
+/* CONTENT */
+.pub-content { max-width: 800px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; background: var(--white); }
+
+/* TOC */
+.pub-toc { background: var(--cream); border-left: 3px solid var(--navy); padding: 32px 36px; margin: 56px 0; border-radius: 0 4px 4px 0; position: relative; z-index: 1; }
+.pub-toc-title { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 16px; }
+.pub-toc ol { list-style: none; counter-reset: toc; }
+.pub-toc li { counter-increment: toc; padding: 6px 0; border-bottom: 1px solid rgba(27,46,75,0.06); }
+.pub-toc li:last-child { border-bottom: none; }
+.pub-toc a { font-size: 0.9375rem; color: var(--navy); text-decoration: none; display: flex; align-items: center; gap: 12px; transition: color 0.2s ease; }
+.pub-toc a:hover { color: var(--navy-light); }
+.pub-toc a::before { content: counter(toc, decimal-leading-zero); font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 700; color: rgba(27,46,75,0.25); min-width: 24px; }
+
+/* BODY */
+.pub-section { padding: 64px 0 0; }
+.pub-section-num { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+.pub-section-num::before { content: ''; width: 24px; height: 1px; background: var(--navy); opacity: 0.3; }
+.pub-section h2 { font-family: var(--font-heading); font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 700; color: var(--navy); letter-spacing: -0.01em; margin-bottom: 28px; line-height: 1.2; }
+.pub-section h3 { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700; color: var(--navy); margin-top: 32px; margin-bottom: 16px; }
+.pub-section p { font-size: 1.0625rem; line-height: 1.85; color: #2a3a4a; margin-bottom: 20px; }
+.pub-section p:last-child { margin-bottom: 0; }
+.pub-section strong { color: var(--navy); }
+
+/* DATA CALLOUT */
+.pub-callout { background: var(--navy); color: var(--cream); padding: 40px 44px; margin: 40px 0; border-radius: 6px; position: relative; overflow: hidden; }
+.pub-callout::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
+.pub-callout-inner { position: relative; z-index: 1; }
+.pub-callout-number { font-family: var(--font-heading); font-size: clamp(2.5rem,5vw,4rem); font-weight: 700; color: var(--cream); letter-spacing: -0.02em; line-height: 1; margin-bottom: 8px; }
+.pub-callout-label { font-size: 1rem; color: var(--text-light); line-height: 1.6; max-width: 480px; }
+.pub-callout-footnote { font-size: 0.75rem; color: rgba(240,239,235,0.3); margin-top: 16px; font-style: italic; }
+
+/* TABLE */
+.pub-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 0.9375rem; }
+.pub-table th { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--navy); padding: 14px 20px; text-align: left; }
+.pub-table td { padding: 14px 20px; border-bottom: 1px solid var(--cream-dark); color: #2a3a4a; line-height: 1.5; }
+.pub-table tr:nth-child(even) td { background: var(--cream); }
+.pub-table tr:last-child td { border-bottom: none; }
+.pub-table .highlight td { background: rgba(27,46,75,0.05); font-weight: 600; color: var(--navy); }
+
+/* FRAMEWORK */
+.pub-framework { border: 1px solid rgba(27,46,75,0.12); border-radius: 6px; overflow: hidden; margin: 32px 0; }
+.pub-framework-header { background: var(--cream-dark); padding: 16px 24px; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); }
+.pub-framework-row { display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid rgba(27,46,75,0.08); }
+.pub-framework-row:last-child { border-bottom: none; }
+.pub-framework-cell { padding: 20px 24px; border-right: 1px solid rgba(27,46,75,0.08); }
+.pub-framework-cell:last-child { border-right: none; }
+.pub-framework-cell-label { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 8px; }
+.pub-framework-cell-content { font-size: 0.875rem; line-height: 1.6; color: #2a3a4a; }
+.pub-framework-cell.good { background: rgba(22,101,52,0.04); }
+
+/* DISCLAIMER */
+.pub-disclaimer { margin: 64px 0 0; padding: 28px 0; border-top: 1px solid var(--cream-dark); font-size: 0.8125rem; line-height: 1.7; color: var(--text-secondary); }
+
+/* CTA */
+.pub-cta { background: var(--cream); padding: 64px clamp(24px,5vw,64px); margin: 64px 0 0; text-align: center; }
+.pub-cta h2 { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.01em; }
+.pub-cta p { font-size: 1rem; color: var(--text-secondary); max-width: 480px; margin: 0 auto 32px; line-height: 1.7; }
+.pub-cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 14px 32px; border-radius: 4px; text-decoration: none; transition: all 0.3s var(--ease); cursor: pointer; border: none; display: inline-flex; align-items: center; }
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); }
+.btn-secondary:hover { border-color: var(--navy); }
+
+/* MORE PUBS */
+.more-pubs { background: var(--navy-dark); padding: 64px clamp(24px,5vw,64px); }
+.more-pubs h3 { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.4); margin-bottom: 32px; }
+.more-pubs-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; max-width: 640px; }
+.more-pub-card { background: rgba(240,239,235,0.04); border: 1px solid rgba(240,239,235,0.08); border-radius: 6px; padding: 24px 20px; text-decoration: none; transition: background 0.2s ease; display: block; }
+.more-pub-card:hover { background: rgba(240,239,235,0.08); }
+.more-pub-tag { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(240,239,235,0.35); margin-bottom: 10px; }
+.more-pub-title { font-family: var(--font-heading); font-size: 0.9375rem; font-weight: 600; color: var(--cream); line-height: 1.4; }
+.more-pub-soon { font-size: 0.75rem; color: rgba(240,239,235,0.25); margin-top: 8px; font-style: italic; }
+
+/* FOOTER */
+footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px solid rgba(240,239,235,0.06); }
+.footer-main { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1rem; color: var(--cream); }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.5); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.3); }
+.footer-disclaimer { max-width: 1280px; margin: 16px auto 0; padding: 0 clamp(24px,5vw,64px); font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); }
+
+@media (max-width: 768px) {
+  .pub-framework-row { grid-template-columns: 1fr; }
+  .pub-framework-cell { border-right: none; }
+  .more-pubs-grid { grid-template-columns: 1fr; }
+  .pub-callout { padding: 28px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">STQ <span>/ Capital Partners</span></a>
+    <a href="/research.html" class="nav-back">All Research</a>
+    <a href="#" onclick="window.location.href='mailto:akiva.glazerson@stqcap.com?subject=Portfolio%20Diagnostic%20Request';return false;" class="nav-cta">Portfolio Diagnostic</a>
+  </div>
+</nav>
+
+
+  <section class="pub-section" id="section-1">
+    <div class="pub-section-num">Section 01</div>
+    <h2>{{SECTION_1_TITLE}}</h2>
+    <p>{{SECTION_1_BODY_P1}}</p>
+    <p>{{SECTION_1_BODY_P2}}</p>
+    <p>{{SECTION_1_BODY_P3}}</p>
+  </section>
+
+  <section class="pub-section" id="section-2">
+    <div class="pub-section-num">Section 02</div>
+    <h2>{{SECTION_2_TITLE}}</h2>
+    <p>{{SECTION_2_BODY_P1}}</p>
+
+    <div style="background:var(--navy);border-radius:6px;padding:40px 44px;margin:40px 0;position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px);background-size:60px 60px;"></div>
+      <div style="position:relative;z-index:1;">
+        <p style="font-family:'Chakra Petch',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,239,235,0.4);margin-bottom:28px;">{{CALLOUT_LABEL}}</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+          <div>
+            <div style="font-family:'Chakra Petch',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,239,235,0.35);margin-bottom:10px;">{{CALLOUT_LEFT_LABEL}}</div>
+            <div style="font-family:'Chakra Petch',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--cream);letter-spacing:-0.02em;line-height:1;">{{CALLOUT_LEFT_VALUE}}</div>
+          </div>
+          <div>
+            <div style="font-family:'Chakra Petch',sans-serif;font-size:0.65rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,239,235,0.35);margin-bottom:10px;">{{CALLOUT_RIGHT_LABEL}}</div>
+            <div style="font-family:'Chakra Petch',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--cream);letter-spacing:-0.02em;line-height:1;">{{CALLOUT_RIGHT_VALUE}}</div>
+          </div>
+        </div>
+        <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(240,239,235,0.08);">
+          <p style="font-size:0.75rem;color:rgba(240,239,235,0.25);font-style:italic;">{{CALLOUT_FOOTNOTE}}</p>
+        </div>
+      </div>
+    </div>
+
+    <p>{{SECTION_2_BODY_P2}}</p>
+    <h3>{{SECTION_2_SUBHEAD}}</h3>
+    <p>{{SECTION_2_BODY_P3}}</p>
+  </section>
+
+  <section class="pub-section" id="section-3">
+    <div class="pub-section-num">Section 03</div>
+    <h2>{{SECTION_3_TITLE}}</h2>
+    <p>{{SECTION_3_BODY_P1}}</p>
+
+    <div class="pub-framework">
+      <div class="pub-framework-header">{{FRAMEWORK_TITLE}}</div>
+      <div class="pub-framework-row">
+        <div class="pub-framework-cell"><div class="pub-framework-cell-label">{{COL_1_HEAD}}</div><div class="pub-framework-cell-content" style="font-weight:700;color:var(--navy);">{{ROW_1_COL_1}}</div></div>
+        <div class="pub-framework-cell"><div class="pub-framework-cell-label">{{COL_2_HEAD}}</div><div class="pub-framework-cell-content">{{ROW_1_COL_2}}</div></div>
+        <div class="pub-framework-cell good"><div class="pub-framework-cell-label">{{COL_3_HEAD}}</div><div class="pub-framework-cell-content">{{ROW_1_COL_3}}</div></div>
+      </div>
+      <div class="pub-framework-row">
+        <div class="pub-framework-cell"><div class="pub-framework-cell-label">{{COL_1_HEAD}}</div><div class="pub-framework-cell-content" style="font-weight:700;color:var(--navy);">{{ROW_2_COL_1}}</div></div>
+        <div class="pub-framework-cell"><div class="pub-framework-cell-label">{{COL_2_HEAD}}</div><div class="pub-framework-cell-content">{{ROW_2_COL_2}}</div></div>
+        <div class="pub-framework-cell good"><div class="pub-framework-cell-label">{{COL_3_HEAD}}</div><div class="pub-framework-cell-content">{{ROW_2_COL_3}}</div></div>
+      </div>
+      <div class="pub-framework-row">
+        <div class="pub-framework-cell"><div class="pub-framework-cell-label">{{COL_1_HEAD}}</div><div class="pub-framework-cell-content" style="font-weight:700;color:var(--navy);">{{ROW_3_COL_1}}</div></div>
+        <div class="pub-framework-cell"><div class="pub-framework-cell-label">{{COL_2_HEAD}}</div><div class="pub-framework-cell-content">{{ROW_3_COL_2}}</div></div>
+        <div class="pub-framework-cell good"><div class="pub-framework-cell-label">{{COL_3_HEAD}}</div><div class="pub-framework-cell-content">{{ROW_3_COL_3}}</div></div>
+      </div>
+    </div>
+
+    <p>{{SECTION_3_BODY_P2}}</p>
+    <p>{{SECTION_3_BODY_P3}}</p>
+  </section>
+
+  <section class="pub-section" id="section-4">
+    <div class="pub-section-num">Section 04</div>
+    <h2>{{SECTION_4_TITLE}}</h2>
+    <p>{{SECTION_4_BODY_P1}}</p>
+    <h3>{{SECTION_4_SUB_1}}</h3>
+    <p>{{SECTION_4_SUB_1_BODY}}</p>
+    <h3>{{SECTION_4_SUB_2}}</h3>
+    <p>{{SECTION_4_SUB_2_BODY}}</p>
+    <h3>{{SECTION_4_SUB_3}}</h3>
+    <p>{{SECTION_4_SUB_3_BODY}}</p>
+  </section>
+
+  <section class="pub-section" id="section-5">
+    <div class="pub-section-num">Section 05</div>
+    <h2>{{SECTION_5_TITLE}}</h2>
+    <p>{{SECTION_5_BODY_P1}}</p>
+    <p>{{SECTION_5_BODY_P2}}</p>
+    <p>{{SECTION_5_BODY_P3}}</p>
+  </section>
+
+
+
+  <div class="pub-disclaimer">
+    <strong>Disclaimer:</strong> This publication is for informational and educational purposes only. It does not constitute personalized investment, tax, or legal advice. The hypothetical illustrations presented are for illustrative purposes only and do not represent actual investment results. Past performance is no guarantee of future results. Investments involve risk, including the potential loss of principal. Tax laws are subject to change. Please consult with a qualified tax, legal, or financial professional regarding your specific situation. Advisory services offered through STQ Capital Partners, an investment adviser registered with the state of California.
+  </div>
+
+</div>
+
+<section class="pub-cta">
+  <h2>{{CTA_TITLE}}</h2>
+  <p>{{CTA_BODY}}</p>
+  <div class="pub-cta-buttons">
+    <a href="#" onclick="window.location.href='mailto:akiva.glazerson@stqcap.com?subject=Portfolio%20Diagnostic%20Request';return false;" class="btn btn-primary">Portfolio Diagnostic</a>
+    <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-secondary">Schedule a Call</a>
+  </div>
+</section>
+
+<section class="more-pubs">
+  <div style="max-width:800px;margin:0 auto;">
+    <h3>More from STQ Research</h3>
+    <div class="more-pubs-grid">
+      <a href="{{MORE_PUB_1_URL}}" class="more-pub-card">
+        <div class="more-pub-tag">{{MORE_PUB_1_TAG}}</div>
+        <div class="more-pub-title">{{MORE_PUB_1_TITLE}}</div>
+      </a>
+      <a href="{{MORE_PUB_2_URL}}" class="more-pub-card">
+        <div class="more-pub-tag">{{MORE_PUB_2_TAG}}</div>
+        <div class="more-pub-title">{{MORE_PUB_2_TITLE}}</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div class="footer-logo">STQ <span>/ Capital Partners</span></div>
+    <div class="footer-copy">© 2026 STQ Capital Partners</div>
+  </div>
+  <div class="footer-disclaimer">Advisory services are offered through STQ Capital Partners ("STQ"), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable.</div>
+</footer>
+
+</body>
+</html>
