@@ -166,6 +166,9 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
       <button class="filter-btn" onclick="filterIssues('Concentrated Positions', this)">Concentrated Positions</button>
       <button class="filter-btn" onclick="filterIssues('Options', this)">Options</button>
       <button class="filter-btn" onclick="filterIssues('Mindset', this)">Mindset</button>
+      <button class="filter-btn" onclick="filterIssues('Estate Planning', this)">Estate Planning</button>
+      <button class="filter-btn" onclick="filterIssues('Philanthropy', this)">Philanthropy</button>
+      <button class="filter-btn" onclick="filterIssues('Book Review', this)">Book Review</button>
       <button class="filter-btn" onclick="filterIssues('Box Spreads', this)">Box Spreads</button>
       <button class="filter-btn" onclick="filterIssues('Tax Strategy', this)">Tax Strategy</button>
     </div>
@@ -216,15 +219,31 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 <script>
 const issues = [
   {
-    title: "What Getting Choked Out Taught Me About Risk Management.",
+    title: "Book Review: The Best Risk Management Lesson I've Read Came from a Russian Prison.",
+    date: "April 16, 2026",
+    preview: "Red Notice is not a finance book. It is a story about what happens when political risk, concentration risk, and counterparty risk collide — and nobody is paying attention.",
+    tag: "Book Review",
+    readTime: "4 min",
+    url: "/insight-red-notice.html"
+  },
+  {
+    title: "No Good Deed Goes Unpunished. Unless You Use a DAF.",
+    date: "April 15, 2026",
+    preview: "Most people give to charity the expensive way — cash out of a checking account, no tax strategy involved. There is a better way that costs you nothing and gives more to the cause.",
+    tag: "Philanthropy",
+    readTime: "4 min",
+    url: "/insight-daf.html"
+  },
+  {
+    title: "What Getting Choked Out Has Taught Me About Investing.",
     date: "April 14, 2026",
     preview: "Anybody who knows me knows I'm obsessed with BJJ. It has more in common with investing than you may think. Here's what the mat has taught me about managing money.",
-    tag: "Mindset",
+    tag: "Perspective",
     readTime: "3 min",
     url: "/insight-bjj-investing.html"
   },
   {
-    title: "Covered Calls vs. Put Spreads. When to Use Each.",
+    title: "You Think You're Protected. You're Not.",
     date: "April 13, 2026",
     preview: "Both are options strategies. Both generate income or protection. But they are not interchangeable — and using the wrong one for your situation is an expensive mistake.",
     tag: "Options",
@@ -248,7 +267,7 @@ const issues = [
     url: "/insight-pimco-lessons.html"
   },
   {
-    title: "The 401(k) Blind Spot. Most Advisors Won't Touch It.",
+    title: "The Largest Account You Own. The One Nobody's Managing.",
     date: "April 10, 2026",
     preview: "Your 401(k) may be the largest account you own. Most advisors manage everything around it but never inside it. That's leaving serious money on the table.",
     tag: "Tax Strategy",
@@ -256,7 +275,7 @@ const issues = [
     url: "/insight-401k-blind-spot.html"
   },
   {
-    title: "Fiduciary vs. Broker. The Difference Is Who They Work For.",
+    title: "Your Advisor Has a Boss. It Might Not Be You.",
     date: "April 9, 2026",
     preview: "A fiduciary is legally required to act in your interest. A broker is not. That distinction is worth understanding before you hand anyone your money.",
     tag: "Independence",
@@ -264,7 +283,7 @@ const issues = [
     url: "/insight-fiduciary-vs-broker.html"
   },
   {
-    title: "$5M in Tesla. Need $4M for a House. Here's What I'd Do.",
+    title: "$5M in Tesla. $4M for a House. Zero Tax. Here's How.",
     date: "April 8, 2026",
     preview: "Selling means a massive tax bill. Not selling means the house stays out of reach. There's a third option most investors don't know exists.",
     tag: "Concentrated Positions",
@@ -280,7 +299,7 @@ const issues = [
     url: "/insight-advisor-question.html"
   },
   {
-    title: "Stop Paying 1% for a Fund Manager Who Can't Beat the Market.",
+    title: "The Mutual Fund Industry's Dirty Secret.",
     date: "April 6, 2026",
     preview: "The average active fund underperforms its benchmark after fees. You're paying a premium for underperformance. The math on low-cost indexing is not subtle.",
     tag: "Portfolio Construction",
@@ -291,12 +310,12 @@ const issues = [
     title: "Buy. Borrow. Die. The Estate Strategy Nobody Talks About.",
     date: "April 5, 2026",
     preview: "The wealthiest families don't sell assets. They buy. They borrow against them at low rates. And when they die, the step-up in basis wipes the gain. It's not a loophole. It's a strategy.",
-    tag: "Tax Strategy",
+    tag: "Estate Planning",
     readTime: "4 min",
     url: "/insight-buy-borrow-die.html"
   },
   {
-    title: "The Loss Piggy Bank.",
+    title: "The Piggy Bank You Fill by \"Losing Money.\" Yes, Really.",
     date: "April 4, 2026",
     preview: "Tax loss harvesting is not a year-end cleanup. Done systematically, it builds a loss bank that compounds in value over time — ready to deploy whenever you need it most.",
     tag: "Tax Alpha",
@@ -345,10 +364,6 @@ function renderIssues(filter) {
       <div class="issue-card-title">${issue.title}</div>
       <div class="issue-card-preview">${issue.preview}</div>
       <div class="issue-card-footer">
-        <div class="issue-card-author">
-          <div class="issue-card-avatar">AG</div>
-          <span class="issue-card-author-name">Akiva Glazerson</span>
-        </div>
         <div class="issue-card-read">${issue.readTime} read</div>
       </div>
     </a>
