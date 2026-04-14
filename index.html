@@ -417,7 +417,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
         <div class="stepper-pill" id="stepperPill">The Foundation</div>
         <div class="stepper-content-title" id="stepperTitle">Strategic</div>
         <div class="stepper-bar"></div>
-        <div class="stepper-desc" id="stepperDesc">Strategic allocation is the architecture of the portfolio — the long-term blueprint across asset classes, geographies, and market exposures built around your specific investment objectives, constraints, and financial picture. Every structural decision is calibrated to you.</div>
+        <div class="stepper-desc" id="stepperDesc">Most portfolios are built around a target allocation. Ours are built around your full financial picture — your income, your tax situation, your concentrated positions, your estate plan. The allocation reflects your life, not a risk questionnaire.</div>
       </div>
     </div>
   </div>
@@ -498,8 +498,8 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
 <!-- CTA -->
 <section class="cta-section" id="contact">
   <div class="container">
-    <h2>Let's Connect.</h2>
-    <p>Whether you're ready to work together or just want to learn more, we'd love to hear from you.</p>
+    <h2>No Pitch. Just the Numbers.</h2>
+    <p>The diagnostic is free. What we find usually isn't.</p>
     <div style="margin:32px 0 24px;color:rgba(240,239,235,0.7);font-size:15px;line-height:2;">
       <a href="#" onclick="window.location.href='mailto:'+('akiva.glazerson'+'@'+'stqcap.com');return false;" style="color:#F0EFEB;text-decoration:none;"><script>document.write('akiva.glazerson'+'@'+'stqcap.com')</script><noscript>akiva [at] stqcap.com</noscript></a><br>
       <a href="tel:3107303981" style="color:#F0EFEB;text-decoration:none;">310-730-3981</a>
@@ -671,9 +671,9 @@ function activateSol(idx) {
 
 // STEPPER
 var stepperPillars = [
-  { letter: 'S', title: 'Strategic', pill: 'The Foundation', desc: 'Strategic allocation is the architecture of the portfolio — the long-term blueprint across asset classes, geographies, and market exposures built around your specific investment objectives, constraints, and financial picture. Every structural decision is calibrated to you.' },
-  { letter: 'T', title: 'Tactical', pill: 'The Opportunistic', desc: "Tactical allocation is how the portfolio adapts — adjusting exposures across asset classes, sectors, and geographies in response to changing market conditions. Where strategic allocation sets the destination, tactical allocation navigates the road. At STQ, every tactical move is evaluated on an after-tax basis first. We don't make a change that makes sense on paper but costs you in taxes." },
-  { letter: 'Q', title: 'Quantitative', pill: 'The Differentiator', desc: "This is where STQ is different. Every decision we make is backed by data and a disciplined analytical process — not gut feel. We measure what's working, we know why, and we can explain it clearly. It's how the world's best institutions manage money. It's how we manage yours." }
+  { letter: 'S', title: 'Strategic', pill: 'The Foundation', desc: 'Most portfolios are built around a target allocation. Ours are built around your full financial picture — your income, your tax situation, your concentrated positions, your estate plan. The allocation reflects your life, not a risk questionnaire.' },
+  { letter: 'T', title: 'Tactical', pill: 'The Opportunistic', desc: "Markets move. Tax rates change. Valuations shift. We adjust — but only when the after-tax case is clear. A move that makes sense on paper but triggers a tax bill you didn't need is not a move we make." },
+  { letter: 'Q', title: 'Quantitative', pill: 'The Differentiator', desc: "We measure everything. Not because it sounds sophisticated — because it's the only way to know if what we're doing is actually working. Every strategy we run has a number attached to it. We can show you the math." }
 ];
 function goStep(index) {
   var stepEls = document.querySelectorAll('.stepper-step');
