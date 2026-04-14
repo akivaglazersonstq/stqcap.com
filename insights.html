@@ -161,6 +161,7 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
       <span class="filter-label">Filter:</span>
       <button class="filter-btn active" onclick="filterIssues('all', this)">All</button>
       <button class="filter-btn" onclick="filterIssues('Portfolio Construction', this)">Portfolio Construction</button>
+      <button class="filter-btn" onclick="filterIssues('Tax Alpha', this)">Tax Alpha</button>
       <button class="filter-btn" onclick="filterIssues('Box Spreads', this)">Box Spreads</button>
       <button class="filter-btn" onclick="filterIssues('Tax Strategy', this)">Tax Strategy</button>
     </div>
@@ -210,6 +211,14 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 
 <script>
 const issues = [
+  {
+    title: "The Loss Piggy Bank.",
+    date: "April 4, 2026",
+    preview: "Tax loss harvesting is not a year-end cleanup. Done systematically, it builds a loss bank that compounds in value over time — ready to deploy whenever you need it most.",
+    tag: "Tax Alpha",
+    readTime: "4 min",
+    url: "/insight-loss-harvesting.html"
+  },
   {
     title: "Location. Location. Location.",
     date: "April 3, 2026",
