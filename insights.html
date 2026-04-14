@@ -162,6 +162,10 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
       <button class="filter-btn active" onclick="filterIssues('all', this)">All</button>
       <button class="filter-btn" onclick="filterIssues('Portfolio Construction', this)">Portfolio Construction</button>
       <button class="filter-btn" onclick="filterIssues('Tax Alpha', this)">Tax Alpha</button>
+      <button class="filter-btn" onclick="filterIssues('Independence', this)">Independence</button>
+      <button class="filter-btn" onclick="filterIssues('Concentrated Positions', this)">Concentrated Positions</button>
+      <button class="filter-btn" onclick="filterIssues('Options', this)">Options</button>
+      <button class="filter-btn" onclick="filterIssues('Mindset', this)">Mindset</button>
       <button class="filter-btn" onclick="filterIssues('Box Spreads', this)">Box Spreads</button>
       <button class="filter-btn" onclick="filterIssues('Tax Strategy', this)">Tax Strategy</button>
     </div>
@@ -211,6 +215,86 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 
 <script>
 const issues = [
+  {
+    title: "What Getting Choked Out Taught Me About Risk Management.",
+    date: "April 14, 2026",
+    preview: "Anybody who knows me knows I'm obsessed with BJJ. It has more in common with investing than you may think. Here's what the mat has taught me about managing money.",
+    tag: "Mindset",
+    readTime: "3 min",
+    url: "/insight-bjj-investing.html"
+  },
+  {
+    title: "Covered Calls vs. Put Spreads. When to Use Each.",
+    date: "April 13, 2026",
+    preview: "Both are options strategies. Both generate income or protection. But they are not interchangeable — and using the wrong one for your situation is an expensive mistake.",
+    tag: "Options",
+    readTime: "4 min",
+    url: "/insight-covered-calls-vs-put-spreads.html"
+  },
+  {
+    title: "The Peter Thiel IRA. What He Did and Why You Can't Ignore It.",
+    date: "April 12, 2026",
+    preview: "Peter Thiel turned a Roth IRA into $5 billion — tax free. The mechanics were aggressive. The principle behind it is available to almost anyone.",
+    tag: "Tax Strategy",
+    readTime: "4 min",
+    url: "/insight-peter-thiel-ira.html"
+  },
+  {
+    title: "What I Learned at PIMCO About Building a Real Portfolio.",
+    date: "April 11, 2026",
+    preview: "Institutional portfolio management looks nothing like what most individual investors experience. Here's what the gap actually costs you.",
+    tag: "Portfolio Construction",
+    readTime: "4 min",
+    url: "/insight-pimco-lessons.html"
+  },
+  {
+    title: "The 401(k) Blind Spot. Most Advisors Won't Touch It.",
+    date: "April 10, 2026",
+    preview: "Your 401(k) may be the largest account you own. Most advisors manage everything around it but never inside it. That's leaving serious money on the table.",
+    tag: "Tax Strategy",
+    readTime: "3 min",
+    url: "/insight-401k-blind-spot.html"
+  },
+  {
+    title: "Fiduciary vs. Broker. The Difference Is Who They Work For.",
+    date: "April 9, 2026",
+    preview: "A fiduciary is legally required to act in your interest. A broker is not. That distinction is worth understanding before you hand anyone your money.",
+    tag: "Independence",
+    readTime: "3 min",
+    url: "/insight-fiduciary-vs-broker.html"
+  },
+  {
+    title: "$5M in Tesla. Need $4M for a House. Here's What I'd Do.",
+    date: "April 8, 2026",
+    preview: "Selling means a massive tax bill. Not selling means the house stays out of reach. There's a third option most investors don't know exists.",
+    tag: "Concentrated Positions",
+    readTime: "4 min",
+    url: "/insight-tesla-house.html"
+  },
+  {
+    title: "The Most Important Question to Ask Your Advisor. Most People Never Do.",
+    date: "April 7, 2026",
+    preview: "How do you get paid? Four words. Most advisors hope you never ask. The answer tells you everything about whose interests they're actually serving.",
+    tag: "Independence",
+    readTime: "3 min",
+    url: "/insight-advisor-question.html"
+  },
+  {
+    title: "Stop Paying 1% for a Fund Manager Who Can't Beat the Market.",
+    date: "April 6, 2026",
+    preview: "The average active fund underperforms its benchmark after fees. You're paying a premium for underperformance. The math on low-cost indexing is not subtle.",
+    tag: "Portfolio Construction",
+    readTime: "3 min",
+    url: "/insight-active-funds.html"
+  },
+  {
+    title: "Buy. Borrow. Die. The Estate Strategy Nobody Talks About.",
+    date: "April 5, 2026",
+    preview: "The wealthiest families don't sell assets. They buy. They borrow against them at low rates. And when they die, the step-up in basis wipes the gain. It's not a loophole. It's a strategy.",
+    tag: "Tax Strategy",
+    readTime: "4 min",
+    url: "/insight-buy-borrow-die.html"
+  },
   {
     title: "The Loss Piggy Bank.",
     date: "April 4, 2026",
