@@ -446,26 +446,13 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
   </div>
 </section>
 
-<!-- WHY STQ -->
-<section class="why-section">
-  <div class="container">
-    <div class="why-header"><h2>Why STQ.</h2></div>
-    <div class="why-grid">
-      <div class="why-card"><div class="why-card-num">01</div><h3>Independence</h3><p>No outside ownership, no product quotas, no conflicts of interest. We answer to one party — you.</p></div>
-      <div class="why-card"><div class="why-card-num">02</div><h3>Integrity</h3><p>Open architecture, full transparency, fiduciary at all times. We don't build products or guide clients into anything that serves us.</p></div>
-      <div class="why-card"><div class="why-card-num">03</div><h3>Innovation</h3><p>Technology-forward operations, cutting-edge tax products, and strategies most advisors can't execute.</p></div>
-      <div class="why-card"><div class="why-card-num">04</div><h3>Individuality</h3><p>Every portfolio is tailored to your tax situation, income, liquidity, and objectives. No cookie cutters.</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- INSIGHTS PREVIEW -->
 <section style="padding:100px 0;background:var(--cream-dark);position:relative;z-index:1;">
   <div class="container">
     <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;flex-wrap:wrap;gap:16px;">
       <div>
         <div class="section-label">Latest Insights</div>
-        <h2 style="font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:var(--navy);letter-spacing:-0.02em;margin-top:12px;">Fresh thinking for your portfolio.<br>Every single day.</h2>
+        <h2 style="font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:var(--navy);letter-spacing:-0.02em;margin-top:12px;">One idea. Every morning. No fluff.</h2>
       </div>
       <a href="/insights.html" style="font-family:var(--font-heading);font-size:0.8125rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--navy);padding-bottom:2px;white-space:nowrap;">View All Insights →</a>
     </div>
@@ -491,6 +478,19 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
         <div style="font-size:0.875rem;line-height:1.65;color:rgba(240,239,235,0.6);margin-bottom:24px;">Same market exposure. More control. A tax engine that works in your favor every single day.</div>
         <div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(240,239,235,0.6);">Read → 10 min</div>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY STQ -->
+<section class="why-section">
+  <div class="container">
+    <div class="why-header"><h2>Why STQ</h2></div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-card-num">01</div><h3>Independence</h3><p>No outside ownership, no product quotas, no conflicts of interest. We answer to one party — you.</p></div>
+      <div class="why-card"><div class="why-card-num">02</div><h3>Integrity</h3><p>Open architecture, full transparency, fiduciary at all times. We don't build products or guide clients into anything that serves us.</p></div>
+      <div class="why-card"><div class="why-card-num">03</div><h3>Innovation</h3><p>Technology-forward operations, cutting-edge tax products, and strategies most advisors can't execute.</p></div>
+      <div class="why-card"><div class="why-card-num">04</div><h3>Individuality</h3><p>Every portfolio is tailored to your tax situation, income, liquidity, and objectives. No cookie cutters.</p></div>
     </div>
   </div>
 </section>
@@ -697,15 +697,15 @@ document.querySelectorAll('.stepper-step').forEach(function(s) { s.addEventListe
 // INSIGHTS CARDS
 (function() {
   var issues = [
-    { title: "You Don't Have Yale's Tax Status. Stop Investing Like You Do.", date: "April 1, 2026", preview: "The endowment model is built for institutions that pay no taxes. You do. Copying it without accounting for your tax situation isn't sophisticated — it's expensive.", tag: "Portfolio Construction", url: "/insight-endowment-model.html" },
     { title: "Stop Borrowing From Banks. Your Portfolio Can Do It Better.", date: "April 2, 2026", preview: "Lines of credit are expensive, bank-controlled, and unnecessary. Your portfolio can do the same job better — at near-Treasury rates, with no application and no forced selling.", tag: "Box Spreads", url: "/insight-box-spreads.html" },
-    { title: "Location. Location. Location.", date: "April 3, 2026", preview: "In real estate, location determines value. In investing, it determines how much of your return you actually keep. Most investors obsess over what to own. The smarter question is where.", tag: "Tax Strategy", url: "/insight-asset-location.html" }
+    { title: "$5M in Tesla. $4M for a House. Zero Tax. Here's How.", date: "April 8, 2026", preview: "Selling means a massive tax bill. Not selling means the house stays out of reach. There's a third option most investors don't know exists.", tag: "Concentrated Positions", url: "/insight-tesla-house.html" },
+    { title: "The Peter Thiel IRA. What He Did and Why You Can't Ignore It.", date: "April 12, 2026", preview: "Peter Thiel turned a Roth IRA into $5 billion — tax free. The mechanics were aggressive. The principle behind it is available to almost anyone.", tag: "Tax Strategy", url: "/insight-peter-thiel-ira.html" }
   ];
   var grid = document.getElementById('homepage-issues');
   if (!grid) return;
   grid.innerHTML = issues.map(function(issue) {
     return '<a href="' + issue.url + '" style="background:var(--white);border:1px solid rgba(27,46,75,0.08);border-radius:6px;padding:28px 24px;text-decoration:none;display:block;transition:all 0.3s ease;" onmouseover="this.style.transform=\'translateY(-4px)\';this.style.boxShadow=\'0 20px 60px rgba(27,46,75,0.08)\'" onmouseout="this.style.transform=\'\';this.style.boxShadow=\'\'">'
-      + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;"><span style="font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);background:var(--cream-dark);padding:3px 8px;border-radius:3px;">' + issue.tag + '</span><span style="font-family:var(--font-heading);font-size:0.6875rem;color:var(--text-secondary);">' + issue.date + '</span></div>'
+      + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;"><span style="font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);background:var(--cream-dark);padding:3px 8px;border-radius:3px;">' + issue.tag + '</span></div>'
       + '<div style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:10px;">' + issue.title + '</div>'
       + '<div style="font-size:0.875rem;line-height:1.65;color:var(--text-secondary);margin-bottom:20px;">' + issue.preview + '</div>'
       + '<div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);">Read →</div></a>';
