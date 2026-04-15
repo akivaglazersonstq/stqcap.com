@@ -1,33 +1,54 @@
+const https = require('https');
+
 exports.handler = async function(event, context) {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
-  const { email } = JSON.parse(event.body);
+  let email;
+  try {
+    const body = JSON.parse(event.body);
+    email = body.email;
+  } catch (e) {
+    return { statusCode: 400, body: JSON.stringify({ error: 'Invalid request body' }) };
+  }
 
   if (!email) {
     return { statusCode: 400, body: JSON.stringify({ error: 'Email required' }) };
   }
 
   const API_KEY = process.env.MAILERLITE_API_KEY;
+  const payload = JSON.stringify({ email });
 
-  try {
-    const response = await fetch('https://connect.mailerlite.com/api/subscribers', {
+  return new Promise((resolve) => {
+    const options = {
+      hostname: 'connect.mailerlite.com',
+      path: '/api/subscribers',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${API_KEY}`
-      },
-      body: JSON.stringify({ email })
+        'Authorization': `Bearer ${API_KEY}`,
+        'Content-Length': Buffer.byteLength(payload)
+      }
+    };
+
+    const req = https.request(options, (res) => {
+      let data = '';
+      res.on('data', (chunk) => { data += chunk; });
+      res.on('end', () => {
+        if (res.statusCode === 200 || res.statusCode === 201) {
+          resolve({ statusCode: 200, body: JSON.stringify({ success: true }) });
+        } else {
+          resolve({ statusCode: res.statusCode, body: JSON.stringify({ error: data }) });
+        }
+      });
     });
 
-    if (response.ok || response.status === 200 || response.status === 201) {
-      return { statusCode: 200, body: JSON.stringify({ success: true }) };
-    } else {
-      const data = await response.json();
-      return { statusCode: response.status, body: JSON.stringify({ error: data }) };
-    }
-  } catch (err) {
-    return { statusCode: 500, body: JSON.stringify({ error: 'Server error' }) };
-  }
+    req.on('error', (err) => {
+      resolve({ statusCode: 500, body: JSON.stringify({ error: 'Server error', detail: err.message }) });
+    });
+
+    req.write(payload);
+    req.end();
+  });
 };
