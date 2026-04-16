@@ -32,7 +32,7 @@ html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
 body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(27,46,75,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
 .container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
-.section-label { font-family: var(--font-heading); font-size: 0.875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); position: relative; padding-left: 20px; }
+.section-label { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); position: relative; padding-left: 20px; }
 .section-label::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: var(--navy); }
 
 /* CHART ANIMATION */
@@ -69,7 +69,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .hero-watermark { position: absolute; right: 15%; top: 50%; transform: translateY(-50%); font-family: var(--font-heading); font-weight: 700; font-size: clamp(9rem,16vw,19rem); color: rgba(27,46,75,0.06); line-height: 0.8; letter-spacing: -0.03em; user-select: none; pointer-events: none; }
 .hero .container { max-width: 100%; margin: 0; padding: 0 60px; }
 .hero-content { max-width: 680px; }
-.hero-tag { font-family: var(--font-heading); font-size: 0.875rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 28px; }
+.hero-tag { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 28px; }
 .hero h1 { font-family: var(--font-heading); font-size: clamp(3.5rem,7vw,5.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 28px; min-height: 2.2em; }
 .hero-sub { font-size: 1.25rem; line-height: 1.7; color: var(--text-secondary); max-width: 580px; margin-bottom: 48px; }
 .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
@@ -77,14 +77,14 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 /* SOLUTIONS */
 .solutions-hover { display: flex; }
 .sol-left { flex: 0 0 50%; background: var(--cream); padding: 24px 48px 24px 64px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid rgba(27,46,75,0.10); }
-.sol-heading { font-family: var(--font-heading); font-size: 0.875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); position: relative; padding-left: 20px; margin-bottom: 16px; }
+.sol-heading { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); position: relative; padding-left: 20px; margin-bottom: 16px; }
 .sol-heading::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1.5px; background: currentColor; opacity: 0.5; }
-.sol-sub-headline { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--navy); letter-spacing: -0.5px; margin-bottom: 32px; line-height: 1.2; }
+.sol-sub-headline { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--navy); letter-spacing: -0.5px; margin-bottom: 32px; line-height: 1.2; }
 .sol-item { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(27,46,75,0.08); cursor: pointer; transition: all 0.3s ease; position: relative; }
 .sol-item::before { content: ''; position: absolute; left: -24px; top: 50%; width: 3px; height: 0; background: var(--navy); transform: translateY(-50%); transition: height 0.3s cubic-bezier(0.25,0.46,0.45,0.94); }
 .sol-item:hover::before, .sol-item.active::before { height: 60%; }
 .sol-num { font-family: var(--font-heading); font-size: 13px; font-weight: 600; color: rgba(27,46,75,0.35); transition: color 0.3s ease; min-width: 28px; }
-.sol-title { font-family: var(--font-heading); font-size: 18px; font-weight: 500; color: rgba(27,46,75,0.55); transition: color 0.3s ease; line-height: 1.4; }
+.sol-title { font-family: var(--font-heading); font-size: 16px; font-weight: 500; color: rgba(27,46,75,0.55); transition: color 0.3s ease; line-height: 1.4; }
 .sol-item:hover .sol-title, .sol-item.active .sol-title { color: var(--navy); }
 .sol-item:hover .sol-num, .sol-item.active .sol-num { color: rgba(27,46,75,0.65); }
 .sol-item:hover { background: rgba(27,46,75,0.03); transform: translateX(4px); }
@@ -93,7 +93,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .sol-panel.active { display: block; }
 @keyframes solSlideIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 .sol-panel-num { font-family: var(--font-heading); font-size: 48px; font-weight: 700; color: rgba(27,46,75,0.05); line-height: 1; margin-bottom: 2px; }
-.sol-panel-title { font-family: var(--font-heading); font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.15; }
+.sol-panel-title { font-family: var(--font-heading); font-size: 24px; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.15; }
 .sol-panel-text { font-size: 16px; line-height: 1.75; color: #4a5a6a; }
 .sol-panel-text + .sol-panel-text { margin-top: 10px; }
 .sol-panel-text p { margin-top: 10px; }
@@ -126,7 +126,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .stepper-section { padding: 100px 0; }
 .stepper-container { max-width: 100%; padding: 0 64px; }
 .stepper-header { margin-bottom: 48px; }
-.stepper-title { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--navy); margin-top: 16px; letter-spacing: -0.5px; }
+.stepper-title { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-top: 16px; letter-spacing: -0.5px; }
 .stepper-nav { display: flex; align-items: center; justify-content: center; margin-bottom: 48px; padding: 0 40px; }
 .stepper-step { display: flex; flex-direction: column; align-items: center; cursor: pointer; position: relative; z-index: 1; }
 .stepper-circle { width: 52px; height: 52px; border-radius: 50%; border: 2px solid rgba(27,46,75,0.2); background: transparent; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: rgba(27,46,75,0.3); transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
@@ -210,7 +210,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
 @keyframes modalIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 .modal-close { position: absolute; top: 20px; right: 24px; background: none; border: none; font-size: 1.25rem; color: var(--text-secondary); cursor: pointer; padding: 4px 8px; line-height: 1; }
 .modal-close:hover { color: var(--navy); }
-.modal-label { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; }
+.modal-label { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; }
 .modal-title { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 8px; line-height: 1.2; }
 .modal-sub { font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 32px; line-height: 1.6; }
 .modal-form { display: flex; flex-direction: column; gap: 16px; }
@@ -296,7 +296,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  <div class="hero-tag">Quantitative Investment and Wealth Advisory</div>
  <h1 id="hero-headline">&nbsp;</h1>
  <noscript><h1 style="font-family:'Chakra Petch',sans-serif;font-size:clamp(3.5rem,7vw,5.5rem);font-weight:700;line-height:1.05;letter-spacing:-0.02em;color:#1B2E4B;margin-bottom:28px;">You've earned it.<br>Let's protect it.</h1></noscript>
- <p class="hero-sub" id="hero-sub" style="opacity:0;transition:opacity 1.2s ease;">STQ is an independent investment advisory firm focused on tax-aware investment strategies, institutional-quality portfolio construction, and freedom from conflicts of interest.</p>
+ <p class="hero-sub" id="hero-sub" style="opacity:0;transition:opacity 1.2s ease;">STQ is a modern investment advisory firm focused on tax-aware investment strategies, institutional-quality portfolio construction, and a conflict-free fiduciary model.</p>
  <div class="hero-buttons">
  <a href="#solutions" class="btn btn-primary">Our Solutions</a>
  <a href="#" onclick="openModal();return false;" class="btn btn-secondary">See What's Possible →</a>
@@ -309,7 +309,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
 <section class="solutions-hover" id="solutions">
  <div class="sol-left">
  <h2 class="sol-heading">Our Solutions</h2>
- <p class="sol-sub-headline">A Full Toolkit. No Bureaucracy.</p>
+ <p class="sol-sub-headline">Institutional Depth. Personal Focus.</p>
  <div class="sol-item active" data-idx="0"><span class="sol-num">01</span><span class="sol-title">Asset Location Optimization</span></div>
  <div class="sol-item" data-idx="1"><span class="sol-num">02</span><span class="sol-title">Portfolio Construction</span></div>
  <div class="sol-item" data-idx="2"><span class="sol-num">03</span><span class="sol-title">Synthetic Portfolio Borrowing</span></div>
@@ -324,56 +324,56 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  <div class="sol-panel active" data-desc="0">
  <div class="sol-panel-num">01</div>
  <h3 class="sol-panel-title">Asset Location Optimization</h3>
- <p style="font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">Where you hold it matters as much as what you hold.</p>
+ <p style="font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">Where you hold it matters as much as what you hold.</p>
  <p class="sol-panel-text">Asset location is the most powerful tax lever most investors never pull.</p><p class="sol-panel-text">Most focus on allocation – what to own, how much, in what mix. Far fewer think carefully about where each investment actually lives. But placement matters as much as selection. A private credit fund in a taxable account generates interest income taxed at your highest ordinary rate every year. The same fund in a tax-deferred account compounds untouched for decades.</p><p class="sol-panel-text">The investment is identical. The outcome is not.</p><p class="sol-panel-text">At STQ, asset location is the foundation of every portfolio we build – because getting placement right adds significant wealth over time without changing a single holding.</p>
  <div class="sol-panel-line"></div><div class="sol-panel-tag">Tax Optimization</div>
  </div>
  <div class="sol-panel" data-desc="1">
  <div class="sol-panel-num">02</div>
  <h3 class="sol-panel-title">Portfolio Construction</h3>
- <p style="font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">A portfolio engineered around your objectives, constraints, and tax position.</p>
- <p class="sol-panel-text">Strategic allocation is the architecture of a portfolio – the long-term blueprint across asset classes, geographies, and market exposures built around your objectives, constraints, and financial picture. Every structural decision is calibrated to you.</p><p class="sol-panel-text">But at STQ, portfolio construction goes beyond a standard mix of stocks and bonds. We incorporate your full financial picture – your income, real estate holdings, business interests, concentrated positions, and estate plan – to build a portfolio that reflects your actual life, not a generic risk profile.</p><p class="sol-panel-text">Portfolios must adapt. Markets move. Valuations shift. Macro conditions change. Every tactical adjustment we make is evaluated on an after-tax basis first – because a move that makes sense on paper but triggers an unnecessary tax bill may not clear the hurdle.</p>
+ <p style="font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">A portfolio engineered around your objectives, constraints, and tax position.</p>
+ <p class="sol-panel-text">Strategic allocation is the architecture of the portfolio – the long-term blueprint across asset classes, geographies, and market exposures built around your objectives, constraints, and financial picture. Every structural decision is calibrated to you.</p><p class="sol-panel-text">But at STQ, portfolio construction goes beyond a standard mix of stocks and bonds. We incorporate your full financial picture – your income, real estate holdings, business interests, concentrated positions, and estate plan – to build a portfolio that reflects your actual life, not a generic risk profile.</p><p class="sol-panel-text">Portfolios must adapt. Markets move. Valuations shift. Macro conditions change. Every tactical adjustment we make is evaluated on an after-tax basis first – because a move that makes sense on paper but triggers an unnecessary tax bill may not clear the hurdle.</p>
  <div class="sol-panel-line"></div><div class="sol-panel-tag">Core Strategy</div>
  </div>
  <div class="sol-panel" data-desc="2">
  <div class="sol-panel-num">03</div>
  <h3 class="sol-panel-title">Synthetic Portfolio Borrowing</h3>
- <p style="font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">Your portfolio is a bank. Start using it like one.</p>
+ <p style="font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">Your portfolio is a bank. Start using it like one.</p>
  <p class="sol-panel-text">Most investors don't realize their portfolio can function as a source of liquidity – without selling a single position. Box spreads are a four-leg options structure on a broad index that create a fully hedged position with a known payoff at expiration. The difference between what you collect today and what you owe at expiration is, effectively, the interest rate – set by the market, not a bank, and typically close to Treasury rates.</p><p class="sol-panel-text">The result: access to capital at competitive rates, with no credit check, no bank approval, and no forced selling of appreciated positions. The interest is potentially tax-deductible, and your portfolio stays fully invested throughout.</p><p class="sol-panel-text">At STQ, we implement synthetic borrowing through established institutional platforms – giving you access to a tool that most advisors can't execute.</p>
  <div class="sol-panel-line"></div><div class="sol-panel-tag">Liquidity</div>
  </div>
  <div class="sol-panel" data-desc="3">
  <div class="sol-panel-num">04</div>
  <h3 class="sol-panel-title">Direct Indexing</h3>
- <p style="font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">Index exposure with a tax engine built in.</p>
+ <p style="font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">Index exposure with a tax engine built in.</p>
  <p class="sol-panel-text">Direct indexing means owning the individual securities that make up an index – rather than a fund that holds them for you. The result is a portfolio that tracks your target exposure while giving you the ability to harvest losses at the individual security level, customize holdings around existing positions, and exclude specific sectors or companies.</p><p class="sol-panel-text">For high-income investors, direct indexing can generate significantly more tax alpha than a comparable ETF strategy – because you're not waiting for the index to lose value. Individual stocks move independently, creating harvesting opportunities even in up markets.</p><p class="sol-panel-text">At STQ, we implement direct indexing through institutional-grade separately managed accounts, giving you the benefits of index-like diversification with the tax efficiency of individual ownership.</p>
  <div class="sol-panel-line"></div><div class="sol-panel-tag">Tax Alpha</div>
  </div>
  <div class="sol-panel" data-desc="4">
  <div class="sol-panel-num">05</div>
  <h3 class="sol-panel-title">Tax Loss Harvesting</h3>
- <p style="font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">Turn volatility into a tax advantage without changing your strategy.</p>
+ <p style="font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">Turn volatility into a tax advantage without changing your strategy.</p>
  <p class="sol-panel-text">Tax-loss harvesting turns market volatility into a tax advantage – strategically realizing losses to offset capital gains and reduce your tax bill, without disrupting your long-term investment strategy.</p><p class="sol-panel-text">Think of it as a loss piggy bank. Every time a position dips below your cost basis, we harvest that loss and bank it. Those banked losses don't expire. They sit there, accumulating, ready to be deployed against gains whenever you need them – a real estate sale, a business exit, a concentrated stock position, an RSU vest.</p><p class="sol-panel-text">At STQ, we use advanced techniques – including long-short strategies – that continuously generate losses regardless of market direction. The earlier you start building the bank, the more powerful the tool becomes.</p>
  <div class="sol-panel-line"></div><div class="sol-panel-tag">Tax Alpha</div>
  </div>
  <div class="sol-panel" data-desc="5">
  <div class="sol-panel-num">06</div>
  <h3 class="sol-panel-title">Concentrated Position Management</h3>
- <p style="font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">You can't just sell. But you can't just hold either.</p>
+ <p style="font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">You can't just sell. But you can't just hold either.</p>
  <p class="sol-panel-text">A concentrated position – whether from company stock, RSUs, a business sale, or an inheritance – is both an asset and a risk. Managing it requires balancing your desire to preserve upside, your need to diversify, and the tax cost of doing either.</p><p class="sol-panel-text">At STQ, we build tailored strategies for each client's situation. Options overlays can create downside protection without a taxable sale. Systematic diversification over time can spread the tax impact across years. Tax-loss harvesting elsewhere in the portfolio can offset gains realized on the position. Prepaid variable forwards allow you to monetize a concentrated position – receiving cash upfront while deferring the tax event – without an outright sale. And in the right circumstances, charitable vehicles can eliminate the tax burden entirely.</p><p class="sol-panel-text">There is no one-size-fits-all answer to a concentrated position. There is only the right answer for you.</p>
  <div class="sol-panel-line"></div><div class="sol-panel-tag">Risk Management</div>
  </div>
  <div class="sol-panel" data-desc="6">
  <div class="sol-panel-num">07</div>
  <h3 class="sol-panel-title">Derivative-Based Strategies</h3>
- <p style="font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">Options don't add risk. Properly structured, they remove it.</p>
+ <p style="font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">Options don't add risk. Properly structured, they remove it.</p>
  <p class="sol-panel-text">Options aren't just for speculation. Properly structured, they're one of the most powerful risk management tools available – and one of the most tax-efficient ways to adjust a portfolio without selling anything.</p><p class="sol-panel-text">At STQ, we use options to protect against significant downside, generate yield on existing positions, and manage concentrated stock or large unrealized gains without triggering a taxable sale. Every structure is evaluated through a tax lens first – because a hedge that creates a tax bill may not be worth putting on.</p><p class="sol-panel-text">The goal is never to add complexity. It's to give the portfolio capabilities it wouldn't otherwise have.</p>
  <div class="sol-panel-line"></div><div class="sol-panel-tag">Options Overlay</div>
  </div>
  <div class="sol-panel" data-desc="7">
  <div class="sol-panel-num">08</div>
  <h3 class="sol-panel-title">Alternative Investments</h3>
- <p style="font-family:var(--font-heading);font-size:1.3rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">Private markets don't move with public ones. That's the point.</p>
+ <p style="font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">Private markets don't move with public ones. That's the point.</p>
  <p class="sol-panel-text">Public markets give you liquidity. They also give you correlation. When everything is listed on an exchange, everything tends to move together – especially when it matters most.</p><p class="sol-panel-text">Alternatives can help break that pattern. Private equity, private credit, venture, real estate, hedge funds – these are sources of return that may not respond to the same forces driving your stock portfolio. Over a full market cycle, lower correlation has historically been one of the most valuable characteristics a portfolio can have.</p><p class="sol-panel-text">But alternatives are also among the most tax-inefficient investments when placed incorrectly. Getting the account right – taxable, tax-deferred, or tax-exempt – can meaningfully change what you actually keep from them.</p><p class="sol-panel-text">At STQ, we source, evaluate, and size alternative allocations as part of a unified portfolio strategy – with placement built into the decision from the start.</p>
  <div class="sol-panel-line"></div><div class="sol-panel-tag">Alternatives</div>
  </div>
