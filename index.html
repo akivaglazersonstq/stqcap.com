@@ -36,9 +36,9 @@ body::before { content: ''; position: fixed; inset: 0; background-image: linear-
 .section-label::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: var(--navy); }
 
 /* CHART ANIMATION */
-.chart-bar-taxable, .chart-bar-taxaware { transform-origin: bottom; transform: scaleY(0); transition: transform 1.2s cubic-bezier(0.16,1,0.3,1), height 0.5s cubic-bezier(0.4,0,0.2,1); }
+.chart-bar-taxable, .chart-bar-taxaware { transform-origin: bottom; transition: height 0.5s cubic-bezier(0.4,0,0.2,1); }
 .chart-bar-taxable.animated, .chart-bar-taxaware.animated { transform: scaleY(1); }
-.chart-bar-value { opacity: 0; transition: opacity 0.4s ease 0.8s; }
+.chart-bar-value { opacity: 1; transition: opacity 0.4s ease 0.8s; }
 .chart-bar-value.animated { opacity: 1; }
 
 /* NAV */
@@ -666,23 +666,34 @@ function setHorizon(years, btn) {
  var d = horizonData[years];
  var barT = document.getElementById('bar-taxable');
  var barA = document.getElementById('bar-taxaware');
- barT.style.height = d.taxableH + 'px';
- barA.style.height = d.taxawareH + 'px';
- document.getElementById('val-taxable').textContent = '$' + d.taxable.toFixed(1) + 'M';
- document.getElementById('val-taxaware').textContent = '$' + d.taxaware.toFixed(1) + 'M';
+ var valT = document.getElementById('val-taxable');
+ var valA = document.getElementById('val-taxaware');
+ var tickerEl = document.getElementById('ticker-number');
  document.getElementById('ticker-label').textContent = 'Additional wealth over ' + years + ' years – from tax structure alone, not market performance.';
  document.getElementById('chart-footnote').textContent = 'Hypothetical growth of $1M over ' + years + ' years. 10% gross return; taxable assumes 37% combined tax rate applied annually. Illustrative only.';
- var target = d.diff * 1000000;
- var duration = 1500;
+ // Get current heights as starting point
+ var startTH = parseInt(barT.style.height) || 0;
+ var startAH = parseInt(barA.style.height) || 0;
+ var startDiff = parseFloat(tickerEl.textContent.replace(/[^0-9.]/g, '')) * 1000000 || 0;
+ var duration = 1200;
  var start = performance.now();
- var tickerEl = document.getElementById('ticker-number');
  function tick(now) {
- var p = Math.min((now - start) / duration, 1);
- var ease = 1 - Math.pow(1 - p, 3);
- var val = Math.round(ease * target / 100000) * 100000;
- tickerEl.textContent = '+' + (val >= 1000000 ? '$' + (val/1000000).toFixed(1) + 'M' : '$' + Math.round(val/1000) + 'K');
- if (p < 1) requestAnimationFrame(tick);
- else tickerEl.textContent = '+$' + d.diff.toFixed(1) + 'M';
+   var p = Math.min((now - start) / duration, 1);
+   var ease = 1 - Math.pow(1 - p, 3);
+   barT.style.height = Math.round(startTH + ease * (d.taxableH - startTH)) + 'px';
+   barA.style.height = Math.round(startAH + ease * (d.taxawareH - startAH)) + 'px';
+   valT.textContent = '$' + (d.taxable * ease + (1 - ease) * (startTH / 100 * 6.3)).toFixed(1) + 'M';
+   valA.textContent = '$' + (d.taxaware * ease + (1 - ease) * (startAH / 220 * 17.4)).toFixed(1) + 'M';
+   var tickVal = Math.round((startDiff + ease * (d.diff * 1000000 - startDiff)) / 100000) * 100000;
+   tickerEl.textContent = '+' + (tickVal >= 1000000 ? '$' + (tickVal/1000000).toFixed(1) + 'M' : '$' + Math.round(tickVal/1000) + 'K');
+   if (p < 1) requestAnimationFrame(tick);
+   else {
+     barT.style.height = d.taxableH + 'px';
+     barA.style.height = d.taxawareH + 'px';
+     valT.textContent = '$' + d.taxable.toFixed(1) + 'M';
+     valA.textContent = '$' + d.taxaware.toFixed(1) + 'M';
+     tickerEl.textContent = '+$' + d.diff.toFixed(1) + 'M';
+   }
  }
  requestAnimationFrame(tick);
 }
@@ -697,26 +708,56 @@ function setHorizon(years, btn) {
  if (entry.isIntersecting && !animated) {
  animated = true;
  document.querySelectorAll('.tax-chart-section button').forEach(function(b) { b.disabled = true; b.style.opacity = '0.5'; });
- setTimeout(function() { document.querySelector('.chart-bar-taxable').classList.add('animated'); }, 300);
- setTimeout(function() { document.querySelector('.chart-bar-taxaware').classList.add('animated'); }, 700);
  setTimeout(function() {
- document.querySelectorAll('.chart-bar-value').forEach(function(el) { el.classList.add('animated'); });
- document.querySelectorAll('.tax-chart-section button').forEach(function(b) { b.disabled = false; b.style.opacity = '1'; });
- var target = 11100000; var duration = 3000; var start = performance.now();
- var tickerEl = document.getElementById('ticker-number');
- function tick(now) {
- var p = Math.min((now - start) / duration, 1);
- var ease = 1 - Math.pow(1 - p, 3);
- var val = Math.round(ease * target / 100000) * 100000;
- tickerEl.textContent = '+' + (val >= 1000000 ? '$' + (val/1000000).toFixed(1) + 'M' : '$' + Math.round(val/1000) + 'K');
- if (p < 1) requestAnimationFrame(tick); else tickerEl.textContent = '+$11.1M';
- }
- requestAnimationFrame(tick);
- }, 1400);
+   var barT = document.getElementById('bar-taxable');
+   var barA = document.getElementById('bar-taxaware');
+   var valT = document.getElementById('val-taxable');
+   var valA = document.getElementById('val-taxaware');
+   var tickerEl = document.getElementById('ticker-number');
+   // Start bars at 0 height, remove scaleY animation
+   barT.style.transform = 'none';
+   barA.style.transform = 'none';
+   barT.style.height = '0px';
+   barA.style.height = '0px';
+   barT.style.transition = 'none';
+   barA.style.transition = 'none';
+   // Show values immediately at 0
+   document.querySelectorAll('.chart-bar-value').forEach(function(el) { el.classList.add('animated'); });
+   var duration = 2800;
+   var start = performance.now();
+   var targetTicker = 11100000;
+   var targetTH = 100; var targetAH = 220;
+   function tick(now) {
+     var p = Math.min((now - start) / duration, 1);
+     var ease = 1 - Math.pow(1 - p, 3);
+     // Animate bar heights
+     barT.style.height = Math.round(ease * targetTH) + 'px';
+     barA.style.height = Math.round(ease * targetAH) + 'px';
+     // Animate values
+     var tVal = (ease * 6.3).toFixed(1);
+     var aVal = (ease * 17.4).toFixed(1);
+     valT.textContent = '$' + tVal + 'M';
+     valA.textContent = '$' + aVal + 'M';
+     // Animate ticker
+     var tickVal = Math.round(ease * targetTicker / 100000) * 100000;
+     tickerEl.textContent = '+' + (tickVal >= 1000000 ? '$' + (tickVal/1000000).toFixed(1) + 'M' : '$' + Math.round(tickVal/1000) + 'K');
+     if (p < 1) {
+       requestAnimationFrame(tick);
+     } else {
+       barT.style.height = targetTH + 'px';
+       barA.style.height = targetAH + 'px';
+       valT.textContent = '$6.3M';
+       valA.textContent = '$17.4M';
+       tickerEl.textContent = '+$11.1M';
+       document.querySelectorAll('.tax-chart-section button').forEach(function(b) { b.disabled = false; b.style.opacity = '1'; });
+     }
+   }
+   requestAnimationFrame(tick);
+ }, 400);
  obs.unobserve(entry.target);
  }
  });
- }, { threshold: 0.3 });
+ }, { threshold: 0.1 });
  obs.observe(chartSection);
 })();
 
