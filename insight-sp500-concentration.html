@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Insights – STQ Capital Partners | Tax-Aware Wealth Management</title>
+<meta name="description" content="Daily tax-aware insights from STQ Capital Partners. Box spread lending, tax loss harvesting, asset location, and institutional strategies for high-income investors.">
+<meta name="keywords" content="box spread RIA, tax loss harvesting, asset location, tax-aware investing, box spread lending, synthetic borrowing, California RIA, tax alpha, covered calls, options overlay">
+<meta property="og:title" content="Insights – STQ Capital Partners">
+<meta property="og:description" content="Daily tax-aware insights on box spreads, tax loss harvesting, and institutional wealth strategies.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stqcap.com/insights.html">
+<link rel="canonical" href="https://stqcap.com/insights.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+ --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
+ --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF;
+ --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7);
+ --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
+ --ease: cubic-bezier(0.25,0.46,0.45,0.94); --ease-out: cubic-bezier(0.16,1,0.3,1);
+}
+html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(27,46,75,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+.nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; }
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-links { display: flex; gap: 36px; margin-right: auto; margin-left: 48px; }
+.nav-links a { font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
+.nav-links a:hover, .nav-links a.active { color: var(--navy); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 12px 28px; border-radius: 4px; text-decoration: none; transition: all 0.3s var(--ease); cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.nav-client-login { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; transition: border-color 0.2s ease, background 0.2s ease; }
+.nav-client-login:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
+
+/* HERO */
+.page-hero { padding: 140px 0 72px; background: var(--navy); position: relative; overflow: hidden; border-bottom: 1px solid rgba(27,46,75,0.08); }
+.page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
+.hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.page-hero-inner { position: relative; z-index: 1; }
+.page-hero-tag { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,239,235,0.4); margin-bottom: 20px; position: relative; padding-left: 20px; }
+.page-hero-tag::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: rgba(240,239,235,0.3); }
+.page-hero h1 { font-family: var(--font-heading); font-size: clamp(2.5rem,5vw,4rem); font-weight: 700; color: var(--cream); letter-spacing: -0.02em; margin-bottom: 20px; line-height: 1.1; }
+.page-hero p { font-size: 1.125rem; color: var(--text-light); max-width: 560px; line-height: 1.7; }
+
+/* FILTER BAR */
+.filter-bar { padding: 32px 0; position: relative; z-index: 1; border-bottom: 1px solid rgba(27,46,75,0.08); background: var(--cream); }
+.filter-inner { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.filter-label { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); margin-right: 8px; }
+.filter-btn { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 8px 18px; border-radius: 4px; border: 1px solid rgba(27,46,75,0.15); background: transparent; color: var(--text-secondary); cursor: pointer; transition: all 0.2s ease; }
+.filter-btn:hover, .filter-btn.active { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+
+/* ISSUES GRID */
+.issues-section { padding: 64px 0 120px; position: relative; z-index: 1; }
+.issues-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+
+/* ISSUE CARD */
+.issue-card { background: var(--white); border: 1px solid rgba(27,46,75,0.08); border-radius: 6px; text-decoration: none; display: block; position: relative; overflow: hidden; transition: all 0.3s var(--ease); padding: 28px; }
+.issue-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--navy); transform: scaleX(0); transform-origin: left; transition: transform 0.3s var(--ease); }
+.issue-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(27,46,75,0.08); border-color: rgba(27,46,75,0.15); }
+.issue-card:hover::after { transform: scaleX(1); }
+.issue-card-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.issue-card-tag { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--navy); background: var(--cream-dark); padding: 3px 10px; border-radius: 3px; }
+.issue-card-date { font-family: var(--font-heading); font-size: 0.6rem; color: var(--text-secondary); letter-spacing: 0.08em; }
+.issue-card-title { font-family: var(--font-heading); font-size: 1.0625rem; font-weight: 700; color: var(--navy); line-height: 1.4; letter-spacing: -0.01em; margin-bottom: 12px; }
+.issue-card-preview { font-size: 0.875rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 24px; }
+.issue-card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid rgba(27,46,75,0.06); }
+.issue-card-author { display: flex; align-items: center; gap: 8px; }
+.issue-card-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.55rem; font-weight: 700; color: var(--cream); flex-shrink: 0; }
+.issue-card-author-name { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; color: var(--text-secondary); letter-spacing: 0.05em; }
+.issue-card-read { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); display: flex; align-items: center; gap: 4px; }
+.issue-card-read::after { content: '→'; }
+
+/* EMPTY STATE */
+.empty-state { grid-column: 1 / -1; text-align: center; padding: 80px 0; color: var(--text-secondary); }
+
+/* NEWSLETTER */
+.insights-signup { background: var(--navy); padding: 80px 0; position: relative; z-index: 1; overflow: hidden; }
+.insights-signup::before { content: 'STQ'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-family: var(--font-heading); font-weight: 700; font-size: 16rem; color: rgba(240,239,235,0.02); pointer-events: none; }
+.signup-inner { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+.signup-inner h2 { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; color: var(--cream); letter-spacing: -0.01em; }
+.signup-inner p { font-size: 0.9375rem; color: var(--text-light); margin-top: 8px; }
+.signup-form { display: flex; gap: 12px; }
+.signup-form input { font-family: var(--font-body); font-size: 0.875rem; padding: 14px 20px; border: 1px solid rgba(240,239,235,0.2); border-radius: 4px; background: rgba(240,239,235,0.08); color: var(--cream); width: 280px; outline: none; transition: border-color 0.2s ease; }
+.signup-form input::placeholder { color: rgba(240,239,235,0.4); }
+.signup-form input:focus { border-color: rgba(240,239,235,0.5); }
+.btn-white { background: var(--cream); color: var(--navy); }
+.btn-white:hover { background: white; transform: translateY(-1px); }
+
+/* FOOTER */
+footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative; z-index: 1; }
+.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 28px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.5); }
+.footer-links { display: flex; gap: 28px; }
+.footer-links a { font-size: 0.8125rem; color: rgba(240,239,235,0.5); text-decoration: none; transition: color 0.2s ease; }
+.footer-links a:hover { color: var(--cream); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.35); }
+.footer-disclaimer { margin-top: 20px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 900px; }
+
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--navy); }
+.mobile-nav { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; transition: opacity 0.3s ease; }
+.mobile-nav.active { display: flex; opacity: 1; }
+.mobile-nav a { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+.mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
+@media (max-width: 1024px) { .issues-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 768px) {
+ .nav-links, .nav-client-login, .nav-cta-desktop { display: none; } .nav-toggle { display: flex; }
+ .nav-inner { padding: 0 24px; }
+ .page-hero { padding: 120px 0 60px; }
+ .issues-grid { grid-template-columns: 1fr; }
+ .signup-inner { flex-direction: column; }
+ .signup-form { flex-direction: column; width: 100%; }
+ .signup-form input { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+ <div class="nav-inner">
+ <a href="/" class="nav-logo">STQ <span>/ Capital Partners</span></a>
+ <div class="nav-links">
+ <a href="/#solutions">Solutions</a>
+ <a href="/#about">About</a>
+ <a href="/insights.html" class="active">Insights</a>
+ <a href="/research.html">Research</a>
+ <a href="/#contact">Contact</a>
+ </div>
+ <div class="nav-actions">
+ <a href="https://client.schwab.com/Areas/Access/Login" target="_blank" class="nav-client-login nav-cta-desktop">
+ <svg width="12" height="13" viewBox="0 0 12 13" fill="none" style="margin-right:6px;vertical-align:-1px;"><rect x="1" y="6" width="10" height="6" rx="1.5" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M3.5 6V4a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>Client Login
+ </a>
+ <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary nav-cta-desktop">Schedule a Call</a>
+ </div>
+ </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="mobile-nav">
+ <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('active')">✕</button>
+ <a href="/#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
+ <a href="/#about" onclick="this.parentElement.classList.remove('active')">About</a>
+ <a href="/insights.html" onclick="this.parentElement.classList.remove('active')">Insights</a>
+ <a href="/research.html" onclick="this.parentElement.classList.remove('active')">Research</a>
+ <a href="/#contact" onclick="this.parentElement.classList.remove('active')">Contact</a>
+ <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Call</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+ <div class="hero-watermark">STQ</div>
+ <div class="container">
+ <div class="page-hero-inner">
+ <div class="page-hero-tag">Daily Insights</div>
+ <h1>The Long and Short of It.</h1>
+ <p>Practical ideas on tax-aware investing, portfolio construction, and the strategies that actually move the needle.</p>
+ </div>
+ </div>
+</section>
+
+<!-- FILTER BAR -->
+<section class="filter-bar">
+ <div class="container">
+ <div class="filter-inner">
+ <span class="filter-label">Filter:</span>
+ <button class="filter-btn active" onclick="filterIssues('all', this)">All</button>
+ <button class="filter-btn" onclick="filterIssues('Portfolio Construction', this)">Portfolio Construction</button>
+ <button class="filter-btn" onclick="filterIssues('Tax Alpha', this)">Tax Alpha</button>
+ <button class="filter-btn" onclick="filterIssues('Independence', this)">Independence</button>
+ <button class="filter-btn" onclick="filterIssues('Concentrated Positions', this)">Concentrated Positions</button>
+ <button class="filter-btn" onclick="filterIssues('Options', this)">Options</button>
+ <button class="filter-btn" onclick="filterIssues('Perspective', this)">Perspective</button>
+ <button class="filter-btn" onclick="filterIssues('Estate Planning', this)">Estate Planning</button>
+ <button class="filter-btn" onclick="filterIssues('Philanthropy', this)">Philanthropy</button>
+ <button class="filter-btn" onclick="filterIssues('Book Review', this)">Book Review</button>
+ <button class="filter-btn" onclick="filterIssues('Box Spreads', this)">Box Spreads</button>
+ <button class="filter-btn" onclick="filterIssues('Tax Strategy', this)">Tax Strategy</button>
+ </div>
+ </div>
+</section>
+
+<!-- ISSUES GRID -->
+<section class="issues-section">
+ <div class="container">
+ <div class="issues-grid" id="issuesGrid"></div>
+ </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="insights-signup">
+ <div class="container">
+ <div class="signup-inner">
+ <div>
+ <h2>Get It First.</h2>
+ <p>Institutional strategies. Plain English. Every morning.</p>
+ </div>
+ <form class="signup-form" id="insights-signup-form" onsubmit="handleInsightsSubscribe(event)">
+ <input type="email" id="insights-email" placeholder="your@email.com" required>
+ <button type="submit" class="btn btn-white" id="insights-btn">Subscribe</button>
+ </form>
+ </div>
+ <p id="insights-msg" style="display:none;color:var(--cream);font-size:0.875rem;margin-top:16px;"></p>
+ </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+ <div class="container">
+ <div class="footer-main">
+ <div class="footer-logo">STQ <span>/ Capital Partners</span></div>
+ <div class="footer-links">
+ <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
+ <a href="/insights.html">Newsletter</a>
+ <a href="/#contact">Contact</a>
+ <a href="https://client.schwab.com/Areas/Access/Login" target="_blank">Client Login</a>
+ </div>
+ <div class="footer-copy">© 2026 STQ Capital Partners</div>
+ </div>
+ <div class="footer-disclaimer">Advisory services are offered through STQ Capital Partners ("STQ"), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable. The information on this site is provided "AS IS" and without warranties either express or implied and the information may not be free from error. Your use of the information provided is at your sole risk.</div>
+ </div>
+</footer>
+
+<script>
+const issues = [
+ {
+ title: "Your Index Fund Has a Concentration Problem.",
+ date: "April 17, 2026",
+ preview: "The five biggest names in the S&P 500 now control nearly 30% of the index. That's not diversification. That's a gamble.",
+ tag: "Concentrated Positions",
+ readTime: "3 min",
+ url: "/insight-sp500-concentration.html"
+ },
+ {
+ title: "Book Review: The Best Risk Management Lesson I've Read Came from a Russian Prison.",
+ date: "April 16, 2026",
+ preview: "Red Notice is not a finance book. It is a story about what happens when political risk, concentration risk, and counterparty risk collide – and nobody is paying attention.",
+ tag: "Book Review",
+ readTime: "4 min",
+ url: "/insight-red-notice.html"
+ },
+ {
+ title: "No Good Deed Goes Unpunished. Unless You Use a DAF.",
+ date: "April 15, 2026",
+ preview: "Most people give to charity the expensive way – cash out of a checking account, no tax strategy involved. There is a better way that costs you nothing and gives more to the cause.",
+ tag: "Philanthropy",
+ readTime: "4 min",
+ url: "/insight-daf.html"
+ },
+ {
+ title: "What Getting Choked Out Has Taught Me About Investing.",
+ date: "April 14, 2026",
+ preview: "Anybody who knows me knows I'm obsessed with BJJ. It has more in common with investing than you may think. Here's what the mat has taught me about managing money.",
+ tag: "Perspective",
+ readTime: "3 min",
+ url: "/insight-bjj-investing.html"
+ },
+ {
+ title: "You Think You're Protected. You're Not.",
+ date: "April 13, 2026",
+ preview: "Both are options strategies. Both generate income or protection. But they are not interchangeable – and using the wrong one for your situation is an expensive mistake.",
+ tag: "Options",
+ readTime: "4 min",
+ url: "/insight-covered-calls-vs-put-spreads.html"
+ },
+ {
+ title: "The Peter Thiel IRA. What He Did and Why You Can't Ignore It.",
+ date: "April 12, 2026",
+ preview: "Peter Thiel turned a Roth IRA into $5 billion – tax free. The mechanics were aggressive. The principle behind it is available to almost anyone.",
+ tag: "Tax Strategy",
+ readTime: "4 min",
+ url: "/insight-peter-thiel-ira.html"
+ },
+ {
+ title: "What I Learned at PIMCO About Building a Real Portfolio.",
+ date: "April 11, 2026",
+ preview: "Institutional portfolio management looks nothing like what most individual investors experience. Here's what the gap actually costs you.",
+ tag: "Portfolio Construction",
+ readTime: "4 min",
+ url: "/insight-pimco-lessons.html"
+ },
+ {
+ title: "The Largest Account You Own. The One Nobody's Managing.",
+ date: "April 10, 2026",
+ preview: "Your 401(k) may be the largest account you own. Most advisors manage everything around it but never inside it. That's leaving serious money on the table.",
+ tag: "Tax Strategy",
+ readTime: "3 min",
+ url: "/insight-401k-blind-spot.html"
+ },
+ {
+ title: "Your Advisor Has a Boss. It Might Not Be You.",
+ date: "April 9, 2026",
+ preview: "A fiduciary is legally required to act in your interest. A broker is not. That distinction is worth understanding before you hand anyone your money.",
+ tag: "Independence",
+ readTime: "3 min",
+ url: "/insight-fiduciary-vs-broker.html"
+ },
+ {
+ title: "$5M in Tesla. $4M for a House. Zero Tax. Here's How.",
+ date: "April 8, 2026",
+ preview: "Selling means a massive tax bill. Not selling means the house stays out of reach. There's a third option most investors don't know exists.",
+ tag: "Concentrated Positions",
+ readTime: "4 min",
+ url: "/insight-tesla-house.html"
+ },
+ {
+ title: "The Most Important Question to Ask Your Advisor. Most People Never Do.",
+ date: "April 7, 2026",
+ preview: "How do you get paid? Four words. Most advisors hope you never ask. The answer tells you everything about whose interests they're actually serving.",
+ tag: "Independence",
+ readTime: "3 min",
+ url: "/insight-advisor-question.html"
+ },
+ {
+ title: "The Mutual Fund Industry's Dirty Secret.",
+ date: "April 6, 2026",
+ preview: "The average active fund underperforms its benchmark after fees. You're paying a premium for underperformance. The math on low-cost indexing is not subtle.",
+ tag: "Portfolio Construction",
+ readTime: "3 min",
+ url: "/insight-active-funds.html"
+ },
+ {
+ title: "Buy. Borrow. Die. The Estate Strategy Nobody Talks About.",
+ date: "April 5, 2026",
+ preview: "The wealthiest families don't sell assets. They buy. They borrow against them at low rates. And when they die, the step-up in basis wipes the gain. It's not a loophole. It's a strategy.",
+ tag: "Estate Planning",
+ readTime: "4 min",
+ url: "/insight-buy-borrow-die.html"
+ },
+ {
+ title: "The Piggy Bank You Fill by \"Losing Money.\" Yes, Really.",
+ date: "April 4, 2026",
+ preview: "Tax loss harvesting is not a year-end cleanup. Done systematically, it builds a loss bank that compounds in value over time – ready to deploy whenever you need it most.",
+ tag: "Tax Alpha",
+ readTime: "4 min",
+ url: "/insight-loss-harvesting.html"
+ },
+ {
+ title: "Location. Location. Location.",
+ date: "April 3, 2026",
+ preview: "In real estate, location determines value. In investing, it determines how much of your return you actually keep. Most investors obsess over what to own. The smarter question is where.",
+ tag: "Tax Strategy",
+ readTime: "5 min",
+ url: "/insight-asset-location.html"
+ },
+ {
+ title: "Stop Borrowing From Banks. Your Portfolio Can Do It Better.",
+ date: "April 2, 2026",
+ preview: "Lines of credit are expensive, bank-controlled, and unnecessary. Your portfolio can do the same job better – at near-Treasury rates, with no application and no forced selling.",
+ tag: "Box Spreads",
+ readTime: "3 min",
+ url: "/insight-box-spreads.html"
+ },
+ {
+ title: "You Don't Have Yale's Tax Status. Stop Investing Like You Do.",
+ date: "April 1, 2026",
+ preview: "The endowment model is built for institutions that pay no taxes. You do. Copying it without accounting for your tax situation isn't sophisticated – it's expensive.",
+ tag: "Portfolio Construction",
+ readTime: "4 min",
+ url: "/insight-endowment-model.html"
+ },
+];
+
+function renderIssues(filter) {
+ const grid = document.getElementById('issuesGrid');
+ const filtered = filter === 'all' ? issues : issues.filter(i => i.tag === filter);
+ if (filtered.length === 0) {
+ grid.innerHTML = '<div class="empty-state"><p>No issues in this category yet. Check back soon.</p></div>';
+ return;
+ }
+ grid.innerHTML = filtered.map(issue => `
+ <a class="issue-card" href="${issue.url}">
+ <div class="issue-card-meta">
+ <span class="issue-card-tag">${issue.tag}</span>
+ <span class="issue-card-date">${issue.date}</span>
+ </div>
+ <div class="issue-card-title">${issue.title}</div>
+ <div class="issue-card-preview">${issue.preview}</div>
+ <div class="issue-card-footer">
+ <div class="issue-card-read">${issue.readTime} read</div>
+ </div>
+ </a>
+ `).join('');
+}
+
+function filterIssues(tag, btn) {
+ document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+ btn.classList.add('active');
+ renderIssues(tag);
+}
+
+renderIssues('all');
+
+async function handleInsightsSubscribe(e) {
+ e.preventDefault();
+ const email = document.getElementById('insights-email').value;
+ const btn = document.getElementById('insights-btn');
+ const msg = document.getElementById('insights-msg');
+ btn.textContent = 'Subscribing...';
+ btn.disabled = true;
+ try {
+ const res = await fetch('/.netlify/functions/subscribe', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({ email })
+ });
+ if (res.ok || res.status === 200 || res.status === 201) {
+ msg.style.display = 'block';
+ msg.textContent = "You're in. First issue hits first thing.";
+ document.getElementById('insights-email').value = '';
+ btn.textContent = 'Subscribed ✓';
+ } else { throw new Error(); }
+ } catch {
+ msg.style.display = 'block';
+ msg.textContent = 'Something went wrong. Email akiva.glazerson@stqcap.com to subscribe.';
+ btn.textContent = 'Subscribe';
+ btn.disabled = false;
+ }
+}
+</script>
+</body>
+</html>
