@@ -123,6 +123,18 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
   .nav-inner { padding: 0 24px; }
   .page-hero { padding: 120px 0 60px; }
 }
+
+/* RESEARCH GATE */
+.research-gate-overlay { display: none; position: fixed; inset: 0; background: rgba(15,30,51,0.7); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(4px); padding: 24px; }
+.research-gate-overlay.active { display: flex; }
+.research-gate-modal { background: var(--cream); border-radius: 8px; padding: 48px; max-width: 440px; width: 100%; position: relative; }
+.research-gate-modal h3 { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.01em; }
+.research-gate-modal p { font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.6; }
+.modal-form { display: flex; flex-direction: column; gap: 12px; }
+.modal-form input { font-family: var(--font-body); font-size: 0.9375rem; padding: 14px 16px; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; background: var(--white); color: var(--navy); outline: none; }
+.modal-form input:focus { border-color: var(--navy); }
+.modal-close { position: absolute; top: 16px; right: 20px; background: none; border: none; font-size: 1.25rem; color: var(--text-secondary); cursor: pointer; padding: 4px; }
+.modal-msg { font-size: 0.875rem; margin-top: 8px; }
 </style>
 </head>
 <body>
@@ -161,7 +173,7 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 <section class="featured-section">
   <div class="container">
     <div class="featured-label">Featured Publication</div>
-    <a href="/research-direct-indexing.html" class="featured-card" data-tag="Tax Alpha">
+    <a href="/research-direct-indexing.html" class="featured-card" data-tag="Tax Alpha" onclick="openResearchGate('/research-direct-indexing.html');return false;">
       <div class="featured-card-left">
         <div>
           <div class="featured-card-tag">Tax Alpha – Direct Indexing Series</div>
@@ -187,7 +199,7 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
   <div class="container">
     <div id="researchGrid" class="research-grid">
 
-      <a href="/asset-location.html" class="research-card" data-tag="Tax Strategy">
+      <a href="/asset-location.html" class="research-card" data-tag="Tax Strategy" onclick="openResearchGate('/asset-location.html');return false;">
         <div class="card-tag">Tax Strategy</div>
         <div class="card-title">All the Right Things in All the Wrong Places.</div>
         <div class="card-desc">Why where you hold your investments matters as much as what you hold – and how to optimize across all three account types.</div>
@@ -239,6 +251,60 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
     <div class="footer-disclaimer">Advisory services are offered through STQ Capital Partners ("STQ"), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable. The information on this site is provided "AS IS" and without warranties either express or implied and the information may not be free from error. Your use of the information provided is at your sole risk.</div>
   </div>
 </footer>
+
+<!-- RESEARCH GATE MODAL -->
+<div class="research-gate-overlay" id="researchGateModal" onclick="if(event.target===this)closeResearchGate()">
+  <div class="research-gate-modal">
+    <button class="modal-close" onclick="closeResearchGate()">✕</button>
+    <h3>Unlock STQ Research.</h3>
+    <p>Enter your email for free access to all STQ research publications. You'll also receive our daily insights.</p>
+    <form class="modal-form" id="research-gate-form" onsubmit="handleResearchGate(event)">
+      <input type="email" id="research-gate-email" placeholder="your@email.com" required>
+      <button type="submit" class="btn btn-primary" id="research-gate-btn" style="justify-content:center;">Get Access →</button>
+    </form>
+    <p class="modal-msg" id="research-gate-msg"></p>
+  </div>
+</div>
+
+<script>
+var pendingResearchUrl = '';
+function openResearchGate(url) {
+  if (localStorage.getItem('stq_research_access') === 'granted') {
+    window.location.href = url;
+    return;
+  }
+  pendingResearchUrl = url;
+  document.getElementById('researchGateModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeResearchGate() {
+  document.getElementById('researchGateModal').classList.remove('active');
+  document.body.style.overflow = '';
+  pendingResearchUrl = '';
+}
+function handleResearchGate(e) {
+  e.preventDefault();
+  var email = document.getElementById('research-gate-email').value;
+  var btn = document.getElementById('research-gate-btn');
+  var msg = document.getElementById('research-gate-msg');
+  btn.textContent = 'Getting access...'; btn.disabled = true;
+  fetch('https://connect.mailerlite.com/api/subscribers', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMmM2OTZhNDU2YmFiZDU4MzEyMmRhYjMwMDA5MDEyZTFmNzE4MTJjMTg0OTA1ODg4MmZjMDQ3MTI4YzU4ZmRiOTQ4NDRhZGFiMWMxOTgxZGIiLCJpYXQiOjE3NzUzNzU0NzguMTQyMDk3LCJuYmYiOjE3NzUzNzU0NzguMTQyMSwiZXhwIjo0OTMxMDQ5MDc4LjEzNzg4Miwic3ViIjoiMjI2NTM2NyIsInNjb3BlcyI6W119.ZdViQ4RRQTgYCmiJyPuhFhpf6e5Okmf75gggIsHrxgG5xmeuxRCmkMCkhRmgY4_zevSlEe6tYpwTui1hVmLO1NlHP4uBmgoJ9dGSFciCjBxs5Y9EtEvYwrVqw5KV8aVK8fXy6h1pSA-Y8kHIekfnTha-Gs_wddrV5U36x6XNbtQq6HhIfnyDEXXCkdOLl5jL4K5G3nPjjROrBKEmkzpaGjL0bI2VJouU3VXN9BKSUEQgVz0RcyGWlsPbPuVoQNYfnGvX6H5HDU6V8t9m6lzO-woI1byNRm_T9j90y1WuZmPe3s1hQNOFEYIvWIMNJaw_GozfJdS4e9t-1sn0E8jULWycSZM0kdklAyXDx-IJ3srznQMGBGgpEqGD6O24aUIQ-nzD8kxnMqWhDSqFOeu-p9ETrFUPKdTL7XpHnV4_AnqzsFRGdpUy_PXyVldVgkOOm_pM_HPP-w5FuUfNv2J6XlU9zSLiC-DHZ608Hw0JPi9yt7jCEwOeDaS87dvX0R8X09GYNMcTVBgPSV8PLvOcQVaIqDPNqU5_d8pPmiX1GtRlJQL3Yf4DugYrmhmITzufU9zOtgsSr-jv2eAUOuw9n_fnEHBw5lFJ3pEs8yl5NjBDN2SSdllkkq_LWDczAs914PfugL2a1t4vk2gx7xZsdg7Y3w__YlKTzBHVMjBbJ-8' },
+    body: JSON.stringify({ email: email, fields: { last_name: 'Research Gate Access' } })
+  }).catch(function() {});
+  setTimeout(function() {
+    localStorage.setItem('stq_research_access', 'granted');
+    var dest = pendingResearchUrl || '/research.html';
+    msg.style.display = 'block'; msg.style.color = '#1B2E4B';
+    msg.textContent = 'Access granted. Taking you there now...';
+    setTimeout(function() {
+      closeResearchGate();
+      window.location.href = dest;
+    }, 800);
+  }, 600);
+}
+</script>
 
 </body>
 </html>
