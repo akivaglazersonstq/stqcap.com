@@ -168,7 +168,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
 .footer-disclaimer { margin-top: 24px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 900px; }
 @media (max-width: 1024px) { .split-grid { grid-template-columns: 1fr; gap: 32px; } .split-label { position: static; } .why-grid { grid-template-columns: repeat(2,1fr); } .chart-wrapper { grid-template-columns: 1fr; } }
 @media (max-width: 800px) { .solutions-hover { flex-direction: column; } .sol-left, .sol-right { flex: none; padding: 48px 24px; } }
-@media (max-width: 768px) { .nav-links, .nav-client-login, .nav-cta-desktop { display: none; } .nav-toggle { display: flex; } .hero h1 { font-size: 2.5rem; } .hero { padding-top: 100px; padding-bottom: 80px; } .why-grid { grid-template-columns: 1fr; } .newsletter-inner { flex-direction: column; text-align: center; align-items: center; } .newsletter-form { flex-direction: column; width: 100%; } .newsletter-form input { width: 100%; } .footer-main { flex-direction: column; text-align: center; } .footer-links { justify-content: center; } .hero-buttons { flex-direction: column; align-items: flex-start; } .cta-buttons { flex-direction: column; align-items: center; } .stepper-container { padding: 0 24px; } .stepper-content { padding: 40px 28px; } .chart-wrapper { padding: 32px 24px; } }
+@media (max-width: 768px) { .nav-links, .nav-client-login, .nav-cta-desktop, .nav-login-dropdown { display: none !important; } .nav-toggle { display: flex; } .hero h1 { font-size: 2.5rem; } .hero { padding-top: 100px; padding-bottom: 80px; } .why-grid { grid-template-columns: 1fr; } .newsletter-inner { flex-direction: column; text-align: center; align-items: center; } .newsletter-form { flex-direction: column; width: 100%; } .newsletter-form input { width: 100%; } .footer-main { flex-direction: column; text-align: center; } .footer-links { justify-content: center; } .hero-buttons { flex-direction: column; align-items: flex-start; } .cta-buttons { flex-direction: column; align-items: center; } .stepper-container { padding: 0 24px; } .stepper-content { padding: 40px 28px; } .chart-wrapper { padding: 32px 24px; } }
 .mobile-nav { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; transition: opacity 0.3s ease; }
 .mobile-nav.active { display: flex; opacity: 1; }
 .mobile-nav a { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--navy); text-decoration: none; }
@@ -498,6 +498,17 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  <a href="/insights.html" style="font-family:var(--font-heading);font-size:0.8125rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--navy);padding-bottom:2px;white-space:nowrap;">View All Insights →</a>
  </div>
  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;max-width:100%;" id="homepage-issues"></div>
+ <div style="margin-top:40px;background:var(--cream-dark);border:1px solid rgba(27,46,75,0.15);border-radius:6px;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+ <div>
+ <div style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--navy);letter-spacing:-0.01em;margin-bottom:6px;">Get it first.</div>
+ <div style="font-size:0.875rem;color:var(--text-secondary);line-height:1.5;">Tax-aware insights delivered every morning.</div>
+ </div>
+ <form style="display:flex;gap:8px;flex-wrap:wrap;" onsubmit="handleInsightsStripSubscribe(event)">
+ <input type="email" id="strip-email" placeholder="your@email.com" required style="font-family:var(--font-body);font-size:0.875rem;padding:12px 18px;border:1px solid rgba(27,46,75,0.15);border-radius:4px;background:var(--white);color:var(--navy);outline:none;width:260px;">
+ <button type="submit" id="strip-btn" class="btn btn-primary">Subscribe</button>
+ </form>
+ <p id="strip-msg" style="display:none;font-size:0.8125rem;color:var(--navy);width:100%;margin-top:-8px;"></p>
+ </div>
  </div>
 </section>
 
@@ -640,17 +651,26 @@ function handleDiagnostic(e) {
  var phone = document.getElementById('diag-phone').value; var size = document.getElementById('diag-size').value;
  var message = document.getElementById('diag-message').value;
  btn.textContent = 'Sending...'; btn.disabled = true;
- fetch('/.netlify/functions/diagnostic', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, email, phone, size, message }) })
+ fetch('https://formspree.io/f/maqabqzp', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+ body: JSON.stringify({ name, email, phone, _subject: 'Portfolio Diagnostic – ' + name, 'Portfolio Size': size, message })
+ })
  .then(function(res) {
- if (res.ok || res.status === 200 || res.status === 201) {
+ if (res.ok) {
+ // Also add to MailerLite
+ fetch('https://connect.mailerlite.com/api/subscribers', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZDU4Y2Y2M2MyZjAxNGJjMWE4YmM2MDgzMGRjMjZjODAyYzdmNDZiNTNhNTY0MGYyNzdhNGNmMTlhZGQ0YjZhOTdlMjNkMGRmZmFiN2JlOTYiLCJpYXQiOjE3NzYyMTI3MzAuODgxMjkxLCJuYmYiOjE3NzYyMTI3MzAuODgxMjkzLCJleHAiOjQ5MzE4ODYzMzAuODc0Nzg3LCJzdWIiOiIyMjY1MzY3Iiwic2NvcGVzIjpbXX0.SoT6uwDSLLRp1bVmMCTm8kNFGg0-Jj7U3MXSmaCPtwbLI_RyA5UoqBdeBIvfZkOMG_rO7lrZQZBeAzK9kkq0o-zYOyOmKuuXv1vpq441LietMpgVWHgAAtL0ExKhvIZM2HnoqUhrcd34oZoYehwVCLjbLXtZ5vQYNnjO2988r7LV5zdmfrusZ7nek3ITcrBCb03r-W6do7hypJSbw_o_7J-RaYyPGOfVYk5ZxdcDe2neZmIvOkBfOd-qyHDFSQvyKaIton3_c7FSkoBXePGR9yt722rv40tO4n1iwiX7bSi6ObNX66S03gKdwIJvxjcaGHMSIOfdKJrCqcCrXUj1OZPd94e_mprtkYFlwla0BAxvMPgf8llzF_qAlovSTwdb8G9y-ORWB1vV5ZF4ZW62ZjRd5JIFckwH2CisIM1TT-b_GU-Hi6-ATvtcqm0HSffbFPEaGFb0slTxHmbx0INSAIW8QNEYVv00DUE-ysF84f4LchSFvdj2LMzSZB9_9YkuPik-AVM32b0RSKP8PVJgYK1B4DH28AUEcNjrksUytGE59NwLr5GctZztoZbDc4AlLd1es5PNFTtdQl2augDGBtnox7rDXb0sWo7BqyttYhQ9D_1RqYltSAHsB9K1qRB9CFF734AOQm8QPshucKos2vx6hGxZKuXlfpvCCVLaSBw' },
+ body: JSON.stringify({ email, fields: { name }, groups: ["185200901719328747"] })
+ }).catch(function() {});
  msg.style.display = 'block'; msg.style.color = '#1B2E4B';
- msg.textContent = "Got it. We'll be in touch within one business day.";
+ msg.textContent = "Got it. We'll be in touch shortly.";
  btn.textContent = 'Submitted ✓'; document.getElementById('diagnostic-form').reset();
  } else { throw new Error(); }
  }).catch(function() {
- var subject = 'Portfolio Diagnostic Request – ' + name;
- var body = 'Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + (phone||'Not provided') + '\nPortfolio Size: ' + (size||'Not provided') + '\nMessage: ' + (message||'None');
- window.location.href = 'mailto:akiva.glazerson@stqcap.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+ msg.style.display = 'block'; msg.style.color = '#991B1B';
+ msg.textContent = 'Something went wrong. Email akiva.glazerson@stqcap.com directly.';
  btn.textContent = "See What's Possible →"; btn.disabled = false;
  });
 }
@@ -788,12 +808,35 @@ document.querySelectorAll('.stepper-step').forEach(function(s) { s.addEventListe
  +'<div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);">Read →</div></a>';
  }).join('');
 })();
+function handleInsightsStripSubscribe(e) {
+ e.preventDefault();
+ var email = document.getElementById('strip-email').value;
+ var btn = document.getElementById('strip-btn');
+ var msg = document.getElementById('strip-msg');
+ btn.textContent = 'Subscribing...'; btn.disabled = true;
+ fetch('https://connect.mailerlite.com/api/subscribers', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZDU4Y2Y2M2MyZjAxNGJjMWE4YmM2MDgzMGRjMjZjODAyYzdmNDZiNTNhNTY0MGYyNzdhNGNmMTlhZGQ0YjZhOTdlMjNkMGRmZmFiN2JlOTYiLCJpYXQiOjE3NzYyMTI3MzAuODgxMjkxLCJuYmYiOjE3NzYyMTI3MzAuODgxMjkzLCJleHAiOjQ5MzE4ODYzMzAuODc0Nzg3LCJzdWIiOiIyMjY1MzY3Iiwic2NvcGVzIjpbXX0.SoT6uwDSLLRp1bVmMCTm8kNFGg0-Jj7U3MXSmaCPtwbLI_RyA5UoqBdeBIvfZkOMG_rO7lrZQZBeAzK9kkq0o-zYOyOmKuuXv1vpq441LietMpgVWHgAAtL0ExKhvIZM2HnoqUhrcd34oZoYehwVCLjbLXtZ5vQYNnjO2988r7LV5zdmfrusZ7nek3ITcrBCb03r-W6do7hypJSbw_o_7J-RaYyPGOfVYk5ZxdcDe2neZmIvOkBfOd-qyHDFSQvyKaIton3_c7FSkoBXePGR9yt722rv40tO4n1iwiX7bSi6ObNX66S03gKdwIJvxjcaGHMSIOfdKJrCqcCrXUj1OZPd94e_mprtkYFlwla0BAxvMPgf8llzF_qAlovSTwdb8G9y-ORWB1vV5ZF4ZW62ZjRd5JIFckwH2CisIM1TT-b_GU-Hi6-ATvtcqm0HSffbFPEaGFb0slTxHmbx0INSAIW8QNEYVv00DUE-ysF84f4LchSFvdj2LMzSZB9_9YkuPik-AVM32b0RSKP8PVJgYK1B4DH28AUEcNjrksUytGE59NwLr5GctZztoZbDc4AlLd1es5PNFTtdQl2augDGBtnox7rDXb0sWo7BqyttYhQ9D_1RqYltSAHsB9K1qRB9CFF734AOQm8QPshucKos2vx6hGxZKuXlfpvCCVLaSBw' },
+ body: JSON.stringify({ email: email, groups: ["185200901719328747"] })
+ }).then(function(res) {
+ if (res.ok || res.status === 200 || res.status === 201) {
+ msg.style.display = 'block';
+ msg.textContent = "You're in. First issue hits first thing.";
+ document.getElementById('strip-email').value = '';
+ btn.textContent = 'Subscribed ✓';
+ } else { throw new Error(); }
+ }).catch(function() {
+ msg.style.display = 'block';
+ msg.textContent = 'Something went wrong. Email akiva.glazerson@stqcap.com to subscribe.';
+ btn.textContent = 'Subscribe'; btn.disabled = false;
+ });
+}
 function handleSubscribe(e) {
  e.preventDefault();
  var email=document.getElementById('newsletter-email').value;
  var btn=document.getElementById('newsletter-btn'); var msg=document.getElementById('newsletter-msg');
  btn.textContent='Subscribing...'; btn.disabled=true;
- fetch('https://connect.mailerlite.com/api/subscribers', { method:'POST', headers:{'Content-Type':'application/json','Authorization':'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZDU4Y2Y2M2MyZjAxNGJjMWE4YmM2MDgzMGRjMjZjODAyYzdmNDZiNTNhNTY0MGYyNzdhNGNmMTlhZGQ0YjZhOTdlMjNkMGRmZmFiN2JlOTYiLCJpYXQiOjE3NzYyMTI3MzAuODgxMjkxLCJuYmYiOjE3NzYyMTI3MzAuODgxMjkzLCJleHAiOjQ5MzE4ODYzMzAuODc0Nzg3LCJzdWIiOiIyMjY1MzY3Iiwic2NvcGVzIjpbXX0.SoT6uwDSLLRp1bVmMCTm8kNFGg0-Jj7U3MXSmaCPtwbLI_RyA5UoqBdeBIvfZkOMG_rO7lrZQZBeAzK9kkq0o-zYOyOmKuuXv1vpq441LietMpgVWHgAAtL0ExKhvIZM2HnoqUhrcd34oZoYehwVCLjbLXtZ5vQYNnjO2988r7LV5zdmfrusZ7nek3ITcrBCb03r-W6do7hypJSbw_o_7J-RaYyPGOfVYk5ZxdcDe2neZmIvOkBfOd-qyHDFSQvyKaIton3_c7FSkoBXePGR9yt722rv40tO4n1iwiX7bSi6ObNX66S03gKdwIJvxjcaGHMSIOfdKJrCqcCrXUj1OZPd94e_mprtkYFlwla0BAxvMPgf8llzF_qAlovSTwdb8G9y-ORWB1vV5ZF4ZW62ZjRd5JIFckwH2CisIM1TT-b_GU-Hi6-ATvtcqm0HSffbFPEaGFb0slTxHmbx0INSAIW8QNEYVv00DUE-ysF84f4LchSFvdj2LMzSZB9_9YkuPik-AVM32b0RSKP8PVJgYK1B4DH28AUEcNjrksUytGE59NwLr5GctZztoZbDc4AlLd1es5PNFTtdQl2augDGBtnox7rDXb0sWo7BqyttYhQ9D_1RqYltSAHsB9K1qRB9CFF734AOQm8QPshucKos2vx6hGxZKuXlfpvCCVLaSBw'}, body:JSON.stringify({email}) })
+ fetch('https://connect.mailerlite.com/api/subscribers', { method:'POST', headers:{'Content-Type':'application/json','Authorization':'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZDU4Y2Y2M2MyZjAxNGJjMWE4YmM2MDgzMGRjMjZjODAyYzdmNDZiNTNhNTY0MGYyNzdhNGNmMTlhZGQ0YjZhOTdlMjNkMGRmZmFiN2JlOTYiLCJpYXQiOjE3NzYyMTI3MzAuODgxMjkxLCJuYmYiOjE3NzYyMTI3MzAuODgxMjkzLCJleHAiOjQ5MzE4ODYzMzAuODc0Nzg3LCJzdWIiOiIyMjY1MzY3Iiwic2NvcGVzIjpbXX0.SoT6uwDSLLRp1bVmMCTm8kNFGg0-Jj7U3MXSmaCPtwbLI_RyA5UoqBdeBIvfZkOMG_rO7lrZQZBeAzK9kkq0o-zYOyOmKuuXv1vpq441LietMpgVWHgAAtL0ExKhvIZM2HnoqUhrcd34oZoYehwVCLjbLXtZ5vQYNnjO2988r7LV5zdmfrusZ7nek3ITcrBCb03r-W6do7hypJSbw_o_7J-RaYyPGOfVYk5ZxdcDe2neZmIvOkBfOd-qyHDFSQvyKaIton3_c7FSkoBXePGR9yt722rv40tO4n1iwiX7bSi6ObNX66S03gKdwIJvxjcaGHMSIOfdKJrCqcCrXUj1OZPd94e_mprtkYFlwla0BAxvMPgf8llzF_qAlovSTwdb8G9y-ORWB1vV5ZF4ZW62ZjRd5JIFckwH2CisIM1TT-b_GU-Hi6-ATvtcqm0HSffbFPEaGFb0slTxHmbx0INSAIW8QNEYVv00DUE-ysF84f4LchSFvdj2LMzSZB9_9YkuPik-AVM32b0RSKP8PVJgYK1B4DH28AUEcNjrksUytGE59NwLr5GctZztoZbDc4AlLd1es5PNFTtdQl2augDGBtnox7rDXb0sWo7BqyttYhQ9D_1RqYltSAHsB9K1qRB9CFF734AOQm8QPshucKos2vx6hGxZKuXlfpvCCVLaSBw'}, body:JSON.stringify({email, groups: ["185200901719328747"]}) })
  .then(function(res) {
  if (res.ok||res.status===201||res.status===200) {
  msg.style.display='block'; msg.style.color='#1B2E4B';
