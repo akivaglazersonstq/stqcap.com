@@ -291,7 +291,7 @@ function handleResearchGate(e) {
   fetch('https://connect.mailerlite.com/api/subscribers', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZDU4Y2Y2M2MyZjAxNGJjMWE4YmM2MDgzMGRjMjZjODAyYzdmNDZiNTNhNTY0MGYyNzdhNGNmMTlhZGQ0YjZhOTdlMjNkMGRmZmFiN2JlOTYiLCJpYXQiOjE3NzYyMTI3MzAuODgxMjkxLCJuYmYiOjE3NzYyMTI3MzAuODgxMjkzLCJleHAiOjQ5MzE4ODYzMzAuODc0Nzg3LCJzdWIiOiIyMjY1MzY3Iiwic2NvcGVzIjpbXX0.SoT6uwDSLLRp1bVmMCTm8kNFGg0-Jj7U3MXSmaCPtwbLI_RyA5UoqBdeBIvfZkOMG_rO7lrZQZBeAzK9kkq0o-zYOyOmKuuXv1vpq441LietMpgVWHgAAtL0ExKhvIZM2HnoqUhrcd34oZoYehwVCLjbLXtZ5vQYNnjO2988r7LV5zdmfrusZ7nek3ITcrBCb03r-W6do7hypJSbw_o_7J-RaYyPGOfVYk5ZxdcDe2neZmIvOkBfOd-qyHDFSQvyKaIton3_c7FSkoBXePGR9yt722rv40tO4n1iwiX7bSi6ObNX66S03gKdwIJvxjcaGHMSIOfdKJrCqcCrXUj1OZPd94e_mprtkYFlwla0BAxvMPgf8llzF_qAlovSTwdb8G9y-ORWB1vV5ZF4ZW62ZjRd5JIFckwH2CisIM1TT-b_GU-Hi6-ATvtcqm0HSffbFPEaGFb0slTxHmbx0INSAIW8QNEYVv00DUE-ysF84f4LchSFvdj2LMzSZB9_9YkuPik-AVM32b0RSKP8PVJgYK1B4DH28AUEcNjrksUytGE59NwLr5GctZztoZbDc4AlLd1es5PNFTtdQl2augDGBtnox7rDXb0sWo7BqyttYhQ9D_1RqYltSAHsB9K1qRB9CFF734AOQm8QPshucKos2vx6hGxZKuXlfpvCCVLaSBw' },
-    body: JSON.stringify({ email: email, fields: { last_name: 'Research Gate Access' } })
+    body: JSON.stringify({ email: email, groups: ["185200901719328747"] })
   }).catch(function() {});
   setTimeout(function() {
     localStorage.setItem('stq_research_access', 'granted');
