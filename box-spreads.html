@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Synthetic Portfolio Borrowing | STQ Capital Partners</title>
+<meta name="description" content="Borrow against your portfolio at near-Treasury rates through box spreads. No bank approval, no credit check, tax-deductible interest. Stay fully invested while accessing the liquidity you need.">
+<meta name="keywords" content="box spread borrowing, synthetic borrowing, portfolio liquidity, box spread RIA, tax-deductible interest, securities-backed lending, box spread loan">
+<meta property="og:title" content="Synthetic Portfolio Borrowing | STQ Capital Partners">
+<meta property="og:description" content="Borrow against your portfolio at near-Treasury rates. No bank, no credit check, tax-deductible interest.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stqcap.com/box-spreads.html">
+<link rel="canonical" href="https://stqcap.com/box-spreads.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%231B2E4B'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='22' fill='%23F0EFEB' letter-spacing='-1'>STQ</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
+  --cream: #F0EFEB; --cream-dark: #E6E4DE; --cream-mid: #DAD8D1;
+  --white: #FFFFFF; --text-primary: #1B2E4B; --text-secondary: #5a6a7e;
+  --text-light: rgba(240,239,235,0.7);
+  --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.25,0.46,0.45,0.94); --ease-out: cubic-bezier(0.16,1,0.3,1);
+}
+html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(27,46,75,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+.section-label { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); position: relative; padding-left: 20px; }
+.section-label::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: var(--navy); }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+.nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; }
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-back { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+.nav-back:hover { color: var(--navy); }
+.nav-back svg { transition: transform 0.2s; }
+.nav-back:hover svg { transform: translateX(-3px); }
+.hero { padding: 160px 0 100px; background: var(--navy); position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
+.hero-watermark { position: absolute; right: 20px; bottom: 20px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.hero-inner { position: relative; z-index: 1; max-width: 800px; }
+.hero-tag { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,239,235,0.4); margin-bottom: 20px; position: relative; padding-left: 20px; }
+.hero-tag::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: rgba(240,239,235,0.3); }
+.hero h1 { font-family: var(--font-heading); font-size: clamp(2.5rem,5vw,4rem); font-weight: 700; color: var(--cream); letter-spacing: -0.02em; margin-bottom: 24px; line-height: 1.05; }
+.hero-sub { font-size: 1.125rem; color: var(--text-light); max-width: 600px; line-height: 1.75; margin-bottom: 40px; }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 14px 32px; border-radius: 4px; text-decoration: none; transition: all 0.3s var(--ease); cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
+.btn-white { background: var(--cream); color: var(--navy); }
+.btn-white:hover { background: var(--white); transform: translateY(-1px); }
+.btn-outline-white { background: transparent; color: var(--cream); border: 1px solid rgba(240,239,235,0.3); }
+.btn-outline-white:hover { border-color: var(--cream); background: rgba(240,239,235,0.08); }
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+.rate-strip { background: var(--cream-dark); border-bottom: 1px solid rgba(27,46,75,0.08); padding: 32px 0; position: relative; z-index: 1; }
+.rate-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
+.rate-item { text-align: center; padding: 16px 24px; position: relative; }
+.rate-item:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 10%; height: 80%; width: 1px; background: rgba(27,46,75,0.1); }
+.rate-label { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 8px; opacity: 0.7; }
+.rate-value { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; color: var(--navy); letter-spacing: -0.02em; line-height: 1; }
+.rate-sub { font-size: 0.75rem; color: var(--text-secondary); margin-top: 4px; }
+.section { padding: 100px 0; position: relative; z-index: 1; }
+.section-alt { background: var(--cream-dark); }
+.section-navy { background: var(--navy); }
+.section-header { margin-bottom: 56px; }
+.section-header h2 { font-family: var(--font-heading); font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin-top: 12px; line-height: 1.2; }
+.section-header.light h2 { color: var(--cream); }
+.section-header.light .section-label { color: rgba(240,239,235,0.5); }
+.section-header.light .section-label::before { background: rgba(240,239,235,0.4); }
+.body-text { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); }
+.body-text p { margin-bottom: 20px; }
+.body-text p:last-child { margin-bottom: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.two-col-wide { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: start; }
+.explainer-steps { display: flex; flex-direction: column; gap: 0; margin-top: 40px; }
+.explainer-step { display: flex; gap: 24px; padding: 28px 0; border-bottom: 1px solid rgba(27,46,75,0.08); }
+.explainer-step:last-child { border-bottom: none; }
+.step-num { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: rgba(27,46,75,0.08); line-height: 1; min-width: 48px; }
+.step-content h4 { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.step-content p { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+.benefit-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; margin-top: 48px; }
+.benefit-card { background: var(--white); border: 1px solid rgba(27,46,75,0.08); border-left: 3px solid var(--navy); border-radius: 0 6px 6px 0; padding: 32px 28px; }
+.benefit-card h3 { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+.benefit-card p { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+.benefit-card .stat { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 8px; }
+.compare-table { width: 100%; border-collapse: collapse; margin-top: 40px; }
+.compare-table th { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 16px 20px; text-align: left; border-bottom: 2px solid rgba(27,46,75,0.1); }
+.compare-table th:first-child { color: var(--text-secondary); }
+.compare-table th.col-stq { background: var(--navy); color: var(--cream); border-radius: 6px 6px 0 0; }
+.compare-table th.col-other { color: var(--text-secondary); }
+.compare-table td { padding: 16px 20px; font-size: 0.9375rem; border-bottom: 1px solid rgba(27,46,75,0.06); vertical-align: top; }
+.compare-table td:first-child { font-weight: 600; color: var(--text-primary); font-size: 0.875rem; }
+.compare-table td.col-stq { background: rgba(27,46,75,0.03); font-weight: 600; color: var(--navy); }
+.compare-table td.col-other { color: var(--text-secondary); }
+.compare-table tr:last-child td { border-bottom: none; }
+.use-case-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 48px; }
+.use-case-card { background: rgba(240,239,235,0.08); border: 1px solid rgba(240,239,235,0.1); border-radius: 6px; padding: 28px 24px; }
+.use-case-card h4 { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; color: var(--cream); margin-bottom: 12px; }
+.use-case-card p { font-size: 0.875rem; line-height: 1.7; color: var(--text-light); }
+.tax-callout { background: var(--white); border-radius: 8px; padding: 48px; border: 1px solid rgba(27,46,75,0.06); }
+.tax-callout h3 { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+.tax-callout p { font-size: 1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 16px; }
+.tax-split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+.tax-pill { text-align: center; padding: 24px; border-radius: 6px; }
+.tax-pill-ltcg { background: var(--navy); }
+.tax-pill-stcg { background: var(--cream-dark); }
+.tax-pill .pct { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 700; line-height: 1; margin-bottom: 8px; }
+.tax-pill-ltcg .pct { color: var(--cream); }
+.tax-pill-stcg .pct { color: var(--navy); }
+.tax-pill .label { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+.tax-pill-ltcg .label { color: rgba(240,239,235,0.6); }
+.tax-pill-stcg .label { color: var(--text-secondary); }
+.faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 48px; }
+.faq-item { border-bottom: 1px solid rgba(27,46,75,0.08); }
+.faq-q { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: var(--navy); padding: 24px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; user-select: none; }
+.faq-q::after { content: '+'; font-size: 1.25rem; font-weight: 400; color: var(--text-secondary); flex-shrink: 0; transition: transform 0.3s ease; }
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a { font-size: 0.9375rem; line-height: 1.8; color: var(--text-secondary); max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+.faq-item.open .faq-a { max-height: 400px; padding-bottom: 24px; }
+.use-case-list { margin-top: 48px; }
+.use-case-row { display: grid; grid-template-columns: 80px 1fr; gap: 32px; align-items: start; padding: 36px 0; border-bottom: 1px solid rgba(27,46,75,0.08); }
+.use-case-num { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: rgba(27,46,75,0.1); line-height: 1; padding-top: 4px; }
+.use-case-body h4 { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+.use-case-body p { font-size: 1rem; line-height: 1.8; color: var(--text-secondary); max-width: 680px; }
+@media (max-width: 640px) { .use-case-row { grid-template-columns: 1fr; gap: 8px; } .use-case-num { font-size: 1.25rem; } }
+.risk-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 40px; }
+.risk-card { background: var(--white); border: 1px solid rgba(27,46,75,0.08); border-radius: 6px; padding: 28px 24px; }
+.risk-card h4 { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+.risk-card p { font-size: 0.875rem; line-height: 1.75; color: var(--text-secondary); }
+.cta-section { background: var(--navy); padding: 100px 0; text-align: center; position: relative; overflow: hidden; z-index: 1; }
+.cta-section::before { content: 'STQ'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-family: var(--font-heading); font-weight: 700; font-size: 20rem; color: rgba(240,239,235,0.02); pointer-events: none; }
+.cta-section h2 { font-family: var(--font-heading); font-size: clamp(2rem,4vw,3rem); font-weight: 700; color: var(--cream); margin-bottom: 16px; letter-spacing: -0.02em; }
+.cta-section p { font-size: 1.0625rem; color: var(--text-light); max-width: 480px; margin: 0 auto 40px; line-height: 1.7; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative; z-index: 1; }
+.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 24px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.5); }
+.footer-links { display: flex; gap: 32px; flex-wrap: wrap; }
+.footer-links a { font-size: 0.8125rem; color: rgba(240,239,235,0.5); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--cream); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.35); }
+.footer-disclaimer { margin-top: 24px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.18); max-width: 900px; }
+@media (max-width: 1024px) { .two-col, .two-col-wide { grid-template-columns: 1fr; gap: 48px; } .benefit-grid { grid-template-columns: 1fr; } .use-case-grid { grid-template-columns: repeat(2,1fr); } .use-case-list { margin-top: 48px; }
+.use-case-row { display: grid; grid-template-columns: 80px 1fr; gap: 32px; align-items: start; padding: 36px 0; border-bottom: 1px solid rgba(27,46,75,0.08); }
+.use-case-num { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: rgba(27,46,75,0.1); line-height: 1; padding-top: 4px; }
+.use-case-body h4 { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+.use-case-body p { font-size: 1rem; line-height: 1.8; color: var(--text-secondary); max-width: 680px; }
+@media (max-width: 640px) { .use-case-row { grid-template-columns: 1fr; gap: 8px; } .use-case-num { font-size: 1.25rem; } }
+.risk-grid { grid-template-columns: 1fr; } .rate-grid { grid-template-columns: repeat(2,1fr); } .rate-item:nth-child(2)::after { display: none; } }
+@media (max-width: 768px) { .nav-inner { padding: 0 24px; } .hero { padding: 120px 0 72px; } .use-case-grid { grid-template-columns: 1fr; } .tax-split { grid-template-columns: 1fr; } .cta-buttons { flex-direction: column; align-items: center; } .compare-table { font-size: 0.8rem; } .compare-table td, .compare-table th { padding: 12px 12px; } .heloc-compare-grid { grid-template-columns: 1fr !important; } .use-case-mosaic { grid-template-columns: 1fr !important; } .case-study-grid { grid-template-columns: 1fr !important; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
+    <a href="/#solutions" class="nav-back">
+      <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M6 1L1 5M1 5L6 9M1 5H13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back
+    </a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-watermark">STQ</div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-tag">Synthetic Portfolio Borrowing</div>
+      <h1>The Cheapest Loan<br>You've Never Heard Of.</h1>
+      <p class="hero-sub">Borrow against your investments at near-Treasury rates through box spreads. No bank approval, no credit check, no forced selling. Interest is structured as a capital loss – deductible against capital gains regardless of how proceeds are used. Funds typically available within days of execution.</p>
+      <div class="hero-buttons">
+        <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-white">Schedule a Conversation</a>
+        <a href="#how-it-works" class="btn btn-outline-white">How It Works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rate-strip">
+  <div class="container">
+    <div class="rate-grid">
+      <div class="rate-item">
+        <div class="rate-label">Floating Line of Credit</div>
+        <div class="rate-value">~3.85%</div>
+        <div class="rate-sub">SOFR + ~0.22% · current</div>
+      </div>
+      <div class="rate-item">
+        <div class="rate-label">1-Year Fixed</div>
+        <div class="rate-value">4.13%</div>
+        <div class="rate-sub">Locked for 12 months</div>
+      </div>
+      <div class="rate-item">
+        <div class="rate-label">3-Year Fixed</div>
+        <div class="rate-value">4.16%</div>
+        <div class="rate-sub">Locked for 36 months</div>
+      </div>
+      <div class="rate-item">
+        <div class="rate-label">5-Year Fixed</div>
+        <div class="rate-value">4.19%</div>
+        <div class="rate-sub">Locked for 60 months</div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:0.6875rem;color:var(--text-secondary);opacity:0.6;margin-top:20px;">Rates as of 03/30/2026. Actual rates depend on market conditions and do not include management fees. Consult your advisor.</p>
+  </div>
+</div>
+
+<section class="section" id="how-it-works">
+  <div class="container">
+    <div class="two-col-wide">
+      <div>
+        <div class="section-header">
+          <div class="section-label">How It Works</div>
+          <h2>Borrow from the market, not the bank.</h2>
+        </div>
+        <div class="body-text">
+          <p>A box spread is a four-leg options structure on the S&P 500 Index that creates a fully hedged position with a fixed, known payoff at expiration. It functions like a zero-coupon bond – you receive cash upfront and repay a fixed amount at settlement.</p>
+          <p>The difference between what you receive today and what you owe at expiration is your interest rate – set by the options market, not by a bank. Institutional participants including options market makers and hedge funds compete to provide the capital, which is what keeps rates competitive.</p>
+          <p>At STQ, we implement this through an established institutional platform available through our custodian. Setup requires one DocuSign package. Funds are typically available within a few business days of execution.</p>
+        </div>
+      </div>
+      <div>
+        <div class="explainer-steps">
+          <div class="explainer-step">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <h4>Portfolio stays invested</h4>
+              <p>Your existing holdings serve as collateral. Nothing is sold. You stay fully invested and continue compounding.</p>
+            </div>
+          </div>
+          <div class="explainer-step">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <h4>Box spread is executed</h4>
+              <p>STQ facilitates a basket of four SPX index options on your behalf. The structure locks in a fixed payoff at expiration – your rate is set at trade time.</p>
+            </div>
+          </div>
+          <div class="explainer-step">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <h4>Funds available quickly</h4>
+              <p>Proceeds are credited to your account. Minimum draw is $10,000. Borrow up to 50% of your portfolio – or up to 85% for portfolio margin accounts.</p>
+            </div>
+          </div>
+          <div class="explainer-step">
+            <div class="step-num">04</div>
+            <div class="step-content">
+              <h4>Interest is tax-deductible</h4>
+              <p>Because SPX options are Section 1256 contracts, interest is treated as a capital loss – 60% long-term, 40% short-term – reported on your 1099. No restrictions on use of proceeds.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Why Box Spreads</div>
+      <h2>Four advantages banks can't match.</h2>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <div class="stat">~3.85%</div>
+        <h3>Rates at or near Treasury</h3>
+        <p>Because the rate is set by the options market – not a bank – you borrow at near-Treasury levels. The spread over SOFR is typically 0.20–0.37%. Compare that to margin loans at 10%+ or SBLOCs at 6.5–8%.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="stat">Any Purpose</div>
+        <h3>Tax-deductible interest</h3>
+        <p>Interest on box spread loans is treated as a capital loss under IRS Section 1256 – regardless of how you use the proceeds. Unlike margin loans or SBLOCs, there are no restrictions on purpose to claim the deduction.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="stat">$0</div>
+        <h3>No forced selling</h3>
+        <p>Your positions stay intact. No capital gains triggered. No disruption to your long-term investment strategy. The portfolio keeps compounding while you access the liquidity you need.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="stat">Simple</div>
+        <h3>No bank, no application</h3>
+        <p>No credit check, no underwriting, no approval process. Setup takes one DocuSign package. Early repayment – partial or full – is supported whenever markets are open.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Tax Treatment</div>
+      <h2>Interest that works in your favor.</h2>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="body-text">
+          <p>SPX index options are Section 1256 contracts under the IRS code. This gives them two distinctive tax treatments that make box spread borrowing uniquely advantageous.</p>
+          <p>Capital gains and losses are treated as 60% long-term and 40% short-term – regardless of how long the position was held. And positions are marked to market at year-end, meaning you can claim the deduction each year on accrued interest, even before the loan is repaid.</p>
+          <p>For a client in the top federal bracket, this means a meaningful portion of borrowing costs is effectively subsidized by the tax code. Your custodian reports the gains and losses on Section 1256 contracts as part of the consolidated 1099 – no special handling required.</p>
+          <p style="margin-top:20px;font-size:0.875rem;color:var(--text-secondary);">Source: <a href="https://www.cboe.com/tradable_products/sp_500/spx_options/" target="_blank" rel="noopener" style="color:var(--navy);text-decoration:underline;text-underline-offset:3px;">CBOE – SPX Options Product Specifications</a> · <a href="https://www.cboe.com/tradable_products/sp_500/spx_options/tax_treatment/" target="_blank" rel="noopener" style="color:var(--navy);text-decoration:underline;text-underline-offset:3px;">Tax Treatment of SPX Options</a></p>
+        </div>
+        <div class="tax-split" style="margin-top:32px;">
+          <div class="tax-pill tax-pill-ltcg">
+            <div class="pct">60%</div>
+            <div class="label">Long-term capital loss</div>
+          </div>
+          <div class="tax-pill tax-pill-stcg">
+            <div class="pct">40%</div>
+            <div class="label">Short-term capital loss</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="tax-callout">
+          <h3>How the deduction works</h3>
+          <p>When you open a box spread loan, you receive the principal upfront and repay principal plus interest at expiration. The difference – your interest cost – is recorded as a capital loss on the options positions.</p>
+          <p>For multi-year fixed-rate loans, you claim the deduction annually based on accrued interest as reported on your 1099 – even if you haven't paid it yet.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRAPHIC 1: Loan flow diagram -->
+    <div style="margin-top:56px;">
+      <p style="font-family:'Chakra Petch',sans-serif;font-size:0.6875rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:24px;padding-left:20px;position:relative;">
+        <span style="position:absolute;left:0;top:50%;width:10px;height:1px;background:var(--navy);"></span>
+        The mechanics of a single-year loan
+      </p>
+      <div style="background:var(--white);border:1px solid rgba(27,46,75,0.06);border-radius:8px;padding:40px 32px;">
+        <svg width="100%" viewBox="0 0 640 170" role="img">
+          <title>Box spread loan flow: receive $950K today, repay $1MM in 1 year, $50K interest = capital loss split 60/40</title>
+          <defs>
+            <marker id="arr1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </marker>
+          </defs>
+          <!-- TODAY -->
+          <text font-family="'Chakra Petch',sans-serif" font-size="11" fill="#5a6a7e" x="50" y="52" text-anchor="middle">Today</text>
+          <!-- Receive box – navy solid -->
+          <rect x="80" y="28" width="130" height="48" rx="6" fill="#1B2E4B" stroke="#1B2E4B" stroke-width="0.5"/>
+          <text font-family="'Chakra Petch',sans-serif" font-size="13" font-weight="600" fill="#F0EFEB" x="145" y="49" text-anchor="middle">Receive $950K</text>
+          <text font-family="'DM Sans',sans-serif" font-size="11" fill="rgba(240,239,235,0.65)" x="145" y="65" text-anchor="middle">cash upfront</text>
+          <!-- Arrow -->
+          <line x1="212" y1="52" x2="255" y2="52" stroke="#5a6a7e" stroke-width="1" marker-end="url(#arr1)"/>
+          <!-- Interest box – navy light tint -->
+          <rect x="258" y="28" width="120" height="48" rx="6" fill="rgba(27,46,75,0.08)" stroke="rgba(27,46,75,0.25)" stroke-width="0.5"/>
+          <text font-family="'Chakra Petch',sans-serif" font-size="13" font-weight="600" fill="#1B2E4B" x="318" y="49" text-anchor="middle">$50K interest</text>
+          <text font-family="'DM Sans',sans-serif" font-size="11" fill="#5a6a7e" x="318" y="65" text-anchor="middle">= capital loss</text>
+          <!-- Arrow fork -->
+          <line x1="380" y1="52" x2="412" y2="52" stroke="#5a6a7e" stroke-width="1"/>
+          <line x1="412" y1="38" x2="412" y2="66" stroke="#5a6a7e" stroke-width="0.5"/>
+          <line x1="412" y1="38" x2="420" y2="38" stroke="#5a6a7e" stroke-width="1" marker-end="url(#arr1)"/>
+          <line x1="412" y1="66" x2="420" y2="66" stroke="#5a6a7e" stroke-width="1" marker-end="url(#arr1)"/>
+          <!-- LTCG box – navy solid -->
+          <rect x="422" y="16" width="200" height="36" rx="6" fill="#1B2E4B" stroke="#1B2E4B" stroke-width="0.5"/>
+          <text font-family="'Chakra Petch',sans-serif" font-size="12" font-weight="600" fill="#F0EFEB" x="522" y="34" text-anchor="middle" dominant-baseline="central">60% long-term – $30K</text>
+          <!-- STCG box – navy light tint -->
+          <rect x="422" y="56" width="200" height="36" rx="6" fill="rgba(27,46,75,0.08)" stroke="rgba(27,46,75,0.25)" stroke-width="0.5"/>
+          <text font-family="'Chakra Petch',sans-serif" font-size="12" font-weight="600" fill="#1B2E4B" x="522" y="74" text-anchor="middle" dominant-baseline="central">40% short-term – $20K</text>
+          <!-- Divider -->
+          <line x1="40" y1="105" x2="630" y2="105" stroke="#DAD8D1" stroke-width="0.5" stroke-dasharray="4 4"/>
+          <!-- IN 1 YEAR -->
+          <text font-family="'Chakra Petch',sans-serif" font-size="11" fill="#5a6a7e" x="50" y="135" text-anchor="middle">In 1 year</text>
+          <!-- Repay box – cream -->
+          <rect x="80" y="118" width="130" height="40" rx="6" fill="#F0EFEB" stroke="rgba(27,46,75,0.2)" stroke-width="0.5"/>
+          <text font-family="'Chakra Petch',sans-serif" font-size="13" font-weight="600" fill="#1B2E4B" x="145" y="138" text-anchor="middle" dominant-baseline="central">Repay $1MM fixed</text>
+          <!-- Note -->
+          <text font-family="'DM Sans',sans-serif" font-size="11" fill="#5a6a7e" x="400" y="138" text-anchor="middle" dominant-baseline="central">Deduction claimed on 1099 · Section 1256</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- HELOC/SBLOC COMPARISON CALLOUT -->
+    <div class="heloc-compare-grid" style="margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+
+      <!-- Why box spreads beat HELOC/SBLOC on deductibility -->
+      <div style="background:var(--white);border:1px solid rgba(27,46,75,0.06);border-radius:8px;padding:36px 32px;">
+        <div style="font-family:'Chakra Petch',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:16px;">vs. HELOC &amp; SBLOC</div>
+        <h3 style="font-family:'Chakra Petch',sans-serif;font-size:1.125rem;font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.3;">The deduction others don't offer.</h3>
+        <p style="font-size:0.9375rem;line-height:1.8;color:var(--text-secondary);margin-bottom:16px;">A HELOC is secured by your home. Interest is deductible only if the proceeds are used to buy, build, or improve the property – use the funds for anything else and the deduction disappears. A securities-backed line of credit is similarly restricted: interest is deductible only as investment interest expense under IRC §163(d), capped at your net investment income for the year, and only if the proceeds are used for investment purposes. Use an SBLOC to buy a vacation home or pay a tax bill and the deduction is disallowed entirely.</p>
+        <p style="font-size:0.9375rem;line-height:1.8;color:var(--text-secondary);">Box spread interest is different. Because it's classified as a capital loss under Section 1256 – not interest expense – the deduction applies regardless of what you do with the proceeds. Buy a vacation home. Pay a tax bill. Fund a business. The deduction follows the loan, not the use.</p>
+        <div style="margin-top:24px;padding-top:24px;border-top:1px solid rgba(27,46,75,0.08);display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;text-align:center;">
+          <div>
+            <div style="font-family:'Chakra Petch',sans-serif;font-size:1.25rem;font-weight:700;color:var(--navy);">✓</div>
+            <div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px;line-height:1.4;">Box spreads<br>any purpose</div>
+          </div>
+          <div>
+            <div style="font-family:'Chakra Petch',sans-serif;font-size:1.25rem;font-weight:700;color:var(--text-secondary);">~</div>
+            <div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px;line-height:1.4;">HELOC<br>home use only</div>
+          </div>
+          <div>
+            <div style="font-family:'Chakra Petch',sans-serif;font-size:1.25rem;font-weight:700;color:var(--text-secondary);">~</div>
+            <div style="font-size:0.75rem;color:var(--text-secondary);margin-top:4px;line-height:1.4;">SBLOC<br>investment use only</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why the effective rate can be sub-3% -->
+      <div style="background:var(--navy);border-radius:8px;padding:36px 32px;">
+        <div style="font-family:'Chakra Petch',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,239,235,0.4);margin-bottom:16px;">Effective Rate</div>
+        <h3 style="font-family:'Chakra Petch',sans-serif;font-size:1.125rem;font-weight:700;color:var(--cream);margin-bottom:16px;line-height:1.3;">Why the real cost is under 3%.</h3>
+        <p style="font-size:0.9375rem;line-height:1.8;color:rgba(240,239,235,0.7);margin-bottom:16px;">The stated rate on a box spread is around 4%. But stated rate and effective rate are two different things.</p>
+        <p style="font-size:0.9375rem;line-height:1.8;color:rgba(240,239,235,0.7);margin-bottom:24px;">Because the interest is classified as a capital loss under Section 1256, it generates a tax benefit that directly reduces your borrowing cost. The 60% long-term portion offsets capital gains you'd otherwise pay 20% on. The 40% short-term portion offsets gains taxed at ordinary rates. Combined, at top federal brackets, the tax savings reduce an approximately 4.10% stated rate to an effective cost of around 2.91%.</p>
+        <div style="background:rgba(240,239,235,0.06);border:1px solid rgba(240,239,235,0.1);border-radius:6px;padding:20px 24px;">
+          <div style="font-family:'Chakra Petch',sans-serif;font-size:0.6875rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(240,239,235,0.35);margin-bottom:16px;">Illustrative – top federal brackets</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;justify-content:space-between;font-size:0.875rem;color:rgba(240,239,235,0.7);">
+              <span>Stated rate</span><span style="font-family:'Chakra Petch',sans-serif;font-weight:600;color:var(--cream);">~4.10%</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:0.875rem;color:rgba(240,239,235,0.7);">
+              <span>Blended federal tax benefit on capital loss</span><span style="font-family:'Chakra Petch',sans-serif;font-weight:600;color:var(--cream);">~–1.19%</span>
+            </div>
+            <div style="height:1px;background:rgba(240,239,235,0.1);"></div>
+            <div style="display:flex;justify-content:space-between;font-size:0.9375rem;color:var(--cream);">
+              <span style="font-weight:600;">After-tax effective rate</span><span style="font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:1.125rem;">~2.91%</span>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:0.6875rem;color:rgba(240,239,235,0.3);margin-top:16px;line-height:1.6;">Illustrative only. Effective rate based on top federal tax brackets applied to the 60/40 long-term/short-term split. Actual results depend on your individual tax situation and whether you have offsetting capital gains. Consult a qualified tax advisor.</p>
+      </div>
+    </div>
+
+    <!-- GRAPHIC 2: Multi-year deductions -->
+    <div style="margin-top:48px;">
+      <p style="font-family:'Chakra Petch',sans-serif;font-size:0.6875rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:16px;padding-left:20px;position:relative;">
+        <span style="position:absolute;left:0;top:50%;width:10px;height:1px;background:var(--navy);"></span>
+        Multi-year fixed loan – annual deductions
+      </p>
+      <p style="font-size:0.9375rem;line-height:1.8;color:var(--text-secondary);margin-bottom:28px;">Clients who want a fixed interest rate can enter into a box spread contract that lasts multiple years. In these cases, the interest is not paid until the options expiration date. These clients can claim a capital loss each year: for tax purposes, custodians will use the fair market value to calculate the losses on those contracts at the end of each year. The losses based on fair market value will be equal to the accrued interest for that year.</p>
+      <div style="background:var(--white);border:1px solid rgba(27,46,75,0.06);border-radius:8px;padding:40px 48px 32px;">
+        <svg width="100%" viewBox="0 0 640 330" role="img">
+          <title>Multi-year deduction chart</title>
+          <defs>
+            <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </marker>
+          </defs>
+
+          <!-- Baseline -->
+          <line x1="30" y1="220" x2="610" y2="220" stroke="#DAD8D1" stroke-width="0.5"/>
+
+          <!-- Dashed line at $10,000 top -->
+          <line x1="30" y1="40" x2="610" y2="40" stroke="#DAD8D1" stroke-width="0.5" stroke-dasharray="3 4"/>
+
+          <!-- CASH RECEIVED -->
+          <rect x="45" y="100" width="72" height="120" rx="3" fill="#1B2E4B"/>
+          <text font-family="'Chakra Petch',sans-serif" font-size="12" font-weight="600" fill="#1B2E4B" x="81" y="90" text-anchor="middle">$9,700</text>
+
+          <!-- YEAR 1 -->
+          <rect x="175" y="90" width="72" height="10" rx="2" fill="#1B2E4B" opacity="0.7"/>
+          <text font-family="'Chakra Petch',sans-serif" font-size="12" font-weight="600" fill="#1B2E4B" x="211" y="82" text-anchor="middle">$100</text>
+
+          <!-- YEAR 2 -->
+          <rect x="295" y="65" width="72" height="10" rx="2" fill="#1B2E4B" opacity="0.7"/>
+          <text font-family="'Chakra Petch',sans-serif" font-size="12" font-weight="600" fill="#1B2E4B" x="331" y="57" text-anchor="middle">$100</text>
+
+          <!-- YEAR 3 -->
+          <rect x="415" y="40" width="72" height="10" rx="2" fill="#1B2E4B" opacity="0.7"/>
+          <text font-family="'Chakra Petch',sans-serif" font-size="12" font-weight="600" fill="#1B2E4B" x="451" y="32" text-anchor="middle">$100</text>
+
+          <!-- LUMP SUM -->
+          <rect x="525" y="40" width="72" height="180" rx="3" fill="#F0EFEB" stroke="rgba(27,46,75,0.2)" stroke-width="0.5"/>
+          <text font-family="'Chakra Petch',sans-serif" font-size="12" font-weight="600" fill="#1B2E4B" x="561" y="30" text-anchor="middle">$10,000</text>
+
+          <!-- Timeline with diamond markers -->
+          <line x1="30" y1="240" x2="605" y2="240" stroke="#1B2E4B" stroke-width="0.5" marker-end="url(#arr2)" opacity="0.3"/>
+          <polygon points="81,233 87,240 81,247 75,240" fill="#1B2E4B"/>
+          <polygon points="211,233 217,240 211,247 205,240" fill="#1B2E4B"/>
+          <polygon points="331,233 337,240 331,247 325,240" fill="#1B2E4B"/>
+          <polygon points="451,233 457,240 451,247 445,240" fill="#1B2E4B"/>
+          <polygon points="561,233 567,240 561,247 555,240" fill="#1B2E4B"/>
+
+          <!-- Column labels -->
+          <text font-family="'DM Sans',sans-serif" font-size="10" fill="#5a6a7e" x="81" y="256" text-anchor="middle">Cash received</text>
+          <text font-family="'DM Sans',sans-serif" font-size="10" fill="#5a6a7e" x="81" y="268" text-anchor="middle">upfront</text>
+
+          <text font-family="'DM Sans',sans-serif" font-size="10" fill="#5a6a7e" x="211" y="256" text-anchor="middle">Year 1</text>
+          <text font-family="'DM Sans',sans-serif" font-size="10" fill="#5a6a7e" x="211" y="268" text-anchor="middle">Accrued interest</text>
+
+          <text font-family="'DM Sans',sans-serif" font-size="10" fill="#5a6a7e" x="331" y="256" text-anchor="middle">Year 2</text>
+          <text font-family="'DM Sans',sans-serif" font-size="10" fill="#5a6a7e" x="331" y="268" text-anchor="middle">Accrued interest</text>
+
+          <text font-family="'DM Sans',sans-serif" font-size="10" fill="#5a6a7e" x="451" y="256" text-anchor="middle">Year 3</text>
+          <text font-family="'DM Sans',sans-serif" font-size="10" fill="#5a6a7e" x="451" y="268" text-anchor="middle">Accrued interest</text>
+
+          <text font-family="'DM Sans',sans-serif" font-size="10" fill="#5a6a7e" x="561" y="256" text-anchor="middle">Lump sum payment</text>
+          <text font-family="'DM Sans',sans-serif" font-size="10" fill="#5a6a7e" x="561" y="268" text-anchor="middle">at expiration</text>
+
+          <!-- Dashed deduction boxes -->
+          <rect x="167" y="274" width="90" height="20" rx="3" fill="none" stroke="#1B2E4B" stroke-width="0.75" stroke-dasharray="3 3"/>
+          <text font-family="'DM Sans',sans-serif" font-size="8" fill="#1B2E4B" x="212" y="287" text-anchor="middle" dominant-baseline="central">Year 1 tax deduction</text>
+
+          <rect x="287" y="274" width="90" height="20" rx="3" fill="none" stroke="#1B2E4B" stroke-width="0.75" stroke-dasharray="3 3"/>
+          <text font-family="'DM Sans',sans-serif" font-size="8" fill="#1B2E4B" x="332" y="287" text-anchor="middle" dominant-baseline="central">Year 2 tax deduction</text>
+
+          <rect x="407" y="274" width="90" height="20" rx="3" fill="none" stroke="#1B2E4B" stroke-width="0.75" stroke-dasharray="3 3"/>
+          <text font-family="'DM Sans',sans-serif" font-size="8" fill="#1B2E4B" x="452" y="287" text-anchor="middle" dominant-baseline="central">Year 3 tax deduction</text>
+        </svg>
+        <p style="font-size:0.6875rem;color:var(--text-secondary);opacity:0.6;margin-top:16px;text-align:center;">Hypothetical $10,000 loan at ~1% annual interest over 3 years. Cumulative accrued interest shown. For illustrative purposes only.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Product Comparison</div>
+      <h2>How box spreads compare.</h2>
+    </div>
+    <div style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="col-stq">Box Spreads (STQ)</th>
+            <th class="col-other">Securities-Backed Lines of Credit</th>
+            <th class="col-other">Margin Loans</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Interest rate</td>
+            <td class="col-stq">3.85% – 4.00%</td>
+            <td class="col-other">6.50% – 8.00%</td>
+            <td class="col-other">10%+</td>
+          </tr>
+          <tr>
+            <td>Fixed-rate option</td>
+            <td class="col-stq">Up to 6 years</td>
+            <td class="col-other">Limited availability</td>
+            <td class="col-other">Not offered</td>
+          </tr>
+          <tr>
+            <td>Tax deductibility</td>
+            <td class="col-stq">Yes – any purpose</td>
+            <td class="col-other">Investment purpose only; capped at net investment income</td>
+            <td class="col-other">Investment purpose only; capped at net investment income</td>
+          </tr>
+          <tr>
+            <td>Minimum draw</td>
+            <td class="col-stq">$10,000</td>
+            <td class="col-other">$70,000+</td>
+            <td class="col-other">N/A</td>
+          </tr>
+          <tr>
+            <td>Borrowing power</td>
+            <td class="col-stq">Up to 50% (85% PM accts)</td>
+            <td class="col-other">50%–70%, no concentrated</td>
+            <td class="col-other">Up to 50%</td>
+          </tr>
+          <tr>
+            <td>Margin call risk</td>
+            <td class="col-stq">Lower – withstands 28.5%+ drop</td>
+            <td class="col-other">Higher – immediate call risk</td>
+            <td class="col-other">Standard – broker discretion; can be called at any time</td>
+          </tr>
+          <tr>
+            <td>Setup</td>
+            <td class="col-stq">1 DocuSign, funds available shortly after execution</td>
+            <td class="col-other">Bank application required</td>
+            <td class="col-other">Varies</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.6875rem;color:var(--text-secondary);opacity:0.6;margin-top:16px;">Rates as of 03/30/2026. For illustrative purposes. Actual rates vary. Consult your advisor.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:720px;">
+    <div class="section-header">
+      <div class="section-label">Common Questions</div>
+      <h2>What people ask us.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What is a box spread, in plain English?</div>
+        <div class="faq-a">A box spread is a basket of four options contracts on the S&P 500 Index that creates a fixed, known payoff at a future date. It functions like a zero-coupon bond – you receive cash upfront and repay a fixed amount at expiration. The difference is your interest rate, set by the options market rather than a bank. Market participants including hedge funds and market makers provide the capital, competing to offer the lowest rate.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Does market volatility affect my loan?</div>
+        <div class="faq-a">Not your interest rate. Once a box spread is implemented, the interest expense is fixed and does not change with market movements. During the COVID downturn, box spread borrowing continued without interruption. Volatility can affect the value of your collateral – which could trigger a margin call if holdings drop significantly – but it does not affect the terms of your loan.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I repay early?</div>
+        <div class="faq-a">Yes. Both partial and full early repayment are supported whenever markets are open. When you repay, the box spread options are exited on the market – effectively selling the loan to other participants. There is no prepayment penalty.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Will I owe margin interest to my broker?</div>
+        <div class="faq-a">No. A margin account is required to use this strategy, but you will not owe margin interest to your broker. The funds come from the options market through box spreads – not from your broker-dealer. Your custodian's margin feature simply determines how much can be withdrawn from the strategy.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How is the interest rate set?</div>
+        <div class="faq-a">Floating rates are benchmarked to SOFR and adjusted monthly using 1–3 month box spreads. Fixed rates are benchmarked to same-duration Treasury yields and locked for the term of the loan. The rates are market-driven: when rates in the options market are too high, institutions invest in box spreads (increasing supply, reducing rates); when too low, they borrow (increasing demand, raising rates). This arbitrage keeps rates close to Treasury.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What paperwork is required?</div>
+        <div class="faq-a">Two items: a limited power of attorney (LPOA) granting trading and fee payment authorization, and an options and margin agreement to enable box spread trading in your account. Both are handled in a single DocuSign package. The account is typically set up within one week.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Who are the lenders?</div>
+        <div class="faq-a">Institutional market participants – options market makers, hedge funds, and other professional investors. You're borrowing directly from the institutional wholesale market, which is why rates are significantly better than what banks offer. The BOXX ETF, with over $10 billion in AUM, was created specifically to put institutional cash to work on the lender side of this market.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding:64px 0;">
+  <div class="container">
+    <div class="section-label" style="margin-bottom:32px;">Further Reading</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+      <a href="https://www.cboe.com/tradable_products/sp_500/spx_options/" target="_blank" rel="noopener" style="display:block;padding:24px 28px;background:var(--white);border:1px solid rgba(27,46,75,0.08);border-radius:6px;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px rgba(27,46,75,0.08)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:10px;">CBOE</div>
+        <div style="font-family:var(--font-heading);font-size:0.9375rem;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.4;">SPX Options – Product Specifications</div>
+        <div style="font-size:0.8125rem;line-height:1.65;color:var(--text-secondary);">Official contract specs, settlement terms, and trading mechanics for SPX index options from the Chicago Board Options Exchange.</div>
+        <div style="margin-top:16px;font-family:var(--font-heading);font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);">cboe.com →</div>
+      </a>
+      <a href="https://www.cboe.com/tradable_products/sp_500/spx_options/tax_treatment/" target="_blank" rel="noopener" style="display:block;padding:24px 28px;background:var(--white);border:1px solid rgba(27,46,75,0.08);border-radius:6px;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px rgba(27,46,75,0.08)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:10px;">CBOE</div>
+        <div style="font-family:var(--font-heading);font-size:0.9375rem;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.4;">Tax Treatment of SPX Options</div>
+        <div style="font-size:0.8125rem;line-height:1.65;color:var(--text-secondary);">CBOE's overview of the Section 1256 tax treatment applicable to SPX index options, including the 60/40 long-term/short-term capital gain split.</div>
+        <div style="margin-top:16px;font-family:var(--font-heading);font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);">cboe.com →</div>
+      </a>
+      <a href="https://www.cboe.com/tradable_products/sp_500/spx_options/strategies/" target="_blank" rel="noopener" style="display:block;padding:24px 28px;background:var(--white);border:1px solid rgba(27,46,75,0.08);border-radius:6px;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px rgba(27,46,75,0.08)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:10px;">CBOE</div>
+        <div style="font-family:var(--font-heading);font-size:0.9375rem;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.4;">SPX Options Strategies</div>
+        <div style="font-size:0.8125rem;line-height:1.65;color:var(--text-secondary);">Strategy guides for SPX index options from CBOE, including box spreads, risk reversals, and other multi-leg structures used by institutional participants.</div>
+        <div style="margin-top:16px;font-family:var(--font-heading);font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);">cboe.com →</div>
+      </a>
+      <a href="https://www.irs.gov/pub/irs-pdf/p550.pdf" target="_blank" rel="noopener" style="display:block;padding:24px 28px;background:var(--white);border:1px solid rgba(27,46,75,0.08);border-radius:6px;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px rgba(27,46,75,0.08)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:10px;">IRS</div>
+        <div style="font-family:var(--font-heading);font-size:0.9375rem;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.4;">Publication 550 – Investment Income &amp; Expenses</div>
+        <div style="font-size:0.8125rem;line-height:1.65;color:var(--text-secondary);">The IRS reference covering Section 1256 contracts, marked-to-market rules, and the treatment of capital gains and losses on regulated futures and index options.</div>
+        <div style="margin-top:16px;font-family:var(--font-heading);font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);">irs.gov →</div>
+      </a>
+    </div>
+    <p style="font-size:0.6875rem;color:var(--text-secondary);opacity:0.6;margin-top:20px;">External links are provided for informational purposes only. STQ Capital Partners is not affiliated with CBOE or the IRS and makes no representations regarding the accuracy or completeness of third-party content.</p>
+  </div>
+</section>
+
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2 style="font-size:clamp(2rem,4vw,2.75rem);">Case Study: Financing a $1.5M Vacation Home</h2>
+      <p style="font-size:1.0625rem;color:var(--text-secondary);max-width:640px;margin-top:12px;line-height:1.7;">A $5M portfolio owner saves over $40,000 annually versus traditional mortgage financing.</p>
+    </div>
+
+    <!-- Situation callout -->
+    <div style="display:flex;align-items:flex-start;gap:20px;padding:28px 32px;border-left:3px solid var(--navy);background:var(--white);border-radius:0 6px 6px 0;margin-bottom:48px;">
+      <div style="margin-top:2px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B2E4B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg></div>
+      <div>
+        <p style="font-size:0.9375rem;line-height:1.7;color:var(--text-secondary);"><strong style="color:var(--navy);">The Situation:</strong> Investor with $5M portfolio wants to buy a $1.5M vacation home.</p>
+        <p style="font-size:0.9375rem;line-height:1.7;color:var(--text-secondary);"><strong style="color:var(--navy);">The Choice:</strong> Traditional 7% Mortgage vs. Box Spread Loan at ~4.10%.</p>
+      </div>
+    </div>
+
+    <!-- Side by side comparison -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;" class="case-study-grid">
+
+      <!-- Traditional Mortgage -->
+      <div style="background:var(--white);border:1px solid rgba(27,46,75,0.1);border-radius:6px;padding:36px 32px;">
+        <h4 style="font-family:var(--font-heading);font-size:1.125rem;font-weight:700;color:var(--navy);margin-bottom:28px;">Traditional Mortgage</h4>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(27,46,75,0.06);">
+          <span style="font-size:0.9375rem;color:var(--text-secondary);">Interest Rate</span>
+          <span style="font-family:var(--font-heading);font-size:0.9375rem;font-weight:600;color:var(--navy);">7.0%</span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--text-secondary);opacity:0.7;padding:6px 0 10px;">$1.5M × 7.0% = $105,000 interest</div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(27,46,75,0.06);">
+          <span style="font-size:0.9375rem;color:var(--text-secondary);">Deductibility Cap</span>
+          <span style="font-family:var(--font-heading);font-size:0.9375rem;font-weight:600;color:var(--navy);">$750k Limit</span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--text-secondary);opacity:0.7;padding:6px 0 10px;">Only ~$52.5k of interest deductible</div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(27,46,75,0.06);">
+          <span style="font-size:0.9375rem;color:var(--text-secondary);">Tax Benefit</span>
+          <span style="font-family:var(--font-heading);font-size:0.9375rem;font-weight:600;color:var(--navy);">~$19,400</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:20px 0 0;margin-top:12px;border-top:2px solid rgba(27,46,75,0.1);">
+          <span style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--navy);">Net Annual Cost</span>
+          <span style="font-family:var(--font-heading);font-size:1.25rem;font-weight:700;color:var(--navy);">$85,600</span>
+        </div>
+      </div>
+
+      <!-- Box Spread Loan -->
+      <div style="background:var(--white);border:2px solid var(--navy);border-radius:6px;padding:36px 32px;position:relative;">
+        <div style="position:absolute;top:-14px;right:24px;background:var(--navy);color:var(--cream);font-family:var(--font-heading);font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:6px 16px;border-radius:4px;">Saves ~$42k / Year</div>
+        <h4 style="font-family:var(--font-heading);font-size:1.125rem;font-weight:700;color:var(--navy);margin-bottom:28px;">Box Spread Loan</h4>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(27,46,75,0.06);">
+          <span style="font-size:0.9375rem;color:var(--text-secondary);">Implied Rate</span>
+          <span style="font-family:var(--font-heading);font-size:0.9375rem;font-weight:600;color:var(--navy);">~4.10%</span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--text-secondary);opacity:0.7;padding:6px 0 10px;">$1.5M × 4.10% = $61,500 interest</div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(27,46,75,0.06);">
+          <span style="font-size:0.9375rem;color:var(--text-secondary);">Deductibility</span>
+          <span style="font-family:var(--font-heading);font-size:0.9375rem;font-weight:600;color:var(--navy);">100% Full</span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--text-secondary);opacity:0.7;padding:6px 0 10px;">Entire $61.5k is deductible capital loss</div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(27,46,75,0.06);">
+          <span style="font-size:0.9375rem;color:var(--text-secondary);">Tax Benefit</span>
+          <span style="font-family:var(--font-heading);font-size:0.9375rem;font-weight:600;color:var(--navy);">~$17,800</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:20px 0 0;margin-top:12px;border-top:2px solid var(--navy);">
+          <span style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--navy);">Net Annual Cost</span>
+          <span style="font-family:var(--font-heading);font-size:1.25rem;font-weight:700;color:var(--navy);">$43,700</span>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:0.6875rem;color:var(--text-secondary);opacity:0.6;margin-top:20px;">Hypothetical illustration for educational purposes only. Assumes top federal bracket. Mortgage deductibility subject to $750k acquisition debt limit under TCJA. Box spread interest treated as Section 1256 capital loss. Actual results depend on individual tax circumstances. Consult a qualified tax advisor.</p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Risks &amp; Disclosures</div>
+      <h2>Understand before you borrow.</h2>
+      <p style="font-size:1rem;color:var(--text-secondary);max-width:640px;margin-top:16px;line-height:1.75;">Synthetic portfolio borrowing is a powerful tool – and like any leverage strategy, it carries risks that must be understood before use. Read these carefully. We discuss each of them in detail before implementation.</p>
+    </div>
+
+    <!-- PRIMARY RISKS -->
+    <div class="risk-grid" style="grid-template-columns:repeat(2,1fr);margin-top:48px;">
+      <div class="risk-card" style="border-left:3px solid var(--navy);border-radius:0 6px 6px 0;">
+        <div style="font-family:var(--font-heading);font-size:0.625rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:10px;">Primary Risk</div>
+        <h4>Margin Call Risk</h4>
+        <p>Box spread borrowing requires a margin-enabled account. If the value of your portfolio falls sufficiently, your broker may issue a margin call – requiring you to deposit additional assets or liquidate securities to restore minimum equity. This is the most significant risk associated with any form of securities-backed lending.</p>
+        <p style="margin-top:12px;">The strategy can generally withstand a portfolio decline of approximately 28.5% or more before a margin call is triggered, depending on your specific account composition. However, this threshold is not guaranteed and can change with portfolio concentration, asset class, and market conditions. Forced liquidation at depressed prices can result in permanent capital loss and unintended taxable events.</p>
+      </div>
+      <div class="risk-card" style="border-left:3px solid var(--navy);border-radius:0 6px 6px 0;">
+        <div style="font-family:var(--font-heading);font-size:0.625rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:10px;">Primary Risk</div>
+        <h4>Leverage &amp; Amplified Loss Risk</h4>
+        <p>Borrowing against your portfolio means that losses on your investments – and on whatever you deploy the proceeds into – are amplified relative to an unleveraged position. If both your portfolio and the investment funded by the loan decline simultaneously, losses can be substantial and may exceed the original amount borrowed.</p>
+        <p style="margin-top:12px;">Leverage is not suitable for all investors. The appropriateness of borrowing depends on your risk tolerance, overall financial picture, liquidity, and investment time horizon. This strategy should never represent a material portion of a portfolio without careful analysis.</p>
+      </div>
+    </div>
+
+    <div class="risk-grid" style="margin-top:20px;">
+      <div class="risk-card">
+        <h4>Interest Rate Risk</h4>
+        <p>Fixed-rate box spread loans lock in your borrowing rate at trade time – typically for terms ranging from 1 month to 6 years. If benchmark rates fall materially after you lock in, your rate will not adjust downward. For clients seeking flexibility, floating-rate structures using short-dated (1–3 month) box spreads are available and reset with prevailing market rates at each roll.</p>
+      </div>
+      <div class="risk-card">
+        <h4>Execution &amp; Liquidity Risk</h4>
+        <p>Box spreads are traded on regulated options exchanges and require sufficient market liquidity to execute at favorable prices. In periods of extreme market stress or prolonged exchange disruptions, execution may be delayed or pricing may be less favorable than under normal conditions. In rare scenarios where a box spread cannot be rolled at expiration, the account may temporarily revert to a standard margin loan until conditions normalize.</p>
+      </div>
+      <div class="risk-card">
+        <h4>Tax Treatment Risk</h4>
+        <p>The favorable tax treatment of Section 1256 contracts – including the 60/40 long-term/short-term split and mark-to-market deductibility – is based on current IRS rules and established tax authority. Tax law can change. Additionally, the deductibility of investment interest expense depends on your individual tax situation, the purpose for which proceeds are used, and applicable income and AMT thresholds. Always consult a qualified tax advisor before implementing this strategy.</p>
+      </div>
+    </div>
+
+    <!-- SUITABILITY -->
+    <div style="margin-top:40px;padding:36px 40px;background:var(--white);border:1px solid rgba(27,46,75,0.1);border-radius:6px;">
+      <div style="font-family:var(--font-heading);font-size:0.625rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:16px;">Suitability</div>
+      <h4 style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:16px;">This strategy is not for everyone.</h4>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;">
+        <div>
+          <p style="font-size:0.875rem;line-height:1.75;color:var(--text-secondary);margin-bottom:12px;"><strong style="color:var(--navy);">Generally appropriate for investors who:</strong></p>
+          <ul style="font-size:0.875rem;line-height:1.9;color:var(--text-secondary);padding-left:20px;">
+            <li>Hold a diversified, liquid investment portfolio of $250K or more</li>
+            <li>Have a clear and specific use for the borrowed capital</li>
+            <li>Can comfortably absorb a portfolio drawdown without forced selling</li>
+            <li>Understand the mechanics and risks of options-based leverage</li>
+            <li>Are working with a qualified advisor and tax professional</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:0.875rem;line-height:1.75;color:var(--text-secondary);margin-bottom:12px;"><strong style="color:var(--navy);">Generally not appropriate for investors who:</strong></p>
+          <ul style="font-size:0.875rem;line-height:1.9;color:var(--text-secondary);padding-left:20px;">
+            <li>Are borrowing to fund speculative or highly illiquid investments</li>
+            <li>Have a concentrated or highly volatile portfolio with limited margin buffer</li>
+            <li>Cannot tolerate the possibility of a margin call in a down market</li>
+            <li>Are relying on the borrowed funds for essential living expenses</li>
+            <li>Have not reviewed the strategy in detail with a qualified advisor</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEGAL DISCLOSURE BLOCK -->
+    <div style="margin-top:32px;padding:28px 32px;background:rgba(27,46,75,0.03);border:1px solid rgba(27,46,75,0.08);border-radius:6px;">
+      <p style="font-size:0.6875rem;line-height:1.8;color:var(--text-secondary);opacity:0.75;">
+        The information on this page is provided for educational and informational purposes only and does not constitute investment, legal, or tax advice, nor is it an offer or solicitation to buy or sell any security. Synthetic portfolio borrowing through box spreads involves the use of options and margin, which carry significant risk including the potential for losses exceeding the amount invested. This strategy is not suitable for all investors. Past performance and hypothetical illustrations are not indicative of future results. Rates shown are indicative and subject to change based on market conditions at time of execution. Interest deductibility depends on individual tax circumstances and the use of loan proceeds – consult a qualified tax professional before implementing. STQ Capital Partners ("STQ") is an investment adviser registered with the State of California. Registration does not imply a certain level of skill or training. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly licensed or exempt from licensure. STQ facilitates box spread borrowing through third-party institutional platforms; STQ is not a lender, broker-dealer, or futures commission merchant. All borrowing arrangements are between the client and the relevant counterparties. Please review all program documentation carefully before participating.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to Put Your Portfolio to Work?</h2>
+    <p>Schedule a conversation to find out how much you can borrow, at what rate, and whether this strategy fits your situation.</p>
+    <div class="cta-buttons">
+      <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-white">Schedule a Call</a>
+      <a href="mailto:akiva.glazerson@stqcap.com?subject=Box%20Spread%20Borrowing%20Inquiry" class="btn btn-outline-white">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-logo">STQ <span>/ Capital</span></div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
+        <a href="/insights.html">Newsletter</a>
+        <a href="/research.html">Research</a>
+        <a href="/#contact">Contact</a>
+      </div>
+      <div class="footer-copy">© 2026 STQ Capital Partners</div>
+    </div>
+    <div class="footer-disclaimer">Advisory services are offered through STQ Capital Partners ("STQ"), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. Box spread borrowing involves options trading and carries risks including margin call risk, interest rate risk, and execution risk. This strategy may not be suitable for all investors. Rates shown are as of 03/30/2026 and subject to change. The information on this site is provided "AS IS" and without warranties either express or implied.</div>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(el) {
+  var item = el.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
