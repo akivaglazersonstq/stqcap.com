@@ -34,14 +34,8 @@ body::before { content: ''; position: fixed; inset: 0; background-image: linear-
 .container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
 .section-label { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); position: relative; padding-left: 20px; }
 .section-label::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: var(--navy); }
-
-/* CHART ANIMATION */
 .chart-bar-taxable, .chart-bar-taxaware { transform-origin: bottom; transition: height 0.5s cubic-bezier(0.4,0,0.2,1); }
-.chart-bar-taxable.animated, .chart-bar-taxaware.animated { transform: scaleY(1); }
 .chart-bar-value { opacity: 1; transition: opacity 0.4s ease 0.8s; }
-.chart-bar-value.animated { opacity: 1; }
-
-/* NAV */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
 .nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; white-space: nowrap; }
@@ -63,8 +57,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .nav-actions { display: flex; align-items: center; gap: 12px; }
 .nav-client-login { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; transition: border-color 0.2s ease, background 0.2s ease; }
 .nav-client-login:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
-
-/* HERO */
 .hero { min-height: auto; display: flex; align-items: flex-start; position: relative; overflow: hidden; padding-top: 168px; padding-bottom: 200px; z-index: 1; }
 .hero-watermark { position: absolute; right: 15%; top: 50%; transform: translateY(-50%); font-family: var(--font-heading); font-weight: 700; font-size: clamp(9rem,16vw,19rem); color: rgba(27,46,75,0.06); line-height: 0.8; letter-spacing: -0.03em; user-select: none; pointer-events: none; }
 .hero .container { max-width: 100%; margin: 0; padding: 0 60px; }
@@ -73,8 +65,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .hero h1 { font-family: var(--font-heading); font-size: clamp(3.5rem,7vw,5.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 28px; min-height: 2.2em; }
 .hero-sub { font-size: 1.25rem; line-height: 1.7; color: var(--text-secondary); max-width: 580px; margin-bottom: 48px; }
 .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
-
-/* SOLUTIONS */
 .solutions-hover { display: flex; }
 .sol-left { flex: 0 0 50%; background: var(--cream); padding: 24px 48px 24px 64px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid rgba(27,46,75,0.10); }
 .sol-heading { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); position: relative; padding-left: 20px; margin-bottom: 16px; }
@@ -99,11 +89,9 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .sol-panel-text p { margin-top: 10px; }
 .sol-panel-line { width: 48px; height: 2px; background: var(--navy); margin-top: 20px; opacity: 0.2; }
 .sol-panel-tag { display: inline-block; margin-top: 20px; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(27,46,75,0.6); border: 1px solid rgba(27,46,75,0.25); padding: 5px 12px; border-radius: 4px; }
-
-/* TAX CHART */
 .tax-chart-section { background: var(--cream-dark); padding: 120px 0; position: relative; z-index: 1; }
 .tax-chart-header { text-align: center; margin-bottom: 64px; }
-.tax-chart-header h2 { font-family: var(--font-heading); font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 700; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.02em; }
+.tax-chart-header h2 { font-family: var(--font-heading); font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 700; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.02em; }
 .tax-chart-header p { font-size: 1.25rem; color: var(--text-secondary); max-width: 480px; margin: 0 auto; line-height: 1.7; }
 .chart-wrapper { max-width: 1100px; margin: 0 auto; background: var(--white); border-radius: 8px; padding: 64px; border: 1px solid rgba(27,46,75,0.06); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
 .chart-text-side h3 { font-family: var(--font-heading); font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 20px; line-height: 1.2; }
@@ -121,8 +109,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .chart-bar-taxaware .chart-bar-value { color: var(--navy); }
 .chart-bar-label { font-family: var(--font-body); font-size: 0.75rem; color: var(--text-secondary); text-align: center; line-height: 1.5; position: absolute; bottom: -56px; left: 50%; transform: translateX(-50%); white-space: nowrap; }
 .chart-footnote { font-size: 0.6875rem; color: var(--text-secondary); opacity: 0.6; margin-top: 16px; text-align: center; }
-
-/* STEPPER */
 .stepper-section { padding: 100px 0; }
 .stepper-container { max-width: 100%; padding: 0 64px; }
 .stepper-header { margin-bottom: 48px; }
@@ -130,12 +116,10 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .stepper-nav { display: flex; align-items: center; justify-content: center; margin-bottom: 48px; padding: 0 40px; }
 .stepper-step { display: flex; flex-direction: column; align-items: center; cursor: pointer; position: relative; z-index: 1; }
 .stepper-circle { width: 52px; height: 52px; border-radius: 50%; border: 2px solid rgba(27,46,75,0.2); background: transparent; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: rgba(27,46,75,0.3); transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
-.stepper-step:not(.active) .stepper-circle:hover { border-color: rgba(27,46,75,0.5); color: rgba(27,46,75,0.6); background: rgba(27,46,75,0.04); transform: scale(1.06); }
 .stepper-step.active .stepper-circle { background: var(--navy); border-color: var(--navy); color: var(--cream); transform: scale(1.08); box-shadow: 0 4px 20px rgba(27,46,75,0.2); }
 .stepper-step.completed .stepper-circle { background: rgba(27,46,75,0.08); border-color: rgba(27,46,75,0.25); color: var(--navy); }
 .stepper-word { font-family: var(--font-heading); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--navy); opacity: 0.25; margin-top: 12px; transition: opacity 0.3s ease; }
 .stepper-step.active .stepper-word { opacity: 0.7; }
-.stepper-step:not(.active):hover .stepper-word { opacity: 0.45; }
 .stepper-connector { flex: 1; height: 2px; background: rgba(27,46,75,0.1); position: relative; margin: 0 -4px; margin-bottom: 28px; }
 .stepper-fill { position: absolute; inset: 0; background: rgba(27,46,75,0.25); transform-origin: left; transform: scaleX(0); transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
 .stepper-connector.filled .stepper-fill { transform: scaleX(1); }
@@ -147,17 +131,11 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .stepper-content-title { font-family: var(--font-heading); font-size: 32px; font-weight: 700; color: var(--navy); margin-bottom: 20px; letter-spacing: -0.5px; }
 .stepper-bar { width: 40px; height: 2.5px; background: var(--navy); opacity: 0.25; margin-bottom: 20px; }
 .stepper-desc { font-size: 16px; line-height: 1.8; color: var(--navy); opacity: 0.75; max-width: 75%; }
-
-/* SCROLL OFFSET FOR FIXED NAV */
 #solutions, #about, #framework, #contact, #insights { scroll-margin-top: 80px; }
-
-/* ABOUT */
 .split-section { padding: 64px 0; }
 .split-grid { display: grid; grid-template-columns: 240px 1fr; gap: 80px; align-items: start; }
 .split-label { padding-top: 8px; position: sticky; top: 100px; }
 .about-text { font-size: 1.0625rem; line-height: 1.9; color: var(--text-secondary); max-width: 640px; }
-
-/* WHY STQ */
 .why-section { padding: 64px 0; background: var(--cream); }
 .why-header { text-align: center; margin-bottom: 64px; }
 .why-header h2 { font-family: var(--font-heading); font-size: clamp(2rem,3.5vw,3rem); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; }
@@ -167,15 +145,11 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .why-card h3 { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
 .why-card p { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
 .why-card-num { position: absolute; right: 8px; bottom: -8px; font-family: var(--font-heading); font-size: 72px; font-weight: 700; color: rgba(27,46,75,0.04); line-height: 1; pointer-events: none; }
-
-/* CTA */
 .cta-section { background: var(--navy); padding: 120px 0; text-align: center; position: relative; overflow: hidden; z-index: 1; }
 .cta-section::before { content: 'STQ'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-family: var(--font-heading); font-weight: 700; font-size: 20rem; color: rgba(240,239,235,0.02); pointer-events: none; }
 .cta-section h2 { font-family: var(--font-heading); font-size: clamp(2rem,4vw,3.25rem); font-weight: 700; color: var(--cream); margin-bottom: 20px; letter-spacing: -0.02em; }
-.cta-section p { font-size: 1.0625rem; color: var(--text-light); max-width: 520px; margin: 0 auto 40px; line-height: 1.7; }
+.cta-section p { font-size: 1.0625rem; color: var(--text-light); max-width: 520px; margin: 0 auto 8px; line-height: 1.7; }
 .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-
-/* NEWSLETTER */
 .newsletter-section { padding: 80px 0; background: var(--cream-dark); position: relative; z-index: 1; }
 .newsletter-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
 .newsletter-inner h3 { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--navy); letter-spacing: -0.01em; }
@@ -183,8 +157,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .newsletter-form { display: flex; gap: 12px; }
 .newsletter-form input { font-family: var(--font-body); font-size: 0.875rem; padding: 14px 20px; border: 1px solid rgba(27,46,75,0.15); border-radius: 4px; background: var(--white); color: var(--navy); width: 300px; outline: none; transition: border-color 0.2s ease; }
 .newsletter-form input:focus { border-color: var(--navy); }
-
-/* FOOTER */
 footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative; z-index: 1; }
 .footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 24px; }
 .footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); letter-spacing: 0.03em; }
@@ -194,16 +166,14 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
 .footer-links a:hover { color: var(--cream); }
 .footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.35); }
 .footer-disclaimer { margin-top: 24px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 900px; }
-
-/* RESPONSIVE */
 @media (max-width: 1024px) { .split-grid { grid-template-columns: 1fr; gap: 32px; } .split-label { position: static; } .why-grid { grid-template-columns: repeat(2,1fr); } .chart-wrapper { grid-template-columns: 1fr; } }
 @media (max-width: 800px) { .solutions-hover { flex-direction: column; } .sol-left, .sol-right { flex: none; padding: 48px 24px; } }
 @media (max-width: 768px) { .nav-links, .nav-client-login, .nav-cta-desktop { display: none; } .nav-toggle { display: flex; } .hero h1 { font-size: 2.5rem; } .hero { padding-top: 100px; padding-bottom: 80px; } .why-grid { grid-template-columns: 1fr; } .newsletter-inner { flex-direction: column; text-align: center; align-items: center; } .newsletter-form { flex-direction: column; width: 100%; } .newsletter-form input { width: 100%; } .footer-main { flex-direction: column; text-align: center; } .footer-links { justify-content: center; } .hero-buttons { flex-direction: column; align-items: flex-start; } .cta-buttons { flex-direction: column; align-items: center; } .stepper-container { padding: 0 24px; } .stepper-content { padding: 40px 28px; } .chart-wrapper { padding: 32px 24px; } }
 .mobile-nav { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; transition: opacity 0.3s ease; }
 .mobile-nav.active { display: flex; opacity: 1; }
 .mobile-nav a { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+.mobile-nav .btn { font-size: 0.8125rem; }
 .mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
-
 .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(15,30,51,0.7); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(4px); padding: 24px; }
 .modal-overlay.active { display: flex; }
 .modal-box { background: var(--cream); border-radius: 8px; padding: 56px 48px; max-width: 520px; width: 100%; position: relative; animation: modalIn 0.35s cubic-bezier(0.16,1,0.3,1); }
@@ -221,12 +191,33 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
 .modal-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .modal-msg { font-size: 0.875rem; margin-top: 8px; display: none; }
 @media (max-width: 600px) { .modal-box { padding: 40px 24px; } .modal-row { grid-template-columns: 1fr; } }
-@keyframes arrowNudge { 0%,100% { transform:translateX(0); opacity:0.4; } 50% { transform:translateX(3px); opacity:0.8; } } .hint-arrow:first-child { display:inline-block; animation:arrowNudgeLeft 2s ease-in-out infinite; } .hint-arrow:last-child { display:inline-block; animation:arrowNudge 2s ease-in-out infinite; } @keyframes arrowNudgeLeft { 0%,100% { transform:translateX(0); opacity:0.4; } 50% { transform:translateX(-3px); opacity:0.8; } }
+.research-gate-overlay { display: none; position: fixed; inset: 0; background: rgba(15,30,51,0.7); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(4px); padding: 24px; }
+.research-gate-overlay.active { display: flex; }
+.mobile-bottom-bar { display: none; }
+@media (max-width: 768px) {
+  .mobile-bottom-bar { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 998; background: rgba(240,239,235,0.97); backdrop-filter: blur(12px); border-top: 1px solid rgba(27,46,75,0.1); padding: 12px 24px; gap: 12px; }
+  .mobile-bottom-bar a { flex: 1; text-align: center; justify-content: center; }
+  body { padding-bottom: 72px; }
+}
 </style>
 </head>
 <body>
 
-<!-- DIAGNOSTIC MODAL -->
+<!-- RESEARCH GATE MODAL -->
+<div class="research-gate-overlay" id="researchGateModal" onclick="if(event.target===this)closeResearchGate()">
+ <div class="modal-box">
+ <button class="modal-close" onclick="closeResearchGate()">✕</button>
+ <div class="modal-label">STQ Research</div>
+ <h2 class="modal-title">Unlock STQ Research.</h2>
+ <p class="modal-sub">Enter your email for free access to our in-depth guides on tax-aware investing, box spreads, direct indexing, and more.</p>
+ <form class="modal-form" id="research-gate-form" onsubmit="handleResearchGate(event)">
+ <input type="email" id="research-gate-email" placeholder="your@email.com" required>
+ <button type="submit" class="btn btn-primary" id="research-gate-btn" style="width:100%;justify-content:center;">Get Access →</button>
+ </form>
+ <p class="modal-msg" id="research-gate-msg"></p>
+ </div>
+</div>
+
 <div class="modal-overlay" id="diagnosticModal" onclick="if(event.target===this)closeModal()">
  <div class="modal-box">
  <button class="modal-close" onclick="closeModal()">✕</button>
@@ -256,15 +247,21 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  </div>
 </div>
 
-<!-- NAV -->
+<!-- MOBILE BOTTOM BAR -->
+<div class="mobile-bottom-bar">
+ <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary">Book a Call</a>
+ <a href="https://client.schwab.com/Areas/Access/Login" target="_blank" class="btn btn-secondary">Client Login</a>
+</div>
+
 <nav>
  <div class="nav-inner">
- <a href="https://stqcap.com" class="nav-logo">STQ <span>/ Capital Partners</span></a>
+ <a href="https://stqcap.com" class="nav-logo">STQ <span>/ Capital</span></a>
  <div class="nav-links">
  <a href="#solutions">Solutions</a>
  <a href="#about">About</a>
  <a href="/insights.html">Insights</a>
- <a href="/research.html">Research</a>
+ <a href="/research.html" onclick="openResearchGate('/research.html');return false;">Research</a>
+ <a href="/box-spreads.html">Financing</a>
  <a href="#contact">Contact</a>
  </div>
  <div class="nav-actions">
@@ -277,25 +274,24 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  </div>
 </nav>
 
-<!-- Mobile nav -->
 <div class="mobile-nav">
  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('active')">✕</button>
  <a href="#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
  <a href="#about" onclick="this.parentElement.classList.remove('active')">About</a>
  <a href="/insights.html" onclick="this.parentElement.classList.remove('active')">Insights</a>
- <a href="/research.html" onclick="this.parentElement.classList.remove('active')">Research</a>
+ <a href="/research.html" onclick="openResearchGate('/research.html');return false;" onclick="this.parentElement.classList.remove('active')">Research</a>
+ <a href="/box-spreads.html" onclick="this.parentElement.classList.remove('active')">Financing</a>
  <a href="#contact" onclick="this.parentElement.classList.remove('active')">Contact</a>
- <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Call</a>
+ <a href="https://client.schwab.com/Areas/Access/Login" target="_blank" class="btn btn-secondary" onclick="this.parentElement.classList.remove('active')">Client Login</a>
+ <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-secondary" onclick="this.parentElement.classList.remove('active')">Book a Call</a>
 </div>
 
-<!-- HERO -->
 <section class="hero">
  <div class="hero-watermark">STQ</div>
  <div class="container">
  <div class="hero-content">
  <div class="hero-tag">Quantitative Investment and Wealth Advisory</div>
  <h1 id="hero-headline">&nbsp;</h1>
- <noscript><h1 style="font-family:'Chakra Petch',sans-serif;font-size:clamp(3.5rem,7vw,5.5rem);font-weight:700;line-height:1.05;letter-spacing:-0.02em;color:#1B2E4B;margin-bottom:28px;">You've earned it.<br>Let's protect it.</h1></noscript>
  <p class="hero-sub" id="hero-sub" style="opacity:0;transition:opacity 1.2s ease;">STQ is a modern investment advisory firm focused on tax-aware investment strategies, institutional-quality portfolio construction, and a conflict-free fiduciary model.</p>
  <div class="hero-buttons">
  <a href="#solutions" class="btn btn-primary">Our Solutions</a>
@@ -305,13 +301,12 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  </div>
 </section>
 
-<!-- SOLUTIONS -->
 <section class="solutions-hover" id="solutions">
  <div class="sol-left">
  <h2 class="sol-heading">Our Solutions</h2>
  <p class="sol-sub-headline">Institutional Depth. Personal Focus.</p>
- <div class="sol-item active" data-idx="0"><span class="sol-num">01</span><span class="sol-title">Asset Location Optimization</span></div>
- <div class="sol-item" data-idx="1"><span class="sol-num">02</span><span class="sol-title">Portfolio Construction</span></div>
+ <div class="sol-item active" data-idx="0"><span class="sol-num">01</span><span class="sol-title">Portfolio Construction</span></div>
+ <div class="sol-item" data-idx="1"><span class="sol-num">02</span><span class="sol-title">Asset Location Optimization</span></div>
  <div class="sol-item" data-idx="2"><span class="sol-num">03</span><span class="sol-title">Synthetic Portfolio Borrowing</span></div>
  <div class="sol-item" data-idx="3"><span class="sol-num">04</span><span class="sol-title">Direct Indexing</span></div>
  <div class="sol-item" data-idx="4"><span class="sol-num">05</span><span class="sol-title">Tax Loss Harvesting</span></div>
@@ -323,30 +318,30 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  <div style="position:absolute;right:40px;bottom:40px;font-family:'Chakra Petch',sans-serif;font-size:80px;font-weight:700;color:rgba(27,46,75,0.04);line-height:1;letter-spacing:-4px;pointer-events:none;user-select:none;">STQ</div>
  <div class="sol-panel active" data-desc="0">
  <div class="sol-panel-num">01</div>
+ <h3 class="sol-panel-title">Portfolio Construction</h3>
+ <p style="font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">Your goals are specific. Your portfolio should be too.</p>
+ <p class="sol-panel-text">Strategic asset allocation is the long-term blueprint for your portfolio – the deliberate decision about which asset classes to own, how much of each, and why. It's the foundation that every other decision gets built on.</p><p class="sol-panel-text">At STQ, we build strategic allocation around your full financial picture – your investments, your real estate, your business interests, your estate plan – and evaluate every structural decision through one lens first: what does this look like after tax? To implement it, we use tax-efficient investment vehicles that distribute far fewer capital gains than traditional mutual funds – minimizing taxable events, reducing turnover, and helping you keep more of every return.</p>
+ <div class="sol-panel-line"></div><div class="sol-panel-tag">Core Strategy</div>
+ </div>
+ <div class="sol-panel" data-desc="1">
+ <div class="sol-panel-num">02</div>
  <h3 class="sol-panel-title">Asset Location Optimization</h3>
  <p style="font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">Where you hold it matters as much as what you hold.</p>
  <p class="sol-panel-text">Asset location is the most powerful tax lever most investors never pull.</p><p class="sol-panel-text">Most focus on allocation – what to own, how much, in what mix. Far fewer think carefully about where each investment actually lives. But placement matters as much as selection. A private credit fund in a taxable account generates interest income taxed at your highest ordinary rate every year. The same fund in a tax-deferred account compounds untouched for decades.</p><p class="sol-panel-text">The investment is identical. The outcome is not.</p><p class="sol-panel-text">At STQ, asset location is the foundation of every portfolio we build – because getting placement right adds significant wealth over time without changing a single holding.</p>
  <div class="sol-panel-line"></div><div class="sol-panel-tag">Tax Optimization</div>
- </div>
- <div class="sol-panel" data-desc="1">
- <div class="sol-panel-num">02</div>
- <h3 class="sol-panel-title">Portfolio Construction</h3>
- <p style="font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">A portfolio engineered around your objectives, constraints, and tax position.</p>
- <p class="sol-panel-text">Strategic allocation is the architecture of the portfolio – the long-term blueprint across asset classes, geographies, and market exposures built around your objectives, constraints, and financial picture. Every structural decision is calibrated to you.</p><p class="sol-panel-text">But at STQ, portfolio construction goes beyond a standard mix of stocks and bonds. We incorporate your full financial picture – your income, real estate holdings, business interests, concentrated positions, and estate plan – to build a portfolio that reflects your actual life, not a generic risk profile.</p><p class="sol-panel-text">Portfolios must adapt. Markets move. Valuations shift. Macro conditions change. Every tactical adjustment we make is evaluated on an after-tax basis first – because a move that makes sense on paper but triggers an unnecessary tax bill may not clear the hurdle.</p>
- <div class="sol-panel-line"></div><div class="sol-panel-tag">Core Strategy</div>
  </div>
  <div class="sol-panel" data-desc="2">
  <div class="sol-panel-num">03</div>
  <h3 class="sol-panel-title">Synthetic Portfolio Borrowing</h3>
  <p style="font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">Your portfolio is a bank. Start using it like one.</p>
  <p class="sol-panel-text">Most investors don't realize their portfolio can function as a source of liquidity – without selling a single position. Box spreads are a four-leg options structure on a broad index that create a fully hedged position with a known payoff at expiration. The difference between what you collect today and what you owe at expiration is, effectively, the interest rate – set by the market, not a bank, and typically close to Treasury rates.</p><p class="sol-panel-text">The result: access to capital at competitive rates, with no credit check, no bank approval, and no forced selling of appreciated positions. The interest is potentially tax-deductible, and your portfolio stays fully invested throughout.</p><p class="sol-panel-text">At STQ, we implement synthetic borrowing through established institutional platforms – giving you access to a tool that most advisors can't execute.</p>
- <div class="sol-panel-line"></div><div class="sol-panel-tag">Liquidity</div>
+ <div class="sol-panel-line"></div><div style="display:flex;align-items:center;gap:24px;margin-top:24px;"><div class="sol-panel-tag" style="margin-top:0;">Liquidity</div><a href="/box-spreads.html" style="font-family:var(--font-heading);font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--navy);padding-bottom:2px;">Learn More →</a></div>
  </div>
  <div class="sol-panel" data-desc="3">
  <div class="sol-panel-num">04</div>
  <h3 class="sol-panel-title">Direct Indexing</h3>
  <p style="font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">Index exposure with a tax engine built in.</p>
- <p class="sol-panel-text">Direct indexing means owning the individual securities that make up an index – rather than a fund that holds them for you. The result is a portfolio that tracks your target exposure while giving you the ability to harvest losses at the individual security level, customize holdings around existing positions, and exclude specific sectors or companies.</p><p class="sol-panel-text">For high-income investors, direct indexing can generate significantly more tax alpha than a comparable ETF strategy – because you're not waiting for the index to lose value. Individual stocks move independently, creating harvesting opportunities even in up markets.</p><p class="sol-panel-text">At STQ, we implement direct indexing through institutional-grade separately managed accounts, giving you the benefits of index-like diversification with the tax efficiency of individual ownership.</p>
+ <p class="sol-panel-text">Direct indexing means owning the individual securities that make up an index – rather than a fund that holds them for you. The result is a portfolio that tracks your target exposure while giving you the ability to harvest losses at the individual security level, customize holdings around existing positions, and exclude specific sectors or companies.</p><p class="sol-panel-text">For high-income investors, direct indexing can generate significantly more tax alpha than a comparable index fund strategy – because you're not waiting for the index to lose value. Individual stocks move independently, creating harvesting opportunities even in up markets.</p><p class="sol-panel-text">At STQ, we implement direct indexing through institutional-grade separately managed accounts, giving you the benefits of index-like diversification with the tax efficiency of individual ownership.</p>
  <div class="sol-panel-line"></div><div class="sol-panel-tag">Tax Alpha</div>
  </div>
  <div class="sol-panel" data-desc="4">
@@ -380,12 +375,11 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  </div>
 </section>
 
-<!-- TAX CHART -->
 <section class="tax-chart-section">
  <div class="container">
  <div class="tax-chart-header">
  <h2>The Power of Tax-Aware Management.</h2>
- <p>Why we don't ignore tax structure.</h3>
+ <p>Why we don't ignore tax structure.</p>
  </div>
  <div class="chart-wrapper">
  <div class="chart-text-side">
@@ -424,7 +418,6 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  </div>
 </section>
 
-<!-- STQ FRAMEWORK -->
 <section class="stepper-section" id="framework">
  <div class="stepper-container">
  <div class="stepper-header">
@@ -438,7 +431,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  <div class="stepper-connector" id="conn1"><div class="stepper-fill"></div></div>
  <div class="stepper-step" data-step="2"><div class="stepper-circle">Q</div><div class="stepper-word">Quantitative</div></div>
  </div>
- <p id="stepper-hint" style="text-align:center;font-family:var(--font-heading);font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(27,46,75,0.4);margin-bottom:24px;"><span class="hint-arrow">←</span> Click to explore <span class="hint-arrow">→</span></p>
+ <p id="stepper-hint" style="text-align:center;font-family:var(--font-heading);font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(27,46,75,0.4);margin-bottom:24px;">← Click to explore →</p>
  <div class="stepper-content">
  <div class="stepper-watermark" id="stepperWatermark">S.</div>
  <div class="stepper-body visible" id="stepperBody">
@@ -451,7 +444,6 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  </div>
 </section>
 
-<!-- ABOUT -->
 <section class="split-section" id="about">
  <div class="container">
  <div class="split-grid">
@@ -461,7 +453,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  <br>
  <p>Prior to founding STQ, Akiva served as Head of Investment Risk at a $50B+ RIA. Before that, he worked in Portfolio Solutions and Quantitative Research at PIMCO, constructing and optimizing multi-asset portfolios for institutional clients. He also held roles at the Royal Bank of Canada, UBS, and Deutsche Bank, building deep experience across public markets, private assets, and derivatives.</p>
  <br>
- <p>Akiva holds a B.S. in Accounting from Yeshiva University, maintains FINRA Series 7, 63, and 65 licenses, and holds the CSRIC designation.</p>
+ <p>Akiva holds a B.S. in Accounting from Yeshiva University – where he attended on a soccer scholarship – maintains FINRA Series 7, 63, and 65 licenses, and holds the CSRIC designation.</p>
  <br>
  <p>Born and raised in South Africa, Akiva is a Brazilian Jiu-Jitsu black belt, an avid cyclist, and an aviation enthusiast. He loves to travel – especially back to South Africa – and above all, enjoys time with his wife and two young daughters.</p>
  <br>
@@ -474,13 +466,12 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  </div>
 </section>
 
-<!-- INSIGHTS PREVIEW -->
 <section style="padding:100px 0;background:var(--cream-dark);position:relative;z-index:1;">
  <div class="container">
  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;flex-wrap:wrap;gap:16px;">
  <div>
  <div class="section-label">Latest Insights</div>
- <h2 style="font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:var(--navy);letter-spacing:-0.02em;margin-top:12px;">One idea. Every morning. No fluff.</h2>
+ <h2 style="font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:var(--navy);letter-spacing:-0.02em;margin-top:12px;">The long and short of it. Every morning.</h2>
  </div>
  <a href="/insights.html" style="font-family:var(--font-heading);font-size:0.8125rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--navy);padding-bottom:2px;white-space:nowrap;">View All Insights →</a>
  </div>
@@ -488,7 +479,6 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  </div>
 </section>
 
-<!-- RESEARCH PREVIEW -->
 <section style="padding:100px 0;background:var(--cream);position:relative;z-index:1;">
  <div class="container">
  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;flex-wrap:wrap;gap:16px;">
@@ -496,10 +486,10 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  <div class="section-label">STQ Research</div>
  <h2 style="font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:var(--navy);letter-spacing:-0.02em;margin-top:12px;max-width:640px;line-height:1.25;">STQ Research goes deeper than the daily newsletter – comprehensive guides on the mechanics, math, and nuance behind the strategies that actually move the needle.</h2>
  </div>
- <a href="/research.html" style="font-family:var(--font-heading);font-size:0.8125rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--navy);padding-bottom:2px;white-space:nowrap;">View All Research →</a>
+ <a href="/research.html" onclick="openResearchGate('/research.html');return false;" style="font-family:var(--font-heading);font-size:0.8125rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--navy);padding-bottom:2px;white-space:nowrap;">View All Research →</a>
  </div>
  <div style="display:grid;grid-template-columns:1fr;gap:20px;max-width:680px;">
- <a href="/research-direct-indexing.html" style="background:var(--navy);border-radius:6px;padding:32px 28px;text-decoration:none;display:block;transition:all 0.3s ease;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 20px 60px rgba(27,46,75,0.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+ <a href="/research-direct-indexing.html" onclick="openResearchGate('/research-direct-indexing.html');return false;" style="background:var(--navy);border-radius:6px;padding:32px 28px;text-decoration:none;display:block;transition:all 0.3s ease;position:relative;overflow:hidden;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 20px 60px rgba(27,46,75,0.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
  <div style="position:absolute;right:8px;bottom:0;font-family:'Chakra Petch',sans-serif;font-size:80px;font-weight:700;color:rgba(240,239,235,0.04);line-height:1;pointer-events:none;">STQ</div>
  <div style="font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(240,239,235,0.4);margin-bottom:14px;">Tax Alpha</div>
  <div style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--cream);line-height:1.4;margin-bottom:12px;">Index Investing Is Smart. Direct Indexing Is Smarter.</div>
@@ -510,7 +500,6 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  </div>
 </section>
 
-<!-- WHY STQ -->
 <section class="why-section">
  <div class="container">
  <div class="why-header"><h2>Why STQ</h2></div>
@@ -523,23 +512,21 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-section" id="contact">
  <div class="container">
  <h2>No Pitch. Just the Numbers.</h2>
  <p>The diagnostic is free. What we find usually isn't.</p>
- <div style="margin:32px 0 24px;color:rgba(240,239,235,0.7);font-size:15px;line-height:2;">
+ <div style="margin:8px 0 24px;color:rgba(240,239,235,0.7);font-size:15px;line-height:2;">
  <a href="mailto:akiva.glazerson@stqcap.com" style="color:#F0EFEB;text-decoration:none;">akiva.glazerson@stqcap.com</a><br>
  <a href="tel:3107303981" style="color:#F0EFEB;text-decoration:none;">310-730-3981</a>
  </div>
  <div class="cta-buttons">
- <a href="#" onclick="openModal();return false;" class="btn btn-white">See What's Possible</a>
+ <a href="#" onclick="openModal();return false;" class="btn btn-white">Portfolio Diagnostic</a>
  <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-outline-white">Schedule a Call</a>
  </div>
  </div>
 </section>
 
-<!-- NEWSLETTER -->
 <section class="newsletter-section" id="insights">
  <div class="container">
  <div class="newsletter-inner">
@@ -555,11 +542,10 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
  <div class="container">
  <div class="footer-main">
- <div class="footer-logo">STQ <span>/ Capital Partners</span></div>
+ <div class="footer-logo">STQ <span>/ Capital</span></div>
  <div class="footer-links">
  <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
  <a href="/insights.html">Newsletter</a>
@@ -575,48 +561,76 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
 </footer>
 
 <script>
-// MODAL
-function openModal() {
- document.getElementById('diagnosticModal').classList.add('active');
+// RESEARCH GATE
+var pendingResearchUrl = '';
+function openResearchGate(url) {
+ if (localStorage.getItem('stq_research_access') === 'granted') {
+ window.location.href = url;
+ return;
+ }
+ pendingResearchUrl = url;
+ document.getElementById('researchGateModal').classList.add('active');
  document.body.style.overflow = 'hidden';
 }
-function closeModal() {
- document.getElementById('diagnosticModal').classList.remove('active');
+function closeResearchGate() {
+ document.getElementById('researchGateModal').classList.remove('active');
  document.body.style.overflow = '';
+ pendingResearchUrl = '';
 }
-document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
-
-function handleDiagnostic(e) {
+function handleResearchGate(e) {
  e.preventDefault();
- var btn = document.getElementById('diag-btn');
- var msg = document.getElementById('diag-msg');
- var name = document.getElementById('diag-name').value;
- var email = document.getElementById('diag-email').value;
- var phone = document.getElementById('diag-phone').value;
- var size = document.getElementById('diag-size').value;
- var message = document.getElementById('diag-message').value;
- btn.textContent = 'Sending...'; btn.disabled = true;
- var subject = 'Portfolio Diagnostic Request – ' + name;
- var body = 'Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + (phone || 'Not provided') + '\nPortfolio Size: ' + (size || 'Not provided') + '\nMessage: ' + (message || 'None');
+ var email = document.getElementById('research-gate-email').value;
+ var btn = document.getElementById('research-gate-btn');
+ var msg = document.getElementById('research-gate-msg');
+ btn.textContent = 'Getting access...'; btn.disabled = true;
+ // Subscribe to MailerLite
+ fetch('/.netlify/functions/subscribe', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({ email: email, source: 'research_gate' })
+ }).catch(function() {});
+ // Email notification
  fetch('/.netlify/functions/diagnostic', {
  method: 'POST',
  headers: { 'Content-Type': 'application/json' },
- body: JSON.stringify({ name: name, email: email, phone: phone, size: size, message: message })
- }).then(function(res) {
+ body: JSON.stringify({ name: 'Research Gate', email: email, message: 'Research gate access request' })
+ }).catch(function() {});
+ // Grant access regardless of API response
+ setTimeout(function() {
+ localStorage.setItem('stq_research_access', 'granted');
+ msg.style.display = 'block'; msg.style.color = '#1B2E4B';
+ msg.textContent = 'Access granted. Taking you there now...';
+ setTimeout(function() {
+ closeResearchGate();
+ window.location.href = pendingResearchUrl;
+ }, 800);
+ }, 600);
+}
+
+function openModal() { document.getElementById('diagnosticModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+function closeModal() { document.getElementById('diagnosticModal').classList.remove('active'); document.body.style.overflow = ''; }
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+function handleDiagnostic(e) {
+ e.preventDefault();
+ var btn = document.getElementById('diag-btn'); var msg = document.getElementById('diag-msg');
+ var name = document.getElementById('diag-name').value; var email = document.getElementById('diag-email').value;
+ var phone = document.getElementById('diag-phone').value; var size = document.getElementById('diag-size').value;
+ var message = document.getElementById('diag-message').value;
+ btn.textContent = 'Sending...'; btn.disabled = true;
+ fetch('/.netlify/functions/diagnostic', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, email, phone, size, message }) })
+ .then(function(res) {
  if (res.ok || res.status === 200 || res.status === 201) {
  msg.style.display = 'block'; msg.style.color = '#1B2E4B';
  msg.textContent = "Got it. We'll be in touch within one business day.";
- btn.textContent = 'Submitted ✓';
- document.getElementById('diagnostic-form').reset();
+ btn.textContent = 'Submitted ✓'; document.getElementById('diagnostic-form').reset();
  } else { throw new Error(); }
  }).catch(function() {
- // Fallback to mailto
+ var subject = 'Portfolio Diagnostic Request – ' + name;
+ var body = 'Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + (phone||'Not provided') + '\nPortfolio Size: ' + (size||'Not provided') + '\nMessage: ' + (message||'None');
  window.location.href = 'mailto:akiva.glazerson@stqcap.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
- btn.textContent = 'See What\'s Possible →'; btn.disabled = false;
+ btn.textContent = "See What's Possible →"; btn.disabled = false;
  });
 }
-
-// TYPEWRITER
 (function() {
  var el = document.getElementById('hero-headline');
  var lines = ["You've earned it.", "Let's protect it."];
@@ -627,78 +641,45 @@ function handleDiagnostic(e) {
  function typeLine() {
  if (charIndex <= lines[lineIndex].length) {
  el.innerHTML = fullText + lines[lineIndex].substring(0, charIndex) + '<span style="animation:blink 0.7s step-end infinite;">|</span>';
- charIndex++;
- setTimeout(typeLine, 120);
+ charIndex++; setTimeout(typeLine, 120);
  } else {
- fullText += lines[lineIndex];
- lineIndex++;
- if (lineIndex < lines.length) {
- fullText += '<br>'; charIndex = 0;
- setTimeout(typeLine, 300);
- } else {
- el.innerHTML = fullText;
- setTimeout(function() {
- var sub = document.getElementById('hero-sub');
- if (sub) sub.style.opacity = '1';
- }, 700);
- }
+ fullText += lines[lineIndex]; lineIndex++;
+ if (lineIndex < lines.length) { fullText += '<br>'; charIndex = 0; setTimeout(typeLine, 300); }
+ else { el.innerHTML = fullText; setTimeout(function() { var sub = document.getElementById('hero-sub'); if (sub) sub.style.opacity = '1'; }, 700); }
  }
  }
  setTimeout(typeLine, 400);
 })();
-
-// TIME HORIZON TOGGLE
 var horizonData = {
  10: { taxable: 2.4, taxaware: 4.0, diff: 1.6, taxableH: 60, taxawareH: 100 },
  20: { taxable: 4.1, taxaware: 9.8, diff: 5.7, taxableH: 80, taxawareH: 160 },
  30: { taxable: 6.3, taxaware: 17.4, diff: 11.1, taxableH: 100, taxawareH: 220 }
 };
-
 function setHorizon(years, btn) {
- document.querySelectorAll('.tax-chart-section button').forEach(function(b) {
- b.style.background = 'transparent';
- b.style.color = 'var(--text-secondary)';
- b.style.borderColor = 'rgba(27,46,75,0.2)';
- });
- btn.style.background = 'var(--navy)';
- btn.style.color = 'var(--cream)';
- btn.style.borderColor = 'var(--navy)';
+ document.querySelectorAll('.tax-chart-section button').forEach(function(b) { b.style.background='transparent'; b.style.color='var(--text-secondary)'; b.style.borderColor='rgba(27,46,75,0.2)'; });
+ btn.style.background='var(--navy)'; btn.style.color='var(--cream)'; btn.style.borderColor='var(--navy)';
  var d = horizonData[years];
- var barT = document.getElementById('bar-taxable');
- var barA = document.getElementById('bar-taxaware');
- var valT = document.getElementById('val-taxable');
- var valA = document.getElementById('val-taxaware');
+ var barT = document.getElementById('bar-taxable'); var barA = document.getElementById('bar-taxaware');
+ var valT = document.getElementById('val-taxable'); var valA = document.getElementById('val-taxaware');
  var tickerEl = document.getElementById('ticker-number');
  document.getElementById('ticker-label').textContent = 'Additional wealth over ' + years + ' years – from tax structure alone, not market performance.';
  document.getElementById('chart-footnote').textContent = 'Hypothetical growth of $1M over ' + years + ' years. 10% gross return; taxable assumes 37% combined tax rate applied annually. Illustrative only.';
- // Get current heights as starting point
- var startTH = parseInt(barT.style.height) || 0;
- var startAH = parseInt(barA.style.height) || 0;
- var startDiff = parseFloat(tickerEl.textContent.replace(/[^0-9.]/g, '')) * 1000000 || 0;
- var duration = 1200;
- var start = performance.now();
+ var startTH = parseInt(barT.style.height)||0; var startAH = parseInt(barA.style.height)||0;
+ var startDiff = parseFloat(tickerEl.textContent.replace(/[^0-9.]/g,''))*1000000||0;
+ var duration = 1200; var start = performance.now();
  function tick(now) {
-   var p = Math.min((now - start) / duration, 1);
-   var ease = 1 - Math.pow(1 - p, 3);
-   barT.style.height = Math.round(startTH + ease * (d.taxableH - startTH)) + 'px';
-   barA.style.height = Math.round(startAH + ease * (d.taxawareH - startAH)) + 'px';
-   valT.textContent = '$' + (d.taxable * ease + (1 - ease) * (startTH / 100 * 6.3)).toFixed(1) + 'M';
-   valA.textContent = '$' + (d.taxaware * ease + (1 - ease) * (startAH / 220 * 17.4)).toFixed(1) + 'M';
-   var tickVal = Math.round((startDiff + ease * (d.diff * 1000000 - startDiff)) / 100000) * 100000;
-   tickerEl.textContent = '+' + (tickVal >= 1000000 ? '$' + (tickVal/1000000).toFixed(1) + 'M' : '$' + Math.round(tickVal/1000) + 'K');
-   if (p < 1) requestAnimationFrame(tick);
-   else {
-     barT.style.height = d.taxableH + 'px';
-     barA.style.height = d.taxawareH + 'px';
-     valT.textContent = '$' + d.taxable.toFixed(1) + 'M';
-     valA.textContent = '$' + d.taxaware.toFixed(1) + 'M';
-     tickerEl.textContent = '+$' + d.diff.toFixed(1) + 'M';
-   }
+ var p = Math.min((now-start)/duration,1); var ease = 1-Math.pow(1-p,3);
+ barT.style.height = Math.round(startTH+ease*(d.taxableH-startTH))+'px';
+ barA.style.height = Math.round(startAH+ease*(d.taxawareH-startAH))+'px';
+ valT.textContent = '$'+(d.taxable*ease+(1-ease)*(startTH/100*6.3)).toFixed(1)+'M';
+ valA.textContent = '$'+(d.taxaware*ease+(1-ease)*(startAH/220*17.4)).toFixed(1)+'M';
+ var tickVal = Math.round((startDiff+ease*(d.diff*1000000-startDiff))/100000)*100000;
+ tickerEl.textContent = '+'+(tickVal>=1000000?'$'+(tickVal/1000000).toFixed(1)+'M':'$'+Math.round(tickVal/1000)+'K');
+ if (p<1) requestAnimationFrame(tick);
+ else { barT.style.height=d.taxableH+'px'; barA.style.height=d.taxawareH+'px'; valT.textContent='$'+d.taxable.toFixed(1)+'M'; valA.textContent='$'+d.taxaware.toFixed(1)+'M'; tickerEl.textContent='+$'+d.diff.toFixed(1)+'M'; }
  }
  requestAnimationFrame(tick);
 }
-
-// BAR CHART ANIMATION
 (function() {
  var chartSection = document.querySelector('.tax-chart-section');
  if (!chartSection) return;
@@ -707,52 +688,27 @@ function setHorizon(years, btn) {
  entries.forEach(function(entry) {
  if (entry.isIntersecting && !animated) {
  animated = true;
- document.querySelectorAll('.tax-chart-section button').forEach(function(b) { b.disabled = true; b.style.opacity = '0.5'; });
+ document.querySelectorAll('.tax-chart-section button').forEach(function(b) { b.disabled=true; b.style.opacity='0.5'; });
  setTimeout(function() {
-   var barT = document.getElementById('bar-taxable');
-   var barA = document.getElementById('bar-taxaware');
-   var valT = document.getElementById('val-taxable');
-   var valA = document.getElementById('val-taxaware');
-   var tickerEl = document.getElementById('ticker-number');
-   // Start bars at 0 height, remove scaleY animation
-   barT.style.transform = 'none';
-   barA.style.transform = 'none';
-   barT.style.height = '0px';
-   barA.style.height = '0px';
-   barT.style.transition = 'none';
-   barA.style.transition = 'none';
-   // Show values immediately at 0
-   document.querySelectorAll('.chart-bar-value').forEach(function(el) { el.classList.add('animated'); });
-   var duration = 2800;
-   var start = performance.now();
-   var targetTicker = 11100000;
-   var targetTH = 100; var targetAH = 220;
-   function tick(now) {
-     var p = Math.min((now - start) / duration, 1);
-     var ease = 1 - Math.pow(1 - p, 3);
-     // Animate bar heights
-     barT.style.height = Math.round(ease * targetTH) + 'px';
-     barA.style.height = Math.round(ease * targetAH) + 'px';
-     // Animate values
-     var tVal = (ease * 6.3).toFixed(1);
-     var aVal = (ease * 17.4).toFixed(1);
-     valT.textContent = '$' + tVal + 'M';
-     valA.textContent = '$' + aVal + 'M';
-     // Animate ticker
-     var tickVal = Math.round(ease * targetTicker / 100000) * 100000;
-     tickerEl.textContent = '+' + (tickVal >= 1000000 ? '$' + (tickVal/1000000).toFixed(1) + 'M' : '$' + Math.round(tickVal/1000) + 'K');
-     if (p < 1) {
-       requestAnimationFrame(tick);
-     } else {
-       barT.style.height = targetTH + 'px';
-       barA.style.height = targetAH + 'px';
-       valT.textContent = '$6.3M';
-       valA.textContent = '$17.4M';
-       tickerEl.textContent = '+$11.1M';
-       document.querySelectorAll('.tax-chart-section button').forEach(function(b) { b.disabled = false; b.style.opacity = '1'; });
-     }
-   }
-   requestAnimationFrame(tick);
+ var barT=document.getElementById('bar-taxable'); var barA=document.getElementById('bar-taxaware');
+ var valT=document.getElementById('val-taxable'); var valA=document.getElementById('val-taxaware');
+ var tickerEl=document.getElementById('ticker-number');
+ barT.style.transform='none'; barA.style.transform='none';
+ barT.style.height='0px'; barA.style.height='0px';
+ barT.style.transition='none'; barA.style.transition='none';
+ document.querySelectorAll('.chart-bar-value').forEach(function(el) { el.classList.add('animated'); });
+ var duration=2800; var start=performance.now();
+ var targetTH=100; var targetAH=220;
+ function tick(now) {
+ var p=Math.min((now-start)/duration,1); var ease=1-Math.pow(1-p,3);
+ barT.style.height=Math.round(ease*targetTH)+'px'; barA.style.height=Math.round(ease*targetAH)+'px';
+ valT.textContent='$'+(ease*6.3).toFixed(1)+'M'; valA.textContent='$'+(ease*17.4).toFixed(1)+'M';
+ var tickVal=Math.round(ease*11100000/100000)*100000;
+ tickerEl.textContent='+'+(tickVal>=1000000?'$'+(tickVal/1000000).toFixed(1)+'M':'$'+Math.round(tickVal/1000)+'K');
+ if (p<1) { requestAnimationFrame(tick); }
+ else { barT.style.height=targetTH+'px'; barA.style.height=targetAH+'px'; valT.textContent='$6.3M'; valA.textContent='$17.4M'; tickerEl.textContent='+$11.1M'; document.querySelectorAll('.tax-chart-section button').forEach(function(b) { b.disabled=false; b.style.opacity='1'; }); }
+ }
+ requestAnimationFrame(tick);
  }, 400);
  obs.unobserve(entry.target);
  }
@@ -760,8 +716,6 @@ function setHorizon(years, btn) {
  }, { threshold: 0.1 });
  obs.observe(chartSection);
 })();
-
-// SOLUTIONS
 document.querySelectorAll('.sol-item').forEach(function(item) {
  item.addEventListener('mouseenter', function() { activateSol(+item.dataset.idx); });
  item.addEventListener('click', function() { activateSol(+item.dataset.idx); });
@@ -769,76 +723,64 @@ document.querySelectorAll('.sol-item').forEach(function(item) {
 function activateSol(idx) {
  document.querySelectorAll('.sol-item').forEach(function(i) { i.classList.remove('active'); });
  document.querySelectorAll('.sol-panel').forEach(function(p) { p.classList.remove('active'); });
- var item = document.querySelector('.sol-item[data-idx="' + idx + '"]');
- var panel = document.querySelector('.sol-panel[data-desc="' + idx + '"]');
+ var item=document.querySelector('.sol-item[data-idx="'+idx+'"]');
+ var panel=document.querySelector('.sol-panel[data-desc="'+idx+'"]');
  if (item) item.classList.add('active');
  if (panel) panel.classList.add('active');
 }
-
-// STEPPER
 var stepperPillars = [
- { letter: 'S', title: 'Strategic', pill: 'The Foundation', desc: "Strategic allocation is the foundation. It's the decision about what your portfolio owns – which asset classes, which geographies, how much of each. Everything else builds on top of it.\n\nMost advisors build that foundation around a generic risk profile. We build it around your life. Your income, your tax situation, your real estate, your concentrated positions, your estate plan – all of it shapes the starting point.\n\nAnd every structural decision we make gets evaluated through one lens first: what does this look like after tax?" },
- { letter: 'T', title: 'Tactical', pill: 'The Opportunistic', desc: "Tactical allocation is how the portfolio adapts. Where strategic allocation sets the long-term blueprint, tactical allocation adjusts exposures in response to changing conditions – shifting between asset classes, geographies, and sectors as markets move, valuations stretch, or macro conditions evolve.\n\nAt STQ, tactical decisions are deliberate and disciplined. We're not trying to time the market. We're making measured adjustments when the data supports them. And every move clears one filter first: does it make sense after tax?" },
- { letter: 'Q', title: 'Quantitative', pill: 'The Differentiator', desc: "Quantitative is how we stay honest. Every decision we make is measured, tracked, and accountable to data – not gut feel, not market narratives, not what sounds good in a client meeting.\n\nIt's easy to look busy. It's harder to show it's working. At STQ, we put numbers behind every strategy and we're transparent about what they show – because the only thing that matters is whether what we're doing is actually working for you." }
+ { letter:'S', title:'Strategic', pill:'The Foundation', desc:"Strategic allocation is the foundation. It's the decision about what your portfolio owns – which asset classes, which geographies, how much of each. Everything else builds on top of it.\n\nMost advisors build that foundation around a generic risk profile. We build it around your life. Your income, your tax situation, your real estate, your concentrated positions, your estate plan – all of it shapes the starting point.\n\nAnd every structural decision we make gets evaluated through one lens first: what does this look like after tax?" },
+ { letter:'T', title:'Tactical', pill:'The Opportunistic', desc:"Tactical allocation is how the portfolio adapts. Where strategic allocation sets the long-term blueprint, tactical allocation adjusts exposures in response to changing conditions – shifting between asset classes, geographies, and sectors as markets move, valuations stretch, or macro conditions evolve.\n\nAt STQ, tactical decisions are deliberate and disciplined. We're not trying to time the market. We're making measured adjustments when the data supports them. And every move clears one filter first: does it make sense after tax?" },
+ { letter:'Q', title:'Quantitative', pill:'The Differentiator', desc:"Quantitative is how we stay honest. Every decision we make is measured, tracked, and accountable to data – not gut feel, not market narratives, not what sounds good in a client meeting.\n\nIt's easy to look busy. It's harder to show it's working. At STQ, we put numbers behind every strategy and we're transparent about what they show – because the only thing that matters is whether what we're doing is actually working for you." }
 ];
 function goStep(index) {
- var stepEls = document.querySelectorAll('.stepper-step');
- var stepBody = document.getElementById('stepperBody');
- stepEls.forEach(function(s, i) { s.classList.remove('active','completed'); if (i===index) s.classList.add('active'); else if (i<index) s.classList.add('completed'); });
- var c0 = document.getElementById('conn0'); var c1 = document.getElementById('conn1');
- if (c0) c0.classList.toggle('filled', index > 0);
- if (c1) c1.classList.toggle('filled', index > 1);
+ var stepEls=document.querySelectorAll('.stepper-step'); var stepBody=document.getElementById('stepperBody');
+ stepEls.forEach(function(s,i) { s.classList.remove('active','completed'); if (i===index) s.classList.add('active'); else if (i<index) s.classList.add('completed'); });
+ var c0=document.getElementById('conn0'); var c1=document.getElementById('conn1');
+ if (c0) c0.classList.toggle('filled',index>0); if (c1) c1.classList.toggle('filled',index>1);
  stepBody.classList.remove('visible');
  setTimeout(function() {
- var p = stepperPillars[index];
- document.getElementById('stepperPill').textContent = p.pill;
- document.getElementById('stepperTitle').textContent = p.title;
- document.getElementById('stepperDesc').textContent = p.desc;
- document.getElementById('stepperWatermark').textContent = p.letter + '.';
+ var p=stepperPillars[index];
+ document.getElementById('stepperPill').textContent=p.pill;
+ document.getElementById('stepperTitle').textContent=p.title;
+ document.getElementById('stepperDesc').textContent=p.desc;
+ document.getElementById('stepperWatermark').textContent=p.letter+'.';
  stepBody.classList.add('visible');
  }, 250);
 }
 document.querySelectorAll('.stepper-step').forEach(function(s) { s.addEventListener('click', function() { goStep(+s.dataset.step); }); });
-
-// INSIGHTS CARDS
 (function() {
  var issues = [
- { title: "Stop Borrowing From Banks. Your Portfolio Can Do It Better.", date: "April 2, 2026", preview: "Lines of credit are expensive, bank-controlled, and unnecessary. Your portfolio can do the same job better – at near-Treasury rates, with no application and no forced selling.", tag: "Box Spreads", url: "/insight-box-spreads.html" },
- { title: "$5M in Tesla. $4M for a House. Zero Tax. Here's How.", date: "April 8, 2026", preview: "Selling means a massive tax bill. Not selling means the house stays out of reach. There's a third option most investors don't know exists.", tag: "Concentrated Positions", url: "/insight-tesla-house.html" },
- { title: "The Peter Thiel IRA. What He Did and Why You Can't Ignore It.", date: "April 12, 2026", preview: "Peter Thiel turned a Roth IRA into $5 billion – tax free. The mechanics were aggressive. The principle behind it is available to almost anyone.", tag: "Tax Strategy", url: "/insight-peter-thiel-ira.html" }
+ { title:"Stop Borrowing From Banks. Your Portfolio Can Do It Better.", date:"April 2, 2026", preview:"Lines of credit are expensive, bank-controlled, and unnecessary. Your portfolio can do the same job better – at near-Treasury rates, with no application and no forced selling.", tag:"Box Spreads", url:"/insight-box-spreads.html" },
+ { title:"$5M in Tesla. $4M for a House. Zero Tax. Here's How.", date:"April 8, 2026", preview:"Selling means a massive tax bill. Not selling means the house stays out of reach. There's a third option most investors don't know exists.", tag:"Concentrated Positions", url:"/insight-tesla-house.html" },
+ { title:"The Peter Thiel IRA. What He Did and Why You Can't Ignore It.", date:"April 12, 2026", preview:"Peter Thiel turned a Roth IRA into $5 billion – tax free. The mechanics were aggressive. The principle behind it is available to almost anyone.", tag:"Tax Strategy", url:"/insight-peter-thiel-ira.html" }
  ];
- var grid = document.getElementById('homepage-issues');
+ var grid=document.getElementById('homepage-issues');
  if (!grid) return;
- grid.innerHTML = issues.map(function(issue) {
- return '<a href="' + issue.url + '" style="background:var(--white);border:1px solid rgba(27,46,75,0.08);border-radius:6px;padding:28px 24px;text-decoration:none;display:block;transition:all 0.3s ease;" onmouseover="this.style.transform=\'translateY(-4px)\';this.style.boxShadow=\'0 20px 60px rgba(27,46,75,0.08)\'" onmouseout="this.style.transform=\'\';this.style.boxShadow=\'\'">'
- + '<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;"><span style="font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);background:var(--cream-dark);padding:3px 8px;border-radius:3px;">' + issue.tag + '</span></div>'
- + '<div style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:10px;">' + issue.title + '</div>'
- + '<div style="font-size:0.875rem;line-height:1.65;color:var(--text-secondary);margin-bottom:20px;">' + issue.preview + '</div>'
- + '<div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);">Read →</div></a>';
+ grid.innerHTML=issues.map(function(issue) {
+ return '<a href="'+issue.url+'" style="background:var(--white);border:1px solid rgba(27,46,75,0.08);border-radius:6px;padding:28px 24px;text-decoration:none;display:block;transition:all 0.3s ease;" onmouseover="this.style.transform=\'translateY(-4px)\';this.style.boxShadow=\'0 20px 60px rgba(27,46,75,0.08)\'" onmouseout="this.style.transform=\'\';this.style.boxShadow=\'\'">'
+ +'<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;"><span style="font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);background:var(--cream-dark);padding:3px 8px;border-radius:3px;">'+issue.tag+'</span></div>'
+ +'<div style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:10px;">'+issue.title+'</div>'
+ +'<div style="font-size:0.875rem;line-height:1.65;color:var(--text-secondary);margin-bottom:20px;">'+issue.preview+'</div>'
+ +'<div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);">Read →</div></a>';
  }).join('');
 })();
-
-// NEWSLETTER
 function handleSubscribe(e) {
  e.preventDefault();
- var email = document.getElementById('newsletter-email').value;
- var btn = document.getElementById('newsletter-btn');
- var msg = document.getElementById('newsletter-msg');
- btn.textContent = 'Subscribing...'; btn.disabled = true;
- fetch('/.netlify/functions/subscribe', {
- method: 'POST',
- headers: { 'Content-Type': 'application/json' },
- body: JSON.stringify({ email: email })
- }).then(function(res) {
- if (res.ok || res.status === 201 || res.status === 200) {
- msg.style.display = 'block'; msg.style.color = '#1B2E4B';
- msg.textContent = "You're in. First issue hits first thing.";
- document.getElementById('newsletter-email').value = ''; btn.textContent = 'Subscribed ✓';
+ var email=document.getElementById('newsletter-email').value;
+ var btn=document.getElementById('newsletter-btn'); var msg=document.getElementById('newsletter-msg');
+ btn.textContent='Subscribing...'; btn.disabled=true;
+ fetch('/.netlify/functions/subscribe', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({email}) })
+ .then(function(res) {
+ if (res.ok||res.status===201||res.status===200) {
+ msg.style.display='block'; msg.style.color='#1B2E4B';
+ msg.textContent="You're in. First issue hits first thing.";
+ document.getElementById('newsletter-email').value=''; btn.textContent='Subscribed ✓';
  } else { throw new Error(); }
  }).catch(function() {
- msg.style.display = 'block'; msg.style.color = '#991B1B';
- msg.textContent = 'Something went wrong. Email akiva.glazerson@stqcap.com to subscribe.';
- btn.textContent = 'Subscribe'; btn.disabled = false;
+ msg.style.display='block'; msg.style.color='#991B1B';
+ msg.textContent='Something went wrong. Email akiva.glazerson@stqcap.com to subscribe.';
+ btn.textContent='Subscribe'; btn.disabled=false;
  });
 }
 </script>
