@@ -13,6 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://stqcap.com/research.html">
 <link rel="canonical" href="https://stqcap.com/research.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%231B2E4B'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='22' fill='%23F0EFEB' letter-spacing='-1'>STQ</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
@@ -34,7 +35,6 @@ body { font-family: var(--font-body); color: var(--text-primary); background: va
 body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(27,46,75,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
 .container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
 
-/* NAV */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
 .nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; }
@@ -49,7 +49,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .nav-client-login { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; transition: border-color 0.2s ease, background 0.2s ease; }
 .nav-client-login:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
 
-/* PAGE HERO */
 .page-hero { padding: 140px 0 72px; background: var(--navy); position: relative; overflow: hidden; border-bottom: 1px solid rgba(27,46,75,0.08); }
 .page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
 .hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
@@ -59,11 +58,9 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .page-hero h1 { font-family: var(--font-heading); font-size: clamp(2.5rem,5vw,4rem); font-weight: 700; color: var(--cream); letter-spacing: -0.02em; margin-bottom: 20px; line-height: 1.1; }
 .page-hero p { font-size: 1.125rem; color: var(--text-light); max-width: 560px; line-height: 1.7; }
 
-/* FEATURED */
 .featured-section { padding: 64px 0 0; position: relative; z-index: 1; }
 .featured-label { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); position: relative; padding-left: 20px; margin-bottom: 32px; }
 .featured-label::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: var(--navy); }
-
 .featured-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--white); border: 1px solid rgba(27,46,75,0.08); border-radius: 6px; overflow: hidden; margin-bottom: 24px; text-decoration: none; transition: all 0.3s var(--ease); }
 .featured-card:hover { transform: translateY(-3px); box-shadow: 0 24px 64px rgba(27,46,75,0.08); }
 .featured-card-left { background: var(--navy); padding: 48px 44px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
@@ -80,7 +77,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .featured-card-meta-item span { color: var(--text-secondary); margin-left: 6px; }
 .featured-card-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--cream-dark); border-radius: 4px; padding: 6px 12px; font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 20px; width: fit-content; }
 
-/* RESEARCH GRID */
 .research-section { padding: 48px 0 120px; position: relative; z-index: 1; }
 .research-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
 .research-card { background: var(--white); border: 1px solid rgba(27,46,75,0.08); border-radius: 6px; padding: 32px 28px; text-decoration: none; display: block; transition: all 0.3s var(--ease); position: relative; overflow: hidden; }
@@ -99,7 +95,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .card-arrow::after { content: '→'; }
 .card-soon { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(27,46,75,0.25); font-style: italic; }
 
-/* CTA */
 .research-cta { background: var(--navy); padding: 80px 0; text-align: center; position: relative; overflow: hidden; z-index: 1; }
 .research-cta::before { content: 'STQ'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-family: var(--font-heading); font-weight: 700; font-size: 20rem; color: rgba(240,239,235,0.02); pointer-events: none; }
 .research-cta h2 { font-family: var(--font-heading); font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 700; color: var(--cream); margin-bottom: 16px; letter-spacing: -0.02em; }
@@ -110,7 +105,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .btn-outline-white { background: transparent; color: var(--cream); border: 1px solid rgba(240,239,235,0.3); }
 .btn-outline-white:hover { border-color: var(--cream); background: rgba(240,239,235,0.08); }
 
-/* FOOTER */
 footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative; z-index: 1; }
 .footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 28px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 20px; }
 .footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); }
@@ -135,12 +129,13 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 
 <nav>
   <div class="nav-inner">
-    <a href="/" class="nav-logo">STQ <span>/ Capital Partners</span></a>
+    <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
     <div class="nav-links">
       <a href="/#solutions">Solutions</a>
       <a href="/#about">About</a>
       <a href="/insights.html">Insights</a>
       <a href="/research.html" class="active">Research</a>
+      <a href="/box-spreads.html">Financing</a>
       <a href="/#contact">Contact</a>
     </div>
     <div class="nav-actions">
@@ -152,7 +147,6 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
   </div>
 </nav>
 
-<!-- PAGE HERO -->
 <section class="page-hero">
   <div class="hero-watermark">STQ</div>
   <div class="container">
@@ -164,14 +158,13 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
   </div>
 </section>
 
-<!-- FEATURED -->
 <section class="featured-section">
   <div class="container">
     <div class="featured-label">Featured Publication</div>
     <a href="/research-direct-indexing.html" class="featured-card" data-tag="Tax Alpha">
       <div class="featured-card-left">
         <div>
-          <div class="featured-card-tag">Tax Alpha — Direct Indexing Series</div>
+          <div class="featured-card-tag">Tax Alpha – Direct Indexing Series</div>
           <div class="featured-card-title">Index Investing Is Smart. Direct Indexing Is Smarter.</div>
         </div>
         <div class="featured-card-watermark">01</div>
@@ -179,7 +172,7 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
       </div>
       <div class="featured-card-right">
         <div class="featured-card-badge">✓ Available Now</div>
-        <div class="featured-card-desc">Index funds are one of the best things to happen to individual investors. Direct indexing is the next step — same exposure, more control, and the ability to harvest losses at the individual stock level regardless of what the market does.</div>
+        <div class="featured-card-desc">Index funds are one of the best things to happen to individual investors. Direct indexing is the next step – same exposure, more control, and the ability to harvest losses at the individual stock level regardless of what the market does.</div>
         <div class="featured-card-meta">
           <div class="featured-card-meta-item">Author <span>Akiva Glazerson</span></div>
           <div class="featured-card-meta-item">Read time <span>10 min</span></div>
@@ -190,7 +183,6 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
   </div>
 </section>
 
-<!-- ALL RESEARCH -->
 <section class="research-section">
   <div class="container">
     <div id="researchGrid" class="research-grid">
@@ -198,7 +190,7 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
       <a href="/asset-location.html" class="research-card" data-tag="Tax Strategy">
         <div class="card-tag">Tax Strategy</div>
         <div class="card-title">All the Right Things in All the Wrong Places.</div>
-        <div class="card-desc">Why where you hold your investments matters as much as what you hold — and how to optimize across all three account types.</div>
+        <div class="card-desc">Why where you hold your investments matters as much as what you hold – and how to optimize across all three account types.</div>
         <p style="font-family:var(--font-heading);font-size:0.6rem;color:rgba(27,46,75,0.3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">March 2026</p>
         <div class="card-meta">
           <span class="card-read-time">12 min read</span>
@@ -209,7 +201,7 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
       <div class="research-card coming-soon" data-tag="Box Spreads">
         <div class="card-tag">Box Spreads</div>
         <div class="card-title">The Box Spread Guide: Borrowing at Treasury Rates Without a Bank</div>
-        <div class="card-desc">How to use defined options structures to access liquidity at near-Treasury rates — no credit check, no bank approval, potentially tax-deductible interest.</div>
+        <div class="card-desc">How to use defined options structures to access liquidity at near-Treasury rates – no credit check, no bank approval, potentially tax-deductible interest.</div>
         <div class="card-meta">
           <span class="card-read-time">~10 min read</span>
           <span class="card-soon">Coming soon</span>
@@ -220,7 +212,6 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
   </div>
 </section>
 
-<!-- CTA -->
 <section class="research-cta">
   <div class="container">
     <h2>Put It to Work in Your Portfolio.</h2>
@@ -232,11 +223,10 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-main">
-      <div class="footer-logo">STQ <span>/ Capital Partners</span></div>
+      <div class="footer-logo">STQ <span>/ Capital</span></div>
       <div class="footer-links">
         <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
         <a href="/insights.html">Insights</a>
