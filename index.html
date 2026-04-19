@@ -168,7 +168,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
 .footer-disclaimer { margin-top: 24px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 900px; }
 @media (max-width: 1024px) { .split-grid { grid-template-columns: 1fr; gap: 32px; } .split-label { position: static; } .why-grid { grid-template-columns: repeat(2,1fr); } .chart-wrapper { grid-template-columns: 1fr; } }
 @media (max-width: 800px) { .solutions-hover { flex-direction: column; } .sol-left, .sol-right { flex: none; padding: 48px 24px; } }
-@media (max-width: 768px) { .nav-links, .nav-client-login, .nav-cta-desktop, .nav-login-dropdown { display: none !important; } .nav-toggle { display: flex; } .hero h1 { font-size: 2.5rem; } .hero { padding-top: 100px; padding-bottom: 80px; } .why-grid { grid-template-columns: 1fr; } .newsletter-inner { flex-direction: column; text-align: center; align-items: center; } .newsletter-form { flex-direction: column; width: 100%; } .newsletter-form input { width: 100%; } .footer-main { flex-direction: column; text-align: center; } .footer-links { justify-content: center; } .hero-buttons { flex-direction: column; align-items: flex-start; } .cta-buttons { flex-direction: column; align-items: center; } .stepper-container { padding: 0 24px; } .stepper-content { padding: 40px 28px; } .chart-wrapper { padding: 32px 24px; } }
+@media (max-width: 768px) { .nav-links, .nav-client-login, .nav-cta-desktop, .nav-login-dropdown { display: none !important; } .nav-toggle { display: flex !important; } .hero h1 { font-size: 2.5rem; } .hero { padding-top: 100px; padding-bottom: 80px; } .why-grid { grid-template-columns: 1fr; } .newsletter-inner { flex-direction: column; text-align: center; align-items: center; } .newsletter-form { flex-direction: column; width: 100%; } .newsletter-form input { width: 100%; } .footer-main { flex-direction: column; text-align: center; } .footer-links { justify-content: center; } .hero-buttons { flex-direction: column; align-items: flex-start; } .cta-buttons { flex-direction: column; align-items: center; } .stepper-container { padding: 0 24px; } .stepper-content { padding: 40px 28px; } .chart-wrapper { padding: 32px 24px; } }
 .mobile-nav { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; transition: opacity 0.3s ease; }
 .mobile-nav.active { display: flex; opacity: 1; }
 .mobile-nav a { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--navy); text-decoration: none; }
@@ -305,7 +305,8 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  <a href="/box-spreads.html" onclick="this.parentElement.classList.remove('active')">Financing</a>
  <a href="/contact.html" onclick="this.parentElement.classList.remove('active')">Contact</a>
  <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Call</a>
- <a href="https://client.schwab.com/Areas/Access/Login" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Client Login</a>
+ <a href="https://client.schwab.com/Areas/Access/Login" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Investment Portal</a>
+ <a href="/get-started.html" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Get Started</a>
 </div>
 
 <section class="hero">
