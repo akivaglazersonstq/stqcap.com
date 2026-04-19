@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
 <style>:root{color-scheme:light only;}</style>
-<title>Research — STQ Capital Partners | Tax-Aware Investment Strategies</title>
+<title>Research – STQ Capital Partners | Tax-Aware Investment Strategies</title>
 <meta name="description" content="Institutional-grade research on tax-aware investing, box spread lending, asset location, and options strategies from STQ Capital Partners.">
 <meta name="keywords" content="box spread RIA, asset location research, tax loss harvesting guide, tax-aware investing, California RIA research, covered call strategy, fortress trade, synthetic borrowing">
-<meta property="og:title" content="Research — STQ Capital Partners">
+<meta property="og:title" content="Research – STQ Capital Partners">
 <meta property="og:description" content="Institutional-grade research on tax-aware investing, box spreads, and options strategies.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://stqcap.com/research.html">
@@ -116,8 +116,18 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 .footer-disclaimer { margin-top: 20px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 900px; }
 
 @media (max-width: 1024px) { .research-grid { grid-template-columns: repeat(2,1fr); } }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--navy); }
+.nav-login-dropdown { position: relative; display: inline-flex; }
+.mobile-nav { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; transition: opacity 0.3s ease; }
+.mobile-nav.active { display: flex; opacity: 1; }
+.mobile-nav a { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+.mobile-nav .btn { font-size: 0.8125rem; }
+.mobile-nav .btn-primary { color: var(--cream); }
+.mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
 @media (max-width: 768px) {
-  .nav-links, .nav-client-login, .nav-cta-desktop { display: none; }
+  .nav-links, .nav-client-login, .nav-cta-desktop, .nav-login-dropdown { display: none !important; }
+  .nav-toggle { display: flex !important; }
   .featured-card { grid-template-columns: 1fr; }
   .research-grid { grid-template-columns: 1fr; }
   .nav-inner { padding: 0 24px; }
@@ -137,7 +147,6 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 .modal-msg { font-size: 0.875rem; margin-top: 8px; }
 
 /* CLIENT LOGIN DROPDOWN */
-.nav-login-dropdown { position: relative; display: inline-flex; }
 .nav-login-btn { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s ease, background 0.2s ease; cursor: pointer; background: transparent; }
 .nav-login-btn:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
 .nav-login-btn svg { transition: transform 0.2s ease; }
@@ -183,8 +192,21 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
       </div>
       <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary nav-cta-desktop">Schedule a Call</a>
     </div>
+    <button class="nav-toggle" onclick="document.querySelector('.mobile-nav').classList.add('active')" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<div class="mobile-nav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('active')">✕</button>
+  <a href="/#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
+  <a href="/#about" onclick="this.parentElement.classList.remove('active')">About</a>
+  <a href="/insights.html" onclick="this.parentElement.classList.remove('active')">Insights</a>
+  <a href="/research.html" onclick="this.parentElement.classList.remove('active')">Research</a>
+  <a href="/box-spreads.html" onclick="this.parentElement.classList.remove('active')">Financing</a>
+  <a href="/contact.html" onclick="this.parentElement.classList.remove('active')">Contact</a>
+  <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Call</a>
+  <a href="https://client.schwab.com/Areas/Access/Login" target="_blank" class="btn btn-outline" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Client Login</a>
+</div>
 
 <section class="page-hero">
   <div class="hero-watermark">STQ</div>
