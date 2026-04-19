@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Get Started — STQ Capital Partners</title>
+<meta name="description" content="Open an account with STQ Capital Partners. Secure, simple onboarding for new clients.">
+<link rel="canonical" href="https://stqcap.com/get-started.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%231B2E4B'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='22' fill='%23F0EFEB' letter-spacing='-1'>STQ</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
+  --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF;
+  --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7);
+  --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.25,0.46,0.45,0.94); --ease-out: cubic-bezier(0.16,1,0.3,1);
+}
+html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(27,46,75,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+.nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; }
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-links { display: flex; gap: 36px; margin-right: auto; margin-left: 48px; }
+.nav-links a { font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
+.nav-links a:hover { color: var(--navy); }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 12px 28px; border-radius: 4px; text-decoration: none; transition: all 0.3s var(--ease); cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); }
+.btn-outline:hover { border-color: var(--navy); background: rgba(27,46,75,0.04); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.nav-client-login { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; transition: border-color 0.2s ease, background 0.2s ease; }
+.nav-client-login:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--navy); }
+.mobile-nav { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; transition: opacity 0.3s ease; }
+.mobile-nav.active { display: flex; opacity: 1; }
+.mobile-nav a { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+.mobile-nav .btn { font-size: 0.8125rem; }
+.mobile-nav .btn-primary { color: var(--cream); }
+.mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
+
+/* HERO */
+.page-hero { padding: 140px 0 80px; background: var(--navy); position: relative; overflow: hidden; }
+.page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
+.hero-watermark { position: absolute; right: 20px; bottom: 40px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.page-hero-inner { position: relative; z-index: 1; max-width: 680px; }
+.page-hero-tag { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,239,235,0.4); margin-bottom: 20px; position: relative; padding-left: 20px; }
+.page-hero-tag::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: rgba(240,239,235,0.3); }
+.page-hero h1 { font-family: var(--font-heading); font-size: clamp(2.5rem,5vw,4rem); font-weight: 700; color: var(--cream); letter-spacing: -0.02em; margin-bottom: 20px; line-height: 1.1; }
+.page-hero p { font-size: 1.125rem; color: var(--text-light); max-width: 520px; line-height: 1.7; }
+
+/* MAIN CONTENT */
+.main-section { padding: 80px 0 120px; position: relative; z-index: 1; }
+.main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+
+/* WHAT TO EXPECT */
+.expect-label { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); position: relative; padding-left: 20px; margin-bottom: 32px; }
+.expect-label::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: var(--navy); }
+.expect-title { font-family: var(--font-heading); font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 20px; line-height: 1.2; }
+.expect-desc { font-size: 1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 48px; }
+
+/* STEPS */
+.steps { display: flex; flex-direction: column; gap: 0; }
+.step { display: flex; gap: 20px; padding: 24px 0; border-bottom: 1px solid rgba(27,46,75,0.08); position: relative; }
+.step:last-child { border-bottom: none; }
+.step-num { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; color: rgba(27,46,75,0.2); min-width: 28px; padding-top: 2px; letter-spacing: 0.05em; }
+.step-content h4 { font-family: var(--font-heading); font-size: 0.9375rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.step-content p { font-size: 0.875rem; line-height: 1.7; color: var(--text-secondary); }
+
+/* CHECKLIST CARD */
+.checklist-card { background: var(--white); border: 1px solid rgba(27,46,75,0.08); border-radius: 8px; padding: 40px; position: sticky; top: 100px; }
+.checklist-title { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.checklist-sub { font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 32px; line-height: 1.6; }
+.checklist { display: flex; flex-direction: column; gap: 0; margin-bottom: 36px; }
+.checklist-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(27,46,75,0.06); }
+.checklist-item:last-child { border-bottom: none; }
+.check-icon { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid rgba(27,46,75,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.check-icon svg { opacity: 0.3; }
+.checklist-item-text { font-size: 0.9375rem; color: var(--text-primary); line-height: 1.5; }
+.checklist-item-sub { font-size: 0.8125rem; color: var(--text-secondary); margin-top: 2px; }
+.checklist-note { font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.6; padding: 16px; background: var(--cream); border-radius: 4px; margin-bottom: 28px; }
+.btn-large { padding: 16px 32px; font-size: 0.875rem; width: 100%; justify-content: center; }
+.secure-badge { display: flex; align-items: center; gap: 8px; margin-top: 16px; justify-content: center; }
+.secure-badge svg { color: var(--text-secondary); }
+.secure-badge span { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); opacity: 0.6; }
+
+/* FOOTER */
+footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative; z-index: 1; }
+.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 28px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.5); }
+.footer-links { display: flex; gap: 28px; }
+.footer-links a { font-size: 0.8125rem; color: rgba(240,239,235,0.5); text-decoration: none; transition: color 0.2s ease; }
+.footer-links a:hover { color: var(--cream); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.35); }
+.footer-disclaimer { margin-top: 20px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 900px; }
+
+@media (max-width: 1024px) { .main-grid { grid-template-columns: 1fr; gap: 48px; } .checklist-card { position: static; } }
+@media (max-width: 768px) { .nav-links, .nav-client-login, .nav-cta-desktop { display: none; } .nav-toggle { display: flex; } .nav-inner { padding: 0 24px; } .page-hero { padding: 120px 0 60px; } }
+
+/* CLIENT LOGIN DROPDOWN */
+.nav-login-dropdown { position: relative; display: inline-flex; }
+.nav-login-btn { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s ease, background 0.2s ease; cursor: pointer; background: transparent; }
+.nav-login-btn:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
+.nav-login-btn svg { transition: transform 0.2s ease; }
+.nav-login-dropdown:hover .nav-login-btn svg:last-child { transform: rotate(180deg); }
+.nav-login-menu { position: absolute; top: calc(100% + 8px); right: 0; background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 6px; box-shadow: 0 12px 40px rgba(27,46,75,0.12); min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.2s var(--ease); z-index: 100; overflow: hidden; }
+.nav-login-dropdown:hover .nav-login-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-login-menu a { display: flex; align-items: center; gap: 10px; padding: 14px 18px; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: background 0.15s ease; border-bottom: 1px solid rgba(27,46,75,0.06); }
+.nav-login-menu a:last-child { border-bottom: none; }
+.nav-login-menu a:hover { background: var(--cream); }
+.nav-login-menu-label { font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-secondary); display: block; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
+    <div class="nav-links">
+      <a href="/#solutions">Solutions</a>
+      <a href="/#about">About</a>
+      <a href="/insights.html">Insights</a>
+      <a href="/research.html">Research</a>
+      <a href="/box-spreads.html">Financing</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <div class="nav-login-dropdown nav-cta-desktop">
+        <button class="nav-login-btn">
+          <svg width="12" height="13" viewBox="0 0 12 13" fill="none"><rect x="1" y="6" width="10" height="6" rx="1.5" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M3.5 6V4a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>
+          Client Login
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-login-menu">
+          <a href="https://client.schwab.com/Areas/Access/Login" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="12" height="6" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+            <div>Investment Portal<span class="nav-login-menu-label">Existing clients</span></div>
+          </a>
+          <a href="/get-started.html">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <div>Get Started<span class="nav-login-menu-label">New clients</span></div>
+          </a>
+        </div>
+      </div>
+      <a href="/get-started.html" class="btn btn-primary nav-cta-desktop">Get Started</a>
+    </div>
+    <button class="nav-toggle" onclick="document.querySelector('.mobile-nav').classList.add('active')" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-nav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('active')">✕</button>
+  <a href="/#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
+  <a href="/#about" onclick="this.parentElement.classList.remove('active')">About</a>
+  <a href="/insights.html" onclick="this.parentElement.classList.remove('active')">Insights</a>
+  <a href="/research.html" onclick="this.parentElement.classList.remove('active')">Research</a>
+  <a href="/box-spreads.html" onclick="this.parentElement.classList.remove('active')">Financing</a>
+  <a href="/#contact" onclick="this.parentElement.classList.remove('active')">Contact</a>
+  <a href="/get-started.html" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Get Started</a>
+  <a href="https://client.schwab.com/Areas/Access/Login" target="_blank" class="btn btn-outline" onclick="this.parentElement.classList.remove('active')">Client Login</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="hero-watermark">STQ</div>
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-tag">New Clients</div>
+      <h1>Let's Get You Set Up.</h1>
+      <p>Opening an account with STQ takes about 10 minutes. Here's exactly what to expect and what you'll need.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<section class="main-section">
+  <div class="container">
+    <div class="main-grid">
+
+      <!-- LEFT: WHAT TO EXPECT -->
+      <div>
+        <div class="expect-label">The Process</div>
+        <h2 class="expect-title">Simple. Secure. Done in one sitting.</h2>
+        <p class="expect-desc">We've designed onboarding to be as straightforward as possible. You submit your information once, securely, and we handle the rest. No back-and-forth, no paperwork maze.</p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <h4>Submit your information.</h4>
+              <p>Click the button, complete the secure form, and upload any documents. Takes about 10 minutes. You can stop and return at any time.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <h4>We review and prepare your account.</h4>
+              <p>We review your submission and prepare your Schwab account. You'll hear back within one business day with next steps and any follow-up questions.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <h4>Sign and fund.</h4>
+              <p>You'll receive a DocuSign envelope with your account opening documents. Sign electronically, fund your account via bank transfer or ACAT, and you're live.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <div class="step-content">
+              <h4>We get to work.</h4>
+              <p>Once funded, we build your portfolio based on your tax situation, objectives, and the strategy you've discussed. You'll receive a full portfolio summary before any trades are placed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: CHECKLIST CARD -->
+      <div>
+        <div class="checklist-card">
+          <div class="checklist-title">What to Have Ready.</div>
+          <div class="checklist-sub">Gather these before you start — it'll take less than 10 minutes if you have them on hand.</div>
+
+          <div class="checklist">
+            <div class="checklist-item">
+              <div class="check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#1B2E4B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div>
+                <div class="checklist-item-text">Government-issued ID</div>
+                <div class="checklist-item-sub">Driver's license or passport — a photo is fine</div>
+              </div>
+            </div>
+            <div class="checklist-item">
+              <div class="check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#1B2E4B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div>
+                <div class="checklist-item-text">Social Security Number</div>
+                <div class="checklist-item-sub">Required for account opening</div>
+              </div>
+            </div>
+            <div class="checklist-item">
+              <div class="check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#1B2E4B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div>
+                <div class="checklist-item-text">Employment information</div>
+                <div class="checklist-item-sub">Employer name, occupation, annual income range</div>
+              </div>
+            </div>
+            <div class="checklist-item">
+              <div class="check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#1B2E4B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div>
+                <div class="checklist-item-text">Beneficiary details</div>
+                <div class="checklist-item-sub">Name, relationship, date of birth, SSN if available</div>
+              </div>
+            </div>
+            <div class="checklist-item">
+              <div class="check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#1B2E4B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div>
+                <div class="checklist-item-text">Bank account for funding</div>
+                <div class="checklist-item-sub">Routing and account number for initial transfer</div>
+              </div>
+            </div>
+            <div class="checklist-item">
+              <div class="check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#1B2E4B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div>
+                <div class="checklist-item-text">Most recent account statement</div>
+                <div class="checklist-item-sub">If transferring from another broker — one statement is enough</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checklist-note">Don't have everything? That's fine. Submit what you have and we'll follow up on anything missing.</div>
+
+          <a href="WEALTHBOX_URL_HERE" target="_blank" class="btn btn-primary btn-large">
+            Open My Account →
+          </a>
+
+          <div class="secure-badge">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M6 1L1.5 3v4c0 2.76 1.93 5.34 4.5 6 2.57-.66 4.5-3.24 4.5-6V3L6 1z" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+            <span>Secured and encrypted – powered by Wealthbox</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-logo">STQ <span>/ Capital</span></div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
+        <a href="/insights.html">Insights</a>
+        <a href="/research.html">Research</a>
+        <a href="/#contact">Contact</a>
+        <a href="https://client.schwab.com/Areas/Access/Login" target="_blank">Client Login</a>
+      </div>
+      <div class="footer-copy">© 2026 STQ Capital Partners</div>
+    </div>
+    <div class="footer-disclaimer">Advisory services are offered through STQ Capital Partners ("STQ"), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss.</div>
+  </div>
+</footer>
+
+</body>
+</html>
