@@ -153,6 +153,19 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
 @media (max-width: 640px) { .use-case-row { grid-template-columns: 1fr; gap: 8px; } .use-case-num { font-size: 1.25rem; } }
 .risk-grid { grid-template-columns: 1fr; } .rate-grid { grid-template-columns: repeat(2,1fr); } .rate-item:nth-child(2)::after { display: none; } }
 @media (max-width: 768px) { .nav-inner { padding: 0 24px; } .hero { padding: 120px 0 72px; } .use-case-grid { grid-template-columns: 1fr; } .tax-split { grid-template-columns: 1fr; } .cta-buttons { flex-direction: column; align-items: center; } .compare-table { font-size: 0.8rem; } .compare-table td, .compare-table th { padding: 12px 12px; } .heloc-compare-grid { grid-template-columns: 1fr !important; } .use-case-mosaic { grid-template-columns: 1fr !important; } .case-study-grid { grid-template-columns: 1fr !important; } }
+
+/* CLIENT LOGIN DROPDOWN */
+.nav-login-dropdown { position: relative; display: inline-flex; }
+.nav-login-btn { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s ease, background 0.2s ease; cursor: pointer; background: transparent; }
+.nav-login-btn:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
+.nav-login-btn svg { transition: transform 0.2s ease; }
+.nav-login-dropdown:hover .nav-login-btn svg { transform: rotate(180deg); }
+.nav-login-menu { position: absolute; top: calc(100% + 8px); right: 0; background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 6px; box-shadow: 0 12px 40px rgba(27,46,75,0.12); min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.2s var(--ease); z-index: 100; overflow: hidden; }
+.nav-login-dropdown:hover .nav-login-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-login-menu a { display: flex; align-items: center; gap: 10px; padding: 14px 18px; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: background 0.15s ease; border-bottom: 1px solid rgba(27,46,75,0.06); }
+.nav-login-menu a:last-child { border-bottom: none; }
+.nav-login-menu a:hover { background: var(--cream); }
+.nav-login-menu-label { font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-secondary); display: block; }
 </style>
 </head>
 <body>
@@ -175,7 +188,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
       <h1>Box Spreads:<br>A Deep Dive.</h1>
       <p class="hero-sub">Borrow against your investments at near-Treasury rates through box spreads. No bank approval, no credit check, no forced selling. Interest is structured as a capital loss – deductible against capital gains regardless of how proceeds are used. Funds typically available within days of execution.</p>
       <div class="hero-buttons">
-        <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-white">Schedule a Conversation</a>
+        <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-white">Schedule a Call</a>
         <a href="#how-it-works" class="btn btn-outline-white">How It Works</a>
       </div>
     </div>
