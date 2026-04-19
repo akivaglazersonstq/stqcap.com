@@ -422,9 +422,9 @@ async function handleInsightsSubscribe(e) {
  btn.textContent = 'Subscribing...';
  btn.disabled = true;
  try {
- const res = await fetch('/.netlify/functions/subscribe', {
+ const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
  method: 'POST',
- headers: { 'Content-Type': 'application/json' },
+ headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMmM2OTZhNDU2YmFiZDU4MzEyMmRhYjMwMDA5MDEyZTFmNzE4MTJjMTg0OTA1ODg4MmZjMDQ3MTI4YzU4ZmRiOTQ4NDRhZGFiMWMxOTgxZGIiLCJpYXQiOjE3NzUzNzU0NzguMTQyMDk3LCJuYmYiOjE3NzUzNzU0NzguMTQyMSwiZXhwIjo0OTMxMDQ5MDc4LjEzNzg4Miwic3ViIjoiMjI2NTM2NyIsInNjb3BlcyI6W119.ZdViQ4RRQTgYCmiJyPuhFhpf6e5Okmf75gggIsHrxgG5xmeuxRCmkMCkhRmgY4_zevSlEe6tYpwTui1hVmLO1NlHP4uBmgoJ9dGSFciCjBxs5Y9EtEvYwrVqw5KV8aVK8fXy6h1pSA-Y8kHIekfnTha-Gs_wddrV5U36x6XNbtQq6HhIfnyDEXXCkdOLl5jL4K5G3nPjjROrBKEmkzpaGjL0bI2VJouU3VXN9BKSUEQgVz0RcyGWlsPbPuVoQNYfnGvX6H5HDU6V8t9m6lzO-woI1byNRm_T9j90y1WuZmPe3s1hQNOFEYIvWIMNJaw_GozfJdS4e9t-1sn0E8jULWycSZM0kdklAyXDx-IJ3srznQMGBGgpEqGD6O24aUIQ-nzD8kxnMqWhDSqFOeu-p9ETrFUPKdTL7XpHnV4_AnqzsFRGdpUy_PXyVldVgkOOm_pM_HPP-w5FuUfNv2J6XlU9zSLiC-DHZ608Hw0JPi9yt7jCEwOeDaS87dvX0R8X09GYNMcTVBgPSV8PLvOcQVaIqDPNqU5_d8pPmiX1GtRlJQL3Yf4DugYrmhmITzufU9zOtgsSr-jv2eAUOuw9n_fnEHBw5lFJ3pEs8yl5NjBDN2SSdllkkq_LWDczAs914PfugL2a1t4vk2gx7xZsdg7Y3w__YlKTzBHVMjBbJ-8' },
  body: JSON.stringify({ email })
  });
  if (res.ok || res.status === 200 || res.status === 201) {
