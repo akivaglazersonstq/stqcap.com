@@ -118,7 +118,7 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 .mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
 @media (max-width: 1024px) { .issues-grid { grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 768px) {
- .nav-links, .nav-client-login, .nav-cta-desktop { display: none; } .nav-toggle { display: flex; }
+ .nav-links, .nav-client-login, .nav-cta-desktop, .nav-login-dropdown { display: none !important; } .nav-toggle { display: flex !important; }
  .nav-inner { padding: 0 24px; }
  .page-hero { padding: 120px 0 60px; }
  .issues-grid { grid-template-columns: 1fr; }
@@ -174,6 +174,7 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
       </div>
  <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary nav-cta-desktop">Schedule a Call</a>
  </div>
+ <button class="nav-toggle" onclick="document.querySelector('.mobile-nav').classList.add('active')" aria-label="Open menu"><span></span><span></span><span></span></button>
  </div>
 </nav>
 
