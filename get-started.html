@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
-<title>Get Started — STQ Capital Partners</title>
+<title>Get Started – STQ Capital</title>
 <meta name="description" content="Open an account with STQ Capital Partners. Secure, simple onboarding for new clients.">
 <link rel="canonical" href="https://stqcap.com/get-started.html">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%231B2E4B'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='22' fill='%23F0EFEB' letter-spacing='-1'>STQ</text></svg>">
@@ -48,6 +48,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .mobile-nav a { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--navy); text-decoration: none; }
 .mobile-nav .btn { font-size: 0.8125rem; }
 .mobile-nav .btn-primary { color: var(--cream); }
+.mobile-nav .btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); font-size: 0.8125rem; }
 .mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
 
 /* HERO */
@@ -107,7 +108,7 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 .footer-disclaimer { margin-top: 20px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 900px; }
 
 @media (max-width: 1024px) { .main-grid { grid-template-columns: 1fr; gap: 48px; } .checklist-card { position: static; } }
-@media (max-width: 768px) { .nav-links, .nav-client-login, .nav-cta-desktop { display: none; } .nav-toggle { display: flex; } .nav-inner { padding: 0 24px; } .page-hero { padding: 120px 0 60px; } }
+@media (max-width: 768px) { .nav-links, .nav-client-login, .nav-cta-desktop, .nav-login-dropdown { display: none !important; } .nav-toggle { display: flex !important; } .nav-inner { padding: 0 24px; } .page-hero { padding: 120px 0 60px; } }
 
 /* CLIENT LOGIN DROPDOWN */
 .nav-login-dropdown { position: relative; display: inline-flex; }
@@ -169,7 +170,8 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
   <a href="/box-spreads.html" onclick="this.parentElement.classList.remove('active')">Financing</a>
   <a href="/contact.html" onclick="this.parentElement.classList.remove('active')">Contact</a>
   <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Call</a>
-  <a href="https://client.schwab.com/Areas/Access/Login" target="_blank" class="btn btn-outline" onclick="this.parentElement.classList.remove('active')">Client Login</a>
+  <a href="https://client.schwab.com/Areas/Access/Login" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Investment Portal</a>
+  <a href="/get-started.html" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Get Started</a>
 </div>
 
 <!-- HERO -->
