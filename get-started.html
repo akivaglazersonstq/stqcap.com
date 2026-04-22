@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
-<title>Get Started – STQ Capital</title>
-<meta name="description" content="Open an account with STQ Capital Partners. Secure, simple onboarding for new clients.">
-<link rel="canonical" href="https://stqcap.com/get-started.html">
+<title>Contact – STQ Capital</title>
+<meta name="description" content="Get in touch with STQ Capital Partners. Schedule a call, send a message, or reach out directly.">
+<link rel="canonical" href="https://stqcap.com/contact.html">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%231B2E4B'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='22' fill='%23F0EFEB' letter-spacing='-1'>STQ</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
@@ -32,15 +33,24 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .nav-logo span { font-weight: 400; color: var(--text-secondary); }
 .nav-links { display: flex; gap: 36px; margin-right: auto; margin-left: 48px; }
 .nav-links a { font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
-.nav-links a:hover { color: var(--navy); }
+.nav-links a:hover, .nav-links a.active { color: var(--navy); }
 .btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 12px 28px; border-radius: 4px; text-decoration: none; transition: all 0.3s var(--ease); cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
 .btn-primary { background: var(--navy); color: var(--cream); }
 .btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
 .btn-outline { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); }
 .btn-outline:hover { border-color: var(--navy); background: rgba(27,46,75,0.04); }
 .nav-actions { display: flex; align-items: center; gap: 12px; }
-.nav-client-login { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; transition: border-color 0.2s ease, background 0.2s ease; }
-.nav-client-login:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
+.nav-login-dropdown { position: relative; display: inline-flex; }
+.nav-login-btn { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s ease, background 0.2s ease; cursor: pointer; background: transparent; }
+.nav-login-btn:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
+.nav-login-btn svg { transition: transform 0.2s ease; }
+.nav-login-dropdown:hover .nav-login-btn svg:last-child { transform: rotate(180deg); }
+.nav-login-menu { position: absolute; top: calc(100% + 8px); right: 0; background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 6px; box-shadow: 0 12px 40px rgba(27,46,75,0.12); min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.2s var(--ease); z-index: 100; overflow: hidden; }
+.nav-login-dropdown:hover .nav-login-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-login-menu a { display: flex; align-items: center; gap: 10px; padding: 14px 18px; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: background 0.15s ease; border-bottom: 1px solid rgba(27,46,75,0.06); }
+.nav-login-menu a:last-child { border-bottom: none; }
+.nav-login-menu a:hover { background: var(--cream); }
+.nav-login-menu-label { font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-secondary); display: block; }
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
 .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--navy); }
 .mobile-nav { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; transition: opacity 0.3s ease; }
@@ -49,52 +59,50 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .mobile-nav .btn { font-size: 0.8125rem; }
 .mobile-nav .btn-primary { color: var(--cream); }
 .mobile-nav .btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); font-size: 0.8125rem; }
+.mobile-nav .btn-secondary { color: var(--navy); }
 .mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
 
 /* HERO */
 .page-hero { padding: 140px 0 80px; background: var(--navy); position: relative; overflow: hidden; }
 .page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
 .hero-watermark { position: absolute; right: 20px; bottom: 40px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
-.page-hero-inner { position: relative; z-index: 1; max-width: 680px; }
+.page-hero-inner { position: relative; z-index: 1; }
 .page-hero-tag { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,239,235,0.4); margin-bottom: 20px; position: relative; padding-left: 20px; }
 .page-hero-tag::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: rgba(240,239,235,0.3); }
 .page-hero h1 { font-family: var(--font-heading); font-size: clamp(2.5rem,5vw,4rem); font-weight: 700; color: var(--cream); letter-spacing: -0.02em; margin-bottom: 20px; line-height: 1.1; }
 .page-hero p { font-size: 1.125rem; color: var(--text-light); max-width: 520px; line-height: 1.7; }
 
-/* MAIN CONTENT */
-.main-section { padding: 80px 0 120px; position: relative; z-index: 1; }
-.main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+/* CONTACT CARDS */
+.contact-cards-section { padding: 80px 0 0; position: relative; z-index: 1; }
+.contact-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.contact-card { background: var(--white); border: 1px solid rgba(27,46,75,0.08); border-radius: 6px; padding: 32px 28px; display: flex; flex-direction: column; gap: 12px; }
+.contact-card-icon { width: 40px; height: 40px; border-radius: 8px; background: var(--cream-dark); display: flex; align-items: center; justify-content: center; margin-bottom: 4px; }
+.contact-card-label { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); }
+.contact-card-value { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: var(--navy); text-decoration: none; letter-spacing: -0.01em; transition: color 0.2s ease; }
+.contact-card-value:hover { color: var(--navy-light); }
+.contact-card-sub { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5; }
 
-/* WHAT TO EXPECT */
-.expect-label { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); position: relative; padding-left: 20px; margin-bottom: 32px; }
-.expect-label::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: var(--navy); }
-.expect-title { font-family: var(--font-heading); font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 20px; line-height: 1.2; }
-.expect-desc { font-size: 1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 48px; }
+/* CALENDLY */
+.calendly-section { padding: 80px 0 0; position: relative; z-index: 1; }
+.section-label { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); position: relative; padding-left: 20px; margin-bottom: 32px; }
+.section-label::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: var(--navy); }
+.calendly-wrapper { background: var(--white); border: 1px solid rgba(27,46,75,0.08); border-radius: 8px; overflow: hidden; }
+.calendly-inline-widget { min-height: 700px; }
 
-/* STEPS */
-.steps { display: flex; flex-direction: column; gap: 0; }
-.step { display: flex; gap: 20px; padding: 24px 0; border-bottom: 1px solid rgba(27,46,75,0.08); position: relative; }
-.step:last-child { border-bottom: none; }
-.step-num { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; color: rgba(27,46,75,0.2); min-width: 28px; padding-top: 2px; letter-spacing: 0.05em; }
-.step-content h4 { font-family: var(--font-heading); font-size: 0.9375rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-.step-content p { font-size: 0.875rem; line-height: 1.7; color: var(--text-secondary); }
-
-/* CHECKLIST CARD */
-.checklist-card { background: var(--white); border: 1px solid rgba(27,46,75,0.08); border-radius: 8px; padding: 40px; position: sticky; top: 100px; }
-.checklist-title { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-.checklist-sub { font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 32px; line-height: 1.6; }
-.checklist { display: flex; flex-direction: column; gap: 0; margin-bottom: 36px; }
-.checklist-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(27,46,75,0.06); }
-.checklist-item:last-child { border-bottom: none; }
-.check-icon { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid rgba(27,46,75,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
-.check-icon svg { opacity: 0.3; }
-.checklist-item-text { font-size: 0.9375rem; color: var(--text-primary); line-height: 1.5; }
-.checklist-item-sub { font-size: 0.8125rem; color: var(--text-secondary); margin-top: 2px; }
-.checklist-note { font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.6; padding: 16px; background: var(--cream); border-radius: 4px; margin-bottom: 28px; }
-.btn-large { padding: 16px 32px; font-size: 0.875rem; width: 100%; justify-content: center; }
-.secure-badge { display: flex; align-items: center; gap: 8px; margin-top: 16px; justify-content: center; }
-.secure-badge svg { color: var(--text-secondary); }
-.secure-badge span { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); opacity: 0.6; }
+/* CONTACT FORM */
+.form-section { padding: 80px 0 120px; position: relative; z-index: 1; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.form-left h2 { font-family: var(--font-heading); font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 16px; line-height: 1.2; }
+.form-left p { font-size: 1rem; line-height: 1.8; color: var(--text-secondary); }
+.contact-form { display: flex; flex-direction: column; gap: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); }
+.form-group input, .form-group textarea, .form-group select { font-family: var(--font-body); font-size: 0.9375rem; padding: 14px 16px; border: 1px solid rgba(27,46,75,0.15); border-radius: 4px; background: var(--white); color: var(--navy); outline: none; transition: border-color 0.2s ease; width: 100%; }
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--navy); }
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-submit { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.form-msg { font-size: 0.875rem; }
 
 /* FOOTER */
 footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative; z-index: 1; }
@@ -107,21 +115,8 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 .footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.35); }
 .footer-disclaimer { margin-top: 20px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 900px; }
 
-@media (max-width: 1024px) { .main-grid { grid-template-columns: 1fr; gap: 48px; } .checklist-card { position: static; } }
-@media (max-width: 768px) { .nav-links, .nav-client-login, .nav-cta-desktop, .nav-login-dropdown { display: none !important; } .nav-toggle { display: flex !important; } .nav-inner { padding: 0 24px; } .page-hero { padding: 120px 0 60px; } }
-
-/* CLIENT LOGIN DROPDOWN */
-.nav-login-dropdown { position: relative; display: inline-flex; }
-.nav-login-btn { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s ease, background 0.2s ease; cursor: pointer; background: transparent; }
-.nav-login-btn:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
-.nav-login-btn svg { transition: transform 0.2s ease; }
-.nav-login-dropdown:hover .nav-login-btn svg:last-child { transform: rotate(180deg); }
-.nav-login-menu { position: absolute; top: calc(100% + 8px); right: 0; background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 6px; box-shadow: 0 12px 40px rgba(27,46,75,0.12); min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.2s var(--ease); z-index: 100; overflow: hidden; }
-.nav-login-dropdown:hover .nav-login-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-.nav-login-menu a { display: flex; align-items: center; gap: 10px; padding: 14px 18px; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: background 0.15s ease; border-bottom: 1px solid rgba(27,46,75,0.06); }
-.nav-login-menu a:last-child { border-bottom: none; }
-.nav-login-menu a:hover { background: var(--cream); }
-.nav-login-menu-label { font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-secondary); display: block; }
+@media (max-width: 1024px) { .contact-cards { grid-template-columns: 1fr; } .form-grid { grid-template-columns: 1fr; gap: 48px; } }
+@media (max-width: 768px) { .nav-links, .nav-cta-desktop, .nav-login-dropdown { display: none !important; } .nav-toggle { display: flex !important; } .nav-inner { padding: 0 24px; } .page-hero { padding: 120px 0 60px; } .form-row { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -135,7 +130,7 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
       <a href="/insights.html">Insights</a>
       <a href="/research.html">Research</a>
       <a href="/box-spreads.html">Financing</a>
-      <a href="/contact.html">Contact</a>
+      <a href="/contact.html" class="active">Contact</a>
     </div>
     <div class="nav-actions">
       <div class="nav-login-dropdown nav-cta-desktop">
@@ -171,7 +166,7 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
   <a href="/contact.html" onclick="this.parentElement.classList.remove('active')">Contact</a>
   <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Call</a>
   <a href="https://client.schwab.com/Areas/Access/Login" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Investment Portal</a>
-  <a href="/get-started.html" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Get Started</a>
+ <a href="/get-started.html" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Get Started</a>
 </div>
 
 <!-- HERO -->
@@ -179,120 +174,91 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
   <div class="hero-watermark">STQ</div>
   <div class="container">
     <div class="page-hero-inner">
-      <div class="page-hero-tag">New Clients</div>
-      <h1>Let's Get You Set Up.</h1>
-      <p>Opening an account with STQ takes about 10 minutes. Here's exactly what to expect and what you'll need.</p>
+      <div class="page-hero-tag">Get In Touch</div>
+      <h1>Let's Talk.</h1>
+      <p>Whether you're ready to work together or just want to learn more — we'd love to hear from you.</p>
     </div>
   </div>
 </section>
 
-<!-- MAIN -->
-<section class="main-section">
+<!-- CONTACT CARDS -->
+<section class="contact-cards-section">
   <div class="container">
-    <div class="main-grid">
-
-      <!-- LEFT: WHAT TO EXPECT -->
-      <div>
-        <div class="expect-label">The Process</div>
-        <h2 class="expect-title">Simple. Secure. Done in one sitting.</h2>
-        <p class="expect-desc">We've designed onboarding to be as straightforward as possible. You submit your information once, securely, and we handle the rest. No back-and-forth, no paperwork maze.</p>
-
-        <div class="steps">
-          <div class="step">
-            <div class="step-num">01</div>
-            <div class="step-content">
-              <h4>Submit your information.</h4>
-              <p>Click the button, complete the secure form, and upload any documents. Takes about 10 minutes. You can stop and return at any time.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num">02</div>
-            <div class="step-content">
-              <h4>We review and prepare your account.</h4>
-              <p>We review your submission and prepare your Schwab account. You'll hear back within one business day with next steps and any follow-up questions.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num">03</div>
-            <div class="step-content">
-              <h4>Sign and fund.</h4>
-              <p>You'll receive a DocuSign envelope with your account opening documents. Sign electronically, fund your account via bank transfer or ACAT, and you're live.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num">04</div>
-            <div class="step-content">
-              <h4>We get to work.</h4>
-              <p>Once funded, we build your portfolio based on your tax situation, objectives, and the strategy you've discussed. You'll receive a full portfolio summary before any trades are placed.</p>
-            </div>
-          </div>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 3h12a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="#1B2E4B" stroke-width="1.3" fill="none"/><path d="M2 4l7 6 7-6" stroke="#1B2E4B" stroke-width="1.3" stroke-linecap="round"/></svg>
         </div>
+        <div class="contact-card-label">Email</div>
+        <a href="mailto:akiva.glazerson@stqcap.com" class="contact-card-value">akiva.glazerson@stqcap.com</a>
+        <div class="contact-card-sub">We'll get back to you.</div>
       </div>
-
-      <!-- RIGHT: CHECKLIST CARD -->
-      <div>
-        <div class="checklist-card">
-          <div class="checklist-title">What to Have Ready.</div>
-          <div class="checklist-sub">Gather these before you start — it'll take less than 10 minutes if you have them on hand.</div>
-
-          <div class="checklist">
-            <div class="checklist-item">
-              <div class="check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#1B2E4B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div>
-                <div class="checklist-item-text">Government-issued ID</div>
-                <div class="checklist-item-sub">Driver's license or passport — a photo is fine</div>
-              </div>
-            </div>
-            <div class="checklist-item">
-              <div class="check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#1B2E4B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div>
-                <div class="checklist-item-text">Social Security Number</div>
-                <div class="checklist-item-sub">Required for account opening</div>
-              </div>
-            </div>
-            <div class="checklist-item">
-              <div class="check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#1B2E4B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div>
-                <div class="checklist-item-text">Employment information</div>
-                <div class="checklist-item-sub">Employer name, occupation, annual income range</div>
-              </div>
-            </div>
-            <div class="checklist-item">
-              <div class="check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#1B2E4B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div>
-                <div class="checklist-item-text">Beneficiary details</div>
-                <div class="checklist-item-sub">Name, relationship, date of birth, SSN if available</div>
-              </div>
-            </div>
-            <div class="checklist-item">
-              <div class="check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#1B2E4B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div>
-                <div class="checklist-item-text">Bank account for funding</div>
-                <div class="checklist-item-sub">Routing and account number for initial transfer</div>
-              </div>
-            </div>
-            <div class="checklist-item">
-              <div class="check-icon"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="#1B2E4B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div>
-                <div class="checklist-item-text">Most recent account statement</div>
-                <div class="checklist-item-sub">If transferring from another broker — one statement is enough</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="checklist-note">Don't have everything? That's fine. Submit what you have and we'll follow up on anything missing.</div>
-
-          <a href="WEALTHBOX_URL_HERE" target="_blank" class="btn btn-primary btn-large">
-            Open My Account →
-          </a>
-
-          <div class="secure-badge">
-            <svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M6 1L1.5 3v4c0 2.76 1.93 5.34 4.5 6 2.57-.66 4.5-3.24 4.5-6V3L6 1z" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
-            <span>Secured and encrypted – powered by Wealthbox</span>
-          </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.5 2h3l1.5 4-2 1.5a10 10 0 004.5 4.5L12 10l4 1.5v3A1 1 0 0115 15.5C7.5 15.5 2.5 10.5 2.5 3A1 1 0 013.5 2z" stroke="#1B2E4B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
         </div>
+        <div class="contact-card-label">Phone</div>
+        <a href="tel:3107303981" class="contact-card-value">310-730-3981</a>
+        <div class="contact-card-sub">Give us a call.</div>
       </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="3" width="14" height="12" rx="1.5" stroke="#1B2E4B" stroke-width="1.3" fill="none"/><path d="M2 7h14M6 3v2M12 3v2" stroke="#1B2E4B" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <div class="contact-card-label">Schedule</div>
+        <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="contact-card-value">Book a 30-min call</a>
+        <div class="contact-card-sub">Pick a time that works for you.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- CALENDLY EMBED -->
+<section class="calendly-section">
+  <div class="container">
+    <div class="section-label">Schedule a Call</div>
+    <div class="calendly-wrapper">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/akiva-glazerson-stqcap/30min?hide_gdpr_banner=1&primary_color=1B2E4B" style="min-width:320px;height:700px;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="form-section">
+  <div class="container">
+    <div class="form-grid">
+      <div class="form-left">
+        <div class="section-label">Send a Message</div>
+        <h2>Prefer to write?<br>We'll get back to you.</h2>
+        <br>
+        <p>Have a specific question about a strategy, your situation, or how STQ works? Send us a message and we'll get back to you.</p>
+      </div>
+      <div>
+        <form class="contact-form" id="contact-form" onsubmit="handleContact(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-name">Full Name</label>
+              <input type="text" id="contact-name" placeholder="Jane Smith" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" placeholder="jane@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contact-subject">Subject</label>
+            <input type="text" id="contact-subject" placeholder="What's on your mind?">
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" placeholder="Tell us about your situation or what you'd like to discuss." required></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary" id="contact-btn">Send Message →</button>
+            <p class="form-msg" id="contact-msg"></p>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </section>
@@ -315,5 +281,53 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
   </div>
 </footer>
 
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script>
+const ML_KEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZDU4Y2Y2M2MyZjAxNGJjMWE4YmM2MDgzMGRjMjZjODAyYzdmNDZiNTNhNTY0MGYyNzdhNGNmMTlhZGQ0YjZhOTdlMjNkMGRmZmFiN2JlOTYiLCJpYXQiOjE3NzYyMTI3MzAuODgxMjkxLCJuYmYiOjE3NzYyMTI3MzAuODgxMjkzLCJleHAiOjQ5MzE4ODYzMzAuODc0Nzg3LCJzdWIiOiIyMjY1MzY3Iiwic2NvcGVzIjpbXX0.SoT6uwDSLLRp1bVmMCTm8kNFGg0-Jj7U3MXSmaCPtwbLI_RyA5UoqBdeBIvfZkOMG_rO7lrZQZBeAzK9kkq0o-zYOyOmKuuXv1vpq441LietMpgVWHgAAtL0ExKhvIZM2HnoqUhrcd34oZoYehwVCLjbLXtZ5vQYNnjO2988r7LV5zdmfrusZ7nek3ITcrBCb03r-W6do7hypJSbw_o_7J-RaYyPGOfVYk5ZxdcDe2neZmIvOkBfOd-qyHDFSQvyKaIton3_c7FSkoBXePGR9yt722rv40tO4n1iwiX7bSi6ObNX66S03gKdwIJvxjcaGHMSIOfdKJrCqcCrXUj1OZPd94e_mprtkYFlwla0BAxvMPgf8llzF_qAlovSTwdb8G9y-ORWB1vV5ZF4ZW62ZjRd5JIFckwH2CisIM1TT-b_GU-Hi6-ATvtcqm0HSffbFPEaGFb0slTxHmbx0INSAIW8QNEYVv00DUE-ysF84f4LchSFvdj2LMzSZB9_9YkuPik-AVM32b0RSKP8PVJgYK1B4DH28AUEcNjrksUytGE59NwLr5GctZztoZbDc4AlLd1es5PNFTtdQl2augDGBtnox7rDXb0sWo7BqyttYhQ9D_1RqYltSAHsB9K1qRB9CFF734AOQm8QPshucKos2vx6hGxZKuXlfpvCCVLaSBw";
+const GROUP_ID = "185200901719328747";
+
+async function handleContact(e) {
+  e.preventDefault();
+  const name = document.getElementById('contact-name').value;
+  const email = document.getElementById('contact-email').value;
+  const subject = document.getElementById('contact-subject').value;
+  const message = document.getElementById('contact-message').value;
+  const btn = document.getElementById('contact-btn');
+  const msg = document.getElementById('contact-msg');
+  btn.textContent = 'Sending...'; btn.disabled = true;
+
+  try {
+    // Send to Formspree — emails you the full message
+    const res = await fetch('https://formspree.io/f/maqabqzp', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name, email, subject, message })
+    });
+
+    // Also add to MailerLite
+    fetch('https://connect.mailerlite.com/api/subscribers', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${ML_KEY}` },
+      body: JSON.stringify({ email, fields: { name }, groups: [GROUP_ID] })
+    }).catch(() => {});
+
+    if (res.ok) {
+      msg.style.color = '#1B2E4B';
+      msg.textContent = "Message received. We'll be in touch shortly.";
+      btn.textContent = 'Sent ✓';
+      document.getElementById('contact-name').value = '';
+      document.getElementById('contact-email').value = '';
+      document.getElementById('contact-subject').value = '';
+      document.getElementById('contact-message').value = '';
+    } else {
+      throw new Error();
+    }
+  } catch(err) {
+    msg.style.color = '#991B1B';
+    msg.textContent = 'Something went wrong. Email akiva.glazerson@stqcap.com directly.';
+    btn.textContent = 'Send Message →'; btn.disabled = false;
+  }
+}
+</script>
 </body>
 </html>
