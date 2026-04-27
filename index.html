@@ -392,7 +392,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  <h3 class="sol-panel-title">Synthetic Portfolio Borrowing</h3>
  <p style="font-family:var(--font-heading);font-size:1.1rem;font-weight:600;color:var(--navy);letter-spacing:0.01em;margin-bottom:16px;opacity:0.8;">Your portfolio is a bank. Box spread borrowing lets you use it like one.</p>
  <p class="sol-panel-text">Most investors don’t realize their portfolio can function as a source of liquidity – without selling a single position. Box spreads are a four-leg options structure on a broad index that create a fully hedged position with a known payoff at expiration. The difference between what you collect today and what you owe at expiration is, effectively, the interest rate – set by the market, not a bank, and typically close to Treasury rates.</p><p class="sol-panel-text">The result: access to capital at competitive rates, with no credit check, no bank approval, and no forced selling of appreciated positions. The interest is potentially tax-deductible, and your portfolio stays fully invested throughout.</p><p class="sol-panel-text">At STQ, we implement synthetic borrowing through established institutional platforms – giving you access to a tool that most advisors can’t execute.</p>
- <div class="sol-panel-line"></div><div style="display:flex;align-items:center;gap:24px;margin-top:24px;"><div class="sol-panel-tag" style="margin-top:0;">Liquidity</div><a href="/box-spreads.html" style="font-family:var(--font-heading);font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--navy);padding-bottom:2px;">Learn More →</a></div>
+ <div class="sol-panel-line"></div><div style="display:flex;align-items:center;gap:24px;margin-top:24px;"><div class="sol-panel-tag" style="margin-top:0;">Liquidity</div><a href="/box-spreads.html" class="sol-panel-tag" style="margin-top:0;color:var(--navy);text-decoration:none;border-color:var(--navy);">Learn More →</a></div><a href="/box-spreads.html" class="sol-panel-link" style="display:none;">Learn More →</a>
  </div>
  <div class="sol-panel" data-desc="2">
  <div class="sol-panel-num">03</div>
@@ -522,12 +522,13 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  <br>
  <p>Born and raised in South Africa, Akiva is a Brazilian Jiu-Jitsu black belt, an avid cyclist, and an aviation enthusiast. He loves to travel – especially back to South Africa – and above all, enjoys time with his wife and two young daughters.</p>
  <br>
+ <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
  <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-family:var(--font-heading);font-size:0.8125rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;border:1px solid rgba(27,46,75,0.2);border-radius:4px;padding:10px 20px;transition:all 0.2s ease;" onmouseover="this.style.borderColor='#1B2E4B';this.style.background='rgba(27,46,75,0.04)'" onmouseout="this.style.borderColor='rgba(27,46,75,0.2)';this.style.background='transparent'">
  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
  Connect on LinkedIn
  </a>
- &nbsp;&nbsp;
- <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--cream);font-family:var(--font-heading);font-size:0.8125rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;background:var(--navy);border-radius:4px;padding:10px 20px;transition:all 0.2s ease;" onmouseover="this.style.background='#2a4570'" onmouseout="this.style.background='#1B2E4B'">Schedule a Call</a>
+ <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--cream);font-family:var(--font-heading);font-size:0.8125rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;background:var(--navy);border:1px solid var(--navy);border-radius:4px;padding:10px 20px;transition:all 0.2s ease;" onmouseover="this.style.background='#2a4570';this.style.borderColor='#2a4570'" onmouseout="this.style.background='#1B2E4B';this.style.borderColor='#1B2E4B'">Schedule a Call</a>
+ </div>
  </div>
  </div>
  </div>
@@ -770,12 +771,15 @@ document.querySelectorAll('.sol-panel').forEach(function(panel){
  var dest=document.getElementById('sol-inline-'+panel.dataset.desc);
  if(!dest) return;
  var title=panel.querySelector('.sol-panel-title');
+ var subhead=panel.querySelector('p[style*="opacity:0.8"]');
  var texts=panel.querySelectorAll('.sol-panel-text');
  var tag=panel.querySelector('.sol-panel-tag');
  var hh='';
  if(title) hh+='<div class="sol-inline-title">'+title.innerHTML+'</div>';
+ if(subhead) hh+='<div class="sol-inline-text" style="font-weight:600;color:var(--navy);opacity:0.8;margin-top:4px;">'+subhead.textContent+'</div>';
  texts.forEach(function(t){ hh+='<div class="sol-inline-text">'+t.innerHTML+'</div>'; });
- if(tag) hh+='<div class="sol-inline-tag">'+tag.innerHTML+'</div>';
+ var link=panel.querySelector('.sol-panel-link');
+ if(tag) hh+='<div style="display:flex;align-items:center;gap:12px;margin-top:10px;"><div class="sol-inline-tag" style="margin-top:0;">'+tag.innerHTML+'</div>'+(link ? '<a href="'+link.getAttribute('href')+'" style="font-family:var(--font-heading);font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--navy);padding-bottom:1px;">'+link.textContent+'</a>' : '')+'</div>';
  dest.innerHTML=hh;
 });
 document.querySelectorAll('.sol-item').forEach(function(item) {
