@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
 <title>Insights – STQ Capital | Tax-Aware Wealth Management</title>
-<meta name="description" content="Daily tax-aware insights from STQ Capital Partners. Box spread lending, tax loss harvesting, asset location, and institutional strategies for high-income investors.">
+<meta name="description" content="Daily tax-aware insights from STQ Capital. Box spread lending, tax loss harvesting, asset location, and institutional strategies for high-income investors.">
 <meta name="keywords" content="box spread RIA, tax loss harvesting, asset location, tax-aware investing, box spread lending, synthetic borrowing, California RIA, tax alpha, covered calls, options overlay">
 <meta property="og:title" content="Insights – STQ Capital">
 <meta property="og:description" content="Daily tax-aware insights on box spreads, tax loss harvesting, and institutional wealth strategies.">
@@ -29,8 +29,6 @@ html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
 body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(27,46,75,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
 .container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
-
-/* NAV */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
 .nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; }
@@ -44,8 +42,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
 .nav-client-login { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; transition: border-color 0.2s ease, background 0.2s ease; }
 .nav-client-login:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
-
-/* HERO */
 .page-hero { padding: 140px 0 72px; background: var(--navy); position: relative; overflow: hidden; border-bottom: 1px solid rgba(27,46,75,0.08); }
 .page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
 .hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
@@ -54,19 +50,13 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .page-hero-tag::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: rgba(240,239,235,0.3); }
 .page-hero h1 { font-family: var(--font-heading); font-size: clamp(2.5rem,5vw,4rem); font-weight: 700; color: var(--cream); letter-spacing: -0.02em; margin-bottom: 20px; line-height: 1.1; }
 .page-hero p { font-size: 1.125rem; color: var(--text-light); max-width: 560px; line-height: 1.7; }
-
-/* FILTER BAR */
 .filter-bar { padding: 32px 0; position: relative; z-index: 1; border-bottom: 1px solid rgba(27,46,75,0.08); background: var(--cream); }
 .filter-inner { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .filter-label { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); margin-right: 8px; }
 .filter-btn { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 8px 18px; border-radius: 4px; border: 1px solid rgba(27,46,75,0.15); background: transparent; color: var(--text-secondary); cursor: pointer; transition: all 0.2s ease; }
 .filter-btn:hover, .filter-btn.active { background: var(--navy); color: var(--cream); border-color: var(--navy); }
-
-/* ISSUES GRID */
 .issues-section { padding: 64px 0 120px; position: relative; z-index: 1; }
 .issues-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
-
-/* ISSUE CARD */
 .issue-card { background: var(--white); border: 1px solid rgba(27,46,75,0.08); border-radius: 6px; text-decoration: none; display: block; position: relative; overflow: hidden; transition: all 0.3s var(--ease); padding: 28px; }
 .issue-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--navy); transform: scaleX(0); transform-origin: left; transition: transform 0.3s var(--ease); }
 .issue-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(27,46,75,0.08); border-color: rgba(27,46,75,0.15); }
@@ -77,16 +67,9 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .issue-card-title { font-family: var(--font-heading); font-size: 1.0625rem; font-weight: 700; color: var(--navy); line-height: 1.4; letter-spacing: -0.01em; margin-bottom: 12px; }
 .issue-card-preview { font-size: 0.875rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 24px; }
 .issue-card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid rgba(27,46,75,0.06); }
-.issue-card-author { display: flex; align-items: center; gap: 8px; }
-.issue-card-avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.55rem; font-weight: 700; color: var(--cream); flex-shrink: 0; }
-.issue-card-author-name { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; color: var(--text-secondary); letter-spacing: 0.05em; }
 .issue-card-read { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); display: flex; align-items: center; gap: 4px; }
 .issue-card-read::after { content: '→'; }
-
-/* EMPTY STATE */
 .empty-state { grid-column: 1 / -1; text-align: center; padding: 80px 0; color: var(--text-secondary); }
-
-/* NEWSLETTER */
 .insights-signup { background: var(--navy); padding: 80px 0; position: relative; z-index: 1; overflow: hidden; }
 .insights-signup::before { content: 'STQ'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-family: var(--font-heading); font-weight: 700; font-size: 16rem; color: rgba(240,239,235,0.02); pointer-events: none; }
 .signup-inner { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
@@ -98,8 +81,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .signup-form input:focus { border-color: rgba(240,239,235,0.5); }
 .btn-white { background: var(--cream); color: var(--navy); }
 .btn-white:hover { background: white; transform: translateY(-1px); }
-
-/* FOOTER */
 footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative; z-index: 1; }
 .footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 28px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 20px; }
 .footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); }
@@ -109,7 +90,6 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 .footer-links a:hover { color: var(--cream); }
 .footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.35); }
 .footer-disclaimer { margin-top: 20px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 900px; }
-
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
 .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--navy); }
 .mobile-nav { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; transition: opacity 0.3s ease; }
@@ -129,8 +109,6 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
  .signup-form { flex-direction: column; width: 100%; }
  .signup-form input { width: 100%; }
 }
-
-/* CLIENT LOGIN DROPDOWN */
 .nav-login-dropdown { position: relative; display: inline-flex; }
 .nav-login-btn { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s ease, background 0.2s ease; cursor: pointer; background: transparent; }
 .nav-login-btn:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
@@ -158,23 +136,23 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
  <a href="/contact.html">Contact</a>
  </div>
  <div class="nav-actions">
-      <div class="nav-login-dropdown nav-cta-desktop">
-        <button class="nav-login-btn">
-          <svg width="12" height="13" viewBox="0 0 12 13" fill="none"><rect x="1" y="6" width="10" height="6" rx="1.5" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M3.5 6V4a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>
-          Client Login
-          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="nav-login-menu">
-          <a href="https://client.schwab.com/Areas/Access/Login" target="_blank">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="12" height="6" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
-            <div>Investment Portal<span class="nav-login-menu-label">Existing clients</span></div>
-          </a>
-          <a href="/get-started.html">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-            <div>Get Started<span class="nav-login-menu-label">New clients</span></div>
-          </a>
-        </div>
-      </div>
+ <div class="nav-login-dropdown nav-cta-desktop">
+ <button class="nav-login-btn">
+ <svg width="12" height="13" viewBox="0 0 12 13" fill="none"><rect x="1" y="6" width="10" height="6" rx="1.5" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M3.5 6V4a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>
+ Client Login
+ <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+ </button>
+ <div class="nav-login-menu">
+ <a href="https://client.schwab.com/Areas/Access/Login" target="_blank">
+ <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="12" height="6" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+ <div>Investment Portal<span class="nav-login-menu-label">Existing clients</span></div>
+ </a>
+ <a href="/get-started.html">
+ <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+ <div>Get Started<span class="nav-login-menu-label">New clients</span></div>
+ </a>
+ </div>
+ </div>
  <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary nav-cta-desktop">Schedule a Call</a>
  </div>
  <button class="nav-toggle" onclick="document.querySelector('.mobile-nav').classList.add('active')" aria-label="Open menu"><span></span><span></span><span></span></button>
@@ -212,6 +190,7 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
  <button class="filter-btn active" onclick="filterIssues('all', this)">All</button>
  <button class="filter-btn" onclick="filterIssues('Portfolio Construction', this)">Portfolio Construction</button>
  <button class="filter-btn" onclick="filterIssues('Tax Alpha', this)">Tax Alpha</button>
+ <button class="filter-btn" onclick="filterIssues('Tax Strategy', this)">Tax Strategy</button>
  <button class="filter-btn" onclick="filterIssues('Independence', this)">Independence</button>
  <button class="filter-btn" onclick="filterIssues('Concentrated Positions', this)">Concentrated Positions</button>
  <button class="filter-btn" onclick="filterIssues('Options', this)">Options</button>
@@ -220,7 +199,6 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
  <button class="filter-btn" onclick="filterIssues('Philanthropy', this)">Philanthropy</button>
  <button class="filter-btn" onclick="filterIssues('Book Review', this)">Book Review</button>
  <button class="filter-btn" onclick="filterIssues('Box Spreads', this)">Box Spreads</button>
- <button class="filter-btn" onclick="filterIssues('Tax Strategy', this)">Tax Strategy</button>
  </div>
  </div>
 </section>
@@ -257,14 +235,23 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
  <a href="/contact.html">Contact</a>
  <a href="https://client.schwab.com/Areas/Access/Login" target="_blank">Client Login</a>
  </div>
- <div class="footer-copy">© 2026 STQ Capital Partners</div>
+ <div class="footer-copy">© 2026 STQ Capital</div>
  </div>
  <div class="footer-disclaimer">Advisory services are offered through STQ Capital Partners ("STQ"), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable. The information on this site is provided "AS IS" and without warranties either express or implied and the information may not be free from error. Your use of the information provided is at your sole risk.</div>
  </div>
 </footer>
 
 <script>
+const ML = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZDU4Y2Y2M2MyZjAxNGJjMWE4YmM2MDgzMGRjMjZjODAyYzdmNDZiNTNhNTY0MGYyNzdhNGNmMTlhZGQ0YjZhOTdlMjNkMGRmZmFiN2JlOTYiLCJpYXQiOjE3NzYyMTI3MzAuODgxMjkxLCJuYmYiOjE3NzYyMTI3MzAuODgxMjkzLCJleHAiOjQ5MzE4ODYzMzAuODc0Nzg3LCJzdWIiOiIyMjY1MzY3Iiwic2NvcGVzIjpbXX0.SoT6uwDSLLRp1bVmMCTm8kNFGg0-Jj7U3MXSmaCPtwbLI_RyA5UoqBdeBIvfZkOMG_rO7lrZQZBeAzK9kkq0o-zYOyOmKuuXv1vpq441LietMpgVWHgAAtL0ExKhvIZM2HnoqUhrcd34oZoYehwVCLjbLXtZ5vQYNnjO2988r7LV5zdmfrusZ7nek3ITcrBCb03r-W6do7hypJSbw_o_7J-RaYyPGOfVYk5ZxdcDe2neZmIvOkBfOd-qyHDFSQvyKaIton3_c7FSkoBXePGR9yt722rv40tO4n1iwiX7bSi6ObNX66S03gKdwIJvxjcaGHMSIOfdKJrCqcCrXUj1OZPd94e_mprtkYFlwla0BAxvMPgf8llzF_qAlovSTwdb8G9y-ORWB1vV5ZF4ZW62ZjRd5JIFckwH2CisIM1TT-b_GU-Hi6-ATvtcqm0HSffbFPEaGFb0slTxHmbx0INSAIW8QNEYVv00DUE-ysF84f4LchSFvdj2LMzSZB9_9YkuPik-AVM32b0RSKP8PVJgYK1B4DH28AUEcNjrksUytGE59NwLr5GctZztoZbDc4AlLd1es5PNFTtdQl2augDGBtnox7rDXb0sWo7BqyttYhQ9D_1RqYltSAHsB9K1qRB9CFF734AOQm8QPshucKos2vx6hGxZKuXlfpvCCVLaSBw';
 const issues = [
+ {
+ title: "The Ultimate Tax-Aware Duo.",
+ date: "April 27, 2026",
+ preview: "Direct indexing builds the loss bank. Box spreads deploy it. Most investors use one tax strategy at a time. The ones who use these two together are playing a different game entirely.",
+ tag: "Tax Strategy",
+ readTime: "4 min",
+ url: "/insight-tax-aware-duo.html"
+ },
  {
  title: "The Simplest Portfolio Is Often the Best One.",
  date: "April 26, 2026",
@@ -276,7 +263,7 @@ const issues = [
  {
  title: "The Philosopher in the Valley.",
  date: "April 25, 2026",
- preview: "Palantir is one of those companies everyone has heard of but nobody really understands. A book review of Michael Steinberger's biography of Alex Karp.",
+ preview: "Palantir is one of those companies everyone has heard of but nobody really understands. A book review of Michael Steinberger’s biography of Alex Karp.",
  tag: "Book Review",
  readTime: "4 min",
  url: "/insight-philosopher-valley.html"
@@ -298,9 +285,9 @@ const issues = [
  url: "/insight-bjj-patience.html"
  },
  {
- title: "The Backdoor Roth. How High Earners Get In When the IRS Says They Can't.",
+ title: "The Backdoor Roth. How High Earners Get In When the IRS Says They Can’t.",
  date: "April 22, 2026",
- preview: "Income too high for a Roth? The backdoor is open. Here's exactly how it works – and the one mistake that makes it taxable.",
+ preview: "Income too high for a Roth? The backdoor is open. Here’s exactly how it works – and the one mistake that makes it taxable.",
  tag: "Tax Strategy",
  readTime: "3 min",
  url: "/insight-backdoor-roth.html"
@@ -314,9 +301,9 @@ const issues = [
  url: "/insight-rebalancing.html"
  },
  {
- title: "Your CPA and Your Advisor Are in a Relationship. They've Never Spoken.",
+ title: "Your CPA and Your Advisor Are in a Relationship. They’ve Never Spoken.",
  date: "April 20, 2026",
- preview: "Whether they know it or not, every decision your CPA makes affects your portfolio – and vice versa. In almost every client relationship I've seen, they've never once spoken. The result is a very expensive silence.",
+ preview: "Whether they know it or not, every decision your CPA makes affects your portfolio – and vice versa. In almost every client relationship I’ve seen, they’ve never once spoken. The result is a very expensive silence.",
  tag: "Portfolio Construction",
  readTime: "3 min",
  url: "/insight-cpa-advisor.html"
@@ -332,7 +319,7 @@ const issues = [
  {
  title: "I Hate Opacity.",
  date: "April 18, 2026",
- preview: "Tax minimization doesn't require a salmon farm in Dubai or a solar deal off the coast of Bermuda. It requires a good advisor and strategies most people have simply never had access to.",
+ preview: "Tax minimization doesn’t require a salmon farm in Dubai or a solar deal off the coast of Bermuda. It requires a good advisor and strategies most people have simply never had access to.",
  tag: "Independence",
  readTime: "3 min",
  url: "/insight-opacity.html"
@@ -340,13 +327,13 @@ const issues = [
  {
  title: "Your Index Fund Has a Concentration Problem.",
  date: "April 17, 2026",
- preview: "The five biggest names in the S&P 500 now control nearly 30% of the index. That's not diversification. That's a gamble.",
+ preview: "The five biggest names in the S&P 500 now control nearly 30% of the index. That’s not diversification. That’s a gamble.",
  tag: "Concentrated Positions",
  readTime: "3 min",
  url: "/insight-sp500-concentration.html"
  },
  {
- title: "Book Review: The Best Risk Management Lesson I've Read Came from a Russian Prison.",
+ title: "Book Review: The Best Risk Management Lesson I’ve Read Came from a Russian Prison.",
  date: "April 16, 2026",
  preview: "Red Notice is not a finance book. It is a story about what happens when political risk, concentration risk, and counterparty risk collide – and nobody is paying attention.",
  tag: "Book Review",
@@ -364,13 +351,13 @@ const issues = [
  {
  title: "What Getting Choked Out Has Taught Me About Investing.",
  date: "April 14, 2026",
- preview: "Anybody who knows me knows I'm obsessed with BJJ. It has more in common with investing than you may think. Here's what the mat has taught me about managing money.",
+ preview: "Anybody who knows me knows I’m obsessed with BJJ. It has more in common with investing than you may think. Here’s what the mat has taught me about managing money.",
  tag: "Perspective",
  readTime: "3 min",
  url: "/insight-bjj-investing.html"
  },
  {
- title: "You Think You're Protected. You're Not.",
+ title: "You Think You’re Protected. You’re Not.",
  date: "April 13, 2026",
  preview: "Both are options strategies. Both generate income or protection. But they are not interchangeable – and using the wrong one for your situation is an expensive mistake.",
  tag: "Options",
@@ -378,7 +365,7 @@ const issues = [
  url: "/insight-covered-calls-vs-put-spreads.html"
  },
  {
- title: "The Peter Thiel IRA. What He Did and Why You Can't Ignore It.",
+ title: "The Peter Thiel IRA. What He Did and Why You Can’t Ignore It.",
  date: "April 12, 2026",
  preview: "Peter Thiel turned a Roth IRA into $5 billion – tax free. The mechanics were aggressive. The principle behind it is available to almost anyone.",
  tag: "Tax Strategy",
@@ -388,15 +375,15 @@ const issues = [
  {
  title: "What I Learned at PIMCO About Building a Real Portfolio.",
  date: "April 11, 2026",
- preview: "Institutional portfolio management looks nothing like what most individual investors experience. Here's what the gap actually costs you.",
+ preview: "Institutional portfolio management looks nothing like what most individual investors experience. Here’s what the gap actually costs you.",
  tag: "Portfolio Construction",
  readTime: "4 min",
  url: "/insight-pimco-lessons.html"
  },
  {
- title: "The Largest Account You Own. The One Nobody's Managing.",
+ title: "The Largest Account You Own. The One Nobody’s Managing.",
  date: "April 10, 2026",
- preview: "Your 401(k) may be the largest account you own. Most advisors manage everything around it but never inside it. That's leaving serious money on the table.",
+ preview: "Your 401(k) may be the largest account you own. Most advisors manage everything around it but never inside it. That’s leaving serious money on the table.",
  tag: "Tax Strategy",
  readTime: "3 min",
  url: "/insight-401k-blind-spot.html"
@@ -410,9 +397,9 @@ const issues = [
  url: "/insight-fiduciary-vs-broker.html"
  },
  {
- title: "$5M in Tesla. $4M for a House. Zero Tax. Here's How.",
+ title: "$5M in Tesla. $4M for a House. Zero Tax. Here’s How.",
  date: "April 8, 2026",
- preview: "Selling means a massive tax bill. Not selling means the house stays out of reach. There's a third option most investors don't know exists.",
+ preview: "Selling means a massive tax bill. Not selling means the house stays out of reach. There’s a third option most investors don’t know exists.",
  tag: "Concentrated Positions",
  readTime: "4 min",
  url: "/insight-tesla-house.html"
@@ -420,15 +407,15 @@ const issues = [
  {
  title: "The Most Important Question to Ask Your Advisor. Most People Never Do.",
  date: "April 7, 2026",
- preview: "How do you get paid? Four words. Most advisors hope you never ask. The answer tells you everything about whose interests they're actually serving.",
+ preview: "How do you get paid? Four words. Most advisors hope you never ask. The answer tells you everything about whose interests they’re actually serving.",
  tag: "Independence",
  readTime: "3 min",
  url: "/insight-advisor-question.html"
  },
  {
- title: "The Mutual Fund Industry's Dirty Secret.",
+ title: "The Mutual Fund Industry’s Dirty Secret.",
  date: "April 6, 2026",
- preview: "The average active fund underperforms its benchmark after fees. You're paying a premium for underperformance. The math on low-cost indexing is not subtle.",
+ preview: "The average active fund underperforms its benchmark after fees. You’re paying a premium for underperformance. The math on low-cost indexing is not subtle.",
  tag: "Portfolio Construction",
  readTime: "3 min",
  url: "/insight-active-funds.html"
@@ -436,7 +423,7 @@ const issues = [
  {
  title: "Buy. Borrow. Die. The Estate Strategy Nobody Talks About.",
  date: "April 5, 2026",
- preview: "The wealthiest families don't sell assets. They buy. They borrow against them at low rates. And when they die, the step-up in basis wipes the gain. It's not a loophole. It's a strategy.",
+ preview: "The wealthiest families don’t sell assets. They buy. They borrow against them at low rates. And when they die, the step-up in basis wipes the gain. It’s not a loophole. It’s a strategy.",
  tag: "Estate Planning",
  readTime: "4 min",
  url: "/insight-buy-borrow-die.html"
@@ -466,14 +453,13 @@ const issues = [
  url: "/insight-box-spreads.html"
  },
  {
- title: "You Don't Have Yale's Tax Status. Stop Investing Like You Do.",
+ title: "You Don’t Have Yale’s Tax Status. Stop Investing Like You Do.",
  date: "April 1, 2026",
- preview: "The endowment model is built for institutions that pay no taxes. You do. Copying it without accounting for your tax situation isn't sophisticated – it's expensive.",
+ preview: "The endowment model is built for institutions that pay no taxes. You do. Copying it without accounting for your tax situation isn’t sophisticated – it’s expensive.",
  tag: "Portfolio Construction",
  readTime: "4 min",
  url: "/insight-endowment-model.html"
  },
-
 ];
 
 function renderIssues(filter) {
@@ -516,12 +502,12 @@ async function handleInsightsSubscribe(e) {
  try {
  const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
  method: 'POST',
- headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZDU4Y2Y2M2MyZjAxNGJjMWE4YmM2MDgzMGRjMjZjODAyYzdmNDZiNTNhNTY0MGYyNzdhNGNmMTlhZGQ0YjZhOTdlMjNkMGRmZmFiN2JlOTYiLCJpYXQiOjE3NzYyMTI3MzAuODgxMjkxLCJuYmYiOjE3NzYyMTI3MzAuODgxMjkzLCJleHAiOjQ5MzE4ODYzMzAuODc0Nzg3LCJzdWIiOiIyMjY1MzY3Iiwic2NvcGVzIjpbXX0.SoT6uwDSLLRp1bVmMCTm8kNFGg0-Jj7U3MXSmaCPtwbLI_RyA5UoqBdeBIvfZkOMG_rO7lrZQZBeAzK9kkq0o-zYOyOmKuuXv1vpq441LietMpgVWHgAAtL0ExKhvIZM2HnoqUhrcd34oZoYehwVCLjbLXtZ5vQYNnjO2988r7LV5zdmfrusZ7nek3ITcrBCb03r-W6do7hypJSbw_o_7J-RaYyPGOfVYk5ZxdcDe2neZmIvOkBfOd-qyHDFSQvyKaIton3_c7FSkoBXePGR9yt722rv40tO4n1iwiX7bSi6ObNX66S03gKdwIJvxjcaGHMSIOfdKJrCqcCrXUj1OZPd94e_mprtkYFlwla0BAxvMPgf8llzF_qAlovSTwdb8G9y-ORWB1vV5ZF4ZW62ZjRd5JIFckwH2CisIM1TT-b_GU-Hi6-ATvtcqm0HSffbFPEaGFb0slTxHmbx0INSAIW8QNEYVv00DUE-ysF84f4LchSFvdj2LMzSZB9_9YkuPik-AVM32b0RSKP8PVJgYK1B4DH28AUEcNjrksUytGE59NwLr5GctZztoZbDc4AlLd1es5PNFTtdQl2augDGBtnox7rDXb0sWo7BqyttYhQ9D_1RqYltSAHsB9K1qRB9CFF734AOQm8QPshucKos2vx6hGxZKuXlfpvCCVLaSBw' },
+ headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${ML}` },
  body: JSON.stringify({ email, groups: ["185200901719328747"] })
  });
  if (res.ok || res.status === 200 || res.status === 201) {
  msg.style.display = 'block';
- msg.textContent = "You're in. First issue hits first thing.";
+ msg.textContent = "You’re in. First issue hits first thing.";
  document.getElementById('insights-email').value = '';
  btn.textContent = 'Subscribed ✓';
  } else { throw new Error(); }
