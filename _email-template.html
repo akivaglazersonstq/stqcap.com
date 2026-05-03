@@ -5,136 +5,121 @@
   <meta name="color-scheme" content="light only">
   <meta name="supported-color-schemes" content="light">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>STQ Capital Partners — {{ARTICLE_TITLE}}</title>
+  <title>STQ Capital — {{ARTICLE_TITLE}}</title>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    body { margin:0; padding:0; background:#F0EFEB; color-scheme: light only; }
-    :root { color-scheme: light only; }
+    body { margin:0; padding:0; background:#F0EFEB !important; color-scheme: light only; }
+    * { -webkit-text-size-adjust:100%; }
     @media (prefers-color-scheme: dark) {
-      body, .email-container { background: #F0EFEB !important; }
-      .body-white { background: #ffffff !important; color: #3A3A3A !important; }
-      .body-text { color: #3A3A3A !important; }
-      .body-strong { color: #1B2E4B !important; }
-      .callout-bg { background: #E6E4DE !important; }
-      .callout-label { color: #5a6a7e !important; }
-      .callout-value { color: #1B2E4B !important; }
-      .callout-sub { color: #5a6a7e !important; }
-      .cta-label { color: #5a6a7e !important; }
-      .cta-desc { color: #5a6a7e !important; }
-      .next-label { color: rgba(27,46,75,0.3) !important; }
-      .next-text { color: #5a6a7e !important; }
+      .nav-bg, .hero-bg, .author-bg { background:#1B2E4B !important; }
+      .body-bg, .cta-bg { background:#F0EFEB !important; }
+      .footer-bg { background:#1B2E4B !important; }
+      .nav-logo-text { color:#F0EFEB !important; }
+      .hero-h1 { color:#F0EFEB !important; }
+      .hero-sub { color:rgba(240,239,235,0.7) !important; }
+      .body-text { color:#5a6a7e !important; }
+      .author-name { color:#F0EFEB !important; }
+      .author-title { color:rgba(240,239,235,0.45) !important; }
     }
-    * { -webkit-text-size-adjust: 100%; }
-
     @media only screen and (max-width:620px) {
       .email-container { width:100% !important; }
-      .mobile-pad { padding-left:24px !important; padding-right:24px !important; }
-      .headline { font-size:26px !important; line-height:33px !important; }
-      .comp-table { display:block !important; width:100% !important; }
-      .comp-col { display:block !important; width:100% !important; margin-bottom:12px; }
+      .pad { padding-left:24px !important; padding-right:24px !important; }
+      .headline { font-size:24px !important; line-height:32px !important; }
     }
   </style>
 </head>
-<body style="margin:0;padding:32px 0;background:#F0EFEB;">
+<body style="margin:0;padding:0;background:#F0EFEB !important;">
 
-<div style="display:none;max-height:0;overflow:hidden;">{{PREHEADER_TEXT}}&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+<div style="display:none;max-height:0;overflow:hidden;">Selling a put isn't just an income strategy. It's a way to get paid while you wait for the price you actually want.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 
-<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td align="center">
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background:#F0EFEB !important;"><tr><td align="center">
 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center" style="max-width:600px;width:100%;" class="email-container">
 
-  <!-- NAV BAR -->
-  <tr><td style="background:#1B2E4B;padding:20px 40px;" class="mobile-pad">
-    <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-      <td><span style="font-family:'Chakra Petch',Arial,sans-serif;font-size:16px;font-weight:700;color:#F0EFEB;letter-spacing:0.03em;">STQ <span style="font-weight:400;color:rgba(240,239,235,0.4);">/ Capital Partners</span></span></td>
-      <td align="right"><span style="font-family:'Chakra Petch',Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,239,235,0.35);">Daily Insights</span></td>
+  <!-- NAV -->
+  <tr><td class="nav-bg pad" style="background:#1B2E4B !important;padding:20px 40px;border-bottom:1px solid rgba(240,239,235,0.08);">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#1B2E4B !important;"><tr>
+      <td style="background:#1B2E4B !important;">
+        <span class="nav-logo-text" style="font-family:'Chakra Petch',Arial,sans-serif;font-size:16px;font-weight:700;color:#F0EFEB !important;letter-spacing:0.03em;">STQ <span style="font-weight:400;color:rgba(240,239,235,0.5) !important;">/ Capital</span></span>
+      </td>
+      <td align="right" style="background:#1B2E4B !important;">
+        <span style="font-family:'Chakra Petch',Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,239,235,0.35) !important;">Daily Insights</span>
+      </td>
     </tr></table>
   </td></tr>
 
-  <!-- HERO BLOCK -->
-  <tr><td style="background:#1B2E4B;padding:16px 40px 0;position:relative;" class="mobile-pad">
-    <div style="position:relative;">
-      <p style="position:absolute;right:20px;bottom:-10px;margin:0;font-family:'Chakra Petch',Arial,sans-serif;font-size:56px;font-weight:700;color:rgba(240,239,235,0.04);line-height:1;letter-spacing:-4px;white-space:nowrap;pointer-events:none;user-select:none;">STQ</p>
-      <div style="position:relative;z-index:1;">
-        <h1 class="headline" style="margin:0 0 20px;font-family:'Chakra Petch',Arial,sans-serif;font-size:32px;line-height:40px;font-weight:700;color:#F0EFEB;letter-spacing:-0.5px;">{{ARTICLE_TITLE}}</h1>
-        <p style="margin:0 0 24px;font-family:'DM Sans',Arial,sans-serif;font-size:17px;line-height:26px;color:rgba(240,239,235,0.65);">{{ARTICLE_SUBHEAD}}</p>
-        <p style="margin:0;font-family:'Chakra Petch',Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,239,235,0.35);"><span style="border:1px solid rgba(240,239,235,0.2);padding:3px 10px;border-radius:3px;margin-right:10px;display:inline-block;">{{CATEGORY}}</span><span style="color:rgba(240,239,235,0.25);">· {{DATE}}</span></p>
-      </div>
-    </div>
+  <!-- HERO (navy + grid background + watermark) -->
+  <tr><td class="hero-bg pad" style="background:#1B2E4B !important;background-image:linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px);background-size:60px 60px;padding:24px 40px 32px;position:relative;">
+    <p style="position:absolute;right:20px;bottom:8px;margin:0;font-family:'Chakra Petch',Arial,sans-serif;font-size:72px;font-weight:700;color:rgba(240,239,235,0.04) !important;line-height:1;letter-spacing:-4px;white-space:nowrap;pointer-events:none;">STQ</p>
+    <h1 class="headline hero-h1" style="margin:0 0 20px;font-family:'Chakra Petch',Arial,sans-serif;font-size:30px;line-height:38px;font-weight:700;color:#F0EFEB !important;letter-spacing:-0.02em;max-width:520px;">{{ARTICLE_TITLE}}</h1>
+    <p class="hero-sub" style="margin:0 0 24px;font-family:'DM Sans',Arial,sans-serif;font-size:17px;line-height:26px;color:rgba(240,239,235,0.7) !important;">{{ARTICLE_SUBHEAD}}</p>
+    <p style="margin:0;font-family:'Chakra Petch',Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;">
+      <span style="border:1px solid rgba(240,239,235,0.2);padding:4px 12px;border-radius:3px;display:inline-block;color:rgba(240,239,235,0.6) !important;margin-right:10px;">{{CATEGORY}}</span>
+      <span style="color:rgba(240,239,235,0.25) !important;">&#183; {{DATE}}</span>
+    </p>
   </td></tr>
 
-  <!-- AUTHOR + READ TIME -->
-  <tr><td style="background:#1B2E4B;padding:24px 40px 36px;" class="mobile-pad">
-    <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-      <td style="border-top:1px solid rgba(240,239,235,0.12);padding-top:20px;">
-        <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td style="background:rgba(240,239,235,0.1);border-radius:50%;width:36px;height:36px;text-align:center;vertical-align:middle;" width="36">
-            <span style="font-family:'Chakra Petch',Arial,sans-serif;font-size:11px;font-weight:700;color:#F0EFEB;line-height:36px;">AG</span>
-          </td>
-          <td width="12"></td>
-          <td>
-            <p style="margin:0;font-family:'Chakra Petch',Arial,sans-serif;font-size:12px;font-weight:700;color:#F0EFEB;letter-spacing:0.02em;">Akiva Glazerson</p>
-            <p style="margin:3px 0 0;font-family:'DM Sans',Arial,sans-serif;font-size:11px;color:rgba(240,239,235,0.45);">Founder, STQ Capital Partners</p>
-          </td>
-          <td align="right" valign="middle"><span style="font-family:'Chakra Petch',Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,239,235,0.3);">{{READ_TIME}}</span></td>
-        </tr></table>
+  <!-- AUTHOR (cream bg — matches insight page) -->
+  <tr><td class="author-bg pad" style="background:#F0EFEB !important;padding:24px 40px 28px;border-bottom:1px solid rgba(27,46,75,0.1);">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F0EFEB !important;"><tr>
+      <td width="44" style="width:44px;height:44px;min-width:44px;border-radius:50%;background:#1B2E4B !important;text-align:center;vertical-align:middle;">
+        <span style="font-family:'Chakra Petch',Arial,sans-serif;font-size:12px;font-weight:700;color:#F0EFEB !important;line-height:44px;">AG</span>
+      </td>
+      <td width="16" style="background:#F0EFEB !important;"></td>
+      <td style="background:#F0EFEB !important;">
+        <p class="author-name" style="margin:0;font-family:'Chakra Petch',Arial,sans-serif;font-size:13px;font-weight:700;color:#1B2E4B !important;letter-spacing:0.02em;">Akiva Glazerson</p>
+        <p class="author-title" style="margin:3px 0 0;font-family:'DM Sans',Arial,sans-serif;font-size:12px;color:#5a6a7e !important;">Principal, STQ Capital</p>
+      </td>
+      <td align="right" valign="middle" style="background:#F0EFEB !important;">
+        <span style="font-family:'Chakra Petch',Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(27,46,75,0.3) !important;">{{READ_TIME}}</span>
       </td>
     </tr></table>
   </td></tr>
 
   <!-- BODY -->
-  <tr><td style="background:#ffffff;padding:36px 40px 0;" class="mobile-pad">
-    <p style="margin:0;font-family:'DM Sans',Arial,sans-serif;font-size:16px;line-height:27px;color:#3A3A3A;">{{BODY_PARAGRAPH_1}}</p>
+  <tr><td class="body-bg pad" style="background:#F0EFEB !important;padding:25px 40px 0;">
+    <p class="body-text" style="margin:0;font-family:'DM Sans',Arial,sans-serif;font-size:17px;line-height:1.85;color:#5a6a7e !important;">{{BODY_PARAGRAPH_1}}</p>
   </td></tr>
 
-  <tr><td style="background:#ffffff;padding:20px 40px 0;" class="mobile-pad">
-    <p style="margin:0 0 24px;font-family:'DM Sans',Arial,sans-serif;font-size:16px;line-height:27px;color:#3A3A3A;">{{BODY_PARAGRAPH_2}}</p>
+  <tr><td class="body-bg pad" style="background:#F0EFEB !important;padding:20px 40px 0;">
+    <p class="body-text" style="margin:0;font-family:'DM Sans',Arial,sans-serif;font-size:17px;line-height:1.85;color:#5a6a7e !important;">{{BODY_PARAGRAPH_2}}</p>
   </td></tr>
 
-  <!-- DATA CALLOUT -->
-  <tr><td style="background:#ffffff;padding:24px 40px;" class="mobile-pad">
-    <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr>
-      <td style="background:#ffffff;border-left:3px solid #1B2E4B;border-radius:0 6px 6px 0;padding:20px 24px;border:1px solid rgba(27,46,75,0.08);border-left:3px solid #1B2E4B;">
-        <p style="margin:0 0 6px;font-family:'Chakra Petch',Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#5a6a7e;opacity:0.7;">The Rate Advantage</p>
-        <p style="margin:0 0 8px;font-family:'Chakra Petch',Arial,sans-serif;font-size:28px;font-weight:700;color:#1B2E4B;letter-spacing:-0.02em;line-height:1.1;">{{CALLOUT_VALUE}}</p>
-        <p style="margin:0;font-family:'DM Sans',Arial,sans-serif;font-size:14px;line-height:1.6;color:#5a6a7e;">{{CALLOUT_SUB}}</p>
-      </td>
-    </tr></table>
-  </td></tr>
-
-  <tr><td style="background:#ffffff;padding:0 40px 40px;" class="mobile-pad">
-    <p style="margin:0;font-family:'DM Sans',Arial,sans-serif;font-size:16px;line-height:27px;color:#3A3A3A;">{{BODY_PARAGRAPH_3}}</p>
-  </td></tr>
-
-  <!-- CTA BLOCK -->
-  <tr><td style="background:#ffffff;padding:36px 40px;" class="mobile-pad">
-    <p style="margin:0 0 8px;font-family:'Chakra Petch',Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#5a6a7e;">Read the full article</p>
-    <p style="margin:0 0 24px;font-family:'DM Sans',Arial,sans-serif;font-size:14px;line-height:22px;color:#5a6a7e;">{{CTA_DESCRIPTION}}</p>
-    <table cellpadding="0" cellspacing="0" border="0"><tr>
-      <td style="border-radius:4px;background:#1B2E4B;"><a href="{{ARTICLE_URL}}" style="display:inline-block;padding:13px 32px;font-family:'Chakra Petch',Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#F0EFEB;text-decoration:none;border-radius:4px;">Read Full Article →</a></td>
-      <td width="12"></td>
-      <td style="border-radius:4px;border:1px solid rgba(27,46,75,0.25);"><a href="https://calendly.com/akiva-glazerson-stqcap/30min" style="display:inline-block;padding:13px 32px;font-family:'Chakra Petch',Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#1B2E4B;text-decoration:none;border-radius:4px;">Schedule a Call</a></td>
-    </tr></table>
-  </td></tr>
-
-  <!-- NEXT ISSUE -->
-  <tr><td style="background:#ffffff;padding:0 40px 36px;" class="mobile-pad">
-    <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr>
-      <td style="border-top:1px solid rgba(27,46,75,0.1);padding-top:24px;">
-        <p style="margin:0 0 8px;font-family:'Chakra Petch',Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(27,46,75,0.3);">Next Issue</p>
-        <p style="margin:0;font-family:'DM Sans',Arial,sans-serif;font-size:14px;line-height:22px;color:#5a6a7e;font-style:italic;"><strong style="color:#1B2E4B;">{{NEXT_ISSUE_TITLE}}</strong> {{NEXT_ISSUE_PREVIEW}}</p>
+  <!-- CTA -->
+  <tr><td class="cta-bg pad" style="background:#F0EFEB !important;padding:32px 40px 48px;">
+    <table cellpadding="0" cellspacing="0" border="0" style="background:#F0EFEB !important;"><tr>
+      <td style="border-radius:4px;background:#1B2E4B !important;">
+        <a href="{{ARTICLE_URL}}" style="display:inline-block;padding:13px 28px;font-family:'Chakra Petch',Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#F0EFEB !important;text-decoration:none;border-radius:4px;background:#1B2E4B !important;">Read the Full Article &#8594;</a>
       </td>
     </tr></table>
   </td></tr>
 
   <!-- FOOTER -->
-  <tr><td style="background:#0f1e33;padding:36px 40px;" class="mobile-pad">
-    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-      <tr><td align="center" style="padding-bottom:12px;"><span style="font-family:'Chakra Petch',Arial,sans-serif;font-size:14px;font-weight:700;color:#F0EFEB;">STQ <span style="font-weight:400;color:rgba(240,239,235,0.4);">/ Capital Partners</span></span></td></tr>
-      <tr><td align="center" style="padding-bottom:12px;"><span style="font-family:'DM Sans',Arial,sans-serif;font-size:12px;color:rgba(240,239,235,0.4);"><a href="#" onclick="this.href='mailto:'+('akiva.glazerson'+'@'+'stqcap.com');return false;" style="color:rgba(240,239,235,0.4);text-decoration:none;">akiva.glazerson@stqcap.com</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://stqcap.com" style="color:rgba(240,239,235,0.4);text-decoration:none;">stqcap.com</a>&nbsp;&nbsp;|&nbsp;&nbsp;310-730-3981</span></td></tr>
-      <tr><td align="center" style="padding-bottom:20px;">
-        <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank" style="font-family:'DM Sans',Arial,sans-serif;font-size:12px;color:rgba(240,239,235,0.4);text-decoration:underline;">LinkedIn</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-        <a href="https://stqcap.com/insights.html" style="font-family:'DM Sans',Arial,sans-serif;font-size:12px;color:rgba(240,239,235,0.4);text-decoration:underline;">All Insights</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-        <a href="https://calendly.com/akiva-glazerson-stqcap/30min" style="font-family:'DM Sans',Arial,sans-serif;font-size:12px;color:rgba(240,239,235,0.4);text-decoration:underline;">Schedule a Meeting</a>
+  <tr><td class="footer-bg pad" style="background:#1B2E4B !important;padding:32px 40px;">
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background:#1B2E4B !important;">
+      <tr><td align="center" style="padding-bottom:12px;background:#1B2E4B !important;">
+        <span style="font-family:'Chakra Petch',Arial,sans-serif;font-size:14px;font-weight:700;color:#F0EFEB !important;">STQ <span style="font-weight:400;color:rgba(240,239,235,0.4) !important;">/ Capital</span></span>
       </td></tr>
-      <tr><td style="border-top:1px solid rgba(240,239,235,0.08);padding-top:16px;"><p style="margin:0;font-family:'DM Sans',Arial,sans-serif;font-size:10px;line-height:16px;color:rgba(240,239,235,0.2);text-align:center;">Advisory services are offered through STQ Capital Partners, an investment adviser registered with the state of California. The information contained herein is for informational purposes only and should not be construed as personalized investment advice. Past performance is no guarantee of future results.</p></td></tr>
-      <tr><td align="center" style="padding-top:12px;"><a href="{$unsubscribe}" style="font-family:'DM Sans',Arial,sans-serif;font-size:10px;color:rgba(240,239,235,0.
+      <tr><td align="center" style="padding-bottom:12px;background:#1B2E4B !important;">
+        <span style="font-family:'DM Sans',Arial,sans-serif;font-size:12px;color:rgba(240,239,235,0.4) !important;">
+          <a href="mailto:akiva.glazerson@stqcap.com" style="color:rgba(240,239,235,0.4) !important;text-decoration:none;">akiva.glazerson@stqcap.com</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+          <a href="https://stqcap.com" style="color:rgba(240,239,235,0.4) !important;text-decoration:none;">stqcap.com</a>&nbsp;&nbsp;|&nbsp;&nbsp;310-730-3981
+        </span>
+      </td></tr>
+      <tr><td align="center" style="padding-bottom:20px;background:#1B2E4B !important;">
+        <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank" style="font-family:'DM Sans',Arial,sans-serif;font-size:12px;color:rgba(240,239,235,0.4) !important;text-decoration:underline;">LinkedIn</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="https://stqcap.com/insights.html" style="font-family:'DM Sans',Arial,sans-serif;font-size:12px;color:rgba(240,239,235,0.4) !important;text-decoration:underline;">All Insights</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="https://calendly.com/akiva-glazerson-stqcap/30min" style="font-family:'DM Sans',Arial,sans-serif;font-size:12px;color:rgba(240,239,235,0.4) !important;text-decoration:underline;">Schedule a Meeting</a>
+      </td></tr>
+      <tr><td style="border-top:1px solid rgba(240,239,235,0.08);padding-top:16px;background:#1B2E4B !important;">
+        <p style="margin:0;font-family:'DM Sans',Arial,sans-serif;font-size:10px;line-height:16px;color:rgba(240,239,235,0.2) !important;text-align:center;">Advisory services are offered through STQ Capital Partners, an investment adviser registered with the state of California. The information contained herein is for informational purposes only and should not be construed as personalized investment advice. Past performance is no guarantee of future results.</p>
+      </td></tr>
+      <tr><td align="center" style="padding-top:12px;background:#1B2E4B !important;">
+        <a href="{$unsubscribe}" style="font-family:'DM Sans',Arial,sans-serif;font-size:10px;color:rgba(240,239,235,0.3) !important;text-decoration:underline;">Unsubscribe</a>
+      </td></tr>
+    </table>
+  </td></tr>
+
+</table>
+</td></tr></table>
+</body>
+</html>
