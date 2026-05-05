@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Most People Sell When They Need Cash. That's Usually the Wrong Move. | STQ Capital</title>
+<meta name="description" content="There's a way to access liquidity from your portfolio without selling a single position — and without triggering a tax bill you weren't ready for.">
+<meta name="author" content="Akiva Glazerson, STQ Capital">
+<link rel="canonical" href="https://stqcap.com/insight-box-spreads-intro.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://stqcap.com/insight-box-spreads-intro.html">
+<meta property="og:title" content="Most People Sell When They Need Cash. That's Usually the Wrong Move.">
+<meta property="og:description" content="There's a way to access liquidity from your portfolio without selling a single position — and without triggering a tax bill you weren't ready for.">
+<meta property="og:site_name" content="STQ Capital">
+<meta property="article:published_time" content="2026-05-05T05:00:00-07:00">
+<meta property="article:author" content="Akiva Glazerson">
+<meta property="article:section" content="Box Spreads">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33; --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF; --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7); --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif; --ease-out: cubic-bezier(0.16,1,0.3,1); }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(27,46,75,0.03) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+.nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; }
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-back { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+.nav-back:hover { color: var(--navy); }
+.nav-back svg { transition: transform 0.2s; }
+.nav-back:hover svg { transform: translateX(-3px); }
+.issue-hero { padding: 140px 0 72px; background: var(--navy); position: relative; overflow: hidden; }
+.issue-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(240,239,235,0.03) 1px, transparent 1px); background-size: 60px 60px; }
+.hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.hero-container { max-width: 1100px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+.issue-hero h1 { font-family: var(--font-heading); font-size: clamp(2.2rem,5vw,3.75rem); font-weight: 700; color: var(--cream); line-height: 1.08; letter-spacing: -0.02em; max-width: 760px; margin-bottom: 24px; animation: slideUp 0.7s var(--ease-out) 0.2s both; }
+.issue-subhead { font-size: 1.125rem; color: var(--text-light); max-width: 620px; line-height: 1.75; animation: slideUp 0.7s var(--ease-out) 0.3s both; }
+.issue-meta { display: flex; align-items: center; gap: 14px; margin-top: 24px; flex-wrap: wrap; }
+.meta-category { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.6); border: 1px solid rgba(240,239,235,0.2); padding: 4px 12px; border-radius: 3px; }
+.meta-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(240,239,235,0.2); }
+.meta-date { font-family: var(--font-heading); font-size: 0.7rem; color: rgba(240,239,235,0.3); letter-spacing: 0.08em; }
+.issue-content { max-width: 720px; margin: 0 auto; padding: 72px clamp(24px,5vw,48px) 120px; position: relative; z-index: 1; }
+.author-block { display: flex; align-items: center; gap: 16px; padding: 24px 0; border-bottom: 1px solid rgba(27,46,75,0.1); margin-bottom: 48px; }
+.author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; color: var(--cream); flex-shrink: 0; }
+.author-name { font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--navy); letter-spacing: 0.02em; }
+.author-title { font-size: 0.8rem; color: var(--text-secondary); margin-top: 3px; }
+.read-time { margin-left: auto; font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(27,46,75,0.3); }
+.issue-body p { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 24px; }
+.issue-body p strong { color: var(--text-primary); font-weight: 600; }
+.issue-body h2 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--navy); margin: 44px 0 16px; letter-spacing: 0.01em; }
+.pull-quote { border-left: 3px solid var(--navy); padding: 4px 0 4px 28px; margin: 40px 0; }
+.pull-quote p { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--navy); line-height: 1.55; letter-spacing: -0.01em; margin: 0; }
+.issue-cta { background: var(--cream-dark); border-radius: 6px; padding: 36px 40px; margin: 48px 0 0; text-align: center; }
+.issue-cta p { font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.75; max-width: 480px; margin-left: auto; margin-right: auto; }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 28px; border-radius: 4px; text-decoration: none; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+footer { background: var(--navy-dark); padding: 48px 0 32px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); }
+.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 24px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.4); }
+.footer-links { display: flex; gap: 32px; }
+.footer-links a { font-size: 0.8125rem; color: rgba(240,239,235,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--cream); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.25); }
+.footer-disclaimer { margin-top: 24px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.18); max-width: 900px; }
+@keyframes slideUp { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 768px) { .nav-inner { padding: 0 24px; } .issue-hero h1 { font-size: 2rem; } .issue-content { padding: 48px 24px 80px; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
+    <a href="/insights.html" class="nav-back">
+      <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+        <path d="M6 1L1 5M1 5L6 9M1 5H13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      All Issues
+    </a>
+  </div>
+</nav>
+<section class="issue-hero">
+  <div class="hero-watermark">STQ</div>
+  <div class="hero-container">
+    <h1>Most People Sell When They Need Cash. That&#8217;s Usually the Wrong Move.</h1>
+    <p class="issue-subhead">There&#8217;s a way to access liquidity from your portfolio without selling a single position &#8211; and without triggering a tax bill you weren&#8217;t ready for.</p>
+    <div class="issue-meta">
+      <span class="meta-category">Box Spreads</span>
+      <span class="meta-dot"></span>
+      <span class="meta-date">May 5, 2026</span>
+    </div>
+  </div>
+</section>
+<div class="issue-content">
+  <div class="author-block">
+    <div class="author-avatar">AG</div>
+    <div>
+      <div class="author-name">Akiva Glazerson</div>
+      <div class="author-title">Principal, STQ Capital</div>
+    </div>
+    <div class="read-time">4 min read</div>
+  </div>
+  <div class="issue-body">
+    <p>Think about the last time you needed a significant amount of cash quickly. A down payment. An unexpected tax bill. A business opportunity with a short window. Most investors do the same thing: they sell something. And the moment they sell, they trigger a gain, hand a portion to the IRS, and permanently remove that capital from compounding. The tax bill is immediate. The lost compounding is silent &#8211; but it lasts decades.</p>
+    <p>There&#8217;s a better option. It&#8217;s called a <strong>box spread</strong> &#8211; a borrowing structure that lets you take a loan against your portfolio at near-Treasury rates. No bank. No application. No credit check. No forced selling. The rate is set by the market, not a broker with a quota. The interest is potentially tax-deductible. Your portfolio stays fully invested. And the capital that would have gone to the IRS keeps compounding instead.</p>
+    <div class="pull-quote">
+      <p>Every time you sell to raise cash, you pay twice: once to the IRS, and once in the compounding you&#8217;ll never get back.</p>
+    </div>
+    <h2>How It Works</h2>
+    <p>A box spread is a four-leg options structure executed on a major index. By selling a short box, you effectively borrow a fixed amount of capital and agree to repay it at expiration &#8211; the difference between what you receive and what you repay is your effective interest rate. That rate is determined by the market at the moment of execution, is fixed for the life of the trade, and cannot be changed by anyone after the fact.</p>
+    <p>At current market conditions, box spread rates have been running close to Treasury rates &#8211; significantly below what most margin accounts or secured lending facilities will offer. The structure is executed through established platforms on the Schwab marketplace, making it accessible to individual investors who previously had no path to this type of liquidity.</p>
+    <h2>When It Makes Sense</h2>
+    <p>Box spreads are particularly powerful in three situations. First, when you have a concentrated position with a large embedded gain &#8211; selling would be painful, but you need liquidity. Second, when you have a tax event on the horizon &#8211; a real estate sale, a business exit, an RSU vest &#8211; and you want to access cash now without adding to your taxable income. Third, when you see an opportunity with a short window and don&#8217;t want to restructure your entire portfolio to act on it.</p>
+    <p>In each case, the math usually favors borrowing over selling &#8211; especially when the after-tax cost of borrowing is lower than the after-tax cost of realizing a gain. That comparison is something most investors never make, because most advisors never show it to them.</p>
+    <h2>What to Watch For</h2>
+    <p>Box spreads are a sophisticated tool. They require options approval on your account, an understanding of the position&#8217;s mechanics, and careful attention to expiration dates and margin requirements. Executed correctly, they&#8217;re one of the most cost-effective liquidity tools available to individual investors. Executed carelessly, they create risk that wasn&#8217;t there before.</p>
+    <p>At STQ, every box spread is structured with the full picture in mind &#8211; the rate, the term, the tax treatment, and how it fits into the broader portfolio. The goal is liquidity that costs less and preserves more, not a shortcut that creates problems down the road.</p>
+  </div>
+  <div class="issue-cta">
+    <p>Want to know if box spread borrowing makes sense for your situation and what rate you&#8217;d be looking at?</p>
+    <a href="mailto:akiva.glazerson@stqcap.com?subject=Portfolio%20Diagnostic%20Request" class="btn btn-primary">Request a Portfolio Diagnostic</a>
+  </div>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-main">
+      <div class="footer-logo">STQ <span>/ Capital</span></div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
+        <a href="/insights.html">Newsletter</a>
+        <a href="/research.html">Research</a>
+        <a href="/#contact">Contact</a>
+      </div>
+      <div class="footer-copy">&#169; 2026 STQ Capital</div>
+    </div>
+    <div class="footer-disclaimer">Advisory services are offered through STQ Capital Partners (&#8220;STQ&#8221;), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable.</div>
+  </div>
+</footer>
+</body>
+</html>
