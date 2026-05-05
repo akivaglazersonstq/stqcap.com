@@ -6,13 +6,6 @@
 <meta name="color-scheme" content="light only">
 <title>Insights – STQ Capital | Tax-Aware Wealth Management</title>
 <meta name="description" content="Daily tax-aware insights from STQ Capital. Box spread lending, tax loss harvesting, asset location, and institutional strategies for high-income investors.">
-<meta name="keywords" content="box spread RIA, tax loss harvesting, asset location, tax-aware investing, box spread lending, synthetic borrowing, California RIA, tax alpha, covered calls, options overlay">
-<meta property="og:title" content="Insights – STQ Capital">
-<meta property="og:description" content="Daily tax-aware insights on box spreads, tax loss harvesting, and institutional wealth strategies.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://stqcap.com/insights.html">
-<link rel="canonical" href="https://stqcap.com/insights.html">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%231B2E4B'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='22' fill='%23F0EFEB' letter-spacing='-1'>STQ</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
@@ -40,8 +33,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 12px 28px; border-radius: 4px; text-decoration: none; transition: all 0.3s var(--ease); cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
 .btn-primary { background: var(--navy); color: var(--cream); }
 .btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
-.nav-client-login { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; transition: border-color 0.2s ease, background 0.2s ease; }
-.nav-client-login:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
 .page-hero { padding: 140px 0 72px; background: var(--navy); position: relative; overflow: hidden; border-bottom: 1px solid rgba(27,46,75,0.08); }
 .page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
 .hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
@@ -123,7 +114,6 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 </style>
 </head>
 <body>
-
 <nav>
  <div class="nav-inner">
  <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
@@ -158,7 +148,6 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
  <button class="nav-toggle" onclick="document.querySelector('.mobile-nav').classList.add('active')" aria-label="Open menu"><span></span><span></span><span></span></button>
  </div>
 </nav>
-
 <div class="mobile-nav">
  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('active')">✕</button>
  <a href="/#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
@@ -171,7 +160,6 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
  <a href="https://client.schwab.com/Areas/Access/Login" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Investment Portal</a>
  <a href="/get-started.html" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Get Started</a>
 </div>
-
 <section class="page-hero">
  <div class="hero-watermark">STQ</div>
  <div class="container">
@@ -182,7 +170,6 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
  </div>
  </div>
 </section>
-
 <section class="filter-bar">
  <div class="container">
  <div class="filter-inner">
@@ -202,13 +189,11 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
  </div>
  </div>
 </section>
-
 <section class="issues-section">
  <div class="container">
  <div class="issues-grid" id="issuesGrid"></div>
  </div>
 </section>
-
 <section class="insights-signup">
  <div class="container">
  <div class="signup-inner">
@@ -224,7 +209,6 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
  <p id="insights-msg" style="display:none;color:var(--cream);font-size:0.875rem;margin-top:16px;"></p>
  </div>
 </section>
-
 <footer>
  <div class="container">
  <div class="footer-main">
@@ -240,315 +224,57 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
  <div class="footer-disclaimer">Advisory services are offered through STQ Capital Partners ("STQ"), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable. The information on this site is provided "AS IS" and without warranties either express or implied and the information may not be free from error. Your use of the information provided is at your sole risk.</div>
  </div>
 </footer>
-
 <script>
 const ML = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZDU4Y2Y2M2MyZjAxNGJjMWE4YmM2MDgzMGRjMjZjODAyYzdmNDZiNTNhNTY0MGYyNzdhNGNmMTlhZGQ0YjZhOTdlMjNkMGRmZmFiN2JlOTYiLCJpYXQiOjE3NzYyMTI3MzAuODgxMjkxLCJuYmYiOjE3NzYyMTI3MzAuODgxMjkzLCJleHAiOjQ5MzE4ODYzMzAuODc0Nzg3LCJzdWIiOiIyMjY1MzY3Iiwic2NvcGVzIjpbXX0.SoT6uwDSLLRp1bVmMCTm8kNFGg0-Jj7U3MXSmaCPtwbLI_RyA5UoqBdeBIvfZkOMG_rO7lrZQZBeAzK9kkq0o-zYOyOmKuuXv1vpq441LietMpgVWHgAAtL0ExKhvIZM2HnoqUhrcd34oZoYehwVCLjbLXtZ5vQYNnjO2988r7LV5zdmfrusZ7nek3ITcrBCb03r-W6do7hypJSbw_o_7J-RaYyPGOfVYk5ZxdcDe2neZmIvOkBfOd-qyHDFSQvyKaIton3_c7FSkoBXePGR9yt722rv40tO4n1iwiX7bSi6ObNX66S03gKdwIJvxjcaGHMSIOfdKJrCqcCrXUj1OZPd94e_mprtkYFlwla0BAxvMPgf8llzF_qAlovSTwdb8G9y-ORWB1vV5ZF4ZW62ZjRd5JIFckwH2CisIM1TT-b_GU-Hi6-ATvtcqm0HSffbFPEaGFb0slTxHmbx0INSAIW8QNEYVv00DUE-ysF84f4LchSFvdj2LMzSZB9_9YkuPik-AVM32b0RSKP8PVJgYK1B4DH28AUEcNjrksUytGE59NwLr5GctZztoZbDc4AlLd1es5PNFTtdQl2augDGBtnox7rDXb0sWo7BqyttYhQ9D_1RqYltSAHsB9K1qRB9CFF734AOQm8QPshucKos2vx6hGxZKuXlfpvCCVLaSBw';
 const issues = [
- {
- title: "What Separates a $6M Portfolio From a $17M One? Not the Investments.",
- date: "May 4, 2026",
- preview: "Two identical portfolios. Same investments. Same returns. Thirty years later, one has $6.3M. The other has $17.4M. So what's different?",
- tag: "Tax Strategy",
- readTime: "4 min",
- url: "/insight-asset-location-3.html"
- },
- {
- title: "You Already Own the Stock. Here's How to Get Paid Again.",
- date: "May 3, 2026",
- preview: "Covered calls let you generate income on positions you already hold \u2013 without selling a single share.",
- tag: "Options",
- readTime: "4 min",
- url: "/insight-covered-calls.html"
- },
- {
- title: "Roth or Traditional? The 401(k) Decision Most People Get Wrong.",
- date: "May 2, 2026",
- preview: "The choice between a Roth and traditional 401(k) isn't about preference. It's about math – and the math depends on where your tax rate is headed.",
- tag: "Tax Strategy",
- readTime: "4 min",
- url: "/insight-401k-optimized.html"
- },
- {
- title: "The Only Free Lunch in Investing.",
- date: "May 1, 2026",
- preview: "Asset location compounds meaningfully over a lifetime without changing a single holding. Most investors — and most advisors — never think about it systematically.",
- tag: "Tax Strategy",
- readTime: "4 min",
- url: "/insight-asset-location-3.html"
- },
-
- {
- title: "Getting Paid to Wait. The Options Strategy Most Investors Ignore.",
- date: "April 30, 2026",
- preview: "Selling a put isn't just an income strategy. It's a way to get paid while you wait for the price you actually want.",
- tag: "Options",
- readTime: "4 min",
- url: "/insight-selling-puts.html"
- },
- {
- title: "You Can't Just Sell. But You Can Give It Away \u2013 Tax-Free.",
- date: "April 29, 2026",
- preview: "A concentrated position is a tax problem. A donor-advised fund turns it into a philanthropic asset \u2013 eliminating the capital gain entirely.",
- tag: "Philanthropy",
- readTime: "4 min",
- url: "/insight-daf-concentrated.html"
- },
- {
- title: "Your Advisor Has a Conflict. Here's Exactly What It Looks Like.",
- date: "April 28, 2026",
- preview: "The wirehouse model isn't broken by accident. It's designed this way. Understanding the conflicts is the first step to protecting yourself from them.",
- tag: "Independence",
- readTime: "4 min",
- url: "/insight-wirehouse-conflicts.html"
- },
- {
- title: "The Ultimate Tax-Aware Duo.",
- date: "April 27, 2026",
- preview: "Direct indexing builds the loss bank. Box spreads deploy it. Most investors use one tax strategy at a time. The ones who use these two together are playing a different game entirely.",
- tag: "Tax Strategy",
- readTime: "4 min",
- url: "/insight-tax-aware-duo.html"
- },
- {
- title: "The Simplest Portfolio Is Often the Best One.",
- date: "April 26, 2026",
- preview: "Most investors have too much going on. Too many funds, too many fees, too many decisions. The two things you can actually control are costs and taxes.",
- tag: "Portfolio Construction",
- readTime: "3 min",
- url: "/insight-simplicity.html"
- },
- {
- title: "The Philosopher in the Valley.",
- date: "April 25, 2026",
- preview: "Palantir is one of those companies everyone has heard of but nobody really understands. A book review of Michael Steinberger’s biography of Alex Karp.",
- tag: "Book Review",
- readTime: "4 min",
- url: "/insight-philosopher-valley.html"
- },
- {
- title: "A Better Way to Buy a House.",
- date: "April 24, 2026",
- preview: "Most people assume a mortgage is the only way to finance a home. For investors with a liquid portfolio, there is another option that costs less and does not require selling a single position.",
- tag: "Box Spreads",
- readTime: "4 min",
- url: "/insight-box-spread-mortgage.html"
- },
- {
- title: "The Hardest Thing in Martial Arts and Investing Is the Same Thing.",
- date: "April 23, 2026",
- preview: "It is not technique. It is not knowledge. After years on the mat and years in markets, I am convinced the skill that separates good investors from great ones is patience under pressure.",
- tag: "Perspective",
- readTime: "3 min",
- url: "/insight-bjj-patience.html"
- },
- {
- title: "The Backdoor Roth. How High Earners Get In When the IRS Says They Can’t.",
- date: "April 22, 2026",
- preview: "Income too high for a Roth? The backdoor is open. Here’s exactly how it works – and the one mistake that makes it taxable.",
- tag: "Tax Strategy",
- readTime: "3 min",
- url: "/insight-backdoor-roth.html"
- },
- {
- title: "Your Advisor Rebalanced Your Portfolio. Congratulations. You Owe Taxes.",
- date: "April 21, 2026",
- preview: "Rebalancing is necessary. But most advisors do it the expensive way – selling winners, triggering gains, and handing a portion of your returns to the IRS every single year.",
- tag: "Tax Strategy",
- readTime: "3 min",
- url: "/insight-rebalancing.html"
- },
- {
- title: "Your CPA and Your Advisor Are in a Relationship. They’ve Never Spoken.",
- date: "April 20, 2026",
- preview: "Whether they know it or not, every decision your CPA makes affects your portfolio – and vice versa. In almost every client relationship I’ve seen, they’ve never once spoken. The result is a very expensive silence.",
- tag: "Portfolio Construction",
- readTime: "3 min",
- url: "/insight-cpa-advisor.html"
- },
- {
- title: "Step-up kills the gain. Box spreads unlock the cash.",
- date: "April 19, 2026",
- preview: "When you inherit an appreciated asset, the gain disappears – forever. Box spreads let you access liquidity without selling. Together, they are one of the most powerful combinations in tax-aware wealth management.",
- tag: "Tax Strategy",
- readTime: "3 min",
- url: "/insight-step-up.html"
- },
- {
- title: "I Hate Opacity.",
- date: "April 18, 2026",
- preview: "Tax minimization doesn’t require a salmon farm in Dubai or a solar deal off the coast of Bermuda. It requires a good advisor and strategies most people have simply never had access to.",
- tag: "Independence",
- readTime: "3 min",
- url: "/insight-opacity.html"
- },
- {
- title: "Your Index Fund Has a Concentration Problem.",
- date: "April 17, 2026",
- preview: "The five biggest names in the S&P 500 now control nearly 30% of the index. That’s not diversification. That’s a gamble.",
- tag: "Concentrated Positions",
- readTime: "3 min",
- url: "/insight-sp500-concentration.html"
- },
- {
- title: "Book Review: The Best Risk Management Lesson I’ve Read Came from a Russian Prison.",
- date: "April 16, 2026",
- preview: "Red Notice is not a finance book. It is a story about what happens when political risk, concentration risk, and counterparty risk collide – and nobody is paying attention.",
- tag: "Book Review",
- readTime: "4 min",
- url: "/insight-red-notice.html"
- },
- {
- title: "No Good Deed Goes Unpunished. Unless You Use a DAF.",
- date: "April 15, 2026",
- preview: "Most people give to charity the expensive way – cash out of a checking account, no tax strategy involved. There is a better way that costs you nothing and gives more to the cause.",
- tag: "Philanthropy",
- readTime: "4 min",
- url: "/insight-daf.html"
- },
- {
- title: "What Getting Choked Out Has Taught Me About Investing.",
- date: "April 14, 2026",
- preview: "Anybody who knows me knows I’m obsessed with BJJ. It has more in common with investing than you may think. Here’s what the mat has taught me about managing money.",
- tag: "Perspective",
- readTime: "3 min",
- url: "/insight-bjj-investing.html"
- },
- {
- title: "You Think You’re Protected. You’re Not.",
- date: "April 13, 2026",
- preview: "Both are options strategies. Both generate income or protection. But they are not interchangeable – and using the wrong one for your situation is an expensive mistake.",
- tag: "Options",
- readTime: "4 min",
- url: "/insight-covered-calls-vs-put-spreads.html"
- },
- {
- title: "The Peter Thiel IRA. What He Did and Why You Can’t Ignore It.",
- date: "April 12, 2026",
- preview: "Peter Thiel turned a Roth IRA into $5 billion – tax free. The mechanics were aggressive. The principle behind it is available to almost anyone.",
- tag: "Tax Strategy",
- readTime: "4 min",
- url: "/insight-peter-thiel-ira.html"
- },
- {
- title: "What I Learned at PIMCO About Building a Real Portfolio.",
- date: "April 11, 2026",
- preview: "Institutional portfolio management looks nothing like what most individual investors experience. Here’s what the gap actually costs you.",
- tag: "Portfolio Construction",
- readTime: "4 min",
- url: "/insight-pimco-lessons.html"
- },
- {
- title: "The Largest Account You Own. The One Nobody’s Managing.",
- date: "April 10, 2026",
- preview: "Your 401(k) may be the largest account you own. Most advisors manage everything around it but never inside it. That’s leaving serious money on the table.",
- tag: "Tax Strategy",
- readTime: "3 min",
- url: "/insight-401k-blind-spot.html"
- },
- {
- title: "Your Advisor Has a Boss. It Might Not Be You.",
- date: "April 9, 2026",
- preview: "A fiduciary is legally required to act in your interest. A broker is not. That distinction is worth understanding before you hand anyone your money.",
- tag: "Independence",
- readTime: "3 min",
- url: "/insight-fiduciary-vs-broker.html"
- },
- {
- title: "$5M in Tesla. $4M for a House. Zero Tax. Here’s How.",
- date: "April 8, 2026",
- preview: "Selling means a massive tax bill. Not selling means the house stays out of reach. There’s a third option most investors don’t know exists.",
- tag: "Concentrated Positions",
- readTime: "4 min",
- url: "/insight-tesla-house.html"
- },
- {
- title: "The Most Important Question to Ask Your Advisor. Most People Never Do.",
- date: "April 7, 2026",
- preview: "How do you get paid? Four words. Most advisors hope you never ask. The answer tells you everything about whose interests they’re actually serving.",
- tag: "Independence",
- readTime: "3 min",
- url: "/insight-advisor-question.html"
- },
- {
- title: "The Mutual Fund Industry’s Dirty Secret.",
- date: "April 6, 2026",
- preview: "The average active fund underperforms its benchmark after fees. You’re paying a premium for underperformance. The math on low-cost indexing is not subtle.",
- tag: "Portfolio Construction",
- readTime: "3 min",
- url: "/insight-active-funds.html"
- },
- {
- title: "Buy. Borrow. Die. The Estate Strategy Nobody Talks About.",
- date: "April 5, 2026",
- preview: "The wealthiest families don’t sell assets. They buy. They borrow against them at low rates. And when they die, the step-up in basis wipes the gain. It’s not a loophole. It’s a strategy.",
- tag: "Estate Planning",
- readTime: "4 min",
- url: "/insight-buy-borrow-die.html"
- },
- {
- title: "The Piggy Bank You Fill by \"Losing Money.\" Yes, Really.",
- date: "April 4, 2026",
- preview: "Tax loss harvesting is not a year-end cleanup. Done systematically, it builds a loss bank that compounds in value over time – ready to deploy whenever you need it most.",
- tag: "Tax Alpha",
- readTime: "4 min",
- url: "/insight-loss-harvesting.html"
- },
- {
- title: "Location. Location. Location.",
- date: "April 3, 2026",
- preview: "In real estate, location determines value. In investing, it determines how much of your return you actually keep. Most investors obsess over what to own. The smarter question is where.",
- tag: "Tax Strategy",
- readTime: "5 min",
- url: "/insight-asset-location.html"
- },
- {
- title: "Stop Borrowing From Banks. Your Portfolio Can Do It Better.",
- date: "April 2, 2026",
- preview: "Lines of credit are expensive, bank-controlled, and unnecessary. Your portfolio can do the same job better – at near-Treasury rates, with no application and no forced selling.",
- tag: "Box Spreads",
- readTime: "3 min",
- url: "/insight-box-spreads.html"
- },
- {
- title: "You Don’t Have Yale’s Tax Status. Stop Investing Like You Do.",
- date: "April 1, 2026",
- preview: "The endowment model is built for institutions that pay no taxes. You do. Copying it without accounting for your tax situation isn’t sophisticated – it’s expensive.",
- tag: "Portfolio Construction",
- readTime: "4 min",
- url: "/insight-endowment-model.html"
- },
+ { title: "Most People Sell When They Need Cash. That's Usually the Wrong Move.", date: "May 5, 2026", preview: "There's a way to access liquidity from your portfolio without selling a single position \u2013 and without triggering a tax bill you weren't ready for.", tag: "Box Spreads", readTime: "4 min", url: "/insight-box-spreads-intro.html" },
+ { title: "What Separates a $6M Portfolio From a $17M One? Not the Investments.", date: "May 4, 2026", preview: "Two identical portfolios. Same investments. Same returns. Thirty years later, one has $6.3M. The other has $17.4M. So what's different?", tag: "Tax Strategy", readTime: "4 min", url: "/insight-asset-location-3.html" },
+ { title: "You Already Own the Stock. Here's How to Get Paid Again.", date: "May 3, 2026", preview: "Covered calls let you generate income on positions you already hold \u2013 without selling a single share.", tag: "Options", readTime: "4 min", url: "/insight-covered-calls.html" },
+ { title: "Roth or Traditional? The 401(k) Decision Most People Get Wrong.", date: "May 2, 2026", preview: "The choice between a Roth and traditional 401(k) isn't about preference. It's about math \u2013 and the math depends on where your tax rate is headed.", tag: "Tax Strategy", readTime: "4 min", url: "/insight-401k-optimized.html" },
+ { title: "The Only Free Lunch in Investing.", date: "May 1, 2026", preview: "Asset location compounds meaningfully over a lifetime without changing a single holding. Most investors \u2014 and most advisors \u2014 never think about it systematically.", tag: "Tax Strategy", readTime: "4 min", url: "/insight-asset-location-3.html" },
+ { title: "Getting Paid to Wait. The Options Strategy Most Investors Ignore.", date: "April 30, 2026", preview: "Selling a put isn't just an income strategy. It's a way to get paid while you wait for the price you actually want.", tag: "Options", readTime: "4 min", url: "/insight-selling-puts.html" },
+ { title: "You Can't Just Sell. But You Can Give It Away \u2013 Tax-Free.", date: "April 29, 2026", preview: "A concentrated position is a tax problem. A donor-advised fund turns it into a philanthropic asset \u2013 eliminating the capital gain entirely.", tag: "Philanthropy", readTime: "4 min", url: "/insight-daf-concentrated.html" },
+ { title: "Your Advisor Has a Conflict. Here's Exactly What It Looks Like.", date: "April 28, 2026", preview: "The wirehouse model isn't broken by accident. It's designed this way. Understanding the conflicts is the first step to protecting yourself from them.", tag: "Independence", readTime: "4 min", url: "/insight-wirehouse-conflicts.html" },
+ { title: "The Ultimate Tax-Aware Duo.", date: "April 27, 2026", preview: "Direct indexing builds the loss bank. Box spreads deploy it. Most investors use one tax strategy at a time. The ones who use these two together are playing a different game entirely.", tag: "Tax Strategy", readTime: "4 min", url: "/insight-tax-aware-duo.html" },
+ { title: "The Simplest Portfolio Is Often the Best One.", date: "April 26, 2026", preview: "Most investors have too much going on. Too many funds, too many fees, too many decisions. The two things you can actually control are costs and taxes.", tag: "Portfolio Construction", readTime: "3 min", url: "/insight-simplicity.html" },
+ { title: "The Philosopher in the Valley.", date: "April 25, 2026", preview: "Palantir is one of those companies everyone has heard of but nobody really understands. A book review of Michael Steinberger's biography of Alex Karp.", tag: "Book Review", readTime: "4 min", url: "/insight-philosopher-valley.html" },
+ { title: "A Better Way to Buy a House.", date: "April 24, 2026", preview: "Most people assume a mortgage is the only way to finance a home. For investors with a liquid portfolio, there is another option that costs less and does not require selling a single position.", tag: "Box Spreads", readTime: "4 min", url: "/insight-box-spread-mortgage.html" },
+ { title: "The Hardest Thing in Martial Arts and Investing Is the Same Thing.", date: "April 23, 2026", preview: "It is not technique. It is not knowledge. After years on the mat and years in markets, I am convinced the skill that separates good investors from great ones is patience under pressure.", tag: "Perspective", readTime: "3 min", url: "/insight-bjj-patience.html" },
+ { title: "The Backdoor Roth. How High Earners Get In When the IRS Says They Can't.", date: "April 22, 2026", preview: "Income too high for a Roth? The backdoor is open. Here's exactly how it works \u2013 and the one mistake that makes it taxable.", tag: "Tax Strategy", readTime: "3 min", url: "/insight-backdoor-roth.html" },
+ { title: "Your Advisor Rebalanced Your Portfolio. Congratulations. You Owe Taxes.", date: "April 21, 2026", preview: "Rebalancing is necessary. But most advisors do it the expensive way \u2013 selling winners, triggering gains, and handing a portion of your returns to the IRS every single year.", tag: "Tax Strategy", readTime: "3 min", url: "/insight-rebalancing.html" },
+ { title: "Your CPA and Your Advisor Are in a Relationship. They've Never Spoken.", date: "April 20, 2026", preview: "Whether they know it or not, every decision your CPA makes affects your portfolio \u2013 and vice versa. In almost every client relationship I've seen, they've never once spoken. The result is a very expensive silence.", tag: "Portfolio Construction", readTime: "3 min", url: "/insight-cpa-advisor.html" },
+ { title: "Step-up kills the gain. Box spreads unlock the cash.", date: "April 19, 2026", preview: "When you inherit an appreciated asset, the gain disappears \u2013 forever. Box spreads let you access liquidity without selling. Together, they are one of the most powerful combinations in tax-aware wealth management.", tag: "Tax Strategy", readTime: "3 min", url: "/insight-step-up.html" },
+ { title: "I Hate Opacity.", date: "April 18, 2026", preview: "Tax minimization doesn't require a salmon farm in Dubai or a solar deal off the coast of Bermuda. It requires a good advisor and strategies most people have simply never had access to.", tag: "Independence", readTime: "3 min", url: "/insight-opacity.html" },
+ { title: "Your Index Fund Has a Concentration Problem.", date: "April 17, 2026", preview: "The five biggest names in the S&P 500 now control nearly 30% of the index. That's not diversification. That's a gamble.", tag: "Concentrated Positions", readTime: "3 min", url: "/insight-sp500-concentration.html" },
+ { title: "Book Review: The Best Risk Management Lesson I've Read Came from a Russian Prison.", date: "April 16, 2026", preview: "Red Notice is not a finance book. It is a story about what happens when political risk, concentration risk, and counterparty risk collide \u2013 and nobody is paying attention.", tag: "Book Review", readTime: "4 min", url: "/insight-red-notice.html" },
+ { title: "No Good Deed Goes Unpunished. Unless You Use a DAF.", date: "April 15, 2026", preview: "Most people give to charity the expensive way \u2013 cash out of a checking account, no tax strategy involved. There is a better way that costs you nothing and gives more to the cause.", tag: "Philanthropy", readTime: "4 min", url: "/insight-daf.html" },
+ { title: "What Getting Choked Out Has Taught Me About Investing.", date: "April 14, 2026", preview: "Anybody who knows me knows I'm obsessed with BJJ. It has more in common with investing than you may think. Here's what the mat has taught me about managing money.", tag: "Perspective", readTime: "3 min", url: "/insight-bjj-investing.html" },
+ { title: "You Think You're Protected. You're Not.", date: "April 13, 2026", preview: "Both are options strategies. Both generate income or protection. But they are not interchangeable \u2013 and using the wrong one for your situation is an expensive mistake.", tag: "Options", readTime: "4 min", url: "/insight-covered-calls-vs-put-spreads.html" },
+ { title: "The Peter Thiel IRA. What He Did and Why You Can't Ignore It.", date: "April 12, 2026", preview: "Peter Thiel turned a Roth IRA into $5 billion \u2013 tax free. The mechanics were aggressive. The principle behind it is available to almost anyone.", tag: "Tax Strategy", readTime: "4 min", url: "/insight-peter-thiel-ira.html" },
+ { title: "What I Learned at PIMCO About Building a Real Portfolio.", date: "April 11, 2026", preview: "Institutional portfolio management looks nothing like what most individual investors experience. Here's what the gap actually costs you.", tag: "Portfolio Construction", readTime: "4 min", url: "/insight-pimco-lessons.html" },
+ { title: "The Largest Account You Own. The One Nobody's Managing.", date: "April 10, 2026", preview: "Your 401(k) may be the largest account you own. Most advisors manage everything around it but never inside it. That's leaving serious money on the table.", tag: "Tax Strategy", readTime: "3 min", url: "/insight-401k-blind-spot.html" },
+ { title: "Your Advisor Has a Boss. It Might Not Be You.", date: "April 9, 2026", preview: "A fiduciary is legally required to act in your interest. A broker is not. That distinction is worth understanding before you hand anyone your money.", tag: "Independence", readTime: "3 min", url: "/insight-fiduciary-vs-broker.html" },
+ { title: "$5M in Tesla. $4M for a House. Zero Tax. Here's How.", date: "April 8, 2026", preview: "Selling means a massive tax bill. Not selling means the house stays out of reach. There's a third option most investors don't know exists.", tag: "Concentrated Positions", readTime: "4 min", url: "/insight-tesla-house.html" },
+ { title: "The Most Important Question to Ask Your Advisor. Most People Never Do.", date: "April 7, 2026", preview: "How do you get paid? Four words. Most advisors hope you never ask. The answer tells you everything about whose interests they're actually serving.", tag: "Independence", readTime: "3 min", url: "/insight-advisor-question.html" },
+ { title: "The Mutual Fund Industry's Dirty Secret.", date: "April 6, 2026", preview: "The average active fund underperforms its benchmark after fees. You're paying a premium for underperformance. The math on low-cost indexing is not subtle.", tag: "Portfolio Construction", readTime: "3 min", url: "/insight-active-funds.html" },
+ { title: "Buy. Borrow. Die. The Estate Strategy Nobody Talks About.", date: "April 5, 2026", preview: "The wealthiest families don't sell assets. They buy. They borrow against them at low rates. And when they die, the step-up in basis wipes the gain. It's not a loophole. It's a strategy.", tag: "Estate Planning", readTime: "4 min", url: "/insight-buy-borrow-die.html" },
+ { title: "The Piggy Bank You Fill by \"Losing Money.\" Yes, Really.", date: "April 4, 2026", preview: "Tax loss harvesting is not a year-end cleanup. Done systematically, it builds a loss bank that compounds in value over time \u2013 ready to deploy whenever you need it most.", tag: "Tax Alpha", readTime: "4 min", url: "/insight-loss-harvesting.html" },
+ { title: "Location. Location. Location.", date: "April 3, 2026", preview: "In real estate, location determines value. In investing, it determines how much of your return you actually keep. Most investors obsess over what to own. The smarter question is where.", tag: "Tax Strategy", readTime: "5 min", url: "/insight-asset-location.html" },
+ { title: "Stop Borrowing From Banks. Your Portfolio Can Do It Better.", date: "April 2, 2026", preview: "Lines of credit are expensive, bank-controlled, and unnecessary. Your portfolio can do the same job better \u2013 at near-Treasury rates, with no application and no forced selling.", tag: "Box Spreads", readTime: "3 min", url: "/insight-box-spreads.html" },
+ { title: "You Don't Have Yale's Tax Status. Stop Investing Like You Do.", date: "April 1, 2026", preview: "The endowment model is built for institutions that pay no taxes. You do. Copying it without accounting for your tax situation isn't sophisticated \u2013 it's expensive.", tag: "Portfolio Construction", readTime: "4 min", url: "/insight-endowment-model.html" },
 ];
-
 function renderIssues(filter) {
  const grid = document.getElementById('issuesGrid');
  const filtered = filter === 'all' ? issues : issues.filter(i => i.tag === filter);
- if (filtered.length === 0) {
- grid.innerHTML = '<div class="empty-state"><p>No issues in this category yet. Check back soon.</p></div>';
- return;
- }
- grid.innerHTML = filtered.map(issue => `
- <a class="issue-card" href="${issue.url}">
- <div class="issue-card-meta">
- <span class="issue-card-tag">${issue.tag}</span>
- <span class="issue-card-date">${issue.date}</span>
- </div>
- <div class="issue-card-title">${issue.title}</div>
- <div class="issue-card-preview">${issue.preview}</div>
- <div class="issue-card-footer">
- <div class="issue-card-read">${issue.readTime} read</div>
- </div>
- </a>
- `).join('');
+ if (filtered.length === 0) { grid.innerHTML = '<div class="empty-state"><p>No issues in this category yet. Check back soon.</p></div>'; return; }
+ grid.innerHTML = filtered.map(issue => `<a class="issue-card" href="${issue.url}"><div class="issue-card-meta"><span class="issue-card-tag">${issue.tag}</span><span class="issue-card-date">${issue.date}</span></div><div class="issue-card-title">${issue.title}</div><div class="issue-card-preview">${issue.preview}</div><div class="issue-card-footer"><div class="issue-card-read">${issue.readTime} read</div></div></a>`).join('');
 }
-
 function filterIssues(tag, btn) {
  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
  btn.classList.add('active');
  renderIssues(tag);
 }
-
 renderIssues('all');
-
 async function handleInsightsSubscribe(e) {
  e.preventDefault();
  const email = document.getElementById('insights-email').value;
@@ -557,23 +283,9 @@ async function handleInsightsSubscribe(e) {
  btn.textContent = 'Subscribing...';
  btn.disabled = true;
  try {
- const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
- method: 'POST',
- headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${ML}` },
- body: JSON.stringify({ email, groups: ["185200901719328747"] })
- });
- if (res.ok || res.status === 200 || res.status === 201) {
- msg.style.display = 'block';
- msg.textContent = "You’re in. First issue hits first thing.";
- document.getElementById('insights-email').value = '';
- btn.textContent = 'Subscribed ✓';
- } else { throw new Error(); }
- } catch {
- msg.style.display = 'block';
- msg.textContent = 'Something went wrong. Email akiva.glazerson@stqcap.com to subscribe.';
- btn.textContent = 'Subscribe';
- btn.disabled = false;
- }
+ const res = await fetch('https://connect.mailerlite.com/api/subscribers', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${ML}` }, body: JSON.stringify({ email, groups: ["185200901719328747"] }) });
+ if (res.ok || res.status === 200 || res.status === 201) { msg.style.display = 'block'; msg.textContent = "You're in. First issue hits first thing."; document.getElementById('insights-email').value = ''; btn.textContent = 'Subscribed \u2713'; } else { throw new Error(); }
+ } catch { msg.style.display = 'block'; msg.textContent = 'Something went wrong. Email akiva.glazerson@stqcap.com to subscribe.'; btn.textContent = 'Subscribe'; btn.disabled = false; }
 }
 </script>
 </body>
