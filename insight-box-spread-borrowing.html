@@ -71,9 +71,69 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
 .footer-disclaimer { margin-top: 24px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.18); max-width: 900px; }
 @keyframes slideUp { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 768px) { .nav-inner { padding: 0 24px; } .issue-hero h1 { font-size: 2rem; } .issue-content { padding: 48px 24px 80px; } }
+.gate-overlay { display:none; position:fixed; inset:0; background:rgba(15,30,51,0.85); z-index:2000; align-items:center; justify-content:center; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); padding:24px; }
+.gate-overlay.active { display:flex !important; }
+.gate-box { background:#F0EFEB; border-radius:8px; padding:52px 44px; max-width:480px; width:100%; position:relative; animation:gateIn 0.35s cubic-bezier(0.16,1,0.3,1); box-shadow:0 32px 80px rgba(15,30,51,0.3); }
+@keyframes gateIn { from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);} }
+.gate-label { font-family:'Chakra Petch',sans-serif; font-size:0.65rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:#5a6a7e; margin-bottom:12px; }
+.gate-title { font-family:'Chakra Petch',sans-serif; font-size:1.75rem; font-weight:700; color:#1B2E4B; letter-spacing:-0.02em; margin-bottom:8px; line-height:1.2; }
+.gate-sub { font-size:0.9375rem; color:#5a6a7e; margin-bottom:28px; line-height:1.6; }
+.gate-form { display:flex; flex-direction:column; gap:12px; }
+.gate-form input { font-family:'DM Sans',sans-serif; font-size:0.9375rem; padding:14px 16px; border:1px solid rgba(27,46,75,0.15); border-radius:4px; background:#fff; color:#1B2E4B; outline:none; transition:border-color 0.2s; }
+.gate-form input:focus { border-color:#1B2E4B; }
+.gate-msg { font-size:0.875rem; margin-top:4px; display:none; }
 </style>
 </head>
 <body>
+<!-- EMAIL GATE -->
+<div class="gate-overlay" id="insightGate">
+  <div class="gate-box">
+    <div class="gate-label">STQ Capital — Daily Insights</div>
+    <h2 class="gate-title">Get the Full Article.</h2>
+    <p class="gate-sub">Enter your email for free access - plus insights on tax-efficient investing.</p>
+    <form class="gate-form" onsubmit="handleInsightGate(event)">
+      <input type="email" id="gate-email" placeholder="your@email.com" required>
+      <button type="submit" id="gate-btn" class="btn btn-primary" style="justify-content:center;">Unlock Article →</button>
+    </form>
+    <p class="gate-msg" id="gate-msg"></p>
+  </div>
+</div>
+
+<script>
+(function() {
+  var STORAGE_KEY = 'stq_insights_access';
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('subscriber') === 'true') {
+    localStorage.setItem(STORAGE_KEY, 'granted');
+    return;
+  }
+  if (localStorage.getItem(STORAGE_KEY) === 'granted') return;
+  window.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      document.getElementById('insightGate').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }, 800);
+  });
+})();
+
+function handleInsightGate(e) {
+  e.preventDefault();
+  var email = document.getElementById('gate-email').value;
+  var btn = document.getElementById('gate-btn');
+  var msg = document.getElementById('gate-msg');
+  btn.textContent = 'Unlocking...'; btn.disabled = true;
+  fetch('https://connect.mailerlite.com/api/subscribers', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZDU4Y2Y2M2MyZjAxNGJjMWE4YmM2MDgzMGRjMjZjODAyYzdmNDZiNTNhNTY0MGYyNzdhNGNmMTlhZGQ0YjZhOTdlMjNkMGRmZmFiN2JlOTYiLCJpYXQiOjE3NzYyMTI3MzAuODgxMjkxLCJuYmYiOjE3NzYyMTI3MzAuODgxMjkzLCJleHAiOjQ5MzE4ODYzMzAuODc0Nzg3LCJzdWIiOiIyMjY1MzY3Iiwic2NvcGVzIjpbXX0.SoT6uwDSLLRp1bVmMCTm8kNFGg0-Jj7U3MXSmaCPtwbLI_RyA5UoqBdeBIvfZkOMG_rO7lrZQZBeAzK9kkq0o-zYOyOmKuuXv1vpq441LietMpgVWHgAAtL0ExKhvIZM2HnoqUhrcd34oZoYehwVCLjbLXtZ5vQYNnjO2988r7LV5zdmfrusZ7nek3ITcrBCb03r-W6do7hypJSbw_o_7J-RaYyPGOfVYk5ZxdcDe2neZmIvOkBfOd-qyHDFSQvyKaIton3_c7FSkoBXePGR9yt722rv40tO4n1iwiX7bSi6ObNX66S03gKdwIJvxjcaGHMSIOfdKJrCqcCrXUj1OZPd94e_mprtkYFlwla0BAxvMPgf8llzF_qAlovSTwdb8G9y-ORWB1vV5ZF4ZW62ZjRd5JIFckwH2CisIM1TT-b_GU-Hi6-ATvtcqm0HSffbFPEaGFb0slTxHmbx0INSAIW8QNEYVv00DUE-ysF84f4LchSFvdj2LMzSZB9_9YkuPik-AVM32b0RSKP8PVJgYK1B4DH28AUEcNjrksUytGE59NwLr5GctZztoZbDc4AlLd1es5PNFTtdQl2augDGBtnox7rDXb0sWo7BqyttYhQ9D_1RqYltSAHsB9K1qRB9CFF734AOQm8QPshucKos2vx6hGxZKuXlfpvCCVLaSBw' },
+    body: JSON.stringify({ email: email, groups: ["185200901719328747"] })
+  }).catch(function(){});
+  setTimeout(function() {
+    localStorage.setItem('stq_insights_access', 'granted');
+    document.getElementById('insightGate').classList.remove('active');
+    document.body.style.overflow = '';
+  }, 700);
+}
+</script>
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
@@ -110,9 +170,9 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
   </div>
 
   <div class="issue-body">
-    <p>One of the most powerful financial strategies I&#8217;ve come across isn&#8217;t an investment strategy at all. It doesn&#8217;t require picking stocks, timing markets, or taking on more risk than you already have. It just requires knowing that your portfolio &#8211; the one sitting in your brokerage account right now &#8211; can function as a lender. And that most investors never use it that way.</p>
+    <p>One of the most powerful financial strategies I&#8217;ve come across isn&#8217;t an investment strategy at all. It doesn&#8217;t require picking stocks, timing markets, or taking on more risk than you already have. It just requires knowing that your portfolio - the one sitting in your brokerage account right now - can function as a lender. And that most investors never use it that way.</p>
 
-    <p>The strategy is called a box spread. And if you have a meaningful portfolio and have ever needed liquidity &#8211; for a down payment, a tax bill, a business opportunity, or a concentrated position you couldn&#8217;t sell &#8211; it is worth understanding.</p>
+    <p>The strategy is called a box spread. And if you have a meaningful portfolio and have ever needed liquidity - for a down payment, a tax bill, a business opportunity, or a concentrated position you couldn&#8217;t sell - it is worth understanding.</p>
 
     <div style="margin: 36px 0; border-radius: 6px; overflow: hidden; border: 1px solid rgba(27,46,75,0.08);">
       <img src="/stq_box_tax.png" alt="Box spread borrowing — STQ Capital" style="width: 100%; display: block;">
@@ -120,9 +180,9 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
 
     <h2>How It Works</h2>
 
-    <p>A box spread is a four-leg options structure executed on a major index like the S&amp;P 500. The mechanics are straightforward: you sell a box spread, cash lands in your account, and you agree to repay a fixed amount at expiration. The difference between what you receive and what you repay is your effective interest rate &#8211; set by the market at the moment of execution, locked in for the life of the trade.</p>
+    <p>A box spread is a four-leg options structure executed on a major index like the S&amp;P 500. The mechanics are straightforward: you sell a box spread, cash lands in your account, and you agree to repay a fixed amount at expiration. The difference between what you receive and what you repay is your effective interest rate - set by the market at the moment of execution, locked in for the life of the trade.</p>
 
-    <p>That rate has historically tracked close to Treasury rates &#8211; significantly below what most margin accounts, HELOCs, or bank loans will offer. You choose the term anywhere from three months to several years. At expiration you repay or roll it forward. Your portfolio stays fully invested throughout.</p>
+    <p>That rate has historically tracked close to Treasury rates - significantly below what most margin accounts, HELOCs, or bank loans will offer. You choose the term anywhere from three months to several years. At expiration you repay or roll it forward. Your portfolio stays fully invested throughout.</p>
 
     <div class="pull-quote">
       <p>No bank. No application. No credit check. No forced selling. No taxable event. The rate is set by the market, not a broker with a quota.</p>
@@ -130,19 +190,19 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
 
     <h2>The Tax Angle</h2>
 
-    <p>Here is where it gets interesting. The interest you pay on a box spread is treated as a capital loss under IRS Section 1256 &#8211; specifically, 60% long-term and 40% short-term. That means what you pay in interest can be used to offset capital gains elsewhere in your portfolio. The cost of borrowing effectively becomes a tax asset.</p>
+    <p>Here is where it gets interesting. The interest you pay on a box spread is treated as a capital loss under IRS Section 1256 - specifically, 60% long-term and 40% short-term. That means what you pay in interest can be used to offset capital gains elsewhere in your portfolio. The cost of borrowing effectively becomes a tax asset.</p>
 
-    <p>For someone sitting on a large capital gain &#8211; a real estate sale, a business exit, a concentrated stock position &#8211; the ability to borrow at near-Treasury rates while simultaneously generating a deductible loss is a meaningful advantage. It is one of the reasons box spreads are particularly powerful when used alongside a broader tax strategy.</p>
+    <p>For someone sitting on a large capital gain - a real estate sale, a business exit, a concentrated stock position - the ability to borrow at near-Treasury rates while simultaneously generating a deductible loss is a meaningful advantage. It is one of the reasons box spreads are particularly powerful when used alongside a broader tax strategy.</p>
 
     <h2>Who It&#8217;s For</h2>
 
-    <p>Box spreads are most useful in three situations. First, when you need liquidity but don&#8217;t want to sell appreciated positions. Second, when you have a tax event on the horizon and want to access cash without adding to your taxable income. Third, when you see an opportunity &#8211; a real estate deal, a private investment, a time-sensitive purchase &#8211; and don&#8217;t want to restructure your entire portfolio to act on it.</p>
+    <p>Box spreads are most useful in three situations. First, when you need liquidity but don&#8217;t want to sell appreciated positions. Second, when you have a tax event on the horizon and want to access cash without adding to your taxable income. Third, when you see an opportunity - a real estate deal, a private investment, a time-sensitive purchase - and don&#8217;t want to restructure your entire portfolio to act on it.</p>
 
     <p>You don&#8217;t need millions. But you do need options approval on your account and an understanding of the mechanics. Executed correctly, it is one of the most cost-effective liquidity tools available to individual investors. Most advisors aren&#8217;t familiar with it. We use it every day.</p>
   </div>
 
   <div class="issue-cta">
-    <p>Want to know if box spread borrowing makes sense for your situation &#8211; and what rate you&#8217;d be looking at today?</p>
+    <p>Want to know if box spread borrowing makes sense for your situation - and what rate you&#8217;d be looking at today?</p>
     <a href="mailto:akiva.glazerson@stqcap.com?subject=Portfolio%20Diagnostic%20Request" class="btn btn-primary">Request a Portfolio Diagnostic</a>
   </div>
 </div>
