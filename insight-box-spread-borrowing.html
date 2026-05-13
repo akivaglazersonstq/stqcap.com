@@ -88,7 +88,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
 <!-- EMAIL GATE -->
 <div class="gate-overlay" id="insightGate">
   <div class="gate-box">
-    <div class="gate-label">STQ Capital — Daily Insights</div>
+    <div class="gate-label">STQ Capital - Daily Insights</div>
     <h2 class="gate-title">Get the Full Article.</h2>
     <p class="gate-sub">Enter your email for free access - plus insights on tax-efficient investing.</p>
     <form class="gate-form" onsubmit="handleInsightGate(event)">
@@ -120,7 +120,6 @@ function handleInsightGate(e) {
   e.preventDefault();
   var email = document.getElementById('gate-email').value;
   var btn = document.getElementById('gate-btn');
-  var msg = document.getElementById('gate-msg');
   btn.textContent = 'Unlocking...'; btn.disabled = true;
   fetch('https://connect.mailerlite.com/api/subscribers', {
     method: 'POST',
@@ -188,17 +187,13 @@ function handleInsightGate(e) {
       <p>No bank. No application. No credit check. No forced selling. No taxable event. The rate is set by the market, not a broker with a quota.</p>
     </div>
 
-    <h2>The Tax Angle</h2>
-
-    <p>Here is where it gets interesting. The interest you pay on a box spread is treated as a capital loss under IRS Section 1256 - specifically, 60% long-term and 40% short-term. That means what you pay in interest can be used to offset capital gains elsewhere in your portfolio. The cost of borrowing effectively becomes a tax asset.</p>
-
-    <p>For someone sitting on a large capital gain - a real estate sale, a business exit, a concentrated stock position - the ability to borrow at near-Treasury rates while simultaneously generating a deductible loss is a meaningful advantage. It is one of the reasons box spreads are particularly powerful when used alongside a broader tax strategy.</p>
-
     <h2>Who It&#8217;s For</h2>
 
     <p>Box spreads are most useful in three situations. First, when you need liquidity but don&#8217;t want to sell appreciated positions. Second, when you have a tax event on the horizon and want to access cash without adding to your taxable income. Third, when you see an opportunity - a real estate deal, a private investment, a time-sensitive purchase - and don&#8217;t want to restructure your entire portfolio to act on it.</p>
 
     <p>You don&#8217;t need millions. But you do need options approval on your account and an understanding of the mechanics. Executed correctly, it is one of the most cost-effective liquidity tools available to individual investors. Most advisors aren&#8217;t familiar with it. We use it every day.</p>
+
+    <p>Box spread financing involves options trading and carries risk, including the risk of loss. Interest treatment as a capital loss under IRS Section 1256 may not apply in all circumstances. This is not a recommendation to engage in any specific strategy. Consult your tax, legal, and financial advisors before engaging in any transaction.</p>
   </div>
 
   <div class="issue-cta">
