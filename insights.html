@@ -124,6 +124,7 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 </style>
 </head>
 <body>
+
 <!-- EMAIL GATE -->
 <div class="gate-overlay" id="insightGate">
   <div class="gate-box">
@@ -172,6 +173,7 @@ function handleInsightGate(e) {
   }, 700);
 }
 </script>
+
 <nav>
  <div class="nav-inner">
  <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
@@ -287,6 +289,7 @@ function handleInsightGate(e) {
 <script>
 const ML = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZDU4Y2Y2M2MyZjAxNGJjMWE4YmM2MDgzMGRjMjZjODAyYzdmNDZiNTNhNTY0MGYyNzdhNGNmMTlhZGQ0YjZhOTdlMjNkMGRmZmFiN2JlOTYiLCJpYXQiOjE3NzYyMTI3MzAuODgxMjkxLCJuYmYiOjE3NzYyMTI3MzAuODgxMjkzLCJleHAiOjQ5MzE4ODYzMzAuODc0Nzg3LCJzdWIiOiIyMjY1MzY3Iiwic2NvcGVzIjpbXX0.SoT6uwDSLLRp1bVmMCTm8kNFGg0-Jj7U3MXSmaCPtwbLI_RyA5UoqBdeBIvfZkOMG_rO7lrZQZBeAzK9kkq0o-zYOyOmKuuXv1vpq441LietMpgVWHgAAtL0ExKhvIZM2HnoqUhrcd34oZoYehwVCLjbLXtZ5vQYNnjO2988r7LV5zdmfrusZ7nek3ITcrBCb03r-W6do7hypJSbw_o_7J-RaYyPGOfVYk5ZxdcDe2neZmIvOkBfOd-qyHDFSQvyKaIton3_c7FSkoBXePGR9yt722rv40tO4n1iwiX7bSi6ObNX66S03gKdwIJvxjcaGHMSIOfdKJrCqcCrXUj1OZPd94e_mprtkYFlwla0BAxvMPgf8llzF_qAlovSTwdb8G9y-ORWB1vV5ZF4ZW62ZjRd5JIFckwH2CisIM1TT-b_GU-Hi6-ATvtcqm0HSffbFPEaGFb0slTxHmbx0INSAIW8QNEYVv00DUE-ysF84f4LchSFvdj2LMzSZB9_9YkuPik-AVM32b0RSKP8PVJgYK1B4DH28AUEcNjrksUytGE59NwLr5GctZztoZbDc4AlLd1es5PNFTtdQl2augDGBtnox7rDXb0sWo7BqyttYhQ9D_1RqYltSAHsB9K1qRB9CFF734AOQm8QPshucKos2vx6hGxZKuXlfpvCCVLaSBw';
 const issues = [
+ { title: "My Favorite Combination in Tax-Efficient Investing.", date: "May 17, 2026", preview: "My favorite tax strategy isn\u2019t a single move. It\u2019s two strategies running simultaneously. Each is powerful on its own. Together, they do something neither can do alone.", tag: "Tax Alpha", readTime: "5 min", url: "/insight-stq-approach-2026-05-17.html" },
  { title: "Your Portfolio Can Lend You Money. Most Investors Never Ask It To.", date: "May 13, 2026", preview: "Box spread borrowing lets you access cash at near-Treasury rates without selling a single position. No bank. No credit check. No taxable event. And the interest is potentially tax-deductible.", tag: "Box Spreads", readTime: "4 min", url: "/insight-box-spread-borrowing.html" },
  { title: "The Fee Nobody Talks About Is the One Hurting You Most.", date: "May 12, 2026", preview: "Expense ratios are small numbers with large consequences. Most investors have no idea what their funds are actually charging them \u2013 or what it\u2019s compounding into over time.", tag: "Fee Drag", readTime: "3 min", url: "/insight-expense-ratio.html" },
  { title: "Own the S&P 500? Do This Instead.", date: "May 11, 2026", preview: "An index fund gives you the return. Direct indexing gives you the return and a tax engine that works in your favor every single day. Most investors have never heard of it.", tag: "Tax Alpha", readTime: "4 min", url: "/insight-direct-indexing.html" },
@@ -335,7 +338,7 @@ function renderIssues(filter) {
  const grid = document.getElementById('issuesGrid');
  const filtered = filter === 'all' ? issues : issues.filter(i => i.tag === filter);
  if (filtered.length === 0) { grid.innerHTML = '<div class="empty-state"><p>No issues in this category yet. Check back soon.</p></div>'; return; }
- grid.innerHTML = filtered.map(issue => `<a class="issue-card" href="${issue.url}"><div class="issue-card-meta"><span class="issue-card-tag">${issue.tag}</span><span class="issue-card-date">${issue.date}</span></div><div class="issue-card-title">${issue.title}</div><div class="issue-card-preview">${issue.preview}</div><div class="issue-card-footer"><div class="issue-card-read">${issue.readTime} read</div></div></a>`).join('');
+ grid.innerHTML = filtered.map(issue => `<a class="issue-card" href="${issue.url}"><div class="issue-card-meta"><span class="issue-card-tag">${issue.tag}</span></div><div class="issue-card-title">${issue.title}</div><div class="issue-card-preview">${issue.preview}</div><div class="issue-card-footer"><div class="issue-card-read">${issue.readTime} read</div></div></a>`).join('');
 }
 function filterIssues(tag, btn) {
  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
