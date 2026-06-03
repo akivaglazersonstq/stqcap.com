@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>A Better Way to Finance a Home Build: Box Spread vs HELOC | STQ Capital</title>
+<meta name="description" content="Building or renovating? Most advisors suggest a HELOC. Compare a HELOC, a jumbo mortgage, and a box spread, and see how the right mix can cut after-tax cost.">
+<meta name="author" content="Akiva Glazerson, STQ Capital">
+<meta name="keywords" content="box spread vs HELOC, box spread home financing, SPX options, Section 1256, alternative to HELOC, jumbo mortgage alternative">
+<link rel="canonical" href="https://stqcap.com/insight-box-spread-vs-heloc-2026-06-04.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://stqcap.com/insight-box-spread-vs-heloc-2026-06-04.html">
+<meta property="og:title" content="A Better Way to Buy (or Build) a Home: Box Spread vs HELOC vs Mortgage">
+<meta property="og:description" content="Most advisors suggest a HELOC for a home build or renovation. For investors with large taxable portfolios, a mortgage-plus-box-spread structure is often cheaper after tax.">
+<meta property="og:site_name" content="STQ Capital">
+<meta property="article:author" content="Akiva Glazerson">
+<meta property="article:section" content="Tax Alpha">
+<meta property="article:published_time" content="2026-06-04">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33; --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF; --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7); --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif; --ease-out: cubic-bezier(0.16,1,0.3,1); }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(27,46,75,0.03) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+.nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; }
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-back { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+.nav-back:hover { color: var(--navy); }
+.nav-back svg { transition: transform 0.2s; }
+.nav-back:hover svg { transform: translateX(-3px); }
+.issue-hero { padding: 140px 0 72px; background: var(--navy); position: relative; overflow: hidden; }
+.issue-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(240,239,235,0.03) 1px, transparent 1px); background-size: 60px 60px; }
+.hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.hero-container { max-width: 1100px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+.issue-hero h1 { font-family: var(--font-heading); font-size: clamp(2.2rem,5vw,3.75rem); font-weight: 700; color: var(--cream); line-height: 1.08; letter-spacing: -0.02em; max-width: 760px; margin-bottom: 24px; animation: slideUp 0.7s var(--ease-out) 0.2s both; }
+.issue-subhead { font-size: 1.125rem; color: var(--text-light); max-width: 620px; line-height: 1.75; animation: slideUp 0.7s var(--ease-out) 0.3s both; }
+.issue-meta { display: flex; align-items: center; gap: 14px; margin-top: 24px; flex-wrap: wrap; }
+.meta-category { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.6); border: 1px solid rgba(240,239,235,0.2); padding: 4px 12px; border-radius: 3px; }
+.meta-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(240,239,235,0.2); }
+.meta-date { font-family: var(--font-heading); font-size: 0.7rem; color: rgba(240,239,235,0.3); letter-spacing: 0.08em; }
+.issue-content { max-width: 720px; margin: 0 auto; padding: 72px clamp(24px,5vw,48px) 120px; position: relative; z-index: 1; }
+.author-block { display: flex; align-items: center; gap: 16px; padding: 24px 0; border-bottom: 1px solid rgba(27,46,75,0.1); margin-bottom: 48px; }
+.author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; color: var(--cream); flex-shrink: 0; }
+.author-name { font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--navy); letter-spacing: 0.02em; }
+.author-title { font-size: 0.8rem; color: var(--text-secondary); margin-top: 3px; }
+.read-time { margin-left: auto; font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(27,46,75,0.3); }
+.issue-body p { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 24px; }
+.issue-body p strong { color: var(--text-primary); font-weight: 600; }
+.issue-body a { color: var(--navy); text-decoration: underline; text-decoration-color: rgba(27,46,75,0.3); text-underline-offset: 2px; transition: text-decoration-color 0.2s; }
+.issue-body a:hover { text-decoration-color: var(--navy); }
+.issue-body h2 { font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; color: var(--navy); margin: 48px 0 16px; letter-spacing: 0.01em; }
+.issue-body h3 { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: var(--navy); margin: 32px 0 12px; letter-spacing: 0.01em; }
+.pull-quote { border-left: 3px solid var(--navy); padding: 4px 0 4px 28px; margin: 40px 0; }
+.pull-quote p { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--navy); line-height: 1.55; letter-spacing: -0.01em; margin: 0; }
+.build-list { list-style: none; margin: 24px 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.build-list li { font-size: 1.0625rem; line-height: 1.75; color: var(--text-secondary); padding-left: 24px; position: relative; }
+.build-list li::before { content: '\2192'; position: absolute; left: 0; color: var(--navy); opacity: 0.5; }
+.build-list li strong { color: var(--text-primary); font-weight: 600; }
+.takeaways { background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-left: 3px solid var(--navy); border-radius: 6px; padding: 28px 32px; margin: 0 0 8px; }
+.takeaways .takeaways-label { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 16px; }
+.takeaways ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+.takeaways li { font-size: 0.9875rem; line-height: 1.7; color: var(--text-secondary); padding-left: 22px; position: relative; }
+.takeaways li::before { content: '\2192'; position: absolute; left: 0; color: var(--navy); opacity: 0.5; }
+.takeaways li strong { color: var(--text-primary); font-weight: 600; }
+.cost-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.9875rem; }
+.cost-table th, .cost-table td { text-align: left; padding: 12px 14px; border-bottom: 1px solid rgba(27,46,75,0.1); }
+.cost-table th { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+.cost-table td { color: var(--text-secondary); line-height: 1.6; }
+.cost-table td:last-child, .cost-table th:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.cost-table tr.total td { font-weight: 700; color: var(--text-primary); border-bottom: none; }
+.cost-table tr.total { background: var(--cream-dark); }
+.chart-figure { margin: 36px 0; }
+.chart-figure img { width: 100%; display: block; border: 1px solid rgba(27,46,75,0.08); border-radius: 6px; background: var(--white); }
+.chart-figure figcaption { font-size: 0.8125rem; line-height: 1.65; color: var(--text-secondary); margin-top: 12px; text-align: center; font-style: italic; }
+.faq-section { margin-top: 56px; padding-top: 8px; }
+.faq-section > h2 { font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; color: var(--navy); margin: 0 0 8px; }
+.faq-item { border-bottom: 1px solid rgba(27,46,75,0.1); padding: 22px 0; }
+.faq-item h3 { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+.faq-item p { font-size: 0.9875rem; line-height: 1.75; color: var(--text-secondary); margin: 0; }
+.issue-cta { background: var(--cream-dark); border-radius: 6px; padding: 36px 40px; margin: 48px 0 0; text-align: center; }
+.issue-cta p { font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.75; max-width: 480px; margin-left: auto; margin-right: auto; }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 28px; border-radius: 4px; text-decoration: none; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.disclaimer-inline { font-size: 0.8125rem; color: rgba(27,46,75,0.45); line-height: 1.7; margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(27,46,75,0.08); }
+footer { background: var(--navy-dark); padding: 48px 0 32px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); }
+.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 24px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.4); }
+.footer-links { display: flex; gap: 32px; }
+.footer-links a { font-size: 0.8125rem; color: rgba(240,239,235,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--cream); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.25); }
+.footer-disclaimer { margin-top: 24px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.18); max-width: 900px; }
+@keyframes slideUp { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 768px) { .nav-inner { padding: 0 24px; } .issue-hero h1 { font-size: 2rem; } .issue-content { padding: 48px 24px 80px; } .takeaways, .issue-cta { padding-left: 24px; padding-right: 24px; } }
+</style>
+
+<!-- Article schema (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://stqcap.com/insight-box-spread-vs-heloc-2026-06-04.html#article",
+  "headline": "A Better Way to Buy (or Build) a Home: Box Spread vs HELOC vs Mortgage",
+  "description": "Most advisors suggest a HELOC for a home build or renovation. For investors with large taxable portfolios, a mortgage-plus-box-spread structure is often cheaper after tax.",
+  "author": { "@type": "Person", "name": "Akiva Glazerson" },
+  "publisher": { "@type": "Organization", "name": "STQ Capital" },
+  "datePublished": "2026-06-04",
+  "dateModified": "2026-06-04",
+  "inLanguage": "en",
+  "url": "https://stqcap.com/insight-box-spread-vs-heloc-2026-06-04.html",
+  "articleSection": ["Home Financing", "Tax Strategy", "High-Net-Worth Planning"],
+  "keywords": ["box spread vs HELOC", "box spread home financing", "SPX options", "Section 1256", "alternative to HELOC", "jumbo mortgage alternative"]
+}
+</script>
+<!-- FAQPage schema (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://stqcap.com/insight-box-spread-vs-heloc-2026-06-04.html#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a box spread, in plain terms?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A box spread is a combination of four S&P 500 index (SPX) options that together behave like a fixed-term loan. You receive cash today and repay a set amount at a chosen future date, and the difference between the two is your interest rate. It is a sophisticated strategy and is not suitable for everyone." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a box spread cheaper than a HELOC for a home renovation?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For an investor with a large taxable portfolio it often is. A HELOC is variable-rate, recently around 8% to 9% (May 2026), with interest deductible only for home improvements and only within the $750,000 cap. A five-year box spread recently implied about 4.6% and its cost is treated as an uncapped Section 1256 capital loss. The HELOC can still win for a homeowner who wants simple, revolving access and qualifies for the home-improvement deduction." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the tax treatment matter so much?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Mortgage and qualifying HELOC interest is deductible only on the first $750,000 of acquisition debt, a cap the One Big Beautiful Bill Act made permanent in 2025. A box spread's cost is realized as a capital loss under Section 1256, which has no such cap and can offset capital gains elsewhere in your portfolio. For a high-bracket investor with gains, that difference can be worth tens of thousands of dollars a year." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the optimal structure?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A common approach is a $750,000 traditional mortgage, sized to fully capture the mortgage-interest deduction, plus a box spread for the remaining balance. That captures the deductible mortgage interest and the uncapped Section 1256 treatment at the same time, while leaving your portfolio invested." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the biggest risks?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You are borrowing against your portfolio rather than your home, so a market drawdown hits you twice. The position must be rolled at maturity, it carries liquidity risk in a market crisis, it requires margin and liquid collateral, and it is not permitted in retirement accounts. The tax benefit only applies if you have capital gains for the loss to offset." }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is this strategy for?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It is generally relevant only for investors with a large taxable portfolio, meaningful realized gains, no pressing need to deduct mortgage interest, and a high tolerance for complexity and leverage. For most buyers a mortgage or a HELOC remains simpler and more appropriate." }
+    }
+  ]
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1HFD429BTQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1HFD429BTQ');
+</script></head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
+    <a href="/insights.html" class="nav-back">
+      <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M6 1L1 5M1 5L6 9M1 5H13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      All Issues
+    </a>
+  </div>
+</nav>
+
+<section class="issue-hero">
+  <div class="hero-watermark">STQ</div>
+  <div class="hero-container">
+    <h1>A Better Way to Buy (or Build) a Home</h1>
+    <p class="issue-subhead">Almost every client's advisor reaches for a HELOC. For an investor with a large taxable portfolio, it is usually the most expensive option on the table &mdash; and there is a far more powerful one most advisors never mention.</p>
+    <div class="issue-meta">
+      <span class="meta-category">Tax Alpha</span>
+      <span class="meta-dot"></span>
+      <span class="meta-date">June 4, 2026</span>
+    </div>
+  </div>
+</section>
+
+<div class="issue-content">
+  <div class="author-block">
+    <div class="author-avatar">AG</div>
+    <div>
+      <div class="author-name">Akiva Glazerson</div>
+      <div class="author-title">Principal, STQ Capital</div>
+    </div>
+    <div class="read-time">7 min read</div>
+  </div>
+
+  <div class="issue-body">
+
+    <div class="takeaways">
+      <div class="takeaways-label">Key Takeaways</div>
+      <ul>
+        <li>Most advisors default to a home equity line of credit (HELOC) for a build or renovation, but for an investor with a large taxable portfolio it is often the <strong>most expensive</strong> of the three main options.</li>
+        <li>A <strong>box spread</strong> is a set of four S&amp;P 500 index (SPX) option positions that together behave like a fixed-term loan. Because it is priced off index options, the implied rate tracks US Treasury yields &mdash; recently about <strong>4.6%</strong> for a five-year term (May 2026) versus roughly 7% on a jumbo mortgage and 8&ndash;9% on a variable HELOC.</li>
+        <li>A HELOC is variable-rate, secured by a lien on your home, and its interest is deductible only when the money is used to buy, build, or substantially improve that home &mdash; and only within the same $750,000 acquisition-debt cap that applies to a mortgage.</li>
+        <li>Under Internal Revenue Code Section 1256, the financing cost of a box spread shows up as a <strong>capital loss</strong> rather than as interest, so it has no $750,000 deduction cap and can offset capital gains you are already realizing in the portfolio.</li>
+        <li>The structure that usually wins: a <strong>$750,000 traditional mortgage plus a box spread for the balance</strong>. In the illustrative $2,000,000 example below, that combination costs about <strong>$72,600</strong> a year after tax versus about <strong>$121,600</strong> for a straight jumbo mortgage &mdash; a saving near <strong>$49,000 a year</strong>.</li>
+        <li>It is not free money. You are borrowing against your portfolio, so a market drawdown hits you twice, the position has to be rolled at maturity, and the tax benefit only matters if you actually have gains for the loss to offset.</li>
+      </ul>
+    </div>
+
+    <p>Lately I have had more conversations about home purchases and renovations than almost anything else. And almost every client tells me the same thing: their advisor suggested a home equity line of credit, a HELOC. It is the reflexive answer, and for many homeowners it is a perfectly reasonable one. But for a client with a large taxable investment portfolio, it is usually the most expensive way to borrow, and there is a far more powerful option that most advisors have never put on the table.</p>
+
+    <p>That option is a <a href="/insights.html">box spread</a>. Hedge funds and family offices have used it for decades. Here is how it works, costed side by side with the two routes you already know.</p>
+
+    <h2>The three ways to finance a build or renovation</h2>
+
+    <h3>The HELOC</h3>
+    <p>A HELOC is a revolving line secured by a second lien on your home. The rate is variable, tied to the prime rate, and recently has run roughly 8% to 9% (May 2026). The interest is deductible only when you use the money to buy, build, or substantially improve the home that secures the line, and even then only within the same $750,000 acquisition-debt cap that limits mortgage interest. So a HELOC can work for a true home improvement, but the rate floats against you, the lien sits on your house, and the deduction is capped.</p>
+
+    <h3>The jumbo mortgage</h3>
+    <p>A 30-year fixed jumbo mortgage runs about 7% as of May 2026, depending on credit and terms. The bank takes a lien on the home, the loan amortizes, and principal plus interest leave your account every month. The deduction is smaller than most people assume: since the 2017 tax law, whose $750,000 cap the One Big Beautiful Bill Act made permanent in 2025, you can deduct interest only on the first $750,000 of acquisition debt. On a $2,000,000 loan, that is interest on less than 40% of the balance. The rest is not deductible at all.</p>
+
+    <h3>The box spread</h3>
+    <p>A box spread is four S&amp;P 500 index (SPX) option positions that, combined, act like a fixed-term loan. You receive cash today and agree to repay a set amount on a chosen future date. The gap between the two is your interest rate. Because it is built on index options rather than sold by a bank, the implied rate tracks Treasury yields &mdash; about 4.6% for a five-year term in May 2026, against a five-year Treasury near 4.27%.</p>
+
+    <p>You pledge your brokerage portfolio rather than your home. There is no monthly payment; the cost settles when the box matures, and you roll it at the end of the term. And the tax treatment is the real edge. Under Internal Revenue Code Section 1256, the financing cost is realized as a capital loss, treated as 60% long-term and 40% short-term, rather than as non-deductible interest. For an investor already realizing capital gains, that loss is worth roughly the capital-gains rate it offsets. Critically, there is no $750,000 cap on it.</p>
+
+    <h2>The structure that usually wins</h2>
+    <p>You do not have to choose one extreme. The structure I most often model is a hybrid:</p>
+    <ul class="build-list">
+      <li>A <strong>$750,000 traditional mortgage</strong>, sized precisely to capture the full mortgage-interest deduction.</li>
+      <li>A <strong>box spread for the remaining balance</strong>, where the cost lands as an uncapped Section 1256 capital loss.</li>
+    </ul>
+
+    <div class="pull-quote">
+      <p>Two deductions, two lower after-tax rates, and your portfolio stays intact: no appreciated assets sold, no capital gains triggered, no upside forfeited.</p>
+    </div>
+
+    <h2>A worked example</h2>
+    <p>This example is illustrative. Assume you are financing $2,000,000 of a home purchase or build and you are a top-bracket taxpayer. The rates are the May 2026 figures above. I assume the mortgage interest is deductible at a 35% marginal ordinary rate and that the box spread's capital loss is worth about a third (33%) against the gains it offsets. Your own numbers will differ.</p>
+
+    <figure class="chart-figure">
+      <img src="/stq_box_home.png" alt="Interest tax deduction and savings with box spreads, per year. A $750,000 mortgage tranche costs $34.1K after tax at a 4.55% rate; a $1.25MM box spread tranche costs $38.5K after tax at a 3.08% rate; total interest is $72.6K versus a straight mortgage, saving $49.0K per year.">
+      <figcaption>The hybrid structure visualized: a $750K mortgage tranche (4.55% after tax) stacked on a $1.25MM box-spread tranche (3.08% after tax) &mdash; about $72.6K total cost of carry, and roughly $49.0K saved per year versus a straight jumbo mortgage.</figcaption>
+    </figure>
+
+    <h3>The hybrid structure</h3>
+    <table class="cost-table">
+      <thead>
+        <tr><th>Component</th><th>After-tax cost / year</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>$750,000 mortgage at 7%, fully deductible &mdash; after-tax rate ~4.55%</td><td>~$34,100</td></tr>
+        <tr><td>$1,250,000 box spread at 4.6%, cost realized as a Section 1256 capital loss &mdash; after-tax rate ~3.08%</td><td>~$38,500</td></tr>
+        <tr class="total"><td>Total after-tax cost of carry</td><td>~$72,600</td></tr>
+      </tbody>
+    </table>
+
+    <h3>A straight $2,000,000 jumbo mortgage at 7%</h3>
+    <table class="cost-table">
+      <thead>
+        <tr><th>Component</th><th>Amount / year</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Gross interest</td><td>~$140,000</td></tr>
+        <tr><td>Deductible interest (first $750,000 only), worth ~$18,400 at 35%</td><td>&minus;$18,400</td></tr>
+        <tr class="total"><td>After-tax cost of carry</td><td>~$121,600</td></tr>
+      </tbody>
+    </table>
+
+    <p>The difference is close to <strong>$49,000 a year</strong>, before you even count the cash flow you keep by not amortizing the full balance. Over a five-year term, that is real money on a single financing decision.</p>
+
+    <h2>When the box spread wins, and when it does not</h2>
+    <p>It wins for a client with a large taxable portfolio, meaningful realized gains for the loss to offset, no particular need to deduct mortgage interest, and the temperament to carry leverage against investments. It is at its best when you are financing around an <a href="/insights.html">appreciated portfolio you do not want to sell</a>.</p>
+
+    <p>It is the wrong tool for a smaller portfolio, for anyone likely to move or refinance within a few years (roll and unwind costs eat the edge), and for an investor who cannot tolerate a market drawdown amplifying against a loan. The Section 1256 benefit only matters if you have gains to absorb the loss; with no realized gains, the math is far less compelling. And a box spread is not permitted in retirement accounts.</p>
+
+    <h2>The honest trade-offs</h2>
+    <p>A box spread is not free money. You are borrowing against your portfolio, not your house, so a market drawdown hits both sides of your balance sheet at once. There is no foreclosure, but there is roll risk when the term ends and liquidity risk in a market crisis. The strategy requires margin and liquid investments as collateral, and execution matters. For the right balance sheet the math is hard to ignore. For most people a mortgage, or a HELOC for a genuine improvement, is still the right call. The point is to know there is a choice.</p>
+
+    <p>If you are buying, building, or renovating, and your taxable portfolio is in seven figures, let's talk and I will walk through all three paths with your actual numbers.</p>
+
+    <div class="faq-section">
+      <h2>Frequently asked questions</h2>
+
+      <div class="faq-item">
+        <h3>What is a box spread, in plain terms?</h3>
+        <p>A box spread is a combination of four S&amp;P 500 index (SPX) options that together behave like a fixed-term loan. You receive cash today and repay a set amount at a chosen future date, and the difference between the two is your interest rate. It is a sophisticated strategy and is not suitable for everyone.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is a box spread cheaper than a HELOC for a home renovation?</h3>
+        <p>For an investor with a large taxable portfolio it often is. A HELOC is variable-rate, recently around 8% to 9% (May 2026), with interest deductible only for home improvements and only within the $750,000 cap. A five-year box spread recently implied about 4.6% and its cost is treated as an uncapped Section 1256 capital loss. The HELOC can still win for a homeowner who wants simple, revolving access and qualifies for the home-improvement deduction.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Why does the tax treatment matter so much?</h3>
+        <p>Mortgage and qualifying HELOC interest is deductible only on the first $750,000 of acquisition debt, a cap the One Big Beautiful Bill Act made permanent in 2025. A box spread's cost is realized as a capital loss under Section 1256, which has no such cap and can offset capital gains elsewhere in your portfolio. For a high-bracket investor with gains, that difference can be worth tens of thousands of dollars a year.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is the optimal structure?</h3>
+        <p>A common approach is a $750,000 traditional mortgage, sized to fully capture the mortgage-interest deduction, plus a box spread for the remaining balance. That captures the deductible mortgage interest and the uncapped Section 1256 treatment at the same time, while leaving your portfolio invested.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What are the biggest risks?</h3>
+        <p>You are borrowing against your portfolio rather than your home, so a market drawdown hits you twice. The position must be rolled at maturity, it carries liquidity risk in a market crisis, it requires margin and liquid collateral, and it is not permitted in retirement accounts. The tax benefit only applies if you have capital gains for the loss to offset.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Who is this strategy for?</h3>
+        <p>It is generally relevant only for investors with a large taxable portfolio, meaningful realized gains, no pressing need to deduct mortgage interest, and a high tolerance for complexity and leverage. For most buyers a mortgage or a HELOC remains simpler and more appropriate.</p>
+      </div>
+    </div>
+
+    <p class="disclaimer-inline">This is informational only and not personalized tax, legal, or investment advice. All dollar figures are illustrative, assume a top-bracket taxpayer, and use May to June 2026 rates (jumbo mortgage about 7%, five-year SPX box about 4.6%, HELOC about 8% to 9%). The value of the Section 1256 capital loss depends on the gains you have available to offset and on current law.</p>
+
+  </div>
+
+  <div class="issue-cta">
+    <p>Buying, building, or renovating with a seven-figure taxable portfolio? Let's walk through all three paths with your actual numbers.</p>
+    <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary">Schedule a Call</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-main">
+      <div class="footer-logo">STQ <span>/ Capital</span></div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
+        <a href="/insights.html">Newsletter</a>
+        <a href="/research.html">Research</a>
+        <a href="/#contact">Contact</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 STQ Capital</div>
+    </div>
+    <div class="footer-disclaimer">Advisory services are offered through STQ Capital, an investment adviser registered with the state of California. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss.</div>
+  </div>
+</footer>
+
+</body>
+</html>
