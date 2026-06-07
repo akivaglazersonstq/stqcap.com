@@ -90,7 +90,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(240,239,235
 @media(max-width:900px){.how-grid{grid-template-columns:1fr;gap:40px;}}
 
 /* COMPARISON */
-.compare-section{padding:80px 0;background:var(--cream-dark);position:relative;z-index:1;}
+.compare-section{padding:64px 0;background:var(--cream-dark);position:relative;z-index:1;}
 .compare-tabs{display:flex;gap:0;margin-bottom:32px;border:1px solid rgba(27,46,75,0.1);border-radius:6px;overflow:hidden;width:fit-content;}
 .compare-tab{font-family:var(--font-heading);font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:10px 20px;cursor:pointer;background:var(--white);color:var(--text-secondary);border:none;transition:all 0.2s ease;}
 .compare-tab.active{background:var(--navy);color:var(--cream);}
@@ -243,140 +243,139 @@ footer{background:var(--navy-dark);padding:40px 0 28px;position:relative;z-index
 <!-- HOW IT WORKS -->
 <section class="how-section">
   <div class="container">
-    <div class="how-grid">
-      <div>
-        <div class="section-label">How It Works</div>
-        <h2 style="font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.25rem);font-weight:700;color:var(--navy);letter-spacing:-0.02em;margin-top:12px;margin-bottom:8px;line-height:1.2;">Borrow from the market, not the bank.</h2>
-        <p style="font-size:1rem;line-height:1.8;color:var(--text-secondary);margin-bottom:0;">A box spread is a four-leg options structure on the S&amp;P 500 Index. It creates a fully hedged position with a fixed, known payoff at expiration, functioning like a zero-coupon bond. You receive cash today and repay a fixed amount at settlement. The difference is your borrowing cost, set entirely by market forces.</p>
-        <div class="how-steps">
-          <div class="how-step">
-            <div class="how-num">01</div>
-            <div class="how-content">
-              <h4>Execute the box spread</h4>
-              <p>STQ places a four-leg options trade on a broad index (XSP). The structure is fully hedged with no directional market exposure.</p>
-            </div>
-          </div>
-          <div class="how-step">
-            <div class="how-num">02</div>
-            <div class="how-content">
-              <h4>Receive cash upfront</h4>
-              <p>The net premium collected hits your account within days. Typically 95–97 cents on the dollar for a 1-year loan at current rates.</p>
-            </div>
-          </div>
-          <div class="how-step">
-            <div class="how-num">03</div>
-            <div class="how-content">
-              <h4>Use the proceeds however you want</h4>
-              <p>Real estate purchase, tax bill, business investment, home improvement. Unlike a HELOC or SBLOC, the deduction follows the loan, not the use.</p>
-            </div>
-          </div>
-          <div class="how-step">
-            <div class="how-num">04</div>
-            <div class="how-content">
-              <h4>Repay at expiration</h4>
-              <p>A fixed amount is settled at expiration. No variable rates, no bank discretion. Roll it, extend it, or pay it off.</p>
-            </div>
-          </div>
+    <div class="section-label">How It Works</div>
+    <h2 style="font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.25rem);font-weight:700;color:var(--navy);letter-spacing:-0.02em;margin-top:12px;margin-bottom:8px;line-height:1.2;">Borrow from the market, not the bank.</h2>
+    <p style="font-size:1rem;line-height:1.8;color:var(--text-secondary);margin-bottom:0;max-width:640px;">A box spread is a four-leg options structure on the S&P 500 Index. It creates a fully hedged position with a fixed, known payoff at expiration, functioning like a zero-coupon bond. You receive cash today and repay a fixed amount at settlement. The difference is your borrowing cost, set entirely by market forces.</p>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-num">01</div>
+        <div class="how-content">
+          <h4>Execute the box spread</h4>
+          <p>STQ places a four-leg options trade on a broad index (XSP). The structure is fully hedged with no directional market exposure.</p>
         </div>
       </div>
-      <div>
-        <div style="background:var(--white);border:1px solid rgba(27,46,75,0.07);border-radius:12px;padding:40px 48px;">
+      <div class="how-step">
+        <div class="how-num">02</div>
+        <div class="how-content">
+          <h4>Receive cash upfront</h4>
+          <p>The net premium collected hits your account within days. Typically 95–97 cents on the dollar for a 1-year loan at current rates.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">03</div>
+        <div class="how-content">
+          <h4>Use the proceeds however you want</h4>
+          <p>Real estate purchase, tax bill, business investment, home improvement. Unlike a HELOC or SBLOC, the deduction follows the loan, not the use.</p>
+        </div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">04</div>
+        <div class="how-content">
+          <h4>Repay at expiration</h4>
+          <p>A fixed amount is settled at expiration. No variable rates, no bank discretion. Roll it, extend it, or pay it off.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <style>
-    .calc-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:8px;}
-    .calc-top-note{font-size:13px;color:var(--text-secondary);}
-    .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
-    .calc-left{display:flex;flex-direction:column;gap:24px;}
-    .calc-right{display:flex;flex-direction:column;gap:12px;}
-    .csg{display:flex;flex-direction:column;gap:8px;}
+<!-- CALCULATOR -->
+<section style="padding:64px 0;background:var(--cream-dark);position:relative;z-index:1;">
+  <div class="container">
+    <div class="section-label">Calculator</div>
+    <h2 style="font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.25rem);font-weight:700;color:var(--navy);letter-spacing:-0.02em;margin-top:12px;margin-bottom:32px;line-height:1.2;">See what it costs you.</h2>
+        <style>
+    .calc-note{font-size:0.8125rem;color:var(--text-secondary);margin-bottom:24px;}
+    .csg{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
     .csg-top{display:flex;justify-content:space-between;align-items:center;}
     .csg-top label{font-family:var(--font-body);font-size:0.875rem;color:var(--text-secondary);}
     .csg-top .cval{font-family:var(--font-heading);font-size:0.9375rem;font-weight:600;color:var(--navy);background:var(--cream-dark);padding:3px 12px;border-radius:4px;}
     input[type=range]{width:100%;accent-color:#1B2E4B;height:4px;cursor:pointer;}
-    .cstat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-    .cstat{background:var(--cream-dark);border-radius:6px;padding:14px 16px;}
-    .cstat-label{font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(27,46,75,0.4);margin-bottom:6px;}
-    .cstat-val{font-family:var(--font-heading);font-size:1.125rem;font-weight:700;color:var(--navy);}
-    .chero{background:var(--navy);border-radius:10px;padding:24px 24px 20px;color:var(--cream);}
+    .cstat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px;align-content:start;}
+    .cstat{background:var(--cream-dark);border-radius:6px;padding:12px 14px;}
+    .cstat-label{font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(27,46,75,0.4);margin-bottom:4px;}
+    .cstat-val{font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--navy);}
+    .chero{background:var(--navy);border-radius:10px;padding:24px 24px 20px;color:var(--cream);margin-top:0;}
     .chero-label{font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;opacity:0.45;margin-bottom:8px;}
-    .chero-rate{font-family:var(--font-heading);font-size:2.75rem;font-weight:700;line-height:1;margin-bottom:4px;}
+    .chero-rate{font-family:var(--font-heading);font-size:2.5rem;font-weight:700;line-height:1;margin-bottom:4px;}
     .chero-sub{font-size:0.8125rem;opacity:0.5;}
-    .chero-divider{border:none;border-top:1px solid rgba(240,239,235,0.1);margin:16px 0;}
+    .chero-divider{border:none;border-top:1px solid rgba(240,239,235,0.1);margin:14px 0;}
     .chero-row{display:flex;justify-content:space-between;align-items:baseline;font-size:0.8125rem;}
     .chero-row .ck{opacity:0.5;}
     .chero-row .cv{font-family:var(--font-heading);font-weight:600;}
     .chero-note{background:rgba(240,239,235,0.06);border:1px solid rgba(240,239,235,0.1);border-radius:6px;padding:10px 14px;margin-top:14px;}
     .chero-note p{font-size:0.75rem;color:rgba(240,239,235,0.5);line-height:1.6;margin:0;}
-    .ccmp{background:var(--white);border:1px solid rgba(27,46,75,0.08);border-radius:8px;padding:16px 18px;}
-    .ccmp-head{font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(27,46,75,0.4);margin-bottom:12px;}
-    .ccmp-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:0.5px solid rgba(27,46,75,0.07);font-size:0.875rem;}
+    .ccmp{background:var(--white);border:1px solid rgba(27,46,75,0.08);border-radius:8px;padding:14px 16px;margin-top:12px;}
+    .ccmp-head{font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(27,46,75,0.4);margin-bottom:10px;}
+    .ccmp-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:0.5px solid rgba(27,46,75,0.07);font-size:0.875rem;}
     .ccmp-row:last-child{border:none;}
     .ccmp-row .cl{color:var(--text-secondary);}
     .ccmp-row .cr{font-family:var(--font-heading);font-weight:600;color:var(--text-secondary);}
     .ccmp-row .cr.win{color:var(--navy);}
     .ccmp-row .cbadge{font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;background:var(--navy);color:var(--cream);padding:2px 8px;border-radius:3px;}
-    .cdisc{font-size:0.6875rem;color:var(--text-secondary);opacity:0.55;line-height:1.6;margin-top:8px;}
-    @media(max-width:768px){.calc-grid{grid-template-columns:1fr;}}
+    .cdisc{font-size:0.6875rem;color:var(--text-secondary);opacity:0.55;line-height:1.6;margin-top:10px;}
     </style>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch;">
+      <div style="display:flex;flex-direction:column;gap:20px;">
 
-    <div class="calc-top">
-      <div></div>
-      <div class="calc-top-note">Adjust sliders to see your cost</div>
+    <div class="calc-note">Adjust sliders to see your cost</div>
+
+    <div class="csg">
+      <div class="csg-top"><label>Portfolio value</label><span class="cval" id="cl-port">$1,000,000</span></div>
+      <input type="range" min="250000" max="10000000" step="50000" value="1000000" id="cs-port" oninput="cgo()">
     </div>
-    <div class="calc-grid">
-      <div class="calc-left">
-        <div class="csg">
-          <div class="csg-top"><label>Portfolio value</label><span class="cval" id="cl-port">$1,000,000</span></div>
-          <input type="range" min="250000" max="10000000" step="50000" value="1000000" id="cs-port" oninput="cgo()">
-        </div>
-        <div class="csg">
-          <div class="csg-top"><label>Loan-to-value (LTV)</label><span class="cval" id="cl-ltv">50%</span></div>
-          <input type="range" min="5" max="85" step="5" value="50" id="cs-ltv" oninput="cgo()">
-        </div>
-        <div class="csg">
-          <div class="csg-top"><label>Loan term</label><span class="cval" id="cl-term">1 Year</span></div>
-          <input type="range" min="1" max="5" step="1" value="1" id="cs-term" oninput="cgo()">
-        </div>
-        <div class="csg">
-          <div class="csg-top"><label>Federal tax bracket</label><span class="cval" id="cl-brk">37%</span></div>
-          <input type="range" min="22" max="37" step="1" value="37" id="cs-brk" oninput="cgo()">
-        </div>
-        <div class="cstat-grid">
-          <div class="cstat"><div class="cstat-label">Loan amount</div><div class="cstat-val" id="co-loan">$500,000</div></div>
-          <div class="cstat"><div class="cstat-label">Annual interest</div><div class="cstat-val" id="co-int">$21,250</div></div>
-          <div class="cstat"><div class="cstat-label">Tax savings</div><div class="cstat-val" id="co-sav">$6,716</div></div>
-          <div class="cstat"><div class="cstat-label">Net annual cost</div><div class="cstat-val" id="co-net">$14,534</div></div>
-          <div class="cstat"><div class="cstat-label">Stated rate</div><div class="cstat-val" id="co-stated">4.25%</div></div>
-        </div>
+    <div class="csg">
+      <div class="csg-top"><label>Loan-to-value (LTV)</label><span class="cval" id="cl-ltv">50%</span></div>
+      <input type="range" min="5" max="85" step="5" value="50" id="cs-ltv" oninput="cgo()">
+    </div>
+    <div class="csg">
+      <div class="csg-top"><label>Loan term</label><span class="cval" id="cl-term">1 Year</span></div>
+      <input type="range" min="1" max="5" step="1" value="1" id="cs-term" oninput="cgo()">
+    </div>
+    <div class="csg">
+      <div class="csg-top"><label>Federal tax bracket</label><span class="cval" id="cl-brk">37%</span></div>
+      <input type="range" min="22" max="37" step="1" value="37" id="cs-brk" oninput="cgo()">
+    </div>
+
+    <div class="cstat-grid" style="flex:1;">
+      <div class="cstat"><div class="cstat-label">Loan amount</div><div class="cstat-val" id="co-loan">$500,000</div></div>
+      <div class="cstat"><div class="cstat-label">Annual interest</div><div class="cstat-val" id="co-int">$21,250</div></div>
+      <div class="cstat"><div class="cstat-label">Tax savings</div><div class="cstat-val" id="co-sav">$6,716</div></div>
+      <div class="cstat"><div class="cstat-label">Net annual cost</div><div class="cstat-val" id="co-net">$14,534</div></div>
+      <div class="cstat"><div class="cstat-label">Stated rate</div><div class="cstat-val" id="co-stated">4.25%</div></div>
+    </div>
+    <p class="cdisc">Illustrative only. Loan amount capped at 85% of portfolio value for illustration purposes. Actual borrowing capacity depends on portfolio composition, account type, and market conditions. Effective rate assumes Section 1256 60/40 treatment at selected federal bracket. LTCG fixed at 20%. State taxes excluded. Consult a qualified tax advisor before implementing.</p>
       </div>
-      <div class="calc-right">
-        <div class="chero">
-          <div class="chero-label">Your effective borrowing rate</div>
-          <div class="chero-rate" id="co-eff">2.91%</div>
-          <div class="chero-sub">After Section 1256 tax benefit · <span id="co-term-lbl">1-year</span> term</div>
-          <hr class="chero-divider">
-          <div class="chero-row"><span class="ck">Stated rate</span><span class="cv" id="ch-stated">4.25%</span></div>
-          <div class="chero-row" style="margin-top:8px;"><span class="ck">LTCG offset (60%)</span><span class="cv" id="ch-ltcg">–0.51%</span></div>
-          <div class="chero-row" style="margin-top:8px;"><span class="ck">STCG offset (40%)</span><span class="cv" id="ch-stcg">–0.63%</span></div>
-          <hr class="chero-divider">
-          <div class="chero-row"><span class="ck" style="opacity:0.85;font-weight:600;">Effective rate</span><span class="cv" id="ch-eff" style="font-size:1rem;">2.91%</span></div>
-          <div class="chero-note">
-            <p>Box spread interest is classified as a capital loss under Section 1256, not interest expense. The IRS splits it 60% long-term / 40% short-term, generating a deduction that directly reduces your borrowing cost. The effective rate is what you actually pay after that benefit.</p>
-          </div>
-        </div>
-        <div class="ccmp">
-          <div class="ccmp-head">vs. other borrowing options</div>
-          <div class="ccmp-row"><span class="cl">Box spread (STQ)</span><span class="cr win" id="cc-box">2.91%</span><span class="cbadge">Best</span></div>
-          <div class="ccmp-row"><span class="cl">HELOC</span><span class="cr">4.8 – 6.5%</span></div>
-          <div class="ccmp-row"><span class="cl">SBLOC</span><span class="cr">5.0 – 7.0%</span></div>
-          <div class="ccmp-row"><span class="cl">Margin loan</span><span class="cr">7 – 9%+</span></div>
-        </div>
-        <p class="cdisc">Illustrative only. Loan amount capped at 85% of portfolio value for illustration purposes. Actual borrowing capacity depends on portfolio composition, account type, and market conditions. Effective rate assumes Section 1256 60/40 treatment at selected federal bracket. LTCG fixed at 20%. State taxes excluded. Consult a qualified tax advisor before implementing.</p>
+
+      <div style="display:flex;flex-direction:column;gap:12px;">
+    <div class="chero" style="flex:1;">
+      <div class="chero-label">Your effective borrowing rate</div>
+      <div class="chero-rate" id="co-eff">2.91%</div>
+      <div class="chero-sub">After Section 1256 tax benefit · <span id="co-term-lbl">1-year</span> term</div>
+      <hr class="chero-divider">
+      <div class="chero-row"><span class="ck">Stated rate</span><span class="cv" id="ch-stated">4.25%</span></div>
+      <div class="chero-row" style="margin-top:8px;"><span class="ck">LTCG offset (60%)</span><span class="cv" id="ch-ltcg">–0.51%</span></div>
+      <div class="chero-row" style="margin-top:8px;"><span class="ck">STCG offset (40%)</span><span class="cv" id="ch-stcg">–0.63%</span></div>
+      <hr class="chero-divider">
+      <div class="chero-row"><span class="ck" style="opacity:0.85;font-weight:600;">Effective rate</span><span class="cv" id="ch-eff" style="font-size:1rem;">2.91%</span></div>
+      <div class="chero-note">
+        <p>Box spread interest is classified as a capital loss under Section 1256, not interest expense. The IRS splits it 60% long-term / 40% short-term, generating a deduction that directly reduces your borrowing cost. The effective rate is what you actually pay after that benefit.</p>
       </div>
     </div>
+
+    <div class="ccmp">
+      <div class="ccmp-head">vs. other borrowing options</div>
+      <div class="ccmp-row"><span class="cl">Box spread (STQ)</span><span class="cr win" id="cc-box">2.91%</span><span class="cbadge">Best</span></div>
+      <div class="ccmp-row"><span class="cl">HELOC</span><span class="cr">4.8 – 6.5%</span></div>
+      <div class="ccmp-row"><span class="cl">SBLOC</span><span class="cr">5.0 – 7.0%</span></div>
+      <div class="ccmp-row"><span class="cl">Margin loan</span><span class="cr">7 – 9%+</span></div>
+    </div>
+      </div>
     </div>
   </div>
 </section>
+
+
 
 <script>
 var STQ_RATES={1:0.0425,2:0.0430,3:0.0432,4:0.0435,5:0.0438};
