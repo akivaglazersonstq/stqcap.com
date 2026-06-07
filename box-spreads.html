@@ -44,6 +44,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(240,239,235
 .nav-back{font-family:var(--font-heading);font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-secondary);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color 0.2s;}
 .nav-back:hover{color:var(--navy);}
 @media(max-width:768px){.nav-inner{padding:0 24px;}}
+@media(max-width:768px){
+  .hero{padding:100px 0 60px;}
+  .hero h1{font-size:2.25rem;}
+  .hero-buttons{flex-direction:column;align-items:flex-start;}
+  .rates-inner{flex-direction:column;align-items:flex-start;}
+  .rate-cards{width:100%;}
+  .rate-card{flex:1;min-width:0;}
+  .how-steps{margin-top:24px;}
+  .compare-tabs{width:100%;overflow-x:auto;}
+  .compare-table td,.compare-table th{padding:10px 12px;font-size:0.8rem;}
+  .faq-intro{margin-bottom:32px;}
+  .cta-section h2{font-size:1.75rem;}
+  .cta-buttons{flex-direction:column;align-items:center;}
+  .footer-main{flex-direction:column;text-align:center;}
+  .footer-links{justify-content:center;}
+}
 
 /* HERO */
 .hero{padding:148px 0 80px;background:var(--navy);position:relative;overflow:hidden;}
@@ -64,6 +80,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(240,239,235
 .benefit-text{font-size:0.9375rem;color:rgba(240,239,235,0.8);line-height:1.5;}
 .benefit-text strong{color:var(--cream);font-weight:600;}
 @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:40px;}.hero-right{display:none;}}
+@media(max-width:768px){.calc-grid-outer{grid-template-columns:1fr !important;gap:32px !important;}}
 
 /* RATES */
 .rates-section{background:var(--cream-dark);padding:40px 0;border-bottom:1px solid rgba(27,46,75,0.08);position:relative;z-index:1;}
@@ -88,6 +105,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(240,239,235
 .how-content h4{font-family:var(--font-heading);font-size:0.9375rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
 .how-content p{font-size:0.9rem;line-height:1.75;color:var(--text-secondary);}
 @media(max-width:900px){.how-grid{grid-template-columns:1fr;gap:40px;}}
+@media(max-width:480px){.cstat-grid{grid-template-columns:1fr;}}
 
 /* COMPARISON */
 .compare-section{padding:64px 0;background:var(--cream-dark);position:relative;z-index:1;}
@@ -315,7 +333,7 @@ footer{background:var(--navy-dark);padding:40px 0 28px;position:relative;z-index
     .ccmp-row .cbadge{font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;background:var(--navy);color:var(--cream);padding:2px 8px;border-radius:3px;}
     .cdisc{font-size:0.6875rem;color:var(--text-secondary);opacity:0.55;line-height:1.6;margin-top:10px;}
     </style>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch;">
+    <div class="calc-grid-outer" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch;">
       <div style="display:flex;flex-direction:column;gap:20px;">
 
     <div class="calc-note">Adjust sliders to see your cost</div>
