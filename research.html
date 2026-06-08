@@ -4,25 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
-<title>Insights – STQ Capital | Tax-Aware Wealth Management</title>
-<meta name="description" content="Daily tax-aware insights from STQ Capital. Box spread lending, tax loss harvesting, asset location, and institutional strategies for high-income investors.">
+<style>:root{color-scheme:light only;}</style>
+<title>Research – STQ Capital | Tax-Aware Investment Strategies</title>
+<meta name="description" content="Institutional-grade research on tax-aware investing, box spread lending, asset location, and options strategies from STQ Capital .">
+<meta name="keywords" content="box spread RIA, asset location research, tax loss harvesting guide, tax-aware investing, California RIA research, covered call strategy, fortress trade, synthetic borrowing">
+<meta property="og:title" content="Research – STQ Capital">
+<meta property="og:description" content="Institutional-grade research on tax-aware investing, box spreads, and options strategies.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stqcap.com/research.html">
+<link rel="canonical" href="https://stqcap.com/research.html">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%231B2E4B'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='22' fill='%23F0EFEB' letter-spacing='-1'>STQ</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+@font-face { font-family: "Chakra Petch"; font-display: swap; }
+@font-face { font-family: "DM Sans"; font-display: swap; }
+
 :root {
- --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
- --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF;
- --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7);
- --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
- --ease: cubic-bezier(0.25,0.46,0.45,0.94); --ease-out: cubic-bezier(0.16,1,0.3,1);
+  --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
+  --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF;
+  --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7);
+  --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.25,0.46,0.45,0.94); --ease-out: cubic-bezier(0.16,1,0.3,1);
 }
+
 html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
 body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(27,46,75,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
 .container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
 .nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; }
@@ -34,6 +46,9 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 12px 28px; border-radius: 4px; text-decoration: none; transition: all 0.3s var(--ease); cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
 .btn-primary { background: var(--navy); color: var(--cream); }
 .btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.nav-client-login { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; transition: border-color 0.2s ease, background 0.2s ease; }
+.nav-client-login:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
+
 .page-hero { padding: 140px 0 72px; background: var(--navy); position: relative; overflow: hidden; border-bottom: 1px solid rgba(27,46,75,0.08); }
 .page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
 .hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
@@ -42,37 +57,54 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .page-hero-tag::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: rgba(240,239,235,0.3); }
 .page-hero h1 { font-family: var(--font-heading); font-size: clamp(2.5rem,5vw,4rem); font-weight: 700; color: var(--cream); letter-spacing: -0.02em; margin-bottom: 20px; line-height: 1.1; }
 .page-hero p { font-size: 1.125rem; color: var(--text-light); max-width: 560px; line-height: 1.7; }
-.filter-bar { padding: 32px 0; position: relative; z-index: 1; border-bottom: 1px solid rgba(27,46,75,0.08); background: var(--cream); }
-.filter-inner { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-.filter-label { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); margin-right: 8px; }
-.filter-btn { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 8px 18px; border-radius: 4px; border: 1px solid rgba(27,46,75,0.15); background: transparent; color: var(--text-secondary); cursor: pointer; transition: all 0.2s ease; }
-.filter-btn:hover, .filter-btn.active { background: var(--navy); color: var(--cream); border-color: var(--navy); }
-.issues-section { padding: 64px 0 120px; position: relative; z-index: 1; }
-.issues-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
-.issue-card { background: var(--white); border: 1px solid rgba(27,46,75,0.08); border-radius: 6px; text-decoration: none; display: block; position: relative; overflow: hidden; transition: all 0.3s var(--ease); padding: 28px; }
-.issue-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--navy); transform: scaleX(0); transform-origin: left; transition: transform 0.3s var(--ease); }
-.issue-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(27,46,75,0.08); border-color: rgba(27,46,75,0.15); }
-.issue-card:hover::after { transform: scaleX(1); }
-.issue-card-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-.issue-card-tag { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--navy); background: var(--cream-dark); padding: 3px 10px; border-radius: 3px; }
-.issue-card-date { font-family: var(--font-heading); font-size: 0.6rem; color: var(--text-secondary); letter-spacing: 0.08em; }
-.issue-card-title { font-family: var(--font-heading); font-size: 1.0625rem; font-weight: 700; color: var(--navy); line-height: 1.4; letter-spacing: -0.01em; margin-bottom: 12px; }
-.issue-card-preview { font-size: 0.875rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 24px; }
-.issue-card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid rgba(27,46,75,0.06); }
-.issue-card-read { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); display: flex; align-items: center; gap: 4px; }
-.issue-card-read::after { content: '→'; }
-.empty-state { grid-column: 1 / -1; text-align: center; padding: 80px 0; color: var(--text-secondary); }
-.insights-signup { background: var(--navy); padding: 80px 0; position: relative; z-index: 1; overflow: hidden; }
-.insights-signup::before { content: 'STQ'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-family: var(--font-heading); font-weight: 700; font-size: 16rem; color: rgba(240,239,235,0.02); pointer-events: none; }
-.signup-inner { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
-.signup-inner h2 { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; color: var(--cream); letter-spacing: -0.01em; }
-.signup-inner p { font-size: 0.9375rem; color: var(--text-light); margin-top: 8px; }
-.signup-form { display: flex; gap: 12px; }
-.signup-form input { font-family: var(--font-body); font-size: 0.875rem; padding: 14px 20px; border: 1px solid rgba(240,239,235,0.2); border-radius: 4px; background: rgba(240,239,235,0.08); color: var(--cream); width: 280px; outline: none; transition: border-color 0.2s ease; }
-.signup-form input::placeholder { color: rgba(240,239,235,0.4); }
-.signup-form input:focus { border-color: rgba(240,239,235,0.5); }
+
+.featured-section { padding: 64px 0 0; position: relative; z-index: 1; }
+.featured-label { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); position: relative; padding-left: 20px; margin-bottom: 32px; }
+.featured-label::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: var(--navy); }
+.featured-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--white); border: 1px solid rgba(27,46,75,0.08); border-radius: 6px; overflow: hidden; margin-bottom: 24px; text-decoration: none; transition: all 0.3s var(--ease); }
+.featured-card:hover { transform: translateY(-3px); box-shadow: 0 24px 64px rgba(27,46,75,0.08); }
+.featured-card-left { background: var(--navy); padding: 48px 44px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
+.featured-card-left::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
+.featured-card-watermark { position: absolute; right: -20px; bottom: -40px; font-family: var(--font-heading); font-size: 160px; font-weight: 700; color: rgba(240,239,235,0.04); line-height: 1; pointer-events: none; }
+.featured-card-tag { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.4); margin-bottom: 16px; position: relative; z-index: 1; }
+.featured-card-title { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--cream); line-height: 1.3; letter-spacing: -0.01em; position: relative; z-index: 1; }
+.featured-card-read { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(240,239,235,0.5); position: relative; z-index: 1; display: flex; align-items: center; gap: 8px; margin-top: 32px; }
+.featured-card-read::after { content: '→'; }
+.featured-card-right { padding: 48px 44px; display: flex; flex-direction: column; justify-content: center; }
+.featured-card-desc { font-size: 1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 24px; }
+.featured-card-meta { display: flex; gap: 20px; flex-wrap: wrap; }
+.featured-card-meta-item { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(27,46,75,0.35); }
+.featured-card-meta-item span { color: var(--text-secondary); margin-left: 6px; }
+.featured-card-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--cream-dark); border-radius: 4px; padding: 6px 12px; font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 20px; width: fit-content; }
+
+.research-section { padding: 48px 0 120px; position: relative; z-index: 1; }
+.research-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.research-card { background: var(--white); border: 1px solid rgba(27,46,75,0.08); border-radius: 6px; padding: 32px 28px; text-decoration: none; display: block; transition: all 0.3s var(--ease); position: relative; overflow: hidden; }
+.research-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--navy); transform: scaleX(0); transform-origin: left; transition: transform 0.3s var(--ease); }
+.research-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(27,46,75,0.08); }
+.research-card:hover::before { transform: scaleX(1); }
+.research-card.coming-soon { opacity: 0.6; cursor: default; }
+.research-card.coming-soon:hover { transform: none; box-shadow: none; }
+.research-card.coming-soon::before { display: none; }
+.card-tag { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy); background: var(--cream-dark); padding: 4px 10px; border-radius: 3px; display: inline-block; margin-bottom: 16px; }
+.card-title { font-family: var(--font-heading); font-size: 1.0625rem; font-weight: 700; color: var(--navy); line-height: 1.4; margin-bottom: 12px; letter-spacing: -0.01em; }
+.card-desc { font-size: 0.875rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 20px; }
+.card-meta { display: flex; align-items: center; justify-content: space-between; }
+.card-read-time { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(27,46,75,0.3); }
+.card-arrow { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); display: flex; align-items: center; gap: 6px; }
+.card-arrow::after { content: '→'; }
+.card-soon { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(27,46,75,0.25); font-style: italic; }
+
+.research-cta { background: var(--navy); padding: 80px 0; text-align: center; position: relative; overflow: hidden; z-index: 1; }
+.research-cta::before { content: 'STQ'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-family: var(--font-heading); font-weight: 700; font-size: 20rem; color: rgba(240,239,235,0.02); pointer-events: none; }
+.research-cta h2 { font-family: var(--font-heading); font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 700; color: var(--cream); margin-bottom: 16px; letter-spacing: -0.02em; }
+.research-cta p { font-size: 1rem; color: var(--text-light); max-width: 480px; margin: 0 auto 36px; line-height: 1.7; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .btn-white { background: var(--cream); color: var(--navy); }
-.btn-white:hover { background: white; transform: translateY(-1px); }
+.btn-white:hover { background: var(--white); transform: translateY(-1px); }
+.btn-outline-white { background: transparent; color: var(--cream); border: 1px solid rgba(240,239,235,0.3); }
+.btn-outline-white:hover { border-color: var(--cream); background: rgba(240,239,235,0.08); }
+
 footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative; z-index: 1; }
 .footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 28px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 20px; }
 .footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); }
@@ -82,26 +114,40 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 .footer-links a:hover { color: var(--cream); }
 .footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.35); }
 .footer-disclaimer { margin-top: 20px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 900px; }
+
+@media (max-width: 1024px) { .research-grid { grid-template-columns: repeat(2,1fr); } }
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
 .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--navy); }
+.nav-login-dropdown { position: relative; display: inline-flex; }
 .mobile-nav { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; transition: opacity 0.3s ease; }
 .mobile-nav.active { display: flex; opacity: 1; }
 .mobile-nav a { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--navy); text-decoration: none; }
-.mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
 .mobile-nav .btn { font-size: 0.8125rem; }
 .mobile-nav .btn-primary { color: var(--cream); }
 .mobile-nav .btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); font-size: 0.8125rem; }
-@media (max-width: 1024px) { .issues-grid { grid-template-columns: repeat(2,1fr); } }
+.mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
 @media (max-width: 768px) {
- .nav-links, .nav-client-login, .nav-cta-desktop, .nav-login-dropdown { display: none !important; } .nav-toggle { display: flex !important; }
- .nav-inner { padding: 0 24px; }
- .page-hero { padding: 120px 0 60px; }
- .issues-grid { grid-template-columns: 1fr; }
- .signup-inner { flex-direction: column; }
- .signup-form { flex-direction: column; width: 100%; }
- .signup-form input { width: 100%; }
+  .nav-links, .nav-client-login, .nav-cta-desktop, .nav-login-dropdown { display: none !important; }
+  .nav-toggle { display: flex !important; }
+  .featured-card { grid-template-columns: 1fr; }
+  .research-grid { grid-template-columns: 1fr; }
+  .nav-inner { padding: 0 24px; }
+  .page-hero { padding: 120px 0 60px; }
 }
-.nav-login-dropdown { position: relative; display: inline-flex; }
+
+/* RESEARCH GATE */
+.research-gate-overlay { display: none; position: fixed; inset: 0; background: rgba(15,30,51,0.7); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(4px); padding: 24px; }
+.research-gate-overlay.active { display: flex; }
+.research-gate-modal { background: var(--cream); border-radius: 8px; padding: 48px; max-width: 440px; width: 100%; position: relative; }
+.research-gate-modal h3 { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.01em; }
+.research-gate-modal p { font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.6; }
+.modal-form { display: flex; flex-direction: column; gap: 12px; }
+.modal-form input { font-family: var(--font-body); font-size: 0.9375rem; padding: 14px 16px; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; background: var(--white); color: var(--navy); outline: none; }
+.modal-form input:focus { border-color: var(--navy); }
+.modal-close { position: absolute; top: 16px; right: 20px; background: none; border: none; font-size: 1.25rem; color: var(--text-secondary); cursor: pointer; padding: 4px; }
+.modal-msg { font-size: 0.875rem; margin-top: 8px; }
+
+/* CLIENT LOGIN DROPDOWN */
 .nav-login-btn { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s ease, background 0.2s ease; cursor: pointer; background: transparent; }
 .nav-login-btn:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
 .nav-login-btn svg { transition: transform 0.2s ease; }
@@ -116,203 +162,207 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 </head>
 <body>
 
-
-
 <nav>
- <div class="nav-inner">
- <a href="https://stqcap.com" class="nav-logo">STQ <span>/ Capital</span></a>
- <div class="nav-links">
- <a href="https://stqcap.com/#solutions">Solutions</a>
- <a href="https://stqcap.com/#about">About</a>
- <a href="/insights.html">Insights</a>
- <a href="/research.html" >Research</a>
- <a href="/box-spreads.html">Synthetic Financing</a>
- <a href="/stq-consulting.html">Consulting</a>
- <a href="/contact.html">Contact</a>
- </div>
- <div class="nav-actions">
- <div class="nav-login-dropdown nav-cta-desktop">
- <button class="nav-login-btn">
- <svg width="12" height="13" viewBox="0 0 12 13" fill="none"><rect x="1" y="6" width="10" height="6" rx="1.5" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M3.5 6V4a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>
- Client Login
- <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
- </button>
- <div class="nav-login-menu">
- <a href="https://login.orionadvisor.com/login.html?g=20e2ec87-e47b-4ab9-9ea4-a395b4b01ee1&e=4&i=138" target="_blank">
- <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="12" height="6" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
- <div>Investment Portal<span class="nav-login-menu-label">Existing clients</span></div>
- </a>
- <a href="https://client.schwab.com" target="_blank">
- <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="12" height="6" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
- <div>Charles Schwab<span class="nav-login-menu-label">Account login</span></div>
- </a>
- <a href="/get-started.html">
- <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
- <div>Get Started<span class="nav-login-menu-label">New clients</span></div>
- </a>
- </div>
- </div>
- <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary nav-cta-desktop">Schedule a Call</a>
- </div>
- <button class="nav-toggle" onclick="document.querySelector('.mobile-nav').classList.add('active')" aria-label="Open menu"><span></span><span></span><span></span></button>
- </div>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
+    <div class="nav-links">
+      <a href="https://stqcap.com/#solutions">Solutions</a>
+      <a href="https://stqcap.com/#about">About</a>
+      <a href="/insights.html">Insights</a>
+      <a href="/research.html" class="active">Research</a>
+      <a href="/box-spreads.html">Synthetic Financing</a>
+      <a href="/stq-consulting.html">Consulting</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <div class="nav-login-dropdown nav-cta-desktop">
+        <button class="nav-login-btn">
+          <svg width="12" height="13" viewBox="0 0 12 13" fill="none"><rect x="1" y="6" width="10" height="6" rx="1.5" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M3.5 6V4a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>
+          Client Login
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-login-menu">
+          <a href="https://login.orionadvisor.com/login.html?g=20e2ec87-e47b-4ab9-9ea4-a395b4b01ee1&e=4&i=138" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="12" height="6" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+            <div>Investment Portal<span class="nav-login-menu-label">Existing clients</span></div>
+          </a>
+          <a href="https://client.schwab.com" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="12" height="6" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+            <div>Charles Schwab<span class="nav-login-menu-label">Account login</span></div>
+          </a>
+          <a href="/get-started.html">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <div>Get Started<span class="nav-login-menu-label">New clients</span></div>
+          </a>
+        </div>
+      </div>
+      <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary nav-cta-desktop">Schedule a Call</a>
+    </div>
+    <button class="nav-toggle" onclick="document.querySelector('.mobile-nav').classList.add('active')" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
 </nav>
+
 <div class="mobile-nav">
- <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('active')">✕</button>
- <a href="https://stqcap.com/#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
- <a href="https://stqcap.com/#about" onclick="this.parentElement.classList.remove('active')">About</a>
- <a href="/insights.html" onclick="this.parentElement.classList.remove('active')">Insights</a>
- <a href="/research.html" onclick="openResearchGate('/research.html');return false;">Research</a>
- <a href="/box-spreads.html" onclick="this.parentElement.classList.remove('active')">Synthetic Financing</a>
- <a href="/stq-consulting.html" onclick="this.parentElement.classList.remove('active')">Consulting</a>
- <a href="/contact.html" onclick="this.parentElement.classList.remove('active')">Contact</a>
- <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Call</a>
- <a href="https://login.orionadvisor.com/login.html?g=20e2ec87-e47b-4ab9-9ea4-a395b4b01ee1&e=4&i=138" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Investment Portal</a>
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('active')">✕</button>
+  <a href="https://stqcap.com/#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
+  <a href="https://stqcap.com/#about" onclick="this.parentElement.classList.remove('active')">About</a>
+  <a href="/insights.html" onclick="this.parentElement.classList.remove('active')">Insights</a>
+  <a href="/research.html" onclick="this.parentElement.classList.remove('active')">Research</a>
+  <a href="/box-spreads.html" onclick="this.parentElement.classList.remove('active')">Synthetic Financing</a>
+  <a href="/stq-consulting.html" onclick="this.parentElement.classList.remove('active')">Consulting</a>
+  <a href="/contact.html" onclick="this.parentElement.classList.remove('active')">Contact</a>
+  <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Call</a>
+  <a href="https://login.orionadvisor.com/login.html?g=20e2ec87-e47b-4ab9-9ea4-a395b4b01ee1&e=4&i=138" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Investment Portal</a>
  <a href="https://client.schwab.com" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Charles Schwab</a>
  <a href="/get-started.html" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Get Started</a>
 </div>
+
 <section class="page-hero">
- <div class="hero-watermark">STQ</div>
- <div class="container">
- <div class="page-hero-inner">
- <div class="page-hero-tag">Daily Insights</div>
- <h1>The Long and Short of It.</h1>
- <p>Practical ideas on tax-aware investing, portfolio construction, and the strategies that actually move the needle.</p>
- </div>
- </div>
+  <div class="hero-watermark">STQ</div>
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-tag">STQ Research</div>
+      <h1>Institutional-Grade Research. No Paywall. No Agenda.</h1>
+      <p>In-depth guides on the strategies that separate a good portfolio from a great one.</p>
+    </div>
+  </div>
 </section>
-<section class="filter-bar">
- <div class="container">
- <div class="filter-inner">
- <span class="filter-label">Filter:</span>
- <button class="filter-btn active" onclick="filterIssues('all', this)">All</button>
- <button class="filter-btn" onclick="filterIssues('Portfolio Construction', this)">Portfolio Construction</button>
- <button class="filter-btn" onclick="filterIssues('Tax Alpha', this)">Tax Alpha</button>
- <button class="filter-btn" onclick="filterIssues('Tax Strategy', this)">Tax Strategy</button>
- <button class="filter-btn" onclick="filterIssues('Independence', this)">Independence</button>
- <button class="filter-btn" onclick="filterIssues('Concentrated Positions', this)">Concentrated Positions</button>
- <button class="filter-btn" onclick="filterIssues('Options', this)">Options</button>
- <button class="filter-btn" onclick="filterIssues('Perspective', this)">Perspective</button>
- <button class="filter-btn" onclick="filterIssues('Estate Planning', this)">Estate Planning</button>
- <button class="filter-btn" onclick="filterIssues('Philanthropy', this)">Philanthropy</button>
- <button class="filter-btn" onclick="filterIssues('Book Review', this)">Book Review</button>
- <button class="filter-btn" onclick="filterIssues('Alternative Investments', this)">Alternative Investments</button>
- <button class="filter-btn" onclick="filterIssues('Box Spreads', this)">Box Spreads</button>
- <button class="filter-btn" onclick="filterIssues('Fee Drag', this)">Fee Drag</button>
- </div>
- </div>
+
+<section class="featured-section">
+  <div class="container">
+    <div class="featured-label">Featured Publication</div>
+    <a href="/research-direct-indexing.html" class="featured-card" data-tag="Tax Alpha" onclick="openResearchGate('/research-direct-indexing.html');return false;">
+      <div class="featured-card-left">
+        <div>
+          <div class="featured-card-tag">Tax Alpha – Direct Indexing Series</div>
+          <div class="featured-card-title">Index Investing Is Smart. Direct Indexing Is Smarter.</div>
+        </div>
+        <div class="featured-card-watermark">01</div>
+        <div class="featured-card-read">Read publication</div>
+      </div>
+      <div class="featured-card-right">
+        <div class="featured-card-badge">✓ Available Now</div>
+        <div class="featured-card-desc">Index funds are one of the best things to happen to individual investors. Direct indexing is the next step – same exposure, more control, and the ability to harvest losses at the individual stock level regardless of what the market does.</div>
+        <div class="featured-card-meta">
+          <div class="featured-card-meta-item">Author <span>Akiva Glazerson</span></div>
+          <div class="featured-card-meta-item">Read time <span>10 min</span></div>
+          <div class="featured-card-meta-item">Published <span>April 2026</span></div>
+        </div>
+      </div>
+    </a>
+  </div>
 </section>
-<section class="issues-section">
- <div class="container">
- <div class="issues-grid" id="issuesGrid"></div>
- </div>
+
+<section class="research-section">
+  <div class="container">
+    <div id="researchGrid" class="research-grid">
+
+      <a href="/asset-location.html" class="research-card" data-tag="Tax Strategy" onclick="openResearchGate('/asset-location.html');return false;">
+        <div class="card-tag">Tax Strategy</div>
+        <div class="card-title">All the Right Things in All the Wrong Places.</div>
+        <div class="card-desc">Why where you hold your investments matters as much as what you hold – and how to optimize across all three account types.</div>
+        <p style="font-family:var(--font-heading);font-size:0.6rem;color:rgba(27,46,75,0.3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">March 2026</p>
+        <div class="card-meta">
+          <span class="card-read-time">12 min read</span>
+          <span class="card-arrow">Read</span>
+        </div>
+      </a>
+
+      <div class="research-card coming-soon" data-tag="Box Spreads">
+        <div class="card-tag">Box Spreads</div>
+        <div class="card-title">The Box Spread Guide: Borrowing at Treasury Rates Without a Bank</div>
+        <div class="card-desc">How to use defined options structures to access liquidity at near-Treasury rates – no credit check, no bank approval, potentially tax-deductible interest.</div>
+        <div class="card-meta">
+          <span class="card-read-time">~10 min read</span>
+          <span class="card-soon">Coming soon</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
-<section class="insights-signup">
- <div class="container">
- <div class="signup-inner">
- <div>
- <h2>Get It First.</h2>
- <p>Institutional strategies. Plain English. Every morning.</p>
- </div>
- <form class="signup-form" id="insights-signup-form" onsubmit="handleInsightsSubscribe(event)">
- <input type="email" id="insights-email" placeholder="your@email.com" required>
- <button type="submit" class="btn btn-white" id="insights-btn">Subscribe</button>
- </form>
- </div>
- <p id="insights-msg" style="display:none;color:var(--cream);font-size:0.875rem;margin-top:16px;"></p>
- </div>
+
+<section class="research-cta">
+  <div class="container">
+    <h2>Put It to Work in Your Portfolio.</h2>
+    <p>Reading about these strategies is step one. Applying them to your specific tax situation is what moves the needle.</p>
+    <div class="cta-buttons">
+      <a href="#" onclick="window.location.href='mailto:akiva.glazerson@stqcap.com?subject=Portfolio%20Diagnostic%20Request';return false;" class="btn btn-white">Portfolio Diagnostic</a>
+      <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-outline-white">Schedule a Call</a>
+    </div>
+  </div>
 </section>
+
 <footer>
- <div class="container">
- <div class="footer-main">
- <div class="footer-logo">STQ <span>/ Capital</span></div>
- <div class="footer-links">
- <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
- <a href="/insights.html">Newsletter</a>
- <a href="/contact.html">Contact</a>
- <a href="https://login.orionadvisor.com/login.html?g=20e2ec87-e47b-4ab9-9ea4-a395b4b01ee1&e=4&i=138" target="_blank">Client Login</a>
- </div>
- <div class="footer-copy">© 2026 STQ Capital</div>
- </div>
- <div class="footer-disclaimer">Advisory services are offered through STQ Capital ("STQ"), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable. The information on this site is provided "AS IS" and without warranties either express or implied and the information may not be free from error. Your use of the information provided is at your sole risk.</div>
- </div>
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-logo">STQ <span>/ Capital</span></div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
+        <a href="/insights.html">Insights</a>
+        <a href="/research.html">Research</a>
+        <a href="/contact.html">Contact</a>
+        <a href="https://login.orionadvisor.com/login.html?g=20e2ec87-e47b-4ab9-9ea4-a395b4b01ee1&e=4&i=138" target="_blank">Client Login</a>
+      </div>
+      <div class="footer-copy">© 2026 STQ Capital </div>
+    </div>
+    <div class="footer-disclaimer">Advisory services are offered through STQ Capital  ("STQ"), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable. The information on this site is provided "AS IS" and without warranties either express or implied and the information may not be free from error. Your use of the information provided is at your sole risk.</div>
+  </div>
 </footer>
+
+<!-- RESEARCH GATE MODAL -->
+<div class="research-gate-overlay" id="researchGateModal" onclick="if(event.target===this)closeResearchGate()">
+  <div class="research-gate-modal">
+    <button class="modal-close" onclick="closeResearchGate()">✕</button>
+    <h3>Unlock STQ Research.</h3>
+    <p>Enter your email for free access to all STQ research publications. You'll also receive our daily insights.</p>
+    <form class="modal-form" id="research-gate-form" onsubmit="handleResearchGate(event)">
+      <input type="email" id="research-gate-email" placeholder="your@email.com" required>
+      <button type="submit" class="btn btn-primary" id="research-gate-btn" style="justify-content:center;">Get Access →</button>
+    </form>
+    <p class="modal-msg" id="research-gate-msg"></p>
+  </div>
+</div>
+
 <script>
-const ML = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZDU4Y2Y2M2MyZjAxNGJjMWE4YmM2MDgzMGRjMjZjODAyYzdmNDZiNTNhNTY0MGYyNzdhNGNmMTlhZGQ0YjZhOTdlMjNkMGRmZmFiN2JlOTYiLCJpYXQiOjE3NzYyMTI3MzAuODgxMjkxLCJuYmYiOjE3NzYyMTI3MzAuODgxMjkzLCJleHAiOjQ5MzE4ODYzMzAuODc0Nzg3LCJzdWIiOiIyMjY1MzY3Iiwic2NvcGVzIjpbXX0.SoT6uwDSLLRp1bVmMCTm8kNFGg0-Jj7U3MXSmaCPtwbLI_RyA5UoqBdeBIvfZkOMG_rO7lrZQZBeAzK9kkq0o-zYOyOmKuuXv1vpq441LietMpgVWHgAAtL0ExKhvIZM2HnoqUhrcd34oZoYehwVCLjbLXtZ5vQYNnjO2988r7LV5zdmfrusZ7nek3ITcrBCb03r-W6do7hypJSbw_o_7J-RaYyPGOfVYk5ZxdcDe2neZmIvOkBfOd-qyHDFSQvyKaIton3_c7FSkoBXePGR9yt722rv40tO4n1iwiX7bSi6ObNX66S03gKdwIJvxjcaGHMSIOfdKJrCqcCrXUj1OZPd94e_mprtkYFlwla0BAxvMPgf8llzF_qAlovSTwdb8G9y-ORWB1vV5ZF4ZW62ZjRd5JIFckwH2CisIM1TT-b_GU-Hi6-ATvtcqm0HSffbFPEaGFb0slTxHmbx0INSAIW8QNEYVv00DUE-ysF84f4LchSFvdj2LMzSZB9_9YkuPik-AVM32b0RSKP8PVJgYK1B4DH28AUEcNjrksUytGE59NwLr5GctZztoZbDc4AlLd1es5PNFTtdQl2augDGBtnox7rDXb0sWo7BqyttYhQ9D_1RqYltSAHsB9K1qRB9CFF734AOQm8QPshucKos2vx6hGxZKuXlfpvCCVLaSBw';
-const issues = [
-      { title: "The Most Important Question You Can Ask Your Advisor.", date: "June 8, 2026", preview: "Most people assume their advisor is legally required to act in their best interest. Most of the time, that assumption is wrong.", tag: "Independence", readTime: "3 min", url: "/insights/insight-fiduciary-2026-06-08.html" },
- { title: "How to Monetize Volatility.", date: "June 5, 2026", preview: "Most investors watch volatility and feel anxious. The ones with the right structure watch it and see opportunity. Here is how direct indexing turns market dips into a tax asset.", tag: "Tax Alpha", readTime: "3 min", url: "/insights/insight-loss-inventory-2026-06-05.html" },
- { title: "This Might Be the Most Innovative Structure in Tax-Aware Investing Right Now.", date: "May 19, 2026", preview: "The no-distribution ETF defers the tax event until you sell and may convert ordinary income into a long-term capital gain. Here is how the structure works.", tag: "Tax Alpha", readTime: "4 min", url: "/insights/insight-no-distribution-etf-2026-05-19.html" },
- { title: "You Think You Own 500 Companies. You Mostly Own 10.", date: "May 18, 2026", preview: "The S&P 500 is more concentrated than most investors realize. In 1990, the top 10 companies made up 19% of the index. Today they make up more than 40%. When you buy SPY or VOO, more than $40 of every $100 goes into those 10 names.", tag: "Portfolio Construction", readTime: "4 min", url: "/insights/insight-sp500-concentration-2026-05-18.html" },
- { title: "My Favorite Combination in Tax-Efficient Investing.", date: "May 17, 2026", preview: "My favorite tax strategy isn\u2019t a single move. It\u2019s two strategies running simultaneously. Each is powerful on its own. Together, they do something neither can do alone.", tag: "Tax Alpha", readTime: "5 min", url: "/insights/insight-stq-approach-2026-05-17.html" },
- { title: "Your Portfolio Can Lend You Money. Most Investors Never Ask It To.", date: "May 13, 2026", preview: "Box spread borrowing lets you access cash at near-Treasury rates without selling a single position. No bank. No credit check. No taxable event. And the interest is potentially tax-deductible.", tag: "Box Spreads", readTime: "4 min", url: "/insights/insight-box-spread-borrowing.html" },
- { title: "The Fee Nobody Talks About Is the One Hurting You Most.", date: "May 12, 2026", preview: "Expense ratios are small numbers with large consequences. Most investors have no idea what their funds are actually charging them \u2013 or what it\u2019s compounding into over time.", tag: "Fee Drag", readTime: "3 min", url: "/insights/insight-expense-ratio.html" },
- { title: "Own the S&P 500? Do This Instead.", date: "May 11, 2026", preview: "An index fund gives you the return. Direct indexing gives you the return and a tax engine that works in your favor every single day. Most investors have never heard of it.", tag: "Tax Alpha", readTime: "4 min", url: "/insights/insight-direct-indexing.html" },
- { title: "You're Donating Cash. That's the Expensive Way to Give.", date: "May 10, 2026", preview: "A donor-advised fund lets you take the deduction today and give on your own timeline. Donate appreciated stock and the capital gain disappears entirely. Most people are giving to charity the expensive way.", tag: "Philanthropy", readTime: "2 min", url: "/insights/insight-daf-explainer.html" },
- { title: "A Different Kind of Investment.", date: "May 9, 2026", preview: "I think about compounding every day. The same principle applies to things that don\u2019t show up on any statement.", tag: "Perspective", readTime: "2 min", url: "/insights/insight-daughters.html" },
- { title: "Your Advisor Works for the Bank. Not for You.", date: "May 8, 2026", preview: "The wirehouse model isn\u2019t broken by accident. It\u2019s designed this way. Understanding the conflicts is the first step to protecting yourself from them.", tag: "Independence", readTime: "4 min", url: "/insights/insight-pe-ria.html" },
- { title: "Why We're Investing in AI Companies Through IRAs.", date: "May 7, 2026", preview: "The companies defining the next decade of technology are private. By broadening our opportunity set to include them, we can build more diversified portfolios \u2013 and place them in accounts where the gains compound for decades, untouched by the IRS.", tag: "Alternative Investments", readTime: "5 min", url: "/insights/insight-ai-ira.html" },
- { title: "What Is Tax Loss Harvesting, Anyway?", date: "May 6, 2026", preview: "It sounds like an accounting trick. It\u2019s not. Here\u2019s exactly how it works \u2013 and why most investors leave it on the table.", tag: "Tax Alpha", readTime: "4 min", url: "/insights/insight-tlh-explainer.html" },
- { title: "Most People Sell When They Need Cash. That's Usually the Wrong Move.", date: "May 5, 2026", preview: "There's a way to access liquidity from your portfolio without selling a single position \u2013 and without triggering a tax bill you weren't ready for.", tag: "Box Spreads", readTime: "4 min", url: "/insights/insight-box-spreads-intro.html" },
- { title: "What Separates a $6M Portfolio From a $17M One? Not the Investments.", date: "May 4, 2026", preview: "Two identical portfolios. Same investments. Same returns. Thirty years later, one has $6.3M. The other has $17.4M. So what's different?", tag: "Tax Strategy", readTime: "4 min", url: "/insights/insight-asset-location-3.html" },
- { title: "You Already Own the Stock. Here's How to Get Paid Again.", date: "May 3, 2026", preview: "Covered calls let you generate income on positions you already hold \u2013 without selling a single share.", tag: "Options", readTime: "4 min", url: "/insights/insight-covered-calls.html" },
- { title: "Roth or Traditional? The 401(k) Decision Most People Get Wrong.", date: "May 2, 2026", preview: "The choice between a Roth and traditional 401(k) isn't about preference. It's about math \u2013 and the math depends on where your tax rate is headed.", tag: "Tax Strategy", readTime: "4 min", url: "/insights/insight-401k-optimized.html" },
- { title: "The Only Free Lunch in Investing.", date: "May 1, 2026", preview: "Asset location compounds meaningfully over a lifetime without changing a single holding. Most investors \u2014 and most advisors \u2014 never think about it systematically.", tag: "Tax Strategy", readTime: "4 min", url: "/insights/insight-asset-location-3.html" },
- { title: "Getting Paid to Wait. The Options Strategy Most Investors Ignore.", date: "April 30, 2026", preview: "Selling a put isn't just an income strategy. It's a way to get paid while you wait for the price you actually want.", tag: "Options", readTime: "4 min", url: "/insights/insight-selling-puts.html" },
- { title: "You Can't Just Sell. But You Can Give It Away \u2013 Tax-Free.", date: "April 29, 2026", preview: "A concentrated position is a tax problem. A donor-advised fund turns it into a philanthropic asset \u2013 eliminating the capital gain entirely.", tag: "Philanthropy", readTime: "4 min", url: "/insights/insight-daf-concentrated.html" },
- { title: "Your Advisor Has a Conflict. Here's Exactly What It Looks Like.", date: "April 28, 2026", preview: "The wirehouse model isn't broken by accident. It's designed this way. Understanding the conflicts is the first step to protecting yourself from them.", tag: "Independence", readTime: "4 min", url: "/insights/insight-wirehouse-conflicts.html" },
- { title: "The Ultimate Tax-Aware Duo.", date: "April 27, 2026", preview: "Direct indexing builds the loss bank. Box spreads deploy it. Most investors use one tax strategy at a time. The ones who use these two together are playing a different game entirely.", tag: "Tax Strategy", readTime: "4 min", url: "/insights/insight-tax-aware-duo.html" },
- { title: "The Simplest Portfolio Is Often the Best One.", date: "April 26, 2026", preview: "Most investors have too much going on. Too many funds, too many fees, too many decisions. The two things you can actually control are costs and taxes.", tag: "Portfolio Construction", readTime: "3 min", url: "/insights/insight-simplicity.html" },
- { title: "The Philosopher in the Valley.", date: "April 25, 2026", preview: "Palantir is one of those companies everyone has heard of but nobody really understands. A book review of Michael Steinberger's biography of Alex Karp.", tag: "Book Review", readTime: "4 min", url: "/insights/insight-philosopher-valley.html" },
- { title: "A Better Way to Buy a House.", date: "April 24, 2026", preview: "Most people assume a mortgage is the only way to finance a home. For investors with a liquid portfolio, there is another option that costs less and does not require selling a single position.", tag: "Box Spreads", readTime: "4 min", url: "/insights/insight-box-spread-mortgage.html" },
- { title: "The Hardest Thing in Martial Arts and Investing Is the Same Thing.", date: "April 23, 2026", preview: "It is not technique. It is not knowledge. After years on the mat and years in markets, I am convinced the skill that separates good investors from great ones is patience under pressure.", tag: "Perspective", readTime: "3 min", url: "/insights/insight-bjj-patience.html" },
- { title: "The Backdoor Roth. How High Earners Get In When the IRS Says They Can't.", date: "April 22, 2026", preview: "Income too high for a Roth? The backdoor is open. Here's exactly how it works \u2013 and the one mistake that makes it taxable.", tag: "Tax Strategy", readTime: "3 min", url: "/insights/insight-backdoor-roth.html" },
- { title: "Your Advisor Rebalanced Your Portfolio. Congratulations. You Owe Taxes.", date: "April 21, 2026", preview: "Rebalancing is necessary. But most advisors do it the expensive way \u2013 selling winners, triggering gains, and handing a portion of your returns to the IRS every single year.", tag: "Tax Strategy", readTime: "3 min", url: "/insights/insight-rebalancing.html" },
- { title: "Your CPA and Your Advisor Are in a Relationship. They've Never Spoken.", date: "April 20, 2026", preview: "Whether they know it or not, every decision your CPA makes affects your portfolio \u2013 and vice versa. In almost every client relationship I've seen, they've never once spoken. The result is a very expensive silence.", tag: "Portfolio Construction", readTime: "3 min", url: "/insights/insight-cpa-advisor.html" },
- { title: "Step-up kills the gain. Box spreads unlock the cash.", date: "April 19, 2026", preview: "When you inherit an appreciated asset, the gain disappears \u2013 forever. Box spreads let you access liquidity without selling. Together, they are one of the most powerful combinations in tax-aware wealth management.", tag: "Tax Strategy", readTime: "3 min", url: "/insights/insight-step-up.html" },
- { title: "I Hate Opacity.", date: "April 18, 2026", preview: "Tax minimization doesn't require a salmon farm in Dubai or a solar deal off the coast of Bermuda. It requires a good advisor and strategies most people have simply never had access to.", tag: "Independence", readTime: "3 min", url: "/insights/insight-opacity.html" },
- { title: "Your Index Fund Has a Concentration Problem.", date: "April 17, 2026", preview: "The five biggest names in the S&P 500 now control nearly 30% of the index. That's not diversification. That's a gamble.", tag: "Concentrated Positions", readTime: "3 min", url: "/insights/insight-sp500-concentration-2026-05-18.html" },
- { title: "Book Review: The Best Risk Management Lesson I've Read Came from a Russian Prison.", date: "April 16, 2026", preview: "Red Notice is not a finance book. It is a story about what happens when political risk, concentration risk, and counterparty risk collide \u2013 and nobody is paying attention.", tag: "Book Review", readTime: "4 min", url: "/insights/insight-red-notice.html" },
- { title: "No Good Deed Goes Unpunished. Unless You Use a DAF.", date: "April 15, 2026", preview: "Most people give to charity the expensive way \u2013 cash out of a checking account, no tax strategy involved. There is a better way that costs you nothing and gives more to the cause.", tag: "Philanthropy", readTime: "4 min", url: "/insights/insight-daf.html" },
- { title: "What Getting Choked Out Has Taught Me About Investing.", date: "April 14, 2026", preview: "Anybody who knows me knows I'm obsessed with BJJ. It has more in common with investing than you may think. Here's what the mat has taught me about managing money.", tag: "Perspective", readTime: "3 min", url: "/insights/insight-bjj-investing.html" },
- { title: "You Think You're Protected. You're Not.", date: "April 13, 2026", preview: "Both are options strategies. Both generate income or protection. But they are not interchangeable \u2013 and using the wrong one for your situation is an expensive mistake.", tag: "Options", readTime: "4 min", url: "/insights/insight-covered-calls-vs-put-spreads.html" },
- { title: "The Peter Thiel IRA. What He Did and Why You Can't Ignore It.", date: "April 12, 2026", preview: "Peter Thiel turned a Roth IRA into $5 billion \u2013 tax free. The mechanics were aggressive. The principle behind it is available to almost anyone.", tag: "Tax Strategy", readTime: "4 min", url: "/insights/insight-peter-thiel-ira.html" },
- { title: "What I Learned at PIMCO About Building a Real Portfolio.", date: "April 11, 2026", preview: "Institutional portfolio management looks nothing like what most individual investors experience. Here's what the gap actually costs you.", tag: "Portfolio Construction", readTime: "4 min", url: "/insights/insight-pimco-lessons.html" },
- { title: "The Largest Account You Own. The One Nobody's Managing.", date: "April 10, 2026", preview: "Your 401(k) may be the largest account you own. Most advisors manage everything around it but never inside it. That's leaving serious money on the table.", tag: "Tax Strategy", readTime: "3 min", url: "/insights/insight-401k-blind-spot.html" },
- { title: "Your Advisor Has a Boss. It Might Not Be You.", date: "April 9, 2026", preview: "A fiduciary is legally required to act in your interest. A broker is not. That distinction is worth understanding before you hand anyone your money.", tag: "Independence", readTime: "3 min", url: "/insights/insight-fiduciary-vs-broker.html" },
- { title: "$5M in Tesla. $4M for a House. Zero Tax. Here's How.", date: "April 8, 2026", preview: "Selling means a massive tax bill. Not selling means the house stays out of reach. There's a third option most investors don't know exists.", tag: "Concentrated Positions", readTime: "4 min", url: "/insights/insight-tesla-house.html" },
- { title: "The Most Important Question to Ask Your Advisor. Most People Never Do.", date: "April 7, 2026", preview: "How do you get paid? Four words. Most advisors hope you never ask. The answer tells you everything about whose interests they're actually serving.", tag: "Independence", readTime: "3 min", url: "/insights/insight-advisor-question.html" },
- { title: "The Mutual Fund Industry's Dirty Secret.", date: "April 6, 2026", preview: "The average active fund underperforms its benchmark after fees. You're paying a premium for underperformance. The math on low-cost indexing is not subtle.", tag: "Portfolio Construction", readTime: "3 min", url: "/insights/insight-active-funds.html" },
- { title: "Buy. Borrow. Die. The Estate Strategy Nobody Talks About.", date: "April 5, 2026", preview: "The wealthiest families don't sell assets. They buy. They borrow against them at low rates. And when they die, the step-up in basis wipes the gain. It's not a loophole. It's a strategy.", tag: "Estate Planning", readTime: "4 min", url: "/insights/insight-buy-borrow-die.html" },
- { title: "The Piggy Bank You Fill by \"Losing Money.\" Yes, Really.", date: "April 4, 2026", preview: "Tax loss harvesting is not a year-end cleanup. Done systematically, it builds a loss bank that compounds in value over time \u2013 ready to deploy whenever you need it most.", tag: "Tax Alpha", readTime: "4 min", url: "/insights/insight-loss-harvesting.html" },
- { title: "Location. Location. Location.", date: "April 3, 2026", preview: "In real estate, location determines value. In investing, it determines how much of your return you actually keep. Most investors obsess over what to own. The smarter question is where.", tag: "Tax Strategy", readTime: "5 min", url: "/insights/insight-asset-location.html" },
- { title: "Stop Borrowing From Banks. Your Portfolio Can Do It Better.", date: "April 2, 2026", preview: "Lines of credit are expensive, bank-controlled, and unnecessary. Your portfolio can do the same job better \u2013 at near-Treasury rates, with no application and no forced selling.", tag: "Box Spreads", readTime: "3 min", url: "/insights/insight-box-spreads.html" },
- { title: "You Don't Have Yale's Tax Status. Stop Investing Like You Do.", date: "April 1, 2026", preview: "The endowment model is built for institutions that pay no taxes. You do. Copying it without accounting for your tax situation isn't sophisticated \u2013 it's expensive.", tag: "Portfolio Construction", readTime: "4 min", url: "/insights/insight-endowment-model.html" },
-];
-function renderIssues(filter) {
- const grid = document.getElementById('issuesGrid');
- const filtered = filter === 'all' ? issues : issues.filter(i => i.tag === filter);
- if (filtered.length === 0) { grid.innerHTML = '<div class="empty-state"><p>No issues in this category yet. Check back soon.</p></div>'; return; }
- grid.innerHTML = filtered.map(issue => `<a class="issue-card" href="${issue.url}"><div class="issue-card-meta"><span class="issue-card-tag">${issue.tag}</span></div><div class="issue-card-title">${issue.title}</div><div class="issue-card-preview">${issue.preview}</div><div class="issue-card-footer"><div class="issue-card-read">${issue.readTime} read</div></div></a>`).join('');
+var pendingResearchUrl = '';
+function openResearchGate(url) {
+  if (localStorage.getItem('stq_research_access') === 'granted') {
+    window.location.href = url;
+    return;
+  }
+  pendingResearchUrl = url;
+  document.getElementById('researchGateModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
-function filterIssues(tag, btn) {
- document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
- btn.classList.add('active');
- renderIssues(tag);
+function closeResearchGate() {
+  document.getElementById('researchGateModal').classList.remove('active');
+  document.body.style.overflow = '';
+  pendingResearchUrl = '';
 }
-renderIssues('all');
-async function handleInsightsSubscribe(e) {
- e.preventDefault();
- const email = document.getElementById('insights-email').value;
- const btn = document.getElementById('insights-btn');
- const msg = document.getElementById('insights-msg');
- btn.textContent = 'Subscribing...';
- btn.disabled = true;
- try {
- const res = await fetch('https://connect.mailerlite.com/api/subscribers', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${ML}` }, body: JSON.stringify({ email, groups: ["185200901719328747"] }) });
- if (res.ok || res.status === 200 || res.status === 201) { msg.style.display = 'block'; msg.textContent = "You're in. First issue hits first thing."; document.getElementById('insights-email').value = ''; btn.textContent = 'Subscribed \u2713'; } else { throw new Error(); }
- } catch { msg.style.display = 'block'; msg.textContent = 'Something went wrong. Email akiva.glazerson@stqcap.com to subscribe.'; btn.textContent = 'Subscribe'; btn.disabled = false; }
+function handleResearchGate(e) {
+  e.preventDefault();
+  var email = document.getElementById('research-gate-email').value;
+  var btn = document.getElementById('research-gate-btn');
+  var msg = document.getElementById('research-gate-msg');
+  btn.textContent = 'Getting access...'; btn.disabled = true;
+  fetch('https://connect.mailerlite.com/api/subscribers', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZDU4Y2Y2M2MyZjAxNGJjMWE4YmM2MDgzMGRjMjZjODAyYzdmNDZiNTNhNTY0MGYyNzdhNGNmMTlhZGQ0YjZhOTdlMjNkMGRmZmFiN2JlOTYiLCJpYXQiOjE3NzYyMTI3MzAuODgxMjkxLCJuYmYiOjE3NzYyMTI3MzAuODgxMjkzLCJleHAiOjQ5MzE4ODYzMzAuODc0Nzg3LCJzdWIiOiIyMjY1MzY3Iiwic2NvcGVzIjpbXX0.SoT6uwDSLLRp1bVmMCTm8kNFGg0-Jj7U3MXSmaCPtwbLI_RyA5UoqBdeBIvfZkOMG_rO7lrZQZBeAzK9kkq0o-zYOyOmKuuXv1vpq441LietMpgVWHgAAtL0ExKhvIZM2HnoqUhrcd34oZoYehwVCLjbLXtZ5vQYNnjO2988r7LV5zdmfrusZ7nek3ITcrBCb03r-W6do7hypJSbw_o_7J-RaYyPGOfVYk5ZxdcDe2neZmIvOkBfOd-qyHDFSQvyKaIton3_c7FSkoBXePGR9yt722rv40tO4n1iwiX7bSi6ObNX66S03gKdwIJvxjcaGHMSIOfdKJrCqcCrXUj1OZPd94e_mprtkYFlwla0BAxvMPgf8llzF_qAlovSTwdb8G9y-ORWB1vV5ZF4ZW62ZjRd5JIFckwH2CisIM1TT-b_GU-Hi6-ATvtcqm0HSffbFPEaGFb0slTxHmbx0INSAIW8QNEYVv00DUE-ysF84f4LchSFvdj2LMzSZB9_9YkuPik-AVM32b0RSKP8PVJgYK1B4DH28AUEcNjrksUytGE59NwLr5GctZztoZbDc4AlLd1es5PNFTtdQl2augDGBtnox7rDXb0sWo7BqyttYhQ9D_1RqYltSAHsB9K1qRB9CFF734AOQm8QPshucKos2vx6hGxZKuXlfpvCCVLaSBw' },
+    body: JSON.stringify({ email: email, groups: ["185200901719328747"] })
+  }).catch(function() {});
+  setTimeout(function() {
+    localStorage.setItem('stq_research_access', 'granted');
+    var dest = pendingResearchUrl || '/research.html';
+    msg.style.display = 'block'; msg.style.color = '#1B2E4B';
+    msg.textContent = 'Access granted. Taking you there now...';
+    setTimeout(function() {
+      closeResearchGate();
+      window.location.href = dest;
+    }, 800);
+  }, 600);
 }
 </script>
+
 </body>
-</html>v
+</html>
