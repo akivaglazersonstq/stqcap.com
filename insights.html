@@ -120,13 +120,14 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 
 <nav>
  <div class="nav-inner">
- <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
+ <a href="https://stqcap.com" class="nav-logo">STQ <span>/ Capital</span></a>
  <div class="nav-links">
- <a href="/#solutions">Solutions</a>
- <a href="/#about">About</a>
- <a href="/insights.html" class="active">Insights</a>
- <a href="/research.html">Research</a>
- <a href="/box-spreads.html">Financing</a>
+ <a href="#solutions">Solutions</a>
+ <a href="#about">About</a>
+ <a href="/insights.html">Insights</a>
+ <a href="/research.html" >Research</a>
+ <a href="/box-spreads.html">Synthetic Financing</a>
+ <a href="/stq-consulting.html">Consulting</a>
  <a href="/contact.html">Contact</a>
  </div>
  <div class="nav-actions">
@@ -141,6 +142,10 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="12" height="6" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
  <div>Investment Portal<span class="nav-login-menu-label">Existing clients</span></div>
  </a>
+ <a href="https://client.schwab.com" target="_blank">
+ <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="12" height="6" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+ <div>Charles Schwab<span class="nav-login-menu-label">Account login</span></div>
+ </a>
  <a href="/get-started.html">
  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
  <div>Get Started<span class="nav-login-menu-label">New clients</span></div>
@@ -154,14 +159,16 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 </nav>
 <div class="mobile-nav">
  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('active')">✕</button>
- <a href="/#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
- <a href="/#about" onclick="this.parentElement.classList.remove('active')">About</a>
+ <a href="#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
+ <a href="#about" onclick="this.parentElement.classList.remove('active')">About</a>
  <a href="/insights.html" onclick="this.parentElement.classList.remove('active')">Insights</a>
- <a href="/research.html" onclick="this.parentElement.classList.remove('active')">Research</a>
- <a href="/box-spreads.html" onclick="this.parentElement.classList.remove('active')">Financing</a>
+ <a href="/research.html" onclick="openResearchGate('/research.html');return false;">Research</a>
+ <a href="/box-spreads.html" onclick="this.parentElement.classList.remove('active')">Synthetic Financing</a>
+ <a href="/stq-consulting.html" onclick="this.parentElement.classList.remove('active')">Consulting</a>
  <a href="/contact.html" onclick="this.parentElement.classList.remove('active')">Contact</a>
  <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Call</a>
  <a href="https://login.orionadvisor.com/login.html?g=20e2ec87-e47b-4ab9-9ea4-a395b4b01ee1&e=4&i=138" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Investment Portal</a>
+ <a href="https://client.schwab.com" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Charles Schwab</a>
  <a href="/get-started.html" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Get Started</a>
 </div>
 <section class="page-hero">
