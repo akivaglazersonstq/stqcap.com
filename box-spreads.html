@@ -4,327 +4,135 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
-<title>Synthetic Financing | STQ Capital</title>
-<meta name="description" content="Borrow against your portfolio at near-Treasury rates through box spreads. No bank, no credit check, no forced selling. The market is the lender.">
-<link rel="canonical" href="https://stqcap.com/box-spreads.html">
+<title>STQ Consulting | Expert Sessions with Akiva Glazerson</title>
+<meta name="description" content="STQ Consulting offers one-on-one sessions for advisors, family offices, and institutions who want to go deeper on systematic tax-loss harvesting, box spread financing, portfolio construction, derivatives, and alternatives.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%231B2E4B'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='22' fill='%23F0EFEB' letter-spacing='-1'>STQ</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-:root{
-  --navy:#1B2E4B;--navy-light:#2a4570;--navy-dark:#0f1e33;
-  --cream:#F0EFEB;--cream-dark:#E6E4DE;--white:#FFFFFF;
-  --text-primary:#1B2E4B;--text-secondary:#5a6a7e;--text-light:rgba(240,239,235,0.7);
-  --font-heading:'Chakra Petch',sans-serif;--font-body:'DM Sans',sans-serif;
-  --ease:cubic-bezier(0.25,0.46,0.45,0.94);
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
+  --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF;
+  --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7);
+  --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.25,0.46,0.45,0.94);
 }
-html{scroll-behavior:smooth;font-size:16px;color-scheme:light only;}
-body{font-family:var(--font-body);color:var(--text-primary);background:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
-body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(27,46,75,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(27,46,75,0.03) 1px,transparent 1px);background-size:80px 80px;pointer-events:none;z-index:0;}
-.container{max-width:1100px;margin:0 auto;padding:0 clamp(24px,5vw,64px);position:relative;z-index:1;}
-.section-label{font-family:var(--font-heading);font-size:0.6875rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary);position:relative;padding-left:20px;}
-.section-label::before{content:'';position:absolute;left:0;top:50%;width:10px;height:1px;background:var(--navy);}
-.btn{font-family:var(--font-heading);font-weight:600;font-size:0.8125rem;letter-spacing:0.05em;text-transform:uppercase;padding:14px 32px;border-radius:4px;text-decoration:none;transition:all 0.3s var(--ease);cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px;}
-.btn-white{background:var(--cream);color:var(--navy);}
-.btn-white:hover{background:var(--white);transform:translateY(-1px);}
-.btn-outline-white{background:transparent;color:var(--cream);border:1px solid rgba(240,239,235,0.3);}
-.btn-outline-white:hover{border-color:var(--cream);background:rgba(240,239,235,0.08);}
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(240,239,235,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(27,46,75,0.08);}
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
-.nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
-.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; white-space: nowrap; }
+html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(27,46,75,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.88); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+.nav-inner { padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; }
 .nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-tag { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); }
+@media (max-width: 600px) { .nav-inner { padding: 0 24px; } .nav-tag { display: none; } }
+
+/* HERO */
+.hero { padding-top: 160px; padding-bottom: 100px; position: relative; overflow: hidden; z-index: 1; }
+.hero-watermark { position: absolute; right: -2%; top: 50%; transform: translateY(-50%); font-family: var(--font-heading); font-weight: 700; font-size: clamp(9rem,16vw,18rem); color: rgba(27,46,75,0.05); line-height: 0.8; letter-spacing: -0.03em; user-select: none; pointer-events: none; }
+.hero-tag { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 24px; position: relative; padding-left: 20px; }
+.hero-tag::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: var(--navy); }
+.hero h1 { font-family: var(--font-heading); font-size: clamp(2.75rem,5.5vw,4.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 28px; max-width: 740px; }
+.hero-sub { font-size: 1.125rem; line-height: 1.8; color: var(--text-secondary); max-width: 600px; margin-bottom: 48px; }
+.hero-price-bar { display: inline-flex; align-items: center; gap: 24px; background: var(--navy); border-radius: 6px; padding: 18px 28px; flex-wrap: wrap; }
+.hero-price { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; color: var(--cream); letter-spacing: -0.02em; }
+.hero-price-label { font-size: 0.875rem; color: rgba(240,239,235,0.6); line-height: 1.5; }
+.hero-price-divider { width: 1px; height: 40px; background: rgba(240,239,235,0.15); }
+.btn-book { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 14px 28px; border-radius: 4px; text-decoration: none; background: var(--cream); color: var(--navy); transition: all 0.3s var(--ease); white-space: nowrap; }
+.btn-book:hover { background: #fff; transform: translateY(-1px); }
+
+/* FOR WHOM */
+.for-whom { padding: 80px 0; background: var(--cream-dark); }
+.section-label { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); position: relative; padding-left: 20px; margin-bottom: 16px; display: inline-block; }
+.section-label::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1px; background: var(--navy); }
+.for-whom h2 { font-family: var(--font-heading); font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 20px; line-height: 1.15; }
+.for-whom-lead { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); max-width: 700px; margin-bottom: 48px; }
+.audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.audience-card { background: var(--white); border: 1px solid rgba(27,46,75,0.07); border-left: 3px solid var(--navy); border-radius: 0 6px 6px 0; padding: 24px 20px; position: relative; overflow: hidden; }
+.audience-card-num { position: absolute; right: 10px; bottom: -6px; font-family: var(--font-heading); font-size: 64px; font-weight: 700; color: rgba(27,46,75,0.04); line-height: 1; pointer-events: none; }
+.audience-card h3 { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+.audience-card p { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+@media (max-width: 768px) { .audience-grid { grid-template-columns: 1fr; } }
+
+/* TOPICS */
+.topics { padding: 100px 0; background: var(--cream); }
+.topics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid rgba(27,46,75,0.08); border-radius: 8px; overflow: hidden; background: var(--white); }
+.topic-item { padding: 32px 36px; border-bottom: 1px solid rgba(27,46,75,0.07); border-right: 1px solid rgba(27,46,75,0.07); transition: background 0.2s ease; }
+.topic-item:nth-child(even) { border-right: none; }
+.topic-item:nth-last-child(-n+2) { border-bottom: none; }
+.topic-item:hover { background: var(--cream); }
+.topic-num { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; color: rgba(27,46,75,0.3); margin-bottom: 10px; }
+.topic-title { font-family: var(--font-heading); font-size: 1.0625rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.3; }
+.topic-desc { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
+@media (max-width: 700px) { .topics-grid { grid-template-columns: 1fr; } .topic-item { border-right: none; } .topic-item:nth-last-child(-n+2) { border-bottom: 1px solid rgba(27,46,75,0.07); } .topic-item:last-child { border-bottom: none; } }
+
+/* ABOUT THE SESSION */
+.about-session { padding: 100px 0; background: var(--cream-dark); }
+.about-session-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.about-session h2 { font-family: var(--font-heading); font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 24px; line-height: 1.15; }
+.about-session p { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 20px; }
+.session-detail-box { background: var(--navy); border-radius: 8px; padding: 40px 36px; }
+.session-detail-row { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 0; border-bottom: 1px solid rgba(240,239,235,0.08); }
+.session-detail-row:last-of-type { border-bottom: none; }
+.session-detail-label { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(240,239,235,0.35); }
+.session-detail-value { font-family: var(--font-heading); font-size: 1rem; font-weight: 600; color: var(--cream); text-align: right; }
+.session-book-btn { display: block; text-align: center; margin-top: 28px; font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 16px 28px; border-radius: 4px; text-decoration: none; background: var(--cream); color: var(--navy); transition: all 0.3s ease; }
+.session-book-btn:hover { background: #fff; transform: translateY(-1px); }
+@media (max-width: 900px) { .about-session-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+/* AKIVA */
+.akiva-section { padding: 100px 0; background: var(--cream); }
+.akiva-grid { display: grid; grid-template-columns: 240px 1fr; gap: 80px; align-items: start; }
+.akiva-name-block { padding-top: 8px; position: sticky; top: 100px; }
+.akiva-name { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-top: 16px; }
+.akiva-title { font-size: 0.875rem; color: var(--text-secondary); margin-top: 4px; line-height: 1.5; }
+.akiva-text p { font-size: 1.0625rem; line-height: 1.9; color: var(--text-secondary); margin-bottom: 20px; }
+@media (max-width: 768px) { .akiva-grid { grid-template-columns: 1fr; gap: 24px; } .akiva-name-block { position: static; } }
+
+/* FOOTER */
+footer { background: var(--navy-dark); padding: 40px 0 32px; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding-bottom: 24px; border-bottom: 1px solid rgba(240,239,235,0.08); }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1rem; color: var(--cream); letter-spacing: 0.03em; text-decoration: none; }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.45); }
+.footer-back { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(240,239,235,0.45); text-decoration: none; transition: color 0.2s ease; }
+.footer-back:hover { color: var(--cream); }
+.footer-disclaimer { margin-top: 20px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 860px; }
+
 .nav-links { display: flex; gap: 36px; margin-right: auto; margin-left: 48px; }
 .nav-links a { font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
 .nav-links a:hover { color: var(--navy); }
-.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 12px 28px; border-radius: 4px; text-decoration: none; transition: all 0.3s var(--ease); cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
-.btn-primary { background: var(--navy); color: var(--cream); }
-.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
-.btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); }
-.btn-secondary:hover { border-color: var(--navy); background: rgba(27,46,75,0.04); }
-.btn-white { background: var(--cream); color: var(--navy); }
-.btn-white:hover { background: var(--white); transform: translateY(-1px); }
-.btn-outline-white { background: transparent; color: var(--cream); border: 1px solid rgba(240,239,235,0.3); }
-.btn-outline-white:hover { border-color: var(--cream); background: rgba(240,239,235,0.08); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
 .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--navy); }
-.nav-actions { display: flex; align-items: center; gap: 12px; }
 .nav-client-login { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; transition: border-color 0.2s ease, background 0.2s ease; }
 .nav-client-login:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
-.hero { min-height: auto; display: flex; align-items: flex-start; position: relative; overflow: hidden; padding-top: 168px; padding-bottom: 200px; z-index: 1; }
-.hero-watermark { position: absolute; right: 15%; top: 50%; transform: translateY(-50%); font-family: var(--font-heading); font-weight: 700; font-size: clamp(9rem,16vw,19rem); color: rgba(27,46,75,0.06); line-height: 0.8; letter-spacing: -0.03em; user-select: none; pointer-events: none; }
-.hero .container { max-width: 100%; margin: 0; padding: 0 60px; }
-.hero-content { max-width: 680px; }
-.hero-tag { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 28px; }
-.hero h1 { font-family: var(--font-heading); font-size: clamp(3.5rem,7vw,5.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 28px; min-height: 2.2em; }
-.hero-sub { font-size: 1.25rem; line-height: 1.7; color: var(--text-secondary); max-width: 580px; margin-bottom: 48px; }
-.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
-.solutions-hover { display: flex; align-items: stretch; }
-.sol-left { flex: 0 0 50%; background: var(--cream); padding: 24px 48px 24px 64px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid rgba(27,46,75,0.10); }
-.sol-heading { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); position: relative; padding-left: 20px; margin-bottom: 16px; }
-.sol-heading::before { content: ''; position: absolute; left: 0; top: 50%; width: 10px; height: 1.5px; background: currentColor; opacity: 0.5; }
-.sol-sub-headline { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--navy); letter-spacing: -0.5px; margin-bottom: 32px; line-height: 1.2; }
-.sol-item { display: flex; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(27,46,75,0.08); cursor: pointer; transition: all 0.3s ease; position: relative; }
-.sol-item::before { content: ''; position: absolute; left: -24px; top: 50%; width: 3px; height: 60%; background: var(--navy); transform: translateY(-50%); opacity: 0; transition: opacity 0.3s cubic-bezier(0.25,0.46,0.45,0.94); }
-.sol-item:hover::before, .sol-item.active::before { opacity: 1; }
-.sol-num { font-family: var(--font-heading); font-size: 13px; font-weight: 600; color: rgba(27,46,75,0.35); transition: color 0.3s ease; min-width: 28px; }
-.sol-title { font-family: var(--font-heading); font-size: 16px; font-weight: 500; color: rgba(27,46,75,0.55); transition: color 0.3s ease; line-height: 1.4; }
-.sol-item:hover .sol-title, .sol-item.active .sol-title { color: var(--navy); }
-.sol-item:hover .sol-num, .sol-item.active .sol-num { color: rgba(27,46,75,0.65); }
-.sol-item:hover { background: transparent; }
-.sol-right { flex: 0 0 50%; background: #fff; padding: 24px 64px 24px; display: flex; flex-direction: column; justify-content: flex-start; position: relative; overflow: visible; min-height: unset; align-self: stretch; }
-.sol-panel { position: relative; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; height: 0; overflow: hidden; }
-.sol-panel.active { height: auto; overflow: visible; }
-.sol-panel.active { opacity: 1; pointer-events: auto; }
-@keyframes solSlideIn { from { opacity: 0; } to { opacity: 1; } }
-.sol-panel-num { font-family: var(--font-heading); font-size: 48px; font-weight: 700; color: rgba(27,46,75,0.05); line-height: 1; margin-bottom: 2px; }
-.sol-panel-title { font-family: var(--font-heading); font-size: 24px; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.15; }
-.sol-panel-text { font-size: 16px; line-height: 1.75; color: #4a5a6a; }
-.sol-panel-text + .sol-panel-text { margin-top: 10px; }
-.sol-panel-text p { margin-top: 10px; }
-.sol-panel-line { width: 48px; height: 2px; background: var(--navy); margin-top: 20px; opacity: 0.2; }
-.sol-panel-tag { display: inline-block; margin-top: 20px; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(27,46,75,0.6); border: 1px solid rgba(27,46,75,0.25); padding: 5px 12px; border-radius: 4px; }
-.sol-inline-panel { display: none; }
-.sol-plus { display: none; }
-.tax-chart-section { background: var(--cream-dark); padding: 120px 0; position: relative; z-index: 1; }
-.tax-chart-header { text-align: center; margin-bottom: 64px; }
-.tax-chart-header h2 { font-family: var(--font-heading); font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 700; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.02em; }
-.tax-chart-header p { font-size: 1.25rem; color: var(--text-secondary); max-width: 480px; margin: 0 auto; line-height: 1.7; }
-.chart-wrapper { max-width: 1100px; margin: 0 auto; background: var(--white); border-radius: 8px; padding: 64px; border: 1px solid rgba(27,46,75,0.06); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-.chart-text-side h3 { font-family: var(--font-heading); font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 20px; line-height: 1.2; }
-.chart-text-side p { font-size: 1rem; line-height: 1.75; color: var(--text-secondary); margin-bottom: 28px; }
-.chart-big-number { font-family: var(--font-heading); font-size: clamp(2.5rem,5vw,3.5rem); font-weight: 700; color: var(--navy); letter-spacing: -0.03em; line-height: 1; margin-bottom: 8px; }
-.chart-big-label { font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5; }
-.chart-visual { display: flex; align-items: flex-end; justify-content: center; gap: 40px; height: 280px; position: relative; padding-bottom: 60px; }
-.chart-visual::before { content: ''; position: absolute; bottom: 60px; left: 0; right: 0; height: 1px; background: rgba(27,46,75,0.1); }
-.chart-bar-group { display: flex; flex-direction: column; align-items: center; gap: 12px; position: relative; }
-.chart-bar { width: 72px; border-radius: 4px 4px 0 0; position: relative; transition: height 0.5s cubic-bezier(0.4,0,0.2,1); }
-.chart-bar-taxable { height: 100px; background: linear-gradient(180deg,rgba(27,46,75,0.25) 0%,rgba(27,46,75,0.12) 100%); border: 1px solid rgba(27,46,75,0.15); border-bottom: none; }
-.chart-bar-taxaware { height: 220px; background: linear-gradient(180deg,var(--navy) 0%,var(--navy-light) 100%); }
-.chart-bar-value { position: absolute; top: -30px; left: 50%; transform: translateX(-50%); font-family: var(--font-heading); font-weight: 700; font-size: 1rem; white-space: nowrap; }
-.chart-bar-taxable .chart-bar-value { color: var(--text-secondary); }
-.chart-bar-taxaware .chart-bar-value { color: var(--navy); }
-.chart-bar-label { font-family: var(--font-body); font-size: 0.75rem; color: var(--text-secondary); text-align: center; line-height: 1.5; position: absolute; bottom: -56px; left: 50%; transform: translateX(-50%); white-space: nowrap; }
-.chart-footnote { font-size: 0.6875rem; color: var(--text-secondary); opacity: 0.6; margin-top: 16px; text-align: center; }
-.stepper-section { padding: 100px 0; }
-.stepper-container { max-width: 100%; padding: 0 64px; }
-.stepper-header { margin-bottom: 48px; }
-.stepper-title { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-top: 16px; letter-spacing: -0.5px; }
-.stepper-nav { display: flex; align-items: center; justify-content: center; margin-bottom: 48px; padding: 0 40px; }
-.stepper-step { display: flex; flex-direction: column; align-items: center; cursor: pointer; position: relative; z-index: 1; }
-.stepper-circle { width: 52px; height: 52px; border-radius: 50%; border: 2px solid rgba(27,46,75,0.2); background: transparent; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: rgba(27,46,75,0.3); transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
-.stepper-step.active .stepper-circle { background: var(--navy); border-color: var(--navy); color: var(--cream); transform: scale(1.08); box-shadow: 0 4px 20px rgba(27,46,75,0.2); }
-.stepper-step.completed .stepper-circle { background: rgba(27,46,75,0.08); border-color: rgba(27,46,75,0.25); color: var(--navy); }
-.stepper-word { font-family: var(--font-heading); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--navy); opacity: 0.25; margin-top: 12px; transition: opacity 0.3s ease; }
-.stepper-step.active .stepper-word { opacity: 0.7; }
-.stepper-connector { flex: 1; height: 2px; background: rgba(27,46,75,0.1); position: relative; margin: 0 -4px; margin-bottom: 28px; }
-.stepper-fill { position: absolute; inset: 0; background: rgba(27,46,75,0.25); transform-origin: left; transform: scaleX(0); transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
-.stepper-connector.filled .stepper-fill { transform: scaleX(1); }
-.stepper-content { background: var(--cream-dark); border-radius: 20px; padding: 56px; position: relative; overflow: hidden; min-height: 260px; }
-.stepper-watermark { position: absolute; right: 0; bottom: -20px; font-family: var(--font-heading); font-size: 240px; font-weight: 700; color: var(--navy); opacity: 0.03; line-height: 1; pointer-events: none; }
-.stepper-body { opacity: 0; transform: translateY(16px); transition: all 0.5s cubic-bezier(0.4,0,0.2,1); }
-.stepper-body.visible { opacity: 1; transform: translateY(0); }
-.stepper-pill { display: inline-block; font-family: var(--font-heading); font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); opacity: 0.55; border: 1px solid rgba(27,46,75,0.3); border-radius: 20px; padding: 6px 16px; margin-bottom: 24px; }
-.stepper-content-title { font-family: var(--font-heading); font-size: 32px; font-weight: 700; color: var(--navy); margin-bottom: 20px; letter-spacing: -0.5px; }
-.stepper-bar { width: 40px; height: 2.5px; background: var(--navy); opacity: 0.25; margin-bottom: 20px; }
-.stepper-desc { font-size: 16px; line-height: 1.8; color: var(--navy); opacity: 0.75; max-width: 75%; }
-#solutions, #about, #framework, #contact, #insights { scroll-margin-top: 80px; }
-.split-section { padding: 64px 0; }
-.split-grid { display: grid; grid-template-columns: 240px 1fr; gap: 80px; align-items: start; }
-.split-label { padding-top: 8px; position: sticky; top: 100px; }
-.about-text { font-size: 1.0625rem; line-height: 1.9; color: var(--text-secondary); max-width: 640px; }
-.why-section { padding: 64px 0; background: var(--cream); }
-.why-header { text-align: center; margin-bottom: 64px; }
-.why-header h2 { font-family: var(--font-heading); font-size: clamp(2rem,3.5vw,3rem); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; }
-.why-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 40px; }
-.why-card { padding: 24px 20px; border: 0.5px solid rgba(27,46,75,0.08); border-left: 3px solid var(--navy); border-radius: 0 6px 6px 0; background: var(--white); transition: all 0.4s var(--ease); position: relative; overflow: hidden; }
-.why-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(27,46,75,0.06); }
-.why-card h3 { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
-.why-card p { font-size: 0.9375rem; line-height: 1.75; color: var(--text-secondary); }
-.why-card-num { position: absolute; right: 8px; bottom: -8px; font-family: var(--font-heading); font-size: 72px; font-weight: 700; color: rgba(27,46,75,0.04); line-height: 1; pointer-events: none; }
-.cta-section { background: var(--navy); padding: 120px 0; text-align: center; position: relative; overflow: hidden; z-index: 1; }
-.cta-section::before { content: 'STQ'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-family: var(--font-heading); font-weight: 700; font-size: 20rem; color: rgba(240,239,235,0.02); pointer-events: none; }
-.cta-section h2 { font-family: var(--font-heading); font-size: clamp(2rem,4vw,3.25rem); font-weight: 700; color: var(--cream); margin-bottom: 20px; letter-spacing: -0.02em; }
-.cta-section p { font-size: 1.0625rem; color: var(--text-light); max-width: 520px; margin: 0 auto 8px; line-height: 1.7; }
-.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.newsletter-section { padding: 80px 0; background: var(--cream-dark); position: relative; z-index: 1; }
-.newsletter-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
-.newsletter-inner h3 { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--navy); letter-spacing: -0.01em; }
-.newsletter-inner p { font-size: 0.9375rem; color: var(--text-secondary); margin-top: 8px; }
-.newsletter-form { display: flex; gap: 12px; }
-.newsletter-form input { font-family: var(--font-body); font-size: 0.875rem; padding: 14px 20px; border: 1px solid rgba(27,46,75,0.15); border-radius: 4px; background: var(--white); color: var(--navy); width: 300px; outline: none; transition: border-color 0.2s ease; }
-.newsletter-form input:focus { border-color: var(--navy); }
-footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative; z-index: 1; }
-.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 24px; }
-.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); letter-spacing: 0.03em; }
-.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.5); }
-.footer-links { display: flex; gap: 32px; flex-wrap: wrap; }
-.footer-links a { font-size: 0.8125rem; color: rgba(240,239,235,0.5); text-decoration: none; transition: color 0.2s ease; }
-.footer-links a:hover { color: var(--cream); }
-.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.35); }
-.footer-disclaimer { margin-top: 24px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 900px; }
-@media (max-width: 1024px) { .split-grid { grid-template-columns: 1fr; gap: 32px; } .split-label { position: static; } .why-grid { grid-template-columns: repeat(2,1fr); } .chart-wrapper { grid-template-columns: 1fr; } }
-@media (max-width: 600px) {
-  .solutions-hover { flex-direction: column; }
-  .sol-left { flex: none; padding: 32px 24px; }
-  .sol-right { display: none !important; }
-  .sol-plus { display: flex !important; }
-  .sol-item { flex-wrap: wrap; }
-  .sol-inline-panel { display: none; padding: 12px 0 8px; width: 100%; }
-  .sol-item.mob-open .sol-inline-panel { display: block; }
-  .sol-item.mob-open .sol-plus-icon { transform: rotate(45deg); }
-  .sol-inline-title { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-  .sol-inline-text { font-size: 0.85rem; line-height: 1.7; color: var(--text-secondary); margin-top: 6px; }
-  .sol-inline-tag { display: inline-block; margin-top: 10px; font-size: 0.6rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(27,46,75,0.5); border: 1px solid rgba(27,46,75,0.15); padding: 3px 8px; border-radius: 4px; }
-}
-@media (max-width: 768px) { .nav-links, .nav-client-login, .nav-cta-desktop, .nav-login-dropdown { display: none !important; } .nav-toggle { display: flex !important; } .hero h1 { font-size: 2.5rem; } .hero { padding-top: 100px; padding-bottom: 80px; } .why-grid { grid-template-columns: 1fr; } .newsletter-inner { flex-direction: column; text-align: center; align-items: center; } .newsletter-form { flex-direction: column; width: 100%; } .newsletter-form input { width: 100%; } .footer-main { flex-direction: column; text-align: center; } .footer-links { justify-content: center; } .hero-buttons { flex-direction: column; align-items: flex-start; } .cta-buttons { flex-direction: column; align-items: center; } .stepper-container { padding: 0 24px; } .stepper-content { padding: 40px 28px; } .chart-wrapper { padding: 32px 24px; } }
+.nav-login-dropdown { position: relative; }
+.nav-login-btn { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); background: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s ease; }
+.nav-login-btn:hover { border-color: rgba(27,46,75,0.5); }
+.nav-login-menu { position: absolute; top: calc(100% + 8px); right: 0; background: #fff; border: 1px solid rgba(27,46,75,0.1); border-radius: 6px; min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.2s ease; z-index: 100; overflow: hidden; }
+.nav-login-dropdown:hover .nav-login-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-login-menu a { display: flex; align-items: center; gap: 10px; padding: 14px 18px; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: background 0.15s ease; border-bottom: 1px solid rgba(27,46,75,0.06); }
+.nav-login-menu a:last-child { border-bottom: none; }
+.nav-login-menu a:hover { background: var(--cream); }
+.nav-login-menu-label { font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-secondary); display: block; }
 .mobile-nav { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; transition: opacity 0.3s ease; }
 .mobile-nav.active { display: flex; opacity: 1; }
 .mobile-nav a { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--navy); text-decoration: none; }
 .mobile-nav .btn { font-size: 0.8125rem; }
 .mobile-nav .btn-primary { color: var(--cream); }
-.mobile-nav .btn-secondary { color: var(--navy); }
+.mobile-nav .btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); font-size: 0.8125rem; }
 .mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
-.hero{padding:148px 0 80px;background:var(--navy);position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px);background-size:60px 60px;}
-.hero-watermark{position:absolute;right:20px;bottom:20px;font-family:var(--font-heading);font-weight:700;font-size:clamp(5rem,10vw,10rem);color:rgba(240,239,235,0.03);line-height:1;pointer-events:none;user-select:none;}
-.hero-inner{position:relative;z-index:1;max-width:720px;}
-.hero-tag{font-family:var(--font-heading);font-size:0.7rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,239,235,0.4);margin-bottom:20px;position:relative;padding-left:20px;}
-.hero-tag::before{content:'';position:absolute;left:0;top:50%;width:10px;height:1px;background:rgba(240,239,235,0.3);}
-.hero h1{font-family:var(--font-heading);font-size:clamp(2.25rem,4vw,3.5rem);font-weight:700;color:var(--cream);letter-spacing:-0.02em;margin-bottom:24px;line-height:1.05;}
-.hero-sub{font-size:1.0625rem;color:var(--text-light);line-height:1.8;margin-bottom:36px;}
-.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;}
-.rates-section{background:var(--cream-dark);padding:40px 0;border-bottom:1px solid rgba(27,46,75,0.08);position:relative;z-index:1;}
-.rates-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
-.rates-label-block .section-label{margin-bottom:4px;}
-.rates-title{font-family:var(--font-heading);font-size:0.9375rem;font-weight:700;color:var(--navy);margin-top:8px;}
-.rate-cards{display:flex;gap:12px;flex-wrap:wrap;}
-.rate-card{background:var(--white);border:1px solid rgba(27,46,75,0.08);border-radius:6px;padding:18px 24px;min-width:140px;text-align:center;}
-.rate-card-tenor{font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(27,46,75,0.4);margin-bottom:6px;}
-.rate-card-rate{font-family:var(--font-heading);font-size:1.625rem;font-weight:700;color:var(--navy);letter-spacing:-0.02em;line-height:1;margin-bottom:2px;}
-.rate-card-sub{font-size:0.6875rem;color:var(--text-secondary);}
-.rates-disclaimer{font-size:0.6875rem;color:var(--text-secondary);opacity:0.55;margin-top:16px;line-height:1.6;}
-.rates-expand-btn{font-family:var(--font-heading);font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);background:none;border:none;cursor:pointer;padding:0;border-bottom:1px solid rgba(27,46,75,0.3);padding-bottom:2px;margin-top:10px;display:inline-block;}
-.how-section{padding:80px 0;background:var(--cream);position:relative;z-index:1;}
-.how-steps{display:flex;flex-direction:column;gap:0;margin-top:32px;max-width:680px;}
-.how-step{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid rgba(27,46,75,0.07);}
-.how-step:last-child{border-bottom:none;}
-.how-num{font-family:var(--font-heading);font-size:1.5rem;font-weight:700;color:rgba(27,46,75,0.08);line-height:1;min-width:36px;}
-.how-content h4{font-family:var(--font-heading);font-size:0.9375rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
-.how-content p{font-size:0.9rem;line-height:1.75;color:var(--text-secondary);}
-.compare-section{padding:64px 0;background:var(--cream-dark);position:relative;z-index:1;}
-.compare-tabs{display:flex;gap:0;margin-bottom:32px;border:1px solid rgba(27,46,75,0.1);border-radius:6px;overflow:hidden;width:fit-content;}
-.compare-tab{font-family:var(--font-heading);font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:10px 20px;cursor:pointer;background:var(--white);color:var(--text-secondary);border:none;transition:all 0.2s ease;}
-.compare-tab.active{background:var(--navy);color:var(--cream);}
-.compare-panel{display:none;}
-.compare-panel.active{display:block;}
-.compare-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:8px;overflow:hidden;border:1px solid rgba(27,46,75,0.07);}
-.compare-table th{font-family:var(--font-heading);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:14px 20px;text-align:left;border-bottom:1px solid rgba(27,46,75,0.08);background:var(--cream);}
-.compare-table th.col-stq{background:var(--navy);color:var(--cream);}
-.compare-table th.col-other{color:var(--text-secondary);}
-.compare-table td{padding:14px 20px;font-size:0.875rem;border-bottom:1px solid rgba(27,46,75,0.05);}
-.compare-table td:first-child{font-weight:600;color:var(--text-primary);font-size:0.8125rem;}
-.compare-table td.col-stq{background:rgba(27,46,75,0.03);font-weight:600;color:var(--navy);}
-.compare-table td.col-other{color:var(--text-secondary);}
-.compare-table tr:last-child td{border-bottom:none;}
-.faq-section{padding:80px 0;background:var(--cream);position:relative;z-index:1;}
-.faq-intro{max-width:560px;margin-bottom:48px;}
-.faq-intro p{font-size:1.0625rem;line-height:1.8;color:var(--text-secondary);margin-top:12px;}
-.faq-list{display:flex;flex-direction:column;gap:0;max-width:800px;}
-.faq-item{border-bottom:1px solid rgba(27,46,75,0.08);}
-.faq-q{font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--navy);padding:22px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none;}
-.faq-q::after{content:'+';font-size:1.25rem;font-weight:300;color:var(--text-secondary);flex-shrink:0;transition:transform 0.3s ease;}
-.faq-item.open .faq-q::after{transform:rotate(45deg);}
-.faq-a{font-size:0.9375rem;line-height:1.8;color:var(--text-secondary);max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s ease;}
-.faq-item.open .faq-a{max-height:600px;padding-bottom:22px;}
-.cta-section{background:var(--navy);padding:80px 0;text-align:center;position:relative;overflow:hidden;z-index:1;}
-.cta-section::before{content:'STQ';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--font-heading);font-weight:700;font-size:20rem;color:rgba(240,239,235,0.02);pointer-events:none;}
-.cta-section h2{font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:var(--cream);margin-bottom:16px;letter-spacing:-0.02em;}
-.cta-section p{font-size:1rem;color:var(--text-light);max-width:480px;margin:0 auto 36px;line-height:1.7;}
-.cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
-footer{background:var(--navy-dark);padding:40px 0 28px;position:relative;z-index:1;}
-.footer-main{display:flex;align-items:center;justify-content:space-between;padding-bottom:24px;border-bottom:1px solid rgba(240,239,235,0.08);flex-wrap:wrap;gap:16px;}
-.footer-logo{font-family:var(--font-heading);font-weight:700;font-size:1rem;color:var(--cream);}
-.footer-logo span{font-weight:400;color:rgba(240,239,235,0.5);}
-.footer-links{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-links a{font-size:0.8125rem;color:rgba(240,239,235,0.5);text-decoration:none;transition:color 0.2s;}
-.footer-links a:hover{color:var(--cream);}
-.footer-copy{font-size:0.8125rem;color:rgba(240,239,235,0.35);}
-.footer-disclaimer{margin-top:20px;font-size:0.6875rem;line-height:1.7;color:rgba(240,239,235,0.18);max-width:900px;}
-/* CALCULATOR */
-.calc-note{font-size:0.8125rem;color:var(--text-secondary);margin-bottom:24px;}
-.csg{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
-.csg-top{display:flex;justify-content:space-between;align-items:center;}
-.csg-top label{font-family:var(--font-body);font-size:0.875rem;color:var(--text-secondary);}
-.csg-top .cval{font-family:var(--font-heading);font-size:0.9375rem;font-weight:600;color:var(--navy);background:var(--cream-dark);padding:3px 12px;border-radius:4px;}
-input[type=range]{width:100%;accent-color:#1B2E4B;height:4px;cursor:pointer;}
-.cstat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px;align-content:start;}
-.cstat{background:var(--cream-dark);border-radius:6px;padding:12px 14px;}
-.cstat-label{font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(27,46,75,0.4);margin-bottom:4px;}
-.cstat-val{font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--navy);}
-.chero{background:var(--navy);border-radius:10px;padding:24px 24px 20px;color:var(--cream);}
-.chero-label{font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;opacity:0.45;margin-bottom:8px;}
-.chero-rate{font-family:var(--font-heading);font-size:2.5rem;font-weight:700;line-height:1;margin-bottom:4px;}
-.chero-sub{font-size:0.8125rem;opacity:0.5;}
-.chero-divider{border:none;border-top:1px solid rgba(240,239,235,0.1);margin:14px 0;}
-.chero-row{display:flex;justify-content:space-between;align-items:baseline;font-size:0.8125rem;}
-.chero-row .ck{opacity:0.5;}
-.chero-row .cv{font-family:var(--font-heading);font-weight:600;}
-.chero-note{background:rgba(240,239,235,0.06);border:1px solid rgba(240,239,235,0.1);border-radius:6px;padding:10px 14px;margin-top:14px;}
-.chero-note p{font-size:0.75rem;color:rgba(240,239,235,0.5);line-height:1.6;margin:0;}
-.ccmp{background:var(--white);border:1px solid rgba(27,46,75,0.08);border-radius:8px;padding:14px 16px;margin-top:12px;}
-.ccmp-head{font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(27,46,75,0.4);margin-bottom:10px;}
-.ccmp-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:0.5px solid rgba(27,46,75,0.07);font-size:0.875rem;}
-.ccmp-row:last-child{border:none;}
-.ccmp-row .cl{color:var(--text-secondary);}
-.ccmp-row .cr{font-family:var(--font-heading);font-weight:600;color:var(--text-secondary);}
-.ccmp-row .cr.win{color:var(--navy);}
-.ccmp-row .cbadge{font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;background:var(--navy);color:var(--cream);padding:2px 8px;border-radius:3px;}
-.cdisc{font-size:0.6875rem;color:var(--text-secondary);opacity:0.55;line-height:1.6;margin-top:10px;}
-
-.nav-links{display:flex;gap:36px;margin-right:auto;margin-left:48px;}
-.nav-links a{font-family:var(--font-body);font-size:0.875rem;font-weight:500;color:var(--text-secondary);text-decoration:none;transition:color 0.2s ease;}
-.nav-links a:hover{color:var(--navy);}
-.nav-actions{display:flex;align-items:center;gap:12px;}
-.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
-.nav-toggle span{display:block;width:22px;height:1.5px;background:var(--navy);}
-.nav-login-dropdown{position:relative;}
-.nav-login-btn{font-family:var(--font-heading);font-size:0.8125rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--navy);background:none;border:1px solid rgba(27,46,75,0.2);border-radius:4px;padding:12px 28px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:border-color 0.2s ease;}
-.nav-login-btn:hover{border-color:rgba(27,46,75,0.5);}
-.nav-login-menu{position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid rgba(27,46,75,0.1);border-radius:6px;min-width:200px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:all 0.2s ease;z-index:100;overflow:hidden;}
-.nav-login-dropdown:hover .nav-login-menu{opacity:1;visibility:visible;transform:translateY(0);}
-.nav-login-menu a{display:flex;align-items:center;gap:10px;padding:14px 18px;font-family:var(--font-heading);font-size:0.75rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--navy);text-decoration:none;transition:background 0.15s ease;border-bottom:1px solid rgba(27,46,75,0.06);}
-.nav-login-menu a:last-child{border-bottom:none;}
-.nav-login-menu a:hover{background:var(--cream);}
-.nav-login-menu-label{font-size:0.6rem;letter-spacing:0.12em;color:var(--text-secondary);display:block;}
-.mobile-nav{display:none;position:fixed;inset:0;background:var(--cream);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;transition:opacity 0.3s ease;}
-.mobile-nav.active{display:flex;opacity:1;}
-.mobile-nav a{font-family:var(--font-heading);font-size:1.5rem;font-weight:600;color:var(--navy);text-decoration:none;}
-.mobile-nav .btn{font-size:0.8125rem;}
-.mobile-nav .btn-primary{color:var(--cream);}
-.mobile-nav .btn-secondary{background:transparent;color:var(--navy);border:1px solid rgba(27,46,75,0.25);font-size:0.8125rem;}
-.mobile-nav-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:1.5rem;color:var(--navy);cursor:pointer;padding:8px;}
-
-/* MOBILE */
-@media(max-width:768px){
-  .nav-inner{padding:0 24px;}
-  .hero{padding:100px 0 60px;}
-  .hero h1{font-size:2.25rem;}
-  .hero-buttons{flex-direction:column;align-items:flex-start;}
-  .rates-inner{flex-direction:column;align-items:flex-start;}
-  .rate-cards{width:100%;}
-  .rate-card{flex:1;min-width:0;}
-  .compare-tabs{width:100%;overflow-x:auto;}
-  .compare-table td,.compare-table th{padding:10px 12px;font-size:0.8rem;}
-  .cta-buttons{flex-direction:column;align-items:center;}
-  .footer-main{flex-direction:column;text-align:center;}
-  .footer-links{justify-content:center;}
-  .calc-grid-outer{grid-template-columns:1fr !important;gap:32px !important;}
-  .cstat-grid{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:480px){.cstat-grid{grid-template-columns:1fr;}}
+@media (max-width: 768px) { .nav-links, .nav-client-login, .nav-cta-desktop, .nav-login-dropdown { display: none !important; } .nav-toggle { display: flex !important; } .nav-inner { padding: 0 24px; } }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 12px 28px; border-radius: 4px; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); }
+.btn-secondary:hover { border-color: var(--navy); background: rgba(27,46,75,0.04); }
 </style>
 </head>
 <body>
@@ -336,7 +144,7 @@ input[type=range]{width:100%;accent-color:#1B2E4B;height:4px;cursor:pointer;}
  <a href="#solutions">Solutions</a>
  <a href="#about">About</a>
  <a href="/insights.html">Insights</a>
- <a href="/research.html" >Research</a>
+ <a href="/research.html" onclick="">Research</a>
  <a href="/box-spreads.html">Synthetic Financing</a>
  <a href="/stq-consulting.html">Consulting</a>
  <a href="/contact.html">Contact</a>
@@ -370,286 +178,108 @@ input[type=range]{width:100%;accent-color:#1B2E4B;height:4px;cursor:pointer;}
 </nav>
 
 <div class="mobile-nav">
- <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('active')">✕</button>
- <a href="#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
- <a href="#about" onclick="this.parentElement.classList.remove('active')">About</a>
- <a href="/insights.html" onclick="this.parentElement.classList.remove('active')">Insights</a>
- <a href="/research.html" >Research</a>
- <a href="/box-spreads.html" onclick="this.parentElement.classList.remove('active')">Synthetic Financing</a>
- <a href="/stq-consulting.html" onclick="this.parentElement.classList.remove('active')">Consulting</a>
- <a href="/contact.html" onclick="this.parentElement.classList.remove('active')">Contact</a>
- <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Call</a>
- <a href="https://login.orionadvisor.com/login.html?g=20e2ec87-e47b-4ab9-9ea4-a395b4b01ee1&e=4&i=138" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Investment Portal</a>
- <a href="https://client.schwab.com" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Charles Schwab</a>
- <a href="/get-started.html" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Get Started</a>
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('active')">✕</button>
+  <a href="/#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
+  <a href="/#about" onclick="this.parentElement.classList.remove('active')">About</a>
+  <a href="/insights.html" onclick="this.parentElement.classList.remove('active')">Insights</a>
+  <a href="/research.html" onclick="this.parentElement.classList.remove('active')">Research</a>
+  <a href="/box-spreads.html" onclick="this.parentElement.classList.remove('active')">Synthetic Financing</a>
+  <a href="/stq-consulting.html" onclick="this.parentElement.classList.remove('active')">Consulting</a>
+  <a href="/contact.html" onclick="this.parentElement.classList.remove('active')">Contact</a>
+  <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Call</a>
+  <a href="https://login.orionadvisor.com/login.html?g=20e2ec87-e47b-4ab9-9ea4-a395b4b01ee1&e=4&i=138" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Investment Portal</a>
+  <a href="https://client.schwab.com" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Charles Schwab</a>
+  <a href="/get-started.html" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Get Started</a>
 </div>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-watermark">STQ</div>
   <div class="container">
-    <div class="hero-inner">
-      <div class="hero-tag">Synthetic Financing</div>
-      <h1>No bank. No middleman. Your portfolio is the lender.</h1>
-      <p class="hero-sub">Box spread financing lets you borrow against your investments at near-Treasury rates, set by the market, not a bank. No credit check, no approval process, no forced selling. You stay fully invested while accessing the capital you need.</p>
-      <div class="hero-buttons">
-        <a href="#faq" class="btn btn-white" style="min-width:220px;justify-content:center;">Common Questions</a>
-        <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-outline-white" style="min-width:220px;justify-content:center;">Schedule a Call</a>
+    <div class="hero-tag">STQ Consulting</div>
+    <h1>The thinking behind the strategies. Available directly.</h1>
+    <p class="hero-sub">Family offices, independent advisors, and institutional teams have reached out wanting to understand the work behind STQ, not just the results. STQ Consulting is built for them.</p>
+    <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn-book" style="display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--cream);font-family:var(--font-heading);font-weight:600;font-size:0.8125rem;letter-spacing:0.05em;text-transform:uppercase;padding:16px 32px;border-radius:4px;text-decoration:none;transition:all 0.3s ease;" onmouseover="this.style.background='#2a4570';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='var(--navy)';this.style.transform=''">Book a Session →</a>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="for-whom">
+  <div class="container">
+    <div class="section-label">Who This Is For</div>
+    <h2>Built for professionals who want more than a product pitch.</h2>
+    <p class="for-whom-lead">STQ Consulting is not a sales call. It is a structured working session for people who already understand the landscape and want to go deeper. The questions we get most often come from three groups.</p>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="audience-card-num">01</div>
+        <h3>Independent Advisors</h3>
+        <p>RIAs and independent planners who want to understand how to implement systematic tax-loss harvesting, box spread financing, or derivative overlays for their own clients, and whether these strategies are right for their practice.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-card-num">02</div>
+        <h3>Family Offices</h3>
+        <p>Single and multi-family offices with sophisticated portfolios who want a direct conversation about after-tax return optimization, asset location, alternatives placement, and portfolio construction methodology.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-card-num">03</div>
+        <h3>Institutions and Allocators</h3>
+        <p>Investment committees, endowments, and allocators evaluating specific strategies, looking to stress-test an approach, or seeking an independent perspective on how the RIA industry is evolving.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="rates-section">
+<!-- TOPICS -->
+<section class="topics">
   <div class="container">
-    <div class="rates-inner">
-      <div class="rates-label-block">
-        <div class="section-label">Live Market Rates</div>
-        <div class="rates-title">Implied borrowing rates, right now.</div>
+    <div class="section-label">What We Cover</div>
+    <h2 style="font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.5rem);font-weight:700;color:var(--navy);letter-spacing:-0.02em;margin-bottom:12px;margin-top:16px;line-height:1.15;">Six areas. One conversation.</h2>
+    <p style="font-size:1.0625rem;line-height:1.8;color:var(--text-secondary);max-width:600px;margin-bottom:48px;">Sessions are structured around your specific questions. Below are the areas we cover most often.</p>
+    <div class="topics-grid">
+      <div class="topic-item">
+        <div class="topic-num">01</div>
+        <div class="topic-title">Systematic Tax-Loss Harvesting</div>
+        <p class="topic-desc">How continuous harvesting works, when long-short overlays make sense, how to build a loss bank and deploy it strategically, and what separates a real TLH program from a year-end exercise.</p>
       </div>
-      <div class="rate-cards">
-        <div class="rate-card"><div class="rate-card-tenor">1 Year</div><div class="rate-card-rate" id="rc-1y">4.25%</div><div class="rate-card-sub">Mid · ~354 days</div></div>
-        <div class="rate-card"><div class="rate-card-tenor">3 Year</div><div class="rate-card-rate" id="rc-3y">4.32%</div><div class="rate-card-sub">Mid · ~924 days</div></div>
-        <div class="rate-card"><div class="rate-card-tenor">5 Year</div><div class="rate-card-rate" id="rc-5y">4.38%</div><div class="rate-card-sub">Mid · ~1,663 days</div></div>
+      <div class="topic-item">
+        <div class="topic-num">02</div>
+        <div class="topic-title">Box Spread Financing</div>
+        <p class="topic-desc">The mechanics of box spread loans: how they are structured, why rates are competitive with Treasury benchmarks, how margin treatment works, and when this tool is appropriate versus alternatives like pledged asset lines.</p>
       </div>
-    </div>
-    <p class="rates-disclaimer">Implied annualized borrowing rates from XSP box spread market data as of <span id="rates-as-of"></span>. Rates vary with market conditions and exclude fees. For executable rates, contact STQ directly.</p>
-    <button onclick="toggleFullRates()" id="full-rates-btn" class="rates-expand-btn">View full rate curve ↓</button>
-    <div id="full-rates-table" style="display:none;margin-top:16px;">
-      <div style="background:var(--white);border:1px solid rgba(27,46,75,0.07);border-radius:8px;overflow:hidden;">
-        <table style="width:100%;border-collapse:collapse;">
-          <thead><tr style="background:var(--cream);">
-            <th style="font-family:var(--font-heading);font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(27,46,75,0.4);padding:12px 20px;text-align:left;border-bottom:1px solid rgba(27,46,75,0.07);">Expiration</th>
-            <th style="font-family:var(--font-heading);font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(27,46,75,0.4);padding:12px 20px;text-align:left;border-bottom:1px solid rgba(27,46,75,0.07);">Days</th>
-            <th style="font-family:var(--font-heading);font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(27,46,75,0.4);padding:12px 20px;text-align:left;border-bottom:1px solid rgba(27,46,75,0.07);">Bid</th>
-            <th style="font-family:var(--font-heading);font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(27,46,75,0.4);padding:12px 20px;text-align:left;border-bottom:1px solid rgba(27,46,75,0.07);">Ask</th>
-            <th style="font-family:var(--font-heading);font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(27,46,75,0.4);padding:12px 20px;text-align:left;border-bottom:1px solid rgba(27,46,75,0.07);">Mid</th>
-          </tr></thead>
-          <tbody id="full-rates-tbody"></tbody>
-        </table>
+      <div class="topic-item">
+        <div class="topic-num">03</div>
+        <div class="topic-title">Portfolio Construction</div>
+        <p class="topic-desc">How to build a portfolio from first principles: asset allocation, asset location across account types, vehicle selection, and how tax considerations should shape structural decisions before a single investment is chosen.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="how-section">
-  <div class="container">
-    <div class="section-label">How It Works</div>
-    <h2 style="font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.25rem);font-weight:700;color:var(--navy);letter-spacing:-0.02em;margin-top:12px;margin-bottom:8px;line-height:1.2;">Borrow from the market, not the bank.</h2>
-    <p style="font-size:1rem;line-height:1.8;color:var(--text-secondary);margin-bottom:0;max-width:640px;">A box spread is a four-leg options structure on the S&amp;P 500 Index. It creates a fully hedged position with a fixed, known payoff at expiration, functioning like a zero-coupon bond. You receive cash today and repay a fixed amount at settlement. The difference is your borrowing cost, set entirely by market forces.</p>
-    <div class="how-steps">
-      <div class="how-step"><div class="how-num">01</div><div class="how-content"><h4>Execute the box spread</h4><p>STQ places a four-leg options trade on a broad index (XSP). The structure is fully hedged with no directional market exposure.</p></div></div>
-      <div class="how-step"><div class="how-num">02</div><div class="how-content"><h4>Receive cash upfront</h4><p>The net premium collected hits your account within days. Typically 95–97 cents on the dollar for a 1-year loan at current rates.</p></div></div>
-      <div class="how-step"><div class="how-num">03</div><div class="how-content"><h4>Use the proceeds however you want</h4><p>Real estate purchase, tax bill, business investment, home improvement. Unlike a HELOC or SBLOC, the deduction follows the loan, not the use.</p></div></div>
-      <div class="how-step"><div class="how-num">04</div><div class="how-content"><h4>Repay at expiration</h4><p>A fixed amount is settled at expiration. No variable rates, no bank discretion. Roll it, extend it, or pay it off.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- CALCULATOR -->
-<section style="padding:64px 0;background:var(--cream-dark);position:relative;z-index:1;">
-  <div class="container">
-    <div class="section-label">Calculator</div>
-    <h2 style="font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.25rem);font-weight:700;color:var(--navy);letter-spacing:-0.02em;margin-top:12px;margin-bottom:32px;line-height:1.2;">See what it costs you.</h2>
-    <div style="max-width:640px;">
-      <div style="display:flex;flex-direction:column;gap:20px;">
-        <div class="calc-note">Adjust sliders to see your cost</div>
-        <div class="csg"><div class="csg-top"><label>Portfolio value</label><span class="cval" id="cl-port">$1,000,000</span></div><input type="range" min="250000" max="10000000" step="50000" value="1000000" id="cs-port" oninput="cgo()"></div>
-        <div class="csg"><div class="csg-top"><label>Loan-to-value (LTV)</label><span class="cval" id="cl-ltv">50%</span></div><input type="range" min="5" max="85" step="5" value="50" id="cs-ltv" oninput="cgo()"></div>
-        <div class="csg"><div class="csg-top"><label>Loan term</label><span class="cval" id="cl-term">1 Year</span></div><input type="range" min="1" max="5" step="1" value="1" id="cs-term" oninput="cgo()"></div>
-        <div class="csg"><div class="csg-top"><label>Federal tax bracket</label><span class="cval" id="cl-brk">37%</span></div><input type="range" min="22" max="37" step="1" value="37" id="cs-brk" oninput="cgo()"></div>
-        <div class="cstat-grid">
-          <div class="cstat"><div class="cstat-label">Loan amount</div><div class="cstat-val" id="co-loan">$500,000</div></div>
-          <div class="cstat"><div class="cstat-label">Annual interest</div><div class="cstat-val" id="co-int">$21,250</div></div>
-          <div class="cstat"><div class="cstat-label">Tax savings</div><div class="cstat-val" id="co-sav">$6,716</div></div>
-          <div class="cstat"><div class="cstat-label">Net annual cost</div><div class="cstat-val" id="co-net">$14,534</div></div>
-          <div class="cstat"><div class="cstat-label">Stated rate</div><div class="cstat-val" id="co-stated">4.25%</div></div>
-          <div class="cstat" style="background:var(--navy);"><div class="cstat-label" style="color:rgba(240,239,235,0.45);">Effective rate (after tax)</div><div class="cstat-val" id="co-eff" style="color:var(--cream);">2.91%</div></div>
-        </div>
-        <p class="cdisc">Illustrative only. Loan amount capped at 85% of portfolio value for illustration purposes. Actual borrowing capacity depends on portfolio composition, account type, and market conditions. Effective rate assumes Section 1256 60/40 treatment at selected federal bracket. LTCG fixed at 20%. State taxes excluded. Consult a qualified tax advisor before implementing.</p>
+      <div class="topic-item">
+        <div class="topic-num">04</div>
+        <div class="topic-title">Derivative-Based Strategies</div>
+        <p class="topic-desc">Using options as precision tools: protective overlays on concentrated positions, cash-secured put writing, covered calls as monetization, and how to evaluate each structure through a tax lens before execution.</p>
+      </div>
+      <div class="topic-item">
+        <div class="topic-num">05</div>
+        <div class="topic-title">Alternatives: Selection, Sizing, Placement</div>
+        <p class="topic-desc">How to evaluate private equity, private credit, and real assets within a broader portfolio. Why placement across account types matters as much as selection, and how to size alternatives without sacrificing liquidity.</p>
+      </div>
+      <div class="topic-item">
+        <div class="topic-num">06</div>
+        <div class="topic-title">The RIA Industry</div>
+        <p class="topic-desc">An unfiltered perspective on where the RIA industry is headed: consolidation dynamics, the PE-ownership question, conflicts of interest embedded in common business models, and what a genuinely independent practice looks like.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="compare-section">
-  <div class="container">
-    <div class="section-label">How It Compares</div>
-    <h2 style="font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.25rem);font-weight:700;color:var(--navy);letter-spacing:-0.02em;margin-top:12px;margin-bottom:32px;line-height:1.2;">No middleman means a better rate.</h2>
-    <div class="compare-tabs">
-      <button class="compare-tab active" onclick="switchTab('heloc',this)">vs. HELOC</button>
-      <button class="compare-tab" onclick="switchTab('sbloc',this)">vs. SBLOC</button>
-      <button class="compare-tab" onclick="switchTab('margin',this)">vs. Margin Loan</button>
-    </div>
-    <div id="tab-heloc" class="compare-panel active">
-      <table class="compare-table">
-        <thead><tr><th>Feature</th><th class="col-stq">Box Spread (STQ)</th><th class="col-other">HELOC</th></tr></thead>
-        <tbody>
-          <tr><td>Rate benchmark</td><td class="col-stq">~Near Treasury</td><td class="col-other">SOFR + bank markup</td></tr>
-          <tr><td>Rate type</td><td class="col-stq">Fixed or floating</td><td class="col-other">Floating</td></tr>
-          <tr><td>Collateral</td><td class="col-stq">Investment portfolio</td><td class="col-other">Your home</td></tr>
-          <tr><td>Credit check / approval</td><td class="col-stq">None</td><td class="col-other">Full underwriting</td></tr>
-          <tr><td>Interest deductibility</td><td class="col-stq">Any use of proceeds</td><td class="col-other">Home use only</td></tr>
-          <tr><td>Margin call risk</td><td class="col-stq">None. Defined repayment</td><td class="col-other">None (home at risk)</td></tr>
-          <tr><td>Time to fund</td><td class="col-stq">Days</td><td class="col-other">Weeks to months</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div id="tab-sbloc" class="compare-panel">
-      <table class="compare-table">
-        <thead><tr><th>Feature</th><th class="col-stq">Box Spread (STQ)</th><th class="col-other">SBLOC</th></tr></thead>
-        <tbody>
-          <tr><td>Rate benchmark</td><td class="col-stq">~Near Treasury</td><td class="col-other">SOFR + bank spread</td></tr>
-          <tr><td>Rate type</td><td class="col-stq">Fixed or floating</td><td class="col-other">Floating (bank discretion)</td></tr>
-          <tr><td>Interest deductibility</td><td class="col-stq">Any use of proceeds</td><td class="col-other">Investment use only (IRC §163d)</td></tr>
-          <tr><td>Margin call risk</td><td class="col-stq">None. Defined repayment</td><td class="col-other">Yes, if portfolio declines</td></tr>
-          <tr><td>Bank relationship required</td><td class="col-stq">No</td><td class="col-other">Yes</td></tr>
-          <tr><td>Tax classification</td><td class="col-stq">Capital loss (Section 1256)</td><td class="col-other">Investment interest expense</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div id="tab-margin" class="compare-panel">
-      <table class="compare-table">
-        <thead><tr><th>Feature</th><th class="col-stq">Box Spread (STQ)</th><th class="col-other">Margin Loan</th></tr></thead>
-        <tbody>
-          <tr><td>Rate benchmark</td><td class="col-stq">~Near Treasury</td><td class="col-other">Broker rate (often 7–9%+)</td></tr>
-          <tr><td>Rate type</td><td class="col-stq">Fixed or floating</td><td class="col-other">Variable, broker-set</td></tr>
-          <tr><td>Margin call risk</td><td class="col-stq">None. Defined repayment</td><td class="col-other">Yes, can force selling</td></tr>
-          <tr><td>Interest deductibility</td><td class="col-stq">Any use of proceeds</td><td class="col-other">Investment use only</td></tr>
-          <tr><td>Tax classification</td><td class="col-stq">Capital loss (Section 1256)</td><td class="col-other">Investment interest expense</td></tr>
-          <tr><td>Effective after-tax rate</td><td class="col-stq">~2.91%</td><td class="col-other">Typically 5–7%+</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section class="faq-section" id="faq">
-  <div class="container">
-    <div class="faq-intro">
-      <div class="section-label">Common Questions</div>
-      <h2 style="font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.25rem);font-weight:700;color:var(--navy);letter-spacing:-0.02em;margin-top:12px;line-height:1.2;">Everything you want to know.</h2>
-      <p>The questions most people ask before their first call with STQ.</p>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What exactly is a box spread?</div><div class="faq-a">A box spread is a four-leg options structure, two calls and two puts at different strike prices, on a broad index like the S&P 500 (XSP). The structure creates a fully hedged position with a known, fixed payoff at expiration. You sell the spread, receive cash upfront, and repay a fixed amount at settlement. The difference between what you receive and what you repay is the implied interest rate, set entirely by the options market, not a bank.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Why are the rates so low?</div><div class="faq-a">Because there's no middleman. Traditional lenders, banks, brokerages, borrow at near-Treasury rates and lend to you at a markup. Box spreads cut them out entirely. The rate you pay is set by arbitrageurs in the options market competing to earn the risk-free rate. The result is a borrowing cost that typically sits within a few basis points of Treasury yields, without any bank spread layered on top.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How is the interest treated for taxes?</div><div class="faq-a">Box spread contracts are Section 1256 contracts, which means the interest is classified as a capital loss, not interest expense. This has two major implications. First, the deduction applies regardless of how you use the loan proceeds. Buy a vacation home, fund a business, pay a tax bill. The deduction follows the loan, not the use. Second, the 60/40 rule applies: 60% of the loss is treated as long-term capital gain, 40% as short-term. At top federal brackets, this can reduce an approximately 4.10% stated rate to an effective cost of around 2.91%. Consult a qualified tax advisor regarding your specific situation.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is there a margin call risk?</div><div class="faq-a">Box spread loans have defined repayment. A fixed amount is owed at expiration, regardless of what the market does between now and then. This is fundamentally different from a margin loan or SBLOC, where a portfolio decline can trigger a forced sale. There is no margin call in the traditional sense. The risk is that if your portfolio declines significantly and you need to exit early, unwinding the position before expiration may carry a cost.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What can I use the proceeds for?</div><div class="faq-a">Anything. Real estate, a tax bill, a business investment, home improvements, funding a trust, purchasing a vehicle, covering living expenses during a liquidity event. Unlike a HELOC (home use only) or SBLOC (investment use only for the deduction to apply), the Section 1256 capital loss classification means the tax deduction applies no matter what you do with the funds.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What portfolio size do I need?</div><div class="faq-a">Generally, a liquid, diversified investment portfolio of $250,000 or more is the starting point. Larger portfolios can access more capital and benefit more from the fixed costs of execution. STQ will assess your specific situation and help you determine whether box spread financing makes sense given your portfolio size, composition, and what you need the capital for.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How long does it take to get funds?</div><div class="faq-a">From the time the box spread is executed, funds are typically available within a few business days. The timeline from initial conversation to execution depends on onboarding, account setup, and how quickly you want to move. For clients already at Schwab with appropriate options permissions, execution can happen within days of the decision.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I choose my loan term?</div><div class="faq-a">Yes. Box spreads are available across a range of expirations. Terms range from approximately 30 days out to several years. Short-dated structures offer floating-rate flexibility (rates reset when you roll at expiration). Longer-dated structures lock in your borrowing cost for the full term. STQ will help you select the term that matches your liquidity timeline and rate view.</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-section">
-  <div class="container">
-    <h2>Find out how much you can borrow.</h2>
-    <p>A 30-minute call is all it takes. We'll walk through your portfolio, the rates available today, and whether this strategy fits your situation.</p>
-    <div class="cta-buttons">
-      <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-white">Schedule a Call</a>
-      <a href="mailto:akiva.glazerson@stqcap.com?subject=Synthetic%20Financing%20Inquiry" class="btn btn-outline-white">Get in Touch</a>
-    </div>
-  </div>
-</section>
 
 <footer>
   <div class="container">
-    <div class="footer-main">
-      <div class="footer-logo">STQ <span>/ Capital</span></div>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
-        <a href="/insights.html">Newsletter</a>
-        <a href="/research.html">Research</a>
-        <a href="/#contact">Contact</a>
-      </div>
-      <div class="footer-copy">© 2026 STQ Capital</div>
+    <div class="footer-inner">
+      <a href="https://stqcap.com" class="footer-logo">STQ <span>/ Capital</span></a>
+      <a href="https://stqcap.com" class="footer-back">← Back to STQ Capital</a>
     </div>
-    <div class="footer-disclaimer">Advisory services are offered through STQ Capital ("STQ"), an investment adviser registered with the state of California. The information on this page is for educational purposes only and does not constitute investment, legal, or tax advice. Synthetic portfolio borrowing involves options and margin, which carry significant risk including potential losses. This strategy is not suitable for all investors. Rates shown are indicative and subject to change. Interest deductibility depends on individual tax circumstances. Consult a qualified tax professional before implementing. STQ facilitates box spread borrowing through third-party institutional platforms; STQ is not a lender or broker-dealer.</div>
+    <div class="footer-disclaimer">Advisory services are offered through STQ Capital ("STQ"), an investment adviser registered with the state of California. STQ Consulting sessions are educational in nature and do not constitute investment advice, a solicitation to buy or sell securities, or the establishment of an advisory relationship. Please consult your legal, tax, or financial professional regarding your specific situation.</div>
   </div>
 </footer>
 
-<script>
-var STQ_RATES={1:0.0425,2:0.0430,3:0.0432,4:0.0435,5:0.0438};
-document.getElementById('rc-1y').textContent=(STQ_RATES[1]*100).toFixed(2)+'%';
-document.getElementById('rc-3y').textContent=(STQ_RATES[3]*100).toFixed(2)+'%';
-document.getElementById('rc-5y').textContent=(STQ_RATES[5]*100).toFixed(2)+'%';
-var d=new Date();
-var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
-document.getElementById('rates-as-of').textContent=months[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear();
-var allRates=[{"date":"7/17/2026","daysUntilExp":44,"bestBid":0.03944892129301891,"bestAsk":0.041565706425348736},{"date":"8/21/2026","daysUntilExp":79,"bestBid":0.0410673225370779,"bestAsk":0.041439499672556224},{"date":"9/18/2026","daysUntilExp":106,"bestBid":0.04111952541047792,"bestAsk":0.04169725525196455},{"date":"10/16/2026","daysUntilExp":133,"bestBid":0.04153841024542437,"bestAsk":0.041684234829000744},{"date":"11/20/2026","daysUntilExp":172,"bestBid":0.041029716134925565,"bestAsk":0.04178000334491827},{"date":"12/18/2026","daysUntilExp":200,"bestBid":0.04080296078006462,"bestAsk":0.041905811068469134},{"date":"1/15/2027","daysUntilExp":226,"bestBid":0.04207494797980971,"bestAsk":0.042336494507557276},{"date":"2/19/2027","daysUntilExp":261,"bestBid":0.042494305984051906,"bestAsk":0.0420349877098527},{"date":"3/19/2027","daysUntilExp":291,"bestBid":0.042294081505039216,"bestAsk":0.0421133926640298},{"date":"4/16/2027","daysUntilExp":319,"bestBid":0.042346276810109273,"bestAsk":0.04238072856552577},{"date":"5/21/2027","daysUntilExp":354,"bestBid":0.042121870978176545,"bestAsk":0.04281263568461924},{"date":"6/17/2027","daysUntilExp":377,"bestBid":0.04269903128908048,"bestAsk":0.043100564751016535},{"date":"9/17/2027","daysUntilExp":476,"bestBid":0.04309215449604409,"bestAsk":0.04271693773128149},{"date":"12/17/2027","daysUntilExp":567,"bestBid":0.04249658885581553,"bestAsk":0.043694693875650614},{"date":"12/15/2028","daysUntilExp":924,"bestBid":0.04294085514207069,"bestAsk":0.043534546360193715},{"date":"12/21/2029","daysUntilExp":1298,"bestBid":0.043019675628592324,"bestAsk":0.04387138541954272},{"date":"12/20/2030","daysUntilExp":1663,"bestBid":0.0434441399667822,"bestAsk":0.04421205196830513},{"date":"12/19/2031","daysUntilExp":2030,"bestBid":0.04385128897335555,"bestAsk":0.044656935897521066}];
-var tableBuilt=false;
-var highlightDays=[354,924,1663];
-var highlightLabels={354:'1 Year',924:'3 Year',1663:'5 Year'};
-function toggleFullRates(){
-  var tbl=document.getElementById('full-rates-table');
-  var btn=document.getElementById('full-rates-btn');
-  var open=tbl.style.display==='block';
-  tbl.style.display=open?'none':'block';
-  btn.textContent=open?'View full rate curve ↓':'Hide full rate curve ↑';
-  if(!tableBuilt){
-    var tbody=document.getElementById('full-rates-tbody');
-    allRates.forEach(function(r){
-      var mid=(r.bestBid+r.bestAsk)/2;
-      var isHL=highlightDays.indexOf(r.daysUntilExp)>=0;
-      var tr=document.createElement('tr');
-      tr.style.borderBottom='1px solid rgba(27,46,75,0.05)';
-      if(isHL) tr.style.background='rgba(27,46,75,0.04)';
-      var label=isHL?' <span style="font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;background:#1B2E4B;color:#F0EFEB;padding:2px 7px;border-radius:3px;margin-left:8px;">'+highlightLabels[r.daysUntilExp]+'</span>':'';
-      tr.innerHTML='<td style="padding:10px 20px;font-size:0.875rem;color:var(--text-primary);">'+r.date+label+'</td>'
-        +'<td style="padding:10px 20px;font-size:0.875rem;color:var(--text-secondary);">'+r.daysUntilExp+'</td>'
-        +'<td style="padding:10px 20px;font-family:var(--font-heading);font-size:0.875rem;color:var(--text-secondary);">'+(r.bestBid*100).toFixed(2)+'%</td>'
-        +'<td style="padding:10px 20px;font-family:var(--font-heading);font-size:0.875rem;color:var(--text-secondary);">'+(r.bestAsk*100).toFixed(2)+'%</td>'
-        +'<td style="padding:10px 20px;font-family:var(--font-heading);font-weight:600;font-size:0.9rem;color:var(--navy);">'+(mid*100).toFixed(2)+'%</td>';
-      tbody.appendChild(tr);
-    });
-    tableBuilt=true;
-  }
-}
-var CTL={1:'1-year',2:'2-year',3:'3-year',4:'4-year',5:'5-year'};
-var CTLong={1:'1 Year',2:'2 Years',3:'3 Years',4:'4 Years',5:'5 Years'};
-function cmoney(n){return '$'+Math.round(n).toLocaleString();}
-function cpct(n){return n.toFixed(2)+'%';}
-function cgo(){
-  var port=+document.getElementById('cs-port').value;
-  var ltv=+document.getElementById('cs-ltv').value/100;
-  var loan=Math.round(port*ltv/1000)*1000;
-  var term=+document.getElementById('cs-term').value;
-  var brk=+document.getElementById('cs-brk').value/100;
-  document.getElementById('cl-port').textContent=cmoney(port);
-  document.getElementById('cl-ltv').textContent=Math.round(ltv*100)+'%';
-  document.getElementById('co-loan').textContent=cmoney(loan);
-  document.getElementById('cl-term').textContent=CTLong[term];
-  document.getElementById('cl-brk').textContent=Math.round(brk*100)+'%';
-  var stated=STQ_RATES[term];
-  var annual=loan*stated;
-  var ltcgSave=annual*0.60*0.20;
-  var stcgSave=annual*0.40*brk;
-  var totalSave=ltcgSave+stcgSave;
-  var netCost=annual-totalSave;
-  var eff=netCost/loan*100;
-  var ltcgPct=annual*0.60*0.20/loan*100;
-  var stcgPct=annual*0.40*brk/loan*100;
-  document.getElementById('co-int').textContent=cmoney(annual);
-  document.getElementById('co-sav').textContent=cmoney(totalSave);
-  document.getElementById('co-net').textContent=cmoney(netCost);
-  document.getElementById('co-stated').textContent=cpct(stated*100);
-  document.getElementById('co-eff').textContent=cpct(eff);
-}
-cgo();
-function switchTab(id,btn){
-  document.querySelectorAll('.compare-panel').forEach(function(p){p.classList.remove('active');});
-  document.querySelectorAll('.compare-tab').forEach(function(b){b.classList.remove('active');});
-  document.getElementById('tab-'+id).classList.add('active');
-  btn.classList.add('active');
-}
-function toggleFaq(el){
-  var item=el.parentElement;
-  var isOpen=item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
-  if(!isOpen) item.classList.add('open');
-}
-</script>
 </body>
 </html>
