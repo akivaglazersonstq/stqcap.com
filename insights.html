@@ -6,6 +6,7 @@
 <meta name="color-scheme" content="light only">
 <title>Insights – STQ Capital | Tax-Aware Wealth Management</title>
 <meta name="description" content="Daily tax-aware insights from STQ Capital. Box spread lending, tax loss harvesting, asset location, and institutional strategies for high-income investors.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%231B2E4B'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='22' fill='%23F0EFEB' letter-spacing='-1'>STQ</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
@@ -111,68 +112,11 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 .nav-login-menu a:last-child { border-bottom: none; }
 .nav-login-menu a:hover { background: var(--cream); }
 .nav-login-menu-label { font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-secondary); display: block; }
-.gate-overlay { display:none; position:fixed; inset:0; background:rgba(15,30,51,0.85); z-index:2000; align-items:center; justify-content:center; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); padding:24px; }
-.gate-overlay.active { display:flex !important; }
-.gate-box { background:var(--cream); border-radius:8px; padding:52px 44px; max-width:480px; width:100%; position:relative; animation:gateIn 0.35s cubic-bezier(0.16,1,0.3,1); box-shadow:0 32px 80px rgba(15,30,51,0.3); }
-@keyframes gateIn { from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);} }
-.gate-label { font-family:var(--font-heading); font-size:0.65rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-secondary); margin-bottom:12px; }
-.gate-title { font-family:var(--font-heading); font-size:1.75rem; font-weight:700; color:var(--navy); letter-spacing:-0.02em; margin-bottom:8px; line-height:1.2; }
-.gate-sub { font-size:0.9375rem; color:var(--text-secondary); margin-bottom:28px; line-height:1.6; }
-.gate-form { display:flex; flex-direction:column; gap:12px; }
-.gate-form input { font-family:var(--font-body); font-size:0.9375rem; padding:14px 16px; border:1px solid rgba(27,46,75,0.15); border-radius:4px; background:#fff; color:var(--navy); outline:none; transition:border-color 0.2s; }
-.gate-form input:focus { border-color:var(--navy); }
 </style>
 </head>
 <body>
 
-<!-- EMAIL GATE -->
-<div class="gate-overlay" id="insightGate">
-  <div class="gate-box">
-    <div class="gate-label">STQ Capital — Daily Insights</div>
-    <h2 class="gate-title">Stay Ahead of the Market.</h2>
-    <p class="gate-sub">Free access to every insight - plus analysis on tax-aware investing, portfolio construction, and the strategies that actually move the needle.</p>
-    <form class="gate-form" onsubmit="handleInsightGate(event)">
-      <input type="email" id="gate-email" placeholder="your@email.com" required>
-      <button type="submit" id="gate-btn" class="btn btn-primary" style="justify-content:center;">Get Free Access →</button>
-    </form>
-    <p id="gate-msg" style="font-size:0.875rem;margin-top:4px;display:none;"></p>
-  </div>
-</div>
 
-<script>
-(function() {
-  var STORAGE_KEY = 'stq_insights_access';
-  if (localStorage.getItem(STORAGE_KEY) === 'granted') return;
-  window.addEventListener('DOMContentLoaded', function() {
-    setTimeout(function() {
-      document.getElementById('insightGate').classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }, 1200);
-  });
-})();
-
-function handleInsightGate(e) {
-  e.preventDefault();
-  var email = document.getElementById('gate-email').value;
-  var btn = document.getElementById('gate-btn');
-  var msg = document.getElementById('gate-msg');
-  btn.textContent = 'Getting access...'; btn.disabled = true;
-  fetch('https://connect.mailerlite.com/api/subscribers', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZDU4Y2Y2M2MyZjAxNGJjMWE4YmM2MDgzMGRjMjZjODAyYzdmNDZiNTNhNTY0MGYyNzdhNGNmMTlhZGQ0YjZhOTdlMjNkMGRmZmFiN2JlOTYiLCJpYXQiOjE3NzYyMTI3MzAuODgxMjkxLCJuYmYiOjE3NzYyMTI3MzAuODgxMjkzLCJleHAiOjQ5MzE4ODYzMzAuODc0Nzg3LCJzdWIiOiIyMjY1MzY3Iiwic2NvcGVzIjpbXX0.SoT6uwDSLLRp1bVmMCTm8kNFGg0-Jj7U3MXSmaCPtwbLI_RyA5UoqBdeBIvfZkOMG_rO7lrZQZBeAzK9kkq0o-zYOyOmKuuXv1vpq441LietMpgVWHgAAtL0ExKhvIZM2HnoqUhrcd34oZoYehwVCLjbLXtZ5vQYNnjO2988r7LV5zdmfrusZ7nek3ITcrBCb03r-W6do7hypJSbw_o_7J-RaYyPGOfVYk5ZxdcDe2neZmIvOkBfOd-qyHDFSQvyKaIton3_c7FSkoBXePGR9yt722rv40tO4n1iwiX7bSi6ObNX66S03gKdwIJvxjcaGHMSIOfdKJrCqcCrXUj1OZPd94e_mprtkYFlwla0BAxvMPgf8llzF_qAlovSTwdb8G9y-ORWB1vV5ZF4ZW62ZjRd5JIFckwH2CisIM1TT-b_GU-Hi6-ATvtcqm0HSffbFPEaGFb0slTxHmbx0INSAIW8QNEYVv00DUE-ysF84f4LchSFvdj2LMzSZB9_9YkuPik-AVM32b0RSKP8PVJgYK1B4DH28AUEcNjrksUytGE59NwLr5GctZztoZbDc4AlLd1es5PNFTtdQl2augDGBtnox7rDXb0sWo7BqyttYhQ9D_1RqYltSAHsB9K1qRB9CFF734AOQm8QPshucKos2vx6hGxZKuXlfpvCCVLaSBw' },
-    body: JSON.stringify({ email: email, groups: ["185200901719328747"] })
-  }).catch(function(){});
-  setTimeout(function() {
-    localStorage.setItem('stq_insights_access', 'granted');
-    msg.style.display = 'block'; msg.style.color = '#1B2E4B';
-    msg.textContent = 'You\'re in. Unlocking...';
-    setTimeout(function() {
-      document.getElementById('insightGate').classList.remove('active');
-      document.body.style.overflow = '';
-    }, 600);
-  }, 700);
-}
-</script>
 
 <nav>
  <div class="nav-inner">
@@ -289,6 +233,7 @@ function handleInsightGate(e) {
 <script>
 const ML = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZDU4Y2Y2M2MyZjAxNGJjMWE4YmM2MDgzMGRjMjZjODAyYzdmNDZiNTNhNTY0MGYyNzdhNGNmMTlhZGQ0YjZhOTdlMjNkMGRmZmFiN2JlOTYiLCJpYXQiOjE3NzYyMTI3MzAuODgxMjkxLCJuYmYiOjE3NzYyMTI3MzAuODgxMjkzLCJleHAiOjQ5MzE4ODYzMzAuODc0Nzg3LCJzdWIiOiIyMjY1MzY3Iiwic2NvcGVzIjpbXX0.SoT6uwDSLLRp1bVmMCTm8kNFGg0-Jj7U3MXSmaCPtwbLI_RyA5UoqBdeBIvfZkOMG_rO7lrZQZBeAzK9kkq0o-zYOyOmKuuXv1vpq441LietMpgVWHgAAtL0ExKhvIZM2HnoqUhrcd34oZoYehwVCLjbLXtZ5vQYNnjO2988r7LV5zdmfrusZ7nek3ITcrBCb03r-W6do7hypJSbw_o_7J-RaYyPGOfVYk5ZxdcDe2neZmIvOkBfOd-qyHDFSQvyKaIton3_c7FSkoBXePGR9yt722rv40tO4n1iwiX7bSi6ObNX66S03gKdwIJvxjcaGHMSIOfdKJrCqcCrXUj1OZPd94e_mprtkYFlwla0BAxvMPgf8llzF_qAlovSTwdb8G9y-ORWB1vV5ZF4ZW62ZjRd5JIFckwH2CisIM1TT-b_GU-Hi6-ATvtcqm0HSffbFPEaGFb0slTxHmbx0INSAIW8QNEYVv00DUE-ysF84f4LchSFvdj2LMzSZB9_9YkuPik-AVM32b0RSKP8PVJgYK1B4DH28AUEcNjrksUytGE59NwLr5GctZztoZbDc4AlLd1es5PNFTtdQl2augDGBtnox7rDXb0sWo7BqyttYhQ9D_1RqYltSAHsB9K1qRB9CFF734AOQm8QPshucKos2vx6hGxZKuXlfpvCCVLaSBw';
 const issues = [
+      { title: "The Most Important Question You Can Ask Your Advisor.", date: "June 8, 2026", preview: "Most people assume their advisor is legally required to act in their best interest. Most of the time, that assumption is wrong.", tag: "Independence", readTime: "3 min", url: "/insights/insight-fiduciary-2026-06-08.html" },
  { title: "How to Monetize Volatility.", date: "June 5, 2026", preview: "Most investors watch volatility and feel anxious. The ones with the right structure watch it and see opportunity. Here is how direct indexing turns market dips into a tax asset.", tag: "Tax Alpha", readTime: "3 min", url: "/insights/insight-loss-inventory-2026-06-05.html" },
  { title: "This Might Be the Most Innovative Structure in Tax-Aware Investing Right Now.", date: "May 19, 2026", preview: "The no-distribution ETF defers the tax event until you sell and may convert ordinary income into a long-term capital gain. Here is how the structure works.", tag: "Tax Alpha", readTime: "4 min", url: "/insights/insight-no-distribution-etf-2026-05-19.html" },
  { title: "You Think You Own 500 Companies. You Mostly Own 10.", date: "May 18, 2026", preview: "The S&P 500 is more concentrated than most investors realize. In 1990, the top 10 companies made up 19% of the index. Today they make up more than 40%. When you buy SPY or VOO, more than $40 of every $100 goes into those 10 names.", tag: "Portfolio Construction", readTime: "4 min", url: "/insights/insight-sp500-concentration-2026-05-18.html" },
@@ -363,4 +308,4 @@ async function handleInsightsSubscribe(e) {
 }
 </script>
 </body>
-</html>
+</html>v
