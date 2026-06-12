@@ -208,6 +208,36 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
 .rates-disclaimer{font-size:0.6875rem;color:var(--text-secondary);opacity:0.55;margin-top:16px;line-height:1.6;}
 .rates-expand-btn{font-family:var(--font-heading);font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);background:none;border:none;cursor:pointer;padding:0;border-bottom:1px solid rgba(27,46,75,0.3);padding-bottom:2px;margin-top:10px;display:inline-block;}
 .how-section{padding:80px 0;background:var(--cream);position:relative;z-index:1;}
+.flow-diagram{position:relative;max-width:900px;}
+.flow-row{display:flex;align-items:center;gap:12px;}
+.flow-row-bottom{margin-top:12px;}
+.flow-tag-box{min-width:80px;}
+.flow-tag{font-family:var(--font-heading);font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);background:var(--navy);padding:8px 14px;border-radius:4px;white-space:nowrap;display:inline-block;}
+.flow-arrow-h{width:36px;height:16px;flex-shrink:0;}
+.flow-block{display:flex;align-items:center;gap:10px;background:var(--navy);color:var(--cream);padding:12px 18px;border-radius:6px;font-family:var(--font-heading);font-size:0.95rem;font-weight:700;white-space:nowrap;}
+.flow-block small{display:block;font-size:0.7rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;opacity:0.6;margin-top:2px;}
+.flow-interest-box{background:var(--navy);border-radius:6px;padding:10px 16px;text-align:center;flex-shrink:0;}
+.flow-interest-amount{font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--cream);line-height:1;}
+.flow-interest-label{font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(240,239,235,0.55);margin-top:3px;}
+.flow-split{display:flex;flex-direction:column;gap:4px;flex-shrink:0;}
+.flow-split-item{display:flex;align-items:center;gap:14px;padding:8px 14px;border-radius:5px;}
+.flow-split-lt{background:var(--navy);}
+.flow-split-st{background:var(--navy-light);}
+.flow-split-pct{font-family:var(--font-heading);font-size:1.35rem;font-weight:700;color:var(--cream);line-height:1;min-width:56px;}
+.flow-split-desc{font-family:var(--font-body);font-size:0.8rem;color:rgba(240,239,235,0.7);line-height:1.4;}
+.flow-split-desc strong{color:var(--cream);font-weight:600;}
+.flow-vert-line{position:absolute;left:40px;top:calc(50% - 16px);width:2px;height:32px;}
+@media(max-width:768px){
+  .flow-diagram{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .flow-row{min-width:700px;gap:8px;}
+  .flow-tag-box{min-width:64px;}
+  .flow-tag{font-size:0.6rem;padding:6px 10px;}
+  .flow-block{font-size:0.8rem;padding:12px 14px;}
+  .flow-interest-box{padding:8px 12px;}
+  .flow-split-item{padding:8px 12px;}
+  .flow-split-pct{font-size:1.1rem;}
+  .flow-split-desc{font-size:0.7rem;}
+}
 .how-steps{display:flex;flex-direction:column;gap:0;margin-top:32px;max-width:680px;}
 .how-step{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid rgba(27,46,75,0.07);}
 .how-step:last-child{border-bottom:none;}
@@ -412,7 +442,7 @@ input[type=range]{width:100%;accent-color:#1B2E4B;height:4px;cursor:pointer;}
         <div class="rate-card"><div class="rate-card-tenor">5 Year</div><div class="rate-card-rate" id="rc-5y">4.38%</div><div class="rate-card-sub">Mid · ~1,663 days</div></div>
       </div>
     </div>
-    <p class="rates-disclaimer">Implied annualized borrowing rates from XSP box spread market data as of <span id="rates-as-of"></span>. Rates vary with market conditions and exclude fees. For executable rates, contact STQ directly.</p>
+    <p class="rates-disclaimer">Implied annualized borrowing rates from XSP box spread market data as of <span id="rates-as-of"></span>. Rates are calculated using daily compounding on a 360-day year. Some third-party sources quote linear (non-compounded) rates, which will appear higher for the same underlying trade. Rates vary with market conditions and exclude fees. For executable rates, contact STQ directly.</p>
     <button onclick="toggleFullRates()" id="full-rates-btn" class="rates-expand-btn">View full rate curve ↓</button>
     <div id="full-rates-table" style="display:none;margin-top:16px;">
       <div style="background:var(--white);border:1px solid rgba(27,46,75,0.07);border-radius:8px;overflow:hidden;">
@@ -443,8 +473,56 @@ input[type=range]{width:100%;accent-color:#1B2E4B;height:4px;cursor:pointer;}
   </div>
 </section>
 
-<!-- CALCULATOR -->
+<!-- FLOW DIAGRAM -->
 <section style="padding:64px 0;background:var(--cream-dark);position:relative;z-index:1;">
+  <div class="container">
+    <div class="section-label">The Mechanics</div>
+    <h2 style="font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.25rem);font-weight:700;color:var(--navy);letter-spacing:-0.02em;margin-top:12px;margin-bottom:8px;line-height:1.2;">One trade. One fixed repayment.</h2>
+    <p style="font-size:1rem;line-height:1.8;color:var(--text-secondary);margin-bottom:40px;max-width:640px;">Here's what a $1MM box spread loan looks like from start to finish, including how the interest flows through your tax return.</p>
+    <div class="flow-diagram">
+      <!-- Row 1: Today -->
+      <div class="flow-row">
+        <div class="flow-tag-box"><span class="flow-tag">Today</span></div>
+        <svg class="flow-arrow-h" viewBox="0 0 40 16"><path d="M0 8h32l-6-5M32 8l-6 5" stroke="var(--navy)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="flow-block flow-block-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 010-4h14v4"/><path d="M3 5v14a2 2 0 002 2h16v-5"/><path d="M18 12a2 2 0 100 4h4v-4h-4z"/></svg>
+          <span>Receive $950K</span>
+        </div>
+        <svg class="flow-arrow-h" viewBox="0 0 40 16"><path d="M0 8h32l-6-5M32 8l-6 5" stroke="var(--navy)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="flow-interest-box">
+          <div class="flow-interest-amount">$50K</div>
+          <div class="flow-interest-label">Interest</div>
+        </div>
+        <svg class="flow-arrow-h" viewBox="0 0 40 16"><path d="M0 8h32l-6-5M32 8l-6 5" stroke="var(--navy)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="flow-split">
+          <div class="flow-split-item flow-split-lt">
+            <div class="flow-split-pct">60%</div>
+            <div class="flow-split-desc">Long-term Capital Loss<br><strong>($30K)</strong></div>
+          </div>
+          <div class="flow-split-item flow-split-st">
+            <div class="flow-split-pct">40%</div>
+            <div class="flow-split-desc">Short-term Capital Loss<br><strong>($20K)</strong></div>
+          </div>
+        </div>
+      </div>
+      <!-- Row 2: In 1 Year -->
+      <div class="flow-row flow-row-bottom">
+        <div class="flow-tag-box"><span class="flow-tag">In 1 Year</span></div>
+        <svg class="flow-arrow-h" viewBox="0 0 40 16"><path d="M0 8h32l-6-5M32 8l-6 5" stroke="var(--navy)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="flow-block flow-block-repay">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cream)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 100 4h4a2 2 0 110 4H8"/><path d="M12 18V6"/></svg>
+          <span>Repay $1MM<br><small>(Fixed Amount)</small></span>
+        </div>
+      </div>
+      <!-- Vertical connector -->
+      <svg class="flow-vert-line" viewBox="0 0 2 40"><line x1="1" y1="0" x2="1" y2="40" stroke="var(--navy)" stroke-width="1.5" stroke-dasharray="4 3"/></svg>
+    </div>
+    <p style="font-size:0.6875rem;color:var(--text-secondary);opacity:0.5;margin-top:12px;max-width:640px;">Illustrative example using a $1MM notional, 1-year term at ~5% implied rate. Section 1256 60/40 treatment applies to box spread contracts. Actual rates, amounts, and tax treatment depend on individual circumstances. Consult a qualified tax advisor.</p>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section style="padding:64px 0;background:var(--cream);position:relative;z-index:1;">
   <div class="container">
     <div class="section-label">Calculator</div>
     <h2 style="font-family:var(--font-heading);font-size:clamp(1.75rem,3vw,2.25rem);font-weight:700;color:var(--navy);letter-spacing:-0.02em;margin-top:12px;margin-bottom:32px;line-height:1.2;">See what it costs you.</h2>
@@ -573,13 +651,16 @@ var STQ_RATES={1:0.0425,2:0.0430,3:0.0432,4:0.0435,5:0.0438};
 document.getElementById('rc-1y').textContent=(STQ_RATES[1]*100).toFixed(2)+'%';
 document.getElementById('rc-3y').textContent=(STQ_RATES[3]*100).toFixed(2)+'%';
 document.getElementById('rc-5y').textContent=(STQ_RATES[5]*100).toFixed(2)+'%';
-var d=new Date();
-var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
-document.getElementById('rates-as-of').textContent=months[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear();
+document.getElementById('rates-as-of').textContent='June 3, 2026';
 var allRates=[{"date":"7/17/2026","daysUntilExp":44,"bestBid":0.03944892129301891,"bestAsk":0.041565706425348736},{"date":"8/21/2026","daysUntilExp":79,"bestBid":0.0410673225370779,"bestAsk":0.041439499672556224},{"date":"9/18/2026","daysUntilExp":106,"bestBid":0.04111952541047792,"bestAsk":0.04169725525196455},{"date":"10/16/2026","daysUntilExp":133,"bestBid":0.04153841024542437,"bestAsk":0.041684234829000744},{"date":"11/20/2026","daysUntilExp":172,"bestBid":0.041029716134925565,"bestAsk":0.04178000334491827},{"date":"12/18/2026","daysUntilExp":200,"bestBid":0.04080296078006462,"bestAsk":0.041905811068469134},{"date":"1/15/2027","daysUntilExp":226,"bestBid":0.04207494797980971,"bestAsk":0.042336494507557276},{"date":"2/19/2027","daysUntilExp":261,"bestBid":0.042494305984051906,"bestAsk":0.0420349877098527},{"date":"3/19/2027","daysUntilExp":291,"bestBid":0.042294081505039216,"bestAsk":0.0421133926640298},{"date":"4/16/2027","daysUntilExp":319,"bestBid":0.042346276810109273,"bestAsk":0.04238072856552577},{"date":"5/21/2027","daysUntilExp":354,"bestBid":0.042121870978176545,"bestAsk":0.04281263568461924},{"date":"6/17/2027","daysUntilExp":377,"bestBid":0.04269903128908048,"bestAsk":0.043100564751016535},{"date":"9/17/2027","daysUntilExp":476,"bestBid":0.04309215449604409,"bestAsk":0.04271693773128149},{"date":"12/17/2027","daysUntilExp":567,"bestBid":0.04249658885581553,"bestAsk":0.043694693875650614},{"date":"12/15/2028","daysUntilExp":924,"bestBid":0.04294085514207069,"bestAsk":0.043534546360193715},{"date":"12/21/2029","daysUntilExp":1298,"bestBid":0.043019675628592324,"bestAsk":0.04387138541954272},{"date":"12/20/2030","daysUntilExp":1663,"bestBid":0.0434441399667822,"bestAsk":0.04421205196830513},{"date":"12/19/2031","daysUntilExp":2030,"bestBid":0.04385128897335555,"bestAsk":0.044656935897521066}];
 var tableBuilt=false;
-var highlightDays=[354,924,1663];
-var highlightLabels={354:'1 Year',924:'3 Year',1663:'5 Year'};
+var highlightDates={'5/21/2027':'1 Year','12/15/2028':'3 Year','12/20/2030':'5 Year'};
+function daysFromToday(ds){
+  var p=ds.split('/');
+  var exp=new Date(+p[2],+p[0]-1,+p[1]);
+  var now=new Date();now.setHours(0,0,0,0);
+  return Math.round((exp-now)/86400000);
+}
 function toggleFullRates(){
   var tbl=document.getElementById('full-rates-table');
   var btn=document.getElementById('full-rates-btn');
@@ -590,13 +671,15 @@ function toggleFullRates(){
     var tbody=document.getElementById('full-rates-tbody');
     allRates.forEach(function(r){
       var mid=(r.bestBid+r.bestAsk)/2;
-      var isHL=highlightDays.indexOf(r.daysUntilExp)>=0;
+      var days=daysFromToday(r.date);
+      if(days<1) return;
+      var hl=highlightDates[r.date];
       var tr=document.createElement('tr');
       tr.style.borderBottom='1px solid rgba(27,46,75,0.05)';
-      if(isHL) tr.style.background='rgba(27,46,75,0.04)';
-      var label=isHL?' <span style="font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;background:#1B2E4B;color:#F0EFEB;padding:2px 7px;border-radius:3px;margin-left:8px;">'+highlightLabels[r.daysUntilExp]+'</span>':'';
+      if(hl) tr.style.background='rgba(27,46,75,0.04)';
+      var label=hl?' <span style="font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;background:#1B2E4B;color:#F0EFEB;padding:2px 7px;border-radius:3px;margin-left:8px;">'+hl+'</span>':'';
       tr.innerHTML='<td style="padding:10px 20px;font-size:0.875rem;color:var(--text-primary);">'+r.date+label+'</td>'
-        +'<td style="padding:10px 20px;font-size:0.875rem;color:var(--text-secondary);">'+r.daysUntilExp+'</td>'
+        +'<td style="padding:10px 20px;font-size:0.875rem;color:var(--text-secondary);">'+days+'</td>'
         +'<td style="padding:10px 20px;font-family:var(--font-heading);font-weight:600;font-size:0.9rem;color:var(--navy);">'+(mid*100).toFixed(2)+'%</td>';
       tbody.appendChild(tr);
     });
