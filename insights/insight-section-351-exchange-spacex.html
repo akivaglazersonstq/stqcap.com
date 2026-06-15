@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="color-scheme" content="light only">
+<title>351 Exchange &amp; the SpaceX IPO: What It Can and Can't Do | STQ Capital</title>
+<meta name="description" content="A Section 351 exchange can reposition an appreciated portfolio tax-free, but the IRS 25/50 test means it cannot, by itself, diversify a single concentrated position like SpaceX. Here is what it does and the alternatives.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
+  --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF;
+  --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7);
+  --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.25,0.46,0.45,0.94);
+}
+html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(27,46,75,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+.article-container { max-width: 720px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+.nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; }
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-links { display: flex; gap: 36px; margin-right: auto; margin-left: 48px; }
+.nav-links a { font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
+.nav-links a:hover, .nav-links a.active { color: var(--navy); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 12px 28px; border-radius: 4px; text-decoration: none; transition: all 0.3s var(--ease); cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.article-hero { padding: 140px 0 64px; background: var(--navy); position: relative; overflow: hidden; }
+.article-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
+.hero-watermark { position: absolute; right: 20px; bottom: 40px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.article-hero-inner { position: relative; z-index: 1; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.4); text-decoration: none; margin-bottom: 32px; transition: color 0.2s ease; }
+.back-link:hover { color: rgba(240,239,235,0.7); }
+.article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+.article-tag { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.6); background: rgba(240,239,235,0.1); padding: 4px 12px; border-radius: 3px; }
+.article-date { font-family: var(--font-heading); font-size: 0.65rem; color: rgba(240,239,235,0.4); letter-spacing: 0.08em; }
+.article-readtime { font-family: var(--font-heading); font-size: 0.65rem; color: rgba(240,239,235,0.4); letter-spacing: 0.08em; }
+.article-hero h1 { font-family: var(--font-heading); font-size: clamp(1.75rem,4vw,3rem); font-weight: 700; color: var(--cream); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 20px; max-width: 680px; }
+.article-hero-sub { font-size: 1.125rem; color: rgba(240,239,235,0.65); line-height: 1.7; max-width: 580px; margin-bottom: 32px; }
+.author-row { display: flex; align-items: center; gap: 14px; padding-top: 28px; border-top: 1px solid rgba(240,239,235,0.1); }
+.author-avatar { width: 44px; height: 44px; background: rgba(240,239,235,0.15); border-radius: 22px; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; color: var(--cream); flex-shrink: 0; }
+.author-name { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 700; color: var(--cream); letter-spacing: 0.02em; }
+.author-title { font-size: 0.75rem; color: rgba(240,239,235,0.5); margin-top: 2px; }
+.article-body { padding: 72px 0 100px; }
+.article-body p { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 28px; }
+.article-body ul { margin: 8px 0 32px 0; padding: 0; list-style: none; }
+.article-body ul li { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); padding: 6px 0 6px 24px; position: relative; }
+.article-body ul li::before { content: "•"; position: absolute; left: 0; color: var(--navy); font-weight: 700; }
+.article-body h2 { font-family: var(--font-heading); font-size: 1.375rem; font-weight: 700; color: var(--navy); letter-spacing: -0.01em; margin: 48px 0 16px; }
+.article-cta { background: var(--navy); border-radius: 8px; padding: 48px; margin: 64px 0 0; }
+.article-cta h3 { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--cream); letter-spacing: -0.01em; margin-bottom: 10px; }
+.article-cta p { font-size: 0.9375rem; color: rgba(240,239,235,0.65); line-height: 1.65; margin-bottom: 24px; }
+.article-cta .btn { background: var(--cream); color: var(--navy); }
+.article-cta .btn:hover { background: white; }
+.divider { border: none; border-top: 1px solid rgba(27,46,75,0.08); margin: 0; }
+footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative; z-index: 1; }
+.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 28px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.5); }
+.footer-links { display: flex; gap: 28px; }
+.footer-links a { font-size: 0.8125rem; color: rgba(240,239,235,0.5); text-decoration: none; transition: color 0.2s ease; }
+.footer-links a:hover { color: var(--cream); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.35); }
+.footer-disclaimer { margin-top: 20px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 900px; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--navy); }
+.mobile-nav { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; transition: opacity 0.3s ease; }
+.mobile-nav.active { display: flex; opacity: 1; }
+.mobile-nav a { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+.mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
+.mobile-nav .btn { font-size: 0.8125rem; }
+.mobile-nav .btn-primary { color: var(--cream); }
+.mobile-nav .btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); font-size: 0.8125rem; }
+.nav-login-dropdown { position: relative; display: inline-flex; }
+.nav-login-btn { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s ease, background 0.2s ease; cursor: pointer; background: transparent; }
+.nav-login-btn:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
+.nav-login-btn svg { transition: transform 0.2s ease; }
+.nav-login-dropdown:hover .nav-login-btn svg:last-child { transform: rotate(180deg); }
+.nav-login-menu { position: absolute; top: calc(100% + 8px); right: 0; background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 6px; box-shadow: 0 12px 40px rgba(27,46,75,0.12); min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.2s var(--ease); z-index: 100; overflow: hidden; }
+.nav-login-dropdown:hover .nav-login-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-login-menu a { display: flex; align-items: center; gap: 10px; padding: 14px 18px; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: background 0.15s ease; border-bottom: 1px solid rgba(27,46,75,0.06); }
+.nav-login-menu a:last-child { border-bottom: none; }
+.nav-login-menu a:hover { background: var(--cream); }
+.nav-login-menu-label { font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-secondary); display: block; }
+@media (max-width: 768px) {
+  .nav-links, .nav-cta-desktop { display: none !important; } .nav-toggle { display: flex !important; }
+  .nav-inner { padding: 0 24px; }
+  .article-hero { padding: 120px 0 52px; }
+  .article-cta { padding: 32px; }
+  .key-takeaways { padding: 22px 22px; } .pullquote { font-size: 1.2rem; }
+}
+/* --- insight components --- */
+.key-takeaways { background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-left: 3px solid var(--navy); border-radius: 8px; padding: 28px 32px; margin: 0 0 8px; }
+.key-takeaways h2 { font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 16px; }
+.key-takeaways ol { margin: 0; padding: 0; list-style: none; counter-reset: kt; }
+.key-takeaways li { position: relative; padding: 0 0 14px 42px; counter-increment: kt; font-size: 1.0625rem; line-height: 1.55; color: var(--text-primary); }
+.key-takeaways li:last-child { padding-bottom: 0; }
+.key-takeaways li::before { content: counter(kt); position: absolute; left: 0; top: -1px; width: 27px; height: 27px; background: var(--navy); color: var(--cream); border-radius: 50%; font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+figure.insight-fig { margin: 48px 0; }
+/* Break figures out of the 720px reading column so the diagrams render larger */
+@media (min-width: 900px) {
+  figure.insight-fig { width: min(1040px, 94vw); margin-left: 50%; transform: translateX(-50%); }
+}
+figure.insight-fig svg { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid rgba(27,46,75,0.1); }
+figure.insight-fig figcaption { font-size: 0.8125rem; color: var(--text-secondary); margin-top: 10px; text-align: center; font-style: italic; }
+.pullquote { border-left: 3px solid var(--navy); padding: 6px 0 6px 26px; margin: 40px 0; font-family: var(--font-heading); font-size: 1.5rem; line-height: 1.38; color: var(--navy); font-weight: 600; letter-spacing: -0.01em; }
+.article-body a { color: var(--navy); text-decoration: underline; text-underline-offset: 2px; text-decoration-color: rgba(27,46,75,0.35); }
+.article-body a:hover { text-decoration-color: var(--navy); }
+.faq { margin: 60px 0 0; }
+.faq > h2 { font-family: var(--font-heading); font-size: 1.5rem; color: var(--navy); margin: 0 0 8px; }
+.faq-item { border-top: 1px solid rgba(27,46,75,0.1); padding: 22px 0; }
+.faq-item h3 { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 600; color: var(--navy); margin: 0 0 8px; }
+.faq-item p { margin: 0; }
+.related { margin: 52px 0 0; padding: 30px 0 0; border-top: 1px solid rgba(27,46,75,0.1); }
+.related h2 { font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 14px; }
+.related a { display: block; color: var(--navy); text-decoration: none; padding: 9px 0; font-weight: 500; border-bottom: 1px solid rgba(27,46,75,0.06); }
+.related a:hover { color: var(--navy-light); }
+.sources { font-size: 0.8125rem; line-height: 1.7; color: var(--text-secondary); margin: 40px 0 0; }
+.sources a { color: var(--navy); }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "351 Exchange and the SpaceX IPO: Why It Won't Diversify a Concentrated Position by Itself",
+      "description": "A Section 351 exchange can reposition an appreciated portfolio tax-free, but the IRS 25/50 test means it cannot, by itself, diversify a single concentrated position like SpaceX. Here is what it does and the alternatives.",
+      "datePublished": "2026-06-11",
+      "author": {
+        "@type": "Person",
+        "name": "Akiva Glazerson",
+        "jobTitle": "Principal, STQ Capital",
+        "url": "https://www.linkedin.com/in/akiva-g-5ba463a3"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "STQ Capital"
+      },
+      "url": "https://stqcap.com/insights/insight-section-351-exchange-spacex.html",
+      "articleSection": "Liquidity"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can a 351 exchange diversify a single concentrated stock like SpaceX?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not on its own. The IRS 25/50 test requires that no holding be more than 25 percent of your contribution, so a single dominant position does not qualify. It has to be combined with enough other securities to pass the test first, or paired with another structure such as an exchange fund."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the 25/50 diversification test?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No single security may exceed 25 percent of the portfolio you contribute, and your five largest holdings together may not exceed 50 percent. ETFs are looked through to their underlying holdings when applying the test."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I ever pay the tax?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, when you sell your ETF shares. The deferred gain rides along on your original cost basis. If you hold until death, your heirs may receive a step-up in basis that can erase the deferred gain under current law."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is a 351 ETF exchange different from a traditional exchange fund?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An exchange fund is a partnership that can accept a concentrated position but typically locks your money up for about seven years and is limited to qualified purchasers. A 351 conversion gives you liquid ETF shares with no seven-year lock, but your contribution must pass the 25/50 test."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the SpaceX IPO timing matter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A 351 contribution generally has to happen while a sponsor is seeding a new ETF, and you usually cannot transfer shares until the post-IPO lockup expires. Both argue for planning before the shares are liquid."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who actually runs 351 conversions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A handful of ETF sponsors, including firms such as Alpha Architect and Cambria, now offer them and publish education on the mechanics. The structuring and the diversification testing are best handled with a tax advisor."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
+    <div class="nav-links">
+      <a href="/#solutions">Solutions</a>
+      <a href="/#about">About</a>
+      <a href="/insights.html" class="active">Insights</a>
+      <a href="/research.html">Research</a>
+      <a href="/box-spreads.html">Financing</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <div class="nav-login-dropdown nav-cta-desktop">
+        <button class="nav-login-btn">
+          <svg width="12" height="13" viewBox="0 0 12 13" fill="none"><rect x="1" y="6" width="10" height="6" rx="1.5" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M3.5 6V4a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>
+          Client Login
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-login-menu">
+          <a href="https://client.schwab.com/Areas/Access/Login" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="12" height="6" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+            <div>Investment Portal<span class="nav-login-menu-label">Existing clients</span></div>
+          </a>
+          <a href="/get-started.html">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <div>Get Started<span class="nav-login-menu-label">New clients</span></div>
+          </a>
+        </div>
+      </div>
+      <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary nav-cta-desktop">Schedule a Call</a>
+    </div>
+    <button class="nav-toggle" onclick="document.querySelector('.mobile-nav').classList.add('active')" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('active')">&#x2715;</button>
+  <a href="/#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
+  <a href="/#about" onclick="this.parentElement.classList.remove('active')">About</a>
+  <a href="/insights.html" onclick="this.parentElement.classList.remove('active')">Insights</a>
+  <a href="/research.html" onclick="this.parentElement.classList.remove('active')">Research</a>
+  <a href="/box-spreads.html" onclick="this.parentElement.classList.remove('active')">Financing</a>
+  <a href="/contact.html" onclick="this.parentElement.classList.remove('active')">Contact</a>
+  <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Call</a>
+  <a href="https://client.schwab.com/Areas/Access/Login" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Investment Portal</a>
+  <a href="/get-started.html" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Get Started</a>
+</div>
+
+<section class="article-hero">
+  <div class="hero-watermark">STQ</div>
+  <div class="article-container">
+    <div class="article-hero-inner">
+      <a href="/insights.html" class="back-link">&#8592; All Insights</a>
+      <div class="article-meta">
+        <span class="article-tag">Liquidity</span>
+        <span class="article-date">June 11, 2026</span>
+        <span class="article-readtime">· 5 min read</span>
+      </div>
+      <h1>351 Exchange and the SpaceX IPO: Why It Won't Diversify a Concentrated Position by Itself</h1>
+      <p class="article-hero-sub">A 351 exchange is the move everyone will reach for after the SpaceX IPO. The IRS 25/50 rule means it does not work the way most people think. Here is what a 351 exchange actually does, the tax math, and the real menu for a concentrated position.</p>
+      <div class="author-row">
+        <div class="author-avatar">AG</div>
+        <div>
+          <div class="author-name">Akiva Glazerson</div>
+          <div class="author-title">Principal, STQ Capital</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="article-body">
+  <div class="article-container">
+<div class="key-takeaways">
+      <h2>Key takeaways</h2>
+      <ol>
+        <li>A Section 351 exchange moves an appreciated portfolio into a new ETF with no tax today. Your cost basis and holding period carry over, and the embedded gain is deferred, not erased.</li>
+        <li>It cannot unwind a single concentrated position on its own. The IRS 25/50 test requires your contribution to already be diversified: no one holding above 25 percent, and your top five below 50 percent.</li>
+        <li>For a truly concentrated SpaceX-style stake, a 351 is one tool among several. The real answer is usually a sequence: combine holdings to qualify, exchange funds, QSBS, hedging, or charitable gifting.</li>
+      </ol>
+    </div>
+<p>The SpaceX IPO is coming, and a wave of newly liquid shareholders is about to go looking for a way to diversify without a giant tax bill.</p>
+    <p>The strategy they will hear about most is the Section 351 exchange. It came up at nearly every session of the Basis Northwest tax conference this year.</p>
+    <p>It is a genuinely powerful tool. It is also widely misunderstood. Used the way most people describe it, on a single concentrated position, it does not work.</p>
+    <figure class='insight-fig'><svg viewBox='0 0 1000 414' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='How a Section 351 exchange works'><rect x='0' y='0' width='1000' height='414' fill='#F0EFEB'/><text x='40' y='46' font-family='Chakra Petch, sans-serif' font-size='25' font-weight='700' fill='#1B2E4B'>How a Section 351 exchange works</text><text x='40' y='73' font-family='DM Sans, sans-serif' font-size='14' fill='#5a6a7e'>Tax-free repositioning, but only if your contribution already passes the 25/50 test</text><rect x='40' y='104' width='270' height='212' rx='10' fill='#ffffff' stroke='#1B2E4B' stroke-opacity='0.15'/><circle cx='74' cy='142' r='16' fill='#1B2E4B'/><text x='74' y='148' text-anchor='middle' font-family='Chakra Petch, sans-serif' font-size='16' font-weight='700' fill='#F0EFEB'>1</text><text x='100' y='148' font-family='Chakra Petch, sans-serif' font-size='14' font-weight='700' fill='#1B2E4B'>YOUR PORTFOLIO</text><text x='66' y='190' font-family='DM Sans, sans-serif' font-size='15' fill='#2a4570'><tspan x='66' dy='0'>An appreciated,</tspan><tspan x='66' dy='21'>tax-locked portfolio.</tspan></text><line x1='66' y1='226' x2='284' y2='226' stroke='#1B2E4B' stroke-opacity='0.12'/><text x='66' y='252' font-family='DM Sans, sans-serif' font-size='12.5' fill='#5a6a7e'><tspan x='66' dy='0'>Already diversified:</tspan><tspan x='66' dy='19'>no name above 25%,</tspan><tspan x='66' dy='19'>top five under 50%.</tspan></text><path d='M320 210 H352' stroke='#1B2E4B' stroke-width='2.5'/><path d='M345 203 L354 210 L345 217' fill='none' stroke='#1B2E4B' stroke-width='2.5'/><rect x='365' y='104' width='270' height='212' rx='10' fill='#ffffff' stroke='#1B2E4B' stroke-opacity='0.15'/><circle cx='399' cy='142' r='16' fill='#1B2E4B'/><text x='399' y='148' text-anchor='middle' font-family='Chakra Petch, sans-serif' font-size='16' font-weight='700' fill='#F0EFEB'>2</text><text x='425' y='148' font-family='Chakra Petch, sans-serif' font-size='14' font-weight='700' fill='#1B2E4B'>CONTRIBUTE</text><text x='391' y='190' font-family='DM Sans, sans-serif' font-size='15' fill='#2a4570'><tspan x='391' dy='0'>Transferred tax-free</tspan><tspan x='391' dy='21'>into a newly launched</tspan><tspan x='391' dy='21'>ETF.</tspan></text><line x1='391' y1='246' x2='609' y2='246' stroke='#1B2E4B' stroke-opacity='0.12'/><text x='391' y='272' font-family='DM Sans, sans-serif' font-size='12.5' fill='#5a6a7e'><tspan x='391' dy='0'>Pooled with other</tspan><tspan x='391' dy='19'>investors holdings.</tspan></text><path d='M645 210 H677' stroke='#1B2E4B' stroke-width='2.5'/><path d='M670 203 L679 210 L670 217' fill='none' stroke='#1B2E4B' stroke-width='2.5'/><rect x='690' y='104' width='270' height='212' rx='10' fill='#ffffff' stroke='#1B2E4B' stroke-opacity='0.15'/><circle cx='724' cy='142' r='16' fill='#1B2E4B'/><text x='724' y='148' text-anchor='middle' font-family='Chakra Petch, sans-serif' font-size='16' font-weight='700' fill='#F0EFEB'>3</text><text x='750' y='148' font-family='Chakra Petch, sans-serif' font-size='14' font-weight='700' fill='#1B2E4B'>YOU HOLD ETF SHARES</text><text x='716' y='190' font-family='DM Sans, sans-serif' font-size='15' fill='#2a4570'><tspan x='716' dy='0'>Diversified ETF shares.</tspan><tspan x='716' dy='21'>Basis and holding</tspan><tspan x='716' dy='21'>period carry over.</tspan></text><line x1='716' y1='246' x2='934' y2='246' stroke='#1B2E4B' stroke-opacity='0.12'/><text x='716' y='272' font-family='DM Sans, sans-serif' font-size='12.5' fill='#2e7d52'><tspan x='716' dy='0'>Embedded gain deferred</tspan><tspan x='716' dy='19'>until you sell.</tspan></text><rect x='40' y='340' width='920' height='52' rx='10' fill='#1B2E4B'/><text x='500' y='372' text-anchor='middle' font-family='Chakra Petch, sans-serif' font-size='16' font-weight='600' fill='#F0EFEB'>No sale. No tax today. You choose when, or whether, to pay the gain.</text></svg><figcaption>How a 351 exchange repositions an already-diversified portfolio, tax-free.</figcaption></figure>
+    <h2>What a 351 exchange actually does</h2>
+    <p>A Section 351 exchange, named for <a href='https://www.law.cornell.edu/uscode/text/26/351' target='_blank' rel='noopener'>Section 351 of the Internal Revenue Code</a>, lets a group of investors contribute securities into a newly launched exchange-traded fund (ETF) in exchange for shares of that fund, with no tax due at the time of the transfer.</p>
+    <p>Your cost basis, what you originally paid, and your holding period come along for the ride. The embedded gain is not realized. It is deferred inside your new ETF shares until you sell them.</p>
+    <p>The appeal is obvious. You go from an old, tax-locked portfolio to a clean, diversified ETF, and you do not write a check to the IRS to get there.</p>
+    <p class='pullquote'>The gain does not disappear. It moves into your ETF shares and waits.</p>
+    <h2>The catch nobody mentions: the 25/50 diversification test</h2>
+    <p>Here is the part that gets lost in the LinkedIn version of this idea. The IRS will not let you drop a single concentrated stock into a 351 ETF to escape the concentration, and the reason is written into the statute.</p>
+    <p>Section 351(e) of the code switches off the tax-free treatment when you transfer property to what it calls an <em>investment company</em>, which is exactly what a lone concentrated position would create. To avoid that label, your contribution has to be <em>diversified</em> under the standard borrowed from <a href='https://www.law.cornell.edu/uscode/text/26/368' target='_blank' rel='noopener'>Section 368(a)(2)(F)</a>: no single holding above 25 percent of what you contribute, and your five largest holdings together no more than 50 percent. Practitioners shorthand it as the 25/50 test. (Sources: <a href='https://www.law.cornell.edu/uscode/text/26/351' target='_blank' rel='noopener'>IRC 351(e)</a>, <a href='https://www.kitces.com/blog/section-351-exchanges-tax-efficient-reallocate-portfolio-us-equity-markets-etf/' target='_blank' rel='noopener'>Kitces</a>, <a href='https://www.plancorp.com/351-exchanges-guide' target='_blank' rel='noopener'>Plancorp</a>.)</p>
+    <p>In plain terms: your portfolio has to be reasonably diversified before you contribute it. So a 351 exchange is excellent for repositioning a sprawling, appreciated, tax-locked portfolio. It is not, by itself, a way to diversify out of one giant SpaceX position.</p>
+    <figure class='insight-fig'><svg viewBox='0 0 1000 414' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Tax due this year, sell versus 351 exchange'><rect x='0' y='0' width='1000' height='414' fill='#F0EFEB'/><text x='40' y='46' font-family='Chakra Petch, sans-serif' font-size='23' font-weight='700' fill='#1B2E4B'>Tax due this year on a $2,000,000 embedded gain</text><text x='40' y='72' font-family='DM Sans, sans-serif' font-size='13' fill='#5a6a7e'>Illustrative. Top 2026 federal (20% plus 3.8% NIIT) plus California (13.3%).</text><line x1='120' y1='340' x2='900' y2='340' stroke='#1B2E4B' stroke-opacity='0.25'/><rect x='250' y='110' width='160' height='230' rx='4' fill='#1B2E4B'/><text x='330' y='98' text-anchor='middle' font-family='Chakra Petch, sans-serif' font-size='22' font-weight='700' fill='#1B2E4B'>$742,000</text><text x='330' y='366' text-anchor='middle' font-family='DM Sans, sans-serif' font-size='15' fill='#2a4570'>Sell and rebalance</text><rect x='610' y='332' width='160' height='8' rx='4' fill='#2e7d52'/><text x='690' y='322' text-anchor='middle' font-family='Chakra Petch, sans-serif' font-size='22' font-weight='700' fill='#2e7d52'>$0</text><text x='690' y='366' text-anchor='middle' font-family='DM Sans, sans-serif' font-size='15' fill='#2a4570'>351 exchange</text><text x='40' y='402' font-family='DM Sans, sans-serif' font-size='11' fill='#8893a3'>Assumes a $2,000,000 long-term gain. Your result depends on your bracket, state, and situation.</text></svg><figcaption>Illustrative tax due this year: a qualifying 351 exchange defers the gain entirely.</figcaption></figure>
+    <h2>A worked example, where it does fit</h2>
+    <p>Consider an investor with $3,000,000 spread across roughly twenty long-held names. The largest sits at 22 percent, the top five at 46 percent, so the portfolio passes the 25/50 test. Cost basis is $1,000,000, leaving a $2,000,000 embedded gain.</p>
+    <p>Selling to rebalance would realize that $2,000,000 as a long-term gain. At the top 2026 federal rate of 20 percent plus the 3.8 percent net investment income tax, that is $476,000 of federal tax. Add California at its top 13.3 percent rate and you are near $742,000 due this year. (Illustrative, top brackets, 2026.)</p>
+    <p>Through a 351 exchange, the same investor contributes the portfolio into a launching ETF, owes nothing this year, and carries the $2,000,000 gain forward in the new shares. Same diversification goal. The tax bill is deferred, not paid.</p>
+    <h2>What about a truly concentrated SpaceX position?</h2>
+    <p>This is the real question, and the honest answer is that a 351 alone will not solve it. A position that is 80 or 90 percent of your net worth fails the 25 percent limit on its own.</p>
+    <p>The realistic playbook is a sequence, not a single move:</p>
+    <ul>
+      <li>Pair the position with enough other securities so that no holding exceeds 25 percent, then contribute the combined, qualifying portfolio.</li>
+      <li>Use an exchange fund, a different structure that accepts concentrated stock but typically locks your capital up for about seven years and is limited to qualified purchasers.</li>
+      <li>Check whether the shares are qualified small business stock (QSBS) under Section 1202, which can exclude a large share of the gain outright. The catch: Section 1202 requires the company to have had $50 million or less in gross assets when the stock was issued, so for a company the size of SpaceX only the earliest investors and employees are likely to qualify.</li>
+      <li>Hedge and borrow against the position to create liquidity now, and stage the diversification over several tax years.</li>
+      <li>Give a slice to a donor-advised fund (DAF), removing the gain entirely on the donated shares while funding your charitable goals.</li>
+    </ul>
+    <p>A 351 exchange can be the final step in that sequence, once the position has been brought into a qualifying, diversified pool. It is rarely the first.</p>
+    <h2>Where this does not apply</h2>
+    <p>A 351 exchange is the wrong tool if your portfolio cannot meet the 25/50 test and cannot be combined to get there, if you need the cash rather than diversification, or if you expect to hold the position until death, when a step-up in basis may erase the gain anyway.</p>
+    <p>It also requires timing. You generally have to contribute while a sponsor is seeding a new fund, not on any random Tuesday. A handful of ETF sponsors now run these conversions and publish education on the mechanics. (See <a href='https://funds.alphaarchitect.com/351educationcenter/' target='_blank' rel='noopener'>Alpha Architect's 351 Education Center</a>.)</p>
+    <h2>How STQ thinks about it</h2>
+    <p>For a client heading into the SpaceX IPO, we do not start with the structure. We start with the position: how concentrated it is, the cost basis, the holding period, whether it qualifies as QSBS, and when the lockup ends.</p>
+    <p>Then we sequence the tools. Sometimes a 351 exchange is the elegant finish. Often it is one piece of a longer plan that begins well before the shares are liquid.</p>
+    <p>The worst outcome is the common one: waiting until the stock is sellable, then selling in a panic and handing a quarter of the gain to two tax authorities that were never going to chase you for it.</p>
+    <p>Plan early. Diversify deliberately. Pay the tax on your schedule, not the market's.</p>
+    <p>If you are heading toward a liquidity event with a concentrated, low-basis position, it is worth mapping the sequence before the lockup ends. Send me a note and we can walk through it.</p>
+    <p>This is informational only and not personalized tax, legal, or investment advice.</p>
+    <p class='sources'>Sources: <a href='https://www.law.cornell.edu/uscode/text/26/351' target='_blank' rel='noopener'>26 U.S. Code Section 351</a> and <a href='https://www.law.cornell.edu/uscode/text/26/368' target='_blank' rel='noopener'>Section 368(a)(2)(F)</a>; Kitces, 'Using Section 351 Exchanges To Tax-Efficiently Reallocate Portfolios'; Plancorp, 'A Guide to 351 Exchanges'; Alpha Architect 351 Education Center. Tax rates reflect top 2026 federal and California brackets and are illustrative only.</p>
+    <div class="faq">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item"><h3>Can a 351 exchange diversify a single concentrated stock like SpaceX?</h3><p>Not on its own. The IRS 25/50 test requires that no holding be more than 25 percent of your contribution, so a single dominant position does not qualify. It has to be combined with enough other securities to pass the test first, or paired with another structure such as an exchange fund.</p></div>
+      <div class="faq-item"><h3>What is the 25/50 diversification test?</h3><p>No single security may exceed 25 percent of the portfolio you contribute, and your five largest holdings together may not exceed 50 percent. ETFs are looked through to their underlying holdings when applying the test.</p></div>
+      <div class="faq-item"><h3>Do I ever pay the tax?</h3><p>Yes, when you sell your ETF shares. The deferred gain rides along on your original cost basis. If you hold until death, your heirs may receive a step-up in basis that can erase the deferred gain under current law.</p></div>
+      <div class="faq-item"><h3>How is a 351 ETF exchange different from a traditional exchange fund?</h3><p>An exchange fund is a partnership that can accept a concentrated position but typically locks your money up for about seven years and is limited to qualified purchasers. A 351 conversion gives you liquid ETF shares with no seven-year lock, but your contribution must pass the 25/50 test.</p></div>
+      <div class="faq-item"><h3>Does the SpaceX IPO timing matter?</h3><p>Yes. A 351 contribution generally has to happen while a sponsor is seeding a new ETF, and you usually cannot transfer shares until the post-IPO lockup expires. Both argue for planning before the shares are liquid.</p></div>
+      <div class="faq-item"><h3>Who actually runs 351 conversions?</h3><p>A handful of ETF sponsors, including firms such as Alpha Architect and Cambria, now offer them and publish education on the mechanics. The structuring and the diversification testing are best handled with a tax advisor.</p></div>
+    </div>
+    <div class="related">
+      <h2>Related insights</h2>
+      <a href="/insights/insight-no-distribution-etf-2026-05-19.html">The most innovative structure in tax-aware investing &#8594;</a>
+      <a href="/insights/insight-step-up.html">Step-up kills the gain. Box spreads unlock the cash. &#8594;</a>
+      <a href="/insights/insight-daf-concentrated.html">You can't just sell. But you can give it away, tax-free. &#8594;</a>
+      <a href="/insights/insight-direct-indexing.html">Own the S&amp;P 500? Do this instead. &#8594;</a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Let's talk.</h3>
+      <p>I'd love to walk through what a tax-efficient approach could look like for your specific situation.</p>
+      <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn">Schedule a Call &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-logo">STQ <span>/ Capital</span></div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
+        <a href="/insights.html">Newsletter</a>
+        <a href="/contact.html">Contact</a>
+        <a href="https://client.schwab.com/Areas/Access/Login" target="_blank">Client Login</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 STQ Capital</div>
+    </div>
+    <div class="footer-disclaimer">Advisory services are offered through STQ Capital (&ldquo;STQ&rdquo;), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable. The information on this site is provided &ldquo;AS IS&rdquo; and without warranties either express or implied and the information may not be free from error. Your use of the information provided is at your sole risk.</div>
+  </div>
+</footer>
+</body>
+</html>
