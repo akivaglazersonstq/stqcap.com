@@ -1,0 +1,5 @@
+# Internal tooling and work-in-progress — never publish to the public site repo
+.a5c/
+**/.a5c/
+guides/
+.DS_Store

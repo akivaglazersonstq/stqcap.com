@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://stqcap.com/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="https://stqcap.com/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="https://stqcap.com/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="https://stqcap.com/apple-touch-icon.png">
+<meta name="color-scheme" content="light only">
+<title>The Synthetic Variable Prepaid Forward: Liquidity on a Concentrated Position Without Selling | STQ Capital</title>
+<meta name="description" content="A synthetic variable prepaid forward protects a concentrated stock position, raises cash today, and triggers no taxable sale. Here is how the collar and box spread work, the math, and the constructive sale rule to plan around.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
+  --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF;
+  --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7);
+  --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.25,0.46,0.45,0.94);
+}
+html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(27,46,75,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+.article-container { max-width: 720px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+.nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; }
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-links { display: flex; gap: 36px; margin-right: auto; margin-left: 48px; }
+.nav-links a { font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
+.nav-links a:hover, .nav-links a.active { color: var(--navy); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 12px 28px; border-radius: 4px; text-decoration: none; transition: all 0.3s var(--ease); cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.article-hero { padding: 140px 0 64px; background: var(--navy); position: relative; overflow: hidden; }
+.article-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
+.hero-watermark { position: absolute; right: 20px; bottom: 40px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.article-hero-inner { position: relative; z-index: 1; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.4); text-decoration: none; margin-bottom: 32px; transition: color 0.2s ease; }
+.back-link:hover { color: rgba(240,239,235,0.7); }
+.article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+.article-tag { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.6); background: rgba(240,239,235,0.1); padding: 4px 12px; border-radius: 3px; }
+.article-date { font-family: var(--font-heading); font-size: 0.65rem; color: rgba(240,239,235,0.4); letter-spacing: 0.08em; }
+.article-readtime { font-family: var(--font-heading); font-size: 0.65rem; color: rgba(240,239,235,0.4); letter-spacing: 0.08em; }
+.article-hero h1 { font-family: var(--font-heading); font-size: clamp(1.75rem,4vw,3rem); font-weight: 700; color: var(--cream); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 20px; max-width: 680px; }
+.article-hero-sub { font-size: 1.125rem; color: rgba(240,239,235,0.65); line-height: 1.7; max-width: 580px; margin-bottom: 32px; }
+.author-row { display: flex; align-items: center; gap: 14px; padding-top: 28px; border-top: 1px solid rgba(240,239,235,0.1); }
+.author-avatar { width: 44px; height: 44px; background: rgba(240,239,235,0.15); border-radius: 22px; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; color: var(--cream); flex-shrink: 0; }
+.author-name { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 700; color: var(--cream); letter-spacing: 0.02em; }
+.author-title { font-size: 0.75rem; color: rgba(240,239,235,0.5); margin-top: 2px; }
+.article-body { padding: 72px 0 100px; }
+.article-body p { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 28px; }
+.article-body ul { margin: 8px 0 32px 0; padding: 0; list-style: none; }
+.article-body ul li { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); padding: 6px 0 6px 24px; position: relative; }
+.article-body ul li::before { content: "•"; position: absolute; left: 0; color: var(--navy); font-weight: 700; }
+.article-body h2 { font-family: var(--font-heading); font-size: 1.375rem; font-weight: 700; color: var(--navy); letter-spacing: -0.01em; margin: 48px 0 16px; }
+.article-cta { background: var(--navy); border-radius: 8px; padding: 48px; margin: 64px 0 0; }
+.article-cta h3 { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--cream); letter-spacing: -0.01em; margin-bottom: 10px; }
+.article-cta p { font-size: 0.9375rem; color: rgba(240,239,235,0.65); line-height: 1.65; margin-bottom: 24px; }
+.article-cta .btn { background: var(--cream); color: var(--navy); }
+.article-cta .btn:hover { background: white; }
+.divider { border: none; border-top: 1px solid rgba(27,46,75,0.08); margin: 0; }
+footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative; z-index: 1; }
+.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 28px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.5); }
+.footer-links { display: flex; gap: 28px; }
+.footer-links a { font-size: 0.8125rem; color: rgba(240,239,235,0.5); text-decoration: none; transition: color 0.2s ease; }
+.footer-links a:hover { color: var(--cream); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.35); }
+.footer-disclaimer { margin-top: 20px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 900px; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--navy); }
+.mobile-nav { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; transition: opacity 0.3s ease; }
+.mobile-nav.active { display: flex; opacity: 1; }
+.mobile-nav a { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+.mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
+.mobile-nav .btn { font-size: 0.8125rem; }
+.mobile-nav .btn-primary { color: var(--cream); }
+.mobile-nav .btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); font-size: 0.8125rem; }
+.nav-login-dropdown { position: relative; display: inline-flex; }
+.nav-login-btn { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s ease, background 0.2s ease; cursor: pointer; background: transparent; }
+.nav-login-btn:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
+.nav-login-btn svg { transition: transform 0.2s ease; }
+.nav-login-dropdown:hover .nav-login-btn svg:last-child { transform: rotate(180deg); }
+.nav-login-menu { position: absolute; top: calc(100% + 8px); right: 0; background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 6px; box-shadow: 0 12px 40px rgba(27,46,75,0.12); min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.2s var(--ease); z-index: 100; overflow: hidden; }
+.nav-login-dropdown:hover .nav-login-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-login-menu a { display: flex; align-items: center; gap: 10px; padding: 14px 18px; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: background 0.15s ease; border-bottom: 1px solid rgba(27,46,75,0.06); }
+.nav-login-menu a:last-child { border-bottom: none; }
+.nav-login-menu a:hover { background: var(--cream); }
+.nav-login-menu-label { font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-secondary); display: block; }
+@media (max-width: 768px) {
+  .nav-links, .nav-cta-desktop { display: none !important; } .nav-toggle { display: flex !important; }
+  .nav-inner { padding: 0 24px; }
+  .article-hero { padding: 120px 0 52px; }
+  .article-cta { padding: 32px; }
+  .key-takeaways { padding: 22px 22px; } .pullquote { font-size: 1.2rem; }
+}
+/* --- insight components --- */
+.key-takeaways { background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-left: 3px solid var(--navy); border-radius: 8px; padding: 28px 32px; margin: 0 0 8px; }
+.key-takeaways h2 { font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 16px; }
+.key-takeaways ol { margin: 0; padding: 0; list-style: none; counter-reset: kt; }
+.key-takeaways li { position: relative; padding: 0 0 14px 42px; counter-increment: kt; font-size: 1.0625rem; line-height: 1.55; color: var(--text-primary); }
+.key-takeaways li:last-child { padding-bottom: 0; }
+.key-takeaways li::before { content: counter(kt); position: absolute; left: 0; top: -1px; width: 27px; height: 27px; background: var(--navy); color: var(--cream); border-radius: 50%; font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+figure.insight-fig { margin: 48px 0; }
+/* Break figures out of the 720px reading column so the diagrams render larger */
+@media (min-width: 900px) {
+  figure.insight-fig { width: min(1040px, 94vw); margin-left: 50%; transform: translateX(-50%); }
+}
+figure.insight-fig svg { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid rgba(27,46,75,0.1); }
+figure.insight-fig figcaption { font-size: 0.8125rem; color: var(--text-secondary); margin-top: 10px; text-align: center; font-style: italic; }
+.pullquote { border-left: 3px solid var(--navy); padding: 6px 0 6px 26px; margin: 40px 0; font-family: var(--font-heading); font-size: 1.5rem; line-height: 1.38; color: var(--navy); font-weight: 600; letter-spacing: -0.01em; }
+.article-body a { color: var(--navy); text-decoration: underline; text-underline-offset: 2px; text-decoration-color: rgba(27,46,75,0.35); }
+.article-body a:hover { text-decoration-color: var(--navy); }
+.faq { margin: 60px 0 0; }
+.faq > h2 { font-family: var(--font-heading); font-size: 1.5rem; color: var(--navy); margin: 0 0 8px; }
+.faq-item { border-top: 1px solid rgba(27,46,75,0.1); padding: 22px 0; }
+.faq-item h3 { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 600; color: var(--navy); margin: 0 0 8px; }
+.faq-item p { margin: 0; }
+.related { margin: 52px 0 0; padding: 30px 0 0; border-top: 1px solid rgba(27,46,75,0.1); }
+.related h2 { font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 14px; }
+.related a { display: block; color: var(--navy); text-decoration: none; padding: 9px 0; font-weight: 500; border-bottom: 1px solid rgba(27,46,75,0.06); }
+.related a:hover { color: var(--navy-light); }
+.sources { font-size: 0.8125rem; line-height: 1.7; color: var(--text-secondary); margin: 40px 0 0; }
+.sources a { color: var(--navy); }
+/* --- svpf flow figure --- */
+.flow-fig .flow-panel { background: var(--cream); border: 1px solid rgba(27,46,75,0.1); border-radius: 8px; padding: 40px 26px; }
+.flow-fig .vflow { display: flex; flex-direction: column; align-items: center; }
+.flow-fig .vstep { width: min(560px, 100%); background: var(--navy); color: var(--cream); border-radius: 12px; padding: 16px 28px; display: flex; align-items: center; gap: 20px; }
+.flow-fig .vstep.start { background: var(--white); color: var(--navy); border: 1.5px solid rgba(27,46,75,0.18); }
+.flow-fig .vstep .ico { width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0; background: rgba(240,239,235,0.12); display: flex; align-items: center; justify-content: center; }
+.flow-fig .vstep.start .ico { background: rgba(27,46,75,0.07); }
+.flow-fig .vstep .txt { display: flex; flex-direction: column; gap: 3px; text-align: left; }
+.flow-fig .vstep .big { font-family: var(--font-heading); font-weight: 700; font-size: 1.4rem; line-height: 1; letter-spacing: -0.3px; }
+.flow-fig .vstep .cap { font-family: var(--font-heading); font-weight: 600; font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.6; line-height: 1.3; }
+.flow-fig .vstep.start .cap { opacity: 0.55; }
+.flow-fig .varrow { width: 18px; height: 24px; margin: 8px 0; }
+.flow-fig .benefit { text-align: center; font-family: var(--font-body); font-weight: 600; font-size: 1.05rem; color: var(--navy); margin-top: 24px; }
+.flow-fig .benefit .g { color: #2e7d52; font-weight: 700; }
+@media (max-width: 760px) { .flow-fig .flow { flex-direction: column; align-items: stretch; } .flow-fig .tile { width: auto; } .flow-fig .arrow { transform: rotate(90deg); align-self: center; } }
+/* --- comparison table --- */
+.cmp-wrap { margin: 48px 0; }
+@media (min-width: 900px) { .cmp-wrap { width: min(1040px, 94vw); margin-left: 50%; transform: translateX(-50%); } }
+.cmp-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 8px; }
+.cmp { width: 100%; min-width: 660px; border-collapse: separate; border-spacing: 0; background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 8px; overflow: hidden; }
+.cmp th, .cmp td { text-align: left; padding: 14px 18px; font-size: 0.95rem; line-height: 1.4; vertical-align: top; border-top: 1px solid rgba(27,46,75,0.08); }
+.cmp thead th { border-top: none; font-family: var(--font-heading); font-weight: 700; color: var(--navy); font-size: 1rem; }
+.cmp thead th .tag { display: block; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); font-weight: 600; margin-top: 3px; }
+.cmp thead th.vpf, .cmp thead th.vpf .tag { color: #2e7d52; }
+.cmp tbody th { font-weight: 600; color: var(--navy); width: 24%; }
+.cmp td.vpf { background: rgba(46,125,82,0.06); color: #1f5a3a; font-weight: 600; }
+.cmp .x { color: #b14a3a; font-weight: 700; }
+.cmp .ok { color: #2e7d52; font-weight: 700; }
+.cmp-cap { font-size: 0.8125rem; color: var(--text-secondary); margin-top: 10px; text-align: center; font-style: italic; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "The Synthetic Variable Prepaid Forward: Liquidity on a Concentrated Position Without Selling",
+      "description": "A synthetic variable prepaid forward protects a concentrated stock position, raises cash today, and triggers no taxable sale. Here is how the collar and box spread work, the math, and the constructive sale rule to plan around.",
+      "datePublished": "2026-06-16",
+      "author": {
+        "@type": "Person",
+        "name": "Akiva Glazerson",
+        "jobTitle": "Principal, STQ Capital",
+        "url": "https://www.linkedin.com/in/akiva-g-5ba463a3"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "STQ Capital"
+      },
+      "url": "https://stqcap.com/insights/insight-variable-prepaid-forward.html",
+      "articleSection": "Liquidity"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a variable prepaid forward (VPF)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A variable prepaid forward is a contract in which you receive cash today in exchange for agreeing to deliver a variable number of shares at a future date, with downside protection built in. Private banks have sold packaged VPFs to concentrated shareholders for decades."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is a synthetic VPF different from a bank VPF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A synthetic version rebuilds the same economics from listed options you control: a protective put and a sold call form a collar, and a box spread provides the cash. It avoids the markup, opacity, and counterparty lock-in of a packaged bank product."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I owe tax when this is set up?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No shares are sold, so there is no realized capital gain at execution. The box spread raises cash as a loan, not a sale. The position stays deferred, and you keep your original cost basis and the potential step-up in basis at death."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the constructive sale rule and how do you avoid it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Under the constructive sale rule, a hedge that removes nearly all of your risk and reward can be treated as if you sold the stock. A collar avoids this when the put and call strikes are spaced widely enough to retain meaningful exposure. Spacing is a planning decision, not an afterthought."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is a synthetic VPF right for, and wrong for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It fits a holder of a large, low-basis position who wants protection and liquidity without selling. It is wrong for someone willing to give up all upside, who lacks liquid collateral, or who simply wants out of the stock entirely. Selling may be cleaner in those cases."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="https://stqcap.com/" class="nav-logo">STQ <span>/ Capital</span></a>
+    <div class="nav-links">
+      <a href="https://stqcap.com/#solutions">Solutions</a>
+      <a href="https://stqcap.com/#about">About</a>
+      <a href="https://stqcap.com/insights.html" class="active">Insights</a>
+      <a href="https://stqcap.com/research.html">Research</a>
+      <a href="https://stqcap.com/box-spreads.html">Synthetic Financing</a>
+      <a href="https://stqcap.com/contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <div class="nav-login-dropdown nav-cta-desktop">
+        <button class="nav-login-btn">
+          <svg width="12" height="13" viewBox="0 0 12 13" fill="none"><rect x="1" y="6" width="10" height="6" rx="1.5" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M3.5 6V4a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>
+          Client Login
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-login-menu">
+          <a href="https://client.schwab.com/Areas/Access/Login" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="12" height="6" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+            <div>Investment Portal<span class="nav-login-menu-label">Existing clients</span></div>
+          </a>
+          <a href="https://stqcap.com/get-started.html">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <div>Get Started<span class="nav-login-menu-label">New clients</span></div>
+          </a>
+        </div>
+      </div>
+      <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary nav-cta-desktop">Schedule a Call</a>
+    </div>
+    <button class="nav-toggle" onclick="document.querySelector('.mobile-nav').classList.add('active')" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('active')">&#x2715;</button>
+  <a href="https://stqcap.com/#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
+  <a href="https://stqcap.com/#about" onclick="this.parentElement.classList.remove('active')">About</a>
+  <a href="https://stqcap.com/insights.html" onclick="this.parentElement.classList.remove('active')">Insights</a>
+  <a href="https://stqcap.com/research.html" onclick="this.parentElement.classList.remove('active')">Research</a>
+  <a href="https://stqcap.com/box-spreads.html" onclick="this.parentElement.classList.remove('active')">Synthetic Financing</a>
+  <a href="https://stqcap.com/contact.html" onclick="this.parentElement.classList.remove('active')">Contact</a>
+  <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Call</a>
+  <a href="https://client.schwab.com/Areas/Access/Login" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Investment Portal</a>
+  <a href="https://stqcap.com/get-started.html" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Get Started</a>
+</div>
+
+<section class="article-hero">
+  <div class="hero-watermark">STQ</div>
+  <div class="article-container">
+    <div class="article-hero-inner">
+      <a href="https://stqcap.com/insights.html" class="back-link">&#8592; All Insights</a>
+      <div class="article-meta">
+        <span class="article-tag">Liquidity</span>
+        <span class="article-date">June 16, 2026</span>
+        <span class="article-readtime">· 6 min read</span>
+      </div>
+      <h1>The Synthetic Variable Prepaid Forward: Liquidity Without Selling</h1>
+      <p class="article-hero-sub">A concentrated stock position leaves most people with two options: ride it and pray, or sell it and pay. There is a powerful third way that protects the downside and raises cash, with no taxable sale.</p>
+      <div class="author-row">
+        <div class="author-avatar">AG</div>
+        <div>
+          <div class="author-name">Akiva Glazerson</div>
+          <div class="author-title">Principal, STQ Capital</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="article-body">
+  <div class="article-container">
+    <div class="key-takeaways">
+      <h2>Key takeaways</h2>
+      <ol>
+        <li>A synthetic variable prepaid forward protects a concentrated position and raises cash today, without selling a share and without triggering a capital gain.</li>
+        <li>It is built from parts you control: a collar (a protective put plus a sold call) protects the downside and caps the upside, and a box spread turns the position into cash at near-Treasury rates.</li>
+        <li>It is a deferral, not a free lunch. You cap your upside, the box spread is a loan you repay, and the collar must be spaced wide enough to avoid the constructive sale rule.</li>
+      </ol>
+    </div>
+    <p>The SpaceX and OpenAI IPOs are about to mint a generation of new paper millionaires, each holding one position that made them wealthy and that they cannot easily sell.</p>
+    <p>Most people with a concentrated position think they have only two choices: hold it and stay fully exposed to a single stock, or sell it and pay the tax before they can reinvest a dollar.</p>
+    <p>There are several other ways to tap into liquidity without creating a taxable event. One of them, traditionally called a variable prepaid forward, lets a bank or counterparty advance you cash today against shares you deliver later, with downside protection built in. The good news is that you do not need the bank's version. We have been running a synthetic one, rebuilt transparently from listed options.</p>
+
+    <figure class='insight-fig flow-fig'>
+      <div class='flow-panel'>
+        <div class='vflow'>
+          <div class='vstep start'>
+            <div class='ico'><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B2E4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></div>
+            <div class='txt'><div class='big'>Concentrated position</div><div class='cap'>Low-basis stock</div></div>
+          </div>
+          <svg class='varrow' viewBox='0 0 16 24'><path d='M8 1v15M2 11l6 6 6-6' stroke='#1B2E4B' stroke-width='1.7' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>
+          <div class='vstep'>
+            <div class='ico'><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F0EFEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <div class='txt'><div class='big'>Collar</div><div class='cap'>Downside protected &middot; Upside capped</div></div>
+          </div>
+          <svg class='varrow' viewBox='0 0 16 24'><path d='M8 1v15M2 11l6 6 6-6' stroke='#1B2E4B' stroke-width='1.7' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>
+          <div class='vstep'>
+            <div class='ico'><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F0EFEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 010-4h14v4"/><path d="M3 5v14a2 2 0 002 2h16v-5"/><path d="M18 12a2 2 0 100 4h4v-4h-4z"/></svg></div>
+            <div class='txt'><div class='big'>Box spread</div><div class='cap'>Cash today, near Treasury rates</div></div>
+          </div>
+          <svg class='varrow' viewBox='0 0 16 24'><path d='M8 1v15M2 11l6 6 6-6' stroke='#1B2E4B' stroke-width='1.7' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>
+          <div class='vstep'>
+            <div class='ico'><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F0EFEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 100 4h4a2 2 0 110 4H8"/><path d="M12 18V6"/></svg></div>
+            <div class='txt'><div class='big'>Repay loan</div><div class='cap'>Fixed amount</div></div>
+          </div>
+        </div>
+        <div class='benefit'>Protect the downside and extract liquidity, <span class='g'>without a sale.</span></div>
+      </div>
+      <figcaption>A synthetic VPF in four steps: a collar protects the position, a box spread raises the cash, and you keep the shares.</figcaption>
+    </figure>
+
+    <h2>What a variable prepaid forward actually is</h2>
+    <p>A variable prepaid forward (VPF) is a contract in which you receive cash today in return for agreeing to deliver a variable number of shares at a future date, with a band of price protection built in. Hedge funds, family offices, and concentrated founders have used VPFs for decades to take chips off the table without selling.</p>
+    <p>The packaged bank version works, but it tends to be expensive, opaque, and controlled by a single counterparty. The economics, though, are not magic. They come from two well-understood building blocks: a collar for protection, and a loan for liquidity. Both can be assembled from listed instruments.</p>
+
+    <h2>Step one: the collar</h2>
+    <p>Say you have a concentrated stock position. The collar is two option trades that bracket it.</p>
+    <p>First, we <strong>buy a put option beneath the current price</strong>. A put gives you the right to sell at the strike price, so if the stock falls, you can still sell at that level. That protects your downside no matter how far the stock drops.</p>
+    <p>Next, we <strong>sell a call option above the current price</strong>. A call obligates you to sell at the strike if the buyer exercises, so your gains above that level stop. In exchange for accepting that cap, you collect a premium, and that premium helps pay for the put you just bought.</p>
+    <p>Together, the long put and the short call form a <strong>collar</strong>. The position is now bracketed: protected on the downside, capped on the upside, and free to move in between.</p>
+
+    <h2>Step two: the box spread for liquidity</h2>
+    <p>A collar protects the position, but it does not put cash in your pocket. That is the job of the box spread.</p>
+    <p>A <a href='https://stqcap.com/box-spreads.html'>box spread</a> is a package of S&amp;P 500 index options (SPX) that, combined, behaves like a fixed-rate loan. You receive cash up front and repay a known amount at a known date, with the rate set by the options market rather than a bank's lending desk. Historically that rate has priced close to Treasury yields, which is why box spreads are one of the cheapest forms of financing available to an investor with eligible collateral.</p>
+    <p>Layer the box spread on top of the collared position and you have completed the structure. The protected shares serve as the backdrop, the box spread delivers the cash, and you have rebuilt a variable prepaid forward from parts you fully control.</p>
+    <p class='pullquote'>Protect the position with a collar. Raise the cash with a box spread. Keep the shares, and trigger no taxable sale.</p>
+
+    <h2>Hold, sell, or a third option</h2>
+    <p>It helps to line up the choices. Holding the position keeps your full upside, but also your full downside, and it raises no cash. One bad quarter can erase years of gains. Selling is safe and liquid, but you realize the gain now and incur a tax bill, and the future upside is gone.</p>
+    <p>The synthetic variable prepaid forward is the third option. You keep the shares, protect the downside, raise cash at potentially attractive rates, and defer the taxable event.</p>
+
+    <h2>Why it is powerful</h2>
+    <p>Selling to de-risk is a one-way door. You realize the gain, pay the tax now, and give up both the future upside and a meaningful slice of capital. The synthetic variable prepaid forward keeps you in the position. No shares are sold, so there is no gain to report and no check to the IRS today.</p>
+    <p>The downside is protected, a defined slice of upside is retained, and the borrowed cash is available to diversify or spend. The gain stays deferred inside shares you still own, with the potential step-up in basis at death still intact.</p>
+
+    <h2>What to plan around</h2>
+    <p>This structure rewards planning, and it is not right for everyone. A few honest trade-offs:</p>
+    <ul>
+      <li>You give up the gains above the call strike. If you believe the stock has another double in it and you can stomach the risk, a cap will chafe.</li>
+      <li>The box spread is borrowed money. It is cheap, but it is a loan with a repayment date, and it requires liquid collateral.</li>
+      <li>The collar cannot be too tight. A hedge that strips out almost all of your risk and reward can be treated as a constructive sale, taxed as if you had sold. The put and call strikes have to be spaced widely enough to keep real exposure, and that spacing is a deliberate planning decision.</li>
+    </ul>
+    <p>If you simply want out of the stock, or you expect to hold until a step-up wipes out the gain entirely, other paths may serve you better. For an investor who wants protection and liquidity while staying invested, the synthetic VPF is hard to beat.</p>
+
+    <h2>How STQ thinks about it</h2>
+    <p>We do not start with the structure. We start with the position: the cost basis, the concentration, the conviction in the stock, the liquidity need, and the timeline.</p>
+    <p>Then we match the tool to the situation and build it transparently, with strikes chosen to balance protection against the constructive sale rule, and financing priced against the market rather than a bank's desk. Most advisors have never heard of this. We build it regularly.</p>
+    <p>If you are holding a large, low-basis position and you need liquidity without triggering the gain, it is worth mapping the structure before you act. Send me a note and we can walk through whether it fits.</p>
+    <p>This is informational only and not personalized tax, legal, or investment advice.</p>
+
+    <div class="faq">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item"><h3>What is a variable prepaid forward (VPF)?</h3><p>A contract in which you receive cash today in exchange for agreeing to deliver a variable number of shares at a future date, with downside protection built in. Private banks have sold packaged VPFs to concentrated shareholders for decades.</p></div>
+      <div class="faq-item"><h3>How is a synthetic VPF different from a bank VPF?</h3><p>A synthetic version rebuilds the same economics from listed options you control: a protective put and a sold call form a collar, and a box spread provides the cash. It avoids the markup, opacity, and counterparty lock-in of a packaged bank product.</p></div>
+      <div class="faq-item"><h3>Do I owe tax when this is set up?</h3><p>No shares are sold, so there is no realized capital gain at execution. The box spread raises cash as a loan, not a sale. The position stays deferred, and you keep your original cost basis and the potential step-up in basis at death.</p></div>
+      <div class="faq-item"><h3>What is the constructive sale rule and how do you avoid it?</h3><p>Under the constructive sale rule, a hedge that removes nearly all of your risk and reward can be treated as if you sold the stock. A collar avoids this when the put and call strikes are spaced widely enough to retain meaningful exposure. Spacing is a planning decision, not an afterthought.</p></div>
+      <div class="faq-item"><h3>Who is a synthetic VPF right for, and wrong for?</h3><p>It fits a holder of a large, low-basis position who wants protection and liquidity without selling. It is wrong for someone willing to give up all upside, who lacks liquid collateral, or who simply wants out of the stock entirely. Selling may be cleaner in those cases.</p></div>
+    </div>
+
+    <div class="related">
+      <h2>Related insights</h2>
+      <a href="https://stqcap.com/insights/insight-section-351-exchange-spacex.html">The Section 351 exchange: diversify without the tax bill &#8594;</a>
+      <a href="https://stqcap.com/insights/insight-step-up.html">Step-up kills the gain. Box spreads unlock the cash. &#8594;</a>
+      <a href="https://stqcap.com/insights/insight-daf-concentrated.html">You can't just sell. But you can give it away, tax-free. &#8594;</a>
+      <a href="https://stqcap.com/box-spreads.html">How box spread financing works &#8594;</a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Let's talk.</h3>
+      <p>I'd love to walk through what a tax-efficient approach could look like for your specific situation.</p>
+      <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn">Schedule a Call &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-logo">STQ <span>/ Capital</span></div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
+        <a href="https://stqcap.com/insights.html">Newsletter</a>
+        <a href="https://stqcap.com/contact.html">Contact</a>
+        <a href="https://client.schwab.com/Areas/Access/Login" target="_blank">Client Login</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 STQ Capital</div>
+    </div>
+    <div class="footer-disclaimer">Advisory services are offered through STQ Capital (&ldquo;STQ&rdquo;), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable. The information on this site is provided &ldquo;AS IS&rdquo; and without warranties either express or implied and the information may not be free from error. Your use of the information provided is at your sole risk.</div>
+  </div>
+</footer>
+</body>
+</html>
