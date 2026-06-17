@@ -1,5 +1,7 @@
-# Internal tooling and work-in-progress — never publish to the public site repo
+# Internal tooling and work-in-progress; do not publish to the public site repo
 .a5c/
 **/.a5c/
-guides/
+# Playbook internals (blueprint, outline, QA notes, render previews) stay local;
+# the published guide itself (guides/post-ipo-tax-playbook.html) is allowed.
+guides/_*
 .DS_Store

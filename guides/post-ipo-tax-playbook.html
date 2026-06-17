@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>The Post-IPO Tax Playbook | STQ Capital</title>
+<meta name="description" content="Five reinforcing moves for the newly liquid: how to diversify, finance, and protect a large, low-basis position in SpaceX, OpenAI, or Anthropic without handing a quarter of the gain to the IRS the day the lockup ends.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
+  --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF;
+  --green: #2e7d52; --green-deep: #1f5a3a; --red: #b14a3a;
+  --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7);
+  --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.25,0.46,0.45,0.94);
+}
+html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(27,46,75,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 clamp(24px,5vw,56px); position: relative; z-index: 1; }
+
+/* ---------- cover ---------- */
+.cover { background: var(--navy); color: var(--cream); position: relative; overflow: hidden; padding: 96px 0 84px; }
+.cover::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
+.cover-watermark { position: absolute; right: -10px; bottom: 20px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(7rem,16vw,15rem); color: rgba(240,239,235,0.035); line-height: 1; pointer-events: none; user-select: none; }
+.cover-inner { position: relative; z-index: 1; }
+.cover-wordmark { font-family: var(--font-heading); font-weight: 700; font-size: 1.4rem; letter-spacing: 0.05em; color: var(--cream); }
+.cover-wordmark span { font-weight: 400; color: rgba(240,239,235,0.55); }
+.cover-kicker { font-family: var(--font-heading); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(240,239,235,0.55); margin: 72px 0 22px; }
+.cover h1 { font-family: var(--font-heading); font-weight: 700; font-size: clamp(2.4rem,6.5vw,4.4rem); line-height: 1.04; letter-spacing: -0.02em; color: var(--cream); margin-bottom: 28px; }
+.cover-sub { font-size: 1.18rem; line-height: 1.7; color: rgba(240,239,235,0.72); max-width: 660px; margin-bottom: 56px; }
+.cover-author { display: flex; align-items: center; gap: 16px; padding-top: 30px; border-top: 1px solid rgba(240,239,235,0.14); max-width: 660px; }
+.cover-avatar { width: 50px; height: 50px; background: rgba(240,239,235,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; font-size: 0.85rem; color: var(--cream); flex-shrink: 0; }
+.cover-author .nm { font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem; color: var(--cream); letter-spacing: 0.02em; }
+.cover-author .ti { font-size: 0.82rem; color: rgba(240,239,235,0.55); margin-top: 2px; }
+
+/* ---------- section dividers (contained within the content column) ---------- */
+.band { background: transparent; color: var(--navy); padding: 60px 0 0; position: relative; }
+.band-inner { position: relative; z-index: 1; }
+.band-num { display: block; font-family: var(--font-heading); font-weight: 700; font-size: 0.74rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; }
+.band h2 { font-family: var(--font-heading); font-weight: 700; font-size: clamp(1.8rem,4vw,2.55rem); letter-spacing: -0.01em; color: var(--navy); line-height: 1.08; }
+.band-inner::after { content: ''; display: block; width: 60px; height: 3px; background: var(--navy); margin-top: 18px; }
+
+/* ---------- body type ---------- */
+.section { padding: 56px 0 8px; }
+.section p { font-size: 1.06rem; line-height: 1.82; color: var(--text-secondary); margin-bottom: 24px; }
+.section p strong { color: var(--navy); font-weight: 600; }
+.section h3 { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--navy); letter-spacing: -0.01em; margin: 40px 0 14px; }
+.section h4 { font-family: var(--font-heading); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 12px; }
+.section ul { margin: 4px 0 28px; padding: 0; list-style: none; }
+.section ul li { font-size: 1.04rem; line-height: 1.8; color: var(--text-secondary); padding: 5px 0 5px 24px; position: relative; }
+.section ul li::before { content: "\2022"; position: absolute; left: 0; color: var(--navy); font-weight: 700; }
+.section a { color: var(--navy); text-decoration: underline; text-underline-offset: 2px; text-decoration-color: rgba(27,46,75,0.35); }
+.section a:hover { text-decoration-color: var(--navy); }
+.lead { font-size: 1.18rem !important; line-height: 1.75 !important; color: var(--navy) !important; font-weight: 500; }
+.pullquote { border-left: 3px solid var(--navy); padding: 6px 0 6px 26px; margin: 38px 0; font-family: var(--font-heading); font-size: 1.4rem; line-height: 1.4; color: var(--navy); font-weight: 600; letter-spacing: -0.01em; }
+.sources { font-size: 0.8rem; line-height: 1.7; color: var(--text-secondary); margin: 32px 0 8px; padding: 18px 22px; background: rgba(27,46,75,0.035); border-radius: 8px; }
+.sources strong { font-family: var(--font-heading); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; display: block; margin-bottom: 8px; color: var(--text-secondary); }
+.sources a { color: var(--navy); }
+
+/* ---------- table of contents ---------- */
+.toc { background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 10px; padding: 36px 40px; margin: 56px 0 0; }
+.toc h2 { font-family: var(--font-heading); font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 20px; }
+.toc ol { list-style: none; counter-reset: toc -1; margin: 0; padding: 0; }
+.toc li { counter-increment: toc; border-bottom: 1px solid rgba(27,46,75,0.07); }
+.toc li:last-child { border-bottom: none; }
+.toc a { display: flex; align-items: baseline; gap: 16px; padding: 13px 0; text-decoration: none; color: var(--navy); transition: color 0.15s ease; }
+.toc a:hover { color: var(--navy-light); }
+.toc a::before { content: counter(toc, decimal-leading-zero); font-family: var(--font-heading); font-weight: 700; font-size: 0.82rem; color: rgba(27,46,75,0.4); flex-shrink: 0; width: 26px; }
+.toc li.special { counter-increment: none; }
+.toc li.special a::before { content: "\203A"; font-size: 1.1rem; color: var(--green); }
+.toc .t { font-family: var(--font-heading); font-weight: 600; font-size: 1.02rem; }
+.toc .d { font-size: 0.86rem; color: var(--text-secondary); margin-left: auto; text-align: right; }
+
+/* ---------- key takeaways ---------- */
+.key-takeaways { background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-left: 3px solid var(--navy); border-radius: 8px; padding: 28px 32px; margin: 40px 0 8px; }
+.key-takeaways h2 { font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 16px; }
+.key-takeaways ol { margin: 0; padding: 0; list-style: none; counter-reset: kt; }
+.key-takeaways li { position: relative; padding: 0 0 14px 42px; counter-increment: kt; font-size: 1.04rem; line-height: 1.55; color: var(--text-primary); }
+.key-takeaways li:last-child { padding-bottom: 0; }
+.key-takeaways li::before { content: counter(kt); position: absolute; left: 0; top: -1px; width: 27px; height: 27px; background: var(--navy); color: var(--cream); border-radius: 50%; font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+
+/* ---------- figures ---------- */
+figure.fig { margin: 40px 0; }
+figure.fig svg { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid rgba(27,46,75,0.1); }
+figure.fig figcaption { font-size: 0.8rem; color: var(--text-secondary); margin-top: 10px; text-align: center; font-style: italic; }
+
+/* ---------- right/wrong block ---------- */
+.fit { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 36px 0; }
+.fit .card { border-radius: 10px; padding: 24px 26px; border: 1px solid rgba(27,46,75,0.1); }
+.fit .right { background: rgba(46,125,82,0.06); border-color: rgba(46,125,82,0.25); }
+.fit .wrong { background: rgba(177,74,58,0.05); border-color: rgba(177,74,58,0.22); }
+.fit .card h4 { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.fit .right h4 { color: var(--green-deep); }
+.fit .wrong h4 { color: var(--red); }
+.fit .card p { font-size: 0.96rem; line-height: 1.65; color: var(--text-primary); margin: 0; }
+@media (max-width: 680px) { .fit { grid-template-columns: 1fr; } }
+
+/* ---------- worked example callout ---------- */
+.example { background: var(--white); border: 1px solid rgba(27,46,75,0.12); border-radius: 10px; padding: 26px 30px; margin: 34px 0; }
+.example .tag { display: inline-block; font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream); background: var(--navy); padding: 4px 10px; border-radius: 3px; margin-bottom: 14px; }
+.example p { font-size: 0.99rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 12px; }
+.example p:last-child { margin-bottom: 0; }
+
+/* ---------- stq line ---------- */
+.stq-line { display: flex; gap: 14px; align-items: flex-start; background: var(--navy); color: var(--cream); border-radius: 10px; padding: 22px 26px; margin: 34px 0; }
+.stq-line .badge { font-family: var(--font-heading); font-weight: 700; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; background: rgba(240,239,235,0.14); color: var(--cream); padding: 6px 10px; border-radius: 4px; flex-shrink: 0; }
+.stq-line p { font-size: 0.99rem; line-height: 1.6; color: rgba(240,239,235,0.9); margin: 0; }
+
+/* ---------- read the full breakdown link ---------- */
+.read-more { display: inline-block; margin: 4px 0 8px; font-family: var(--font-heading); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.04em; color: var(--navy); text-decoration: none; border-bottom: 1px solid rgba(27,46,75,0.3); padding-bottom: 2px; }
+.read-more:hover { border-bottom-color: var(--navy); }
+
+/* ---------- caveat box (long-short extension) ---------- */
+.caveat { border: 1px dashed rgba(27,46,75,0.3); border-radius: 8px; padding: 20px 24px; margin: 30px 0; background: rgba(27,46,75,0.025); }
+.caveat h4 { color: var(--navy); margin-bottom: 10px; }
+.caveat p { font-size: 0.92rem; line-height: 1.66; color: var(--text-secondary); margin-bottom: 0; }
+
+/* ---------- comparison table ---------- */
+.cmp-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 8px; margin: 34px 0; }
+.cmp { width: 100%; min-width: 520px; border-collapse: separate; border-spacing: 0; background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 8px; overflow: hidden; }
+.cmp th, .cmp td { text-align: left; padding: 14px 18px; font-size: 0.94rem; line-height: 1.4; vertical-align: top; border-top: 1px solid rgba(27,46,75,0.08); }
+.cmp thead th { border-top: none; font-family: var(--font-heading); font-weight: 700; color: var(--navy); font-size: 0.98rem; }
+.cmp thead th.box, .cmp thead th.box .tag { color: var(--green); }
+.cmp thead th .tag { display: block; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); font-weight: 600; margin-top: 3px; }
+.cmp tbody th { font-weight: 600; color: var(--navy); width: 30%; }
+.cmp td.box { background: rgba(46,125,82,0.06); color: var(--green-deep); font-weight: 600; }
+
+/* ---------- widgets ---------- */
+.widget { background: var(--white); border: 1px solid rgba(27,46,75,0.12); border-radius: 12px; overflow: hidden; margin: 40px 0; }
+.widget-head { background: var(--navy); color: var(--cream); padding: 20px 28px; }
+.widget-head h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--cream); margin: 0 0 4px; letter-spacing: -0.01em; }
+.widget-head p { font-size: 0.85rem; color: rgba(240,239,235,0.6); margin: 0; }
+.widget-body { padding: 26px 28px 28px; }
+.widget-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 26px; }
+.widget-inputs .field label { display: block; font-family: var(--font-heading); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 7px; }
+.widget-inputs .field input, .widget-inputs .field select { width: 100%; font-family: var(--font-body); font-size: 1.05rem; font-weight: 600; color: var(--navy); padding: 11px 14px; border: 1px solid rgba(27,46,75,0.2); border-radius: 6px; background: var(--cream); }
+.widget-inputs .field input:focus, .widget-inputs .field select:focus { outline: none; border-color: var(--navy); }
+.widget-outputs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: rgba(27,46,75,0.1); border: 1px solid rgba(27,46,75,0.1); border-radius: 8px; overflow: hidden; }
+.widget-outputs .out { background: var(--cream); padding: 16px 18px; }
+.widget-outputs .out .ol { font-family: var(--font-heading); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 6px; line-height: 1.3; }
+.widget-outputs .out .ov { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--navy); line-height: 1.05; }
+.widget-outputs .out .os { font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px; line-height: 1.4; }
+.widget-outputs .out.pos .ov { color: var(--green); }
+.widget-outputs .out.neg .ov { color: var(--red); }
+.widget-outputs .out.full { grid-column: 1 / -1; }
+.widget-foot { font-size: 0.78rem; color: var(--text-secondary); margin-top: 16px; line-height: 1.55; font-style: italic; }
+@media (max-width: 600px) { .widget-inputs, .widget-outputs { grid-template-columns: 1fr; } }
+
+/* ---------- ported box spread calculator (from box-spreads.html) ---------- */
+.calc-note { font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 20px; }
+.csg { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.csg-top { display: flex; justify-content: space-between; align-items: center; }
+.csg-top label { font-family: var(--font-body); font-size: 0.875rem; color: var(--text-secondary); }
+.csg-top .cval { font-family: var(--font-heading); font-size: 0.9375rem; font-weight: 600; color: var(--navy); background: var(--cream-dark); padding: 3px 12px; border-radius: 4px; }
+.csg input[type=range] { width: 100%; accent-color: #1B2E4B; height: 4px; cursor: pointer; }
+.cstat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; align-content: start; }
+.cstat { background: var(--cream-dark); border-radius: 6px; padding: 12px 14px; }
+.cstat-label { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(27,46,75,0.4); margin-bottom: 4px; }
+.cstat-val { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: var(--navy); }
+.cdisc { font-size: 0.6875rem; color: var(--text-secondary); opacity: 0.7; line-height: 1.6; margin-top: 14px; }
+@media (max-width: 480px) { .cstat-grid { grid-template-columns: 1fr; } }
+
+/* ---------- CTA close ---------- */
+.cta { background: var(--navy); border-radius: 12px; padding: 48px; margin: 8px 0 0; color: var(--cream); position: relative; overflow: hidden; }
+.cta::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 50px 50px; }
+.cta-inner { position: relative; z-index: 1; }
+.cta h3 { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--cream); margin-bottom: 12px; letter-spacing: -0.01em; }
+.cta p { font-size: 1rem; line-height: 1.7; color: rgba(240,239,235,0.72); margin-bottom: 26px; max-width: 620px; }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.84rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 14px 32px; border-radius: 4px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; background: var(--cream); color: var(--navy); transition: background 0.25s var(--ease); }
+.btn:hover { background: var(--white); }
+.disclaimer-line { font-size: 0.88rem; line-height: 1.7; color: var(--text-secondary); margin: 34px 0 0; font-style: italic; }
+
+/* ---------- lead capture (email, soft conversion) ---------- */
+.lead-form { background: var(--white); border: 1px solid rgba(27,46,75,0.12); border-left: 3px solid var(--green); border-radius: 8px; padding: 18px 22px; margin: 18px 0 34px; }
+.lead-form .lf-copy { font-size: 0.92rem; line-height: 1.5; color: var(--text-secondary); margin: 0 0 12px; }
+.lead-form .lf-copy strong { color: var(--navy); font-weight: 600; }
+.lead-form form { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.lead-form input[type=email] { flex: 1 1 240px; font-family: var(--font-body); font-size: 0.96rem; color: var(--navy); padding: 11px 14px; border: 1px solid rgba(27,46,75,0.2); border-radius: 6px; background: var(--cream); }
+.lead-form input[type=email]:focus { outline: none; border-color: var(--navy); }
+.lead-form button { font-family: var(--font-heading); font-weight: 600; font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 12px 24px; border: none; border-radius: 6px; background: var(--navy); color: var(--cream); cursor: pointer; transition: background 0.2s var(--ease); }
+.lead-form button:hover { background: var(--navy-light); }
+.lead-form .lf-done { font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--green-deep); margin: 0; }
+
+/* ---------- running-tally cards (scenario) ---------- */
+.tally { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(27,46,75,0.1); border: 1px solid rgba(27,46,75,0.1); border-radius: 8px; overflow: hidden; margin: 30px 0; }
+.tally .t-cell { background: var(--cream); padding: 16px 18px; }
+.tally .t-cell .tl { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 6px; line-height: 1.3; }
+.tally .t-cell .tv { font-family: var(--font-heading); font-size: 1.32rem; font-weight: 700; color: var(--navy); line-height: 1.05; }
+.tally .t-cell.pos .tv { color: var(--green); }
+@media (max-width: 600px) { .tally { grid-template-columns: 1fr; } }
+
+/* ---------- "if you need X, use Y" decision list ---------- */
+.ifuse { list-style: none; margin: 28px 0 8px; padding: 0; }
+.ifuse li { display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(27,46,75,0.08); }
+.ifuse li:last-child { border-bottom: none; }
+.ifuse .need { font-size: 0.98rem; line-height: 1.5; color: var(--text-secondary); }
+.ifuse .arrow { font-family: var(--font-heading); font-weight: 700; color: rgba(27,46,75,0.4); font-size: 1rem; }
+.ifuse .use { font-family: var(--font-heading); font-weight: 700; font-size: 0.98rem; color: var(--navy); }
+@media (max-width: 600px) { .ifuse li { grid-template-columns: 1fr; gap: 4px; } .ifuse .arrow { display: none; } }
+
+/* ---------- footer ---------- */
+footer { background: var(--navy-dark); padding: 40px 0 30px; position: relative; z-index: 1; margin-top: 64px; }
+.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 24px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 16px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.5); }
+.footer-copy { font-size: 0.8rem; color: rgba(240,239,235,0.35); }
+.footer-disclaimer { margin-top: 20px; font-size: 0.68rem; line-height: 1.7; color: rgba(240,239,235,0.22); }
+
+/* ---------- print ---------- */
+@media print {
+  @page { margin: 16mm 14mm; }
+  html, body { background: var(--white); }
+  body::before { display: none; }
+  *, *::before, *::after { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .wrap { max-width: 100%; padding: 0; }
+  .cover { page-break-after: always; padding: 60px 40px; min-height: 92vh; }
+  .band { page-break-before: always; }
+  .toc { page-break-after: always; }
+  figure.fig, .cmp-scroll, .cmp, .widget, .example, .fit, .key-takeaways, .stq-line, .caveat, .pullquote { break-inside: avoid; page-break-inside: avoid; }
+  .widget-inputs input, .widget-inputs select { border-color: rgba(27,46,75,0.35); }
+  .cta { page-break-inside: avoid; }
+  footer { page-break-before: avoid; }
+  a { text-decoration: none; color: var(--navy); }
+  .no-print { display: none !important; }
+  .lead-form { display: none !important; }
+  .calendly-print { display: block !important; font-style: normal; }
+}
+.calendly-print { display: none; }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<header class="cover" id="top">
+  <div class="cover-watermark">STQ</div>
+  <div class="wrap cover-inner">
+    <div class="cover-wordmark">STQ <span>/ Capital</span></div>
+    <div class="cover-kicker">A Strategy Playbook for the Newly Liquid</div>
+    <h1>The Post-IPO Tax Playbook</h1>
+    <p class="cover-sub">Five moves for the newly liquid: how to diversify, finance, and protect a large, low-basis position in SpaceX, OpenAI, or Anthropic without handing a quarter of your gain to the IRS the day the lockup ends.</p>
+    <div class="cover-author">
+      <div class="cover-avatar">AG</div>
+      <div>
+        <div class="nm">Akiva Glazerson</div>
+        <div class="ti">Principal, STQ Capital</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ TABLE OF CONTENTS ============ -->
+<div class="wrap">
+  <nav class="toc" aria-label="Table of contents">
+    <h2>What is inside</h2>
+    <ol>
+      <li><a href="#summary"><span class="t">Executive Summary</span><span class="d">The third path</span></a></li>
+      <li class="special"><a href="#sequence"><span class="t">The Sequence</span><span class="d">Which move, when</span></a></li>
+      <li><a href="#ch-351"><span class="t">The Section 351 Exchange</span><span class="d">Diversify with no tax today</span></a></li>
+      <li><a href="#ch-di"><span class="t">Direct Indexing</span><span class="d">Exposure as a tax engine</span></a></li>
+      <li><a href="#ch-ls"><span class="t">Long-Short Tax-Loss Harvesting</span><span class="d">Build the loss bank</span></a></li>
+      <li><a href="#ch-box"><span class="t">Box Spread Financing</span><span class="d">Cash near Treasury rates</span></a></li>
+      <li><a href="#ch-vpf"><span class="t">The Synthetic Variable Prepaid Forward</span><span class="d">Protect and monetize</span></a></li>
+      <li class="special"><a href="#scenario"><span class="t">A Full Walk-Through</span><span class="d">One holder, all five moves</span></a></li>
+      <li><a href="#integration"><span class="t">How These Fit Together</span><span class="d">The post-IPO sequence</span></a></li>
+      <li><a href="#close"><span class="t">Working With STQ</span><span class="d">Schedule a call</span></a></li>
+    </ol>
+  </nav>
+</div>
+
+<!-- ============ EXECUTIVE SUMMARY ============ -->
+<section class="band" id="summary"><div class="wrap"><div class="band-inner"><span class="band-num">00</span><h2>Executive Summary</h2></div></div></section>
+<section class="section"><div class="wrap">
+  <p class="lead">A concentrated, low-basis position from an initial public offering (IPO) leaves most people with a bad menu: hold it and stay fully exposed to one stock, or sell it and realize the gain.</p>
+  <p>At the top 2026 federal rate of 20 percent long-term capital gains plus the 3.8 percent net investment income tax (NIIT), that is 23.8 percent before any state tax (IRS, 2026). The point of this playbook is the third path between those two.</p>
+  <p>There is no single move. There are five, and they reinforce each other. A Section 351 exchange (26 U.S. Code Section 351) diversifies the bulk of the position with no tax today. Direct indexing rebuilds broad-market exposure as a tax engine. Systematic loss harvesting banks losses to offset gains. Box spread financing raises cash near Treasury rates without selling. A synthetic variable prepaid forward protects and monetizes whatever concentrated stake remains.</p>
+  <p>Most of these strategies defer tax rather than erase it. The deferred gain rides inside your new shares, and if you hold until death, your heirs may receive a step-up in basis that resets cost basis to fair market value and can wipe out the embedded gain entirely under current law.</p>
+  <p>Timing matters more than people expect. A 351 contribution generally has to happen while a sponsor is seeding a new exchange-traded fund (ETF), and you usually cannot transfer shares until the post-IPO lockup expires. Both argue for planning before the shares are liquid, not after.</p>
+  <p>Every structure here is built from instruments you control and can be priced against the market, not bought as an opaque, marked-up bank product. Most advisors have never built them. We build them regularly.</p>
+  <p>These are tools for a specific profile: a holder of a large taxable position with meaningful embedded gain who wants to diversify, finance, or protect without a forced sale. They are wrong for someone who simply wants out of the stock, who holds only in tax-advantaged accounts, or who lacks the liquid collateral the financing legs require.</p>
+
+  <div class="key-takeaways">
+    <h2>The five moves at a glance</h2>
+    <ol>
+      <li><strong>Section 351 exchange.</strong> Roll the bulk of the position into a diversified ETF with no tax today. The gain carries forward, deferred.</li>
+      <li><strong>Direct indexing.</strong> Rebuild broad-market exposure as individual stocks so the portfolio harvests losses continuously underneath.</li>
+      <li><strong>Long-short tax-loss harvesting.</strong> Bank losses systematically and wash-sale-clean, building an inventory to offset the eventual gain.</li>
+      <li><strong>Box spread financing.</strong> Raise cash near Treasury rates without selling, with the cost treated as a Section 1256 capital loss.</li>
+      <li><strong>Synthetic variable prepaid forward.</strong> Protect and monetize the concentrated stake you keep, spaced clear of the constructive sale rule.</li>
+    </ol>
+  </div>
+</div></section>
+
+<!-- ============ THE SEQUENCE (decision framework) ============ -->
+<section class="band" id="sequence"><div class="wrap"><div class="band-inner"><span class="band-num">The Map</span><h2>The Sequence</h2></div></div></section>
+<section class="section"><div class="wrap">
+  <p class="lead">The five moves are not a menu you pick one item from. They are an ordered system, and knowing which move answers which need is most of the work.</p>
+  <p>Read the chapters that follow as reference. Read this page first. It answers the only two questions that matter at the start: which move applies to what you need right now, and in what order they compound. The default order runs from diversifying the bulk to protecting the slice you keep, and each step makes the next one stronger.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 1000 612" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Decision flow: which post-IPO move applies to which need">
+      <rect x="0" y="0" width="1000" height="612" fill="#F0EFEB"/>
+      <text x="40" y="46" font-family="Chakra Petch, sans-serif" font-size="25" font-weight="700" fill="#1B2E4B">Which move, when</text>
+      <text x="40" y="73" font-family="DM Sans, sans-serif" font-size="14" fill="#5a6a7e">Start with what you need. The rows below are also the default order to run them in.</text>
+      <!-- start node -->
+      <rect x="40" y="96" width="920" height="44" rx="10" fill="#1B2E4B"/>
+      <text x="500" y="124" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="15" font-weight="700" fill="#F0EFEB">START: a large, low-basis position about to become liquid</text>
+      <!-- rows: IF YOU NEED -> THE MOVE -->
+      <!-- row 1 -->
+      <rect x="40" y="158" width="34" height="64" rx="8" fill="#1B2E4B"/><text x="57" y="197" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="17" font-weight="700" fill="#F0EFEB">1</text>
+      <rect x="84" y="158" width="500" height="64" rx="8" fill="#ffffff" stroke="#1B2E4B" stroke-opacity="0.15"/>
+      <text x="104" y="184" font-family="Chakra Petch, sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.5" fill="#5a6a7e">IF YOU NEED TO</text>
+      <text x="104" y="206" font-family="DM Sans, sans-serif" font-size="14.5" fill="#2a4570">Diversify the bulk without a tax bill today</text>
+      <path d="M592 190 H636" stroke="#1B2E4B" stroke-width="2.4"/><path d="M629 183 L638 190 L629 197" fill="none" stroke="#1B2E4B" stroke-width="2.4"/>
+      <rect x="648" y="158" width="312" height="64" rx="8" fill="#1B2E4B" fill-opacity="0.07" stroke="#1B2E4B" stroke-opacity="0.2"/>
+      <text x="668" y="194" font-family="Chakra Petch, sans-serif" font-size="14.5" font-weight="700" fill="#1B2E4B">Section 351 Exchange</text>
+      <!-- row 2 -->
+      <rect x="40" y="234" width="34" height="64" rx="8" fill="#1B2E4B"/><text x="57" y="273" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="17" font-weight="700" fill="#F0EFEB">2</text>
+      <rect x="84" y="234" width="500" height="64" rx="8" fill="#ffffff" stroke="#1B2E4B" stroke-opacity="0.15"/>
+      <text x="104" y="260" font-family="Chakra Petch, sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.5" fill="#5a6a7e">IF YOU NEED TO</text>
+      <text x="104" y="282" font-family="DM Sans, sans-serif" font-size="14.5" fill="#2a4570">Rebuild market exposure that also works for you</text>
+      <path d="M592 266 H636" stroke="#1B2E4B" stroke-width="2.4"/><path d="M629 259 L638 266 L629 273" fill="none" stroke="#1B2E4B" stroke-width="2.4"/>
+      <rect x="648" y="234" width="312" height="64" rx="8" fill="#1B2E4B" fill-opacity="0.07" stroke="#1B2E4B" stroke-opacity="0.2"/>
+      <text x="668" y="270" font-family="Chakra Petch, sans-serif" font-size="14.5" font-weight="700" fill="#1B2E4B">Direct Indexing</text>
+      <!-- row 3 -->
+      <rect x="40" y="310" width="34" height="64" rx="8" fill="#1B2E4B"/><text x="57" y="349" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="17" font-weight="700" fill="#F0EFEB">3</text>
+      <rect x="84" y="310" width="500" height="64" rx="8" fill="#ffffff" stroke="#1B2E4B" stroke-opacity="0.15"/>
+      <text x="104" y="336" font-family="Chakra Petch, sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.5" fill="#5a6a7e">IF YOU NEED</text>
+      <text x="104" y="358" font-family="DM Sans, sans-serif" font-size="14.5" fill="#2a4570">A bank of losses to offset a gain that is coming</text>
+      <path d="M592 342 H636" stroke="#1B2E4B" stroke-width="2.4"/><path d="M629 335 L638 342 L629 349" fill="none" stroke="#1B2E4B" stroke-width="2.4"/>
+      <rect x="648" y="310" width="312" height="64" rx="8" fill="#1B2E4B" fill-opacity="0.07" stroke="#1B2E4B" stroke-opacity="0.2"/>
+      <text x="668" y="346" font-family="Chakra Petch, sans-serif" font-size="14.5" font-weight="700" fill="#1B2E4B">Long-Short Harvesting</text>
+      <!-- row 4 -->
+      <rect x="40" y="386" width="34" height="64" rx="8" fill="#1B2E4B"/><text x="57" y="425" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="17" font-weight="700" fill="#F0EFEB">4</text>
+      <rect x="84" y="386" width="500" height="64" rx="8" fill="#ffffff" stroke="#1B2E4B" stroke-opacity="0.15"/>
+      <text x="104" y="412" font-family="Chakra Petch, sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.5" fill="#5a6a7e">IF YOU NEED</text>
+      <text x="104" y="434" font-family="DM Sans, sans-serif" font-size="14.5" fill="#2a4570">Cash now, without selling and triggering the gain</text>
+      <path d="M592 418 H636" stroke="#1B2E4B" stroke-width="2.4"/><path d="M629 411 L638 418 L629 425" fill="none" stroke="#1B2E4B" stroke-width="2.4"/>
+      <rect x="648" y="386" width="312" height="64" rx="8" fill="#1B2E4B" fill-opacity="0.07" stroke="#1B2E4B" stroke-opacity="0.2"/>
+      <text x="668" y="422" font-family="Chakra Petch, sans-serif" font-size="14.5" font-weight="700" fill="#1B2E4B">Box Spread Financing</text>
+      <!-- row 5 -->
+      <rect x="40" y="462" width="34" height="64" rx="8" fill="#2e7d52"/><text x="57" y="501" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="17" font-weight="700" fill="#F0EFEB">5</text>
+      <rect x="84" y="462" width="500" height="64" rx="8" fill="#ffffff" stroke="#1B2E4B" stroke-opacity="0.15"/>
+      <text x="104" y="488" font-family="Chakra Petch, sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.5" fill="#5a6a7e">IF YOU NEED TO</text>
+      <text x="104" y="510" font-family="DM Sans, sans-serif" font-size="14.5" fill="#2a4570">Protect and monetize the stake you choose to keep</text>
+      <path d="M592 494 H636" stroke="#2e7d52" stroke-width="2.4"/><path d="M629 487 L638 494 L629 501" fill="none" stroke="#2e7d52" stroke-width="2.4"/>
+      <rect x="648" y="462" width="312" height="64" rx="8" fill="#2e7d52" fill-opacity="0.1" stroke="#2e7d52" stroke-opacity="0.3"/>
+      <text x="668" y="498" font-family="Chakra Petch, sans-serif" font-size="14.5" font-weight="700" fill="#1f5a3a">Synthetic VPF</text>
+      <!-- footer ribbon -->
+      <rect x="40" y="548" width="920" height="44" rx="10" fill="#1B2E4B"/>
+      <text x="500" y="576" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="15" font-weight="600" fill="#F0EFEB">Run them in order. Each move makes the next one work harder.</text>
+    </svg>
+    <figcaption>The decision flow: match the move to the need, then run them in the order shown so they reinforce each other.</figcaption>
+  </figure>
+
+  <h3>If you need X, use Y</h3>
+  <ul class="ifuse">
+    <li><span class="need">Diversify the bulk of the position with no tax this year</span><span class="arrow">&#8594;</span><span class="use">Section 351 exchange</span></li>
+    <li><span class="need">Rebuild broad-market exposure that harvests losses underneath</span><span class="arrow">&#8594;</span><span class="use">Direct indexing</span></li>
+    <li><span class="need">A larger, reliable inventory of losses to offset a future gain</span><span class="arrow">&#8594;</span><span class="use">Long-short harvesting</span></li>
+    <li><span class="need">Liquidity now without selling appreciated positions</span><span class="arrow">&#8594;</span><span class="use">Box spread financing</span></li>
+    <li><span class="need">Downside protection and cash on the stake you keep</span><span class="arrow">&#8594;</span><span class="use">Synthetic VPF</span></li>
+  </ul>
+
+  <p>Two timing rules sit underneath the whole flow. A 351 contribution generally has to happen while a sponsor is seeding a new ETF, and you usually cannot transfer shares until the lockup expires. Both push the planning earlier than people expect: the sequence is most powerful when it is mapped before the shares are liquid, not after. The walk-through later in this guide runs one hypothetical holder through all five moves in this exact order so you can see the numbers compound.</p>
+</div></section>
+
+<!-- ============ CHAPTER 1 : SECTION 351 ============ -->
+<section class="band" id="ch-351"><div class="wrap"><div class="band-inner"><span class="band-num">01</span><h2>The Section 351 Exchange</h2></div></div></section>
+<section class="section"><div class="wrap">
+  <h4>The problem it solves</h4>
+  <p>You hold a large, low-basis position and want to diversify, but selling to rebalance realizes the entire embedded gain and hands a fifth or more of it to the IRS before you can reinvest a dollar.</p>
+
+  <h3>How it works</h3>
+  <p>A Section 351 exchange, named for Section 351 of the Internal Revenue Code (<a href="https://www.law.cornell.edu/uscode/text/26/351" target="_blank" rel="noopener">26 U.S. Code Section 351</a>), lets a group of investors contribute securities into a newly launched exchange-traded fund (ETF, a pooled, listed fund) in exchange for shares of that fund, with no tax due at the time of the transfer. Your cost basis (what you originally paid) and your holding period carry over. The embedded gain is not realized. It is deferred inside your new ETF shares until you sell them.</p>
+  <p>You go from an old, tax-locked single position to a clean, diversified, liquid fund without writing a check to the IRS to get there. You pay the tax only when you sell the ETF shares, on your schedule rather than the market's, and if you hold until death the step-up in basis may erase the deferred gain entirely under current law.</p>
+  <p>This is a deferral, not an erasure, and it differs from a traditional exchange fund, which is a partnership that typically locks money up for about seven years and is limited to qualified purchasers. A 351 conversion gives you liquid ETF shares with no seven-year lock.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 1000 414" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How a Section 351 exchange works">
+      <rect x="0" y="0" width="1000" height="414" fill="#F0EFEB"/>
+      <text x="40" y="46" font-family="Chakra Petch, sans-serif" font-size="25" font-weight="700" fill="#1B2E4B">How a Section 351 exchange works</text>
+      <text x="40" y="73" font-family="DM Sans, sans-serif" font-size="14" fill="#5a6a7e">Tax-free repositioning of an appreciated position into a diversified ETF</text>
+      <rect x="40" y="104" width="270" height="212" rx="10" fill="#ffffff" stroke="#1B2E4B" stroke-opacity="0.15"/>
+      <circle cx="74" cy="142" r="16" fill="#1B2E4B"/><text x="74" y="148" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="16" font-weight="700" fill="#F0EFEB">1</text>
+      <text x="100" y="148" font-family="Chakra Petch, sans-serif" font-size="14" font-weight="700" fill="#1B2E4B">YOUR PORTFOLIO</text>
+      <text x="66" y="190" font-family="DM Sans, sans-serif" font-size="15" fill="#2a4570"><tspan x="66" dy="0">An appreciated,</tspan><tspan x="66" dy="21">tax-locked position.</tspan></text>
+      <line x1="66" y1="226" x2="284" y2="226" stroke="#1B2E4B" stroke-opacity="0.12"/>
+      <text x="66" y="252" font-family="DM Sans, sans-serif" font-size="12.5" fill="#5a6a7e"><tspan x="66" dy="0">Years of embedded</tspan><tspan x="66" dy="19">gain, locked up by</tspan><tspan x="66" dy="19">the tax on a sale.</tspan></text>
+      <path d="M320 210 H352" stroke="#1B2E4B" stroke-width="2.5"/><path d="M345 203 L354 210 L345 217" fill="none" stroke="#1B2E4B" stroke-width="2.5"/>
+      <rect x="365" y="104" width="270" height="212" rx="10" fill="#ffffff" stroke="#1B2E4B" stroke-opacity="0.15"/>
+      <circle cx="399" cy="142" r="16" fill="#1B2E4B"/><text x="399" y="148" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="16" font-weight="700" fill="#F0EFEB">2</text>
+      <text x="425" y="148" font-family="Chakra Petch, sans-serif" font-size="14" font-weight="700" fill="#1B2E4B">CONTRIBUTE</text>
+      <text x="391" y="190" font-family="DM Sans, sans-serif" font-size="15" fill="#2a4570"><tspan x="391" dy="0">Transferred tax-free</tspan><tspan x="391" dy="21">into a newly launched</tspan><tspan x="391" dy="21">ETF.</tspan></text>
+      <line x1="391" y1="246" x2="609" y2="246" stroke="#1B2E4B" stroke-opacity="0.12"/>
+      <text x="391" y="272" font-family="DM Sans, sans-serif" font-size="12.5" fill="#5a6a7e"><tspan x="391" dy="0">Pooled with other</tspan><tspan x="391" dy="19">investors holdings.</tspan></text>
+      <path d="M645 210 H677" stroke="#1B2E4B" stroke-width="2.5"/><path d="M670 203 L679 210 L670 217" fill="none" stroke="#1B2E4B" stroke-width="2.5"/>
+      <rect x="690" y="104" width="270" height="212" rx="10" fill="#ffffff" stroke="#1B2E4B" stroke-opacity="0.15"/>
+      <circle cx="724" cy="142" r="16" fill="#1B2E4B"/><text x="724" y="148" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="16" font-weight="700" fill="#F0EFEB">3</text>
+      <text x="750" y="148" font-family="Chakra Petch, sans-serif" font-size="14" font-weight="700" fill="#1B2E4B">YOU HOLD ETF SHARES</text>
+      <text x="716" y="190" font-family="DM Sans, sans-serif" font-size="15" fill="#2a4570"><tspan x="716" dy="0">Diversified ETF shares.</tspan><tspan x="716" dy="21">Basis and holding</tspan><tspan x="716" dy="21">period carry over.</tspan></text>
+      <line x1="716" y1="246" x2="934" y2="246" stroke="#1B2E4B" stroke-opacity="0.12"/>
+      <text x="716" y="272" font-family="DM Sans, sans-serif" font-size="12.5" fill="#2e7d52"><tspan x="716" dy="0">Embedded gain deferred</tspan><tspan x="716" dy="19">until you sell.</tspan></text>
+      <rect x="40" y="340" width="920" height="52" rx="10" fill="#1B2E4B"/>
+      <text x="500" y="372" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="16" font-weight="600" fill="#F0EFEB">No sale. No tax today. You choose when, or whether, to pay the gain.</text>
+    </svg>
+    <figcaption>How a 351 exchange repositions an appreciated position into a diversified ETF, tax-free.</figcaption>
+  </figure>
+
+  <div class="example">
+    <span class="tag">Illustrative worked example, top brackets, 2026</span>
+    <p>Consider an investor with $3,000,000 spread across long-held names, a $1,000,000 cost basis, and a $2,000,000 embedded long-term gain. Selling to rebalance realizes that $2,000,000 gain. At the top 2026 federal rate of 20 percent plus the 3.8 percent NIIT, that is $476,000 of federal tax, and adding California at its top 13.3 percent rate brings the bill to roughly $742,000 due this year.</p>
+    <p>Through a 351 exchange, the same investor contributes the portfolio into a launching ETF, owes nothing this year, and carries the $2,000,000 gain forward inside the new diversified shares. Same diversification goal, tax deferred rather than paid.</p>
+  </div>
+
+  <div class="fit">
+    <div class="card right"><h4>Right for</h4><p>An investor carrying a large, appreciated, concentrated or low-basis portfolio who wants to diversify and is willing to plan ahead of a fund launch and ahead of the lockup expiring.</p></div>
+    <div class="card wrong"><h4>Wrong for</h4><p>Someone who needs cash today rather than diversification, or who expects to hold the position until death when a step-up in basis may wipe out the gain anyway. Other paths may serve them better.</p></div>
+  </div>
+
+  <div class="stq-line"><span class="badge">How STQ does this for you</span><p>We start with the position, the cost basis, the holding period, the goals, and the timeline, then map the 351 contribution well before the shares are liquid so you diversify and defer in one clean move.</p></div>
+  <a class="read-more" href="https://stqcap.com/insights/insight-section-351-exchange-spacex.html">Read the full Section 351 breakdown &#8594;</a>
+
+  <div class="sources"><strong>Sources</strong>
+    <a href="https://www.law.cornell.edu/uscode/text/26/351" target="_blank" rel="noopener">26 U.S. Code Section 351</a>. Tax rates reflect top 2026 federal (20% long-term capital gains plus 3.8% NIIT) and top California (13.3%) brackets; illustrative only. Section 351 exchanges featured at nearly every session of the Basis Northwest tax conference (2026).
+  </div>
+</div></section>
+
+<!-- ============ CHAPTER 2 : DIRECT INDEXING ============ -->
+<section class="band" id="ch-di"><div class="wrap"><div class="band-inner"><span class="band-num">02</span><h2>Direct Indexing</h2></div></div></section>
+<section class="section"><div class="wrap">
+  <h4>The problem it solves</h4>
+  <p>After you diversify, you still want broad-market exposure, but a plain index fund gives you the return and nothing else. When one stock inside the index falls, that loss is trapped inside the fund and you cannot use it against your other gains, and the S&amp;P 500 itself is far more concentrated than it looks.</p>
+
+  <h3>How it works</h3>
+  <p>Direct indexing means owning the individual securities that make up an index, all of them or a representative sample, rather than a fund that holds them for you. The market exposure is essentially identical to an S&amp;P 500 ETF. The tax treatment is completely different.</p>
+  <p>Because you own the individual stocks, you can harvest losses at the security level: when one name drops while the broader index is flat, you sell it, immediately buy a similar stock to keep your exposure, and bank the loss as a tax asset. Individual stocks move independently, so even in a rising market some names are down, which means harvesting opportunities appear continuously.</p>
+  <p>Those banked losses can be deployed against gains anywhere in your portfolio: a business exit, a real estate sale, a restricted stock unit (RSU) vest, or reducing the concentrated position itself. This also addresses a hidden problem with the index: market-cap weighting has pushed the top 10 S&amp;P 500 companies from 19 percent of the index in 1990 to more than 40 percent today (as of 2026), with those same 10 names capturing about 34 percent of all S&amp;P 500 profits (Apollo Chief Economist, 2026). Direct indexing lets you keep the foundation while building around it intentionally.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 1000 432" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Index fund versus direct indexing">
+      <rect x="0" y="0" width="1000" height="432" fill="#F0EFEB"/>
+      <text x="40" y="46" font-family="Chakra Petch, sans-serif" font-size="25" font-weight="700" fill="#1B2E4B">Same exposure, different machinery</text>
+      <text x="40" y="73" font-family="DM Sans, sans-serif" font-size="14" fill="#5a6a7e">An index fund traps the loss inside; direct indexing puts it to work</text>
+      <!-- left card -->
+      <rect x="40" y="100" width="445" height="248" rx="10" fill="#ffffff" stroke="#1B2E4B" stroke-opacity="0.15"/>
+      <text x="64" y="134" font-family="Chakra Petch, sans-serif" font-size="14" font-weight="700" fill="#1B2E4B">INDEX FUND</text>
+      <rect x="64" y="152" width="397" height="120" rx="8" fill="#1B2E4B" fill-opacity="0.06" stroke="#1B2E4B" stroke-opacity="0.2"/>
+      <text x="262" y="200" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="15" font-weight="700" fill="#1B2E4B">ONE FUND SHARE</text>
+      <text x="262" y="224" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" fill="#5a6a7e">wraps all 500 stocks together</text>
+      <text x="64" y="302" font-family="DM Sans, sans-serif" font-size="13" fill="#b14a3a"><tspan x="64" dy="0">One drops, the loss is</tspan><tspan x="64" dy="19">trapped inside the fund.</tspan></text>
+      <!-- right card -->
+      <rect x="515" y="100" width="445" height="248" rx="10" fill="#ffffff" stroke="#1B2E4B" stroke-opacity="0.15"/>
+      <text x="539" y="134" font-family="Chakra Petch, sans-serif" font-size="14" font-weight="700" fill="#1B2E4B">DIRECT INDEXING</text>
+      <!-- grid of dots -->
+      <g>
+        <!-- generated grid 14 x 5 -->
+        <g fill="#1B2E4B">
+          <circle cx="555" cy="160" r="5"/><circle cx="583" cy="160" r="5"/><circle cx="611" cy="160" r="5"/><circle cx="639" cy="160" r="5"/><circle cx="667" cy="160" r="5"/><circle cx="695" cy="160" r="5"/><circle cx="723" cy="160" r="5"/><circle cx="751" cy="160" r="5"/><circle cx="779" cy="160" r="5"/><circle cx="807" cy="160" r="5"/><circle cx="835" cy="160" r="5"/><circle cx="863" cy="160" r="5"/><circle cx="891" cy="160" r="5"/><circle cx="919" cy="160" r="5"/>
+          <circle cx="555" cy="186" r="5"/><circle cx="583" cy="186" r="5"/><circle cx="611" cy="186" r="5"/><circle cx="667" cy="186" r="5"/><circle cx="695" cy="186" r="5"/><circle cx="723" cy="186" r="5"/><circle cx="751" cy="186" r="5"/><circle cx="779" cy="186" r="5"/><circle cx="835" cy="186" r="5"/><circle cx="863" cy="186" r="5"/><circle cx="891" cy="186" r="5"/><circle cx="919" cy="186" r="5"/>
+          <circle cx="555" cy="212" r="5"/><circle cx="583" cy="212" r="5"/><circle cx="639" cy="212" r="5"/><circle cx="667" cy="212" r="5"/><circle cx="695" cy="212" r="5"/><circle cx="723" cy="212" r="5"/><circle cx="779" cy="212" r="5"/><circle cx="807" cy="212" r="5"/><circle cx="835" cy="212" r="5"/><circle cx="863" cy="212" r="5"/><circle cx="919" cy="212" r="5"/>
+          <circle cx="555" cy="238" r="5"/><circle cx="583" cy="238" r="5"/><circle cx="611" cy="238" r="5"/><circle cx="639" cy="238" r="5"/><circle cx="695" cy="238" r="5"/><circle cx="723" cy="238" r="5"/><circle cx="751" cy="238" r="5"/><circle cx="779" cy="238" r="5"/><circle cx="807" cy="238" r="5"/><circle cx="863" cy="238" r="5"/><circle cx="891" cy="238" r="5"/><circle cx="919" cy="238" r="5"/>
+        </g>
+        <!-- harvestable in red -->
+        <g fill="#b14a3a">
+          <circle cx="639" cy="186" r="5"/><circle cx="807" cy="186" r="5"/><circle cx="611" cy="212" r="5"/><circle cx="751" cy="212" r="5"/><circle cx="891" cy="212" r="5"/><circle cx="667" cy="238" r="5"/><circle cx="835" cy="238" r="5"/>
+        </g>
+      </g>
+      <text x="539" y="302" font-family="DM Sans, sans-serif" font-size="13" fill="#2e7d52"><tspan x="539" dy="0">Sell the loser (red), buy a similar</tspan><tspan x="539" dy="19">name, bank the loss.</tspan></text>
+      <rect x="40" y="368" width="920" height="48" rx="10" fill="#1B2E4B"/>
+      <text x="500" y="397" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="16" font-weight="600" fill="#F0EFEB">Same index. Same exposure. A tax engine running underneath.</text>
+    </svg>
+    <figcaption>An index fund holds the 500 stocks for you; direct indexing holds them so losses can be harvested at the security level.</figcaption>
+  </figure>
+
+  <!-- WIDGET: Tax-alpha projector -->
+  <div class="widget" id="tax-alpha-projector">
+    <div class="widget-head">
+      <h3>Direct-Indexing Tax-Alpha Projector</h3>
+      <p>Estimate the harvested tax alpha a directly indexed portfolio may generate. Illustrative.</p>
+    </div>
+    <div class="widget-body">
+      <div class="widget-inputs">
+        <div class="field">
+          <label for="ta-size">Portfolio size (USD)</label>
+          <input type="number" id="ta-size" value="2000000" min="100000" step="100000" oninput="calcTaxAlpha()">
+        </div>
+        <div class="field">
+          <label for="ta-horizon">Horizon (years)</label>
+          <input type="number" id="ta-horizon" value="10" min="1" max="40" step="1" oninput="calcTaxAlpha()">
+        </div>
+      </div>
+      <div class="widget-outputs">
+        <div class="out pos"><div class="ol">Harvested tax alpha / year</div><div class="ov" id="ta-annual">$20k - $40k</div><div class="os">at 1% to 2% of portfolio per year</div></div>
+        <div class="out pos"><div class="ol">Cumulative over horizon</div><div class="ov" id="ta-cumulative">$200k - $400k</div><div class="os">simple sum, before compounding</div></div>
+      </div>
+      <p class="widget-foot">Illustrative only. Uses the published 1 percent to 2 percent per year tax-alpha range for systematic direct indexing; actual results depend on market volatility, your tax bracket, available gains to offset, and execution. Tax-loss harvesting requires a taxable account.</p>
+    </div>
+  </div>
+
+  <div class="fit">
+    <div class="card right"><h4>Right for</h4><p>Investors with significant taxable accounts who face meaningful capital gains from other sources such as real estate, a business interest, or equity compensation, or who hold concentrated positions they need to reduce over time. Typically worth it at $100,000 or more, where owning individual securities is efficient.</p></div>
+    <div class="card wrong"><h4>Wrong for</h4><p>Investors whose portfolios are entirely in tax-advantaged accounts such as IRAs or 401(k)s, where there are no gains to offset and tax-loss harvesting does not apply.</p></div>
+  </div>
+
+  <div class="stq-line"><span class="badge">How STQ does this for you</span><p>We rebuild your broad-market exposure as individual holdings so the portfolio harvests losses continuously in the background, turning ordinary market movement into a tax asset you can deploy when a gain arrives.</p></div>
+  <a class="read-more" href="https://stqcap.com/insights/insight-direct-indexing.html">Read the full direct indexing breakdown &#8594;</a>
+
+  <div class="lead-form">
+    <p class="lf-copy"><strong>Want STQ to project this on your actual portfolio?</strong> Drop your email and we will run your numbers.</p>
+    <form onsubmit="return stqLead(event,'lf-email-ta')">
+      <input type="email" id="lf-email-ta" required placeholder="you@email.com" aria-label="Email address">
+      <button type="submit">Send</button>
+    </form>
+    <p class="lf-done" id="lf-done-ta" hidden>You're in. We'll be in touch shortly.</p>
+  </div>
+</div></section>
+
+<!-- ============ CHAPTER 3 : LONG-SHORT TLH ============ -->
+<section class="band" id="ch-ls"><div class="wrap"><div class="band-inner"><span class="band-num">03</span><h2>Long-Short Tax-Loss Harvesting</h2></div></div></section>
+<section class="section"><div class="wrap">
+  <h4>The problem it solves</h4>
+  <p>A directly indexed portfolio in a calm, rising market only throws off so many losses, yet you have a very large embedded gain to offset. You need a bigger, more reliable inventory of harvestable losses, and you need to capture them without tripping the wash sale rule.</p>
+
+  <h3>How it works</h3>
+  <p>Tax-loss harvesting means deliberately selling a position that has fallen below its cost basis, locking in the loss on paper, and immediately reinvesting in something similar so your market exposure stays essentially the same. You have not changed your strategy or permanently exited; you have converted a paper loss into a tax asset, what we call a loss bank.</p>
+  <p>The one rule to respect is the IRS wash sale rule: if you buy the same or a substantially identical security within 30 days before or after the sale, the loss is disallowed, so you buy something similar but not identical (for example, sell one broad index fund and buy a total-market fund).</p>
+  <p>The goal is to systematically build an inventory of losses that sits in the portfolio until a taxable event arrives (a business sale, a real estate gain, equity compensation, or reducing the concentrated stake), at which point the losses are already there to offset it. In this framework volatility is not a problem to manage, it is the raw material: the more the market moves, the more harvest opportunities appear and the larger the loss bank grows.</p>
+  <p>Paired with box spread financing, the combination compounds, because the harvested losses offset gains while the box spread loan can generate deductible interest, with that interest treated as a capital loss under IRS Section 1256 (60 percent long-term, 40 percent short-term).</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 1000 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Harvesting losses into a loss bank over time">
+      <rect x="0" y="0" width="1000" height="420" fill="#F0EFEB"/>
+      <text x="40" y="46" font-family="Chakra Petch, sans-serif" font-size="25" font-weight="700" fill="#1B2E4B">Every dip fills the loss bank</text>
+      <text x="40" y="73" font-family="DM Sans, sans-serif" font-size="14" fill="#5a6a7e">Harvest the dips over the years; draw down when the gain event lands</text>
+      <!-- price line -->
+      <polyline points="50,150 130,128 200,168 270,120 340,176 410,132 480,188 550,140 620,196 700,150" fill="none" stroke="#1B2E4B" stroke-width="2.4"/>
+      <!-- harvest dots at dips -->
+      <g fill="#b14a3a">
+        <circle cx="200" cy="168" r="6"/><circle cx="340" cy="176" r="6"/><circle cx="480" cy="188" r="6"/><circle cx="620" cy="196" r="6"/>
+      </g>
+      <text x="50" y="110" font-family="Chakra Petch, sans-serif" font-size="12" font-weight="700" fill="#5a6a7e">PRICE OVER TIME</text>
+      <!-- harvest arrows down into reservoir -->
+      <g stroke="#b14a3a" stroke-width="1.8" stroke-dasharray="4 4">
+        <line x1="200" y1="178" x2="200" y2="268"/><line x1="340" y1="186" x2="340" y2="268"/><line x1="480" y1="198" x2="480" y2="268"/><line x1="620" y1="206" x2="620" y2="268"/>
+      </g>
+      <text x="700" y="178" font-family="DM Sans, sans-serif" font-size="12.5" fill="#b14a3a">harvest the dips</text>
+      <!-- reservoir -->
+      <rect x="50" y="272" width="650" height="96" rx="8" fill="#1B2E4B" fill-opacity="0.10" stroke="#1B2E4B" stroke-opacity="0.25"/>
+      <rect x="50" y="316" width="650" height="52" rx="0" fill="#1B2E4B" fill-opacity="0.55"/>
+      <rect x="50" y="272" width="650" height="96" rx="8" fill="none" stroke="#1B2E4B" stroke-opacity="0.25"/>
+      <text x="70" y="302" font-family="Chakra Petch, sans-serif" font-size="15" font-weight="700" fill="#1B2E4B">LOSS BANK</text>
+      <text x="70" y="350" font-family="DM Sans, sans-serif" font-size="12.5" fill="#F0EFEB">losses banked, ready to offset the gain</text>
+      <!-- taxable event drawdown -->
+      <path d="M700 318 H742" stroke="#2e7d52" stroke-width="2.6"/><path d="M735 311 L744 318 L735 325" fill="none" stroke="#2e7d52" stroke-width="2.6"/>
+      <rect x="752" y="272" width="208" height="96" rx="10" fill="#2e7d52"/>
+      <text x="856" y="306" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="14" font-weight="700" fill="#F0EFEB">TAXABLE EVENT</text>
+      <text x="856" y="332" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" fill="#F0EFEB"><tspan x="856" dy="0">business sale, RSU vest,</tspan><tspan x="856" dy="17">reduce the stake</tspan></text>
+      <rect x="40" y="372" width="920" height="40" rx="10" fill="#1B2E4B"/>
+      <text x="500" y="397" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="15" font-weight="600" fill="#F0EFEB">Volatility is not the problem. It is the raw material.</text>
+    </svg>
+    <figcaption>Volatility is not the problem; it is the raw material. Each dip is harvested into the loss bank that offsets the eventual gain.</figcaption>
+  </figure>
+
+  <div class="example">
+    <span class="tag">Illustrative worked example</span>
+    <p>An investor expects a large gain event ahead, for example reducing the concentrated stake or a business sale. By harvesting losses systematically through the years beforehand, the portfolio builds a loss bank that offsets that gain dollar-for-dollar when it lands, sheltering income that would otherwise be taxed at up to 23.8 percent federal (IRS, 2026) before state tax. The earlier the harvesting starts, the larger the offset waiting when the event arrives.</p>
+  </div>
+
+  <h3>Going further: the long-short (130-30) tax-aware extension</h3>
+  <p>A long-only directly indexed portfolio can only harvest losses on the names it actually owns, and in a steadily rising market the supply of losers shrinks. A long-short overlay is the institutional answer to that ceiling. In a tax-aware long-short structure, often run as a "130-30" portfolio, the manager holds roughly 130 percent of capital in long positions and sells short roughly 30 percent, financed so the net market exposure stays close to 100 percent.</p>
+  <p>Short selling means borrowing a stock and selling it, intending to buy it back later, so a short position gains value when the stock falls. The point for tax purposes is mechanical: in any market, some longs fall and some shorts rise the wrong way, so both books continuously throw off realizable losses. That widens the inventory of harvestable losses well beyond what a long-only portfolio can produce, which is exactly what a holder with a very large embedded gain needs.</p>
+  <p>The trade-offs are real. A long-short overlay adds leverage, short-borrow costs, and greater complexity, and short-sale tax rules differ from long-sale rules (for example, gains on shorts are generally short-term regardless of holding period). It suits larger taxable portfolios that need more loss capacity than long-only harvesting can supply, and it is not appropriate for everyone.</p>
+
+  <div class="caveat">
+    <h4>Sourcing and scope note</h4>
+    <p>This long-short (130-30) extension is described from general industry and academic practice on tax-aware long-short investing as of June 2026 (see, for example, published research from quantitative asset managers such as AQR and Quantinno, and the broader tax-aware long-short literature). It goes beyond STQ Capital's existing published insights and is included here for education. It is not a description of a specific STQ product or a claim about STQ-managed results. Any implementation should be evaluated with a tax advisor against your own situation.</p>
+  </div>
+
+  <div class="fit">
+    <div class="card right"><h4>Right for</h4><p>Investors anticipating a significant taxable event who can start banking losses early, and who have meaningful taxable capital gains exposure to offset.</p></div>
+    <div class="card wrong"><h4>Wrong for</h4><p>Investors in tax-advantaged accounts only, where harvesting does no good, and anyone unwilling to maintain the disciplined, wash-sale-aware execution the strategy requires.</p></div>
+  </div>
+
+  <div class="stq-line"><span class="badge">How STQ does this for you</span><p>We run the harvesting continuously and wash-sale-clean, building the loss bank before the taxable event arrives so the offset is waiting when you need it most.</p></div>
+  <a class="read-more" href="https://stqcap.com/insights/insight-tlh-explainer.html">Read the full tax-loss harvesting breakdown &#8594;</a>
+
+  <div class="sources"><strong>Sources</strong>
+    STQ Capital insights: "What Is Tax Loss Harvesting, Anyway?" (May 6, 2026), "How to Monetize Volatility." (June 5, 2026), "The Ultimate Tax-Aware Duo." (April 27, 2026), "My Favorite Combination in Tax-Efficient Investing." (May 17, 2026). IRS wash sale rule; $3,000 ordinary-income offset and indefinite carryforward; box spread interest treated as a capital loss under IRS Section 1256 (60% long-term / 40% short-term). Long-short (130-30) extension: general industry and academic practice as of June 2026; not an STQ-specific claim.
+  </div>
+</div></section>
+
+<!-- ============ CHAPTER 4 : BOX SPREAD ============ -->
+<section class="band" id="ch-box"><div class="wrap"><div class="band-inner"><span class="band-num">04</span><h2>Box Spread Financing</h2></div></div></section>
+<section class="section"><div class="wrap">
+  <h4>The problem it solves</h4>
+  <p>You need liquidity, for a home, a tax bill, a private deal, or to reinvest, but you do not want to sell appreciated positions and trigger the gain. The usual answer is a bank line of credit at whatever rate the bank feels like charging, with an application, a credit check, and terms it can change on you.</p>
+
+  <h3>How it works</h3>
+  <p>A box spread is a package of S&amp;P 500 index options (SPX, or its one-tenth-size sibling XSP) that, combined, behaves like a fixed-rate loan. It is a four-leg structure (a bull call spread plus a bear put spread at the same strikes, same index, same expiration) deliberately built so the payoff at expiration is fixed no matter where the market goes.</p>
+  <p>Because the payoff is known, you can calculate the implied interest rate before you trade: the difference between the cash you receive today and the fixed amount you owe at expiration. That rate is set by the options market in real time, with institutions competing on both sides, and it has historically priced close to Treasury yields, well below most margin accounts, home equity lines of credit (HELOCs), or bank loans.</p>
+  <p>You sell the box spread, cash lands in your account, your portfolio stays fully invested with no positions sold and no gain triggered, and at expiration you settle the fixed amount or roll it forward. The strategy works only with European-style index options (SPX or XSP), where early exercise is impossible, which is what guarantees the fixed payoff.</p>
+  <p>The interest may be deductible as investment interest expense, with the deduction following the loan rather than its use, and box spread interest is treated as a capital loss under IRS Section 1256 (60 percent long-term, 40 percent short-term). Because you never sell, appreciated positions keep compounding and the step-up in basis at death stays intact.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 1000 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How box spread financing works">
+      <rect x="0" y="0" width="1000" height="420" fill="#F0EFEB"/>
+      <text x="40" y="46" font-family="Chakra Petch, sans-serif" font-size="25" font-weight="700" fill="#1B2E4B">Borrow from the options market, not a bank</text>
+      <text x="40" y="73" font-family="DM Sans, sans-serif" font-size="14" fill="#5a6a7e">Cash today, a fixed amount later, and the market sets the rate</text>
+      <!-- TODAY tag -->
+      <rect x="40" y="108" width="92" height="30" rx="6" fill="#1B2E4B" fill-opacity="0.1" stroke="#1B2E4B" stroke-opacity="0.2"/>
+      <text x="86" y="128" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="12" font-weight="700" fill="#1B2E4B">TODAY</text>
+      <!-- sell box block -->
+      <rect x="40" y="150" width="300" height="120" rx="10" fill="#1B2E4B"/>
+      <text x="64" y="186" font-family="Chakra Petch, sans-serif" font-size="15" font-weight="700" fill="#F0EFEB">SELL THE BOX SPREAD</text>
+      <text x="64" y="212" font-family="DM Sans, sans-serif" font-size="13" fill="rgba(240,239,235,0.75)"><tspan x="64" dy="0">Four-leg SPX / XSP options,</tspan><tspan x="64" dy="19">European-style.</tspan></text>
+      <text x="64" y="256" font-family="DM Sans, sans-serif" font-size="12.5" fill="#9fd9b6">Cash today, ~95 to 97 cents on the dollar (1-yr).</text>
+      <!-- time arrow -->
+      <path d="M348 210 H660" stroke="#1B2E4B" stroke-width="2.4"/><path d="M652 203 L662 210 L652 217" fill="none" stroke="#1B2E4B" stroke-width="2.4"/>
+      <text x="504" y="200" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" fill="#5a6a7e">fully invested, nothing sold</text>
+      <!-- expiration block -->
+      <rect x="668" y="108" width="120" height="30" rx="6" fill="#1B2E4B" fill-opacity="0.1" stroke="#1B2E4B" stroke-opacity="0.2"/>
+      <text x="728" y="128" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="12" font-weight="700" fill="#1B2E4B">AT EXPIRATION</text>
+      <rect x="668" y="150" width="292" height="120" rx="10" fill="#ffffff" stroke="#1B2E4B" stroke-opacity="0.18"/>
+      <text x="692" y="186" font-family="Chakra Petch, sans-serif" font-size="15" font-weight="700" fill="#1B2E4B">REPAY A FIXED AMOUNT</text>
+      <text x="692" y="212" font-family="DM Sans, sans-serif" font-size="13" fill="#5a6a7e"><tspan x="692" dy="0">Known in advance,</tspan><tspan x="692" dy="19">or roll it forward.</tspan></text>
+      <text x="692" y="256" font-family="DM Sans, sans-serif" font-size="12.5" fill="#5a6a7e">No appreciated position sold. No gain triggered.</text>
+      <!-- 1256 split -->
+      <text x="40" y="312" font-family="Chakra Petch, sans-serif" font-size="12" font-weight="700" fill="#5a6a7e">INTEREST, TREATED AS A SECTION 1256 CAPITAL LOSS</text>
+      <rect x="40" y="324" width="300" height="30" rx="6" fill="#1B2E4B"/>
+      <text x="190" y="344" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="12.5" font-weight="700" fill="#F0EFEB">60% long-term</text>
+      <rect x="346" y="324" width="200" height="30" rx="6" fill="#2a4570"/>
+      <text x="446" y="344" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="12.5" font-weight="700" fill="#F0EFEB">40% short-term</text>
+      <rect x="40" y="372" width="920" height="40" rx="10" fill="#1B2E4B"/>
+      <text x="500" y="397" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="15" font-weight="600" fill="#F0EFEB">You receive cash today. You owe a fixed amount later. The market sets the rate, not a bank.</text>
+    </svg>
+    <figcaption>A box spread delivers cash today and a fixed, known repayment later, with the cost realized as a Section 1256 capital loss.</figcaption>
+  </figure>
+
+  <!-- WIDGET: Box spread calculator (ported from box-spreads.html) -->
+  <div class="widget" id="box-spread-calculator">
+    <div class="widget-head">
+      <h3>Box Spread Calculator</h3>
+      <p>See what it costs you. Adjust the sliders to estimate your borrowing cost. Illustrative.</p>
+    </div>
+    <div class="widget-body">
+      <div class="calc-note">Adjust the sliders to see your cost.</div>
+      <div class="csg"><div class="csg-top"><label>Portfolio value</label><span class="cval" id="cl-port">$1,000,000</span></div><input type="range" min="250000" max="10000000" step="50000" value="1000000" id="cs-port" oninput="cgo()"></div>
+      <div class="csg"><div class="csg-top"><label>Loan-to-value (LTV)</label><span class="cval" id="cl-ltv">50%</span></div><input type="range" min="5" max="85" step="5" value="50" id="cs-ltv" oninput="cgo()"></div>
+      <div class="csg"><div class="csg-top"><label>Loan term</label><span class="cval" id="cl-term">1 Year</span></div><input type="range" min="1" max="5" step="1" value="1" id="cs-term" oninput="cgo()"></div>
+      <div class="csg"><div class="csg-top"><label>Federal tax bracket</label><span class="cval" id="cl-brk">37%</span></div><input type="range" min="22" max="37" step="1" value="37" id="cs-brk" oninput="cgo()"></div>
+      <div class="cstat-grid">
+        <div class="cstat"><div class="cstat-label">Loan amount</div><div class="cstat-val" id="co-loan">$500,000</div></div>
+        <div class="cstat"><div class="cstat-label">Annual interest</div><div class="cstat-val" id="co-int">$21,250</div></div>
+        <div class="cstat"><div class="cstat-label">Tax savings</div><div class="cstat-val" id="co-sav">$6,716</div></div>
+        <div class="cstat"><div class="cstat-label">Net annual cost</div><div class="cstat-val" id="co-net">$14,534</div></div>
+        <div class="cstat"><div class="cstat-label">Stated rate</div><div class="cstat-val" id="co-stated">4.25%</div></div>
+        <div class="cstat" style="background:var(--navy);"><div class="cstat-label" style="color:rgba(240,239,235,0.45);">Effective rate (after tax)</div><div class="cstat-val" id="co-eff" style="color:var(--cream);">2.91%</div></div>
+      </div>
+      <p class="cdisc">Illustrative only. Loan amount capped at 85% of portfolio value for illustration purposes. Actual borrowing capacity depends on portfolio composition, account type, and market conditions. Effective rate assumes Section 1256 60/40 treatment at the selected federal bracket. LTCG fixed at 20%. State taxes excluded. Consult a qualified tax advisor before implementing.</p>
+      <a href="https://stqcap.com/box-spreads.html" target="_blank" rel="noopener" class="btn" style="background:var(--navy);color:var(--cream);margin-top:16px;">Run the full calculator on stqcap.com &#8594;</a>
+    </div>
+  </div>
+
+  <div class="lead-form">
+    <p class="lf-copy"><strong>Want STQ to run these exact numbers on your portfolio?</strong> Drop your email and we will price a box spread against your actual borrowing need.</p>
+    <form onsubmit="return stqLead(event,'lf-email-box')">
+      <input type="email" id="lf-email-box" required placeholder="you@email.com" aria-label="Email address">
+      <button type="submit">Send</button>
+    </form>
+    <p class="lf-done" id="lf-done-box" hidden>You're in. We'll be in touch shortly.</p>
+  </div>
+
+  <div class="example">
+    <span class="tag">Illustrative worked example, 2026</span>
+    <p>A $1,000,000 one-year box spread on XSP delivers cash up front at roughly 95 to 97 cents on the dollar, at an implied annualized rate near 4.25 percent based on XSP box spread market data (as shown on STQ's live-rates page, 2026), with the three-year near 4.32 percent and the five-year near 4.38 percent. That tracks close to Treasury yields and sits well below typical margin, HELOC, or bank-loan rates.</p>
+    <p>The portfolio stays fully invested, no appreciated position is sold, no capital gain is triggered, and the interest is treated as a capital loss under IRS Section 1256 (60 percent long-term, 40 percent short-term). Rates vary with market conditions and exclude fees.</p>
+  </div>
+
+  <div class="cmp-scroll">
+    <table class="cmp">
+      <thead><tr><th>&nbsp;</th><th>Sell stock to raise cash<span class="tag">The default</span></th><th class="box">Box spread financing<span class="tag">The alternative</span></th></tr></thead>
+      <tbody>
+        <tr><th>Tax today</th><td>Realize the gain, pay up to 23.8% federal before state</td><td class="box">None. No position sold, no gain triggered</td></tr>
+        <tr><th>The rate</th><td>n/a (you give up the asset)</td><td class="box">Near Treasury, set by the options market</td></tr>
+        <tr><th>Cost treatment</th><td>Tax is a permanent cost</td><td class="box">Interest is a Section 1256 capital loss (60/40)</td></tr>
+        <tr><th>Future upside</th><td>Forfeited on what you sold</td><td class="box">Kept. Positions keep compounding</td></tr>
+        <tr><th>Step-up at death</th><td>Lost on the sold shares</td><td class="box">Preserved</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="fit">
+    <div class="card right"><h4>Right for</h4><p>An investor with a meaningful portfolio and options approval on the account who needs liquidity but does not want to sell appreciated positions, has a tax event on the horizon, or wants to act on a time-sensitive opportunity without restructuring the portfolio.</p></div>
+    <div class="card wrong"><h4>Wrong for</h4><p>Someone without eligible liquid collateral or options approval, anyone who would use the wrong (American-style, early-exercisable) options, and an investor who is better off simply selling. It is borrowed money with a repayment date, not free cash.</p></div>
+  </div>
+
+  <div class="stq-line"><span class="badge">How STQ does this for you</span><p>We price the box spread against the live options market rather than a bank's lending desk and execute the four legs on European-style index options, so you get near-Treasury financing with no forced sale and the step-up left intact.</p></div>
+  <a class="read-more" href="https://stqcap.com/insights/insight-box-spreads.html">Read the full box spread breakdown &#8594;</a>
+
+  <div class="sources"><strong>Sources</strong>
+    STQ Capital insights: "Stop Borrowing From Banks. Your Portfolio Can Do It Better." (April 2, 2026), "Your Portfolio Can Lend You Money." (May 13, 2026), "Step-up kills the gain. Box spreads unlock the cash." (April 19, 2026). STQ Capital Synthetic Financing page: implied XSP box spread rates as of 2026, 1-year ~4.25%, 3-year ~4.32%, 5-year ~4.38%; ~95 to 97 cents on the dollar for a one-year loan. Box spread interest treated as a capital loss under IRS Section 1256 (60% long-term / 40% short-term); SPX and XSP are European-style index options.
+  </div>
+
+  <div class="lead-form">
+    <p class="lf-copy"><strong>Need liquidity without selling?</strong> Drop your email and STQ will quote a box spread against your portfolio at today's rates.</p>
+    <form onsubmit="return stqLead(event,'lf-email-c4')">
+      <input type="email" id="lf-email-c4" required placeholder="you@email.com" aria-label="Email address">
+      <button type="submit">Send</button>
+    </form>
+    <p class="lf-done" id="lf-done-c4" hidden>You're in. We'll be in touch shortly.</p>
+  </div>
+</div></section>
+
+<!-- ============ CHAPTER 5 : SYNTHETIC VPF ============ -->
+<section class="band" id="ch-vpf"><div class="wrap"><div class="band-inner"><span class="band-num">05</span><h2>The Synthetic Variable Prepaid Forward</h2></div></div></section>
+<section class="section"><div class="wrap">
+  <h4>The problem it solves</h4>
+  <p>After diversifying the bulk, you keep a concentrated stake you still believe in but cannot easily sell. You want downside protection and cash today without the taxable sale, and without the markup and lock-in of a packaged bank product.</p>
+
+  <h3>How it works</h3>
+  <p>A variable prepaid forward (VPF) is a contract in which you receive cash today in return for agreeing to deliver a variable number of shares at a future date, with a band of price protection built in. Wall Street has sold packaged VPFs to concentrated holders for decades, but the economics are not magic and can be rebuilt transparently from listed instruments you control.</p>
+  <p>First, the collar: with the stock at, say, 100, you buy a put option at 90 (a put gives you the right to sell at the strike, so it sets a floor below which your downside is capped) and you sell a call option at 110 (a call obligates you to sell at the strike if exercised, capping your upside above 110, and the premium you collect helps pay for the put). The long put and short call together bracket the position: protected below 90, capped above 110, free to move in between.</p>
+  <p>Second, the box spread provides the cash: a package of S&amp;P 500 index options (SPX) that behaves like a fixed-rate loan priced near Treasury yields. Layer the box spread on the collared position and you have rebuilt a VPF from parts you fully control. No shares are sold, so there is no realized gain and no check to the IRS at execution; the gain stays deferred and the step-up in basis at death is preserved.</p>
+  <p>The one thing to plan around is the constructive sale rule under <a href="https://www.law.cornell.edu/uscode/text/26/1259" target="_blank" rel="noopener">Section 1259 of the Internal Revenue Code</a>: a hedge that strips out nearly all of your risk and reward can be treated as if you sold the stock, so the put and call strikes must be spaced widely enough to retain meaningful exposure. That spacing is a deliberate planning decision.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 1000 414" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Building a synthetic variable prepaid forward">
+      <rect x="0" y="0" width="1000" height="414" fill="#F0EFEB"/>
+      <text x="40" y="46" font-family="Chakra Petch, sans-serif" font-size="25" font-weight="700" fill="#1B2E4B">Build a VPF from parts you control</text>
+      <text x="40" y="73" font-family="DM Sans, sans-serif" font-size="14" fill="#5a6a7e">A collar protects, a box spread funds, and you keep the shares</text>
+      <rect x="40" y="104" width="270" height="212" rx="10" fill="#ffffff" stroke="#1B2E4B" stroke-opacity="0.15"/>
+      <circle cx="74" cy="142" r="16" fill="#1B2E4B"/><text x="74" y="148" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="16" font-weight="700" fill="#F0EFEB">1</text>
+      <text x="100" y="148" font-family="Chakra Petch, sans-serif" font-size="14" font-weight="700" fill="#1B2E4B">COLLAR</text>
+      <text x="66" y="190" font-family="DM Sans, sans-serif" font-size="15" fill="#2a4570"><tspan x="66" dy="0">Buy a put at 90,</tspan><tspan x="66" dy="21">sell a call at 110.</tspan></text>
+      <line x1="66" y1="226" x2="284" y2="226" stroke="#1B2E4B" stroke-opacity="0.12"/>
+      <text x="66" y="252" font-family="DM Sans, sans-serif" font-size="12.5" fill="#5a6a7e"><tspan x="66" dy="0">Downside floored,</tspan><tspan x="66" dy="19">upside capped, call</tspan><tspan x="66" dy="19">premium funds the put.</tspan></text>
+      <path d="M320 210 H352" stroke="#1B2E4B" stroke-width="2.5"/><path d="M345 203 L354 210 L345 217" fill="none" stroke="#1B2E4B" stroke-width="2.5"/>
+      <rect x="365" y="104" width="270" height="212" rx="10" fill="#ffffff" stroke="#1B2E4B" stroke-opacity="0.15"/>
+      <circle cx="399" cy="142" r="16" fill="#1B2E4B"/><text x="399" y="148" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="16" font-weight="700" fill="#F0EFEB">2</text>
+      <text x="425" y="148" font-family="Chakra Petch, sans-serif" font-size="14" font-weight="700" fill="#1B2E4B">BOX SPREAD</text>
+      <text x="391" y="190" font-family="DM Sans, sans-serif" font-size="15" fill="#2a4570"><tspan x="391" dy="0">A synthetic loan from</tspan><tspan x="391" dy="21">index options.</tspan></text>
+      <line x1="391" y1="246" x2="609" y2="246" stroke="#1B2E4B" stroke-opacity="0.12"/>
+      <text x="391" y="272" font-family="DM Sans, sans-serif" font-size="12.5" fill="#5a6a7e"><tspan x="391" dy="0">Cash today, near</tspan><tspan x="391" dy="19">Treasury rates.</tspan></text>
+      <path d="M645 210 H677" stroke="#1B2E4B" stroke-width="2.5"/><path d="M670 203 L679 210 L670 217" fill="none" stroke="#1B2E4B" stroke-width="2.5"/>
+      <rect x="690" y="104" width="270" height="212" rx="10" fill="#ffffff" stroke="#1B2E4B" stroke-opacity="0.15"/>
+      <circle cx="724" cy="142" r="16" fill="#1B2E4B"/><text x="724" y="148" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="16" font-weight="700" fill="#F0EFEB">3</text>
+      <text x="750" y="148" font-family="Chakra Petch, sans-serif" font-size="14" font-weight="700" fill="#1B2E4B">YOU KEEP THE SHARES</text>
+      <text x="716" y="190" font-family="DM Sans, sans-serif" font-size="15" fill="#2a4570"><tspan x="716" dy="0">Protected, liquid,</tspan><tspan x="716" dy="21">still the owner.</tspan></text>
+      <line x1="716" y1="246" x2="934" y2="246" stroke="#1B2E4B" stroke-opacity="0.12"/>
+      <text x="716" y="272" font-family="DM Sans, sans-serif" font-size="12.5" fill="#2e7d52"><tspan x="716" dy="0">No sale, gain deferred,</tspan><tspan x="716" dy="19">step-up preserved.</tspan></text>
+      <rect x="40" y="340" width="920" height="52" rx="10" fill="#1B2E4B"/>
+      <text x="500" y="372" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="16" font-weight="600" fill="#F0EFEB">Protected below 90. Capped above 110. Cash raised today, no shares sold.</text>
+    </svg>
+    <figcaption>A synthetic VPF in three parts: the collar protects, the box spread funds, and the shares stay yours.</figcaption>
+  </figure>
+
+  <figure class="fig">
+    <svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Collared position payoff versus unhedged stock">
+      <rect x="0" y="0" width="1000" height="400" fill="#F0EFEB"/>
+      <text x="40" y="46" font-family="Chakra Petch, sans-serif" font-size="25" font-weight="700" fill="#1B2E4B">What the collar does to the payoff</text>
+      <text x="40" y="73" font-family="DM Sans, sans-serif" font-size="14" fill="#5a6a7e">Position value across the range of stock prices. Illustrative strikes: put 90, call 110.</text>
+      <!-- axes -->
+      <line x1="110" y1="110" x2="110" y2="320" stroke="#1B2E4B" stroke-opacity="0.3" stroke-width="1.5"/>
+      <line x1="110" y1="320" x2="900" y2="320" stroke="#1B2E4B" stroke-opacity="0.3" stroke-width="1.5"/>
+      <text x="100" y="106" text-anchor="end" font-family="DM Sans, sans-serif" font-size="11" fill="#5a6a7e">position value</text>
+      <text x="900" y="342" text-anchor="end" font-family="DM Sans, sans-serif" font-size="11" fill="#5a6a7e">stock price</text>
+      <!-- strike guides -->
+      <line x1="350" y1="110" x2="350" y2="320" stroke="#1B2E4B" stroke-opacity="0.15" stroke-dasharray="4 4"/>
+      <line x1="650" y1="110" x2="650" y2="320" stroke="#1B2E4B" stroke-opacity="0.15" stroke-dasharray="4 4"/>
+      <text x="350" y="338" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" fill="#5a6a7e">90</text>
+      <text x="650" y="338" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" fill="#5a6a7e">110</text>
+      <!-- unhedged stock dashed -->
+      <line x1="130" y1="300" x2="880" y2="130" stroke="#8893a3" stroke-width="2" stroke-dasharray="6 5"/>
+      <text x="820" y="124" font-family="DM Sans, sans-serif" font-size="12" fill="#8893a3">unhedged stock</text>
+      <!-- collared solid navy -->
+      <polyline points="130,262 350,262 650,194 880,194" fill="none" stroke="#1B2E4B" stroke-width="3"/>
+      <circle cx="350" cy="262" r="6" fill="#2e7d52"/>
+      <circle cx="650" cy="194" r="6" fill="#b14a3a"/>
+      <text x="300" y="248" text-anchor="end" font-family="DM Sans, sans-serif" font-size="12" fill="#2e7d52">floor at 90</text>
+      <text x="700" y="186" font-family="DM Sans, sans-serif" font-size="12" fill="#b14a3a">cap at 110</text>
+      <text x="500" y="184" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="13" font-weight="700" fill="#1B2E4B">you keep the move in this band</text>
+    </svg>
+    <figcaption>Below 90 the put floors the loss; above 110 the call caps the gain; in between you keep the move. Illustrative.</figcaption>
+  </figure>
+
+  <div class="example">
+    <span class="tag">Illustrative worked example, top brackets, 2026</span>
+    <p>An investor holds $3,000,000 of a single appreciated stock with a $1,000,000 cost basis and a $2,000,000 embedded long-term gain. Selling to de-risk realizes that gain and costs $476,000 of federal tax this year at the top rate of 20 percent plus the 3.8 percent NIIT, before state tax, and surrenders the future upside.</p>
+    <p>Through a synthetic VPF, the same investor instead collars the position (illustrative strikes: put at 90, call at 110) and raises cash with a box spread. No shares are sold, so there is no gain to report and no check to the IRS this year. The downside is floored, a defined slice of upside is retained, the borrowed cash is available to diversify or spend, and the gain stays deferred inside shares the investor still owns, with the potential step-up in basis at death intact.</p>
+  </div>
+
+  <div class="fit">
+    <div class="card right"><h4>Right for</h4><p>A holder of a large, low-basis, concentrated position who wants downside protection and liquidity while staying invested, and who has the liquid collateral the box spread requires.</p></div>
+    <div class="card wrong"><h4>Wrong for</h4><p>Someone willing to give up all upside, who lacks liquid collateral, who simply wants out of the stock entirely (a clean sale may be better), or who expects to hold until a step-up wipes out the gain anyway.</p></div>
+  </div>
+
+  <div class="stq-line"><span class="badge">How STQ does this for you</span><p>We start with your position, conviction, and timeline, then build the collar and box spread transparently, choosing strikes that balance protection against the Section 1259 constructive sale rule and pricing the financing against the market rather than a bank's desk.</p></div>
+  <a class="read-more" href="https://stqcap.com/insights/insight-variable-prepaid-forward.html">Read the full synthetic VPF breakdown &#8594;</a>
+
+  <div class="sources"><strong>Sources</strong>
+    STQ Capital, "The Synthetic Variable Prepaid Forward: Liquidity Without Selling" (June 16, 2026). <a href="https://www.law.cornell.edu/uscode/text/26/1259" target="_blank" rel="noopener">26 U.S. Code Section 1259</a>, constructive sales. Tax rates reflect top 2026 federal brackets (20% long-term capital gains plus 3.8% NIIT); strikes and figures illustrative only.
+  </div>
+
+  <div class="lead-form">
+    <p class="lf-copy"><strong>Holding a concentrated stake you want to protect?</strong> Drop your email and STQ will sketch a synthetic VPF around it.</p>
+    <form onsubmit="return stqLead(event,'lf-email-c5')">
+      <input type="email" id="lf-email-c5" required placeholder="you@email.com" aria-label="Email address">
+      <button type="submit">Send</button>
+    </form>
+    <p class="lf-done" id="lf-done-c5" hidden>You're in. We'll be in touch shortly.</p>
+  </div>
+</div></section>
+
+<!-- ============ END-TO-END WORKED SCENARIO ============ -->
+<section class="band" id="scenario"><div class="wrap"><div class="band-inner"><span class="band-num">Worked in full</span><h2>A Full Walk-Through</h2></div></div></section>
+<section class="section"><div class="wrap">
+  <p class="lead">Meet Maya, a hypothetical, illustrative holder. The point of walking one person through all five moves in order is to show how they compound, not to recommend these exact figures for anyone.</p>
+  <p>Maya was an early employee at NewCo, which just went public. When the lockup lifts she holds <strong>$10,000,000</strong> of NewCo stock against a <strong>$1,000,000</strong> cost basis, leaving a <strong>$9,000,000</strong> embedded long-term gain. If she simply sold to de-risk, the gain would cost <strong>$2,142,000</strong> in federal tax at the top 2026 rate of 20 percent long-term capital gains plus the 3.8 percent NIIT (23.8 percent), before any California tax. She does not want to write that check, and she does not want to stay 100 percent exposed to one stock. Here is the sequence she runs instead.</p>
+
+  <h3>Move 1: diversify the bulk with a Section 351 exchange</h3>
+  <p>Maya contributes <strong>$8,000,000</strong> (the bulk) into a launching diversified ETF. No shares are sold, so there is no tax this year. The roughly <strong>$7,200,000</strong> of embedded gain on that slice carries forward inside her new fund shares. She keeps the remaining <strong>$2,000,000</strong> of NewCo, the stake she still believes in. <em>Tax due on this move: zero. Selling that slice instead would have cost about $1,713,600 federal.</em></p>
+
+  <h3>Move 2: rebuild exposure through direct indexing</h3>
+  <p>Rather than hold that $8,000,000 as a plain index fund, Maya holds it as a directly indexed S&amp;P 500 sleeve: the same broad-market exposure, but owning the individual names so losses can be harvested underneath. At the published 1 percent to 2 percent annual tax-alpha range, that is roughly <strong>$80,000 to $160,000</strong> of harvested losses banked per year, without changing her market exposure.</p>
+
+  <h3>Move 3: amplify the losses with long-short harvesting</h3>
+  <p>Maya knows a gain event is coming (she intends to trim the concentrated NewCo stake over time, and expects other gains). A tax-aware long-short overlay widens the supply of harvestable losses well beyond what the long-only sleeve produces. Run systematically, the loss bank grows to an illustrative <strong>$700,000</strong> of net realized losses over about five years, sitting ready to offset gains dollar-for-dollar. At 23.8 percent federal, that is roughly <strong>$166,600</strong> of tax sheltered when she finally realizes those gains.</p>
+
+  <h3>Move 4: finance liquidity with a box spread</h3>
+  <p>Maya needs <strong>$2,000,000</strong> in cash for a home and a private deal. Instead of selling (which would realize gain), she raises it with a one-year box spread at an implied rate near 4.25 percent, about <strong>$85,000</strong> of interest, treated as a Section 1256 capital loss (60 percent long-term, 40 percent short-term). Her portfolio stays fully invested and nothing is sold. <em>Tax triggered: zero.</em></p>
+
+  <h3>Move 5: protect the rest with a synthetic VPF</h3>
+  <p>On the <strong>$2,000,000</strong> of NewCo she kept, Maya builds a synthetic variable prepaid forward: a collar (illustrative strikes, put at 90 and call at 110) for downside protection, plus a box spread for additional cash. No shares are sold, the gain stays deferred, the downside is floored, a defined slice of upside is retained, and the step-up in basis at death stays intact. The strikes are spaced wide enough to stay clear of the Section 1259 constructive sale rule.</p>
+
+  <div class="tally">
+    <div class="t-cell"><div class="tl">If Maya had simply sold</div><div class="tv">$2,142,000</div></div>
+    <div class="t-cell pos"><div class="tl">Capital-gains tax at execution, her sequence</div><div class="tv">$0</div></div>
+    <div class="t-cell pos"><div class="tl">Cash raised without a sale</div><div class="tv">$2,000,000+</div></div>
+  </div>
+
+  <p>The moves compound. The 351 deferred the bulk of the gain. Direct indexing and the long-short overlay built a loss bank that will absorb roughly $700,000 of future gains. The box spread funded $2,000,000 of liquidity at near-Treasury cost and fed a deductible Section 1256 loss into the same return. The synthetic VPF protected the slice she kept. Maya diversified, raised seven figures of cash, and protected her remaining stake while writing a <strong>$0</strong> capital-gains check at execution, versus the <strong>$2,142,000</strong> a clean sale would have cost. Held to the end, the step-up in basis can reset her cost basis at death and erase the deferred gain entirely under current law.</p>
+
+  <p class="disclaimer-line" style="font-style:normal;"><strong>Illustrative only.</strong> Maya is hypothetical and the figures are simplified for teaching. They use top 2026 federal brackets (20 percent long-term capital gains plus 3.8 percent NIIT, 23.8 percent) before state tax. Your own numbers, account eligibility, and timing will differ.</p>
+
+  <div class="lead-form">
+    <p class="lf-copy"><strong>Want STQ to run these exact numbers on your portfolio?</strong> Drop your email and we will build the walk-through on your real position. Soft start, no pitch.</p>
+    <form onsubmit="return stqLead(event,'lf-email-scn')">
+      <input type="email" id="lf-email-scn" required placeholder="you@email.com" aria-label="Email address">
+      <button type="submit">Send</button>
+    </form>
+    <p class="lf-done" id="lf-done-scn" hidden>You're in. We'll be in touch shortly.</p>
+  </div>
+
+  <div class="cta">
+    <div class="cta-inner">
+      <h3>Ready to map your own sequence?</h3>
+      <p>If you would rather skip the email and go straight to the math on your specific position, book a call. Thirty minutes, no pitch.</p>
+      <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" rel="noopener" class="btn">Schedule a Call &#8594;</a>
+      <p class="calendly-print">Schedule a call: https://calendly.com/akiva-glazerson-stqcap/30min</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ INTEGRATION ============ -->
+<section class="band" id="integration"><div class="wrap"><div class="band-inner"><span class="band-num">06</span><h2>How These Fit Together</h2></div></div></section>
+<section class="section"><div class="wrap">
+  <p class="lead">Sequence the five moves rather than picking one. Plan before the lockup ends, because the best options expire with it.</p>
+
+  <figure class="fig">
+    <svg viewBox="0 0 1000 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The post-IPO sequence in five steps">
+      <rect x="0" y="0" width="1000" height="360" fill="#F0EFEB"/>
+      <text x="40" y="46" font-family="Chakra Petch, sans-serif" font-size="25" font-weight="700" fill="#1B2E4B">The post-IPO sequence</text>
+      <text x="40" y="73" font-family="DM Sans, sans-serif" font-size="14" fill="#5a6a7e">Each move makes the next one more powerful. Plan before the lockup ends.</text>
+      <!-- connecting line -->
+      <line x1="116" y1="190" x2="884" y2="190" stroke="#1B2E4B" stroke-opacity="0.25" stroke-width="2"/>
+      <!-- step 1 -->
+      <circle cx="116" cy="190" r="30" fill="#1B2E4B"/><text x="116" y="198" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="18" font-weight="700" fill="#F0EFEB">1</text>
+      <text x="116" y="142" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="13" font-weight="700" fill="#1B2E4B">351 EXCHANGE</text>
+      <text x="116" y="246" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5a6a7e"><tspan x="116" dy="0">Diversify the</tspan><tspan x="116" dy="16">bulk, no tax</tspan></text>
+      <!-- step 2 -->
+      <circle cx="308" cy="190" r="30" fill="#1B2E4B"/><text x="308" y="198" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="18" font-weight="700" fill="#F0EFEB">2</text>
+      <text x="308" y="142" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="13" font-weight="700" fill="#1B2E4B">DIRECT INDEXING</text>
+      <text x="308" y="246" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5a6a7e"><tspan x="308" dy="0">Rebuild exposure</tspan><tspan x="308" dy="16">that harvests</tspan></text>
+      <!-- step 3 -->
+      <circle cx="500" cy="190" r="30" fill="#1B2E4B"/><text x="500" y="198" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="18" font-weight="700" fill="#F0EFEB">3</text>
+      <text x="500" y="142" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="13" font-weight="700" fill="#1B2E4B">HARVESTING</text>
+      <text x="500" y="246" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5a6a7e"><tspan x="500" dy="0">Build the</tspan><tspan x="500" dy="16">loss bank</tspan></text>
+      <!-- step 4 -->
+      <circle cx="692" cy="190" r="30" fill="#1B2E4B"/><text x="692" y="198" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="18" font-weight="700" fill="#F0EFEB">4</text>
+      <text x="692" y="142" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="13" font-weight="700" fill="#1B2E4B">BOX SPREAD</text>
+      <text x="692" y="246" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5a6a7e"><tspan x="692" dy="0">Finance cash,</tspan><tspan x="692" dy="16">no sale</tspan></text>
+      <!-- step 5 -->
+      <circle cx="884" cy="190" r="30" fill="#2e7d52"/><text x="884" y="198" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="18" font-weight="700" fill="#F0EFEB">5</text>
+      <text x="884" y="142" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="13" font-weight="700" fill="#1B2E4B">SYNTHETIC VPF</text>
+      <text x="884" y="246" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" fill="#5a6a7e"><tspan x="884" dy="0">Protect what</tspan><tspan x="884" dy="16">remains</tspan></text>
+      <rect x="40" y="296" width="920" height="48" rx="10" fill="#1B2E4B"/>
+      <text x="500" y="325" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="15" font-weight="600" fill="#F0EFEB">Stay invested. Defer deliberately. Pay the tax on your schedule, not the market's.</text>
+    </svg>
+    <figcaption>The five moves in sequence, from diversifying the bulk to protecting the concentrated stake you keep.</figcaption>
+  </figure>
+
+  <p><strong>Step one, diversify the bulk:</strong> use a Section 351 exchange to roll most of the concentrated position into a diversified ETF with no tax today, carrying the embedded gain forward instead of paying it.</p>
+  <p><strong>Step two, rebuild exposure intelligently:</strong> hold that broad-market exposure through direct indexing rather than a plain fund, so the portfolio quietly harvests losses at the individual-stock level.</p>
+  <p><strong>Step three, amplify the losses:</strong> run systematic, wash-sale-clean tax-loss harvesting to build a loss bank that will offset gains when a taxable event eventually lands.</p>
+  <p><strong>Step four, finance liquidity without selling:</strong> when you need cash, raise it with a box spread at near-Treasury rates so appreciated positions keep compounding and the step-up stays intact, with the interest treated as a capital loss under IRS Section 1256.</p>
+  <p><strong>Step five, protect and monetize the rest:</strong> for the concentrated stake you keep, build a synthetic variable prepaid forward, a collar for downside protection plus a box spread for cash, spaced to stay clear of the Section 1259 constructive sale rule.</p>
+  <p>Each move makes the next more powerful: the 351 diversifies, direct indexing and harvesting build the offset, the box spread funds liquidity and feeds deductible interest into the same return, and the synthetic VPF guards what remains. Held to the end, the step-up in basis can reset cost basis at death and erase the deferred gain entirely under current law.</p>
+  <p class="pullquote">Stay invested, defer deliberately, and pay the tax on your schedule, not the market's.</p>
+</div></section>
+
+<!-- ============ CLOSE / CTA ============ -->
+<section class="band" id="close"><div class="wrap"><div class="band-inner"><span class="band-num">07</span><h2>Working With STQ</h2></div></div></section>
+<section class="section"><div class="wrap">
+  <p>We do not start with the structure. We start with the position: the cost basis, the concentration, the conviction in the stock, the liquidity need, and the timeline. Then we match the tool to the situation and build it transparently, priced against the market rather than a bank's desk.</p>
+  <p>Most advisors have never built these structures. We build them regularly. If you are heading toward a liquidity event with a large, low-basis position, the most valuable thing you can do is map the sequence before the lockup ends, while every option is still on the table.</p>
+
+  <div class="cta">
+    <div class="cta-inner">
+      <h3>Map your sequence before the lockup ends.</h3>
+      <p>If your taxable position is in seven figures and a liquidity event is on the horizon, it is worth walking through which of these moves fit your situation, and in what order. No pitch, just the math on your specific position.</p>
+      <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" rel="noopener" class="btn">Schedule a Call &#8594;</a>
+      <p class="calendly-print">Schedule a call: https://calendly.com/akiva-glazerson-stqcap/30min</p>
+    </div>
+  </div>
+
+  <div class="lead-form">
+    <p class="lf-copy"><strong>Not ready to book yet?</strong> Drop your email and STQ will send the short version of how this maps to your position.</p>
+    <form onsubmit="return stqLead(event,'lf-email-final')">
+      <input type="email" id="lf-email-final" required placeholder="you@email.com" aria-label="Email address">
+      <button type="submit">Send</button>
+    </form>
+    <p class="lf-done" id="lf-done-final" hidden>You're in. We'll be in touch shortly.</p>
+  </div>
+
+  <p class="disclaimer-line">This is informational only and not personalized tax, legal, or investment advice.</p>
+</div></section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-main">
+      <div class="footer-logo">STQ <span>/ Capital</span></div>
+      <div class="footer-copy">&copy; 2026 STQ Capital</div>
+    </div>
+    <div class="footer-disclaimer">Advisory services are offered through STQ Capital (&ldquo;STQ&rdquo;), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information in this guide is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable. Worked examples are illustrative and use top 2026 federal brackets (20% long-term capital gains plus 3.8% net investment income tax) before state tax unless otherwise noted. The information is provided &ldquo;AS IS&rdquo; and without warranties either express or implied and may not be free from error. Your use of the information provided is at your sole risk.</div>
+  </div>
+</footer>
+
+<script>
+// ---- Shared MailerLite lead-capture handler (token defined once, reused) ----
+(function () {
+  const STQ_ML_TOKEN = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiZDU4Y2Y2M2MyZjAxNGJjMWE4YmM2MDgzMGRjMjZjODAyYzdmNDZiNTNhNTY0MGYyNzdhNGNmMTlhZGQ0YjZhOTdlMjNkMGRmZmFiN2JlOTYiLCJpYXQiOjE3NzYyMTI3MzAuODgxMjkxLCJuYmYiOjE3NzYyMTI3MzAuODgxMjkzLCJleHAiOjQ5MzE4ODYzMzAuODc0Nzg3LCJzdWIiOiIyMjY1MzY3Iiwic2NvcGVzIjpbXX0.SoT6uwDSLLRp1bVmMCTm8kNFGg0-Jj7U3MXSmaCPtwbLI_RyA5UoqBdeBIvfZkOMG_rO7lrZQZBeAzK9kkq0o-zYOyOmKuuXv1vpq441LietMpgVWHgAAtL0ExKhvIZM2HnoqUhrcd34oZoYehwVCLjbLXtZ5vQYNnjO2988r7LV5zdmfrusZ7nek3ITcrBCb03r-W6do7hypJSbw_o_7J-RaYyPGOfVYk5ZxdcDe2neZmIvOkBfOd-qyHDFSQvyKaIton3_c7FSkoBXePGR9yt722rv40tO4n1iwiX7bSi6ObNX66S03gKdwIJvxjcaGHMSIOfdKJrCqcCrXUj1OZPd94e_mprtkYFlwla0BAxvMPgf8llzF_qAlovSTwdb8G9y-ORWB1vV5ZF4ZW62ZjRd5JIFckwH2CisIM1TT-b_GU-Hi6-ATvtcqm0HSffbFPEaGFb0slTxHmbx0INSAIW8QNEYVv00DUE-ysF84f4LchSFvdj2LMzSZB9_9YkuPik-AVM32b0RSKP8PVJgYK1B4DH28AUEcNjrksUytGE59NwLr5GctZztoZbDc4AlLd1es5PNFTtdQl2augDGBtnox7rDXb0sWo7BqyttYhQ9D_1RqYltSAHsB9K1qRB9CFF734AOQm8QPshucKos2vx6hGxZKuXlfpvCCVLaSBw';
+  window.stqLead = function (e, id) {
+    e.preventDefault();
+    var input = document.getElementById(id);
+    var email = input ? input.value : '';
+    fetch('https://connect.mailerlite.com/api/subscribers', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': STQ_ML_TOKEN }, body: JSON.stringify({ email: email, groups: ["185200901719328747"] }) }).catch(function () {});
+    var wrap = input ? input.closest('.lead-form') : null;
+    if (wrap) {
+      var form = wrap.querySelector('form');
+      var done = wrap.querySelector('.lf-done');
+      if (form) form.style.display = 'none';
+      if (done) { done.hidden = false; done.style.display = 'block'; }
+    }
+    return false;
+  };
+})();
+</script>
+<script>
+(function () {
+  var fmt = function (n) {
+    return '$' + Math.round(n).toLocaleString('en-US');
+  };
+  var fmtK = function (n) {
+    if (Math.abs(n) >= 1000000) return '$' + (n / 1000000).toFixed(n % 1000000 === 0 ? 0 : 1) + 'M';
+    if (Math.abs(n) >= 1000) return '$' + Math.round(n / 1000) + 'k';
+    return '$' + Math.round(n);
+  };
+
+  // ---- Box spread calculator, ported verbatim from box-spreads.html ----
+  // Implied XSP box spread rate curve (STQ live-rates page, 2026), tracking SOFR/Treasury.
+  var STQ_RATES = { 1: 0.0425, 2: 0.0430, 3: 0.0432, 4: 0.0435, 5: 0.0438 };
+  var CTLong = { 1: '1 Year', 2: '2 Years', 3: '3 Years', 4: '4 Years', 5: '5 Years' };
+  var cmoney = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+  var cpct = function (n) { return n.toFixed(2) + '%'; };
+
+  window.cgo = function () {
+    var port = +document.getElementById('cs-port').value;
+    var ltv = +document.getElementById('cs-ltv').value / 100;
+    var loan = Math.round(port * ltv / 1000) * 1000;
+    var term = +document.getElementById('cs-term').value;
+    var brk = +document.getElementById('cs-brk').value / 100;
+    document.getElementById('cl-port').textContent = cmoney(port);
+    document.getElementById('cl-ltv').textContent = Math.round(ltv * 100) + '%';
+    document.getElementById('co-loan').textContent = cmoney(loan);
+    document.getElementById('cl-term').textContent = CTLong[term];
+    document.getElementById('cl-brk').textContent = Math.round(brk * 100) + '%';
+    var stated = STQ_RATES[term];
+    var annual = loan * stated;
+    var ltcgSave = annual * 0.60 * 0.20;
+    var stcgSave = annual * 0.40 * brk;
+    var totalSave = ltcgSave + stcgSave;
+    var netCost = annual - totalSave;
+    var eff = netCost / loan * 100;
+    document.getElementById('co-int').textContent = cmoney(annual);
+    document.getElementById('co-sav').textContent = cmoney(totalSave);
+    document.getElementById('co-net').textContent = cmoney(netCost);
+    document.getElementById('co-stated').textContent = cpct(stated * 100);
+    document.getElementById('co-eff').textContent = cpct(eff);
+  };
+
+  window.calcTaxAlpha = function () {
+    var size = parseFloat(document.getElementById('ta-size').value) || 0;
+    var years = parseInt(document.getElementById('ta-horizon').value, 10) || 1;
+    if (years < 1) years = 1;
+    var lowYr = size * 0.01;
+    var highYr = size * 0.02;
+    var lowCum = lowYr * years;
+    var highCum = highYr * years;
+    document.getElementById('ta-annual').textContent = fmtK(lowYr) + ' - ' + fmtK(highYr);
+    document.getElementById('ta-cumulative').textContent = fmtK(lowCum) + ' - ' + fmtK(highCum);
+  };
+
+  // Compute defaults on load so print/PDF shows static computed values.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { window.cgo(); window.calcTaxAlpha(); });
+  } else {
+    window.cgo();
+    window.calcTaxAlpha();
+  }
+})();
+</script>
+</body>
+</html>
