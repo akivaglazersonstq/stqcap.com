@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stqcap.com/sitemap.xml
