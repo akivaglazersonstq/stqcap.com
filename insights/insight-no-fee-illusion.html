@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="color-scheme" content="light only">
+<title>The &quot;I Pay No Fees&quot; Myth: Where Wirehouse Costs Actually Hide | STQ Capital</title>
+<meta name="description" content="Many wirehouse clients believe they pay no fees. The fee did not disappear, it moved to where the statement does not itemize it: proprietary fund expense ratios, embedded product costs, the cash sweep spread, and revenue sharing. Here is how to find it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
+  --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF;
+  --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7);
+  --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.25,0.46,0.45,0.94);
+}
+html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(27,46,75,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+.article-container { max-width: 720px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+.nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; }
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-links { display: flex; gap: 36px; margin-right: auto; margin-left: 48px; }
+.nav-links a { font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
+.nav-links a:hover, .nav-links a.active { color: var(--navy); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 12px 28px; border-radius: 4px; text-decoration: none; transition: all 0.3s var(--ease); cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; }
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.article-hero { padding: 140px 0 64px; background: var(--navy); position: relative; overflow: hidden; }
+.article-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
+.hero-watermark { position: absolute; right: 20px; bottom: 40px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.article-hero-inner { position: relative; z-index: 1; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.4); text-decoration: none; margin-bottom: 32px; transition: color 0.2s ease; }
+.back-link:hover { color: rgba(240,239,235,0.7); }
+.article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+.article-tag { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.6); background: rgba(240,239,235,0.1); padding: 4px 12px; border-radius: 3px; }
+.article-date { font-family: var(--font-heading); font-size: 0.65rem; color: rgba(240,239,235,0.4); letter-spacing: 0.08em; }
+.article-readtime { font-family: var(--font-heading); font-size: 0.65rem; color: rgba(240,239,235,0.4); letter-spacing: 0.08em; }
+.article-hero h1 { font-family: var(--font-heading); font-size: clamp(1.75rem,4vw,3rem); font-weight: 700; color: var(--cream); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 20px; max-width: 680px; }
+.article-hero-sub { font-size: 1.125rem; color: rgba(240,239,235,0.65); line-height: 1.7; max-width: 580px; margin-bottom: 32px; }
+.author-row { display: flex; align-items: center; gap: 14px; padding-top: 28px; border-top: 1px solid rgba(240,239,235,0.1); }
+.author-avatar { width: 44px; height: 44px; background: rgba(240,239,235,0.15); border-radius: 22px; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; color: var(--cream); flex-shrink: 0; }
+.author-name { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 700; color: var(--cream); letter-spacing: 0.02em; }
+.author-title { font-size: 0.75rem; color: rgba(240,239,235,0.5); margin-top: 2px; }
+.article-body { padding: 72px 0 100px; }
+.article-body p { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 28px; }
+.article-body ul { margin: 8px 0 32px 0; padding: 0; list-style: none; }
+.article-body ul li { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); padding: 6px 0 6px 24px; position: relative; }
+.article-body ul li::before { content: "•"; position: absolute; left: 0; color: var(--navy); font-weight: 700; }
+.article-body h2 { font-family: var(--font-heading); font-size: 1.375rem; font-weight: 700; color: var(--navy); letter-spacing: -0.01em; margin: 48px 0 16px; }
+.article-cta { background: var(--navy); border-radius: 8px; padding: 48px; margin: 64px 0 0; }
+.article-cta h3 { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--cream); letter-spacing: -0.01em; margin-bottom: 10px; }
+.article-cta p { font-size: 0.9375rem; color: rgba(240,239,235,0.65); line-height: 1.65; margin-bottom: 24px; }
+.article-cta .btn { background: var(--cream); color: var(--navy); }
+.article-cta .btn:hover { background: white; }
+.divider { border: none; border-top: 1px solid rgba(27,46,75,0.08); margin: 0; }
+footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative; z-index: 1; }
+.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 28px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.5); }
+.footer-links { display: flex; gap: 28px; }
+.footer-links a { font-size: 0.8125rem; color: rgba(240,239,235,0.5); text-decoration: none; transition: color 0.2s ease; }
+.footer-links a:hover { color: var(--cream); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.35); }
+.footer-disclaimer { margin-top: 20px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); max-width: 900px; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--navy); }
+.mobile-nav { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; transition: opacity 0.3s ease; }
+.mobile-nav.active { display: flex; opacity: 1; }
+.mobile-nav a { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+.mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
+.mobile-nav .btn { font-size: 0.8125rem; }
+.mobile-nav .btn-primary { color: var(--cream); }
+.mobile-nav .btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); font-size: 0.8125rem; }
+.nav-login-dropdown { position: relative; display: inline-flex; }
+.nav-login-btn { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s ease, background 0.2s ease; cursor: pointer; background: transparent; }
+.nav-login-btn:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
+.nav-login-btn svg { transition: transform 0.2s ease; }
+.nav-login-dropdown:hover .nav-login-btn svg:last-child { transform: rotate(180deg); }
+.nav-login-menu { position: absolute; top: calc(100% + 8px); right: 0; background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 6px; box-shadow: 0 12px 40px rgba(27,46,75,0.12); min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.2s var(--ease); z-index: 100; overflow: hidden; }
+.nav-login-dropdown:hover .nav-login-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-login-menu a { display: flex; align-items: center; gap: 10px; padding: 14px 18px; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: background 0.15s ease; border-bottom: 1px solid rgba(27,46,75,0.06); }
+.nav-login-menu a:last-child { border-bottom: none; }
+.nav-login-menu a:hover { background: var(--cream); }
+.nav-login-menu-label { font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-secondary); display: block; }
+@media (max-width: 768px) {
+  .nav-links, .nav-cta-desktop { display: none !important; } .nav-toggle { display: flex !important; }
+  .nav-inner { padding: 0 24px; }
+  .article-hero { padding: 120px 0 52px; }
+  .article-cta { padding: 32px; }
+  .key-takeaways { padding: 22px 22px; } .pullquote { font-size: 1.2rem; }
+}
+/* --- insight components --- */
+.key-takeaways { background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-left: 3px solid var(--navy); border-radius: 8px; padding: 28px 32px; margin: 0 0 8px; }
+.key-takeaways h2 { font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 16px; }
+.key-takeaways ol { margin: 0; padding: 0; list-style: none; counter-reset: kt; }
+.key-takeaways li { position: relative; padding: 0 0 14px 42px; counter-increment: kt; font-size: 1.0625rem; line-height: 1.55; color: var(--text-primary); }
+.key-takeaways li:last-child { padding-bottom: 0; }
+.key-takeaways li::before { content: counter(kt); position: absolute; left: 0; top: -1px; width: 27px; height: 27px; background: var(--navy); color: var(--cream); border-radius: 50%; font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+figure.insight-fig { margin: 48px 0; }
+/* Break figures out of the 720px reading column so the diagrams render larger */
+@media (min-width: 900px) {
+  figure.insight-fig { width: min(1040px, 94vw); margin-left: 50%; transform: translateX(-50%); }
+}
+figure.insight-fig svg { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid rgba(27,46,75,0.1); }
+figure.insight-fig figcaption { font-size: 0.8125rem; color: var(--text-secondary); margin-top: 10px; text-align: center; font-style: italic; }
+.pullquote { border-left: 3px solid var(--navy); padding: 6px 0 6px 26px; margin: 40px 0; font-family: var(--font-heading); font-size: 1.5rem; line-height: 1.38; color: var(--navy); font-weight: 600; letter-spacing: -0.01em; }
+.article-body a { color: var(--navy); text-decoration: underline; text-underline-offset: 2px; text-decoration-color: rgba(27,46,75,0.35); }
+.article-body a:hover { text-decoration-color: var(--navy); }
+.faq { margin: 60px 0 0; }
+.faq > h2 { font-family: var(--font-heading); font-size: 1.5rem; color: var(--navy); margin: 0 0 8px; }
+.faq-item { border-top: 1px solid rgba(27,46,75,0.1); padding: 22px 0; }
+.faq-item h3 { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 600; color: var(--navy); margin: 0 0 8px; }
+.faq-item p { margin: 0; }
+.related { margin: 52px 0 0; padding: 30px 0 0; border-top: 1px solid rgba(27,46,75,0.1); }
+.related h2 { font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin: 0 0 14px; }
+.related a { display: block; color: var(--navy); text-decoration: none; padding: 9px 0; font-weight: 500; border-bottom: 1px solid rgba(27,46,75,0.06); }
+.related a:hover { color: var(--navy-light); }
+.sources { font-size: 0.8125rem; line-height: 1.7; color: var(--text-secondary); margin: 40px 0 0; }
+.sources a { color: var(--navy); }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "\"I Pay No Fees.\" Why That Sentence Is Almost Never True.",
+      "description": "Many wirehouse clients believe they pay no fees. The fee did not disappear, it moved to where the statement does not itemize it: proprietary fund expense ratios, embedded product costs, the cash sweep spread, and revenue sharing. Here is how to find it.",
+      "datePublished": "2026-06-22",
+      "author": {
+        "@type": "Person",
+        "name": "Akiva Glazerson",
+        "jobTitle": "Principal, STQ Capital",
+        "url": "https://www.linkedin.com/in/akiva-g-5ba463a3"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "STQ Capital"
+      },
+      "url": "https://stqcap.com/insights/insight-no-fee-illusion.html",
+      "articleSection": "Advisory"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does \"no advisory fee\" mean my account is actually free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rarely. A zero or near-zero advisory line usually means the firm is paid another way: through the expense ratios of the funds you hold, the markup inside packaged products, the spread on your swept cash, or revenue sharing. The total cost can be meaningful even when the visible fee is not."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a cash sweep and how does it cost me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A cash sweep automatically moves your uninvested cash into an interest-bearing account, often an affiliated bank. The firm sets the rate it pays you and can keep the difference between that and what the cash actually earns. In 2025 the SEC fined Wells Fargo Advisors and Merrill Lynch a combined $60 million over how they ran these programs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are proprietary products and why do they matter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Proprietary products are funds or structures created or favored by the firm advising you. They are not automatically bad, but they carry built-in costs and create an incentive to recommend the firm's own products over a cheaper or better-fitting alternative."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I find out what I am really paying?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Add up the expense ratios of every fund you hold, ask for the all-in cost of any annuity or structured product, check the rate paid on your swept cash against current short-term rates, and request the firm's revenue sharing disclosure. An independent advisor can total this for you in an afternoon."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is any of this illegal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Generally no. These costs are disclosed somewhere, usually in a prospectus or account agreement most people never read. The issue is visibility, not legality. You cannot weigh a cost you never see itemized."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
+    <div class="nav-links">
+      <a href="/#solutions">Solutions</a>
+      <a href="/#about">About</a>
+      <a href="/insights.html" class="active">Insights</a>
+      <a href="/research.html">Research</a>
+      <a href="/box-spreads.html">Financing</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <div class="nav-login-dropdown nav-cta-desktop">
+        <button class="nav-login-btn">
+          <svg width="12" height="13" viewBox="0 0 12 13" fill="none"><rect x="1" y="6" width="10" height="6" rx="1.5" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M3.5 6V4a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>
+          Client Login
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-login-menu">
+          <a href="https://client.schwab.com/Areas/Access/Login" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="12" height="6" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+            <div>Investment Portal<span class="nav-login-menu-label">Existing clients</span></div>
+          </a>
+          <a href="/get-started.html">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <div>Get Started<span class="nav-login-menu-label">New clients</span></div>
+          </a>
+        </div>
+      </div>
+      <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary nav-cta-desktop">Schedule a Call</a>
+    </div>
+    <button class="nav-toggle" onclick="document.querySelector('.mobile-nav').classList.add('active')" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('active')">&#x2715;</button>
+  <a href="/#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
+  <a href="/#about" onclick="this.parentElement.classList.remove('active')">About</a>
+  <a href="/insights.html" onclick="this.parentElement.classList.remove('active')">Insights</a>
+  <a href="/research.html" onclick="this.parentElement.classList.remove('active')">Research</a>
+  <a href="/box-spreads.html" onclick="this.parentElement.classList.remove('active')">Financing</a>
+  <a href="/contact.html" onclick="this.parentElement.classList.remove('active')">Contact</a>
+  <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Call</a>
+  <a href="https://client.schwab.com/Areas/Access/Login" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Investment Portal</a>
+  <a href="/get-started.html" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Get Started</a>
+</div>
+
+<section class="article-hero">
+  <div class="hero-watermark">STQ</div>
+  <div class="article-container">
+    <div class="article-hero-inner">
+      <a href="/insights.html" class="back-link">&#8592; All Insights</a>
+      <div class="article-meta">
+        <span class="article-tag">Advisory</span>
+        <span class="article-date">June 22, 2026</span>
+        <span class="article-readtime">· 5 min read</span>
+      </div>
+      <h1>&quot;I Pay No Fees.&quot; Why That Sentence Is Almost Never True.</h1>
+      <p class="article-hero-sub">I hear it constantly from people with big relationships at the wirehouses, and their statement even seems to back it up. Then we look under the hood. Here is where the fees actually live, and why you cannot manage a cost you cannot see.</p>
+      <div class="author-row">
+        <div class="author-avatar">AG</div>
+        <div>
+          <div class="author-name">Akiva Glazerson</div>
+          <div class="author-title">Principal, STQ Capital</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="article-body">
+  <div class="article-container">
+<div class="key-takeaways">
+      <h2>Key takeaways</h2>
+      <ol>
+        <li>"I pay no fees" almost always means "I cannot see what I am paying." The advisory fee line can read zero while the real costs sit inside the products you hold.</li>
+        <li>The four common hiding places are proprietary fund expense ratios, embedded product and annuity costs, the cash sweep spread, and revenue sharing or payment for order flow. None of them appear as a fee on your statement.</li>
+        <li>The fix is not outrage, it is visibility. In 2025 the SEC fined Wells Fargo Advisors and Merrill Lynch a combined $60 million over their cash sweep programs, a reminder of how large an invisible cost can quietly become.</li>
+      </ol>
+    </div>
+<p>"I don't pay any fees."</p>
+    <p>I hear this a lot from people with big relationships at the wirehouses. They are convinced of it, and on the surface their statement backs them up. There is no advisory fee line, or only a very small one.</p>
+    <p>So we look under the hood. What we almost always find is that the fee did not disappear. It just moved somewhere the statement does not show it.</p>
+    <figure class='insight-fig'><svg viewBox='0 0 1000 470' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Where the fee actually lives'><rect x='0' y='0' width='1000' height='470' fill='#F0EFEB'/><text x='40' y='46' font-family='Chakra Petch, sans-serif' font-size='25' font-weight='700' fill='#1B2E4B'>Where the fee actually lives</text><text x='40' y='73' font-family='DM Sans, sans-serif' font-size='14' fill='#5a6a7e'>The advisory line can read zero while the real cost sits inside the products you hold</text><rect x='40' y='104' width='300' height='320' rx='10' fill='#ffffff' stroke='#1B2E4B' stroke-opacity='0.15'/><text x='64' y='148' font-family='Chakra Petch, sans-serif' font-size='13' font-weight='700' letter-spacing='1.5' fill='#5a6a7e'>WHAT YOU SEE</text><text x='64' y='240' font-family='Chakra Petch, sans-serif' font-size='66' font-weight='700' fill='#1B2E4B'>0.00%</text><text x='64' y='278' font-family='DM Sans, sans-serif' font-size='16' fill='#2a4570'>Advisory fee on the statement</text><line x1='64' y1='312' x2='316' y2='312' stroke='#1B2E4B' stroke-opacity='0.12'/><text x='64' y='344' font-family='DM Sans, sans-serif' font-size='13' fill='#5a6a7e'><tspan x='64' dy='0'>The number most people quote</tspan><tspan x='64' dy='20'>when they say they pay nothing.</tspan></text><path d='M352 264 H392' stroke='#1B2E4B' stroke-width='2.5'/><path d='M384 256 L394 264 L384 272' fill='none' stroke='#1B2E4B' stroke-width='2.5'/><rect x='404' y='104' width='556' height='320' rx='10' fill='#1B2E4B'/><text x='430' y='148' font-family='Chakra Petch, sans-serif' font-size='13' font-weight='700' letter-spacing='1.5' fill='rgba(240,239,235,0.6)'>WHAT YOU ACTUALLY PAY</text><text x='430' y='206' font-family='DM Sans, sans-serif' font-size='19' fill='#F0EFEB'>Proprietary fund expense ratios</text><line x1='430' y1='230' x2='934' y2='230' stroke='rgba(240,239,235,0.15)'/><text x='430' y='266' font-family='DM Sans, sans-serif' font-size='19' fill='#F0EFEB'>Embedded product and annuity costs</text><line x1='430' y1='290' x2='934' y2='290' stroke='rgba(240,239,235,0.15)'/><text x='430' y='326' font-family='DM Sans, sans-serif' font-size='19' fill='#F0EFEB'>The cash sweep spread</text><line x1='430' y1='350' x2='934' y2='350' stroke='rgba(240,239,235,0.15)'/><text x='430' y='386' font-family='DM Sans, sans-serif' font-size='19' fill='#F0EFEB'>Revenue sharing and order flow</text></svg><figcaption>None of these appear as a fee line on your statement. They are real costs all the same.</figcaption></figure>
+    <h2>What "no fees" usually means</h2>
+    <p>A modern independent advisor typically charges one clearly stated advisory fee, billed against the account, and nothing else. You can see it, so you can question it.</p>
+    <p>The traditional brokerage model often works the other way. The headline fee is small or absent, and the firm is paid through the products it puts you in. Here are the four places that money usually hides.</p>
+    <h2>1. Proprietary fund expense ratios</h2>
+    <p>Many wirehouse portfolios are filled with the firm's own funds, or with actively managed funds that carry a built-in expense ratio. That cost is paid from inside the fund every year. It never shows up as a line you are billed for.</p>
+    <p>The amounts are not trivial. In 2024 the average actively managed equity mutual fund charged 0.64 percent a year, while the average index equity fund charged 0.05 percent, according to the Investment Company Institute (ICI). That is a gap of roughly 0.59 percent, paid quietly, every year, on the same market exposure.</p>
+    <figure class='insight-fig'><svg viewBox='0 0 1000 414' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Average equity fund expense ratio, active versus index'><rect x='0' y='0' width='1000' height='414' fill='#F0EFEB'/><text x='40' y='46' font-family='Chakra Petch, sans-serif' font-size='23' font-weight='700' fill='#1B2E4B'>Average U.S. equity fund expense ratio, 2024</text><text x='40' y='72' font-family='DM Sans, sans-serif' font-size='13' fill='#5a6a7e'>Asset-weighted. Source: Investment Company Institute, 2025.</text><line x1='120' y1='340' x2='900' y2='340' stroke='#1B2E4B' stroke-opacity='0.25'/><rect x='250' y='110' width='160' height='230' rx='4' fill='#1B2E4B'/><text x='330' y='98' text-anchor='middle' font-family='Chakra Petch, sans-serif' font-size='22' font-weight='700' fill='#1B2E4B'>0.64%</text><text x='330' y='366' text-anchor='middle' font-family='DM Sans, sans-serif' font-size='15' fill='#2a4570'>Active equity fund</text><rect x='610' y='322' width='160' height='18' rx='4' fill='#2e7d52'/><text x='690' y='310' text-anchor='middle' font-family='Chakra Petch, sans-serif' font-size='22' font-weight='700' fill='#2e7d52'>0.05%</text><text x='690' y='366' text-anchor='middle' font-family='DM Sans, sans-serif' font-size='15' fill='#2a4570'>Index equity fund</text><text x='500' y='402' text-anchor='middle' font-family='DM Sans, sans-serif' font-size='12' fill='#8893a3'>A 0.59 percent gap, and inside a proprietary fund it never shows up as a fee.</text></svg><figcaption>The gap between active and index funds is paid from inside the fund, not billed to your account.</figcaption></figure>
+    <p class='pullquote'>The cost does not show up on your statement. It shows up in your returns.</p>
+    <p>On a $2,000,000 portfolio, that 0.59 percent gap is about $11,800 a year (illustrative, based on the ICI averages above). Compounded over a decade, it is real money, and almost none of it is visible as a fee.</p>
+    <h2>2. Embedded product and annuity costs</h2>
+    <p>Structured products, variable annuities, and similar packaged investments bury their cost in the price rather than itemizing it. You are quoted a single number, and the fees, surrender charges, and rider costs live inside the wrapper. The statement shows a holding, not a cost.</p>
+    <h2>3. The cash sweep spread</h2>
+    <p>A cash sweep is the program that automatically moves your uninvested cash into an interest-bearing account, usually an affiliated bank. The catch is the spread. The firm can pay you a small rate and keep the difference.</p>
+    <p>This is not a hypothetical. In early 2025 the Securities and Exchange Commission (SEC) fined Wells Fargo Advisors and Merrill Lynch a combined $60 million over their cash sweep programs, after the firms paid clients little while short-term rates were high. One large firm had paid as little as 0.01 percent on advisory-account cash before raising it to around 2 percent in 2024. None of that gap was ever labeled a fee. (Sources: SEC; reporting in InvestmentNews and Banking Dive, 2025.)</p>
+    <h2>4. Revenue sharing and payment for order flow</h2>
+    <p>Behind the scenes, fund companies pay to be on a brokerage's platform (revenue sharing), and trades can be routed to market makers who pay for that flow (payment for order flow, or PFOF). You never see either on a single line. They shape which products you are offered and where your trades go.</p>
+    <h2>Here is the part that matters</h2>
+    <p>None of this is hidden in a way that is illegal. It is all disclosed somewhere, in a prospectus most people never read. But "I pay no fees" and "I cannot see what I am paying" are two very different statements.</p>
+    <p>You cannot manage what you cannot see. When the cost is transparent and itemized, you can ask whether you are getting value for it. When it is embedded in the product, the conversation never happens.</p>
+    <h2>Where this does not apply</h2>
+    <p>This is not a knock on every advisor at a wirehouse. Plenty are honest and good at their jobs, and for some investors a bundled relationship is genuinely appropriate. The point is not that one model is evil and the other is holy. It is that the proprietary-product model and a fiduciary, fee-transparent model are built differently, and the difference shows up in places you have to go looking for.</p>
+    <h2>How STQ thinks about it</h2>
+    <p>When someone tells us they pay nothing, we do not argue. We ask to see the holdings. Then we add up the expense ratios, the product costs, the sweep rate, and the all-in number, and we put it next to a single transparent advisory fee on the same assets.</p>
+    <p>Sometimes the bundled model still wins. Often it does not. Either way, the client finally gets to see the real number and decide.</p>
+    <p>If someone tells you they pay nothing, the right question is not "what is your fee." It is "what am I holding, and what does it cost to hold it."</p>
+    <p>If you want a second set of eyes on what is actually under the hood of your portfolio, send me a note and I will walk through the all-in cost with you.</p>
+    <p>This is informational only and not personalized tax, legal, or investment advice.</p>
+    <p class='sources'>Sources: Investment Company Institute, "Trends in the Expenses and Fees of Funds, 2024" (2025), average asset-weighted equity fund expense ratios; U.S. Securities and Exchange Commission cash sweep settlements with Wells Fargo Advisors and Merrill Lynch (2025), as reported by InvestmentNews and Banking Dive. Fund-fee and tax figures are illustrative and depend on your specific holdings and situation.</p>
+    <div class="faq">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-item"><h3>Does "no advisory fee" mean my account is actually free?</h3><p>Rarely. A zero or near-zero advisory line usually means the firm is paid another way: through the expense ratios of the funds you hold, the markup inside packaged products, the spread on your swept cash, or revenue sharing. The total cost can be meaningful even when the visible fee is not.</p></div>
+      <div class="faq-item"><h3>What is a cash sweep and how does it cost me?</h3><p>A cash sweep automatically moves your uninvested cash into an interest-bearing account, often an affiliated bank. The firm sets the rate it pays you and can keep the difference between that and what the cash actually earns. In 2025 the SEC fined Wells Fargo Advisors and Merrill Lynch a combined $60 million over how they ran these programs.</p></div>
+      <div class="faq-item"><h3>What are proprietary products and why do they matter?</h3><p>Proprietary products are funds or structures created or favored by the firm advising you. They are not automatically bad, but they carry built-in costs and create an incentive to recommend the firm's own products over a cheaper or better-fitting alternative.</p></div>
+      <div class="faq-item"><h3>How do I find out what I am really paying?</h3><p>Add up the expense ratios of every fund you hold, ask for the all-in cost of any annuity or structured product, check the rate paid on your swept cash against current short-term rates, and request the firm's revenue sharing disclosure. An independent advisor can total this for you in an afternoon.</p></div>
+      <div class="faq-item"><h3>Is any of this illegal?</h3><p>Generally no. These costs are disclosed somewhere, usually in a prospectus or account agreement most people never read. The issue is visibility, not legality. You cannot weigh a cost you never see itemized.</p></div>
+    </div>
+    <div class="related">
+      <h2>Related insights</h2>
+      <a href="/insights/insight-wirehouse-conflicts.html">Your advisor has a conflict. Here's exactly what it looks like. &#8594;</a>
+      <a href="/insights/insight-active-funds.html">The mutual fund industry's dirty secret. &#8594;</a>
+      <a href="/insights/insight-fiduciary-vs-broker.html">Your advisor has a boss. It might not be you. &#8594;</a>
+      <a href="/insights/insight-direct-indexing.html">Own the S&amp;P 500? Do this instead. &#8594;</a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Let's talk.</h3>
+      <p>I'd love to walk through what a tax-efficient approach could look like for your specific situation.</p>
+      <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn">Schedule a Call &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-logo">STQ <span>/ Capital</span></div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
+        <a href="/insights.html">Newsletter</a>
+        <a href="/contact.html">Contact</a>
+        <a href="https://client.schwab.com/Areas/Access/Login" target="_blank">Client Login</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 STQ Capital</div>
+    </div>
+    <div class="footer-disclaimer">Advisory services are offered through STQ Capital (&ldquo;STQ&rdquo;), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable. The information on this site is provided &ldquo;AS IS&rdquo; and without warranties either express or implied and the information may not be free from error. Your use of the information provided is at your sole risk.</div>
+  </div>
+</footer>
+</body>
+</html>
