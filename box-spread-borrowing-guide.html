@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Box Spread Borrowing: The Complete Guide | STQ Capital</title>
+<meta name="description" content="A complete, plain-English guide to box spread borrowing: how it works, how the interest rate is set, the tax treatment, the risks, and how it compares to an SBLOC, HELOC, or margin loan.">
+<meta name="keywords" content="box spread borrowing, box spread financing, box spread loan, box spread vs SBLOC, box spread vs HELOC, SPX box spread, Section 1256, synthetic financing, borrow against portfolio, tax-aware borrowing">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Box Spread Borrowing: The Complete Guide">
+<meta name="twitter:description" content="How box spread borrowing actually works: the mechanics, the interest rate, the tax treatment, the risks, and how it compares to an SBLOC, HELOC, or margin loan.">
+<meta name="author" content="Akiva Glazerson, STQ Capital">
+<link rel="canonical" href="https://stqcap.com/box-spread-borrowing-guide.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://stqcap.com/box-spread-borrowing-guide.html">
+<meta property="og:title" content="Box Spread Borrowing: The Complete Guide">
+<meta property="og:description" content="How box spread borrowing actually works: the mechanics, the interest rate, the tax treatment, the risks, and how it compares to an SBLOC, HELOC, or margin loan.">
+<meta property="og:site_name" content="STQ Capital">
+<meta property="article:author" content="Akiva Glazerson">
+<meta property="article:section" content="Box Spreads">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33; --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF; --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7); --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif; --ease-out: cubic-bezier(0.16,1,0.3,1); }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(27,46,75,0.03) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+.nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; }
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-back { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+.nav-back:hover { color: var(--navy); }
+.issue-hero { padding: 140px 0 72px; background: var(--navy); position: relative; overflow: hidden; }
+.issue-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(240,239,235,0.03) 1px, transparent 1px); background-size: 60px 60px; }
+.hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.hero-container { max-width: 1100px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+.issue-hero h1 { font-family: var(--font-heading); font-size: clamp(2.2rem,5vw,3.75rem); font-weight: 700; color: var(--cream); line-height: 1.08; letter-spacing: -0.02em; max-width: 820px; margin-bottom: 24px; }
+.issue-subhead { font-size: 1.125rem; color: var(--text-light); max-width: 680px; line-height: 1.75; }
+.issue-meta { display: flex; align-items: center; gap: 14px; margin-top: 24px; flex-wrap: wrap; }
+.meta-category { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.6); border: 1px solid rgba(240,239,235,0.2); padding: 4px 12px; border-radius: 3px; }
+.meta-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(240,239,235,0.2); }
+.meta-date { font-family: var(--font-heading); font-size: 0.7rem; color: rgba(240,239,235,0.3); letter-spacing: 0.08em; }
+.issue-content { max-width: 760px; margin: 0 auto; padding: 64px clamp(24px,5vw,48px) 120px; position: relative; z-index: 1; }
+.toc { background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 8px; padding: 28px 32px; margin-bottom: 48px; }
+.toc h2 { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 16px; }
+.toc ol { list-style: none; counter-reset: toc; display: grid; gap: 10px; }
+.toc li { counter-increment: toc; }
+.toc a { font-family: var(--font-body); font-size: 0.95rem; color: var(--navy); text-decoration: none; display: flex; gap: 12px; align-items: baseline; transition: color 0.2s; }
+.toc a::before { content: counter(toc,decimal-leading-zero); font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700; color: rgba(27,46,75,0.35); }
+.toc a:hover { color: var(--navy-light); text-decoration: underline; }
+.issue-body p { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 24px; }
+.issue-body p strong { color: var(--text-primary); font-weight: 600; }
+.issue-body h2 { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--navy); margin: 56px 0 18px; letter-spacing: -0.01em; scroll-margin-top: 90px; }
+.issue-body h3 { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: var(--navy); margin: 32px 0 12px; }
+.issue-body ul { margin: 0 0 24px 0; padding-left: 0; list-style: none; }
+.issue-body ul li { font-size: 1.0625rem; line-height: 1.7; color: var(--text-secondary); padding-left: 26px; position: relative; margin-bottom: 12px; }
+.issue-body ul li::before { content: ''; position: absolute; left: 4px; top: 12px; width: 7px; height: 7px; background: var(--navy); border-radius: 1px; }
+.pull-quote { border-left: 3px solid var(--navy); padding: 4px 0 4px 28px; margin: 40px 0; }
+.pull-quote p { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--navy); line-height: 1.55; letter-spacing: -0.01em; margin: 0; }
+.compare-table { width: 100%; border-collapse: collapse; margin: 28px 0 32px; font-size: 0.95rem; background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 8px; overflow: hidden; }
+.compare-table th, .compare-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(27,46,75,0.08); vertical-align: top; }
+.compare-table thead th { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cream); background: var(--navy); }
+.compare-table tbody th { font-family: var(--font-heading); font-weight: 700; color: var(--navy); font-size: 0.85rem; }
+.compare-table td { color: var(--text-secondary); line-height: 1.5; }
+.compare-table tr:last-child th, .compare-table tr:last-child td { border-bottom: none; }
+.faq-item { border-bottom: 1px solid rgba(27,46,75,0.1); padding: 22px 0; }
+.faq-item h3 { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: var(--navy); margin: 0 0 10px; }
+.faq-item p { margin-bottom: 0; }
+.related { margin-top: 56px; }
+.related h2 { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 18px; }
+.related-list { display: grid; gap: 12px; }
+.related-list a { display: block; background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 6px; padding: 16px 20px; text-decoration: none; color: var(--navy); font-weight: 600; font-size: 0.98rem; transition: all 0.2s; }
+.related-list a:hover { border-color: var(--navy); transform: translateY(-1px); }
+.related-list a span { display: block; font-weight: 400; font-size: 0.85rem; color: var(--text-secondary); margin-top: 4px; }
+.issue-cta { background: var(--navy); border-radius: 8px; padding: 40px; margin: 56px 0 0; text-align: center; }
+.issue-cta h2 { color: var(--cream); font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 12px; }
+.issue-cta p { font-size: 0.9375rem; color: var(--text-light); margin-bottom: 24px; line-height: 1.7; max-width: 480px; margin-left: auto; margin-right: auto; }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 28px; border-radius: 4px; text-decoration: none; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
+.btn-white { background: var(--cream); color: var(--navy); }
+.btn-white:hover { background: var(--white); transform: translateY(-1px); }
+.disclaimer-box { margin-top: 40px; font-size: 0.8rem; line-height: 1.7; color: var(--text-secondary); background: var(--cream-dark); border-radius: 6px; padding: 20px 24px; }
+footer { background: var(--navy-dark); padding: 48px 0 32px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); }
+.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 24px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.4); }
+.footer-links { display: flex; gap: 32px; flex-wrap: wrap; }
+.footer-links a { font-size: 0.8125rem; color: rgba(240,239,235,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--cream); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.25); }
+.footer-disclaimer { margin-top: 24px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.18); max-width: 900px; }
+@media (max-width: 768px) { .nav-inner { padding: 0 24px; } .issue-hero h1 { font-size: 2rem; } .issue-content { padding: 48px 24px 80px; } .compare-table { font-size: 0.82rem; } .compare-table th, .compare-table td { padding: 10px; } }
+</style>
+<!-- SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Box Spread Borrowing: The Complete Guide",
+  "description": "A complete, plain-English guide to box spread borrowing: how it works, how the interest rate is set, the tax treatment, the risks, and how it compares to an SBLOC, HELOC, or margin loan.",
+  "datePublished": "2026-06-26T05:00:00-07:00",
+  "dateModified": "2026-06-26T05:00:00-07:00",
+  "author": {
+    "@type": "Person",
+    "name": "Akiva Glazerson",
+    "jobTitle": "Founder",
+    "url": "https://www.linkedin.com/in/akiva-g-5ba463a3",
+    "worksFor": { "@type": "FinancialService", "name": "STQ Capital", "url": "https://stqcap.com" }
+  },
+  "publisher": { "@type": "FinancialService", "name": "STQ Capital", "url": "https://stqcap.com" },
+  "mainEntityOfPage": "https://stqcap.com/box-spread-borrowing-guide.html",
+  "articleSection": "Box Spreads",
+  "about": "Box spread borrowing",
+  "keywords": "box spread borrowing, box spread financing, box spread vs SBLOC, box spread vs HELOC, SPX box spread, Section 1256, synthetic financing"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a box spread?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A box spread is a four-leg options position (a bull call spread combined with a bear put spread at the same two strike prices and expiration) that has a known, fixed value at expiration equal to the distance between the strikes. Selling the box delivers cash today in exchange for repaying that fixed amount at expiration, which functions like a fixed-rate loan with no monthly payments." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the interest rate on a box spread set?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The implied rate is set by the options market, not by a loan officer. It is the difference between the cash you receive today and the fixed amount you repay at expiration, and it typically trades close to short-term Treasury or SOFR rates because the position is fully hedged. There is no credit check and the rate does not depend on your personal credit profile." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is box spread interest tax deductible?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Box spreads using broad-based index options are generally Section 1256 contracts, which receive 60/40 capital gains treatment and mark-to-market accounting. The financing cost is generally realized as a capital loss, and interest incurred to carry investments may be deductible as investment interest expense, subject to limits. Tax treatment depends on your individual situation, so consult a qualified tax advisor." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is a box spread different from an SBLOC?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Both let you borrow against a portfolio without selling, but an SBLOC charges a bank-set variable rate (often a spread over a benchmark) and can be called or repriced at the lender's discretion. A box spread borrows from the options market at a fixed, market-set rate that usually tracks Treasuries, with a defined maturity and no lender-driven repricing." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the risks of box spread borrowing?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Box spread borrowing requires a margin account and liquid collateral, carries margin-call risk if the collateral value falls, must be rolled or repaid at maturity, and is marked to market in the meantime. Using European-style, cash-settled index options such as SPX avoids early-assignment risk. It is not appropriate for everyone and involves real risk of loss." }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is box spread borrowing for?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It tends to fit investors with a sizable portfolio of liquid securities who want low-cost, flexible liquidity without selling appreciated positions or triggering capital gains. Common uses include funding a purchase, bridging a deal, paying a tax bill, or accessing cash while staying invested." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
+    <a href="/box-spreads.html" class="nav-back">Box Spread Calculator &rarr;</a>
+  </div>
+</nav>
+
+<section class="issue-hero">
+  <div class="hero-watermark">STQ</div>
+  <div class="hero-container">
+    <h1>Box Spread Borrowing: The Complete Guide</h1>
+    <p class="issue-subhead">Borrow against your portfolio at a market-set rate that usually tracks Treasuries, with no bank, no credit check, and no forced selling. Here is exactly how it works, what it costs, how it is taxed, and where the risks are.</p>
+    <div class="issue-meta">
+      <span class="meta-category">Box Spreads</span>
+      <span class="meta-dot"></span>
+      <span class="meta-date">Updated June 2026</span>
+    </div>
+  </div>
+</section>
+
+<div class="issue-content">
+  <nav class="toc" aria-label="Table of contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#what">What a box spread actually is</a></li>
+      <li><a href="#rate">How the interest rate is set</a></li>
+      <li><a href="#tax">The tax treatment</a></li>
+      <li><a href="#compare">Box spread vs SBLOC vs HELOC vs margin</a></li>
+      <li><a href="#uses">When it makes sense to use one</a></li>
+      <li><a href="#risks">The risks, told honestly</a></li>
+      <li><a href="#who">Who it is for</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </nav>
+
+  <div class="issue-body">
+    <p>Most people borrow the same two ways their parents did: a loan from a bank, or by selling something they own. Investors with a sizable portfolio have a third option that is far cheaper than either, and almost nobody talks about it. It is called box spread borrowing, and it lets your portfolio act like a lender at a rate the market sets, not a bank.</p>
+
+    <p>This guide walks through the whole thing in plain English: the mechanics, the rate, the tax treatment, the trade-offs, and how it stacks up against the alternatives. It is not exotic options trading. It is financing.</p>
+
+    <h2 id="what">What a Box Spread Actually Is</h2>
+    <p>A box spread is a four-leg options structure. You combine a bull call spread and a bear put spread at the same two strike prices and the same expiration date. The result is a position with a single, known value at expiration: the distance between the two strikes. Nothing about the market's direction changes that payoff. It is fixed the moment you put the trade on.</p>
+    <p>When you <strong>sell</strong> a box spread, you receive cash today and agree to repay that fixed amount at expiration. The difference between what you collect now and what you owe later is your financing cost. In other words, selling a box is economically the same as taking out a fixed-rate loan with a single repayment at maturity and no monthly payments in between.</p>
+    <div class="pull-quote">
+      <p>A box spread is not a market bet. It is a fully hedged structure with a known payoff. That is exactly what makes it usable as financing.</p>
+    </div>
+    <p>Done properly, the trade uses European-style, cash-settled index options such as SPX or XSP. European-style options cannot be exercised early, which removes the risk of early assignment and keeps the structure clean from open to maturity.</p>
+
+    <h2 id="rate">How the Interest Rate Is Set</h2>
+    <p>This is the part that surprises people. The rate on a box spread is not quoted by a loan officer and has nothing to do with your credit score. It is set by the options market. Because the position is fully hedged, the implied rate trades close to short-term risk-free rates, often within a narrow band of Treasury or SOFR levels.</p>
+    <p>The practical consequence: a borrower with a large mortgage, a business loan, or a securities-based line of credit is frequently paying a meaningfully higher rate than a box spread would cost for the same term, because every one of those products carries a lender's margin on top of the underlying rate. A box spread strips the lender out of the transaction.</p>
+
+    <h2 id="tax">The Tax Treatment</h2>
+    <p>Box spreads built with broad-based index options are generally treated as Section 1256 contracts. That carries two consequences worth understanding.</p>
+    <ul>
+      <li><strong>60/40 treatment.</strong> Gains and losses on Section 1256 contracts are treated as 60% long-term and 40% short-term, regardless of how long the position is held.</li>
+      <li><strong>The financing cost as a capital item.</strong> On a financing box, the cost of the structure is generally realized as a capital loss, and interest incurred to carry investments may be deductible as investment interest expense, subject to the usual limitations.</li>
+    </ul>
+    <p>This is where box spread borrowing can be more tax-efficient than a conventional loan, where the interest is often not deductible at all for personal borrowing. The interest on a box spread used in an investment context is <strong>potentially tax-deductible</strong>. Whether and how that applies depends entirely on your individual tax situation, so this is a conversation to have with a qualified tax advisor rather than a guarantee.</p>
+
+    <h2 id="compare">Box Spread vs SBLOC vs HELOC vs Margin</h2>
+    <p>The fastest way to see the difference is side by side. Every one of these lets you raise cash, but the rate, the flexibility, and the risk profile are not the same.</p>
+    <table class="compare-table">
+      <thead>
+        <tr><th>Feature</th><th>Box Spread</th><th>SBLOC</th><th>HELOC</th><th>Margin Loan</th></tr>
+      </thead>
+      <tbody>
+        <tr><th>Rate set by</th><td>Options market (near Treasuries)</td><td>Bank (spread over benchmark)</td><td>Bank (spread over prime)</td><td>Broker (often high)</td></tr>
+        <tr><th>Rate type</th><td>Fixed to maturity</td><td>Variable</td><td>Variable</td><td>Variable</td></tr>
+        <tr><th>Credit check</th><td>None</td><td>Light</td><td>Full underwriting</td><td>None</td></tr>
+        <tr><th>Repayment</th><td>One payment at maturity</td><td>Flexible</td><td>Monthly</td><td>Flexible</td></tr>
+        <tr><th>Interest deductible?</th><td>Potentially (investment interest)</td><td>Sometimes</td><td>Limited</td><td>Sometimes</td></tr>
+        <tr><th>Collateral</th><td>Liquid securities</td><td>Liquid securities</td><td>Home equity</td><td>Liquid securities</td></tr>
+      </tbody>
+    </table>
+    <p>The headline is the rate and the deductibility. A box spread usually borrows closest to the true risk-free rate and offers the cleanest potential tax treatment, in exchange for requiring a margin account, liquid collateral, and a maturity you have to manage.</p>
+
+    <h2 id="uses">When It Makes Sense to Use One</h2>
+    <p>Box spread borrowing is a tool, not a strategy by itself. The common use cases share one theme: you need cash, and selling appreciated assets would be expensive or disruptive.</p>
+    <ul>
+      <li><strong>Borrow to spend.</strong> Fund a home purchase or renovation, a large expense, or a lifestyle need without liquidating positions that would trigger capital gains.</li>
+      <li><strong>Borrow to bridge.</strong> Cover the gap on a business or real estate transaction until permanent financing or a sale closes.</li>
+      <li><strong>Borrow to wait.</strong> Pay a tax bill or meet a capital call while keeping your portfolio fully invested and compounding.</li>
+    </ul>
+
+    <h2 id="risks">The Risks, Told Honestly</h2>
+    <p>Make no mistake, the trade-offs are real, and a box spread is the wrong call for plenty of situations. The honest list:</p>
+    <ul>
+      <li><strong>Margin and collateral.</strong> It requires a margin account and liquid securities as collateral. If that collateral falls sharply in value, you can face a margin call.</li>
+      <li><strong>It must be managed at maturity.</strong> The box has a fixed expiration. At that point you repay it or roll it into a new one, and the roll happens at whatever rate the market offers then.</li>
+      <li><strong>Mark to market.</strong> Section 1256 positions are marked to market, so the position's value moves on your statement before maturity even though the payoff is fixed.</li>
+      <li><strong>Execution matters.</strong> Strike selection, expiration, and using European-style cash-settled options are not optional details. Done sloppily, the structure can introduce risks it was meant to remove.</li>
+    </ul>
+    <p>This is precisely why it belongs in the hands of someone who runs it as a discipline, not a one-off trade.</p>
+
+    <h2 id="who">Who It Is For</h2>
+    <p>Box spread borrowing tends to make sense for investors who hold a meaningful portfolio of liquid securities, want flexible liquidity without selling, and are comfortable with a margin account and a maturity to manage. If your assets are mostly illiquid, or borrowing against your portfolio would stretch your risk tolerance, it is probably not the right tool. For the right investor, it changes the math entirely.</p>
+
+    <h2 id="faq">Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What is a box spread?</h3>
+      <p>A four-leg options position (a bull call spread plus a bear put spread at the same strikes and expiration) with a fixed value at maturity equal to the distance between the strikes. Selling it gives you cash now in exchange for a single fixed repayment later, functioning like a fixed-rate loan with no monthly payments.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How is the interest rate set?</h3>
+      <p>By the options market, not a lender. Because the position is fully hedged, the implied rate trades close to short-term Treasury or SOFR rates, and it does not depend on your credit.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is the interest tax deductible?</h3>
+      <p>Box spreads on broad-based index options are generally Section 1256 contracts with 60/40 treatment. The financing cost is generally realized as a capital loss, and interest to carry investments may be deductible as investment interest expense, subject to limits. It is potentially tax-deductible depending on your situation. Consult a qualified tax advisor.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How is it different from an SBLOC?</h3>
+      <p>An SBLOC charges a bank-set variable rate and can be repriced or called. A box spread borrows from the market at a fixed rate that usually tracks Treasuries, with a defined maturity and no lender-driven repricing.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What are the main risks?</h3>
+      <p>It requires a margin account and liquid collateral, carries margin-call risk, must be rolled or repaid at maturity, and is marked to market in the meantime. Using European-style cash-settled index options such as SPX avoids early-assignment risk.</p>
+    </div>
+  </div>
+
+  <div class="related">
+    <h2>Go Deeper</h2>
+    <div class="related-list">
+      <a href="/box-spreads.html">Box Spread Calculator and Overview<span>See what you could borrow and what it would cost.</span></a>
+      <a href="/insights/insight-box-spread-borrowing.html">Your Portfolio Can Lend You Money<span>The short version of how box spread borrowing works.</span></a>
+      <a href="/insights/insight-box-spread-overlooked-features.html">The Two Features Almost Everyone Overlooks<span>No payments until maturity, and an annual deduction.</span></a>
+      <a href="/insights/insight-box-spread-vs-heloc-2026-06-04.html">Box Spread vs HELOC for a Home<span>Stacking a box spread against a mortgage.</span></a>
+    </div>
+  </div>
+
+  <div class="issue-cta">
+    <h2>See What a Box Spread Would Cost You</h2>
+    <p>We run box spread borrowing as a discipline, not a one-off trade. Let's look at the rate, the structure, and the tax treatment for your specific situation.</p>
+    <a href="mailto:akiva.glazerson@stqcap.com?subject=Box%20Spread%20Borrowing%20Inquiry" class="btn btn-white">Request a Consultation</a>
+  </div>
+
+  <div class="disclaimer-box">For informational purposes only. Not investment, tax, or legal advice. Box spread borrowing involves the use of margin and options and carries risk, including the potential for loss and margin calls. Tax treatment, including Section 1256 treatment and the deductibility of investment interest, depends on your individual circumstances and current law. Consult a qualified advisor before implementing any strategy.</div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-main">
+      <div class="footer-logo">STQ <span>/ Capital</span></div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
+        <a href="/insights.html">Insights</a>
+        <a href="/box-spreads.html">Box Spreads</a>
+        <a href="/#contact">Contact</a>
+      </div>
+      <div class="footer-copy">&#169; 2026 STQ Capital</div>
+    </div>
+    <div class="footer-disclaimer">Advisory services are offered through STQ Capital, an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable.</div>
+  </div>
+</footer>
+</body>
+</html>
