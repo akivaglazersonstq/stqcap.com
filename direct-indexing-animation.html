@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>How Direct Indexing Works</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=DM+Sans:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1B2E4B;--navy-light:#2C4368;--cream:#F0EFEB;--gray:#5A6A7E;--white:#FFFFFF;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;overflow:hidden;background:var(--cream);font-family:'DM Sans',sans-serif;}
+#scaler{position:absolute;top:0;left:0;transform-origin:top left;}
+#stage{position:relative;width:1200px;height:675px;background:var(--cream);overflow:hidden;}
+.brand{position:absolute;top:36px;left:48px;font-family:'Chakra Petch';font-weight:700;font-size:18px;color:var(--navy);letter-spacing:0.02em;}
+.brand span{color:var(--gray);font-weight:500;}
+.kicker{position:absolute;top:40px;right:48px;font-family:'Chakra Petch';font-weight:700;font-size:12px;letter-spacing:0.18em;color:var(--gray);text-transform:uppercase;}
+.caption{position:absolute;bottom:92px;left:0;width:100%;text-align:center;font-family:'Chakra Petch';font-weight:700;font-size:30px;color:var(--navy);letter-spacing:-0.01em;opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease;}
+.caption.show{opacity:1;transform:translateY(0);}
+.subcap{position:absolute;bottom:64px;left:0;width:100%;text-align:center;font-size:15px;color:var(--gray);opacity:0;transition:opacity .5s ease .15s;}
+.subcap.show{opacity:1;}
+#etf{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:300px;height:300px;background:var(--navy);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;transition:opacity .6s ease,transform .6s ease;}
+#etf .t1{font-family:'Chakra Petch';font-weight:700;font-size:34px;color:var(--cream);}
+#etf .t2{font-family:'Chakra Petch';font-weight:700;font-size:13px;letter-spacing:0.15em;color:rgba(240,239,235,0.55);text-transform:uppercase;}
+#etf.gone{opacity:0;transform:translate(-50%,-50%) scale(0.7);}
+#grid{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);display:grid;grid-template-columns:repeat(6,72px);grid-template-rows:repeat(4,72px);gap:10px;}
+.tile{width:72px;height:72px;background:var(--navy);border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;opacity:0;transform:scale(0.5);transition:opacity .45s ease,transform .45s cubic-bezier(.2,1.4,.4,1),background .5s ease,box-shadow .5s ease;}
+.tile.in{opacity:1;transform:scale(1);}
+.tile .sym{font-family:'Chakra Petch';font-weight:700;font-size:13px;color:var(--cream);letter-spacing:0.03em;}
+.tile .chg{font-size:11px;font-weight:600;color:rgba(240,239,235,0.55);}
+.tile.down{background:var(--cream);box-shadow:inset 0 0 0 2px var(--gray);}
+.tile.down .sym{color:var(--navy);}
+.tile.down .chg{color:var(--gray);}
+.tile.harvested{opacity:0;transform:scale(0.4) translateY(20px);transition:opacity .5s ease,transform .5s ease;}
+.tile.swap{background:var(--navy-light);}
+#counter{position:absolute;right:64px;top:151px;width:230px;background:var(--white);border-radius:12px;padding:22px 26px;box-shadow:0 8px 28px rgba(27,46,75,0.10);opacity:0;transition:opacity .5s ease;}
+#benefits{position:absolute;right:64px;top:307px;width:230px;display:flex;flex-direction:column;gap:10px;}
+.benefit{background:var(--white);border-radius:12px;padding:14px 18px;box-shadow:0 8px 28px rgba(27,46,75,0.10);opacity:0;transform:translateX(14px);transition:opacity .5s ease,transform .5s ease;}
+.benefit.show{opacity:1;transform:translateX(0);}
+.bt{font-family:'Chakra Petch';font-weight:700;font-size:14px;color:var(--navy);letter-spacing:0.01em;}
+.bd{font-size:12px;color:var(--gray);line-height:1.5;margin-top:3px;}
+#counter.show{opacity:1;}
+#counter .lbl{font-family:'Chakra Petch';font-weight:700;font-size:11px;letter-spacing:0.14em;color:var(--gray);text-transform:uppercase;margin-bottom:8px;}
+#counter .amt{font-family:'Chakra Petch';font-weight:700;font-size:38px;color:var(--navy);letter-spacing:-0.02em;}
+#counter .note{font-size:12px;color:var(--gray);margin-top:8px;line-height:1.5;}
+#grid.shifted{transform:translate(calc(-50% - 120px),-50%);transition:transform .7s cubic-bezier(.4,0,.2,1);}
+</style>
+</head>
+<body>
+<div id="scaler">
+<div id="stage">
+  <div class="brand">STQ <span>/ Capital</span></div>
+  <div class="kicker">How Direct Indexing Works</div>
+
+  <div id="etf"><div class="t1">S&amp;P 500</div><div class="t2">Index Fund</div></div>
+  <div id="grid"></div>
+
+  <div id="counter">
+    <div class="lbl">Harvested Losses</div>
+    <div class="amt" id="amt">$0</div>
+    <div class="note">Banked to offset capital gains</div>
+  </div>
+  <div id="benefits">
+    <div class="benefit" id="b0"><div class="bt">Fully customizable</div><div class="bd">Exclude your employer stock, or any company</div></div>
+    <div class="benefit" id="b1"><div class="bt">Gift the winners</div><div class="bd">Donate appreciated shares instead of cash</div></div>
+    <div class="benefit" id="b2"><div class="bt">Built for exits</div><div class="bd">Bank losses ahead of a sale or liquidity event</div></div>
+  </div>
+
+  <div class="caption" id="cap"></div>
+  <div class="subcap" id="sub"></div>
+</div>
+</div>
+
+<script>
+function fit(){var s=Math.min(window.innerWidth/1200,window.innerHeight/675);document.getElementById('scaler').style.transform='scale('+s+')';}
+window.addEventListener('resize',fit);fit();
+
+const SYMS=['AAPL','MSFT','NVDA','AMZN','GOOG','META','BRK.B','AVGO','TSLA','LLY','JPM','V','XOM','UNH','MA','COST','HD','PG','JNJ','NFLX','ABBV','CRM','BAC','KO'];
+const grid=document.getElementById('grid');
+SYMS.forEach((s,i)=>{
+  const d=document.createElement('div');
+  d.className='tile';d.id='t'+i;
+  d.innerHTML='<div class="sym">'+s+'</div><div class="chg" id="c'+i+'">&nbsp;</div>';
+  grid.appendChild(d);
+});
+const cap=document.getElementById('cap'),sub=document.getElementById('sub');
+const DOWN=[2,7,13,18,21];
+const UPS={};SYMS.forEach((s,i)=>{if(!DOWN.includes(i))UPS[i]='+'+(0.4+((i*7)%23)/10).toFixed(1)+'%';});
+const DOWNS={2:'-3.2%',7:'-1.8%',13:'-4.1%',18:'-2.6%',21:'-1.4%'};
+const REPL={2:'AMD',7:'TXN',13:'CI',18:'ABT',21:'NOW'};
+
+function setCap(t,s){cap.classList.remove('show');sub.classList.remove('show');
+  setTimeout(()=>{cap.textContent=t;sub.textContent=s||'';cap.classList.add('show');if(s)sub.classList.add('show');},350);}
+
+function countTo(target,ms){
+  const el=document.getElementById('amt');const t0=performance.now();
+  function f(t){const p=Math.min(1,(t-t0)/ms);const v=Math.round(target*(1-Math.pow(1-p,3)));
+    el.textContent='$'+v.toLocaleString();if(p<1)requestAnimationFrame(f);}
+  requestAnimationFrame(f);}
+
+function run(){
+  document.getElementById('etf').classList.remove('gone');
+  grid.classList.remove('shifted');
+  document.getElementById('counter').classList.remove('show');
+  [0,1,2].forEach(k=>document.getElementById('b'+k).classList.remove('show'));
+  document.getElementById('amt').textContent='$0';
+  document.querySelectorAll('.tile').forEach(t=>{t.className='tile';});
+  SYMS.forEach((s,i)=>{document.getElementById('c'+i).innerHTML='&nbsp;';document.getElementById('t'+i).querySelector('.sym').textContent=s;});
+
+  setTimeout(()=>setCap('Most investors buy the box.'),400);
+  setTimeout(()=>{
+    document.getElementById('etf').classList.add('gone');
+    setCap('We buy the stocks inside it.');
+    SYMS.forEach((s,i)=>setTimeout(()=>document.getElementById('t'+i).classList.add('in'),i*45));
+  },3200);
+  setTimeout(()=>{
+    setCap('Markets move. Even in up years, some stocks dip.');
+    SYMS.forEach((s,i)=>{
+      const c=document.getElementById('c'+i);
+      if(DOWN.includes(i)){document.getElementById('t'+i).classList.add('down');c.textContent=DOWNS[i];}
+      else c.textContent=UPS[i];
+    });
+  },6800);
+  setTimeout(()=>{
+    setCap('The dips get harvested as tax losses.','Positions are replaced to keep you fully invested and tracking the index.');
+    grid.classList.add('shifted');
+    document.getElementById('counter').classList.add('show');
+    DOWN.forEach((i,k)=>setTimeout(()=>{
+      document.getElementById('t'+i).classList.add('harvested');
+      setTimeout(()=>{
+        const t=document.getElementById('t'+i);
+        t.classList.remove('harvested','down');t.classList.add('swap','in');
+        t.querySelector('.sym').textContent=REPL[i];
+        document.getElementById('c'+i).innerHTML='&nbsp;';
+      },600);
+    },k*350));
+    countTo(13200,2600);
+  },10400);
+  setTimeout(()=>{
+    setCap('Same market exposure. Losses banked.','Harvested losses may offset capital gains, depending on applicable tax law.');
+    [0,1,2].forEach(k=>setTimeout(()=>document.getElementById('b'+k).classList.add('show'),300+k*350));
+  },15200);
+  setTimeout(run,20500);
+}
+run();
+</script>
+</body>
+</html>
