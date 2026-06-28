@@ -45,7 +45,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .meta-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(240,239,235,0.2); }
 .meta-date { font-family: var(--font-heading); font-size: 0.7rem; color: rgba(240,239,235,0.3); letter-spacing: 0.08em; }
 .issue-content { max-width: 760px; margin: 0 auto; padding: 64px clamp(24px,5vw,48px) 120px; position: relative; z-index: 1; }
-.toc { background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 8px; padding: 28px 32px; margin-bottom: 48px; }
+.toc { position: static; background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 8px; padding: 28px 32px; margin-bottom: 48px; backdrop-filter: none; }
 .toc h2 { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 16px; }
 .toc ol { list-style: none; counter-reset: toc; display: grid; gap: 10px; }
 .toc li { counter-increment: toc; }
