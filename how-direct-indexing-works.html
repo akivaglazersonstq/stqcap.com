@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<style>:root{color-scheme:light only;}</style>
+<title>How Direct Indexing Works - STQ Capital Partners</title>
+<meta name="description" content="A visual explainer: how direct indexing works, step by step. Own the individual stocks in an index instead of a fund, harvest losses at the security level even in up years, and bank them to offset gains. By STQ Capital Partners.">
+<meta name="author" content="Akiva Glazerson, STQ Capital">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Direct Indexing Works - STQ Capital Partners">
+<meta name="twitter:description" content="A visual, step-by-step explainer of how direct indexing turns an index portfolio into a tax engine.">
+<meta property="og:title" content="How Direct Indexing Works">
+<meta property="og:description" content="Own the stocks inside the index, harvest losses at the security level, and bank them to offset gains. Watch how it works.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://stqcap.com/how-direct-indexing-works.html">
+<link rel="canonical" href="https://stqcap.com/how-direct-indexing-works.html">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+@font-face { font-family: "Chakra Petch"; font-display: swap; }
+@font-face { font-family: "DM Sans"; font-display: swap; }
+
+:root {
+  --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
+  --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF;
+  --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7);
+  --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+.nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; }
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-back { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s ease; }
+.nav-back:hover { color: var(--navy); }
+.nav-back::before { content: '←'; }
+.nav-cta { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 10px 24px; border-radius: 4px; background: var(--navy); color: var(--cream); text-decoration: none; transition: background 0.2s ease; }
+.nav-cta:hover { background: var(--navy-light); }
+
+/* HERO */
+.pub-hero { background: var(--navy); padding: 140px 0 80px; position: relative; overflow: hidden; }
+.pub-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; }
+.hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.pub-hero-inner { max-width: 800px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+.pub-series { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,239,235,0.5); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+.pub-series::before { content: ''; width: 24px; height: 1px; background: rgba(240,239,235,0.3); }
+.pub-hero h1 { font-family: var(--font-heading); font-size: clamp(2rem,4vw,3rem); font-weight: 700; color: var(--cream); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 24px; }
+.pub-hero-sub { font-size: 1.125rem; line-height: 1.7; color: var(--text-light); max-width: 640px; }
+
+/* CONTENT */
+.pub-content { max-width: 800px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; background: var(--white); }
+
+/* ANIMATION */
+.di-stage { margin: -48px auto 0; max-width: 920px; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 2; }
+.di-frame { position: relative; width: 100%; aspect-ratio: 1200/675; border-radius: 10px; overflow: hidden; border: 1px solid rgba(27,46,75,0.1); background: var(--cream); box-shadow: 0 24px 60px rgba(15,30,51,0.18); }
+.di-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+.di-caption { text-align: center; font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-secondary); margin-top: 16px; }
+
+/* BODY */
+.pub-section { padding: 56px 0 0; }
+.pub-section-num { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+.pub-section-num::before { content: ''; width: 24px; height: 1px; background: var(--navy); opacity: 0.3; }
+.pub-section h2 { font-family: var(--font-heading); font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 700; color: var(--navy); letter-spacing: -0.01em; margin-bottom: 28px; line-height: 1.2; }
+.pub-section p { font-size: 1.0625rem; line-height: 1.85; color: #2a3a4a; margin-bottom: 20px; }
+.pub-section p:last-child { margin-bottom: 0; }
+.pub-section strong { color: var(--navy); }
+
+/* STEPS */
+.di-steps { display: grid; gap: 1px; background: rgba(27,46,75,0.1); border: 1px solid rgba(27,46,75,0.1); border-radius: 8px; overflow: hidden; margin: 8px 0 0; }
+.di-step { background: var(--white); padding: 24px 28px; display: grid; grid-template-columns: 56px 1fr; gap: 20px; align-items: start; }
+.di-step-num { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: rgba(27,46,75,0.25); line-height: 1; }
+.di-step-title { font-family: var(--font-heading); font-size: 1.0625rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.di-step-body { font-size: 0.9375rem; line-height: 1.65; color: #2a3a4a; }
+
+/* CALLOUT */
+.pub-callout { background: var(--navy); color: var(--cream); padding: 40px 44px; margin: 40px 0 0; border-radius: 6px; position: relative; overflow: hidden; }
+.pub-callout::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
+.pub-callout-inner { position: relative; z-index: 1; }
+.pub-callout-label { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(240,239,235,0.4); margin-bottom: 14px; }
+.pub-callout p { font-size: 1.0625rem; line-height: 1.75; color: var(--cream); }
+
+/* DISCLAIMER */
+.pub-disclaimer { margin: 56px 0 0; padding: 28px 0; border-top: 1px solid var(--cream-dark); font-size: 0.8125rem; line-height: 1.7; color: var(--text-secondary); }
+
+/* CTA */
+.pub-cta { background: var(--cream); padding: 64px clamp(24px,5vw,64px); margin: 64px 0 0; text-align: center; }
+.pub-cta h2 { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.01em; }
+.pub-cta p { font-size: 1rem; color: var(--text-secondary); max-width: 480px; margin: 0 auto 32px; line-height: 1.7; }
+.pub-cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 14px 32px; border-radius: 4px; text-decoration: none; transition: all 0.3s var(--ease); cursor: pointer; border: none; display: inline-flex; align-items: center; }
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); }
+.btn-secondary:hover { border-color: var(--navy); }
+
+/* MORE PUBS */
+.more-pubs { background: var(--navy-dark); padding: 64px clamp(24px,5vw,64px); }
+.more-pubs h3 { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.4); margin-bottom: 32px; }
+.more-pubs-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; max-width: 640px; }
+.more-pub-card { background: rgba(240,239,235,0.04); border: 1px solid rgba(240,239,235,0.08); border-radius: 6px; padding: 24px 20px; text-decoration: none; transition: background 0.2s ease; display: block; }
+.more-pub-card:hover { background: rgba(240,239,235,0.08); }
+.more-pub-tag { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(240,239,235,0.35); margin-bottom: 10px; }
+.more-pub-title { font-family: var(--font-heading); font-size: 0.9375rem; font-weight: 600; color: var(--cream); line-height: 1.4; }
+
+/* FOOTER */
+footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px solid rgba(240,239,235,0.06); }
+.footer-main { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1rem; color: var(--cream); }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.5); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.3); }
+.footer-disclaimer { max-width: 1280px; margin: 16px auto 0; padding: 0 clamp(24px,5vw,64px); font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); }
+
+@media (max-width: 768px) {
+  .di-stage { margin-top: -32px; }
+  .more-pubs-grid { grid-template-columns: 1fr; }
+  .pub-callout { padding: 28px 24px; }
+  .di-step { grid-template-columns: 40px 1fr; gap: 14px; padding: 20px; }
+}
+</style>
+<!-- SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "How Direct Indexing Works",
+  "description": "A visual, step-by-step explainer of how direct indexing works: owning the individual stocks in an index instead of a fund, harvesting losses at the security level even in up years, and banking them to offset capital gains.",
+  "url": "https://stqcap.com/how-direct-indexing-works.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "STQ Capital",
+    "url": "https://stqcap.com"
+  },
+  "about": "Direct indexing",
+  "author": {
+    "@type": "Person",
+    "name": "Akiva Glazerson",
+    "jobTitle": "Founder",
+    "url": "https://stqcap.com/akiva-glazerson.html",
+    "sameAs": "https://www.linkedin.com/in/akiva-g-5ba463a3"
+  },
+  "publisher": {
+    "@type": "FinancialService",
+    "name": "STQ Capital",
+    "url": "https://stqcap.com"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is direct indexing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Direct indexing means owning the individual stocks that make up an index in a separately managed account, rather than holding a single index fund or ETF. Because you own the underlying stocks directly, losses can be harvested at the individual security level, even when the broader index is up for the year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does direct indexing harvest tax losses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In any given year, some stocks in an index decline even when the index itself rises. With direct indexing, those individual positions are sold to realize the loss and immediately replaced with a similar stock, keeping the portfolio fully invested and tracking the index. The realized losses are banked and can be used to offset capital gains elsewhere, subject to applicable tax law."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is direct indexing different from owning an index fund?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An index fund gives you the index return in a single wrapper, but you cannot harvest losses on the individual holdings inside it. Direct indexing gives you the same market exposure while letting you harvest losses at the security level, customize the holdings to exclude specific companies, and gift appreciated shares. The result is the index return plus a continuous source of tax alpha."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">STQ <span>/ Capital Partners</span></a>
+    <a href="/research.html" class="nav-back">All Research</a>
+    <a href="#" onclick="window.location.href='mailto:akiva.glazerson@stqcap.com?subject=Direct%20Indexing%20Inquiry';return false;" class="nav-cta">Talk to STQ</a>
+  </div>
+</nav>
+
+<section class="pub-hero">
+  <div class="hero-watermark">STQ</div>
+  <div class="pub-hero-inner">
+    <div class="pub-series">STQ Research - Visual Explainer</div>
+    <h1>How Direct Indexing Works.</h1>
+    <p class="pub-hero-sub">An index fund gives you the return. Direct indexing gives you the return and a tax engine that works in your favor every day the market is open. Here is the whole idea in twenty seconds.</p>
+  </div>
+</section>
+
+<div class="di-stage">
+  <div class="di-frame">
+    <iframe src="/direct-indexing-animation.html" title="Animated explainer: how direct indexing works, from buying the index to harvesting losses" loading="lazy" scrolling="no"></iframe>
+  </div>
+  <div class="di-caption">Loops automatically - no sound</div>
+</div>
+
+<div class="pub-content">
+
+  <section class="pub-section">
+    <div class="pub-section-num">What you just watched</div>
+    <h2>The index return, plus a loss engine.</h2>
+    <p>Most investors buy the box: a single S&amp;P 500 fund that gives them the index return and nothing else. Direct indexing buys the stocks inside that box instead, in your own account. You get the same exposure, but now every position is yours to manage for taxes.</p>
+    <p>That distinction is the whole point. A fund is one line on a statement. Direct indexing is hundreds of individual lots, each one a candidate for tax-loss harvesting the moment it dips, even in a year the index finishes up.</p>
+  </section>
+
+  <section class="pub-section">
+    <div class="pub-section-num">Step by step</div>
+    <h2>How the machine runs.</h2>
+    <div class="di-steps">
+      <div class="di-step">
+        <div class="di-step-num">01</div>
+        <div>
+          <div class="di-step-title">Own the stocks, not the fund</div>
+          <div class="di-step-body">Instead of one S&amp;P 500 ETF, you hold the individual companies that make up the index in a separately managed account. Same market exposure, full transparency, full control.</div>
+        </div>
+      </div>
+      <div class="di-step">
+        <div class="di-step-num">02</div>
+        <div>
+          <div class="di-step-title">Markets move, and some stocks dip</div>
+          <div class="di-step-body">In any year, even a strong one, some names fall while others rise. Inside a fund those individual declines are invisible. Held directly, each one is a tax opportunity.</div>
+        </div>
+      </div>
+      <div class="di-step">
+        <div class="di-step-num">03</div>
+        <div>
+          <div class="di-step-title">Harvest the losses, stay invested</div>
+          <div class="di-step-body">The down positions are sold to realize the loss and immediately replaced with a similar stock. The portfolio keeps tracking the index. You never step out of the market to do it.</div>
+        </div>
+      </div>
+      <div class="di-step">
+        <div class="di-step-num">04</div>
+        <div>
+          <div class="di-step-title">Bank the losses for when you need them</div>
+          <div class="di-step-body">Harvested losses are stored and may offset capital gains anywhere in your life: a real estate sale, a business exit, an RSU vest, or a concentrated position you finally want to trim.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pub-section">
+    <div class="pub-section-num">Where STQ is different</div>
+    <h2>The index is built around you.</h2>
+    <p>Most firms offer direct indexing as an off-the-shelf product. At STQ, the index itself is constructed around your situation: your existing holdings, your sector views, your tax picture, your concentrated positions. You can exclude your employer stock, tilt away from what you already own, and gift the winners instead of selling them. No two clients hold the same portfolio.</p>
+    <div class="pub-callout">
+      <div class="pub-callout-inner">
+        <div class="pub-callout-label">The takeaway</div>
+        <p>Same market exposure as an index fund. A steady supply of harvested losses the fund can never give you. That is the difference between owning the return and owning the return with a tax engine attached.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="pub-disclaimer">
+    <strong>Disclaimer:</strong> This page is for informational and educational purposes only and does not constitute personalized investment, tax, or legal advice. The animation is a simplified illustration and does not represent actual investment results. The availability and value of harvested losses depend on your individual circumstances and applicable tax law, which is subject to change. Investments involve risk, including the potential loss of principal. Please consult a qualified tax, legal, or financial professional regarding your specific situation. Advisory services offered through STQ Capital Partners, an investment adviser registered with the state of California.
+  </div>
+
+</div>
+
+<section class="pub-cta">
+  <h2>See Direct Indexing Built Around Your Portfolio.</h2>
+  <p>We will look at your holdings, your concentrated positions, and your tax picture, and show you what a custom index could do.</p>
+  <div class="pub-cta-buttons">
+    <a href="#" onclick="window.location.href='mailto:akiva.glazerson@stqcap.com?subject=Direct%20Indexing%20Inquiry';return false;" class="btn btn-primary">Talk to STQ</a>
+    <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-secondary">Schedule a Call</a>
+  </div>
+</section>
+
+<section class="more-pubs">
+  <div style="max-width:800px;margin:0 auto;">
+    <h3>Go Deeper</h3>
+    <div class="more-pubs-grid">
+      <a href="/insights/insight-direct-indexing.html" class="more-pub-card">
+        <div class="more-pub-tag">Tax Alpha</div>
+        <div class="more-pub-title">Own an S&amp;P 500 ETF? Do This Instead.</div>
+      </a>
+      <a href="/tax-aware-investing-guide.html" class="more-pub-card">
+        <div class="more-pub-tag">Pillar Guide</div>
+        <div class="more-pub-title">The Complete Guide to Tax-Aware Investing</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div class="footer-logo">STQ <span>/ Capital Partners</span></div>
+    <div class="footer-copy">© 2026 STQ Capital Partners</div>
+  </div>
+  <div class="footer-disclaimer">Advisory services are offered through STQ Capital Partners ("STQ"), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable.</div>
+</footer>
+
+</body>
+</html>
