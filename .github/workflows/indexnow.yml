@@ -1,0 +1,61 @@
+name: IndexNow ping
+
+# Notifies Bing and Yandex (via IndexNow) of pages that changed in each push
+# to main, so they recrawl quickly. Google does not use IndexNow.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Submit changed pages to IndexNow
+        env:
+          KEY: 0065b705a782109b891155ad1e889841
+        run: |
+          set -euo pipefail
+          BEFORE='${{ github.event.before }}'
+          if [[ -z "$BEFORE" || "$BEFORE" == "0000000000000000000000000000000000000000" ]]; then
+            RANGE="HEAD~1 HEAD"
+          else
+            RANGE="$BEFORE ${{ github.sha }}"
+          fi
+
+          # changed, public .html files (skip _-prefixed templates)
+          mapfile -t files < <(git diff --name-only --diff-filter=ACM $RANGE -- '*.html' \
+            | grep -vE '(^|/)_' || true)
+
+          if [[ ${#files[@]} -eq 0 ]]; then
+            echo "No public HTML changed; nothing to submit."
+            exit 0
+          fi
+
+          urls=()
+          for f in "${files[@]}"; do
+            urls+=("\"https://stqcap.com/$f\"")
+          done
+          list=$(IFS=,; echo "${urls[*]}")
+
+          body=$(printf '{"host":"stqcap.com","key":"%s","keyLocation":"https://stqcap.com/%s.txt","urlList":[%s]}' "$KEY" "$KEY" "$list")
+          echo "Submitting ${#files[@]} URL(s) to IndexNow:"
+          printf '  %s\n' "${files[@]}"
+
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST 'https://api.indexnow.org/indexnow' \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data "$body")
+          echo "IndexNow responded: HTTP $code"
+          # 200 and 202 are success; 422/400 mean key/URL issues worth surfacing
+          if [[ "$code" != "200" && "$code" != "202" ]]; then
+            echo "::warning::IndexNow returned HTTP $code"
+          fi
