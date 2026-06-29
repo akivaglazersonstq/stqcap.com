@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<style>:root{color-scheme:light only;}</style>
+<title>What to Do With a Concentrated Stock Position - STQ Capital</title>
+<meta name="description" content="A comprehensive guide to managing a concentrated stock position: how to diversify, hedge, monetize, and give without triggering an avoidable tax bill. Direct indexing, exchange funds, collars, prepaid forwards, and charitable strategies. By STQ Capital.">
+<meta name="author" content="Akiva Glazerson, STQ Capital">
+<meta name="keywords" content="concentrated stock position, concentrated stock position strategies, diversify concentrated stock, low basis stock, exchange fund, variable prepaid forward, collar strategy, direct indexing completion portfolio, RSU concentration, founder stock diversification, tax-aware investing">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What to Do With a Concentrated Stock Position - STQ Capital">
+<meta name="twitter:description" content="A single stock you cannot sell without a huge tax bill is a problem with more than one answer. Here is the full toolkit.">
+<meta property="og:title" content="What to Do With a Concentrated Stock Position">
+<meta property="og:description" content="Diversify, hedge, monetize, or give, without triggering an avoidable tax bill. The full toolkit for a low-basis concentrated position.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://stqcap.com/concentrated-stock-positions.html">
+<link rel="canonical" href="https://stqcap.com/concentrated-stock-positions.html">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+@font-face { font-family: "Chakra Petch"; font-display: swap; }
+@font-face { font-family: "DM Sans"; font-display: swap; }
+
+:root {
+  --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
+  --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF;
+  --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7);
+  --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+.nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; }
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-back { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s ease; }
+.nav-back:hover { color: var(--navy); }
+.nav-back::before { content: '←'; }
+.nav-cta { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 10px 24px; border-radius: 4px; background: var(--navy); color: var(--cream); text-decoration: none; transition: background 0.2s ease; }
+.nav-cta:hover { background: var(--navy-light); }
+
+/* HERO */
+.pub-hero { background: var(--navy); padding: 140px 0 80px; position: relative; overflow: hidden; }
+.pub-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; }
+.hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.pub-hero-inner { max-width: 800px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+.pub-series { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,239,235,0.5); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+.pub-series::before { content: ''; width: 24px; height: 1px; background: rgba(240,239,235,0.3); }
+.pub-hero h1 { font-family: var(--font-heading); font-size: clamp(2rem,4vw,3rem); font-weight: 700; color: var(--cream); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 24px; }
+.pub-hero-sub { font-size: 1.125rem; line-height: 1.7; color: var(--text-light); max-width: 640px; margin-bottom: 40px; }
+.pub-meta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.pub-meta-item { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(240,239,235,0.4); }
+.pub-meta-item span { color: rgba(240,239,235,0.7); margin-left: 6px; }
+
+/* CONTENT */
+.pub-content { max-width: 800px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; background: var(--white); }
+
+/* TOC */
+.pub-toc { background: var(--cream); border-left: 3px solid var(--navy); padding: 32px 36px; margin: 56px 0; border-radius: 0 4px 4px 0; position: relative; z-index: 1; }
+.pub-toc-title { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 16px; }
+.pub-toc ol { list-style: none; counter-reset: toc; }
+.pub-toc li { counter-increment: toc; padding: 6px 0; border-bottom: 1px solid rgba(27,46,75,0.06); }
+.pub-toc li:last-child { border-bottom: none; }
+.pub-toc a { font-size: 0.9375rem; color: var(--navy); text-decoration: none; display: flex; align-items: center; gap: 12px; transition: color 0.2s ease; }
+.pub-toc a:hover { color: var(--navy-light); }
+.pub-toc a::before { content: counter(toc, decimal-leading-zero); font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 700; color: rgba(27,46,75,0.25); min-width: 24px; }
+
+/* BODY */
+.pub-section { padding: 64px 0 0; }
+.pub-section-num { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+.pub-section-num::before { content: ''; width: 24px; height: 1px; background: var(--navy); opacity: 0.3; }
+.pub-section h2 { font-family: var(--font-heading); font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 700; color: var(--navy); letter-spacing: -0.01em; margin-bottom: 28px; line-height: 1.2; }
+.pub-section h3 { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700; color: var(--navy); margin-top: 32px; margin-bottom: 16px; }
+.pub-section p { font-size: 1.0625rem; line-height: 1.85; color: #2a3a4a; margin-bottom: 20px; }
+.pub-section p:last-child { margin-bottom: 0; }
+.pub-section strong { color: var(--navy); }
+
+/* CALLOUT */
+.pub-callout { background: var(--navy); color: var(--cream); padding: 40px 44px; margin: 40px 0; border-radius: 6px; position: relative; overflow: hidden; }
+.pub-callout::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
+.pub-callout-inner { position: relative; z-index: 1; }
+.pub-callout-number { font-family: var(--font-heading); font-size: clamp(2.5rem,5vw,4rem); font-weight: 700; color: var(--cream); letter-spacing: -0.02em; line-height: 1; margin-bottom: 8px; }
+.pub-callout-label { font-size: 1rem; color: var(--text-light); line-height: 1.6; max-width: 480px; }
+.pub-callout-footnote { font-size: 0.75rem; color: rgba(240,239,235,0.3); margin-top: 16px; font-style: italic; }
+
+/* FRAMEWORK */
+.pub-framework { border: 1px solid rgba(27,46,75,0.12); border-radius: 6px; overflow: hidden; margin: 32px 0; }
+.pub-framework-header { background: var(--cream-dark); padding: 16px 24px; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); }
+.pub-framework-row { display: grid; grid-template-columns: 1fr 1.4fr 1.2fr; border-bottom: 1px solid rgba(27,46,75,0.08); }
+.pub-framework-row:last-child { border-bottom: none; }
+.pub-framework-cell { padding: 20px 24px; border-right: 1px solid rgba(27,46,75,0.08); }
+.pub-framework-cell:last-child { border-right: none; }
+.pub-framework-cell-label { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 8px; }
+.pub-framework-cell-content { font-size: 0.875rem; line-height: 1.6; color: #2a3a4a; }
+.pub-framework-cell.goal { background: rgba(27,46,75,0.03); }
+
+/* DISCLAIMER */
+.pub-disclaimer { margin: 64px 0 0; padding: 28px 0; border-top: 1px solid var(--cream-dark); font-size: 0.8125rem; line-height: 1.7; color: var(--text-secondary); }
+
+/* CTA */
+.pub-cta { background: var(--cream); padding: 64px clamp(24px,5vw,64px); margin: 64px 0 0; text-align: center; }
+.pub-cta h2 { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.01em; }
+.pub-cta p { font-size: 1rem; color: var(--text-secondary); max-width: 480px; margin: 0 auto 32px; line-height: 1.7; }
+.pub-cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 14px 32px; border-radius: 4px; text-decoration: none; transition: all 0.3s var(--ease); cursor: pointer; border: none; display: inline-flex; align-items: center; }
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); }
+.btn-secondary:hover { border-color: var(--navy); }
+
+/* MORE PUBS */
+.more-pubs { background: var(--navy-dark); padding: 64px clamp(24px,5vw,64px); }
+.more-pubs h3 { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.4); margin-bottom: 32px; }
+.more-pubs-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; max-width: 640px; }
+.more-pub-card { background: rgba(240,239,235,0.04); border: 1px solid rgba(240,239,235,0.08); border-radius: 6px; padding: 24px 20px; text-decoration: none; transition: background 0.2s ease; display: block; }
+.more-pub-card:hover { background: rgba(240,239,235,0.08); }
+.more-pub-tag { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(240,239,235,0.35); margin-bottom: 10px; }
+.more-pub-title { font-family: var(--font-heading); font-size: 0.9375rem; font-weight: 600; color: var(--cream); line-height: 1.4; }
+
+/* FOOTER */
+footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px solid rgba(240,239,235,0.06); }
+.footer-main { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1rem; color: var(--cream); }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.5); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.3); }
+.footer-disclaimer { max-width: 1280px; margin: 16px auto 0; padding: 0 clamp(24px,5vw,64px); font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); }
+
+@media (max-width: 768px) {
+  .pub-framework-row { grid-template-columns: 1fr; }
+  .pub-framework-cell { border-right: none; }
+  .more-pubs-grid { grid-template-columns: 1fr; }
+  .pub-callout { padding: 28px 24px; }
+}
+</style>
+<!-- SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What to Do With a Concentrated Stock Position",
+  "description": "A comprehensive guide to managing a concentrated, low-basis stock position: how to diversify, hedge, monetize, and give without triggering an avoidable tax bill.",
+  "datePublished": "2026-06-28T05:00:00-07:00",
+  "dateModified": "2026-06-28T05:00:00-07:00",
+  "author": {
+    "@type": "Person",
+    "name": "Akiva Glazerson",
+    "jobTitle": "Founder",
+    "url": "https://stqcap.com/akiva-glazerson.html",
+    "sameAs": "https://www.linkedin.com/in/akiva-g-5ba463a3"
+  },
+  "publisher": {
+    "@type": "FinancialService",
+    "name": "STQ Capital",
+    "url": "https://stqcap.com"
+  },
+  "mainEntityOfPage": "https://stqcap.com/concentrated-stock-positions.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a concentrated stock position?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A concentrated stock position is when a single stock makes up an outsized share of your net worth, often more than 10 to 20 percent. It typically comes from founder or employer equity, RSUs that vested and were never sold, an inheritance, or a long-held winner that grew far faster than the rest of the portfolio. The position usually carries a low cost basis, so selling it triggers a large capital gains tax bill."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you diversify a concentrated stock position without paying a huge tax bill?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no single answer. The main approaches are: building a direct-indexing completion portfolio around the position and harvesting losses to offset gains as you trim it; contributing shares to an exchange fund for tax-deferred diversification; hedging with a collar or a variable prepaid forward to reduce risk without selling; donating appreciated shares to a donor-advised fund or charitable remainder trust to avoid the gain entirely; borrowing against the position instead of selling; and staged selling timed to low-income years. The right mix depends on your basis, your tax bracket, your goals for the position, and your timeline."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an exchange fund?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An exchange fund pools concentrated stock from many investors into a single diversified partnership. You contribute your shares and receive a pro-rata interest in the diversified pool, deferring capital gains tax on the original position. After a required holding period, typically seven years, you can redeem into a diversified basket of securities. It is one tool for diversifying a low-basis position without an immediate taxable sale, though it involves illiquidity and specific eligibility rules."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I just sell my concentrated stock and pay the tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sometimes selling and paying the tax is the right call, especially if the concentration risk is severe relative to your wealth. But selling all at once in a single year is rarely optimal. The tax can often be reduced or spread out by harvesting offsetting losses elsewhere in the portfolio, staging sales across multiple years, timing them to lower-income years, and pairing them with charitable gifts. The goal is to manage the concentration risk while paying the least tax legally required."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
+    <a href="/research.html" class="nav-back">All Research</a>
+    <a href="#" onclick="window.location.href='mailto:akiva.glazerson@stqcap.com?subject=Concentrated%20Position%20Review';return false;" class="nav-cta">Position Review</a>
+  </div>
+</nav>
+
+<section class="pub-hero">
+  <div class="hero-watermark">STQ</div>
+  <div class="pub-hero-inner">
+    <div class="pub-series">STQ Research - Tax Strategy Series</div>
+    <h1>What to Do With a Concentrated Stock Position.</h1>
+    <p class="pub-hero-sub">One stock built your wealth. Now it is the biggest risk to it, and you cannot sell without handing a fortune to the IRS. That is a problem with more than one answer.</p>
+    <div class="pub-meta">
+      <div class="pub-meta-item">Author <span>Akiva Glazerson</span></div>
+      <div class="pub-meta-item">Series <span>Tax Strategy</span></div>
+      <div class="pub-meta-item">Read time <span>11 minutes</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="pub-content">
+
+  <nav class="pub-toc">
+    <div class="pub-toc-title">Contents</div>
+    <ol>
+      <li><a href="#the-trap">The Concentration Trap</a></li>
+      <li><a href="#the-math">Why "Just Sell It" Is Rarely the Answer</a></li>
+      <li><a href="#the-toolkit">The Toolkit: Six Ways to Solve It</a></li>
+      <li><a href="#deep-dive">How Each Tool Actually Works</a></li>
+      <li><a href="#stq-approach">The STQ Approach: Sequencing, Not Products</a></li>
+    </ol>
+  </nav>
+
+  <section class="pub-section" id="the-trap">
+    <div class="pub-section-num">Section 01</div>
+    <h2>The Concentration Trap</h2>
+    <p>A concentrated stock position is the kind of problem people are happy to have, right up until they understand it. One holding, usually built from founder equity, vested RSUs, an inheritance, or a winner you simply never sold, has grown into an outsized share of your net worth. It made you wealthy. Now it is the single largest threat to that wealth.</p>
+    <p>The risk is obvious once you say it out loud: your financial future is riding on one company's earnings calls, one management team, one product cycle, one regulatory decision. Diversification is the one free lunch in investing, and a concentrated position is the opposite of it.</p>
+    <p>The trap is that the obvious fix makes a second problem. The position almost always carries a <strong>low cost basis</strong>, which means selling it realizes a large capital gain. Between federal long-term capital gains rates, the net investment income tax, and state tax, a Californian can hand over more than a third of the gain. So the holder freezes: too risky to keep, too expensive to sell. Most advisors meet this with a shrug and a recommendation to "trim over time." That is a non-answer.</p>
+  </section>
+
+  <section class="pub-section" id="the-math">
+    <div class="pub-section-num">Section 02</div>
+    <h2>Why "Just Sell It" Is Rarely the Answer</h2>
+    <p>Selling and paying the tax is sometimes correct. If a single stock is 60 percent of your wealth and a bad quarter would change your life, reducing that risk is worth a tax bill. But selling the entire position in one year, with no planning around it, is almost never the most efficient path.</p>
+
+    <div class="pub-callout">
+      <div class="pub-callout-inner">
+        <div class="pub-callout-number">~37%</div>
+        <div class="pub-callout-label">Combined federal and California tax a high earner can owe on a long-term capital gain. On a low-basis position, that applies to nearly the entire sale.</div>
+        <div class="pub-callout-footnote">Illustrative combined rate (top federal long-term capital gains rate plus the 3.8% net investment income tax plus top California rate). Your actual rate depends on income, residency, and holding period. Not tax advice.</div>
+      </div>
+    </div>
+
+    <p>The reason all-at-once selling is inefficient is that the tax is not a fixed toll. It is a variable you can manage. The same dollar of gain costs very different amounts depending on the year you realize it, the losses you have banked against it, whether it is paired with a charitable gift, and whether you needed to sell the shares at all to get what you wanted from them.</p>
+    <p>The right frame is not "sell or hold." It is a sequence of decisions across four goals: <strong>diversify</strong> the risk, <strong>hedge</strong> what you keep, <strong>monetize</strong> without selling where possible, and <strong>give</strong> the most appreciated shares so the gain is never taxed at all. Most positions get solved with a combination, staged over several years.</p>
+  </section>
+
+  <section class="pub-section" id="the-toolkit">
+    <div class="pub-section-num">Section 03</div>
+    <h2>The Toolkit: Six Ways to Solve It</h2>
+    <p>There is no single product that fixes a concentrated position. There is a toolkit, and the skill is in matching tools to your basis, bracket, timeline, and intentions for the stock.</p>
+
+    <div class="pub-framework">
+      <div class="pub-framework-header">Concentrated Position Toolkit - Tool, Mechanism, Best When</div>
+      <div class="pub-framework-row">
+        <div class="pub-framework-cell goal">
+          <div class="pub-framework-cell-label">Tool</div>
+          <div class="pub-framework-cell-content" style="font-weight:700;color:var(--navy);">Direct indexing completion</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Mechanism</div>
+          <div class="pub-framework-cell-content">Build an index portfolio around the position and harvest losses continuously to offset the gains you realize as you trim.</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Best When</div>
+          <div class="pub-framework-cell-content">You want to diversify gradually and tax-efficiently while staying invested.</div>
+        </div>
+      </div>
+      <div class="pub-framework-row">
+        <div class="pub-framework-cell goal">
+          <div class="pub-framework-cell-label">Tool</div>
+          <div class="pub-framework-cell-content" style="font-weight:700;color:var(--navy);">Exchange fund</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Mechanism</div>
+          <div class="pub-framework-cell-content">Contribute shares to a pooled partnership and receive a diversified interest, deferring the gain.</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Best When</div>
+          <div class="pub-framework-cell-content">You want broad diversification now, can accept a multi-year lockup, and qualify.</div>
+        </div>
+      </div>
+      <div class="pub-framework-row">
+        <div class="pub-framework-cell goal">
+          <div class="pub-framework-cell-label">Tool</div>
+          <div class="pub-framework-cell-content" style="font-weight:700;color:var(--navy);">Collar / protective put</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Mechanism</div>
+          <div class="pub-framework-cell-content">Use options to cap downside on the shares you keep, often at little or no net cost.</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Best When</div>
+          <div class="pub-framework-cell-content">You want to hold for a reason but need to protect against a crash in the meantime.</div>
+        </div>
+      </div>
+      <div class="pub-framework-row">
+        <div class="pub-framework-cell goal">
+          <div class="pub-framework-cell-label">Tool</div>
+          <div class="pub-framework-cell-content" style="font-weight:700;color:var(--navy);">Variable prepaid forward</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Mechanism</div>
+          <div class="pub-framework-cell-content">Receive cash today against the position with settlement deferred to a future date, without a current sale.</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Best When</div>
+          <div class="pub-framework-cell-content">You need liquidity now but want to defer the taxable sale and keep some upside.</div>
+        </div>
+      </div>
+      <div class="pub-framework-row">
+        <div class="pub-framework-cell goal">
+          <div class="pub-framework-cell-label">Tool</div>
+          <div class="pub-framework-cell-content" style="font-weight:700;color:var(--navy);">Charitable (DAF / CRT)</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Mechanism</div>
+          <div class="pub-framework-cell-content">Donate the most appreciated shares to a donor-advised fund or charitable remainder trust; the gain is never taxed and you get a deduction.</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Best When</div>
+          <div class="pub-framework-cell-content">You are charitably inclined and hold your lowest-basis lots.</div>
+        </div>
+      </div>
+      <div class="pub-framework-row">
+        <div class="pub-framework-cell goal">
+          <div class="pub-framework-cell-label">Tool</div>
+          <div class="pub-framework-cell-content" style="font-weight:700;color:var(--navy);">Borrow against it</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Mechanism</div>
+          <div class="pub-framework-cell-content">Access liquidity through a portfolio loan or box spread financing instead of selling appreciated shares.</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Best When</div>
+          <div class="pub-framework-cell-content">You need cash, not diversification, and plan to hold or step up basis later.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pub-section" id="deep-dive">
+    <div class="pub-section-num">Section 04</div>
+    <h2>How Each Tool Actually Works</h2>
+
+    <h3>Direct Indexing as a Completion Portfolio</h3>
+    <p>This is the workhorse. Instead of holding a single stock and an index fund next to it, you hold the index as individual stocks in a separately managed account, built deliberately to underweight the sector and factors your concentrated position already gives you. Because you own the names directly, losses can be harvested at the security level all year, even when the market is up. Those banked losses then offset the capital gains you realize as you trim the concentrated position. The result is a glide path: you diversify on a schedule, and the loss engine pays down part of the tax bill as you go. See <a href="/how-direct-indexing-works.html">How Direct Indexing Works</a> for the mechanics.</p>
+
+    <h3>Exchange Funds</h3>
+    <p>An exchange fund pools concentrated holdings from many investors into one diversified partnership. You contribute your shares, receive a pro-rata interest in the pool, and defer the gain on your original position. After the required holding period, usually seven years, you can redeem into a diversified basket. It buys instant diversification without a taxable sale, at the cost of illiquidity and specific eligibility requirements. It is a fit for some positions and a poor fit for others, which is exactly why it should be one option on the table, not the only one.</p>
+
+    <h3>Collars and Protective Puts</h3>
+    <p>Sometimes you want to keep the stock, at least for now: a lockup, an anticipated step-up, a thesis you still believe. Hedging lets you hold while removing the catastrophe risk. A protective put sets a floor under the price. A collar pairs that put with a sold call, which finances the protection so the hedge can cost little or nothing, in exchange for capping some upside. Neither triggers a sale, so neither realizes the gain.</p>
+
+    <h3>Variable Prepaid Forwards</h3>
+    <p>A variable prepaid forward lets you receive a large share of the position's value in cash today while deferring the actual sale to a future settlement date, and it builds in downside protection along the way. It is a way to monetize a position, get liquidity to diversify or spend, and defer the taxable event, without selling the shares outright now. The structures are nuanced and must be built carefully to achieve the intended tax treatment.</p>
+
+    <h3>Charitable Strategies: DAF and CRT</h3>
+    <p>If you are giving anyway, give the right shares. Donating appreciated stock to a <strong>donor-advised fund</strong> means the embedded gain is never taxed, and you generally deduct the full fair market value. For larger amounts, a <strong>charitable remainder trust</strong> can sell the position inside the trust without immediate tax, pay you an income stream for life or a term, and leave the remainder to charity. Both turn your lowest-basis, most-appreciated lots, the worst ones to sell, into the best ones to give.</p>
+
+    <h3>Borrowing Instead of Selling</h3>
+    <p>If what you actually need is cash rather than diversification, selling is the wrong tool. Borrowing against the portfolio, including through box spread financing, can provide liquidity at rates close to Treasuries without realizing any gain. The shares stay invested, the gain stays unrealized, and if the position is ultimately held until death, the basis may step up. See our <a href="/box-spread-borrowing-guide.html">guide to box spread borrowing</a> for how that financing works.</p>
+  </section>
+
+  <section class="pub-section" id="stq-approach">
+    <div class="pub-section-num">Section 05</div>
+    <h2>The STQ Approach: Sequencing, Not Products</h2>
+    <p>Most firms that handle concentrated stock sell a product: an exchange fund, a structured hedge, a charitable vehicle. The product is real, but leading with it is backwards. The position does not need a product. It needs a sequence.</p>
+    <p>We start with the full picture: how concentrated you actually are relative to your wealth, your cost basis lot by lot, your marginal rates this year and your projected rates in the years ahead, your liquidity needs, your charitable intentions, and your timeline for the stock. Only then do we map tools to the situation, usually more than one, staged across multiple tax years to keep each year's realized gain inside the bracket that makes sense.</p>
+    <p>A typical plan layers them. A direct-indexing completion portfolio diversifies and generates the losses that absorb part of the tax. A hedge protects the shares still held. The lowest-basis lots are routed to charitable gifts so their gain is never taxed. Liquidity needs are met by borrowing rather than selling. And the realized sales that do happen are timed to the years that cost the least. None of this works in a silo, which is why we coordinate it directly with your CPA. That is how institutional portfolios handle concentration, and it is how we handle yours.</p>
+  </section>
+
+  <div class="pub-disclaimer">
+    <strong>Disclaimer:</strong> This publication is for informational and educational purposes only. It does not constitute personalized investment, tax, or legal advice, and it is not an offer or solicitation. Strategies such as exchange funds, options collars, variable prepaid forwards, and charitable trusts involve significant complexity, costs, risks, and eligibility requirements, and they are not suitable for everyone. Tax treatment depends on your specific circumstances and on tax law, which is subject to change. The illustrative tax rate shown is hypothetical. Investments involve risk, including the potential loss of principal. Please consult a qualified tax, legal, and financial professional regarding your situation before acting. Advisory services offered through STQ Capital, an investment adviser registered with the state of California.
+  </div>
+
+</div>
+
+<section class="pub-cta">
+  <h2>Hold One Stock That Is Too Big to Sell?</h2>
+  <p>We will map your basis, your bracket, and your options, and build a sequence that reduces the risk while paying the least tax legally required.</p>
+  <div class="pub-cta-buttons">
+    <a href="#" onclick="window.location.href='mailto:akiva.glazerson@stqcap.com?subject=Concentrated%20Position%20Review';return false;" class="btn btn-primary">Request a Position Review</a>
+    <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-secondary">Schedule a Call</a>
+  </div>
+</section>
+
+<section class="more-pubs">
+  <div style="max-width:800px;margin:0 auto;">
+    <h3>More from STQ Research</h3>
+    <div class="more-pubs-grid">
+      <a href="/how-direct-indexing-works.html" class="more-pub-card">
+        <div class="more-pub-tag">Tax Alpha</div>
+        <div class="more-pub-title">How Direct Indexing Works</div>
+      </a>
+      <a href="/box-spread-borrowing-guide.html" class="more-pub-card">
+        <div class="more-pub-tag">Box Spreads</div>
+        <div class="more-pub-title">Borrowing at Treasury Rates Without a Bank</div>
+      </a>
+      <a href="/tax-aware-investing-guide.html" class="more-pub-card">
+        <div class="more-pub-tag">Pillar Guide</div>
+        <div class="more-pub-title">The Complete Guide to Tax-Aware Investing</div>
+      </a>
+      <a href="/asset-location.html" class="more-pub-card">
+        <div class="more-pub-tag">Tax Strategy</div>
+        <div class="more-pub-title">All the Right Things in All the Wrong Places</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div class="footer-logo">STQ <span>/ Capital</span></div>
+    <div class="footer-copy">© 2026 STQ Capital</div>
+  </div>
+  <div class="footer-disclaimer">Advisory services are offered through STQ Capital ("STQ"), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable.</div>
+</footer>
+
+</body>
+</html>
