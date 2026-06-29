@@ -464,24 +464,23 @@ input[type=range]{width:100%;accent-color:#1B2E4B;height:4px;cursor:pointer;}
   <div class="container">
     <div class="rates-inner">
       <div class="rates-label-block">
-        <div class="section-label">Live Market Rates</div>
-        <div class="rates-title">Implied borrowing rates, right now.</div>
+        <div class="section-label">Benchmark Rates</div>
+        <div class="rates-title">Near-Treasury borrowing rates, updated daily.</div>
       </div>
       <div class="rate-cards">
-        <div class="rate-card"><div class="rate-card-tenor">1 Year</div><div class="rate-card-rate" id="rc-1y">4.25%</div><div class="rate-card-sub">Mid · ~354 days</div></div>
-        <div class="rate-card"><div class="rate-card-tenor">3 Year</div><div class="rate-card-rate" id="rc-3y">4.32%</div><div class="rate-card-sub">Mid · ~924 days</div></div>
-        <div class="rate-card"><div class="rate-card-tenor">5 Year</div><div class="rate-card-rate" id="rc-5y">4.38%</div><div class="rate-card-sub">Mid · ~1,663 days</div></div>
+        <div class="rate-card"><div class="rate-card-tenor">1 Year</div><div class="rate-card-rate" id="rc-1y">4.25%</div><div class="rate-card-sub">Treasury benchmark</div></div>
+        <div class="rate-card"><div class="rate-card-tenor">3 Year</div><div class="rate-card-rate" id="rc-3y">4.32%</div><div class="rate-card-sub">Treasury benchmark</div></div>
+        <div class="rate-card"><div class="rate-card-tenor">5 Year</div><div class="rate-card-rate" id="rc-5y">4.38%</div><div class="rate-card-sub">Treasury benchmark</div></div>
       </div>
     </div>
-    <p class="rates-disclaimer">Implied annualized borrowing rates from XSP box spread market data as of <span id="rates-as-of"></span>. Rates are calculated using daily compounding on a 360-day year. Some third-party sources quote linear (non-compounded) rates, which will appear higher for the same underlying trade. Rates vary with market conditions and exclude fees. For executable rates, contact STQ directly.</p>
+    <p class="rates-disclaimer">Benchmarked to the U.S. Treasury par yield curve as of <span id="rates-as-of"></span>, updated automatically each business day. Box spread financing typically prices within a few basis points of these levels; executable rates vary with market conditions and exclude fees. For a live executable quote, contact STQ directly.</p>
     <button onclick="toggleFullRates()" id="full-rates-btn" class="rates-expand-btn">View full rate curve ↓</button>
     <div id="full-rates-table" style="display:none;margin-top:16px;">
       <div style="background:var(--white);border:1px solid rgba(27,46,75,0.07);border-radius:8px;overflow:hidden;">
         <table style="width:100%;border-collapse:collapse;">
           <thead><tr style="background:var(--cream);">
-            <th style="font-family:var(--font-heading);font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(27,46,75,0.4);padding:12px 20px;text-align:left;border-bottom:1px solid rgba(27,46,75,0.07);">Expiration</th>
-            <th style="font-family:var(--font-heading);font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(27,46,75,0.4);padding:12px 20px;text-align:left;border-bottom:1px solid rgba(27,46,75,0.07);">Days</th>
-            <th style="font-family:var(--font-heading);font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(27,46,75,0.4);padding:12px 20px;text-align:left;border-bottom:1px solid rgba(27,46,75,0.07);">Mid</th>
+            <th style="font-family:var(--font-heading);font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(27,46,75,0.4);padding:12px 20px;text-align:left;border-bottom:1px solid rgba(27,46,75,0.07);">Tenor</th>
+            <th style="font-family:var(--font-heading);font-size:0.65rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(27,46,75,0.4);padding:12px 20px;text-align:left;border-bottom:1px solid rgba(27,46,75,0.07);">Benchmark Rate</th>
           </tr></thead>
           <tbody id="full-rates-tbody"></tbody>
         </table>
@@ -692,20 +691,17 @@ input[type=range]{width:100%;accent-color:#1B2E4B;height:4px;cursor:pointer;}
 </footer>
 
 <script>
+/* BOX_RATES_START — auto-updated daily by scripts/update-box-rates.mjs (U.S. Treasury par yield curve) */
 var STQ_RATES={1:0.0425,2:0.0430,3:0.0432,4:0.0435,5:0.0438};
+var STQ_AS_OF='June 3, 2026';
+var STQ_CURVE=[{label:'1 Year',rate:0.0425},{label:'2 Year',rate:0.0430},{label:'3 Year',rate:0.0432},{label:'5 Year',rate:0.0438},{label:'7 Year',rate:0.0445},{label:'10 Year',rate:0.0452},{label:'20 Year',rate:0.0478},{label:'30 Year',rate:0.0470}];
+/* BOX_RATES_END */
 document.getElementById('rc-1y').textContent=(STQ_RATES[1]*100).toFixed(2)+'%';
 document.getElementById('rc-3y').textContent=(STQ_RATES[3]*100).toFixed(2)+'%';
 document.getElementById('rc-5y').textContent=(STQ_RATES[5]*100).toFixed(2)+'%';
-document.getElementById('rates-as-of').textContent='June 3, 2026';
-var allRates=[{"date":"7/17/2026","daysUntilExp":44,"bestBid":0.03944892129301891,"bestAsk":0.041565706425348736},{"date":"8/21/2026","daysUntilExp":79,"bestBid":0.0410673225370779,"bestAsk":0.041439499672556224},{"date":"9/18/2026","daysUntilExp":106,"bestBid":0.04111952541047792,"bestAsk":0.04169725525196455},{"date":"10/16/2026","daysUntilExp":133,"bestBid":0.04153841024542437,"bestAsk":0.041684234829000744},{"date":"11/20/2026","daysUntilExp":172,"bestBid":0.041029716134925565,"bestAsk":0.04178000334491827},{"date":"12/18/2026","daysUntilExp":200,"bestBid":0.04080296078006462,"bestAsk":0.041905811068469134},{"date":"1/15/2027","daysUntilExp":226,"bestBid":0.04207494797980971,"bestAsk":0.042336494507557276},{"date":"2/19/2027","daysUntilExp":261,"bestBid":0.042494305984051906,"bestAsk":0.0420349877098527},{"date":"3/19/2027","daysUntilExp":291,"bestBid":0.042294081505039216,"bestAsk":0.0421133926640298},{"date":"4/16/2027","daysUntilExp":319,"bestBid":0.042346276810109273,"bestAsk":0.04238072856552577},{"date":"5/21/2027","daysUntilExp":354,"bestBid":0.042121870978176545,"bestAsk":0.04281263568461924},{"date":"6/17/2027","daysUntilExp":377,"bestBid":0.04269903128908048,"bestAsk":0.043100564751016535},{"date":"9/17/2027","daysUntilExp":476,"bestBid":0.04309215449604409,"bestAsk":0.04271693773128149},{"date":"12/17/2027","daysUntilExp":567,"bestBid":0.04249658885581553,"bestAsk":0.043694693875650614},{"date":"12/15/2028","daysUntilExp":924,"bestBid":0.04294085514207069,"bestAsk":0.043534546360193715},{"date":"12/21/2029","daysUntilExp":1298,"bestBid":0.043019675628592324,"bestAsk":0.04387138541954272},{"date":"12/20/2030","daysUntilExp":1663,"bestBid":0.0434441399667822,"bestAsk":0.04421205196830513},{"date":"12/19/2031","daysUntilExp":2030,"bestBid":0.04385128897335555,"bestAsk":0.044656935897521066}];
+document.getElementById('rates-as-of').textContent=STQ_AS_OF;
+var highlightTenors={'1 Year':1,'3 Year':1,'5 Year':1};
 var tableBuilt=false;
-var highlightDates={'5/21/2027':'1 Year','12/15/2028':'3 Year','12/20/2030':'5 Year'};
-function daysFromToday(ds){
-  var p=ds.split('/');
-  var exp=new Date(+p[2],+p[0]-1,+p[1]);
-  var now=new Date();now.setHours(0,0,0,0);
-  return Math.round((exp-now)/86400000);
-}
 function toggleFullRates(){
   var tbl=document.getElementById('full-rates-table');
   var btn=document.getElementById('full-rates-btn');
@@ -714,18 +710,13 @@ function toggleFullRates(){
   btn.textContent=open?'View full rate curve ↓':'Hide full rate curve ↑';
   if(!tableBuilt){
     var tbody=document.getElementById('full-rates-tbody');
-    allRates.forEach(function(r){
-      var mid=(r.bestBid+r.bestAsk)/2;
-      var days=daysFromToday(r.date);
-      if(days<1) return;
-      var hl=highlightDates[r.date];
+    STQ_CURVE.forEach(function(r){
+      var hl=highlightTenors[r.label];
       var tr=document.createElement('tr');
       tr.style.borderBottom='1px solid rgba(27,46,75,0.05)';
       if(hl) tr.style.background='rgba(27,46,75,0.04)';
-      var label=hl?' <span style="font-family:var(--font-heading);font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;background:#1B2E4B;color:#F0EFEB;padding:2px 7px;border-radius:3px;margin-left:8px;">'+hl+'</span>':'';
-      tr.innerHTML='<td style="padding:10px 20px;font-size:0.875rem;color:var(--text-primary);">'+r.date+label+'</td>'
-        +'<td style="padding:10px 20px;font-size:0.875rem;color:var(--text-secondary);">'+days+'</td>'
-        +'<td style="padding:10px 20px;font-family:var(--font-heading);font-weight:600;font-size:0.9rem;color:var(--navy);">'+(mid*100).toFixed(2)+'%</td>';
+      tr.innerHTML='<td style="padding:10px 20px;font-size:0.875rem;color:var(--text-primary);">'+r.label+'</td>'
+        +'<td style="padding:10px 20px;font-family:var(--font-heading);font-weight:600;font-size:0.9rem;color:var(--navy);">'+(r.rate*100).toFixed(2)+'%</td>';
       tbody.appendChild(tr);
     });
     tableBuilt=true;

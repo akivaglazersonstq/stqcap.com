@@ -1,0 +1,42 @@
+name: Update box spread rates
+
+# Refreshes the benchmark rates on box-spreads.html from the U.S. Treasury
+# par yield curve. Runs on business-day evenings (after Treasury publishes the
+# daily curve, ~4pm ET) and can be run manually.
+
+on:
+  schedule:
+    - cron: '17 22 * * 1-5'   # 22:17 UTC, Mon-Fri (~6pm ET, after the curve is posted)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-box-rates
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch Treasury curve and update page
+        run: node scripts/update-box-rates.mjs
+
+      - name: Commit if changed
+        run: |
+          if [[ -n "$(git status --porcelain box-spreads.html)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add box-spreads.html
+            git commit -m "Auto-update box spread benchmark rates (Treasury curve)"
+            git push
+          else
+            echo "No rate change; nothing to commit."
+          fi
