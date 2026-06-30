@@ -147,9 +147,9 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .split-label { margin-bottom: 14px; }
 .about-row { display: flex; gap: clamp(32px,5vw,64px); align-items: center; }
 .about-row .about-text { flex: 1 1 auto; max-width: 640px; }
-.about-photo { flex: 0 0 clamp(180px,20%,240px); aspect-ratio: 4/5; border-radius: 10px; overflow: hidden; position: relative; background: linear-gradient(160deg,#1B2E4B,#0f1e33); box-shadow: 0 24px 60px rgba(15,30,51,0.18); }
+.about-photo { flex: 0 0 clamp(150px,17%,205px); aspect-ratio: 4/5; margin: 0 auto; border-radius: 10px; overflow: hidden; position: relative; background: linear-gradient(160deg,#1B2E4B,#0f1e33); box-shadow: 0 24px 60px rgba(15,30,51,0.18); }
 .about-photo::after { content: 'AG'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; font-size: 4rem; color: rgba(240,239,235,0.16); }
-.about-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; z-index: 1; }
+.about-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 1; }
 @media (max-width: 768px) { .about-row { flex-direction: column-reverse; align-items: flex-start; } .about-photo { width: 100%; max-width: 320px; flex-basis: auto; } .about-row .about-text { max-width: none; } }
 .about-text { font-size: 1.0625rem; line-height: 1.9; color: var(--text-secondary); max-width: 760px; }
 .why-section { padding: 64px 0; background: var(--cream); }
