@@ -45,6 +45,8 @@ nav.site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; backgr
 .content { max-width: 760px; margin: 0 auto; padding: 56px clamp(24px,5vw,48px) 120px; position: relative; z-index: 1; }
 .content p { font-size: 1.0625rem; line-height: 1.9; color: var(--text-secondary); margin-bottom: 24px; }
 .content p strong { color: var(--text-primary); font-weight: 600; }
+.bio-photo { float: right; width: clamp(160px,34%,220px); aspect-ratio: 4/5; object-fit: cover; object-position: center 88%; border-radius: 10px; margin: 6px 0 18px 32px; box-shadow: 0 18px 48px rgba(15,30,51,0.16); background: var(--navy); }
+@media (max-width: 600px) { .bio-photo { float: none; display: block; width: 190px; margin: 0 0 28px; } }
 .actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 36px; }
 .btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 12px 24px; border-radius: 4px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s; }
 .btn-primary { background: var(--navy); color: var(--cream); border: 1px solid var(--navy); }
@@ -120,6 +122,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
 </section>
 
 <div class="content">
+  <img class="bio-photo" src="/akiva-glazerson.jpg" alt="Akiva Glazerson, Founder of STQ Capital" loading="lazy">
   <p>Akiva Glazerson is the founder of STQ Capital. He brings a rare combination of institutional investment experience and quantitative expertise that anchors STQ&#8217;s commitment to transparency, integrity, accountability, and excellence.</p>
   <p>Prior to founding STQ, Akiva served as Head of Investment Risk at a $42B+ RIA. Before that, he worked in Portfolio Solutions and Quantitative Research at PIMCO, constructing and optimizing multi-asset portfolios for institutional clients. He also held roles at the Royal Bank of Canada, UBS, and Deutsche Bank, building deep experience across public markets, private assets, and derivatives.</p>
   <p>Akiva holds a B.S. in Accounting from Yeshiva University &#8211; where he attended on a soccer scholarship &#8211; maintains FINRA Series 7, 63, and 65 licenses, and holds the CSRIC designation.</p>
