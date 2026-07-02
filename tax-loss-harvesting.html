@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<style>:root{color-scheme:light only;}</style>
+<title>Tax-Loss Harvesting: Building a Loss Bank - STQ Capital</title>
+<meta name="description" content="Tax-loss harvesting done right is a year-round engine, not an end-of-year chore. How losses get banked, carried forward, and used to offset gains for years. By STQ Capital.">
+<meta name="author" content="Akiva Glazerson, STQ Capital">
+<meta name="keywords" content="tax-loss harvesting, tax loss harvesting, loss bank, capital loss carryforward, wash sale rule, direct indexing tax loss harvesting, harvest losses, offset capital gains, tax alpha, systematic loss harvesting, tax-aware investing">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tax-Loss Harvesting: Building a Loss Bank - STQ Capital">
+<meta name="twitter:description" content="Most advisors harvest losses once a year, in December, in a fund that cannot do it well. Here is how a loss bank is actually built.">
+<meta property="og:title" content="Tax-Loss Harvesting: Building a Loss Bank">
+<meta property="og:description" content="Done right, tax-loss harvesting is a year-round engine that banks losses to offset gains for years. Here is how it works, and where most advisors fall short.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://stqcap.com/tax-loss-harvesting.html">
+<link rel="canonical" href="https://stqcap.com/tax-loss-harvesting.html">
+<meta property="og:image" content="https://stqcap.com/og-tax-aware.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://stqcap.com/og-tax-aware.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+@font-face { font-family: "Chakra Petch"; font-display: swap; }
+@font-face { font-family: "DM Sans"; font-display: swap; }
+
+:root {
+  --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
+  --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF;
+  --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7);
+  --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+.nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; }
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-back { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s ease; }
+.nav-back:hover { color: var(--navy); }
+.nav-back::before { content: '←'; }
+.nav-cta { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 10px 24px; border-radius: 4px; background: var(--navy); color: var(--cream); text-decoration: none; transition: background 0.2s ease; }
+.nav-cta:hover { background: var(--navy-light); }
+
+/* HERO */
+.pub-hero { background: var(--navy); padding: 140px 0 80px; position: relative; overflow: hidden; }
+.pub-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; }
+.hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.pub-hero-inner { max-width: 800px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+.pub-series { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,239,235,0.5); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+.pub-series::before { content: ''; width: 24px; height: 1px; background: rgba(240,239,235,0.3); }
+.pub-hero h1 { font-family: var(--font-heading); font-size: clamp(2rem,4vw,3rem); font-weight: 700; color: var(--cream); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 24px; }
+.pub-hero-sub { font-size: 1.125rem; line-height: 1.7; color: var(--text-light); max-width: 640px; margin-bottom: 40px; }
+.pub-meta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.pub-meta-item { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(240,239,235,0.4); }
+.pub-meta-item span { color: rgba(240,239,235,0.7); margin-left: 6px; }
+
+/* CONTENT */
+.pub-content { max-width: 800px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; background: var(--white); }
+
+/* TOC */
+.pub-toc { background: var(--cream); border-left: 3px solid var(--navy); padding: 32px 36px; margin: 56px 0; border-radius: 0 4px 4px 0; position: relative; z-index: 1; }
+.pub-toc-title { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 16px; }
+.pub-toc ol { list-style: none; counter-reset: toc; }
+.pub-toc li { counter-increment: toc; padding: 6px 0; border-bottom: 1px solid rgba(27,46,75,0.06); }
+.pub-toc li:last-child { border-bottom: none; }
+.pub-toc a { font-size: 0.9375rem; color: var(--navy); text-decoration: none; display: flex; align-items: center; gap: 12px; transition: color 0.2s ease; }
+.pub-toc a:hover { color: var(--navy-light); }
+.pub-toc a::before { content: counter(toc, decimal-leading-zero); font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 700; color: rgba(27,46,75,0.25); min-width: 24px; }
+
+/* BODY */
+.pub-section { padding: 64px 0 0; }
+.pub-section-num { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+.pub-section-num::before { content: ''; width: 24px; height: 1px; background: var(--navy); opacity: 0.3; }
+.pub-section h2 { font-family: var(--font-heading); font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 700; color: var(--navy); letter-spacing: -0.01em; margin-bottom: 28px; line-height: 1.2; }
+.pub-section h3 { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700; color: var(--navy); margin-top: 32px; margin-bottom: 16px; }
+.pub-section p { font-size: 1.0625rem; line-height: 1.85; color: #2a3a4a; margin-bottom: 20px; }
+.pub-section p:last-child { margin-bottom: 0; }
+.pub-section strong { color: var(--navy); }
+
+/* CALLOUT */
+.pub-callout { background: var(--navy); color: var(--cream); padding: 40px 44px; margin: 40px 0; border-radius: 6px; position: relative; overflow: hidden; }
+.pub-callout::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
+.pub-callout-inner { position: relative; z-index: 1; }
+.pub-callout-number { font-family: var(--font-heading); font-size: clamp(2.5rem,5vw,4rem); font-weight: 700; color: var(--cream); letter-spacing: -0.02em; line-height: 1; margin-bottom: 8px; }
+.pub-callout-label { font-size: 1rem; color: var(--text-light); line-height: 1.6; max-width: 480px; }
+.pub-callout-footnote { font-size: 0.75rem; color: rgba(240,239,235,0.3); margin-top: 16px; font-style: italic; }
+
+/* FRAMEWORK */
+.pub-framework { border: 1px solid rgba(27,46,75,0.12); border-radius: 6px; overflow: hidden; margin: 32px 0; }
+.pub-framework-header { background: var(--cream-dark); padding: 16px 24px; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); }
+.pub-framework-row { display: grid; grid-template-columns: 1fr 1.4fr 1.2fr; border-bottom: 1px solid rgba(27,46,75,0.08); }
+.pub-framework-row:last-child { border-bottom: none; }
+.pub-framework-cell { padding: 20px 24px; border-right: 1px solid rgba(27,46,75,0.08); }
+.pub-framework-cell:last-child { border-right: none; }
+.pub-framework-cell-label { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 8px; }
+.pub-framework-cell-content { font-size: 0.875rem; line-height: 1.6; color: #2a3a4a; }
+.pub-framework-cell.goal { background: rgba(27,46,75,0.03); }
+
+/* DISCLAIMER */
+.pub-disclaimer { margin: 64px 0 0; padding: 28px 0; border-top: 1px solid var(--cream-dark); font-size: 0.8125rem; line-height: 1.7; color: var(--text-secondary); }
+
+/* CTA */
+.pub-cta { background: var(--cream); padding: 64px clamp(24px,5vw,64px); margin: 64px 0 0; text-align: center; }
+.pub-cta h2 { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.01em; }
+.pub-cta p { font-size: 1rem; color: var(--text-secondary); max-width: 480px; margin: 0 auto 32px; line-height: 1.7; }
+.pub-cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 14px 32px; border-radius: 4px; text-decoration: none; transition: all 0.3s var(--ease); cursor: pointer; border: none; display: inline-flex; align-items: center; }
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); }
+.btn-secondary:hover { border-color: var(--navy); }
+
+/* MORE PUBS */
+.more-pubs { background: var(--navy-dark); padding: 64px clamp(24px,5vw,64px); }
+.more-pubs h3 { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.4); margin-bottom: 32px; }
+.more-pubs-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; max-width: 640px; }
+.more-pub-card { background: rgba(240,239,235,0.04); border: 1px solid rgba(240,239,235,0.08); border-radius: 6px; padding: 24px 20px; text-decoration: none; transition: background 0.2s ease; display: block; }
+.more-pub-card:hover { background: rgba(240,239,235,0.08); }
+.more-pub-tag { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(240,239,235,0.35); margin-bottom: 10px; }
+.more-pub-title { font-family: var(--font-heading); font-size: 0.9375rem; font-weight: 600; color: var(--cream); line-height: 1.4; }
+
+/* FOOTER */
+footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px solid rgba(240,239,235,0.06); }
+.footer-main { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1rem; color: var(--cream); }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.5); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.3); }
+.footer-disclaimer { max-width: 1280px; margin: 16px auto 0; padding: 0 clamp(24px,5vw,64px); font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); }
+
+@media (max-width: 768px) {
+  .pub-framework-row { grid-template-columns: 1fr; }
+  .pub-framework-cell { border-right: none; }
+  .more-pubs-grid { grid-template-columns: 1fr; }
+  .pub-callout { padding: 28px 24px; }
+}
+</style>
+<!-- SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Tax-Loss Harvesting: Building a Loss Bank",
+  "description": "A guide to tax-loss harvesting as a year-round engine: how losses are banked, carried forward, and used to offset capital gains and income for years, and why most advisors leave value on the table.",
+  "datePublished": "2026-07-02T05:00:00-07:00",
+  "dateModified": "2026-07-02T05:00:00-07:00",
+  "author": {
+    "@type": "Person",
+    "name": "Akiva Glazerson",
+    "jobTitle": "Founder",
+    "url": "https://stqcap.com/akiva-glazerson.html",
+    "sameAs": "https://www.linkedin.com/in/akiva-g-5ba463a3"
+  },
+  "publisher": {
+    "@type": "FinancialService",
+    "name": "STQ Capital",
+    "url": "https://stqcap.com"
+  },
+  "mainEntityOfPage": "https://stqcap.com/tax-loss-harvesting.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is tax-loss harvesting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tax-loss harvesting is selling an investment that has dropped below its purchase price to realize a capital loss, then reinvesting the proceeds to keep your market exposure roughly the same. The realized loss offsets capital gains elsewhere in your portfolio and, if losses exceed gains, up to 3,000 dollars of ordinary income per year. Any remaining loss carries forward indefinitely. The result is a lower tax bill without a meaningful change to how you are invested."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a loss bank or capital loss carryforward?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A loss bank is the running balance of realized capital losses that have not yet been used. When you harvest more losses than you have gains to offset in a given year, the excess does not expire. It carries forward to future years, where it can offset future gains, including gains from selling a concentrated position, a business, or real estate. Systematically harvesting in every kind of market builds that balance up over time, so the offsetting power is there when you need it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the wash sale rule?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The wash sale rule disallows a loss if you buy the same security, or one that is substantially identical, within 30 days before or after the sale. To harvest a loss and stay invested, you reinvest the proceeds in a security that maintains your exposure without being substantially identical, then avoid repurchasing the original for 31 days. Managing the wash sale rule across many lots is one of the main reasons harvesting is done far more effectively at the individual-stock level than with a single fund."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is direct indexing better for tax-loss harvesting than an index fund?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When you own an index as a single ETF or mutual fund, the fund can only show a loss if the whole index is down. When you own the underlying stocks directly in a separately managed account, individual names fall even in an up year, so losses can be harvested continuously regardless of where the index is. Direct indexing turns harvesting from a once-a-year, whole-market event into a year-round, security-level engine, which is what actually builds a meaningful loss bank."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does tax-loss harvesting just delay taxes rather than avoid them?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Harvesting lowers the cost basis of your replacement holdings, so part of the benefit is deferral, and deferral itself has real value because the money you would have paid in tax stays invested and compounding. But it is more than pure timing. Harvested losses can offset short-term gains taxed at high ordinary rates while the deferred gain is later taxed at lower long-term rates, and low-basis lots can ultimately be donated or held for a step-up at death, so the deferred gain may never be taxed at all."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1HFD429BTQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1HFD429BTQ');
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
+    if (a) gtag('event', 'cta_email_click', { link_url: a.getAttribute('href') });
+  });
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
+    <a href="/research.html" class="nav-back">All Research</a>
+    <a href="#" onclick="window.location.href='mailto:info@stqcap.com?subject=Tax-Loss%20Harvesting%20Review';return false;" class="nav-cta">Portfolio Review</a>
+  </div>
+</nav>
+
+<section class="pub-hero">
+  <div class="hero-watermark">STQ</div>
+  <div class="pub-hero-inner">
+    <div class="pub-series">STQ Research - Tax Strategy Series</div>
+    <h1>Tax-Loss Harvesting: Building a Loss Bank.</h1>
+    <p class="pub-hero-sub">Most advisors harvest losses once a year, in December, inside a fund that can barely do it. Done right, it is a year-round engine that banks losses to pay down the tax on your biggest gains, for years.</p>
+    <div class="pub-meta">
+      <div class="pub-meta-item">Author <span>Akiva Glazerson</span></div>
+      <div class="pub-meta-item">Series <span>Tax Strategy</span></div>
+      <div class="pub-meta-item">Read time <span>10 minutes</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="pub-content">
+
+  <nav class="pub-toc">
+    <div class="pub-toc-title">Contents</div>
+    <ol>
+      <li><a href="#what-it-is">What Harvesting Actually Does</a></li>
+      <li><a href="#loss-bank">The Loss Bank: Why Losses Compound</a></li>
+      <li><a href="#where-most-fail">Where Most Harvesting Falls Short</a></li>
+      <li><a href="#mechanics">The Mechanics: Wash Sales and Substitution</a></li>
+      <li><a href="#stq-approach">The STQ Approach: Harvesting as Infrastructure</a></li>
+    </ol>
+  </nav>
+
+  <section class="pub-section" id="what-it-is">
+    <div class="pub-section-num">Section 01</div>
+    <h2>What Harvesting Actually Does</h2>
+    <p>Tax-loss harvesting is one of the few strategies in investing that lowers your tax bill without changing what you own in any way that matters. You sell a holding that has dropped below what you paid for it, book the loss, and immediately reinvest the proceeds in something that keeps your market exposure intact. Your portfolio still does the same thing the next morning. What changed is that you now hold a realized capital loss, and that loss is worth money.</p>
+    <p>A realized loss first offsets your realized capital gains, dollar for dollar. If your losses exceed your gains for the year, up to <strong>3,000 dollars</strong> of the excess can offset ordinary income, which is taxed at the highest rates you pay. Anything left over does not vanish. It carries forward, with no expiration, to be used against gains in future years.</p>
+    <p>That last part is the whole game, and it is the part most people miss. Harvesting is not really about this year's return. It is about building a stockpile of losses you can spend later, on the day you finally sell the concentrated position, the business, or the property that carries a gain large enough to matter.</p>
+  </section>
+
+  <section class="pub-section" id="loss-bank">
+    <div class="pub-section-num">Section 02</div>
+    <h2>The Loss Bank: Why Losses Compound</h2>
+    <p>Think of every harvested loss as a deposit into an account whose only purpose is to absorb future gains. We call it the loss bank. Every deposit sits there, indefinitely, until a taxable gain shows up to be offset. The balance does not shrink with time. It only grows, one harvested lot at a time, in every kind of market.</p>
+
+    <div class="pub-callout">
+      <div class="pub-callout-inner">
+        <div class="pub-callout-number">$0</div>
+        <div class="pub-callout-label">Expiration date on a federal capital loss carryforward. A loss you bank today can offset a gain a decade from now.</div>
+        <div class="pub-callout-footnote">Under current federal law, net capital losses carry forward indefinitely for individuals. State treatment and future tax law may differ. Not tax advice.</div>
+      </div>
+    </div>
+
+    <p>The value of a full loss bank shows up at the moments that matter most. A founder ready to diversify a low-basis stake, a family selling a rental after decades of appreciation, an investor whose portfolio finally rebalanced into a large gain: each of these is a tax event measured in six or seven figures. A loss bank built patiently over years is what lets you meet that event with offsets already in hand, instead of writing the full check.</p>
+    <p>This is also why harvesting and diversifying a concentrated position belong in the same plan. The losses you bank year after year are precisely what pay down the tax as you trim the position. We cover that sequence in our guide to <a href="/concentrated-stock-positions.html">concentrated stock positions</a>. The loss bank is the engine underneath it.</p>
+  </section>
+
+  <section class="pub-section" id="where-most-fail">
+    <div class="pub-section-num">Section 03</div>
+    <h2>Where Most Harvesting Falls Short</h2>
+    <p>Almost everyone agrees tax-loss harvesting is a good idea. The gap between firms is in how much of it they actually capture, and for most advisors the answer is: a small fraction. Two habits are to blame.</p>
+    <p>The first is timing. Harvesting gets treated as a December chore, a once-a-year sweep done alongside the holiday rebalance. But markets do not save their declines for the fourth quarter. Individual positions dip and recover throughout the year, and a loss that existed in March is gone by the time the December review rolls around. Checking once a year means harvesting the losses that happen to be visible on one arbitrary day and missing every one that came and went in between.</p>
+    <p>The second is the instrument. If you hold the market through a single index ETF or mutual fund, that fund shows a harvestable loss only when the entire index is below your basis. In a year the market finishes up, the fund shows a gain, and there is nothing to harvest, even though dozens of stocks inside that index fell hard along the way. The losses are real. The wrapper just hides them from you.</p>
+
+    <div class="pub-framework">
+      <div class="pub-framework-header">Two Ways to Harvest - What You Can Actually Capture</div>
+      <div class="pub-framework-row">
+        <div class="pub-framework-cell goal">
+          <div class="pub-framework-cell-label">Approach</div>
+          <div class="pub-framework-cell-content" style="font-weight:700;color:var(--navy);">Once-a-year, single fund</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">What Gets Harvested</div>
+          <div class="pub-framework-cell-content">Only losses visible on the day you look, and only when the whole index is below basis.</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Result</div>
+          <div class="pub-framework-cell-content">Little to nothing in up years. A thin loss bank when you need it most.</div>
+        </div>
+      </div>
+      <div class="pub-framework-row">
+        <div class="pub-framework-cell goal">
+          <div class="pub-framework-cell-label">Approach</div>
+          <div class="pub-framework-cell-content" style="font-weight:700;color:var(--navy);">Year-round, direct indexing</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">What Gets Harvested</div>
+          <div class="pub-framework-cell-content">Losses in individual stocks whenever they fall, monitored continuously, even in an up market.</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Result</div>
+          <div class="pub-framework-cell-content">A steady stream of banked losses that compounds year after year.</div>
+        </div>
+      </div>
+    </div>
+
+    <p>Owning the index as its individual stocks, rather than as one fund, is what fixes both problems at once. When you hold the names directly in a separately managed account, a stock that drops 15 percent can be harvested even while the index is up 10 percent. That is the difference between harvesting theater and a loss bank that actually fills. See <a href="/how-direct-indexing-works.html">How Direct Indexing Works</a> for the full mechanism.</p>
+  </section>
+
+  <section class="pub-section" id="mechanics">
+    <div class="pub-section-num">Section 04</div>
+    <h2>The Mechanics: Wash Sales and Substitution</h2>
+    <p>The one rule that governs harvesting is the <strong>wash sale rule</strong>. It disallows your loss if you buy back the same security, or one that is substantially identical, within 30 days before or after the sale. The point of the rule is to stop you from claiming a loss on paper while never really leaving the position. To harvest correctly, you have to genuinely change what you hold, at least for a window.</p>
+    <p>The way through is substitution. You sell the position at a loss and immediately buy a different security that keeps your exposure close to identical without being substantially identical to what you sold. Your risk and return profile barely moves. The loss is preserved. After the 31-day window, you can return to the original holding if you choose.</p>
+    <p>This is straightforward with one holding and genuinely hard across hundreds of lots at once, which is the real argument for doing it at the individual-stock level with systems built for it. A direct-indexing account tracks the basis and holding period of every lot, watches for wash sale conflicts across the whole portfolio, and executes substitutions that hold the index exposure steady. Doing that by hand, position by position, is how errors and disallowed losses creep in.</p>
+    <p>One honest caveat: harvesting lowers the cost basis of the replacement holdings, so some of the benefit is deferral rather than outright avoidance. That deferral still has real value, because the tax you did not pay stays invested and compounding. And it is often more than deferral. Losses can offset short-term gains taxed at the highest ordinary rates while the deferred gain is later taxed at lower long-term rates, and the lowest-basis lots can eventually be donated or held for a step-up at death, so the gain may never be taxed at all.</p>
+  </section>
+
+  <section class="pub-section" id="stq-approach">
+    <div class="pub-section-num">Section 05</div>
+    <h2>The STQ Approach: Harvesting as Infrastructure</h2>
+    <p>We do not treat tax-loss harvesting as a feature to switch on in December. We treat it as standing infrastructure that runs underneath the whole portfolio, every day the market is open. Individual positions are monitored continuously, losses are captured as they appear, and substitutions keep your exposure where it belongs the entire time.</p>
+    <p>The point of running it that way is not to score a slightly better return this year. It is to build the loss bank deliberately, so that when the large gain finally arrives, from a concentrated position you are diversifying, a property you are selling, a portfolio you are repositioning, the offsets are already sitting there waiting. Harvesting is the quiet engine that makes the rest of a tax-aware plan work.</p>
+    <p>And it does not run in isolation. The losses we bank feed directly into how we unwind concentrated stock, how we time realized gains into the right years, and how we coordinate with your CPA so nothing is harvested twice or wasted. That is the difference between a checkbox on a statement and a strategy. To see how harvesting fits alongside asset location, tax-aware rebalancing, and the rest, start with our <a href="/tax-aware-investing-guide.html">complete guide to tax-aware investing</a>.</p>
+  </section>
+
+  <div class="pub-disclaimer">
+    <strong>Disclaimer:</strong> This publication is for informational and educational purposes only. It does not constitute personalized investment, tax, or legal advice, and it is not an offer or solicitation. Tax-loss harvesting involves risks, including the risk that a substitute security performs differently from the security sold, and the benefit depends on your specific tax situation. Harvesting generally lowers the cost basis of replacement holdings, deferring rather than always eliminating tax. The wash sale rule and the treatment of capital loss carryforwards are governed by tax law, which is subject to change, and state treatment may differ from federal. Investments involve risk, including the potential loss of principal. Please consult a qualified tax, legal, and financial professional regarding your situation before acting. Advisory services offered through STQ Capital, an investment adviser registered with the state of California.
+  </div>
+
+</div>
+
+<section class="pub-cta">
+  <h2>Is Your Portfolio Actually Harvesting?</h2>
+  <p>We will look at how your losses are being captured today, and show you what a year-round loss bank would have banked instead.</p>
+  <div class="pub-cta-buttons">
+    <a href="#" onclick="window.location.href='mailto:info@stqcap.com?subject=Tax-Loss%20Harvesting%20Review';return false;" class="btn btn-primary">Request a Portfolio Review</a>
+    <a href="https://calendly.com/akiva-glazerson-stqcap/30min" target="_blank" class="btn btn-secondary">Schedule a Call</a>
+  </div>
+</section>
+
+<section class="more-pubs">
+  <div style="max-width:800px;margin:0 auto;">
+    <h3>More from STQ Research</h3>
+    <div class="more-pubs-grid">
+      <a href="/how-direct-indexing-works.html" class="more-pub-card">
+        <div class="more-pub-tag">Tax Alpha</div>
+        <div class="more-pub-title">How Direct Indexing Works</div>
+      </a>
+      <a href="/concentrated-stock-positions.html" class="more-pub-card">
+        <div class="more-pub-tag">Tax Strategy</div>
+        <div class="more-pub-title">What to Do With a Concentrated Stock Position</div>
+      </a>
+      <a href="/tax-aware-investing-guide.html" class="more-pub-card">
+        <div class="more-pub-tag">Pillar Guide</div>
+        <div class="more-pub-title">The Complete Guide to Tax-Aware Investing</div>
+      </a>
+      <a href="/asset-location.html" class="more-pub-card">
+        <div class="more-pub-tag">Tax Strategy</div>
+        <div class="more-pub-title">All the Right Things in All the Wrong Places</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div class="footer-logo">STQ <span>/ Capital</span></div>
+    <div class="footer-copy">© 2026 STQ Capital</div>
+  </div>
+  <div class="footer-disclaimer">Advisory services are offered through STQ Capital ("STQ"), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable.</div>
+</footer>
+
+</body>
+</html>
