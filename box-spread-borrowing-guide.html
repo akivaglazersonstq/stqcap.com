@@ -160,6 +160,18 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
   ]
 }
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1HFD429BTQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1HFD429BTQ');
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
+    if (a) gtag('event', 'cta_email_click', { link_url: a.getAttribute('href') });
+  });
+</script>
 </head>
 <body>
 <nav>
@@ -280,6 +292,10 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
     <div class="faq-item">
       <h3>What are the main risks?</h3>
       <p>It requires a margin account and liquid collateral, carries margin-call risk, must be rolled or repaid at maturity, and is marked to market in the meantime. Using European-style cash-settled index options such as SPX avoids early-assignment risk.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Who is box spread borrowing for?</h3>
+      <p>It tends to fit investors with a sizable portfolio of liquid securities who want low-cost, flexible liquidity without selling appreciated positions or triggering capital gains. Common uses include funding a purchase, bridging a deal, paying a tax bill, or accessing cash while staying invested.</p>
     </div>
   </div>
 
