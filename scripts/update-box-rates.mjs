@@ -96,7 +96,7 @@ function buildBlock(c) {
   ].filter(([, v]) => v != null);
   const curveStr = '[' + curve.map(([l, v]) => `{label:'${l}',rate:${v}}`).join(',') + ']';
   return [
-    '/* BOX_RATES_START — auto-updated daily by scripts/update-box-rates.mjs (U.S. Treasury par yield curve) */',
+    '/* BOX_RATES_START - auto-updated daily by scripts/update-box-rates.mjs (U.S. Treasury par yield curve) */',
     `var STQ_RATES=${ratesStr};`,
     `var STQ_AS_OF='${c.asOf}';`,
     `var STQ_CURVE=${curveStr};`,

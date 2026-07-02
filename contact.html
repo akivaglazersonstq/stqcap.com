@@ -106,6 +106,9 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 
 @media (max-width: 1024px) { .contact-cards { grid-template-columns: 1fr; } .form-grid { grid-template-columns: 1fr; gap: 48px; } }
 @media (max-width: 768px) { .nav-links, .nav-cta-desktop, .nav-login-dropdown { display: none !important; } .nav-toggle { display: flex !important; } .nav-inner { padding: 0 24px; } .page-hero { padding: 60px 0 60px; } .form-row { grid-template-columns: 1fr; } }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 14px 32px; border-radius: 4px; text-decoration: none; cursor: pointer; border: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s ease; }
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
 </style>
 <!-- SCHEMA -->
 <script type="application/ld+json">

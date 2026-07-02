@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://stqcap.com">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="STQ Capital | Box Spread RIA &amp; Tax-Aware Investing">
+<meta name="twitter:title" content="STQ Capital | Tax-Aware Investment Strategies">
 <meta name="twitter:description" content="The RIA built around box spread borrowing and tax-aware investing. Keep more of what you earn.">
 <link rel="canonical" href="https://stqcap.com">
 <meta property="og:image" content="https://stqcap.com/og-home.png">
@@ -91,7 +91,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 @keyframes solSlideIn { from { opacity: 0; } to { opacity: 1; } }
 .sol-panel-num { font-family: var(--font-heading); font-size: 48px; font-weight: 700; color: rgba(27,46,75,0.05); line-height: 1; margin-bottom: 2px; }
 .sol-panel-title { font-family: var(--font-heading); font-size: 24px; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.15; }
-.sol-panel-text { font-size: 16px; line-height: 1.75; color: #4a5a6a; }
+.sol-panel-text { font-size: 16px; line-height: 1.75; color: #5a6a7e; }
 .sol-panel-text + .sol-panel-text { margin-top: 10px; }
 .sol-panel-text p { margin-top: 10px; }
 .sol-panel-line { width: 48px; height: 2px; background: var(--navy); margin-top: 20px; opacity: 0.2; }
@@ -388,7 +388,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  <div class="container">
  <div class="hero-content">
  <div class="hero-tag">Quantitative Investment and Wealth Advisory</div>
- <h1 id="hero-headline">&nbsp;</h1>
+ <h1 id="hero-headline">You've earned it.<br>Let's grow it.</h1>
  <p class="hero-sub" id="hero-sub" style="opacity:0;transition:opacity 1.2s ease;">STQ is a modern investment advisory firm focused on tax-aware investment strategies, institutional-quality portfolio construction, and a conflict-free fiduciary model.</p>
  <div class="hero-buttons">
  <a href="#solutions" class="btn btn-primary" style="min-width:220px;justify-content:center;">Our Solutions</a>
@@ -680,7 +680,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
  <a href="/framework.html">Our Framework</a>
  <a href="/contact.html">Contact</a>
  <a href="/privacy.html">Privacy Policy</a>
- <a href="https://adviserinfo.sec.gov/" target="_blank">Form ADV</a>
+ <a href="https://adviserinfo.sec.gov/firm/summary/340239" target="_blank">Form ADV</a>
  <a href="https://login.orionadvisor.com/login.html?g=20e2ec87-e47b-4ab9-9ea4-a395b4b01ee1&e=4&i=138" target="_blank">Client Login</a>
  </div>
  <div class="footer-copy">© 2026 STQ Capital</div>
@@ -735,12 +735,13 @@ function handleDiagnostic(e) {
  btn.textContent='Submitted ✓'; document.getElementById('diagnostic-form').reset();
  } else { throw new Error(); }
  }).catch(function(){
- msg.style.display='block'; msg.style.color='#991B1B'; msg.textContent='Something went wrong. Email akiva.glazerson@stqcap.com directly.';
+ msg.style.display='block'; msg.style.color='#991B1B'; msg.textContent='Something went wrong. Email info@stqcap.com directly.';
  btn.textContent="See What's Possible →"; btn.disabled=false;
  });
 }
 (function() {
  var el=document.getElementById('hero-headline');
+ el.innerHTML='&nbsp;';
  var lines=["You've earned it.","Let's grow it."];
  var lineIndex=0; var charIndex=0; var fullText='';
  var style=document.createElement('style');
@@ -878,9 +879,9 @@ function goStep(index) {
 document.querySelectorAll('.stepper-step').forEach(function(s){s.addEventListener('click',function(){goStep(+s.dataset.step);});});
 (function(){
  var issues=[
- {title:"Stop Borrowing From Banks. Your Portfolio Can Do It Better.",date:"April 2, 2026",preview:"Lines of credit are expensive, bank-controlled, and unnecessary. Your portfolio can do the same job better – at near-Treasury rates, with no application and no forced selling.",tag:"Box Spreads",url:"/insights/insight-box-spreads.html"},
- {title:"$5M in Tesla. $4M for a House. Zero Tax. Here's How.",date:"April 8, 2026",preview:"Selling means a massive tax bill. Not selling means the house stays out of reach. There's a third option most investors don't know exists.",tag:"Concentrated Positions",url:"/insights/insight-tesla-house.html"},
- {title:"The Peter Thiel IRA. What He Did and Why You Can't Ignore It.",date:"April 12, 2026",preview:"Peter Thiel turned a Roth IRA into $5 billion – tax free. The mechanics were aggressive. The principle behind it is available to almost anyone.",tag:"Tax Strategy",url:"/insights/insight-peter-thiel-ira.html"}
+ {title:"Most Portfolios Are Assembled. Yours Should Be Constructed.",date:"June 29, 2026",preview:"A questionnaire, a risk score, a model off the shelf - the same allocation as a thousand other clients. That is assembly, not construction. Real construction is built around one person, after tax, as a system.",tag:"Portfolio Construction",url:"/insights/insight-portfolio-construction.html"},
+ {title:"Too Big to Sell? You Have Six Options, Not Two.",date:"June 29, 2026",preview:"A concentrated stock position feels like a choice between riding it and selling it. It is not. Six tools cover four goals: diversify, hedge, monetize, and give.",tag:"Tax Strategy",url:"/insights/insight-concentrated-six-options.html"},
+ {title:"A Windfall Is Coming. Start Banking Losses Now.",date:"June 26, 2026",preview:"A business sale, an RSU vest, a property closing - the gain you can already see coming has a tax bill attached. A loss bank, built years early through direct indexing, is how you offset it.",tag:"Tax Alpha",url:"/insights/insight-loss-bank.html"}
  ];
  var grid=document.getElementById('homepage-issues');
  if(!grid) return;
@@ -904,7 +905,7 @@ function handleInsightsStripSubscribe(e){
  document.getElementById('strip-email').value=''; btn.textContent='Subscribed ✓';
  }else{throw new Error();}
  }).catch(function(){
- msg.style.display='block'; msg.textContent='Something went wrong. Email akiva.glazerson@stqcap.com to subscribe.';
+ msg.style.display='block'; msg.textContent='Something went wrong. Email info@stqcap.com to subscribe.';
  btn.textContent='Subscribe'; btn.disabled=false;
  });
 }
@@ -920,7 +921,7 @@ function handleSubscribe(e){
  document.getElementById('newsletter-email').value=''; btn.textContent='Subscribed ✓';
  }else{throw new Error();}
  }).catch(function(){
- msg.style.display='block'; msg.style.color='#991B1B'; msg.textContent='Something went wrong. Email akiva.glazerson@stqcap.com to subscribe.';
+ msg.style.display='block'; msg.style.color='#991B1B'; msg.textContent='Something went wrong. Email info@stqcap.com to subscribe.';
  btn.textContent='Subscribe'; btn.disabled=false;
  });
 }

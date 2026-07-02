@@ -19,13 +19,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://stqcap.com/get-started.html</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://stqcap.com/index.html</loc>
+    <loc>https://stqcap.com/</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
