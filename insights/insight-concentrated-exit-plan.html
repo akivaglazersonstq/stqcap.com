@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Ride and Pray, or Sell and Pay? We Picked Neither. | STQ Capital</title>
+<meta name="description" content="A real case: one volatile stock dominating a client's net worth. The three-part plan - a collar for protection, a box spread for liquidity, and a direct indexing account for a tax-neutral exit.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ride and Pray, or Sell and Pay? We Picked Neither.">
+<meta name="twitter:description" content="One volatile stock dominating a client's net worth. The three-part plan: protection, liquidity, and a tax-neutral exit over time.">
+<meta name="author" content="Akiva Glazerson, STQ Capital">
+<link rel="canonical" href="https://stqcap.com/insights/insight-concentrated-exit-plan.html">
+<meta property="og:image" content="https://stqcap.com/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://stqcap.com/og-default.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://stqcap.com/insights/insight-concentrated-exit-plan.html">
+<meta property="og:title" content="Ride and Pray, or Sell and Pay? We Picked Neither.">
+<meta property="og:description" content="A real case: one volatile stock dominating a client's net worth. The three-part plan - a collar for protection, a box spread for liquidity, and a direct indexing account for a tax-neutral exit.">
+<meta property="og:site_name" content="STQ Capital">
+<meta property="article:published_time" content="2026-06-30T05:00:00-07:00">
+<meta property="article:author" content="Akiva Glazerson">
+<meta property="article:section" content="Tax Strategy">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33; --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF; --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7); --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif; --ease-out: cubic-bezier(0.16,1,0.3,1); }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(27,46,75,0.03) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+.nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; }
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-back { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+.nav-back:hover { color: var(--navy); }
+.nav-back svg { transition: transform 0.2s; }
+.nav-back:hover svg { transform: translateX(-3px); }
+.issue-hero { padding: 140px 0 72px; background: var(--navy); position: relative; overflow: hidden; }
+.issue-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(240,239,235,0.03) 1px, transparent 1px); background-size: 60px 60px; }
+.hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.hero-container { max-width: 1100px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+.issue-hero h1 { font-family: var(--font-heading); font-size: clamp(2.2rem,5vw,3.75rem); font-weight: 700; color: var(--cream); line-height: 1.08; letter-spacing: -0.02em; max-width: 780px; margin-bottom: 24px; animation: slideUp 0.7s var(--ease-out) 0.2s both; }
+.issue-subhead { font-size: 1.125rem; color: var(--text-light); max-width: 640px; line-height: 1.75; animation: slideUp 0.7s var(--ease-out) 0.3s both; }
+.issue-meta { display: flex; align-items: center; gap: 14px; margin-top: 24px; flex-wrap: wrap; }
+.meta-category { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.6); border: 1px solid rgba(240,239,235,0.2); padding: 4px 12px; border-radius: 3px; }
+.meta-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(240,239,235,0.2); }
+.meta-date { font-family: var(--font-heading); font-size: 0.7rem; color: rgba(240,239,235,0.3); letter-spacing: 0.08em; }
+.issue-content { max-width: 720px; margin: 0 auto; padding: 72px clamp(24px,5vw,48px) 120px; position: relative; z-index: 1; }
+.author-block { display: flex; align-items: center; gap: 16px; padding: 24px 0; border-bottom: 1px solid rgba(27,46,75,0.1); margin-bottom: 48px; }
+.author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; color: var(--cream); flex-shrink: 0; }
+.author-name { font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--navy); letter-spacing: 0.02em; }
+.author-title { font-size: 0.8rem; color: var(--text-secondary); margin-top: 3px; }
+.read-time { margin-left: auto; font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(27,46,75,0.3); }
+.issue-body p { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 24px; }
+.issue-body p strong { color: var(--text-primary); font-weight: 600; }
+.issue-body h2 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--navy); margin: 44px 0 16px; letter-spacing: 0.01em; }
+.issue-body a { color: var(--navy); font-weight: 600; }
+.pull-quote { border-left: 3px solid var(--navy); padding: 4px 0 4px 28px; margin: 40px 0; }
+.pull-quote p { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--navy); line-height: 1.55; letter-spacing: -0.01em; margin: 0; }
+.issue-cta { background: var(--cream-dark); border-radius: 6px; padding: 36px 40px; margin: 48px 0 0; text-align: center; }
+.issue-cta p { font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.75; max-width: 480px; margin-left: auto; margin-right: auto; }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 28px; border-radius: 4px; text-decoration: none; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+footer { background: var(--navy-dark); padding: 48px 0 32px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); }
+.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 24px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.4); }
+.footer-links { display: flex; gap: 32px; }
+.footer-links a { font-size: 0.8125rem; color: rgba(240,239,235,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--cream); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.25); }
+.footer-disclaimer { margin-top: 24px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.18); max-width: 900px; }
+@keyframes slideUp { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 768px) { .nav-inner { padding: 0 24px; } .issue-hero h1 { font-size: 2rem; } .issue-content { padding: 48px 24px 80px; } }
+</style>
+<!-- SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Ride and Pray, or Sell and Pay? We Picked Neither.",
+  "description": "A real case: one volatile stock dominating a client's net worth. The three-part plan - a collar for protection, a box spread for liquidity, and a direct indexing account for a tax-neutral exit.",
+  "datePublished": "2026-06-30T05:00:00-07:00",
+  "dateModified": "2026-06-30T05:00:00-07:00",
+  "author": {
+    "@type": "Person",
+    "name": "Akiva Glazerson",
+    "jobTitle": "Founder",
+    "url": "https://stqcap.com/akiva-glazerson.html", "sameAs": "https://www.linkedin.com/in/akiva-g-5ba463a3",
+    "worksFor": {
+      "@type": "FinancialService",
+      "name": "STQ Capital",
+      "url": "https://stqcap.com"
+    }
+  },
+  "publisher": {
+    "@type": "FinancialService",
+    "name": "STQ Capital",
+    "url": "https://stqcap.com"
+  },
+  "mainEntityOfPage": "https://stqcap.com/insights/insight-concentrated-exit-plan.html",
+  "articleSection": "Tax Strategy",
+  "keywords": "concentrated stock position, collar strategy, box spread borrowing, direct indexing, tax-loss harvesting, tax-neutral exit, constructive sale rules, low basis stock"
+}
+</script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
+    <a href="/insights.html" class="nav-back">
+      <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+        <path d="M6 1L1 5M1 5L6 9M1 5H13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      All Issues
+    </a>
+  </div>
+</nav>
+
+<section class="issue-hero">
+  <div class="hero-watermark">STQ</div>
+  <div class="hero-container">
+    <h1>Ride and Pray, or Sell and Pay? We Picked Neither.</h1>
+    <p class="issue-subhead">A new client, one volatile stock, and most of a net worth riding on it. Here is the three-part structure we are building instead of the usual binary.</p>
+    <div class="issue-meta">
+      <span class="meta-category">Tax Strategy</span>
+      <span class="meta-dot"></span>
+      <span class="meta-date">June 30, 2026</span>
+    </div>
+  </div>
+</section>
+
+<div class="issue-content">
+  <div class="author-block">
+    <div class="author-avatar">AG</div>
+    <div>
+      <div class="author-name"><a href="/akiva-glazerson.html" style="color:inherit;text-decoration:none;">Akiva Glazerson</a></div>
+      <div class="author-title">Founder, STQ Capital</div>
+    </div>
+    <div class="read-time">5 min read</div>
+  </div>
+
+  <div class="issue-body">
+    <p>This is one of the most creative cases we are working on right now. We are onboarding a client holding a single, volatile stock that has grown into the dominant position in their net worth. Years of upside, all in one name, and all the risk that comes with that.</p>
+
+    <p>The dilemma is the classic one. Too risky to hold, because one bad quarter can erase years of gains. Too expensive to sell, because the embedded gain means a capital gains bill that takes a brutal bite.</p>
+
+    <p>The usual advice here is binary: ride and pray, or sell and pay. We don't think in binaries. Here is the three-part structure we are building, customized to this client's basis and brackets.</p>
+
+    <h2>1. A Collar for Protection</h2>
+
+    <p>We are buying a put option to set a floor under the position and selling a call option to help finance it. Downside defined, no shares sold, no gain triggered. The mandate on this leg is simple: structure it so a 20% drawdown is off the table.</p>
+
+    <h2>2. A Box Spread for Liquidity</h2>
+
+    <p>With the position protected, we are borrowing against it with a <a href="/box-spread-borrowing-guide.html">box spread</a>: liquidity at a rate near Treasuries, set by the options market rather than a bank's lending desk. The client gets cash for their other goals, the position stays intact, and the gain stays deferred.</p>
+
+    <h2>3. Direct Indexing for a Tax-Neutral Exit</h2>
+
+    <p>The portfolio has no spare liquidity without the box spread, so the loan proceeds go to work: they fund a <a href="/how-direct-indexing-works.html">direct indexing</a> account built for tax-loss harvesting.</p>
+
+    <p>From there, we sell the concentrated name down gradually while harvesting losses elsewhere in the portfolio. Each year's realized gain gets offset by banked losses, so the unwind lands near tax-neutral.</p>
+
+    <div class="pull-quote">
+      <p>Protected. Liquid. Exited tax-neutrally over time.</p>
+    </div>
+
+    <h2>The Trade-Offs</h2>
+
+    <p>None of this is free, and it is worth being plain about the costs. The collar caps upside above the call strike. The box spread is borrowed money that has to be rolled and repaid, and a drawdown works against it. The exit takes years and discipline, and constructive-sale rules have to be respected at every step of the structure.</p>
+
+    <h2>Why Sequencing Is the Strategy</h2>
+
+    <p>None of these tools is exotic on its own. The creativity is in sequencing them, protection first, then liquidity, then a patient tax-neutral exit, as one coordinated plan instead of three disconnected trades.</p>
+
+    <p>This is exactly the kind of problem most firms are not built to solve. It takes options, financing, and security-level tax management working together, tailored to one person's numbers. You cannot run it off a model. The full menu of tools for positions like this is in our guide: <a href="/concentrated-stock-positions.html">What to Do With a Concentrated Stock Position</a>.</p>
+
+    <p>If a single position has quietly become the dominant risk in your portfolio, there is a better path than hold-and-pray or sell-and-pay.</p>
+
+    <p style="font-size:0.8125rem;color:rgba(27,46,75,0.45);">Client details anonymized. Strategies shown are illustrative, involve risk, and are not suitable for everyone. This is informational only and not personalized tax, legal, or investment advice.</p>
+  </div>
+
+  <div class="issue-cta">
+    <p>Holding one stock that has become the dominant risk in your net worth? We will map your basis, your brackets, and your options, and show you what a coordinated plan looks like.</p>
+    <a href="mailto:akiva.glazerson@stqcap.com?subject=Concentrated%20Position%20Review" class="btn btn-primary">Request a Position Review</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-main">
+      <div class="footer-logo">STQ <span>/ Capital</span></div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
+        <a href="/insights.html">Newsletter</a>
+        <a href="/research.html">Research</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+      <div class="footer-copy">&#169; 2026 STQ Capital</div>
+    </div>
+    <div class="footer-disclaimer">Advisory services are offered through STQ Capital, an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable.</div>
+  </div>
+</footer>
+</body>
+</html>
