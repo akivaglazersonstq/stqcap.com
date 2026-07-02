@@ -42,15 +42,13 @@ Static site — serve the folder and open in a browser, e.g. `python -m http.ser
 Each new topic produces three assets: (1) an HTML insight page in `insights/` plus a listing entry in `insights.html`, (2) a MailerLite HTML email (tease, don't reveal — hook + 2-3 lines driving to the full article), (3) a LinkedIn post (short, opinionated). Sitemap should be updated when adding pages.
 
 ## Conventions
-- Contact email is `akiva.glazerson@stqcap.com` sitewide, EXCEPT:
-  - `contact.html` — uses `info@stqcap.com` (changed June 2026).
-  - `index.html` home-page footer contact block — uses `info@stqcap.com` (changed June 2026).
-  All other contact points (CTA buttons across pages, every `insights/insight-*.html` article, and the `_`-prefixed templates) remain `akiva.glazerson@stqcap.com`.
+- Contact email is `info@stqcap.com` sitewide (unified June 30, 2026): all CTA buttons, every `insights/insight-*.html` article, the `_`-prefixed templates, contact.html, and the home-page footer. Do not use `akiva.glazerson@stqcap.com` in site copy.
 - New insight pages should follow the structure of an existing `insights/insight-*.html` file (copy one as a starting point).
 
 ## Session history
 - **June 2026:** Changed the contact page email (`contact.html`) from `akiva.glazerson@stqcap.com` to `info@stqcap.com` — merged to `main`, live.
-- **June 2026:** Changed the home-page (`index.html`) footer contact email to `info@stqcap.com` (one-off; sitewide CTAs/articles/templates intentionally left on `akiva.glazerson@stqcap.com`).
+- **June 2026:** Changed the home-page (`index.html`) footer contact email to `info@stqcap.com`.
+- **June 30, 2026:** Unified ALL site emails to `info@stqcap.com` (every CTA, article, and template).
 
 ## Note
 This project was previously managed via Claude in Cowork mode (sandbox + browser-driven PRs). It's now managed via Claude Code on the web (direct local edits; GitHub writes via the GitHub integration). A fine-grained GitHub token named `STQ Cowork` may still exist — it can be revoked once Claude Code is using its own credentials.

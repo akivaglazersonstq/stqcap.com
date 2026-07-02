@@ -425,7 +425,7 @@ async function handleInsightsSubscribe(e) {
  try {
  const res = await fetch('https://connect.mailerlite.com/api/subscribers', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${ML}` }, body: JSON.stringify({ email, groups: ["185200901719328747"] }) });
  if (res.ok || res.status === 200 || res.status === 201) { msg.style.display = 'block'; msg.textContent = "You're in. First issue hits first thing."; document.getElementById('insights-email').value = ''; btn.textContent = 'Subscribed \u2713'; } else { throw new Error(); }
- } catch { msg.style.display = 'block'; msg.textContent = 'Something went wrong. Email akiva.glazerson@stqcap.com to subscribe.'; btn.textContent = 'Subscribe'; btn.disabled = false; }
+ } catch { msg.style.display = 'block'; msg.textContent = 'Something went wrong. Email info@stqcap.com to subscribe.'; btn.textContent = 'Subscribe'; btn.disabled = false; }
 }
 </script>
 </body>
