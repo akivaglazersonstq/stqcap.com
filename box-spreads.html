@@ -391,6 +391,90 @@ input[type=range]{width:100%;accent-color:#1B2E4B;height:4px;cursor:pointer;}
   }
 }
 </script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What exactly is a box spread?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A box spread is a four-leg options structure, two calls and two puts at different strike prices, on a broad index like the S&P 500 (XSP). The structure creates a fully hedged position with a known, fixed payoff at expiration. You sell the spread, receive cash upfront, and repay a fixed amount at settlement. The difference between what you receive and what you repay is the implied interest rate, set entirely by the options market, not a bank."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why are the rates so low?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Because there's no middleman. Traditional lenders, banks, brokerages, borrow at near-Treasury rates and lend to you at a markup. Box spreads cut them out entirely. The rate you pay is set by arbitrageurs in the options market competing to earn the risk-free rate. The result is a borrowing cost that typically sits within a few basis points of Treasury yields, without any bank spread layered on top."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How is the interest treated for taxes?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Box spread contracts are Section 1256 contracts, which means the interest is classified as a capital loss, not interest expense. This has two major implications. First, the deduction applies regardless of how you use the loan proceeds. Buy a vacation home, fund a business, pay a tax bill. The deduction follows the loan, not the use. Second, the 60/40 rule applies: 60% of the loss is treated as long-term capital gain, 40% as short-term. At top federal brackets, at top federal brackets this typically reduces the effective cost to roughly 25-30% below the stated rate. Consult a qualified tax advisor regarding your specific situation."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is there a margin call risk?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Box spread loans have defined repayment. A fixed amount is owed at expiration, regardless of what the market does between now and then. This is fundamentally different from a margin loan or SBLOC, where a portfolio decline can trigger a forced sale. There is no margin call in the traditional sense. The risk is that if your portfolio declines significantly and you need to exit early, unwinding the position before expiration may carry a cost."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What can I use the proceeds for?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Anything. Real estate, a tax bill, a business investment, home improvements, funding a trust, purchasing a vehicle, covering living expenses during a liquidity event. Unlike a HELOC (home use only) or SBLOC (investment use only for the deduction to apply), the Section 1256 capital loss classification means the tax deduction applies no matter what you do with the funds."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What portfolio size do I need?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Generally, a liquid, diversified investment portfolio of $250,000 or more is the starting point. Larger portfolios can access more capital and benefit more from the fixed costs of execution. STQ will assess your specific situation and help you determine whether box spread financing makes sense given your portfolio size, composition, and what you need the capital for."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How long does it take to get funds?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "From the time the box spread is executed, funds are typically available within a few business days. The timeline from initial conversation to execution depends on onboarding, account setup, and how quickly you want to move. For clients already at Schwab with appropriate options permissions, execution can happen within days of the decision."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I choose my loan term?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Box spreads are available across a range of expirations. Terms range from approximately 30 days out to several years. Short-dated structures offer floating-rate flexibility (rates reset when you roll at expiration). Longer-dated structures lock in your borrowing cost for the full term. STQ will help you select the term that matches your liquidity timeline and rate view."
+   }
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1HFD429BTQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1HFD429BTQ');
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
+    if (a) gtag('event', 'cta_email_click', { link_url: a.getAttribute('href') });
+  });
+</script>
 </head>
 <body>
 

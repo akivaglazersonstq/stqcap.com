@@ -131,6 +131,18 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
   }
 }
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1HFD429BTQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1HFD429BTQ');
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
+    if (a) gtag('event', 'cta_email_click', { link_url: a.getAttribute('href') });
+  });
+</script>
 </head>
 <body>
 
@@ -213,6 +225,10 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; position: relative;
 
   <h2>Former Clients</h2>
   <p>Even if we cease to provide you with financial services, our Privacy Policy will continue to apply to you, and we will continue to treat your nonpublic personal information with strict confidentiality. We maintain all records regarding all former clients for the retention period required by law.</p>
+
+  <h2>Website Analytics and Cookies</h2>
+  <p>Our website uses Google Analytics to understand how visitors find and use the site. Google Analytics sets cookies and collects standard technical information such as pages viewed, time on page, referring source, approximate location, browser, and device type. This data is aggregated and is not used to identify you personally. We do not link website analytics data to the nonpublic personal information we maintain for clients, and we do not sell it.</p>
+  <p>You can block or delete cookies through your browser settings, and you can opt out of Google Analytics by installing Google's <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--navy);">opt-out browser add-on</a>. Blocking cookies will not affect your ability to read the site.</p>
 
   <div class="privacy-divider"></div>
 

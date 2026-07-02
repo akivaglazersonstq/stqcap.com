@@ -109,6 +109,18 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
   "keywords": "covered calls, concentrated positions, options income, yield enhancement, STQ Capital"
 }
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1HFD429BTQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1HFD429BTQ');
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
+    if (a) gtag('event', 'cta_email_click', { link_url: a.getAttribute('href') });
+  });
+</script>
 </head>
 <body>
 <nav>
