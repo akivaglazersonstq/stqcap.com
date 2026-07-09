@@ -2,12 +2,17 @@ name: IndexNow ping
 
 # Notifies Bing and Yandex (via IndexNow) of pages that changed in each push
 # to main, so they recrawl quickly. Google does not use IndexNow.
+#
+# Manual run (workflow_dispatch) submits every public URL in sitemap.xml,
+# which is also the safe fallback when a push's "before" commit is not
+# reachable (e.g. a large multi-commit merge).
 
 on:
   push:
     branches: [main]
     paths:
       - '**.html'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -18,44 +23,53 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
-      - name: Submit changed pages to IndexNow
+      - name: Submit pages to IndexNow
         env:
           KEY: 0065b705a782109b891155ad1e889841
         run: |
           set -euo pipefail
-          BEFORE='${{ github.event.before }}'
-          if [[ -z "$BEFORE" || "$BEFORE" == "0000000000000000000000000000000000000000" ]]; then
-            RANGE="HEAD~1 HEAD"
+
+          urls=()
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "Manual run: submitting every public URL in sitemap.xml"
+            mapfile -t urls < <(grep -oE 'https://stqcap\.com/[^<[:space:]]+' sitemap.xml | sort -u)
           else
-            RANGE="$BEFORE ${{ github.sha }}"
+            BEFORE='${{ github.event.before }}'
+            if [[ -z "$BEFORE" || "$BEFORE" == "0000000000000000000000000000000000000000" ]] \
+               || ! git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+              echo "::warning::'before' commit $BEFORE unavailable; falling back to full sitemap"
+              mapfile -t urls < <(grep -oE 'https://stqcap\.com/[^<[:space:]]+' sitemap.xml | sort -u)
+            else
+              # changed, public .html files (skip _-prefixed templates)
+              mapfile -t files < <(git diff --name-only --diff-filter=ACM "$BEFORE" "${{ github.sha }}" -- '*.html' \
+                | grep -vE '(^|/)_' || true)
+              for f in "${files[@]}"; do
+                [[ -n "$f" ]] && urls+=("https://stqcap.com/$f")
+              done
+            fi
           fi
 
-          # changed, public .html files (skip _-prefixed templates)
-          mapfile -t files < <(git diff --name-only --diff-filter=ACM $RANGE -- '*.html' \
-            | grep -vE '(^|/)_' || true)
-
-          if [[ ${#files[@]} -eq 0 ]]; then
-            echo "No public HTML changed; nothing to submit."
+          if [[ ${#urls[@]} -eq 0 ]]; then
+            echo "No public pages to submit."
             exit 0
           fi
 
-          urls=()
-          for f in "${files[@]}"; do
-            urls+=("\"https://stqcap.com/$f\"")
-          done
-          list=$(IFS=,; echo "${urls[*]}")
+          quoted=()
+          for u in "${urls[@]}"; do quoted+=("\"$u\""); done
+          list=$(IFS=,; echo "${quoted[*]}")
 
           body=$(printf '{"host":"stqcap.com","key":"%s","keyLocation":"https://stqcap.com/%s.txt","urlList":[%s]}' "$KEY" "$KEY" "$list")
-          echo "Submitting ${#files[@]} URL(s) to IndexNow:"
-          printf '  %s\n' "${files[@]}"
+          echo "Submitting ${#urls[@]} URL(s) to IndexNow:"
+          printf '  %s\n' "${urls[@]}"
 
           code=$(curl -s -o /dev/null -w '%{http_code}' -X POST 'https://api.indexnow.org/indexnow' \
             -H 'Content-Type: application/json; charset=utf-8' \
             --data "$body")
           echo "IndexNow responded: HTTP $code"
-          # 200 and 202 are success; 422/400 mean key/URL issues worth surfacing
+          # 200 and 202 are success; anything else is worth surfacing
           if [[ "$code" != "200" && "$code" != "202" ]]; then
-            echo "::warning::IndexNow returned HTTP $code"
+            echo "::error::IndexNow returned HTTP $code"
+            exit 1
           fi
