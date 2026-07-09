@@ -33,7 +33,6 @@
 :root {
   --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
   --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF;
-  --accent: #12C079; --accent-ink: #0B7A4E;
   --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7);
   --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
   --ease: cubic-bezier(0.25,0.46,0.45,0.94);
@@ -59,7 +58,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
 .pub-hero-inner { max-width: 800px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
 .pub-series { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,239,235,0.5); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
-.pub-series::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+.pub-series::before { content: ''; width: 24px; height: 1px; background: rgba(240,239,235,0.3); }
 .pub-hero h1 { font-family: var(--font-heading); font-size: clamp(2rem,4vw,3rem); font-weight: 700; color: var(--cream); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 24px; }
 .pub-hero-sub { font-size: 1.125rem; line-height: 1.7; color: var(--text-light); max-width: 640px; margin-bottom: 40px; }
 .pub-meta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
@@ -70,32 +69,32 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .pub-content { max-width: 800px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; background: var(--white); }
 
 /* TOC */
-.pub-toc { background: var(--cream); border-left: 3px solid var(--accent); padding: 32px 36px; margin: 56px 0; border-radius: 0 4px 4px 0; position: relative; z-index: 1; }
+.pub-toc { background: var(--cream); border-left: 3px solid var(--navy); padding: 32px 36px; margin: 56px 0; border-radius: 0 4px 4px 0; position: relative; z-index: 1; }
 .pub-toc-title { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 16px; }
 .pub-toc ol { list-style: none; counter-reset: toc; }
 .pub-toc li { counter-increment: toc; padding: 6px 0; border-bottom: 1px solid rgba(27,46,75,0.06); }
 .pub-toc li:last-child { border-bottom: none; }
 .pub-toc a { font-size: 0.9375rem; color: var(--navy); text-decoration: none; display: flex; align-items: center; gap: 12px; transition: color 0.2s ease; }
 .pub-toc a:hover { color: var(--navy-light); }
-.pub-toc a::before { content: counter(toc, decimal-leading-zero); font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 700; color: var(--accent-ink); min-width: 24px; }
+.pub-toc a::before { content: counter(toc, decimal-leading-zero); font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 700; color: rgba(27,46,75,0.25); min-width: 24px; }
 
 /* BODY */
 .pub-section { padding: 64px 0 0; }
 .pub-section-num { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
-.pub-section-num::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+.pub-section-num::before { content: ''; width: 24px; height: 1px; background: var(--navy); opacity: 0.3; }
 .pub-section h2 { font-family: var(--font-heading); font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 700; color: var(--navy); letter-spacing: -0.01em; margin-bottom: 28px; line-height: 1.2; }
 .pub-section h3 { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700; color: var(--navy); margin-top: 32px; margin-bottom: 16px; }
 .pub-section p { font-size: 1.0625rem; line-height: 1.85; color: #2a3a4a; margin-bottom: 20px; }
 .pub-section p:last-child { margin-bottom: 0; }
 .pub-section strong { color: var(--navy); }
-.pub-section a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; transition: color 0.2s ease; }
-.pub-section a:hover { color: var(--navy); }
+.pub-section a { color: var(--navy); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; transition: color 0.2s ease; }
+.pub-section a:hover { color: var(--navy-light); }
 
 /* CALLOUT */
 .pub-callout { background: var(--navy); color: var(--cream); padding: 40px 44px; margin: 40px 0; border-radius: 6px; position: relative; overflow: hidden; }
 .pub-callout::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
 .pub-callout-inner { position: relative; z-index: 1; }
-.pub-callout-number { font-family: var(--font-heading); font-size: clamp(2.5rem,5vw,4rem); font-weight: 700; color: var(--accent); letter-spacing: -0.02em; line-height: 1; margin-bottom: 8px; }
+.pub-callout-number { font-family: var(--font-heading); font-size: clamp(2.5rem,5vw,4rem); font-weight: 700; color: var(--cream); letter-spacing: -0.02em; line-height: 1; margin-bottom: 8px; }
 .pub-callout-label { font-size: 1rem; color: var(--text-light); line-height: 1.6; max-width: 480px; }
 .pub-callout-footnote { font-size: 0.75rem; color: rgba(240,239,235,0.3); margin-top: 16px; font-style: italic; }
 
@@ -130,7 +129,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .more-pubs-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; max-width: 640px; }
 .more-pub-card { background: rgba(240,239,235,0.04); border: 1px solid rgba(240,239,235,0.08); border-radius: 6px; padding: 24px 20px; text-decoration: none; transition: background 0.2s ease; display: block; }
 .more-pub-card:hover { background: rgba(240,239,235,0.08); }
-.more-pub-tag { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+.more-pub-tag { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(240,239,235,0.35); margin-bottom: 10px; }
 .more-pub-title { font-family: var(--font-heading); font-size: 0.9375rem; font-weight: 600; color: var(--cream); line-height: 1.4; }
 
 /* FOOTER */
@@ -148,12 +147,6 @@ footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px sol
   .pub-callout { padding: 28px 24px; }
 }
 
-/* SCROLL REVEAL (Frec-style motion) */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
-.reveal.in { opacity: 1; transform: none; }
-.more-pub-card { transition: background 0.2s ease, transform 0.3s cubic-bezier(0.16,1,0.3,1); }
-.more-pub-card:hover { transform: translateY(-3px); }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; transition: none !important; } }
 </style>
 <!-- SCHEMA -->
 <script type="application/ld+json">
@@ -277,7 +270,7 @@ footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px sol
     </ol>
   </nav>
 
-  <section class="pub-section reveal" id="what-it-is">
+  <section class="pub-section" id="what-it-is">
     <div class="pub-section-num">Section 01</div>
     <h2>What Harvesting Actually Does</h2>
     <p>Tax-loss harvesting is one of the few strategies in investing that lowers your tax bill without changing what you own in any way that matters. You sell a holding that has dropped below what you paid for it, book the loss, and immediately reinvest the proceeds in something that keeps your market exposure intact. Your portfolio still does the same thing the next morning. What changed is that you now hold a realized capital loss, and that loss is worth money.</p>
@@ -285,12 +278,12 @@ footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px sol
     <p>That last part is the whole game, and it is the part most people miss. Harvesting is not really about this year's return. It is about building a stockpile of losses you can spend later, on the day you finally sell the concentrated position, the business, or the property that carries a gain large enough to matter.</p>
   </section>
 
-  <section class="pub-section reveal" id="loss-bank">
+  <section class="pub-section" id="loss-bank">
     <div class="pub-section-num">Section 02</div>
     <h2>The Loss Bank: Why Losses Compound</h2>
     <p>Think of every harvested loss as a deposit into an account whose only purpose is to absorb future gains. We call it the loss bank. Every deposit sits there, indefinitely, until a taxable gain shows up to be offset. The balance does not shrink with time. It only grows, one harvested lot at a time, in every kind of market.</p>
 
-    <div class="pub-callout reveal">
+    <div class="pub-callout">
       <div class="pub-callout-inner">
         <div class="pub-callout-number">$0</div>
         <div class="pub-callout-label">Expiration date on a federal capital loss carryforward. A loss you bank today can offset a gain a decade from now.</div>
@@ -302,14 +295,14 @@ footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px sol
     <p>This is also why harvesting and diversifying a concentrated position belong in the same plan. The losses you bank year after year are precisely what pay down the tax as you trim the position. We cover that sequence in our guide to <a href="/concentrated-stock-positions.html">concentrated stock positions</a>. The loss bank is the engine underneath it.</p>
   </section>
 
-  <section class="pub-section reveal" id="where-most-fail">
+  <section class="pub-section" id="where-most-fail">
     <div class="pub-section-num">Section 03</div>
     <h2>Where Most Harvesting Falls Short</h2>
     <p>Almost everyone agrees tax-loss harvesting is a good idea. The gap between firms is in how much of it they actually capture, and for most advisors the answer is: a small fraction. Two habits are to blame.</p>
     <p>The first is timing. Harvesting gets treated as a December chore, a once-a-year sweep done alongside the holiday rebalance. But markets do not save their declines for the fourth quarter. Individual positions dip and recover throughout the year, and a loss that existed in March is gone by the time the December review rolls around. Checking once a year means harvesting the losses that happen to be visible on one arbitrary day and missing every one that came and went in between.</p>
     <p>The second is the instrument. If you hold the market through a single index ETF or mutual fund, that fund shows a harvestable loss only when the entire index is below your basis. In a year the market finishes up, the fund shows a gain, and there is nothing to harvest, even though dozens of stocks inside that index fell hard along the way. The losses are real. The wrapper just hides them from you.</p>
 
-    <div class="pub-framework reveal">
+    <div class="pub-framework">
       <div class="pub-framework-header">Two Ways to Harvest - What You Can Actually Capture</div>
       <div class="pub-framework-row">
         <div class="pub-framework-cell goal">
@@ -344,7 +337,7 @@ footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px sol
     <p>Owning the index as its individual stocks, rather than as one fund, is what fixes both problems at once. When you hold the names directly in a separately managed account, a stock that drops 15 percent can be harvested even while the index is up 10 percent. That is the difference between harvesting theater and a loss bank that actually fills. See <a href="/how-direct-indexing-works.html">How Direct Indexing Works</a> for the full mechanism.</p>
   </section>
 
-  <section class="pub-section reveal" id="mechanics">
+  <section class="pub-section" id="mechanics">
     <div class="pub-section-num">Section 04</div>
     <h2>The Mechanics: Wash Sales and Substitution</h2>
     <p>The one rule that governs harvesting is the <strong>wash sale rule</strong>. It disallows your loss if you buy back the same security, or one that is substantially identical, within 30 days before or after the sale. The point of the rule is to stop you from claiming a loss on paper while never really leaving the position. To harvest correctly, you have to genuinely change what you hold, at least for a window.</p>
@@ -353,7 +346,7 @@ footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px sol
     <p>One honest caveat: harvesting lowers the cost basis of the replacement holdings, so some of the benefit is deferral rather than outright avoidance. That deferral still has real value, because the tax you did not pay stays invested and compounding. And it is often more than deferral. Losses can offset short-term gains taxed at the highest ordinary rates while the deferred gain is later taxed at lower long-term rates, and the lowest-basis lots can eventually be donated or held for a step-up at death, so the gain may never be taxed at all.</p>
   </section>
 
-  <section class="pub-section reveal" id="stq-approach">
+  <section class="pub-section" id="stq-approach">
     <div class="pub-section-num">Section 05</div>
     <h2>The STQ Approach: Harvesting as Infrastructure</h2>
     <p>We do not treat tax-loss harvesting as a feature to switch on in December. We treat it as standing infrastructure that runs underneath the whole portfolio, every day the market is open. Individual positions are monitored continuously, losses are captured as they appear, and substitutions keep your exposure where it belongs the entire time.</p>
@@ -380,19 +373,19 @@ footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px sol
   <div style="max-width:800px;margin:0 auto;">
     <h3>More from STQ Research</h3>
     <div class="more-pubs-grid">
-      <a href="/how-direct-indexing-works.html" class="more-pub-card reveal">
+      <a href="/how-direct-indexing-works.html" class="more-pub-card">
         <div class="more-pub-tag">Tax Alpha</div>
         <div class="more-pub-title">How Direct Indexing Works</div>
       </a>
-      <a href="/concentrated-stock-positions.html" class="more-pub-card reveal">
+      <a href="/concentrated-stock-positions.html" class="more-pub-card">
         <div class="more-pub-tag">Tax Strategy</div>
         <div class="more-pub-title">What to Do With a Concentrated Stock Position</div>
       </a>
-      <a href="/tax-aware-investing-guide.html" class="more-pub-card reveal">
+      <a href="/tax-aware-investing-guide.html" class="more-pub-card">
         <div class="more-pub-tag">Pillar Guide</div>
         <div class="more-pub-title">The Complete Guide to Tax-Aware Investing</div>
       </a>
-      <a href="/asset-location.html" class="more-pub-card reveal">
+      <a href="/asset-location.html" class="more-pub-card">
         <div class="more-pub-tag">Tax Strategy</div>
         <div class="more-pub-title">All the Right Things in All the Wrong Places</div>
       </a>
@@ -408,17 +401,5 @@ footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px sol
   <div class="footer-disclaimer">Advisory services are offered through STQ Capital ("STQ"), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable.</div>
 </footer>
 
-<script>
-(function(){
-  var els = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    els.forEach(function(e){ e.classList.add('in'); }); return;
-  }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
-  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-  els.forEach(function(e, i){ e.style.transitionDelay = Math.min(i%4*0.06, 0.18) + 's'; io.observe(e); });
-})();
-</script>
 </body>
 </html>
