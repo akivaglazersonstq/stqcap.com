@@ -11,10 +11,10 @@
 <meta name="twitter:description" content="Own the index as one ETF and a choppy year is just a quiet number. Own it as individual stocks and every dip becomes a harvest.">
 <meta name="author" content="Akiva Glazerson, STQ Capital">
 <link rel="canonical" href="https://stqcap.com/insights/insight-volatility-tax-asset.html">
-<meta property="og:image" content="https://stqcap.com/og-tax-aware.png">
+<meta property="og:image" content="https://stqcap.com/og-volatility.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="twitter:image" content="https://stqcap.com/og-tax-aware.png">
+<meta name="twitter:image" content="https://stqcap.com/og-volatility.png">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://stqcap.com/insights/insight-volatility-tax-asset.html">
 <meta property="og:title" content="Volatility Is the Price of Stocks. Get Paid Back.">
@@ -62,6 +62,19 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .issue-body a { color: var(--navy); font-weight: 600; }
 .pull-quote { border-left: 3px solid var(--navy); padding: 4px 0 4px 28px; margin: 40px 0; }
 .pull-quote p { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--navy); line-height: 1.55; letter-spacing: -0.01em; margin: 0; }
+.chart-figure { margin: 40px 0; }
+.chart-card { background: var(--white); border: 1px solid rgba(27,46,75,0.12); border-radius: 12px; padding: 26px 28px 22px; box-shadow: 0 2px 24px rgba(27,46,75,0.05); }
+.chart-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
+.chart-head-label { font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; color: var(--navy); letter-spacing: 0.01em; }
+.chart-badge { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); background: var(--cream); border: 1px solid rgba(27,46,75,0.12); padding: 6px 12px; border-radius: 20px; }
+.chart-legend { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 16px; }
+.chart-legend span { display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--text-secondary); }
+.chart-legend i { width: 13px; height: 13px; flex-shrink: 0; }
+.lg-navy { background: var(--navy); border-radius: 2px; }
+.lg-coral { background: #B76A4F; border-radius: 2px; }
+.lg-ring { border: 1.6px solid var(--navy); border-radius: 50%; }
+.chart-figure figcaption { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-top: 14px; }
+@media (max-width: 640px) { .chart-badge { display: none; } .chart-card { padding: 20px 18px 16px; } }
 .issue-cta { background: var(--cream-dark); border-radius: 6px; padding: 36px 40px; margin: 48px 0 0; text-align: center; }
 .issue-cta p { font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.75; max-width: 480px; margin-left: auto; margin-right: auto; }
 .btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 28px; border-radius: 4px; text-decoration: none; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
@@ -169,6 +182,52 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
     <p>Own the S&amp;P as one ETF and a choppy year that ends up 10% is just a quiet 10%. Nothing to do. Own the same index as <a href="/how-direct-indexing-works.html">individual stocks</a> and that year is full of opportunities.</p>
 
     <p>Under a 10% index, names are down 15% in March, down 20% in April, back to even by July. Every one of those dips is a harvest.</p>
+
+    <figure class="chart-figure">
+      <div class="chart-card">
+        <div class="chart-head">
+          <span class="chart-head-label">Individual holdings, one volatile year</span>
+          <span class="chart-badge">Index ends +10% on the year</span>
+        </div>
+        <svg viewBox="0 0 1080 340" role="img" aria-label="Individual holdings over one volatile year: most names finish up, four dipped into a loss and were harvested" style="width:100%;height:auto;display:block;">
+<line x1="30" y1="250" x2="1066" y2="250" stroke="rgba(27,46,75,0.28)" stroke-width="1.5" stroke-dasharray="3 4"/>
+<text x="30" y="242" font-family="Chakra Petch, sans-serif" font-size="15" font-weight="600" fill="rgba(27,46,75,0.5)">0%</text>
+<rect x="78" y="100" width="34" height="150" rx="2.5" fill="#1B2E4B"/>
+<rect x="134" y="138" width="34" height="112" rx="2.5" fill="#1B2E4B"/>
+<rect x="190" y="62" width="34" height="188" rx="2.5" fill="#1B2E4B"/>
+<rect x="246" y="172" width="34" height="78" rx="2.5" fill="#1B2E4B"/>
+<rect x="302" y="256" width="34" height="34" rx="4" fill="#B76A4F"/>
+<circle cx="319.0" cy="314" r="13" fill="none" stroke="#1B2E4B" stroke-width="1.6"/>
+<path d="M 313.5 314 l 3.5 3.6 l 7 -8" fill="none" stroke="#1B2E4B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="358" y="100" width="34" height="150" rx="2.5" fill="#1B2E4B"/>
+<rect x="414" y="130" width="34" height="120" rx="2.5" fill="#1B2E4B"/>
+<rect x="470" y="186" width="34" height="64" rx="2.5" fill="#1B2E4B"/>
+<rect x="526" y="256" width="34" height="34" rx="4" fill="#B76A4F"/>
+<circle cx="543.0" cy="314" r="13" fill="none" stroke="#1B2E4B" stroke-width="1.6"/>
+<path d="M 537.5 314 l 3.5 3.6 l 7 -8" fill="none" stroke="#1B2E4B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="582" y="100" width="34" height="150" rx="2.5" fill="#1B2E4B"/>
+<rect x="638" y="132" width="34" height="118" rx="2.5" fill="#1B2E4B"/>
+<rect x="694" y="178" width="34" height="72" rx="2.5" fill="#1B2E4B"/>
+<rect x="750" y="256" width="34" height="34" rx="4" fill="#B76A4F"/>
+<circle cx="767.0" cy="314" r="13" fill="none" stroke="#1B2E4B" stroke-width="1.6"/>
+<path d="M 761.5 314 l 3.5 3.6 l 7 -8" fill="none" stroke="#1B2E4B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="806" y="100" width="34" height="150" rx="2.5" fill="#1B2E4B"/>
+<rect x="862" y="150" width="34" height="100" rx="2.5" fill="#1B2E4B"/>
+<rect x="918" y="256" width="34" height="34" rx="4" fill="#B76A4F"/>
+<circle cx="935.0" cy="314" r="13" fill="none" stroke="#1B2E4B" stroke-width="1.6"/>
+<path d="M 929.5 314 l 3.5 3.6 l 7 -8" fill="none" stroke="#1B2E4B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="974" y="100" width="34" height="150" rx="2.5" fill="#1B2E4B"/>
+<rect x="1030" y="130" width="34" height="120" rx="2.5" fill="#1B2E4B"/>
+</svg>
+        <div class="chart-legend">
+          <span><i class="lg-navy"></i>Name up on the year</span>
+          <span><i class="lg-coral"></i>Dipped into a loss</span>
+          <span><i class="lg-ring"></i>Loss harvested</span>
+        </div>
+      </div>
+      <figcaption>Owned as individual stocks, a year the index finishes up 10% still hands you a series of harvestable dips. Illustrative.</figcaption>
+    </figure>
+
 
     <h2>The Move</h2>
 
