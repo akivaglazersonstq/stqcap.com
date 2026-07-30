@@ -130,6 +130,42 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
   .issue-hero h1 { font-size: 2rem; }
   .issue-content { padding: 48px 24px 80px; }
 }
+
+/* full site nav */
+.nav-links { display: flex; gap: 36px; margin-right: auto; margin-left: 48px; }
+.nav-links a { font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
+.nav-links a:hover, .nav-links a.active { color: var(--navy); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.nav-client-login { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; transition: border-color 0.2s ease, background 0.2s ease; }
+.nav-client-login:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
+.btn-white { background: var(--cream); color: var(--navy); }
+.btn-white:hover { background: var(--white); transform: translateY(-1px); }
+.btn-outline-white { background: transparent; color: var(--cream); border: 1px solid rgba(240,239,235,0.3); }
+.btn-outline-white:hover { border-color: var(--cream); background: rgba(240,239,235,0.08); }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--navy); }
+.nav-login-dropdown { position: relative; display: inline-flex; }
+.mobile-nav { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; transition: opacity 0.3s ease; }
+.mobile-nav.active { display: flex; opacity: 1; }
+.mobile-nav a { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+.mobile-nav .btn { font-size: 0.8125rem; }
+.mobile-nav .btn-primary { color: var(--cream); }
+.mobile-nav .btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); font-size: 0.8125rem; }
+.mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
+.nav-login-btn { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s ease, background 0.2s ease; cursor: pointer; background: transparent; }
+.nav-login-btn:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
+.nav-login-btn svg { transition: transform 0.2s ease; }
+.nav-login-dropdown:hover .nav-login-btn svg:last-child { transform: rotate(180deg); }
+.nav-login-menu { position: absolute; top: calc(100% + 8px); right: 0; background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 6px; box-shadow: 0 12px 40px rgba(27,46,75,0.12); min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.2s var(--ease); z-index: 100; overflow: hidden; }
+.nav-login-dropdown:hover .nav-login-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-login-menu a { display: flex; align-items: center; gap: 10px; padding: 14px 18px; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: background 0.15s ease; border-bottom: 1px solid rgba(27,46,75,0.06); }
+.nav-login-menu a:last-child { border-bottom: none; }
+.nav-login-menu a:hover { background: var(--cream); }
+.nav-login-menu-label { font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-secondary); display: block; }
+@media (max-width: 768px) {
+  .nav-links, .nav-client-login, .nav-cta-desktop, .nav-login-dropdown { display: none !important; }
+  .nav-toggle { display: flex !important; }
+}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HFD429BTQ"></script>
@@ -153,14 +189,56 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
-    <a href="/insights.html" class="nav-back">
-      <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
-        <path d="M6 1L1 5M1 5L6 9M1 5H13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      All Issues
-    </a>
+    <div class="nav-links">
+      <a href="https://stqcap.com/#solutions">Solutions</a>
+      <a href="https://stqcap.com/#about">About</a>
+      <a href="/insights.html" class="active">Insights</a>
+      <a href="/research.html">Research</a>
+      <a href="/box-spreads.html">Synthetic Financing</a>
+      <a href="/stq-consulting.html">Consulting</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <div class="nav-login-dropdown nav-cta-desktop">
+        <button class="nav-login-btn">
+          <svg width="12" height="13" viewBox="0 0 12 13" fill="none"><rect x="1" y="6" width="10" height="6" rx="1.5" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M3.5 6V4a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>
+          Client Login
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-login-menu">
+          <a href="https://login.orionadvisor.com/login.html?g=20e2ec87-e47b-4ab9-9ea4-a395b4b01ee1&e=4&i=138" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="12" height="6" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+            <div>Investment Portal<span class="nav-login-menu-label">Existing clients</span></div>
+          </a>
+          <a href="https://client.schwab.com" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="12" height="6" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+            <div>Charles Schwab<span class="nav-login-menu-label">Account login</span></div>
+          </a>
+          <a href="/get-started.html">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <div>Get Started<span class="nav-login-menu-label">New clients</span></div>
+          </a>
+        </div>
+      </div>
+      <a href="https://calendly.com/stqcapital/30min" target="_blank" class="btn btn-primary nav-cta-desktop">Schedule a Call</a>
+    </div>
+    <button class="nav-toggle" onclick="document.querySelector('.mobile-nav').classList.add('active')" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+<div class="mobile-nav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('active')">✕</button>
+  <a href="https://stqcap.com/#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
+  <a href="https://stqcap.com/#about" onclick="this.parentElement.classList.remove('active')">About</a>
+  <a href="/insights.html" onclick="this.parentElement.classList.remove('active')">Insights</a>
+  <a href="/research.html" onclick="this.parentElement.classList.remove('active')">Research</a>
+  <a href="/box-spreads.html" onclick="this.parentElement.classList.remove('active')">Synthetic Financing</a>
+  <a href="/stq-consulting.html" onclick="this.parentElement.classList.remove('active')">Consulting</a>
+  <a href="/contact.html" onclick="this.parentElement.classList.remove('active')">Contact</a>
+  <a href="https://calendly.com/stqcapital/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Call</a>
+  <a href="https://login.orionadvisor.com/login.html?g=20e2ec87-e47b-4ab9-9ea4-a395b4b01ee1&e=4&i=138" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Investment Portal</a>
+ <a href="https://client.schwab.com" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Charles Schwab</a>
+ <a href="/get-started.html" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Get Started</a>
+</div>
 
 <section class="issue-hero">
   <div class="hero-watermark">STQ</div>
