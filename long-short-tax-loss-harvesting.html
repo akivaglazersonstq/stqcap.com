@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<style>:root{color-scheme:light only;}</style>
+<title>Long/Short Tax-Loss Harvesting: The Complete Guide - STQ Capital</title>
+<meta name="description" content="Long-only harvesting stalls once a portfolio sits on gains. A long/short extension keeps generating losses in any market. How it works, what it costs, who it fits.">
+<meta name="author" content="Akiva Glazerson, STQ Capital">
+<meta name="keywords" content="long short tax loss harvesting, long/short tax-loss harvesting, tax-aware long-short, 130/30 tax strategy, loss harvesting capacity, ossification, tax alpha, direct indexing extension, short book, harvest losses in up markets">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Long/Short Tax-Loss Harvesting: The Complete Guide">
+<meta name="twitter:description" content="Long-only harvesting runs dry once everything sits on gains. A long/short extension keeps the loss engine running in every market.">
+<meta property="og:title" content="Long/Short Tax-Loss Harvesting: The Complete Guide">
+<meta property="og:description" content="Long-only harvesting stalls once a portfolio sits on gains. A long/short extension keeps generating losses in any market. How it works, what it costs, who it fits.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://stqcap.com/long-short-tax-loss-harvesting.html">
+<link rel="canonical" href="https://stqcap.com/long-short-tax-loss-harvesting.html">
+<meta property="og:image" content="https://stqcap.com/og-tax-aware.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://stqcap.com/og-tax-aware.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+@font-face { font-family: "Chakra Petch"; font-display: swap; }
+@font-face { font-family: "DM Sans"; font-display: swap; }
+
+:root {
+  --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33;
+  --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF;
+  --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7);
+  --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; color-scheme: light only; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+.nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; }
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-back { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s ease; }
+.nav-back:hover { color: var(--navy); }
+.nav-back::before { content: '←'; }
+.nav-cta { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 10px 24px; border-radius: 4px; background: var(--navy); color: var(--cream); text-decoration: none; transition: background 0.2s ease; }
+.nav-cta:hover { background: var(--navy-light); }
+
+/* HERO */
+.pub-hero { background: var(--navy); padding: 140px 0 80px; position: relative; overflow: hidden; }
+.pub-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 80px 80px; pointer-events: none; }
+.hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.pub-hero-inner { max-width: 800px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+.pub-series { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,239,235,0.5); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+.pub-series::before { content: ''; width: 24px; height: 1px; background: rgba(240,239,235,0.3); }
+.pub-hero h1 { font-family: var(--font-heading); font-size: clamp(2rem,4vw,3rem); font-weight: 700; color: var(--cream); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 24px; }
+.pub-hero-sub { font-size: 1.125rem; line-height: 1.7; color: var(--text-light); max-width: 640px; margin-bottom: 40px; }
+.pub-meta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.pub-meta-item { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(240,239,235,0.4); }
+.pub-meta-item span { color: rgba(240,239,235,0.7); margin-left: 6px; }
+
+/* CONTENT */
+.pub-content { max-width: 800px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; background: var(--white); }
+
+/* TOC */
+.pub-toc { background: var(--cream); border-left: 3px solid var(--navy); padding: 32px 36px; margin: 56px 0; border-radius: 0 4px 4px 0; position: relative; z-index: 1; }
+.pub-toc-title { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 16px; }
+.pub-toc ol { list-style: none; counter-reset: toc; }
+.pub-toc li { counter-increment: toc; padding: 6px 0; border-bottom: 1px solid rgba(27,46,75,0.06); }
+.pub-toc li:last-child { border-bottom: none; }
+.pub-toc a { font-size: 0.9375rem; color: var(--navy); text-decoration: none; display: flex; align-items: center; gap: 12px; transition: color 0.2s ease; }
+.pub-toc a:hover { color: var(--navy-light); }
+.pub-toc a::before { content: counter(toc, decimal-leading-zero); font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 700; color: rgba(27,46,75,0.25); min-width: 24px; }
+
+/* BODY */
+.pub-section { padding: 64px 0 0; }
+.pub-section-num { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+.pub-section-num::before { content: ''; width: 24px; height: 1px; background: var(--navy); opacity: 0.3; }
+.pub-section h2 { font-family: var(--font-heading); font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 700; color: var(--navy); letter-spacing: -0.01em; margin-bottom: 28px; line-height: 1.2; }
+.pub-section h3 { font-family: var(--font-heading); font-size: 1.125rem; font-weight: 700; color: var(--navy); margin-top: 32px; margin-bottom: 16px; }
+.pub-section p { font-size: 1.0625rem; line-height: 1.85; color: #2a3a4a; margin-bottom: 20px; }
+.pub-section p:last-child { margin-bottom: 0; }
+.pub-section strong { color: var(--navy); }
+.pub-section a { color: var(--navy); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; transition: color 0.2s ease; }
+.pub-section a:hover { color: var(--navy-light); }
+
+/* CALLOUT */
+.pub-callout { background: var(--navy); color: var(--cream); padding: 40px 44px; margin: 40px 0; border-radius: 6px; position: relative; overflow: hidden; }
+.pub-callout::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(240,239,235,0.03) 1px,transparent 1px); background-size: 60px 60px; }
+.pub-callout-inner { position: relative; z-index: 1; }
+.pub-callout-number { font-family: var(--font-heading); font-size: clamp(2.5rem,5vw,4rem); font-weight: 700; color: var(--cream); letter-spacing: -0.02em; line-height: 1; margin-bottom: 8px; }
+.pub-callout-label { font-size: 1rem; color: var(--text-light); line-height: 1.6; max-width: 480px; }
+.pub-callout-footnote { font-size: 0.75rem; color: rgba(240,239,235,0.3); margin-top: 16px; font-style: italic; }
+
+/* FRAMEWORK */
+.pub-framework { border: 1px solid rgba(27,46,75,0.12); border-radius: 6px; overflow: hidden; margin: 32px 0; }
+.pub-framework-header { background: var(--cream-dark); padding: 16px 24px; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); }
+.pub-framework-row { display: grid; grid-template-columns: 1fr 1.4fr 1.2fr; border-bottom: 1px solid rgba(27,46,75,0.08); }
+.pub-framework-row:last-child { border-bottom: none; }
+.pub-framework-cell { padding: 20px 24px; border-right: 1px solid rgba(27,46,75,0.08); }
+.pub-framework-cell:last-child { border-right: none; }
+.pub-framework-cell-label { font-family: var(--font-heading); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 8px; }
+.pub-framework-cell-content { font-size: 0.875rem; line-height: 1.6; color: #2a3a4a; }
+.pub-framework-cell.goal { background: rgba(27,46,75,0.03); }
+
+/* DISCLAIMER */
+.pub-disclaimer { margin: 64px 0 0; padding: 28px 0; border-top: 1px solid var(--cream-dark); font-size: 0.8125rem; line-height: 1.7; color: var(--text-secondary); }
+
+/* CTA */
+.pub-cta { background: var(--cream); padding: 64px clamp(24px,5vw,64px); margin: 64px 0 0; text-align: center; }
+.pub-cta h2 { font-family: var(--font-heading); font-size: 1.75rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; letter-spacing: -0.01em; }
+.pub-cta p { font-size: 1rem; color: var(--text-secondary); max-width: 480px; margin: 0 auto 32px; line-height: 1.7; }
+.pub-cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 14px 32px; border-radius: 4px; text-decoration: none; transition: all 0.3s var(--ease); cursor: pointer; border: none; display: inline-flex; align-items: center; }
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+.btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); }
+.btn-secondary:hover { border-color: var(--navy); }
+
+/* MORE PUBS */
+.more-pubs { background: var(--navy-dark); padding: 64px clamp(24px,5vw,64px); }
+.more-pubs h3 { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.4); margin-bottom: 32px; }
+.more-pubs-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; max-width: 640px; }
+.more-pub-card { background: rgba(240,239,235,0.04); border: 1px solid rgba(240,239,235,0.08); border-radius: 6px; padding: 24px 20px; text-decoration: none; transition: background 0.2s ease; display: block; }
+.more-pub-card:hover { background: rgba(240,239,235,0.08); }
+.more-pub-tag { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(240,239,235,0.35); margin-bottom: 10px; }
+.more-pub-title { font-family: var(--font-heading); font-size: 0.9375rem; font-weight: 600; color: var(--cream); line-height: 1.4; }
+
+/* FOOTER */
+footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px solid rgba(240,239,235,0.06); }
+.footer-main { max-width: 1280px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1rem; color: var(--cream); }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.5); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.3); }
+.footer-disclaimer { max-width: 1280px; margin: 16px auto 0; padding: 0 clamp(24px,5vw,64px); font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.2); }
+
+@media (max-width: 768px) {
+  .pub-framework-row { grid-template-columns: 1fr; }
+  .pub-framework-cell { border-right: none; }
+  .more-pubs-grid { grid-template-columns: 1fr; }
+  .pub-callout { padding: 28px 24px; }
+}
+
+
+/* full site nav */
+.nav-links { display: flex; gap: 36px; margin-right: auto; margin-left: 48px; }
+.nav-links a { font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
+.nav-links a:hover, .nav-links a.active { color: var(--navy); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.nav-client-login { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; transition: border-color 0.2s ease, background 0.2s ease; }
+.nav-client-login:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
+.btn-white { background: var(--cream); color: var(--navy); }
+.btn-white:hover { background: var(--white); transform: translateY(-1px); }
+.btn-outline-white { background: transparent; color: var(--cream); border: 1px solid rgba(240,239,235,0.3); }
+.btn-outline-white:hover { border-color: var(--cream); background: rgba(240,239,235,0.08); }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--navy); }
+.nav-login-dropdown { position: relative; display: inline-flex; }
+.mobile-nav { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; transition: opacity 0.3s ease; }
+.mobile-nav.active { display: flex; opacity: 1; }
+.mobile-nav a { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+.mobile-nav .btn { font-size: 0.8125rem; }
+.mobile-nav .btn-primary { color: var(--cream); }
+.mobile-nav .btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); font-size: 0.8125rem; }
+.mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
+.nav-login-btn { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s ease, background 0.2s ease; cursor: pointer; background: transparent; }
+.nav-login-btn:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
+.nav-login-btn svg { transition: transform 0.2s ease; }
+.nav-login-dropdown:hover .nav-login-btn svg:last-child { transform: rotate(180deg); }
+.nav-login-menu { position: absolute; top: calc(100% + 8px); right: 0; background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 6px; box-shadow: 0 12px 40px rgba(27,46,75,0.12); min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.2s var(--ease); z-index: 100; overflow: hidden; }
+.nav-login-dropdown:hover .nav-login-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-login-menu a { display: flex; align-items: center; gap: 10px; padding: 14px 18px; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: background 0.15s ease; border-bottom: 1px solid rgba(27,46,75,0.06); }
+.nav-login-menu a:last-child { border-bottom: none; }
+.nav-login-menu a:hover { background: var(--cream); }
+.nav-login-menu-label { font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-secondary); display: block; }
+@media (max-width: 768px) {
+  .nav-links, .nav-client-login, .nav-cta-desktop, .nav-login-dropdown { display: none !important; }
+  .nav-toggle { display: flex !important; }
+}
+</style>
+<!-- SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Long/Short Tax-Loss Harvesting: The Complete Guide",
+  "description": "Long-only harvesting stalls once a portfolio sits on gains. A long/short extension keeps generating losses in any market. How it works, what it costs, who it fits.",
+  "datePublished": "2026-08-12T05:00:00-07:00",
+  "dateModified": "2026-08-12T05:00:00-07:00",
+  "author": {
+    "@type": "Person",
+    "name": "Akiva Glazerson",
+    "jobTitle": "Founder",
+    "url": "https://stqcap.com/akiva-glazerson.html", "sameAs": "https://www.linkedin.com/in/akiva-g-5ba463a3",
+    "worksFor": { "@type": "FinancialService", "name": "STQ Capital", "url": "https://stqcap.com" }
+  },
+  "publisher": { "@type": "FinancialService", "name": "STQ Capital", "url": "https://stqcap.com" },
+  "mainEntityOfPage": "https://stqcap.com/long-short-tax-loss-harvesting.html",
+  "articleSection": "Tax Strategy",
+  "keywords": "long short tax loss harvesting, tax-aware long-short, 130/30, loss harvesting capacity, ossification, tax alpha"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What is long/short tax-loss harvesting?","acceptedAnswer":{"@type":"Answer","text":"It is a tax-loss harvesting strategy that adds a short book to a long portfolio, for example $130 long and $30 short per $100 invested, while keeping the same net market exposure. Because the portfolio holds positions on both sides of the market, some positions are losing in every environment, so there are always losses available to harvest."}},
+    {"@type":"Question","name":"Does adding shorts change my market exposure?","acceptedAnswer":{"@type":"Answer","text":"Not the net exposure. In a 130/30 construction, $130 of longs minus $30 of shorts nets to the same $100 of market exposure as a long-only portfolio. The extension changes where losses come from, not how much market risk you carry, although it does add leverage and implementation risk."}},
+    {"@type":"Question","name":"Why does long-only tax-loss harvesting stop working?","acceptedAnswer":{"@type":"Answer","text":"Every harvest resets cost basis lower and every up year lifts prices further above basis. After several good years, most positions sit well above what you paid, nothing trades below basis, and there is little left to harvest. The industry term is ossification."}},
+    {"@type":"Question","name":"Is long/short harvesting riskier than long-only?","acceptedAnswer":{"@type":"Answer","text":"Yes. Shorting introduces leverage, borrow costs, and the possibility of losses on individual shorts exceeding their initial value, and the strategy must be managed tightly to keep tracking the index. It costs more to run than long-only direct indexing and is not suitable for everyone."}},
+    {"@type":"Question","name":"Who is long/short tax-loss harvesting for?","acceptedAnswer":{"@type":"Answer","text":"Investors with large, recurring capital gains to offset, such as ongoing RSU vests, business sale proceeds, or appreciated real estate, and investors whose long-only harvesting has ossified after years of appreciation. For modest or infrequent gains, long-only harvesting is usually enough."}}
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1HFD429BTQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1HFD429BTQ');
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
+    if (a) gtag('event', 'cta_email_click', { link_url: a.getAttribute('href') });
+  });
+</script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
+    <div class="nav-links">
+      <a href="https://stqcap.com/#solutions">Solutions</a>
+      <a href="https://stqcap.com/#about">About</a>
+      <a href="/insights.html">Insights</a>
+      <a href="/research.html">Research</a>
+      <a href="/box-spreads.html">Synthetic Financing</a>
+      <a href="/stq-consulting.html">Consulting</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <div class="nav-login-dropdown nav-cta-desktop">
+        <button class="nav-login-btn">
+          <svg width="12" height="13" viewBox="0 0 12 13" fill="none"><rect x="1" y="6" width="10" height="6" rx="1.5" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M3.5 6V4a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>
+          Client Login
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-login-menu">
+          <a href="https://login.orionadvisor.com/login.html?g=20e2ec87-e47b-4ab9-9ea4-a395b4b01ee1&e=4&i=138" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="12" height="6" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+            <div>Investment Portal<span class="nav-login-menu-label">Existing clients</span></div>
+          </a>
+          <a href="https://client.schwab.com" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="12" height="6" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+            <div>Charles Schwab<span class="nav-login-menu-label">Account login</span></div>
+          </a>
+          <a href="/get-started.html">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <div>Get Started<span class="nav-login-menu-label">New clients</span></div>
+          </a>
+        </div>
+      </div>
+      <a href="https://calendly.com/stqcapital/30min" target="_blank" class="btn btn-primary nav-cta-desktop">Schedule a Call</a>
+    </div>
+    <button class="nav-toggle" onclick="document.querySelector('.mobile-nav').classList.add('active')" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('active')">✕</button>
+  <a href="https://stqcap.com/#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
+  <a href="https://stqcap.com/#about" onclick="this.parentElement.classList.remove('active')">About</a>
+  <a href="/insights.html" onclick="this.parentElement.classList.remove('active')">Insights</a>
+  <a href="/research.html" onclick="this.parentElement.classList.remove('active')">Research</a>
+  <a href="/box-spreads.html" onclick="this.parentElement.classList.remove('active')">Synthetic Financing</a>
+  <a href="/stq-consulting.html" onclick="this.parentElement.classList.remove('active')">Consulting</a>
+  <a href="/contact.html" onclick="this.parentElement.classList.remove('active')">Contact</a>
+  <a href="https://calendly.com/stqcapital/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Call</a>
+  <a href="https://login.orionadvisor.com/login.html?g=20e2ec87-e47b-4ab9-9ea4-a395b4b01ee1&e=4&i=138" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Investment Portal</a>
+ <a href="https://client.schwab.com" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Charles Schwab</a>
+ <a href="/get-started.html" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Get Started</a>
+</div>
+
+<section class="pub-hero">
+  <div class="hero-watermark">STQ</div>
+  <div class="pub-hero-inner">
+    <div class="pub-series">STQ Research - Tax Strategy Series</div>
+    <h1>Long/Short Tax-Loss Harvesting: Harvesting That Never Runs Dry.</h1>
+    <p class="pub-hero-sub">Standard harvesting has a shelf life: after a few good years everything sits on gains and the loss engine stalls. Adding a short book keeps it producing, in bull markets, flat markets, and everything in between.</p>
+    <div class="pub-meta">
+      <div class="pub-meta-item">Author <span>Akiva Glazerson</span></div>
+      <div class="pub-meta-item">Series <span>Tax Strategy</span></div>
+      <div class="pub-meta-item">Read time <span>9 minutes</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="pub-content">
+
+  <nav class="pub-toc">
+    <div class="pub-toc-title">Contents</div>
+    <ol>
+      <li><a href="#why-it-stalls">Why Long-Only Harvesting Runs Dry</a></li>
+      <li><a href="#the-extension">The Long/Short Extension, Explained</a></li>
+      <li><a href="#any-market">Losses in Every Market</a></li>
+      <li><a href="#costs-risks">The Costs, the Risks, the Fine Print</a></li>
+      <li><a href="#stq-approach">The STQ Approach: The Second Gear</a></li>
+    </ol>
+  </nav>
+
+  <section class="pub-section" id="why-it-stalls">
+    <div class="pub-section-num">Section 01</div>
+    <h2>Why Long-Only Harvesting Runs Dry</h2>
+    <p><a href="/tax-loss-harvesting.html">Tax-loss harvesting</a> done properly is a year-round engine: sell what dips below cost basis, bank the loss, replace the exposure. In a fresh direct indexing account it works beautifully, because every position starts at today's prices and every wobble creates a harvest.</p>
+    <p>Then it succeeds itself out of a job. Every harvest resets basis lower. Every up year lifts prices further above basis. Three or four good years in, the typical long-only account holds a portfolio of embedded gains, and a stock that is up 80% on your basis can fall 20% without ever becoming a loss you can realize. The industry term is <strong>ossification</strong>. The practical translation: the loss supply dries up exactly as your gains get big.</p>
+    <p>This is not a flaw in execution. It is the structural ceiling of harvesting long positions only: the strategy needs prices below basis, and time pushes prices away from basis.</p>
+  </section>
+
+  <section class="pub-section" id="the-extension">
+    <div class="pub-section-num">Section 02</div>
+    <h2>The Long/Short Extension, Explained</h2>
+    <p>The fix is structural too. Instead of holding $100 of stocks long, the portfolio holds more than $100 long and finances a short book against it, keeping the same net exposure to the market.</p>
+    <div class="pub-callout">
+      <div class="pub-callout-inner">
+        <div class="pub-callout-number">130/30</div>
+        <div class="pub-callout-label">The classic construction: $130 of longs, $30 of shorts, per $100 invested. Net market exposure stays at $100. What changes is that the portfolio now holds positions on both sides of the market.</div>
+        <div class="pub-callout-footnote">Extension ratios vary by mandate. Illustrative, not a recommendation.</div>
+      </div>
+    </div>
+    <p>That both-sides structure is the whole point. A loss no longer requires a stock to fall below your basis. When the market rises, the shorts lose, and those losses are real, realizable, and harvestable. When the market falls, the longs supply the losses, as they always did. The engine stops depending on the market's direction.</p>
+    <p>Run against an index with the same discipline as <a href="/how-direct-indexing-works.html">direct indexing</a>, the result is index-like net exposure with a loss engine that does not decay as the account ages.</p>
+  </section>
+
+  <section class="pub-section" id="any-market">
+    <div class="pub-section-num">Section 03</div>
+    <h2>Losses in Every Market</h2>
+    <p>Here is the difference environment by environment.</p>
+    <div class="pub-framework">
+      <div class="pub-framework-header">Where the Losses Come From - Three Market Environments</div>
+      <div class="pub-framework-row">
+        <div class="pub-framework-cell goal">
+          <div class="pub-framework-cell-label">Environment</div>
+          <div class="pub-framework-cell-content" style="font-weight:700;color:var(--navy);">Strong bull year</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Long-Only Harvest</div>
+          <div class="pub-framework-cell-content">Thin, and shrinking every year as gains build over basis.</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Long/Short Harvest</div>
+          <div class="pub-framework-cell-content">The short book loses into the rally and keeps supplying harvestable losses.</div>
+        </div>
+      </div>
+      <div class="pub-framework-row">
+        <div class="pub-framework-cell goal">
+          <div class="pub-framework-cell-label">Environment</div>
+          <div class="pub-framework-cell-content" style="font-weight:700;color:var(--navy);">Flat, choppy year</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Long-Only Harvest</div>
+          <div class="pub-framework-cell-content">Decent early on, weaker as the account ages and basis drifts below prices.</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Long/Short Harvest</div>
+          <div class="pub-framework-cell-content">Dispersion cuts both ways. Losers on each side of the book get harvested.</div>
+        </div>
+      </div>
+      <div class="pub-framework-row">
+        <div class="pub-framework-cell goal">
+          <div class="pub-framework-cell-label">Environment</div>
+          <div class="pub-framework-cell-content" style="font-weight:700;color:var(--navy);">Down year</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Long-Only Harvest</div>
+          <div class="pub-framework-cell-content">Rich harvest, the one environment where long-only shines.</div>
+        </div>
+        <div class="pub-framework-cell">
+          <div class="pub-framework-cell-label">Long/Short Harvest</div>
+          <div class="pub-framework-cell-content">The longs supply the losses, same as long-only, while shorts offset some decline.</div>
+        </div>
+      </div>
+    </div>
+    <p>The asymmetry matters because of what the losses are for. Harvesting is about <a href="/tax-loss-harvesting.html">building a loss bank</a> that absorbs the big gain when it lands: the business sale, the RSU vest, the property closing. Long-only harvesting front-loads its help and fades. The extension keeps depositing, year after year, which is exactly what you want when the gains in your future are recurring rather than one-time.</p>
+  </section>
+
+  <section class="pub-section" id="costs-risks">
+    <div class="pub-section-num">Section 04</div>
+    <h2>The Costs, the Risks, the Fine Print</h2>
+    <p>The power is real and so is the price. It is worth being plain about both.</p>
+    <h3>Leverage and shorting risk</h3>
+    <p>A 130/30 portfolio is levered. Individual shorts can lose more than their initial value, and the gross book is larger than your capital. Managed against an index this is a controlled, hedged structure, but it is categorically more complex than owning stocks.</p>
+    <h3>Borrow costs and fees</h3>
+    <p>Shorting costs money: stock borrow fees, financing spreads, and higher management costs than plain direct indexing. The extra tax alpha has to clear that hurdle, after tax, before the strategy earns its place.</p>
+    <h3>Tracking error</h3>
+    <p>The extension must be run so the portfolio still behaves like your index. Loosely managed, it stops being a tax strategy and becomes a bet on the manager's stock selection.</p>
+    <h3>The rules still apply</h3>
+    <p>Wash-sale discipline, substitution, and holding-period management all carry over from long-only harvesting, now on both sides of the book. The operational bar is higher, not lower.</p>
+    <p>For an investor with modest, infrequent gains, none of this is worth it, and long-only harvesting inside a direct indexing account is the right tool. The extension is for the investor whose gain pipeline outruns what long-only can supply.</p>
+  </section>
+
+  <section class="pub-section" id="stq-approach">
+    <div class="pub-section-num">Section 05</div>
+    <h2>The STQ Approach: The Second Gear</h2>
+    <p>We treat the long/short extension as the second gear of one machine, not a separate product. Disciplined, year-round harvesting inside a customized direct indexing account comes first. It is simpler, cheaper, and for most investors it is enough.</p>
+    <p>The extension enters the conversation in two situations: when a client's recurring gains are larger than what a long-only engine can offset, and when an account has ossified after years of appreciation and the harvest has gone quiet. In both cases we model the same question in plain numbers: does the additional after-tax benefit clear the additional cost, risk, and tracking error? If it does, we size the extension to the gain pipeline and run it. If it does not, we say so and stay in first gear.</p>
+    <p>Where it fits in the bigger picture, alongside asset location, box spread financing, and exit planning, is covered in our complete guide to <a href="/tax-aware-investing-guide.html">tax-aware investing</a>.</p>
+    <p style="font-size:0.8125rem;color:rgba(27,46,75,0.45);">For informational and educational purposes only. Long/short strategies involve leverage, short selling, borrow costs, and the risk of losses exceeding those of a long-only portfolio, and are not suitable for everyone. Tax outcomes depend on your circumstances and current law, which can change. This is not personalized tax, legal, or investment advice.</p>
+  </section>
+
+  <div class="pub-disclaimer">
+    <strong>Disclaimer:</strong> This publication is for informational and educational purposes only. It does not constitute personalized investment, tax, or legal advice, and it is not an offer or solicitation. Tax-loss harvesting involves risks, including the risk that a substitute security performs differently from the security sold, and the benefit depends on your specific tax situation. Harvesting generally lowers the cost basis of replacement holdings, deferring rather than always eliminating tax. The wash sale rule and the treatment of capital loss carryforwards are governed by tax law, which is subject to change, and state treatment may differ from federal. Investments involve risk, including the potential loss of principal. Please consult a qualified tax, legal, and financial professional regarding your situation before acting. Advisory services offered through STQ Capital, an investment adviser registered with the state of California.
+  </div>
+
+</div>
+
+<section class="pub-cta">
+  <h2>Has Your Harvest Gone Quiet?</h2>
+  <p>We will look at your gain pipeline and your current harvest, and tell you in plain numbers whether a long/short extension earns its cost.</p>
+  <div class="pub-cta-buttons">
+    <a href="#" onclick="window.location.href='mailto:info@stqcap.com?subject=Long%2FShort%20Harvesting%20Review';return false;" class="btn btn-primary">Request a Portfolio Review</a>
+    <a href="https://calendly.com/stqcapital/30min" target="_blank" class="btn btn-secondary">Schedule a Call</a>
+  </div>
+</section>
+
+<section class="more-pubs">
+  <div style="max-width:800px;margin:0 auto;">
+    <h3>More from STQ Research</h3>
+    <div class="more-pubs-grid">
+      <a href="/how-direct-indexing-works.html" class="more-pub-card">
+        <div class="more-pub-tag">Tax Alpha</div>
+        <div class="more-pub-title">How Direct Indexing Works</div>
+      </a>
+      <a href="/concentrated-stock-positions.html" class="more-pub-card">
+        <div class="more-pub-tag">Tax Strategy</div>
+        <div class="more-pub-title">What to Do With a Concentrated Stock Position</div>
+      </a>
+      <a href="/tax-aware-investing-guide.html" class="more-pub-card">
+        <div class="more-pub-tag">Pillar Guide</div>
+        <div class="more-pub-title">The Complete Guide to Tax-Aware Investing</div>
+      </a>
+      <a href="/tax-loss-harvesting.html" class="more-pub-card">
+        <div class="more-pub-tag">Pillar Guide</div>
+        <div class="more-pub-title">Tax-Loss Harvesting: Building a Loss Bank</div>
+        <div class="more-pub-desc">The long-only foundation: how losses get banked, carried forward, and spent.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div class="footer-logo">STQ <span>/ Capital</span></div>
+    <div class="footer-copy">© 2026 STQ Capital</div>
+  </div>
+  <div class="footer-disclaimer">Advisory services are offered through STQ Capital ("STQ"), an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable.</div>
+</footer>
+
+</body>
+</html>
