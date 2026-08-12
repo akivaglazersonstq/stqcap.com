@@ -1,0 +1,33 @@
+# STQ Capital
+
+> STQ Capital is an independent registered investment adviser (RIA) in California, founded by Akiva Glazerson, specializing in tax-aware investment strategies for high-income and high-net-worth investors: direct indexing with year-round tax-loss harvesting, box spread financing at near-Treasury rates, long/short tax-loss harvesting, concentrated stock position management, and asset location. After-tax return is the number that matters. Contact: info@stqcap.com. Schedule: https://calendly.com/stqcapital/30min
+
+## Pillar Guides
+
+- [Tax-Aware Investing: The Complete Guide](https://stqcap.com/tax-aware-investing-guide.html): Why after-tax return is the only number that matters, and the core strategies that keep more of what you earn.
+- [Tax-Loss Harvesting: Building a Loss Bank](https://stqcap.com/tax-loss-harvesting.html): Done right, harvesting is a year-round engine that banks losses to offset gains for years, not a December chore.
+- [Long/Short Tax-Loss Harvesting](https://stqcap.com/long-short-tax-loss-harvesting.html): Long-only harvesting stalls once a portfolio sits on gains. A long/short extension keeps generating losses in any market.
+- [Box Spread Borrowing: The Complete Guide](https://stqcap.com/box-spread-borrowing-guide.html): Borrow against a portfolio at near-Treasury rates through the options market. No bank, no credit check, potentially tax-deductible interest.
+- [Box Spread Financing](https://stqcap.com/box-spreads.html): Live benchmark rates and how STQ implements box spread borrowing.
+- [How Direct Indexing Works](https://stqcap.com/how-direct-indexing-works.html): Own the individual stocks inside an index, harvest losses at the security level, customize everything.
+- [What to Do With a Concentrated Stock Position](https://stqcap.com/concentrated-stock-positions.html): Six tools to diversify, hedge, monetize, and give, almost none requiring a taxable sale.
+- [Asset Location](https://stqcap.com/asset-location.html): The same investments in different account types can produce dramatically different after-tax outcomes.
+
+## Key Insights
+
+- [Long/Short Tax-Loss Harvesting: The Engine That Does Not Run Dry](https://stqcap.com/insights/insight-long-short-tax-loss-harvesting.html): Why long-only harvesting ossifies and how a short book fixes it.
+- [Volatility Is the Price of Stocks. Get Paid Back.](https://stqcap.com/insights/insight-volatility-tax-asset.html): How direct indexing turns market swings into a banked tax asset.
+- [351 Exchange or Exchange Fund?](https://stqcap.com/insights/insight-351-vs-exchange-fund.html): Two tax-free ways to diversify a concentrated position, compared.
+- [The Bank Will Sell You a VPF. Here Is Why We Build It.](https://stqcap.com/insights/insight-synthetic-vpf-vs-bank.html): Synthetic variable prepaid forward (collar plus box spread) vs the bank's packaged version.
+- [PPLI: A Tax-Free Wrapper for Your Most-Taxed Assets](https://stqcap.com/insights/insight-ppli.html): Private placement life insurance for hedge funds and private credit.
+- [All Insights](https://stqcap.com/insights.html): Full library of STQ Capital insights on tax strategy, box spreads, direct indexing, and portfolio construction.
+
+## About
+
+- [Akiva Glazerson](https://stqcap.com/akiva-glazerson.html): Founder of STQ Capital. Background at PIMCO; quantitative, tax-first approach to wealth management.
+- [Research](https://stqcap.com/research.html): Institutional-grade research hub.
+- [Contact](https://stqcap.com/contact.html): info@stqcap.com, or book a 30-minute call.
+
+## Disclosures
+
+Advisory services offered through STQ Capital, an investment adviser registered in California. Content is educational, not personalized tax, legal, or investment advice.
