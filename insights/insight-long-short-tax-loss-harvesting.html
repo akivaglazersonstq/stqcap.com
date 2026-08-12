@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Long/Short Tax-Loss Harvesting: It Does Not Run Dry | STQ Capital</title>
+<meta name="description" content="Standard tax-loss harvesting stalls after a few good years: everything sits on gains. A long/short extension keeps generating losses in any market. How it works.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Long/Short Tax-Loss Harvesting: It Does Not Run Dry">
+<meta name="twitter:description" content="Long-only harvesting has a shelf life. Add a short book and something is always down, so the loss engine keeps running in every market.">
+<meta name="author" content="Akiva Glazerson, STQ Capital">
+<link rel="canonical" href="https://stqcap.com/insights/insight-long-short-tax-loss-harvesting.html">
+<meta property="og:image" content="https://stqcap.com/og-tax-aware.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://stqcap.com/og-tax-aware.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://stqcap.com/insights/insight-long-short-tax-loss-harvesting.html">
+<meta property="og:title" content="Long/Short Tax-Loss Harvesting: It Does Not Run Dry">
+<meta property="og:description" content="Standard tax-loss harvesting stalls after a few good years: everything sits on gains. A long/short extension keeps generating losses in any market. How it works.">
+<meta property="og:site_name" content="STQ Capital">
+<meta property="article:published_time" content="2026-08-12T05:00:00-07:00">
+<meta property="article:author" content="Akiva Glazerson">
+<meta property="article:section" content="Tax Alpha">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --navy: #1B2E4B; --navy-light: #2a4570; --navy-dark: #0f1e33; --cream: #F0EFEB; --cream-dark: #E6E4DE; --white: #FFFFFF; --text-primary: #1B2E4B; --text-secondary: #5a6a7e; --text-light: rgba(240,239,235,0.7); --font-heading: 'Chakra Petch', sans-serif; --font-body: 'DM Sans', sans-serif; --ease-out: cubic-bezier(0.16,1,0.3,1); }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(27,46,75,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(27,46,75,0.03) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none; z-index: 0; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(240,239,235,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(27,46,75,0.08); }
+.nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; }
+.nav-logo span { font-weight: 400; color: var(--text-secondary); }
+.nav-back { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+.nav-back:hover { color: var(--navy); }
+.nav-back svg { transition: transform 0.2s; }
+.nav-back:hover svg { transform: translateX(-3px); }
+.issue-hero { padding: 140px 0 72px; background: var(--navy); position: relative; overflow: hidden; }
+.issue-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(240,239,235,0.03) 1px, transparent 1px); background-size: 60px 60px; }
+.hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
+.hero-container { max-width: 1100px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
+.issue-hero h1 { font-family: var(--font-heading); font-size: clamp(2.2rem,5vw,3.75rem); font-weight: 700; color: var(--cream); line-height: 1.08; letter-spacing: -0.02em; max-width: 820px; margin-bottom: 24px; animation: slideUp 0.7s var(--ease-out) 0.2s both; }
+.issue-subhead { font-size: 1.125rem; color: var(--text-light); max-width: 640px; line-height: 1.75; animation: slideUp 0.7s var(--ease-out) 0.3s both; }
+.issue-meta { display: flex; align-items: center; gap: 14px; margin-top: 24px; flex-wrap: wrap; }
+.meta-category { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.6); border: 1px solid rgba(240,239,235,0.2); padding: 4px 12px; border-radius: 3px; }
+.issue-content { max-width: 720px; margin: 0 auto; padding: 72px clamp(24px,5vw,48px) 120px; position: relative; z-index: 1; }
+.author-block { display: flex; align-items: center; gap: 16px; padding: 24px 0; border-bottom: 1px solid rgba(27,46,75,0.1); margin-bottom: 48px; }
+.author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; color: var(--cream); flex-shrink: 0; }
+.author-name { font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--navy); letter-spacing: 0.02em; }
+.author-title { font-size: 0.8rem; color: var(--text-secondary); margin-top: 3px; }
+.read-time { margin-left: auto; font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(27,46,75,0.3); }
+.issue-body p { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 24px; }
+.issue-body p strong { color: var(--text-primary); font-weight: 600; }
+.issue-body h2 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--navy); margin: 44px 0 16px; letter-spacing: 0.01em; }
+.issue-body a { color: var(--navy); font-weight: 600; }
+.pull-quote { border-left: 3px solid var(--navy); padding: 4px 0 4px 28px; margin: 40px 0; }
+.pull-quote p { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--navy); line-height: 1.55; letter-spacing: -0.01em; margin: 0; }
+.compare { border: 1px solid rgba(27,46,75,0.12); border-radius: 8px; overflow: hidden; margin: 36px 0; }
+.compare-row { display: grid; grid-template-columns: 1fr 1fr; }
+.compare-head { background: var(--navy); }
+.compare-head div { padding: 16px 22px; font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--cream); }
+.compare-head div:first-child { border-right: 1px solid rgba(240,239,235,0.12); }
+.compare-body .compare-row { border-top: 1px solid rgba(27,46,75,0.08); }
+.compare-body .compare-row div { padding: 16px 22px; font-size: 0.9rem; line-height: 1.55; color: #2a3a4a; }
+.compare-body .compare-row div:first-child { border-right: 1px solid rgba(27,46,75,0.08); background: rgba(27,46,75,0.02); }
+.compare-label { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); display: block; margin-bottom: 5px; }
+.issue-cta { background: var(--cream-dark); border-radius: 6px; padding: 36px 40px; margin: 48px 0 0; text-align: center; }
+.issue-cta p { font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.75; max-width: 480px; margin-left: auto; margin-right: auto; }
+.btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 28px; border-radius: 4px; text-decoration: none; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
+footer { background: var(--navy-dark); padding: 48px 0 32px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); }
+.footer-main { display: flex; align-items: center; justify-content: space-between; padding-bottom: 32px; border-bottom: 1px solid rgba(240,239,235,0.08); flex-wrap: wrap; gap: 24px; }
+.footer-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--cream); }
+.footer-logo span { font-weight: 400; color: rgba(240,239,235,0.4); }
+.footer-links { display: flex; gap: 32px; flex-wrap: wrap; }
+.footer-links a { font-size: 0.8125rem; color: rgba(240,239,235,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--cream); }
+.footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.25); }
+.footer-disclaimer { margin-top: 24px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.18); max-width: 900px; }
+@keyframes slideUp { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 768px) { .nav-inner { padding: 0 24px; } .issue-hero h1 { font-size: 2rem; } .issue-content { padding: 48px 24px 80px; } .compare-row { grid-template-columns: 1fr; } .compare-head div:first-child, .compare-body .compare-row div:first-child { border-right: none; } }
+
+/* full site nav */
+.nav-links { display: flex; gap: 36px; margin-right: auto; margin-left: 48px; }
+.nav-links a { font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
+.nav-links a:hover, .nav-links a.active { color: var(--navy); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.nav-client-login { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; transition: border-color 0.2s ease, background 0.2s ease; }
+.nav-client-login:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
+.btn-white { background: var(--cream); color: var(--navy); }
+.btn-white:hover { background: var(--white); transform: translateY(-1px); }
+.btn-outline-white { background: transparent; color: var(--cream); border: 1px solid rgba(240,239,235,0.3); }
+.btn-outline-white:hover { border-color: var(--cream); background: rgba(240,239,235,0.08); }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--navy); }
+.nav-login-dropdown { position: relative; display: inline-flex; }
+.mobile-nav { display: none; position: fixed; inset: 0; background: var(--cream); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; transition: opacity 0.3s ease; }
+.mobile-nav.active { display: flex; opacity: 1; }
+.mobile-nav a { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+.mobile-nav .btn { font-size: 0.8125rem; }
+.mobile-nav .btn-primary { color: var(--cream); }
+.mobile-nav .btn-secondary { background: transparent; color: var(--navy); border: 1px solid rgba(27,46,75,0.25); font-size: 0.8125rem; }
+.mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
+.nav-login-btn { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s ease, background 0.2s ease; cursor: pointer; background: transparent; }
+.nav-login-btn:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
+.nav-login-btn svg { transition: transform 0.2s ease; }
+.nav-login-dropdown:hover .nav-login-btn svg:last-child { transform: rotate(180deg); }
+.nav-login-menu { position: absolute; top: calc(100% + 8px); right: 0; background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 6px; box-shadow: 0 12px 40px rgba(27,46,75,0.12); min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.2s var(--ease); z-index: 100; overflow: hidden; }
+.nav-login-dropdown:hover .nav-login-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-login-menu a { display: flex; align-items: center; gap: 10px; padding: 14px 18px; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: background 0.15s ease; border-bottom: 1px solid rgba(27,46,75,0.06); }
+.nav-login-menu a:last-child { border-bottom: none; }
+.nav-login-menu a:hover { background: var(--cream); }
+.nav-login-menu-label { font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-secondary); display: block; }
+@media (max-width: 768px) {
+  .nav-links, .nav-client-login, .nav-cta-desktop, .nav-login-dropdown { display: none !important; }
+  .nav-toggle { display: flex !important; }
+}
+</style>
+<!-- SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Long/Short Tax-Loss Harvesting: It Does Not Run Dry",
+  "description": "Standard tax-loss harvesting stalls after a few good years: everything sits on gains. A long/short extension keeps generating losses in any market. How it works.",
+  "datePublished": "2026-08-12T05:00:00-07:00",
+  "dateModified": "2026-08-12T05:00:00-07:00",
+  "author": {
+    "@type": "Person",
+    "name": "Akiva Glazerson",
+    "jobTitle": "Founder",
+    "url": "https://stqcap.com/akiva-glazerson.html", "sameAs": "https://www.linkedin.com/in/akiva-g-5ba463a3",
+    "worksFor": { "@type": "FinancialService", "name": "STQ Capital", "url": "https://stqcap.com" }
+  },
+  "publisher": { "@type": "FinancialService", "name": "STQ Capital", "url": "https://stqcap.com" },
+  "mainEntityOfPage": "https://stqcap.com/insights/insight-long-short-tax-loss-harvesting.html",
+  "articleSection": "Tax Alpha",
+  "keywords": "long short tax loss harvesting, long/short tax-loss harvesting, tax-aware long-short, 130/30 tax strategy, long-only harvesting ossification, loss harvesting capacity, tax alpha, direct indexing extension, short book losses"
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1HFD429BTQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1HFD429BTQ');
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
+    if (a) gtag('event', 'cta_email_click', { link_url: a.getAttribute('href') });
+  });
+</script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">STQ <span>/ Capital</span></a>
+    <div class="nav-links">
+      <a href="https://stqcap.com/#solutions">Solutions</a>
+      <a href="https://stqcap.com/#about">About</a>
+      <a href="/insights.html" class="active">Insights</a>
+      <a href="/research.html">Research</a>
+      <a href="/box-spreads.html">Synthetic Financing</a>
+      <a href="/stq-consulting.html">Consulting</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <div class="nav-login-dropdown nav-cta-desktop">
+        <button class="nav-login-btn">
+          <svg width="12" height="13" viewBox="0 0 12 13" fill="none"><rect x="1" y="6" width="10" height="6" rx="1.5" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M3.5 6V4a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>
+          Client Login
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-login-menu">
+          <a href="https://login.orionadvisor.com/login.html?g=20e2ec87-e47b-4ab9-9ea4-a395b4b01ee1&e=4&i=138" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="12" height="6" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+            <div>Investment Portal<span class="nav-login-menu-label">Existing clients</span></div>
+          </a>
+          <a href="https://client.schwab.com" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="7" width="12" height="6" rx="1.5" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+            <div>Charles Schwab<span class="nav-login-menu-label">Account login</span></div>
+          </a>
+          <a href="/get-started.html">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <div>Get Started<span class="nav-login-menu-label">New clients</span></div>
+          </a>
+        </div>
+      </div>
+      <a href="https://calendly.com/stqcapital/30min" target="_blank" class="btn btn-primary nav-cta-desktop">Schedule a Call</a>
+    </div>
+    <button class="nav-toggle" onclick="document.querySelector('.mobile-nav').classList.add('active')" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('active')">✕</button>
+  <a href="https://stqcap.com/#solutions" onclick="this.parentElement.classList.remove('active')">Solutions</a>
+  <a href="https://stqcap.com/#about" onclick="this.parentElement.classList.remove('active')">About</a>
+  <a href="/insights.html" onclick="this.parentElement.classList.remove('active')">Insights</a>
+  <a href="/research.html" onclick="this.parentElement.classList.remove('active')">Research</a>
+  <a href="/box-spreads.html" onclick="this.parentElement.classList.remove('active')">Synthetic Financing</a>
+  <a href="/stq-consulting.html" onclick="this.parentElement.classList.remove('active')">Consulting</a>
+  <a href="/contact.html" onclick="this.parentElement.classList.remove('active')">Contact</a>
+  <a href="https://calendly.com/stqcapital/30min" target="_blank" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Schedule a Call</a>
+  <a href="https://login.orionadvisor.com/login.html?g=20e2ec87-e47b-4ab9-9ea4-a395b4b01ee1&e=4&i=138" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Investment Portal</a>
+ <a href="https://client.schwab.com" target="_blank" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Charles Schwab</a>
+ <a href="/get-started.html" class="btn btn-secondary" style="margin-top:-16px;" onclick="this.parentElement.classList.remove('active')">Get Started</a>
+</div>
+
+<section class="issue-hero">
+  <div class="hero-watermark">STQ</div>
+  <div class="hero-container">
+    <h1>Long/Short Tax-Loss Harvesting: The Engine That Does Not Run Dry.</h1>
+    <p class="issue-subhead">Standard harvesting has a shelf life. After a few good years everything sits on gains and the loss engine stalls. Add a short book, and it never has to.</p>
+    <div class="issue-meta">
+      <span class="meta-category">Tax Alpha</span>
+    </div>
+  </div>
+</section>
+
+<div class="issue-content">
+  <div class="author-block">
+    <div class="author-avatar">AG</div>
+    <div>
+      <div class="author-name"><a href="/akiva-glazerson.html" style="color:inherit;text-decoration:none;">Akiva Glazerson</a></div>
+      <div class="author-title">Founder, STQ Capital</div>
+    </div>
+    <div class="read-time">5 min read</div>
+  </div>
+
+  <div class="issue-body">
+    <p>Tax-loss harvesting has a problem almost nobody selling it mentions: run well, it eventually stops working. In year one, a <a href="/how-direct-indexing-works.html">direct indexing</a> account is full of fresh positions, and every dip drops below cost basis and gets harvested. But every harvest resets basis lower, and every up year lifts prices further above it. After a handful of good years the portfolio is all gains. Nothing trades below basis, so there is nothing left to harvest. The engine that was producing losses every month goes quiet.</p>
+
+    <p>The industry term is ossification. The practical translation: exactly when your gains are biggest, your loss supply dries up.</p>
+
+    <h2>The fix: add a short book</h2>
+    <p>A long/short extension solves it structurally. Instead of holding $100 long, the portfolio holds something like $130 long and $30 short, with the same net market exposure. Now the portfolio contains positions on both sides of the market, and that changes what a "loss" requires. In a rising market, the shorts lose and get harvested. In a falling market, the longs lose and get harvested. There is no market environment in which nothing is down.</p>
+
+    <div class="compare">
+      <div class="compare-head compare-row"><div>Long-only harvesting</div><div>Long/short extension</div></div>
+      <div class="compare-body">
+        <div class="compare-row"><div><span class="compare-label">Where losses come from</span>Stocks dipping below your cost basis</div><div><span class="compare-label">Where losses come from</span>Both sides of the book, in any market</div></div>
+        <div class="compare-row"><div><span class="compare-label">In a strong bull run</span>Harvest dries up as gains build</div><div><span class="compare-label">In a strong bull run</span>The short book keeps producing losses</div></div>
+        <div class="compare-row"><div><span class="compare-label">After 5+ good years</span>Ossified: little left to harvest</div><div><span class="compare-label">After 5+ good years</span>Still harvesting at a similar rate</div></div>
+        <div class="compare-row"><div><span class="compare-label">Complexity</span>Low: long stocks only</div><div><span class="compare-label">Complexity</span>Real: leverage, borrow costs, tighter management</div></div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p>In a long-only book, a bull market starves the harvest. With a short book, something is always down.</p>
+    </div>
+
+    <h2>Why this matters for the loss bank</h2>
+    <p>Harvesting is not about this year's return. It is about <a href="/tax-loss-harvesting.html">building a loss bank</a>: a stockpile of realized losses waiting to absorb the big gain when it lands, from a business sale, an RSU vest, a property closing. Long-only harvesting front-loads its help and fades. A long/short extension keeps depositing into the bank year after year, which is exactly what you want if the large gains in your future are recurring rather than one-time.</p>
+
+    <h2>The price of the power</h2>
+    <p>None of this is free, and it is worth being plain about it. Shorting introduces leverage and borrow costs. The extension has to be managed tightly to keep tracking the index rather than becoming a bet on the manager's stock picks. It costs more to run than plain direct indexing, and the extra tax alpha only earns its keep if you actually have gains to offset. For an investor with modest, infrequent gains, long-only harvesting is usually enough. For an investor with large, recurring gains, the math changes.</p>
+
+    <h2>How STQ thinks about it</h2>
+    <p>We treat the long/short extension as the second gear of the same machine, not a separate product. Direct indexing with disciplined harvesting comes first. When a client's gain pipeline is large enough that the long-only engine cannot keep up, or has ossified after years of appreciation, we model the extension against its added cost, risk, and tracking error, in plain numbers. If the after-tax math clears, we run it. If it does not, we say so. The broader framework is in our guide to <a href="/tax-aware-investing-guide.html">tax-aware investing</a>.</p>
+
+    <p style="font-size:0.8125rem;color:rgba(27,46,75,0.45);">For informational and educational purposes only. Long/short strategies involve leverage, short selling, borrow costs, and the risk of losses exceeding a long-only portfolio, and are not suitable for everyone. Tax outcomes depend on your circumstances and current law, which can change. This is not personalized tax, legal, or investment advice.</p>
+  </div>
+
+  <div class="issue-cta">
+    <p>Sitting on years of gains with nothing left to harvest? We will look at your gain pipeline and tell you whether a long/short extension actually earns its cost, in plain numbers.</p>
+    <a href="mailto:info@stqcap.com?subject=Long%2FShort%20Harvesting%20Review" class="btn btn-primary">Request a Harvesting Review</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-main">
+      <div class="footer-logo">STQ <span>/ Capital</span></div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
+        <a href="/insights.html">Newsletter</a>
+        <a href="/research.html">Research</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+      <div class="footer-copy">&#169; 2026 STQ Capital</div>
+    </div>
+    <div class="footer-disclaimer">Advisory services are offered through STQ Capital, an investment adviser registered with the state of California. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable.</div>
+  </div>
+</footer>
+</body>
+</html>
