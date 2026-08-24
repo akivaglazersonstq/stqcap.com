@@ -169,6 +169,8 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
   document.addEventListener('click', function(e){
     var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
     if (a) gtag('event', 'cta_email_click', { link_url: a.getAttribute('href') });
+    var c = e.target.closest && e.target.closest('a[href*="calendly.com"]');
+    if (c) gtag('event', 'schedule_click', { link_url: c.getAttribute('href') });
   });
 </script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
