@@ -739,6 +739,40 @@ input[type=range]{width:100%;accent-color:#1B2E4B;height:4px;cursor:pointer;}
   </div>
 </section>
 
+<section style="padding:72px 0;background:var(--cream-dark);position:relative;z-index:1;">
+  <style>
+    .car-head { max-width: 1200px; margin: 0 auto 32px; padding: 0 clamp(24px,5vw,64px); display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .car-head h2 { font-family: var(--font-heading); font-size: clamp(1.75rem,3vw,2.25rem); font-weight: 700; color: var(--navy); letter-spacing: -0.02em; margin-top: 12px; line-height: 1.2; }
+    .car-head p { font-size: 0.9375rem; color: var(--text-secondary); max-width: 520px; margin-top: 10px; line-height: 1.7; }
+    .car-strip { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px clamp(24px,5vw,64px) 20px; max-width: 1200px; margin: 0 auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: rgba(27,46,75,0.25) transparent; }
+    .car-slide { flex: 0 0 300px; scroll-snap-align: start; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 28px rgba(27,46,75,0.14); background: var(--white); }
+    .car-slide img { display: block; width: 100%; height: auto; }
+    .car-actions { max-width: 1200px; margin: 12px auto 0; padding: 0 clamp(24px,5vw,64px); display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .car-hint { font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(27,46,75,0.35); }
+    @media (max-width: 768px) { .car-slide { flex-basis: 76vw; } }
+  </style>
+  <div class="car-head">
+    <div>
+      <div class="section-label">The Explainer</div>
+      <h2>Box spreads in seven slides.</h2>
+      <p>The whole strategy, one swipe at a time: what it is, who sets the rate, the tax treatment, and what people actually use it for.</p>
+    </div>
+    <a href="/downloads/stq-box-spreads-explainer.pdf" class="btn btn-primary" download>Download the PDF</a>
+  </div>
+  <div class="car-strip" aria-label="Box spread explainer slides">
+    <div class="car-slide"><img src="/carousel/box-spreads-01.png" alt="Think inside the box: a better way to borrow against your portfolio" width="1080" height="1351" loading="lazy"></div>
+    <div class="car-slide"><img src="/carousel/box-spreads-02.png" alt="What it is: a loan built from S&P 500 options" width="1080" height="1351" loading="lazy"></div>
+    <div class="car-slide"><img src="/carousel/box-spreads-03.png" alt="The rate: set by the market, not the bank" width="1080" height="1351" loading="lazy"></div>
+    <div class="car-slide"><img src="/carousel/box-spreads-04.png" alt="The tax treatment: the interest can be a deductible loss" width="1080" height="1351" loading="lazy"></div>
+    <div class="car-slide"><img src="/carousel/box-spreads-05.png" alt="What it is for: cash without selling" width="1080" height="1351" loading="lazy"></div>
+    <div class="car-slide"><img src="/carousel/box-spreads-06.png" alt="The ecosystem: box spreads next to direct indexing" width="1080" height="1351" loading="lazy"></div>
+    <div class="car-slide"><img src="/carousel/box-spreads-07.png" alt="Next step: see your rate" width="1080" height="1351" loading="lazy"></div>
+  </div>
+  <div class="car-actions">
+    <span class="car-hint">Scroll or swipe &#8594;</span>
+  </div>
+</section>
+
 <section class="cta-section">
   <div class="container">
     <h2>Find out how much you can borrow.</h2>
