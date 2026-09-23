@@ -193,9 +193,12 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
 </div>
 
 <script>
+var pendingInsightUrl = '';
+function hasInsightAccess() {
+  try { return localStorage.getItem('stq_insights_access') === 'granted' || localStorage.getItem('stq_research_access') === 'granted'; } catch (e) { return true; }
+}
 (function() {
-  var STORAGE_KEY = 'stq_insights_access';
-  if (localStorage.getItem(STORAGE_KEY) === 'granted') return;
+  if (hasInsightAccess()) return;
   window.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
       if (sessionStorage.getItem('stq_gate_dismissed')) return;
@@ -204,6 +207,14 @@ footer { background: var(--navy-dark); padding: 40px 0 28px; position: relative;
     }, 1200);
   });
 })();
+document.addEventListener('click', function(e) {
+  var a = e.target.closest && e.target.closest('a.issue-card');
+  if (!a || hasInsightAccess()) return;
+  e.preventDefault();
+  pendingInsightUrl = a.getAttribute('href');
+  document.getElementById('insightGate').classList.add('active');
+  document.body.style.overflow = 'hidden';
+});
 
 function dismissInsightGate(){var g=document.getElementById('insightGate');g.classList.remove('active');document.body.style.overflow='';sessionStorage.setItem('stq_gate_dismissed','1');}
 document.getElementById('insightGate').addEventListener('click',function(e){if(e.target===this)dismissInsightGate();});
@@ -220,12 +231,16 @@ function handleInsightGate(e) {
     body: JSON.stringify({ email: email, groups: ["185200901719328747"] })
   }).catch(function(){});
   setTimeout(function() {
-    localStorage.setItem('stq_insights_access', 'granted');
+    try {
+      localStorage.setItem('stq_insights_access', 'granted');
+      localStorage.setItem('stq_research_access', 'granted');
+    } catch (err) {}
     msg.style.display = 'block'; msg.style.color = '#1B2E4B';
     msg.textContent = 'You\'re in. Unlocking...';
     setTimeout(function() {
       document.getElementById('insightGate').classList.remove('active');
       document.body.style.overflow = '';
+      if (pendingInsightUrl) { window.location.href = pendingInsightUrl; }
     }, 600);
   }, 700);
 }
