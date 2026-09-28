@@ -13,6 +13,15 @@
 - [What to Do With a Concentrated Stock Position](https://stqcap.com/concentrated-stock-positions.html): Six tools to diversify, hedge, monetize, and give, almost none requiring a taxable sale.
 - [Asset Location](https://stqcap.com/asset-location.html): The same investments in different account types can produce dramatically different after-tax outcomes.
 
+## Box Spread Financing
+
+- [Most People Sell When They Need Cash. That's Usually the Wrong Move.](https://stqcap.com/insights/insight-box-spreads-intro.html): The plain-English introduction to borrowing with a box spread instead of selling.
+- [Your Portfolio Can Lend You Money. Most Investors Never Ask It To.](https://stqcap.com/insights/insight-box-spread-borrowing.html): How borrowing against a portfolio with a box spread works in practice.
+- [The Two Box Spread Features Almost Everyone Overlooks](https://stqcap.com/insights/insight-box-spread-overlooked-features.html): No payments until maturity, and the implied interest books as an annual Section 1256 capital loss.
+- [A Better Way to Buy (or Build) a Home](https://stqcap.com/insights/insight-box-spread-vs-heloc-2026-06-04.html): Box spread vs HELOC for financing a home purchase or build against a portfolio instead of the house.
+- [A Better Way to Buy a House](https://stqcap.com/insights/insight-box-spread-mortgage.html): Using portfolio financing in place of a traditional mortgage.
+- [Box Spreads Explained in Seven Slides (PDF)](https://stqcap.com/downloads/stq-box-spreads-explainer.pdf): The visual explainer: what it is, who sets the rate, tax treatment, and use cases.
+
 ## Key Insights
 
 - [Long/Short Tax-Loss Harvesting: The Engine That Does Not Run Dry](https://stqcap.com/insights/insight-long-short-tax-loss-harvesting.html): Why long-only harvesting ossifies and how a short book fixes it.
