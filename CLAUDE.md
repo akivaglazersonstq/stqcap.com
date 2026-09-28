@@ -3,7 +3,7 @@
 This file orients you (Claude Code) to the stqcap.com website project. Read it before making changes.
 
 ## What this is
-The public marketing site for STQ Capital, a California RIA. Static HTML/CSS/JS — no build framework, no bundler. Each page is a self-contained `.html` file with inline `<style>` and `<script>`.
+The public marketing site for STQ Capital, an RIA registered in California and New York. Static HTML/CSS/JS — no build framework, no bundler. Each page is a self-contained `.html` file with inline `<style>` and `<script>`.
 
 ## Hosting & deploy
 - **GitHub repo:** `akivaglazersonstq/stqcap.com` (public), production branch `main`.
