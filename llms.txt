@@ -15,6 +15,7 @@
 
 ## Box Spread Financing
 
+- [Box Spread Rates Today](https://stqcap.com/box-spread-rates.html): Current borrowing benchmarks from the U.S. Treasury par yield curve, updated every business day, with the SBLOC and margin comparison.
 - [Most People Sell When They Need Cash. That's Usually the Wrong Move.](https://stqcap.com/insights/insight-box-spreads-intro.html): The plain-English introduction to borrowing with a box spread instead of selling.
 - [Your Portfolio Can Lend You Money. Most Investors Never Ask It To.](https://stqcap.com/insights/insight-box-spread-borrowing.html): How borrowing against a portfolio with a box spread works in practice.
 - [The Two Box Spread Features Almost Everyone Overlooks](https://stqcap.com/insights/insight-box-spread-overlooked-features.html): No payments until maturity, and the implied interest books as an annual Section 1256 capital loss.
