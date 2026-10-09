@@ -1,0 +1,583 @@
+# STQ Capital: Full Guide Text
+
+> Complete text of STQ Capital's pillar guides on tax-aware investing. STQ Capital is an independent registered investment adviser (RIA) registered in California and New York, serving high-income and high-net-worth investors. Contact: info@stqcap.com. Schedule: https://calendly.com/stqcapital/30min
+
+## Tax-Aware Investing: The Complete Guide
+Source: https://stqcap.com/tax-aware-investing-guide.html
+
+STQ Tax-Aware Investing: How to Keep More of What You Earn The only return that matters is the one you keep after tax. Most portfolios are built as if taxes do not exist. This is the complete guide to building one that treats them as the cost they are, and the strategies that turn that discipline into real after-tax wealth. Tax-Aware Investing Updated June 2026 On this page What tax-aware investing is
+
+Why after-tax is the only number that matters
+
+The core strategies
+
+How they compound together
+
+Who it is for
+
+Frequently asked questions
+
+Two investors buy the same portfolio on the same day. Same holdings, same contributions, same gross return for thirty years. One ends up significantly wealthier than the other. The difference is not skill, and it is not luck. It is tax.
+
+Most portfolios are built as if taxes happen to someone else. Assets are selected for their pre-tax return, dropped into whatever account is convenient, and left to generate taxable events nobody planned for. Tax-aware investing is the opposite discipline. It treats tax as a cost to be managed at every decision, and over a lifetime that discipline compounds into a number large enough to change the outcome.
+
+### What Tax-Aware Investing Is
+
+Tax-aware investing is portfolio management that optimizes for after-tax return rather than pre-tax return. The market exposure can be identical to a conventional portfolio. What changes is everything around it: which account holds each asset, when losses are realized, which vehicle is used, and how liquidity is raised. Each of those decisions has a tax consequence, and managing them deliberately is where the value comes from.
+
+Gross return is what an asset earns. After-tax return is what you keep. They are not the same number, and only one of them pays for your life.
+
+### Why After-Tax Is the Only Number That Matters
+
+Tax drag is silent. It does not appear on a statement as a line item. It shows up as a smaller number years later, quietly, every time a fund distributes a gain, a position is sold without offsetting losses, or income lands in the wrong account. That is what makes it dangerous: a cost you cannot see is a cost you cannot manage.
+
+Most advisors compare strategies on a pre-tax basis, which treats two very different outcomes as if they were the same. We treat any gross comparison as incomplete. The question is never simply what a strategy earns. It is what it earns after the IRS takes its share, because that is the only money that compounds for you.
+
+### The Core Strategies
+
+Tax-aware investing is not a single move. It is a set of strategies that each address a different point where tax is created or saved. Used together, they reinforce one another.
+
+### Asset Location
+
+The same investment held in the wrong account type can cost years of compounding. Placing tax-inefficient assets in tax-advantaged accounts and tax-efficient assets in taxable accounts is the closest thing to a free optimization in investing.
+
+### Tax-Loss Harvesting and the Loss Bank
+
+Every time a position dips below cost basis, that loss can be harvested and banked, ready to offset a future gain from a business exit, an RSU vest, or a real estate sale. Started early, it becomes one of the most valuable tax assets a high earner can own.
+
+### Direct Indexing
+
+Owning the individual stocks in an index, rather than a fund that holds them for you, lets you harvest losses at the security level, even in a year the index is up. It is index exposure with a tax engine running underneath it. See How Direct Indexing Works for the step-by-step visual.
+
+### Box Spread Borrowing
+
+When you need cash, selling appreciated assets triggers tax. Box spread borrowing lets you raise liquidity against your portfolio at a market-set rate near Treasuries, with no forced selling and interest that is potentially tax-deductible.
+
+### Concentrated Position Management
+
+A single large position is both an asset and a risk, and selling it can hand a fortune to the IRS. Collars, prepaid forwards, 351 exchanges, and harvested losses can reduce the risk and the tax cost at the same time. See the full guide: What to Do With a Concentrated Stock Position .
+
+### Tax-Efficient Vehicles
+
+Structure has real tax consequences. No-distribution ETFs, 351 exchanges, and donor-advised funds can defer taxable events, convert income character, or eliminate capital gains entirely on the right assets.
+
+### How They Compound Together
+
+The strategies are not a menu you pick one from. They feed each other. Direct indexing and long-short harvesting fill the same loss bank. Those banked losses offset the gain when a concentrated position is finally diversified. Box spread borrowing raises cash without realizing gains, so the loss bank stays intact for when it is needed most. Asset location decides where each of these lives so the tax treatment is never wasted. Run as a system, each strategy makes the others more powerful.
+
+### Who It Is For
+
+The value of tax-aware investing scales with two things: your marginal tax rate and the size of your taxable portfolio. It matters most for high-income investors, those with significant assets outside retirement accounts, and anyone facing large gains from a business sale, equity compensation, real estate, or a concentrated stock position. The larger the potential tax bill, the more there is to manage, and the more a deliberate approach is worth.
+
+If your assets sit entirely in tax-advantaged accounts, much of this is moot. But for investors with real taxable exposure and a tax rate that makes gains painful, after-tax management is one of the highest-value things a portfolio can do.
+
+### Frequently Asked Questions
+
+### What is tax-aware investing?
+
+Portfolio management that optimizes for after-tax return rather than pre-tax return, treating tax as a cost to manage at every decision: which account holds each asset, when losses are harvested, which vehicle is used, and how liquidity is raised.
+
+### How is it different from regular investing?
+
+Regular investing focuses on gross return. Tax-aware investing focuses on what you keep after tax. The same market exposure, managed for tax, can deliver a materially higher after-tax result.
+
+### What are the core strategies?
+
+Asset location, tax-loss harvesting and the loss bank, direct indexing, concentrated position management, tax-efficient vehicles, and tax-aware financing such as box spread borrowing instead of selling appreciated assets.
+
+### Who benefits most?
+
+High-income investors and those with large taxable accounts, because the value scales with the tax rate and portfolio size. Anyone facing a large gain from a business exit, equity compensation, or a concentrated position has the most to gain.
+
+### See What Tax-Aware Management Could Keep for You
+
+We build every portfolio around after-tax return. Let's look at what a tax-aware approach could mean for your specific situation.
+
+
+## Tax-Loss Harvesting: Building a Loss Bank
+Source: https://stqcap.com/tax-loss-harvesting.html
+
+### Tax-Loss Harvesting: Building a Loss Bank.
+
+Most advisors harvest losses once a year, in December, inside a fund that can barely do it. Done right, it is a year-round engine that banks losses to pay down the tax on your biggest gains, for years.
+
+### What Harvesting Actually Does
+
+Tax-loss harvesting is one of the few strategies in investing that lowers your tax bill without changing what you own in any way that matters. You sell a holding that has dropped below what you paid for it, book the loss, and immediately reinvest the proceeds in something that keeps your market exposure intact. Your portfolio still does the same thing the next morning. What changed is that you now hold a realized capital loss, and that loss is worth money.
+
+A realized loss first offsets your realized capital gains, dollar for dollar. If your losses exceed your gains for the year, up to 3,000 dollars of the excess can offset ordinary income, which is taxed at the highest rates you pay. Anything left over does not vanish. It carries forward, with no expiration, to be used against gains in future years.
+
+That last part is the whole game, and it is the part most people miss. Harvesting is not really about this year's return. It is about building a stockpile of losses you can spend later, on the day you finally sell the concentrated position, the business, or the property that carries a gain large enough to matter.
+
+### The Loss Bank: Why Losses Compound
+
+Think of every harvested loss as a deposit into an account whose only purpose is to absorb future gains. We call it the loss bank. Every deposit sits there, indefinitely, until a taxable gain shows up to be offset. The balance does not shrink with time. It only grows, one harvested lot at a time, in every kind of market.
+
+The value of a full loss bank shows up at the moments that matter most. A founder ready to diversify a low-basis stake, a family selling a rental after decades of appreciation, an investor whose portfolio finally rebalanced into a large gain: each of these is a tax event measured in six or seven figures. A loss bank built patiently over years is what lets you meet that event with offsets already in hand, instead of writing the full check.
+
+This is also why harvesting and diversifying a concentrated position belong in the same plan. The losses you bank year after year are precisely what pay down the tax as you trim the position. We cover that sequence in our guide to concentrated stock positions . The loss bank is the engine underneath it.
+
+### Where Most Harvesting Falls Short
+
+Almost everyone agrees tax-loss harvesting is a good idea. The gap between firms is in how much of it they actually capture, and for most advisors the answer is: a small fraction. Two habits are to blame.
+
+The first is timing. Harvesting gets treated as a December chore, a once-a-year sweep done alongside the holiday rebalance. But markets do not save their declines for the fourth quarter. Individual positions dip and recover throughout the year, and a loss that existed in March is gone by the time the December review rolls around. Checking once a year means harvesting the losses that happen to be visible on one arbitrary day and missing every one that came and went in between.
+
+The second is the instrument. If you hold the market through a single index ETF or mutual fund, that fund shows a harvestable loss only when the entire index is below your basis. In a year the market finishes up, the fund shows a gain, and there is nothing to harvest, even though dozens of stocks inside that index fell hard along the way. The losses are real. The wrapper just hides them from you.
+
+Owning the index as its individual stocks, rather than as one fund, is what fixes both problems at once. When you hold the names directly in a separately managed account, a stock that drops 15 percent can be harvested even while the index is up 10 percent. That is the difference between harvesting theater and a loss bank that actually fills. See How Direct Indexing Works for the full mechanism.
+
+### The Mechanics: Wash Sales and Substitution
+
+The one rule that governs harvesting is the wash sale rule . It disallows your loss if you buy back the same security, or one that is substantially identical, within 30 days before or after the sale. The point of the rule is to stop you from claiming a loss on paper while never really leaving the position. To harvest correctly, you have to genuinely change what you hold, at least for a window.
+
+The way through is substitution. You sell the position at a loss and immediately buy a different security that keeps your exposure close to identical without being substantially identical to what you sold. Your risk and return profile barely moves. The loss is preserved. After the 31-day window, you can return to the original holding if you choose.
+
+This is straightforward with one holding and genuinely hard across hundreds of lots at once, which is the real argument for doing it at the individual-stock level with systems built for it. A direct-indexing account tracks the basis and holding period of every lot, watches for wash sale conflicts across the whole portfolio, and executes substitutions that hold the index exposure steady. Doing that by hand, position by position, is how errors and disallowed losses creep in.
+
+One honest caveat: harvesting lowers the cost basis of the replacement holdings, so some of the benefit is deferral rather than outright avoidance. That deferral still has real value, because the tax you did not pay stays invested and compounding. And it is often more than deferral. Losses can offset short-term gains taxed at the highest ordinary rates while the deferred gain is later taxed at lower long-term rates, and the lowest-basis lots can eventually be donated or held for a step-up at death, so the gain may never be taxed at all.
+
+### The STQ Approach: Harvesting as Infrastructure
+
+We do not treat tax-loss harvesting as a feature to switch on in December. We treat it as standing infrastructure that runs underneath the whole portfolio, every day the market is open. Individual positions are monitored continuously, losses are captured as they appear, and substitutions keep your exposure where it belongs the entire time.
+
+The point of running it that way is not to score a slightly better return this year. It is to build the loss bank deliberately, so that when the large gain finally arrives, from a concentrated position you are diversifying, a property you are selling, a portfolio you are repositioning, the offsets are already sitting there waiting. Harvesting is the quiet engine that makes the rest of a tax-aware plan work.
+
+And it does not run in isolation. The losses we bank feed directly into how we unwind concentrated stock, how we time realized gains into the right years, and how we coordinate with your CPA so nothing is harvested twice or wasted. That is the difference between a checkbox on a statement and a strategy. To see how harvesting fits alongside asset location, tax-aware rebalancing, and the rest, start with our complete guide to tax-aware investing .
+
+### Is Your Portfolio Actually Harvesting?
+
+We will look at how your losses are being captured today, and show you what a year-round loss bank would have banked instead.
+
+### More from STQ Research
+
+
+## Long/Short Tax-Loss Harvesting
+Source: https://stqcap.com/long-short-tax-loss-harvesting.html
+
+### Long/Short Tax-Loss Harvesting: Harvesting That Never Runs Dry.
+
+Standard harvesting has a shelf life: after a few good years everything sits on gains and the loss engine stalls. Adding a short book keeps it producing, in bull markets, flat markets, and everything in between.
+
+### Why Long-Only Harvesting Runs Dry
+
+Tax-loss harvesting done properly is a year-round engine: sell what dips below cost basis, bank the loss, replace the exposure. In a fresh direct indexing account it works beautifully, because every position starts at today's prices and every wobble creates a harvest.
+
+Then it succeeds itself out of a job. Every harvest resets basis lower. Every up year lifts prices further above basis. Three or four good years in, the typical long-only account holds a portfolio of embedded gains, and a stock that is up 80% on your basis can fall 20% without ever becoming a loss you can realize. The industry term is ossification . The practical translation: the loss supply dries up exactly as your gains get big.
+
+This is not a flaw in execution. It is the structural ceiling of harvesting long positions only: the strategy needs prices below basis, and time pushes prices away from basis.
+
+### The Long/Short Extension, Explained
+
+The fix is structural too. Instead of holding $100 of stocks long, the portfolio holds more than $100 long and finances a short book against it, keeping the same net exposure to the market.
+
+That both-sides structure is the whole point. A loss no longer requires a stock to fall below your basis. When the market rises, the shorts lose, and those losses are real, realizable, and harvestable. When the market falls, the longs supply the losses, as they always did. The engine stops depending on the market's direction.
+
+Run against an index with the same discipline as direct indexing , the result is index-like net exposure with a loss engine that does not decay as the account ages.
+
+### Losses in Every Market
+
+Here is the difference environment by environment.
+
+The asymmetry matters because of what the losses are for. Harvesting is about building a loss bank that absorbs the big gain when it lands: the business sale, the RSU vest, the property closing. Long-only harvesting front-loads its help and fades. The extension keeps depositing, year after year, which is exactly what you want when the gains in your future are recurring rather than one-time.
+
+### The Costs, the Risks, the Fine Print
+
+The power is real and so is the price. It is worth being plain about both.
+
+### Leverage and shorting risk
+
+A 130/30 portfolio is levered. Individual shorts can lose more than their initial value, and the gross book is larger than your capital. Managed against an index this is a controlled, hedged structure, but it is categorically more complex than owning stocks.
+
+### Borrow costs and fees
+
+Shorting costs money: stock borrow fees, financing spreads, and higher management costs than plain direct indexing. The extra tax alpha has to clear that hurdle, after tax, before the strategy earns its place.
+
+### Tracking error
+
+The extension must be run so the portfolio still behaves like your index. Loosely managed, it stops being a tax strategy and becomes a bet on the manager's stock selection.
+
+### The rules still apply
+
+Wash-sale discipline, substitution, and holding-period management all carry over from long-only harvesting, now on both sides of the book. The operational bar is higher, not lower.
+
+For an investor with modest, infrequent gains, none of this is worth it, and long-only harvesting inside a direct indexing account is the right tool. The extension is for the investor whose gain pipeline outruns what long-only can supply.
+
+### The STQ Approach: The Second Gear
+
+We treat the long/short extension as the second gear of one machine, not a separate product. Disciplined, year-round harvesting inside a customized direct indexing account comes first. It is simpler, cheaper, and for most investors it is enough.
+
+The extension enters the conversation in two situations: when a client's recurring gains are larger than what a long-only engine can offset, and when an account has ossified after years of appreciation and the harvest has gone quiet. In both cases we model the same question in plain numbers: does the additional after-tax benefit clear the additional cost, risk, and tracking error? If it does, we size the extension to the gain pipeline and run it. If it does not, we say so and stay in first gear.
+
+Where it fits in the bigger picture, alongside asset location, box spread financing, and exit planning, is covered in our complete guide to tax-aware investing .
+
+For informational and educational purposes only. Long/short strategies involve leverage, short selling, borrow costs, and the risk of losses exceeding those of a long-only portfolio, and are not suitable for everyone. Tax outcomes depend on your circumstances and current law, which can change. This is not personalized tax, legal, or investment advice.
+
+### Has Your Harvest Gone Quiet?
+
+We will look at your gain pipeline and your current harvest, and tell you in plain numbers whether a long/short extension earns its cost.
+
+### More from STQ Research
+
+
+## Box Spread Borrowing: The Complete Guide
+Source: https://stqcap.com/box-spread-borrowing-guide.html
+
+STQ Box Spread Borrowing: The Complete Guide Borrow against your portfolio at a market-set rate that usually tracks Treasuries, with no bank, no credit check, and no forced selling. Here is exactly how it works, what it costs, how it is taxed, and where the risks are. Box Spreads Updated June 2026 Most people borrow the same two ways their parents did: a loan from a bank, or by selling something they own. Investors with a sizable portfolio have a third option that is far cheaper than either, and almost nobody talks about it. It is called box spread borrowing, and it lets your portfolio act like a lender at a rate the market sets, not a bank. This guide walks through the whole thing in plain English: the mechanics, the rate, the tax treatment, the trade-offs, and how it stacks up against the alternatives. It is not exotic options trading. It is financing. What a Box Spread Actually Is A box spread is a four-leg options structure. You combine a bull call spread and a bear put spread at the same two strike prices and the same expiration date. The result is a position with a single, known value at expiration: the distance between the two strikes. Nothing about the market's direction changes that payoff. It is fixed the moment you put the trade on. When you sell a box spread, you receive cash today and agree to repay that fixed amount at expiration. The difference between what you collect now and what you owe later is your financing cost. In other words, selling a box is economically the same as taking out a fixed-rate loan with a single repayment at maturity and no monthly payments in between. A box spread is not a market bet. It is a fully hedged structure with a known payoff. That is exactly what makes it usable as financing. Done properly, the trade uses European-style, cash-settled index options such as SPX or XSP. European-style options cannot be exercised early, which removes the risk of early assignment and keeps the structure clean from open to maturity. How the Interest Rate Is Set This is the part that surprises people. The rate on a box spread is not quoted by a loan officer and has nothing to do with your credit score. It is set by the options market. Because the position is fully hedged, the implied rate trades close to short-term risk-free rates, often within a narrow band of Treasury or SOFR levels. The practical consequence: a borrower with a large mortgage, a business loan, or a securities-based line of credit is frequently paying a meaningfully higher rate than a box spread would cost for the same term, because every one of those products carries a lender's margin on top of the underlying rate. A box spread strips the lender out of the transaction. The Tax Treatment Box spreads built with broad-based index options are generally treated as Section 1256 contracts. That carries two consequences worth understanding. 60/40 treatment. Gains and losses on Section 1256 contracts are treated as 60% long-term and 40% short-term, regardless of how long the position is held.
+
+The financing cost as a capital item. On a financing box, the cost of the structure is generally realized as a capital loss, and interest incurred to carry investments may be deductible as investment interest expense, subject to the usual limitations.
+
+This is where box spread borrowing can be more tax-efficient than a conventional loan, where the interest is often not deductible at all for personal borrowing. The interest on a box spread used in an investment context is potentially tax-deductible . Whether and how that applies depends entirely on your individual tax situation, so this is a conversation to have with a qualified tax advisor rather than a guarantee.
+
+### Box Spread vs SBLOC vs HELOC vs Margin
+
+The fastest way to see the difference is side by side. Every one of these lets you raise cash, but the rate, the flexibility, and the risk profile are not the same.
+
+The headline is the rate and the deductibility. A box spread usually borrows closest to the true risk-free rate and offers the cleanest potential tax treatment, in exchange for requiring a margin account, liquid collateral, and a maturity you have to manage.
+
+### When It Makes Sense to Use One
+
+Box spread borrowing is a tool, not a strategy by itself. The common use cases share one theme: you need cash, and selling appreciated assets would be expensive or disruptive.
+
+Borrow to spend. Fund a home purchase or renovation, a large expense, or a lifestyle need without liquidating positions that would trigger capital gains.
+
+Borrow to bridge. Cover the gap on a business or real estate transaction until permanent financing or a sale closes.
+
+Borrow to wait. Pay a tax bill or meet a capital call while keeping your portfolio fully invested and compounding.
+
+### The Risks, Told Honestly
+
+Make no mistake, the trade-offs are real, and a box spread is the wrong call for plenty of situations. The honest list:
+
+Margin and collateral. It requires a margin account and liquid securities as collateral. If that collateral falls sharply in value, you can face a margin call.
+
+It must be managed at maturity. The box has a fixed expiration. At that point you repay it or roll it into a new one, and the roll happens at whatever rate the market offers then.
+
+Mark to market. Section 1256 positions are marked to market, so the position's value moves on your statement before maturity even though the payoff is fixed.
+
+Execution matters. Strike selection, expiration, and using European-style cash-settled options are not optional details. Done sloppily, the structure can introduce risks it was meant to remove.
+
+This is precisely why it belongs in the hands of someone who runs it as a discipline, not a one-off trade.
+
+### Who It Is For
+
+Box spread borrowing tends to make sense for investors who hold a meaningful portfolio of liquid securities, want flexible liquidity without selling, and are comfortable with a margin account and a maturity to manage. If your assets are mostly illiquid, or borrowing against your portfolio would stretch your risk tolerance, it is probably not the right tool. For the right investor, it changes the math entirely.
+
+### Frequently Asked Questions
+
+### What is a box spread?
+
+A four-leg options position (a bull call spread plus a bear put spread at the same strikes and expiration) with a fixed value at maturity equal to the distance between the strikes. Selling it gives you cash now in exchange for a single fixed repayment later, functioning like a fixed-rate loan with no monthly payments.
+
+### How is the interest rate set?
+
+By the options market, not a lender. Because the position is fully hedged, the implied rate trades close to short-term Treasury or SOFR rates, and it does not depend on your credit.
+
+### Is the interest tax deductible?
+
+Box spreads on broad-based index options are generally Section 1256 contracts with 60/40 treatment. The financing cost is generally realized as a capital loss, and interest to carry investments may be deductible as investment interest expense, subject to limits. It is potentially tax-deductible depending on your situation. Consult a qualified tax advisor.
+
+### How is it different from an SBLOC?
+
+An SBLOC charges a bank-set variable rate and can be repriced or called. A box spread borrows from the market at a fixed rate that usually tracks Treasuries, with a defined maturity and no lender-driven repricing.
+
+### What are the main risks?
+
+It requires a margin account and liquid collateral, carries margin-call risk, must be rolled or repaid at maturity, and is marked to market in the meantime. Using European-style cash-settled index options such as SPX avoids early-assignment risk.
+
+### Who is box spread borrowing for?
+
+It tends to fit investors with a sizable portfolio of liquid securities who want low-cost, flexible liquidity without selling appreciated positions or triggering capital gains. Common uses include funding a purchase, bridging a deal, paying a tax bill, or accessing cash while staying invested.
+
+### Go Deeper
+
+### See What a Box Spread Would Cost You
+
+We run box spread borrowing as a discipline, not a one-off trade. Let's look at the rate, the structure, and the tax treatment for your specific situation.
+
+
+## Box Spread Financing
+Source: https://stqcap.com/box-spreads.html
+
+### No bank. No middleman. Your portfolio is the lender.
+
+Box spread financing lets you borrow against your investments at near-Treasury rates, set by the market, not a bank. No credit check, no approval process, no forced selling. You stay fully invested while accessing the capital you need.
+
+Benchmarked to the U.S. Treasury par yield curve as of , updated automatically each business day. Box spread financing typically prices within a few basis points of these levels; executable rates vary with market conditions and exclude fees. For a live executable quote, contact STQ directly. See today's box spread rates for the full breakdown.
+
+### Borrow from the market, not the bank.
+
+A box spread is a four-leg options structure on the S&P 500 Index. It creates a fully hedged position with a fixed, known payoff at expiration, functioning like a zero-coupon bond. You receive cash today and repay a fixed amount at settlement. The difference is your borrowing cost, set entirely by market forces.
+
+### Execute the box spread
+
+STQ places a four-leg options trade on a broad index (XSP). The structure is fully hedged with no directional market exposure.
+
+### Receive cash upfront
+
+The net premium collected hits your account within days. Typically 95-97 cents on the dollar for a 1-year loan at current rates.
+
+### Use the proceeds however you want
+
+Real estate purchase, tax bill, business investment, home improvement. Unlike a HELOC or SBLOC, the deduction follows the loan, not the use.
+
+### Repay at expiration
+
+A fixed amount is settled at expiration. No variable rates, no bank discretion. Roll it, extend it, or pay it off.
+
+### One trade. One fixed repayment.
+
+Here's what a $1MM box spread loan looks like from start to finish, including how the interest flows through your tax return.
+
+Receive $950K $50K Interest 60% Long-term Capital Loss ($30K) 40% Short-term Capital Loss ($20K) In 1 Year Repay $1MM (Fixed Amount) Illustrative example using a $1MM notional, 1-year term at ~5% implied rate. Section 1256 60/40 treatment applies to box spread contracts. Actual rates, amounts, and tax treatment depend on individual circumstances. Consult a qualified tax advisor.
+
+### See what it costs you.
+
+Illustrative only. Loan amount capped at 85% of portfolio value for illustration purposes. Actual borrowing capacity depends on portfolio composition, account type, and market conditions. Effective rate assumes Section 1256 60/40 treatment at selected federal bracket. LTCG fixed at 20%. State taxes excluded. Consult a qualified tax advisor before implementing.
+
+### No middleman means a better deal on every dimension.
+
+### Everything you want to know.
+
+The questions most people ask before their first call with STQ. Want the full picture? Read the complete box spread borrowing guide .
+
+### Box spreads in seven slides.
+
+The whole strategy, one swipe at a time: what it is, who sets the rate, the tax treatment, and what people actually use it for.
+
+### Find out how much you can borrow.
+
+A 30-minute call is all it takes. We'll walk through your portfolio, the rates available today, and whether this strategy fits your situation.
+
+
+## Box Spread Rates Today
+Source: https://stqcap.com/box-spread-rates.html
+
+### Box Spread Rates Today.
+
+Box spread borrowing costs are set by the options market, not a bank, and they track the U.S. Treasury curve. The benchmarks below refresh every business day.
+
+Benchmark curve as of September 25, 2026
+
+Source: U.S. Treasury daily par yield curve. Implied box spread borrowing rates on broad index options typically price within a few tenths of a percent of these yields; the exact rate depends on term, market conditions, and execution. These are benchmarks, not quotes.
+
+### How to read this table
+
+A box spread is a loan built from S&P 500 index options: cash today, one fixed repayment at expiration. Because arbitrageurs compete to earn the risk-free rate on the other side of the trade, the implied borrowing rate tracks the Treasury yield of the matching maturity. Pick your term above, and the number next to it is approximately the market's wholesale cost of money for that period. That, give or take a small spread, is the rate a well-executed box prices at.
+
+Compare that to what banks charge against the same collateral. Securities-backed lines of credit typically run several points above Treasuries, variable. Margin loans run higher still. The box spread removes the middleman, which is the entire point.
+
+### Why the rate is set by the market
+
+There is no loan officer in a box spread. The four option legs create a fixed payoff at expiration, so whoever buys the other side is simply lending at the implied rate. Index arbitrage desks do this at scale, competing with each other, and that competition pins the rate to Treasuries. A bank's rate committee never enters the picture. That is why the table above, a public government data feed, is a working benchmark for what this financing costs.
+
+### What this means in dollars
+
+On $1,000,000 borrowed for a year, each percentage point of rate is $10,000. A borrower refinancing a 7.5% SBLOC into a box priced near the 1-year benchmark above keeps the difference, every year, on the same collateral. The complete guide walks through the mechanics, the risks, and who this does and does not fit, and the tax treatment is its own story: the financing cost generally books as a capital loss, which may offset gains regardless of what the money bought.
+
+### Frequently asked questions
+
+### What determines box spread rates?
+
+The options market. The implied rate is set by arbitrageurs competing to earn the risk-free rate, so it tracks U.S. Treasury yields of the same maturity, typically within a few tenths of a percent. No bank sets or marks up the rate.
+
+### Are box spread rates fixed or variable?
+
+Fixed. The rate locks the moment the trade executes and does not change for the life of the position, whether that is 30 days or several years. SBLOC and margin rates are variable and move with the bank's reference rate.
+
+### How close are box spread rates to Treasury yields?
+
+Historically, implied box rates on broad index options have landed within a few tenths of a percent of comparable-maturity Treasuries. The exact spread varies with term, market conditions, and execution quality.
+
+### Is the cost tax-deductible?
+
+The financing cost is generally treated as a Section 1256 capital loss rather than interest expense, which may offset capital gains regardless of how the money is used. Tax treatment depends on your circumstances; consult your tax adviser.
+
+For informational and educational purposes only. Benchmark yields are published by the U.S. Treasury and change daily; implied box spread rates are not guaranteed and depend on market conditions and execution. Borrowing against securities involves leverage and risk, including the risk of loss greater than anticipated. This is not an offer of credit and not personalized tax, legal, or investment advice.
+
+Benchmarks are the starting point. Send your current SBLOC or margin statement and we will quote a box spread next to it: the rate, the annual difference in dollars, and the tax treatment.
+
+
+## How Direct Indexing Works
+Source: https://stqcap.com/how-direct-indexing-works.html
+
+### How Direct Indexing Works.
+
+An index fund gives you the return. Direct indexing gives you the return and a tax engine that works in your favor every day the market is open. Here is the whole idea in twenty seconds.
+
+### The index return, plus a loss engine.
+
+Most investors buy the box: a single S&P 500 fund that gives them the index return and nothing else. Direct indexing buys the stocks inside that box instead, in your own account. You get the same exposure, but now every position is yours to manage for taxes.
+
+That distinction is the whole point. A fund is one line on a statement. Direct indexing is hundreds of individual lots, each one a candidate for tax-loss harvesting the moment it dips, even in a year the index finishes up.
+
+### How the machine runs.
+
+### The index is built around you.
+
+Most firms offer direct indexing as an off-the-shelf product. At STQ, the index itself is constructed around your situation: your existing holdings, your sector views, your tax picture, your concentrated positions. You can exclude your employer stock, tilt away from what you already own, and gift the winners instead of selling them. No two clients hold the same portfolio.
+
+Same market exposure as an index fund. A steady supply of harvested losses the fund can never give you. That is the difference between owning the return and owning the return with a tax engine attached.
+
+### See Direct Indexing Built Around Your Portfolio.
+
+We will look at your holdings, your concentrated positions, and your tax picture, and show you what a custom index could do.
+
+### Go Deeper
+
+
+## What to Do With a Concentrated Stock Position
+Source: https://stqcap.com/concentrated-stock-positions.html
+
+### What to Do With a Concentrated Stock Position.
+
+One stock built your wealth. Now it is the biggest risk to it, and you cannot sell without handing a fortune to the IRS. That is a problem with more than one answer.
+
+### The Concentration Trap
+
+A concentrated stock position is the kind of problem people are happy to have, right up until they understand it. One holding, usually built from founder equity, vested RSUs, an inheritance, or a winner you simply never sold, has grown into an outsized share of your net worth. It made you wealthy. Now it is the single largest threat to that wealth.
+
+The risk is obvious once you say it out loud: your financial future is riding on one company's earnings calls, one management team, one product cycle, one regulatory decision. Diversification is the one free lunch in investing, and a concentrated position is the opposite of it.
+
+The trap is that the obvious fix makes a second problem. The position almost always carries a low cost basis , which means selling it realizes a large capital gain. Between federal long-term capital gains rates, the net investment income tax, and state tax, a Californian can hand over more than a third of the gain. So the holder freezes: too risky to keep, too expensive to sell. Most advisors meet this with a shrug and a recommendation to "trim over time." That is a non-answer.
+
+### Why "Just Sell It" Is Rarely the Answer
+
+Selling and paying the tax is sometimes correct. If a single stock is 60 percent of your wealth and a bad quarter would change your life, reducing that risk is worth a tax bill. But selling the entire position in one year, with no planning around it, is almost never the most efficient path.
+
+The reason all-at-once selling is inefficient is that the tax is not a fixed toll. It is a variable you can manage. The same dollar of gain costs very different amounts depending on the year you realize it, the losses you have banked against it, whether it is paired with a charitable gift, and whether you needed to sell the shares at all to get what you wanted from them.
+
+The right frame is not "sell or hold." It is a sequence of decisions across four goals: diversify the risk, hedge what you keep, monetize without selling where possible, and give the most appreciated shares so the gain is never taxed at all. Most positions get solved with a combination, staged over several years.
+
+### The Toolkit: Six Ways to Solve It
+
+There is no single product that fixes a concentrated position. There is a toolkit, and the skill is in matching tools to your basis, bracket, timeline, and intentions for the stock.
+
+### How Each Tool Actually Works
+
+### Direct Indexing as a Completion Portfolio
+
+This is the workhorse. Instead of holding a single stock and an index fund next to it, you hold the index as individual stocks in a separately managed account, built deliberately to underweight the sector and factors your concentrated position already gives you. Because you own the names directly, losses can be harvested at the security level all year, even when the market is up. Those banked losses then offset the capital gains you realize as you trim the concentrated position. The result is a glide path: you diversify on a schedule, and the loss engine pays down part of the tax bill as you go. See How Direct Indexing Works for the mechanics.
+
+### Exchange Funds
+
+An exchange fund pools concentrated holdings from many investors into one diversified partnership. You contribute your shares, receive a pro-rata interest in the pool, and defer the gain on your original position. After the required holding period, usually seven years, you can redeem into a diversified basket. It buys instant diversification without a taxable sale, at the cost of illiquidity and specific eligibility requirements. It is a fit for some positions and a poor fit for others, which is exactly why it should be one option on the table, not the only one.
+
+### Collars and Protective Puts
+
+Sometimes you want to keep the stock, at least for now: a lockup, an anticipated step-up, a thesis you still believe. Hedging lets you hold while removing the catastrophe risk. A protective put sets a floor under the price. A collar pairs that put with a sold call, which finances the protection so the hedge can cost little or nothing, in exchange for capping some upside. Neither triggers a sale, so neither realizes the gain.
+
+### Variable Prepaid Forwards
+
+A variable prepaid forward lets you receive a large share of the position's value in cash today while deferring the actual sale to a future settlement date, and it builds in downside protection along the way. It is a way to monetize a position, get liquidity to diversify or spend, and defer the taxable event, without selling the shares outright now. The structures are nuanced and must be built carefully to achieve the intended tax treatment.
+
+### Charitable Strategies: DAF and CRT
+
+If you are giving anyway, give the right shares. Donating appreciated stock to a donor-advised fund means the embedded gain is never taxed, and you generally deduct the full fair market value. For larger amounts, a charitable remainder trust can sell the position inside the trust without immediate tax, pay you an income stream for life or a term, and leave the remainder to charity. Both turn your lowest-basis, most-appreciated lots, the worst ones to sell, into the best ones to give.
+
+### Borrowing Instead of Selling
+
+If what you actually need is cash rather than diversification, selling is the wrong tool. Borrowing against the portfolio, including through box spread financing, can provide liquidity at rates close to Treasuries without realizing any gain. The shares stay invested, the gain stays unrealized, and if the position is ultimately held until death, the basis may step up. See our guide to box spread borrowing for how that financing works.
+
+### The STQ Approach: Sequencing, Not Products
+
+Most firms that handle concentrated stock sell a product: an exchange fund, a structured hedge, a charitable vehicle. The product is real, but leading with it is backwards. The position does not need a product. It needs a sequence.
+
+We start with the full picture: how concentrated you actually are relative to your wealth, your cost basis lot by lot, your marginal rates this year and your projected rates in the years ahead, your liquidity needs, your charitable intentions, and your timeline for the stock. Only then do we map tools to the situation, usually more than one, staged across multiple tax years to keep each year's realized gain inside the bracket that makes sense.
+
+A typical plan layers them. A direct-indexing completion portfolio diversifies and generates the losses that absorb part of the tax. A hedge protects the shares still held. The lowest-basis lots are routed to charitable gifts so their gain is never taxed. Liquidity needs are met by borrowing rather than selling. And the realized sales that do happen are timed to the years that cost the least. None of this works in a silo, which is why we coordinate it directly with your CPA. That is how institutional portfolios handle concentration, and it is how we handle yours.
+
+### Hold One Stock That Is Too Big to Sell?
+
+We will map your basis, your bracket, and your options, and build a sequence that reduces the risk while paying the least tax legally required.
+
+### More from STQ Research
+
+
+## Asset Location
+Source: https://stqcap.com/asset-location.html
+
+### All the Right Things in All the Wrong Places.
+
+Most investors obsess over what to buy. The smarter question is where to put it.
+
+### What Asset Location Actually Is
+
+Asset location is not asset allocation. This distinction matters, and most investors - and many advisors - confuse the two.
+
+Asset allocation is the decision of what to own: stocks, bonds, real estate, alternatives, cash. It is the strategic mix that reflects your risk tolerance, time horizon, and financial goals.
+
+Asset location is the decision of where to hold each asset: in a taxable brokerage account, a tax-deferred account like a traditional IRA or 401(k), or a tax-exempt account like a Roth IRA.
+
+The insight behind asset location is simple: different assets generate different types of returns, and different types of returns are taxed differently. By placing the right assets in the right accounts, you can meaningfully reduce the tax drag on your portfolio without changing what you own or how much risk you take.
+
+Despite this, asset location is one of the least consistently applied strategies in wealth management. The reason is structural: most advisors manage accounts in silos without considering the full picture. When you cannot see all the buckets at once, you cannot optimize across them.
+
+### The Math: Why It Matters More Than You Think
+
+Consider two investors. Both start with $1 million. Both earn a 10% gross annual return. Both invest for 30 years. The only difference: one invests tax-inefficiently, the other uses systematic asset location.
+
+Hypothetical Growth of $1M · 10% Gross Return · 37% Tax Rate · 30 Years
+
+Hypothetical illustration only. Assumes 37% combined tax rate applied annually on the taxable portfolio. Tax-aware portfolio assumes full deferral optimization. Actual results will vary. Not a guarantee of any specific outcome.
+
+Industry research suggests that systematic asset location may add 0.50% to 1.00% or more in additional after-tax returns annually. For a multi-million dollar portfolio, that difference compounds meaningfully over time - without changing what you own or how much risk you take.
+
+Tax drag compounds over time in ways that are easy to underestimate. Each dollar of tax paid today is not just lost today - it also stops compounding for every year that follows. Over a long horizon, the cumulative cost of tax-inefficient placement can dwarf the cost of a poorly chosen investment.
+
+### Where the Drag Comes From
+
+The drag typically comes from three places: holding bonds in taxable accounts where their interest is taxed as ordinary income every year; holding REITs in taxable accounts where their distributions face ordinary income rates; and holding high-turnover active strategies in taxable accounts where short-term gains are realized continuously. Each of these is solvable with intentional placement.
+
+### The Three Buckets - And What Goes In Each
+
+Every investor has access to three types of accounts, each with a distinct tax character. The goal of asset location is to match each asset to the account where its tax treatment is most favorable.
+
+### The Logic Behind Each Placement
+
+Taxable accounts should hold assets that are inherently tax-efficient: broad equity index funds and ETFs that generate minimal distributions, buy-and-hold positions that defer gains indefinitely, and municipal bonds whose interest is already tax-exempt. Taxable accounts are also where tax-loss harvesting strategies live - the continuous realization of losses to offset gains elsewhere.
+
+Tax-deferred accounts are best used for assets that generate ordinary income - taxable bonds, REITs, high-yield credit, and actively managed strategies with high turnover. Sheltered inside a traditional IRA or 401(k), their income compounds without annual tax friction.
+
+Tax-exempt Roth accounts are the most powerful account type available to most investors, and the most frequently misused. Because growth is entirely tax-free, the Roth should hold your highest-expected-return assets. Putting conservative fixed income in a Roth is a waste of your most valuable tax shelter.
+
+### The Five Mistakes Most Investors Make
+
+The same asset location errors appear repeatedly. They are not subtle. They are not edge cases. They are systematic failures that cost clients real money every year.
+
+### 1. Holding Bonds in Taxable Accounts
+
+Taxable bonds generate ordinary income - the least tax-efficient return type. Holding them in a taxable brokerage account subjects that income to your highest marginal rate every year. The fix is straightforward: move bonds to a tax-deferred account. Most advisors do not do this because they manage accounts in silos and do not see the full picture.
+
+### 2. Holding REITs in Taxable Accounts
+
+REIT distributions are generally taxed as ordinary income, not at the qualified dividend rate. They are among the least tax-efficient assets available, and they belong in an IRA or Roth - not a brokerage account. Yet many model portfolios place REITs in taxable accounts by default.
+
+### 3. Putting Conservative Assets in the Roth
+
+The Roth IRA is your most powerful account because growth is permanently tax-free. Filling it with conservative bonds or money market funds wastes that shelter. The Roth should hold your highest-conviction, highest-expected-return positions - the assets you most want to compound without a tax drag.
+
+### 4. Ignoring the 401(k)
+
+Many advisors manage a client's IRA and brokerage account but ignore the 401(k) entirely. The result is an uncoordinated overall portfolio that misses major location opportunities. We manage 401(k) assets alongside the rest of the portfolio, ensuring the full picture is optimized - not just the accounts we can directly see.
+
+### 5. Not Coordinating with the CPA
+
+Asset location is a tax strategy, and tax strategy requires coordination with your tax preparer. Without knowing your marginal rates, projected income, anticipated Roth conversion opportunities, and tax situation in the year of a major liquidity event, the location decisions are incomplete. We do not operate in a silo from your CPA. We work with them proactively.
+
+### The STQ Approach
+
+At STQ, asset location is not a feature. It is the foundation. Before we discuss what to own, we map the full account structure - taxable, tax-deferred, and tax-exempt accounts across every custodian - and build a location framework that governs every placement decision going forward.
+
+This process begins with your tax return. We look at your marginal rates, your sources of income, your existing asset mix, and your anticipated liquidity events. From there, we model the optimal location for each asset class in your portfolio and construct a transition plan that improves location over time without triggering unnecessary tax events in the process.
+
+We also integrate tax-loss harvesting directly into the location strategy. The taxable account is where losses live - and our strategies ensure we can generate losses continuously, regardless of market direction, to offset gains from real estate sales, business income, concentrated stock positions, and more.
+
+Finally, we coordinate everything with your CPA. Location decisions affect your tax return. Roth conversion decisions require income projections. Gain realization decisions require knowledge of your carryforward losses. This is not optional. It is how institutional portfolios are managed, and it is how we manage yours.
+
+### See What Asset Location Could Do for Your Portfolio.
+
+We will analyze your full account structure and show you exactly where the tax drag is - and what fixing it may be worth.
+
+### More from STQ Research
+

@@ -25,6 +25,9 @@
 
 ## Key Insights
 
+- [Duration: The One Number That Runs Your Bonds](https://stqcap.com/insights/insight-bond-duration-primer.html): A plain-English primer on bond duration, interest-rate sensitivity, and setting it to your horizon.
+- [The Year Before the Liquidity Event](https://stqcap.com/insights/insight-liquidity-event-planning.html): The pre-exit tax playbook: build the offset, give the asset not the proceeds, shape when the gain lands, design the landing.
+- [Moving Into Direct Indexing Without the Tax Bill](https://stqcap.com/insights/insight-direct-indexing-transition.html): Transfer in kind, point new money at the sleeve, and let the harvest pay for the exit.
 - [Long/Short Tax-Loss Harvesting: The Engine That Does Not Run Dry](https://stqcap.com/insights/insight-long-short-tax-loss-harvesting.html): Why long-only harvesting ossifies and how a short book fixes it.
 - [Volatility Is the Price of Stocks. Get Paid Back.](https://stqcap.com/insights/insight-volatility-tax-asset.html): How direct indexing turns market swings into a banked tax asset.
 - [351 Exchange or Exchange Fund?](https://stqcap.com/insights/insight-351-vs-exchange-fund.html): Two tax-free ways to diversify a concentrated position, compared.
@@ -37,6 +40,10 @@
 - [Akiva Glazerson](https://stqcap.com/akiva-glazerson.html): Founder of STQ Capital. Background at PIMCO; quantitative, tax-first approach to wealth management.
 - [Research](https://stqcap.com/research.html): Institutional-grade research hub.
 - [Contact](https://stqcap.com/contact.html): info@stqcap.com, or book a 30-minute call.
+
+## Full Text
+
+- [llms-full.txt](https://stqcap.com/llms-full.txt): Complete text of all pillar guides in one file, for ingestion.
 
 ## Disclosures
 
