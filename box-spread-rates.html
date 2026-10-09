@@ -4,25 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
-<title>Own the S&P 500? Do This Instead. | STQ Capital</title>
-<meta name="description" content="An index fund gives you the return. Direct indexing gives you the return plus a tax engine working in your favor every day. What most investors miss.">
+<title>Box Spread Rates Today | STQ Capital</title>
+<meta name="description" content="Current box spread borrowing benchmarks, updated every business day from the U.S. Treasury par yield curve. How the implied rate works and how it compares to SBLOC and margin rates.">
+<meta name="keywords" content="box spread rates, current box spread rates, box spread implied rate, box spread financing rate, borrow against portfolio rate, SBLOC rate comparison">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Own the S&P 500? Do This Instead.">
-<meta name="twitter:description" content="An index fund gives you the return. Direct indexing gives you the return and a tax engine that works in your favor every single day. Here's what most investors are missing.">
+<meta name="twitter:title" content="Box Spread Rates Today">
+<meta name="twitter:description" content="Box spread borrowing benchmarks, updated every business day from the U.S. Treasury par yield curve.">
 <meta name="author" content="Akiva Glazerson, STQ Capital">
-<link rel="canonical" href="https://stqcap.com/insights/insight-direct-indexing.html">
-<meta property="og:image" content="https://stqcap.com/og/insight-direct-indexing.png">
+<link rel="canonical" href="https://stqcap.com/box-spread-rates.html">
+<meta property="og:image" content="https://stqcap.com/og-box-spreads.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="twitter:image" content="https://stqcap.com/og/insight-direct-indexing.png">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://stqcap.com/insights/insight-direct-indexing.html">
-<meta property="og:title" content="Own the S&P 500? Do This Instead.">
-<meta property="og:description" content="An index fund gives you the return. Direct indexing gives you the return and a tax engine that works in your favor every single day. Here's what most investors are missing.">
+<meta name="twitter:image" content="https://stqcap.com/og-box-spreads.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stqcap.com/box-spread-rates.html">
+<meta property="og:title" content="Box Spread Rates Today">
+<meta property="og:description" content="Current box spread borrowing benchmarks, updated every business day from the U.S. Treasury par yield curve.">
 <meta property="og:site_name" content="STQ Capital">
-<meta property="article:published_time" content="2026-05-10T05:00:00-07:00">
-<meta property="article:author" content="Akiva Glazerson">
-<meta property="article:section" content="Tax Alpha">
+<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png?v=2" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon.ico?v=2" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
@@ -36,31 +38,37 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgb
 .nav-inner { max-width: 100%; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .nav-logo { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; letter-spacing: 0.03em; }
 .nav-logo span { font-weight: 400; color: var(--text-secondary); }
-.nav-back { font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
-.nav-back:hover { color: var(--navy); }
-.nav-back svg { transition: transform 0.2s; }
-.nav-back:hover svg { transform: translateX(-3px); }
 .issue-hero { padding: 140px 0 72px; background: var(--navy); position: relative; overflow: hidden; }
 .issue-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(240,239,235,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(240,239,235,0.03) 1px, transparent 1px); background-size: 60px 60px; }
 .hero-watermark { position: absolute; right: 20px; bottom: 56px; font-family: var(--font-heading); font-weight: 700; font-size: clamp(5rem,10vw,10rem); color: rgba(240,239,235,0.03); line-height: 1; pointer-events: none; user-select: none; }
 .hero-container { max-width: 1100px; margin: 0 auto; padding: 0 clamp(24px,5vw,64px); position: relative; z-index: 1; }
-.issue-hero h1 { font-family: var(--font-heading); font-size: clamp(2.2rem,5vw,3.75rem); font-weight: 700; color: var(--cream); line-height: 1.08; letter-spacing: -0.02em; max-width: 760px; margin-bottom: 24px; animation: slideUp 0.7s var(--ease-out) 0.2s both; }
-.issue-subhead { font-size: 1.125rem; color: var(--text-light); max-width: 620px; line-height: 1.75; animation: slideUp 0.7s var(--ease-out) 0.3s both; }
+.issue-hero h1 { font-family: var(--font-heading); font-size: clamp(2.2rem,5vw,3.75rem); font-weight: 700; color: var(--cream); line-height: 1.08; letter-spacing: -0.02em; max-width: 820px; margin-bottom: 24px; animation: slideUp 0.7s var(--ease-out) 0.2s both; }
+.issue-subhead { font-size: 1.125rem; color: var(--text-light); max-width: 640px; line-height: 1.75; animation: slideUp 0.7s var(--ease-out) 0.3s both; }
 .issue-meta { display: flex; align-items: center; gap: 14px; margin-top: 24px; flex-wrap: wrap; }
 .meta-category { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,239,235,0.6); border: 1px solid rgba(240,239,235,0.2); padding: 4px 12px; border-radius: 3px; }
-.meta-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(240,239,235,0.2); }
-.meta-date { font-family: var(--font-heading); font-size: 0.7rem; color: rgba(240,239,235,0.3); letter-spacing: 0.08em; }
 .issue-content { max-width: 720px; margin: 0 auto; padding: 72px clamp(24px,5vw,48px) 120px; position: relative; z-index: 1; }
-.author-block { display: flex; align-items: center; gap: 16px; padding: 24px 0; border-bottom: 1px solid rgba(27,46,75,0.1); margin-bottom: 48px; }
-.author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; color: var(--cream); flex-shrink: 0; }
-.author-name { font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--navy); letter-spacing: 0.02em; }
-.author-title { font-size: 0.8rem; color: var(--text-secondary); margin-top: 3px; }
-.read-time { margin-left: auto; font-family: var(--font-heading); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(27,46,75,0.3); }
 .issue-body p { font-size: 1.0625rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 24px; }
 .issue-body p strong { color: var(--text-primary); font-weight: 600; }
 .issue-body h2 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--navy); margin: 44px 0 16px; letter-spacing: 0.01em; }
-.pull-quote { border-left: 3px solid var(--navy); padding: 4px 0 4px 28px; margin: 40px 0; }
-.pull-quote p { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--navy); line-height: 1.55; letter-spacing: -0.01em; margin: 0; }
+.issue-body a { color: var(--navy); font-weight: 600; }
+.rates-asof { font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 10px; }
+.rates-table { width: 100%; border-collapse: collapse; border: 1px solid rgba(27,46,75,0.12); border-radius: 8px; overflow: hidden; margin: 0 0 10px; font-size: 0.95rem; }
+.rates-table th { background: var(--navy); color: var(--cream); font-family: var(--font-heading); font-weight: 700; font-size: 0.85rem; text-align: left; padding: 14px 20px; }
+.rates-table td { padding: 13px 20px; border-top: 1px solid rgba(27,46,75,0.08); color: #2a3a4a; }
+.rates-table td:last-child, .rates-table th:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.rates-note { font-size: 0.8125rem; color: rgba(27,46,75,0.45); line-height: 1.6; margin-bottom: 24px; }
+.compare { border: 1px solid rgba(27,46,75,0.12); border-radius: 8px; overflow: hidden; margin: 36px 0; }
+.compare-row { display: grid; grid-template-columns: 1fr 1fr; }
+.compare-head { background: var(--navy); }
+.compare-head div { padding: 16px 22px; font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: var(--cream); }
+.compare-head div:first-child { border-right: 1px solid rgba(240,239,235,0.12); }
+.compare-body .compare-row { border-top: 1px solid rgba(27,46,75,0.08); }
+.compare-body .compare-row div { padding: 16px 22px; font-size: 0.9rem; line-height: 1.55; color: #2a3a4a; }
+.compare-body .compare-row div:first-child { border-right: 1px solid rgba(27,46,75,0.08); background: rgba(27,46,75,0.02); }
+.compare-label { font-family: var(--font-heading); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); display: block; margin-bottom: 5px; }
+.faq-item { border-bottom: 1px solid rgba(27,46,75,0.1); padding: 20px 0; }
+.faq-item h3 { font-family: var(--font-heading); font-size: 0.98rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+.faq-item p { font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary); margin: 0; }
 .issue-cta { background: var(--cream-dark); border-radius: 6px; padding: 36px 40px; margin: 48px 0 0; text-align: center; }
 .issue-cta p { font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.75; max-width: 480px; margin-left: auto; margin-right: auto; }
 .btn { font-family: var(--font-heading); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 28px; border-radius: 4px; text-decoration: none; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s; }
@@ -77,19 +85,13 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
 .footer-copy { font-size: 0.8125rem; color: rgba(240,239,235,0.25); }
 .footer-disclaimer { margin-top: 24px; font-size: 0.6875rem; line-height: 1.7; color: rgba(240,239,235,0.18); max-width: 900px; }
 @keyframes slideUp { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: translateY(0); } }
-@media (max-width: 768px) { .nav-inner { padding: 0 24px; } .issue-hero h1 { font-size: 2rem; } .issue-content { padding: 48px 24px 80px; } }
-
-/* full site nav */
+@media (max-width: 768px) { .nav-inner { padding: 0 24px; } .issue-hero h1 { font-size: 2rem; } .issue-content { padding: 48px 24px 80px; } .compare-row { grid-template-columns: 1fr; } .compare-head div:first-child, .compare-body .compare-row div:first-child { border-right: none; } }
 .nav-links { display: flex; gap: 36px; margin-right: auto; margin-left: 48px; }
 .nav-links a { font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
 .nav-links a:hover, .nav-links a.active { color: var(--navy); }
 .nav-actions { display: flex; align-items: center; gap: 12px; }
-.nav-client-login { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; transition: border-color 0.2s ease, background 0.2s ease; }
-.nav-client-login:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
 .btn-white { background: var(--cream); color: var(--navy); }
-.btn-white:hover { background: var(--white); transform: translateY(-1px); }
 .btn-outline-white { background: transparent; color: var(--cream); border: 1px solid rgba(240,239,235,0.3); }
-.btn-outline-white:hover { border-color: var(--cream); background: rgba(240,239,235,0.08); }
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
 .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--navy); }
 .nav-login-dropdown { position: relative; display: inline-flex; }
@@ -102,9 +104,7 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
 .mobile-nav-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 1.5rem; color: var(--navy); cursor: pointer; padding: 8px; }
 .nav-login-btn { font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; border: 1px solid rgba(27,46,75,0.2); border-radius: 4px; padding: 12px 28px; display: inline-flex; align-items: center; gap: 8px; transition: border-color 0.2s ease, background 0.2s ease; cursor: pointer; background: transparent; }
 .nav-login-btn:hover { border-color: rgba(27,46,75,0.5); background: rgba(27,46,75,0.03); }
-.nav-login-btn svg { transition: transform 0.2s ease; }
-.nav-login-dropdown:hover .nav-login-btn svg:last-child { transform: rotate(180deg); }
-.nav-login-menu { position: absolute; top: calc(100% + 8px); right: 0; background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 6px; box-shadow: 0 12px 40px rgba(27,46,75,0.12); min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.2s var(--ease); z-index: 100; overflow: hidden; }
+.nav-login-menu { position: absolute; top: calc(100% + 8px); right: 0; background: var(--white); border: 1px solid rgba(27,46,75,0.1); border-radius: 6px; box-shadow: 0 12px 40px rgba(27,46,75,0.12); min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.2s ease; z-index: 100; overflow: hidden; }
 .nav-login-dropdown:hover .nav-login-menu { opacity: 1; visibility: visible; transform: translateY(0); }
 .nav-login-menu a { display: flex; align-items: center; gap: 10px; padding: 14px 18px; font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--navy); text-decoration: none; transition: background 0.15s ease; border-bottom: 1px solid rgba(27,46,75,0.06); }
 .nav-login-menu a:last-child { border-bottom: none; }
@@ -119,28 +119,24 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Own the S&P 500? Do This Instead.",
-  "description": "An index fund gives you the return. Direct indexing gives you the return and a tax engine that works in your favor every single day. Here's what most investors are missing.",
-  "datePublished": "2026-05-10T05:00:00-07:00",
-  "dateModified": "2026-05-10T05:00:00-07:00",
-  "author": {
-    "@type": "Person",
-    "name": "Akiva Glazerson",
-    "jobTitle": "Founder",
-    "url": "https://stqcap.com/akiva-glazerson.html", "sameAs": "https://www.linkedin.com/in/akiva-g-5ba463a3",
-    "worksFor": {
-      "@type": "FinancialService",
-      "name": "STQ Capital",
-      "url": "https://stqcap.com"
-    }
-  },
-  "publisher": {
-    "@type": "FinancialService",
-    "name": "STQ Capital",
-    "url": "https://stqcap.com"
-  },
-  "mainEntityOfPage": "https://stqcap.com/insights/insight-direct-indexing.html"
+  "@type": "WebPage",
+  "name": "Box Spread Rates Today",
+  "description": "Current box spread borrowing benchmarks, updated every business day from the U.S. Treasury par yield curve.",
+  "url": "https://stqcap.com/box-spread-rates.html",
+  "isPartOf": { "@type": "WebSite", "name": "STQ Capital", "url": "https://stqcap.com" },
+  "publisher": { "@type": "FinancialService", "name": "STQ Capital", "url": "https://stqcap.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What determines box spread rates?", "acceptedAnswer": { "@type": "Answer", "text": "The options market. A box spread's implied borrowing rate is set by arbitrageurs competing to earn the risk-free rate, so it tracks U.S. Treasury yields of the same maturity, typically within a few tenths of a percent. No bank sets or marks up the rate." } },
+    { "@type": "Question", "name": "Are box spread rates fixed or variable?", "acceptedAnswer": { "@type": "Answer", "text": "Fixed. The rate is locked the moment the trade executes and does not change for the life of the position, whether that is 30 days or several years. SBLOC and margin rates, by contrast, are variable and move with the bank's reference rate." } },
+    { "@type": "Question", "name": "How close are box spread rates to Treasury yields?", "acceptedAnswer": { "@type": "Answer", "text": "Historically, implied box spread rates on broad index options have tracked Treasury yields of comparable maturity closely, usually landing within a few tenths of a percent above them. The exact spread varies with term, market conditions, and execution quality." } },
+    { "@type": "Question", "name": "Is the cost of a box spread tax-deductible?", "acceptedAnswer": { "@type": "Answer", "text": "The financing cost of a box spread on broad-based index options is generally treated as a Section 1256 capital loss rather than interest expense, which may offset capital gains regardless of how the borrowed money is used. Tax treatment depends on your circumstances; consult your tax adviser." } }
+  ]
 }
 </script>
 <!-- Google tag (gtag.js) -->
@@ -157,10 +153,6 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
     if (c) gtag('event', 'schedule_click', { link_url: c.getAttribute('href') });
   });
 </script>
-<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
-<link rel="icon" href="/favicon-96.png?v=2" type="image/png" sizes="96x96">
-<link rel="icon" href="/favicon.ico?v=2" sizes="32x32">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
 </head>
 <body>
 <nav>
@@ -169,9 +161,9 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
     <div class="nav-links">
       <a href="https://stqcap.com/#solutions">Solutions</a>
       <a href="https://stqcap.com/#about">About</a>
-      <a href="/insights.html" class="active">Insights</a>
+      <a href="/insights.html">Insights</a>
       <a href="/research.html">Research</a>
-      <a href="/box-spreads.html">Synthetic Financing</a>
+      <a href="/box-spreads.html" class="active">Synthetic Financing</a>
       <a href="/stq-consulting.html">Consulting</a>
       <a href="/contact.html">Contact</a>
     </div>
@@ -220,73 +212,63 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
 <section class="issue-hero">
   <div class="hero-watermark">STQ</div>
   <div class="hero-container">
-    <h1>Own an S&amp;P 500 ETF? Do This Instead.</h1>
-    <p class="issue-subhead">An index fund gives you the return. Direct indexing gives you the return and a tax engine that works in your favor every single day. Most investors have never heard of it. Here&#8217;s what they&#8217;re missing.</p>
+    <h1>Box Spread Rates Today.</h1>
+    <p class="issue-subhead">Box spread borrowing costs are set by the options market, not a bank, and they track the U.S. Treasury curve. The benchmarks below refresh every business day.</p>
     <div class="issue-meta">
-      <span class="meta-category">Tax Alpha</span>
+      <span class="meta-category">Live Benchmarks</span>
     </div>
   </div>
 </section>
 
 <div class="issue-content">
-  <div class="author-block">
-    <div class="author-avatar">AG</div>
-    <div>
-      <div class="author-name"><a href="/akiva-glazerson.html" style="color:inherit;text-decoration:none;">Akiva Glazerson</a></div>
-      <div class="author-title">Founder, STQ Capital</div>
-    </div>
-    <div class="read-time">4 min read</div>
-  </div>
-
   <div class="issue-body">
-    <p>Index funds are one of the best inventions in the history of investing. Low cost, diversified, tax-efficient relative to active management, and almost impossible to beat over long periods. If you own a broad market index fund, you are doing something right.</p>
 
-    <p>But there is a version of index investing that is better. It does not pick better stocks and it does not time the market. It is better because it turns your market exposure into a tax engine, one that runs quietly year after year and produces returns that have nothing to do with how the market did.</p>
+    <!-- BOX_RATES_TABLE_START : auto-updated daily by scripts/update-box-rates.mjs (U.S. Treasury par yield curve) -->
+    <p class="rates-asof">Benchmark curve as of September 25, 2026</p>
+    <table class="rates-table">
+      <tr><th>Term</th><th>U.S. Treasury par yield</th></tr>
+      <tr><td>1 Year</td><td>4.50%</td></tr>
+      <tr><td>2 Year</td><td>4.81%</td></tr>
+      <tr><td>3 Year</td><td>4.94%</td></tr>
+      <tr><td>4 Year</td><td>4.96%</td></tr>
+      <tr><td>5 Year</td><td>4.98%</td></tr>
+    </table>
+    <!-- BOX_RATES_TABLE_END -->
+    <p class="rates-note">Source: U.S. Treasury daily par yield curve. Implied box spread borrowing rates on broad index options typically price within a few tenths of a percent of these yields; the exact rate depends on term, market conditions, and execution. These are benchmarks, not quotes.</p>
 
-    <p>It is called direct indexing, and above a certain portfolio size it is also one of the most overlooked things in investing.</p>
+    <h2>How to read this table</h2>
+    <p>A <a href="/box-spreads.html">box spread</a> is a loan built from S&amp;P 500 index options: cash today, one fixed repayment at expiration. Because arbitrageurs compete to earn the risk-free rate on the other side of the trade, the implied borrowing rate tracks the Treasury yield of the matching maturity. Pick your term above, and the number next to it is approximately the market's wholesale cost of money for that period. That, give or take a small spread, is the rate a well-executed box prices at.</p>
 
-    <div class="pull-quote">
-      <p>An index fund holds the stocks for you. Direct indexing means you hold them yourself. That one difference changes everything.</p>
+    <p>Compare that to what banks charge against the same collateral. Securities-backed lines of credit typically run several points above Treasuries, variable. Margin loans run higher still. The box spread removes the middleman, which is the entire point.</p>
+
+    <div class="compare">
+      <div class="compare-head compare-row"><div>Box spread</div><div>SBLOC or margin loan</div></div>
+      <div class="compare-body">
+        <div class="compare-row"><div><span class="compare-label">Rate</span>Tracks the Treasury curve, set by the options market</div><div><span class="compare-label">Rate</span>Reference rate plus the bank's markup, typically 6.5 to 13%</div></div>
+        <div class="compare-row"><div><span class="compare-label">Rate type</span>Fixed for the full term</div><div><span class="compare-label">Rate type</span>Variable, moves whenever the bank's rate moves</div></div>
+        <div class="compare-row"><div><span class="compare-label">Payments</span>None until maturity, one fixed repayment</div><div><span class="compare-label">Payments</span>Ongoing interest, often monthly</div></div>
+        <div class="compare-row"><div><span class="compare-label">Cost treatment</span>Generally a Section 1256 capital loss that may offset gains</div><div><span class="compare-label">Cost treatment</span>Personal-use interest is rarely deductible</div></div>
+      </div>
     </div>
 
-    <div style="position:relative;width:100%;aspect-ratio:1200/675;margin:36px 0;border-radius:8px;overflow:hidden;border:1px solid rgba(27,46,75,0.08);background:var(--cream);">
-      <iframe src="/direct-indexing-animation.html" title="How direct indexing works: harvesting losses while tracking the index" loading="lazy" scrolling="no" style="position:absolute;inset:0;width:100%;height:100%;border:0;display:block;"></iframe>
-    </div>
+    <h2>Why the rate is set by the market</h2>
+    <p>There is no loan officer in a box spread. The four option legs create a fixed payoff at expiration, so whoever buys the other side is simply lending at the implied rate. Index arbitrage desks do this at scale, competing with each other, and that competition pins the rate to Treasuries. A bank's rate committee never enters the picture. That is why the table above, a public government data feed, is a working benchmark for what this financing costs.</p>
 
-    <p style="text-align:center;font-size:0.9rem;margin:-12px 0 8px;"><a href="/how-direct-indexing-works.html" style="color:var(--navy);font-weight:600;">See the full explainer: How Direct Indexing Works &#8594;</a></p>
+    <h2>What this means in dollars</h2>
+    <p>On $1,000,000 borrowed for a year, each percentage point of rate is $10,000. A borrower refinancing a 7.5% SBLOC into a box priced near the 1-year benchmark above keeps the difference, every year, on the same collateral. The <a href="/box-spread-borrowing-guide.html">complete guide</a> walks through the mechanics, the risks, and who this does and does not fit, and the <a href="/insights/insight-box-spread-overlooked-features.html">tax treatment</a> is its own story: the financing cost generally books as a capital loss, which may offset gains regardless of what the money bought.</p>
 
-    <h2>What an Index Fund Can&#8217;t Do</h2>
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item"><h3>What determines box spread rates?</h3><p>The options market. The implied rate is set by arbitrageurs competing to earn the risk-free rate, so it tracks U.S. Treasury yields of the same maturity, typically within a few tenths of a percent. No bank sets or marks up the rate.</p></div>
+    <div class="faq-item"><h3>Are box spread rates fixed or variable?</h3><p>Fixed. The rate locks the moment the trade executes and does not change for the life of the position, whether that is 30 days or several years. SBLOC and margin rates are variable and move with the bank's reference rate.</p></div>
+    <div class="faq-item"><h3>How close are box spread rates to Treasury yields?</h3><p>Historically, implied box rates on broad index options have landed within a few tenths of a percent of comparable-maturity Treasuries. The exact spread varies with term, market conditions, and execution quality.</p></div>
+    <div class="faq-item"><h3>Is the cost tax-deductible?</h3><p>The financing cost is generally treated as a Section 1256 capital loss rather than interest expense, which may offset capital gains regardless of how the money is used. Tax treatment depends on your circumstances; consult your tax adviser.</p></div>
 
-    <p>When you buy an S&amp;P 500 ETF, you own one thing: a share of the fund. The fund owns the 500 stocks. You do not, and most investors never think about why that matters.</p>
-
-    <p>Because you own the fund and not the individual stocks, you cannot harvest losses at the individual security level. The fund handles that internally, in a way optimized for the fund rather than for your tax situation. When Apple drops 15% while the broader index is flat, that loss sits inside the fund where you cannot touch it or use it against a gain elsewhere in your portfolio. It evaporates.</p>
-
-    <h2>What Direct Indexing Does</h2>
-
-    <p>Direct indexing means owning the individual securities that make up an index &#8211; all 500 stocks, or a representative sample &#8211; rather than a fund that holds them for you. The market exposure is essentially identical. The tax treatment is completely different.</p>
-
-    <p>Because you own the individual stocks, you can harvest losses at the security level. When Apple drops 15% while the broader index is flat, that is a harvestable loss. You sell Apple, immediately buy a similar technology stock to maintain your exposure, and bank the loss. The index barely moved. Your loss bank just got bigger.</p>
-
-    <p>Individual stocks move independently of each other. On any given day &#8211; even in a rising market &#8211; some stocks in the index are down. Those are harvesting opportunities. A well-managed direct indexing strategy captures them continuously, building a loss bank that can be deployed against gains anywhere in your portfolio: a real estate sale, a business exit, an RSU vest, a concentrated stock position you need to reduce.</p>
-
-    <h2>The Tax Math</h2>
-
-    <p>The value of a direct indexing strategy scales with your tax rate and your portfolio size. For an investor with a significant capital gains rate and a portfolio large enough to own individual securities efficiently &#8211; typically $100K or more &#8211; the annual tax alpha generated by systematic loss harvesting can meaningfully exceed the cost of the strategy.</p>
-
-    <p>It also pairs with everything else. The losses harvested through direct indexing feed the same loss bank as tax loss harvesting on other positions. Box spread borrowing lets you access liquidity without triggering gains. Concentrated position management uses harvested losses to offset the tax cost of diversifying. Each strategy makes the others more powerful.</p>
-
-    <h2>Who It&#8217;s For</h2>
-
-    <p>Direct indexing makes the most sense for investors who have significant taxable accounts, face meaningful capital gains from other sources &#8211; real estate, business interests, equity compensation &#8211; or hold concentrated positions they need to reduce over time. The larger the potential tax bill, the more valuable the loss bank becomes.</p>
-
-    <p>If your portfolio is entirely in tax-advantaged accounts, direct indexing is less relevant, since there are no gains to offset. But for anyone with meaningful taxable exposure and a tax rate that makes gains painful, the harvesting pays for itself many times over.</p>
-
-    <p>Most advisors never offer it, and most never bother to implement it. That is the gap worth closing.</p>
+    <p style="font-size:0.8125rem;color:rgba(27,46,75,0.45);margin-top:32px;">For informational and educational purposes only. Benchmark yields are published by the U.S. Treasury and change daily; implied box spread rates are not guaranteed and depend on market conditions and execution. Borrowing against securities involves leverage and risk, including the risk of loss greater than anticipated. This is not an offer of credit and not personalized tax, legal, or investment advice.</p>
   </div>
 
   <div class="issue-cta">
-    <p>Want to know whether direct indexing makes sense for your portfolio and what a tax engine could generate for your specific situation?</p>
-    <a href="mailto:info@stqcap.com?subject=Portfolio%20Diagnostic%20Request" class="btn btn-primary">Request a Portfolio Diagnostic</a>
+    <p>Benchmarks are the starting point. Send your current SBLOC or margin statement and we will quote a box spread next to it: the rate, the annual difference in dollars, and the tax treatment.</p>
+    <a href="mailto:info@stqcap.com?subject=Box%20Spread%20Rate%20Quote" class="btn btn-primary">See My Rate</a>
   </div>
 </div>
 
@@ -298,9 +280,9 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
         <a href="https://www.linkedin.com/in/akiva-g-5ba463a3" target="_blank">LinkedIn</a>
         <a href="/insights.html">Newsletter</a>
         <a href="/research.html">Research</a>
-        <a href="/#contact">Contact</a>
-      
-        <a href="/privacy.html">Privacy</a></div>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
       <div class="footer-copy">&#169; 2026 STQ Capital</div>
     </div>
     <div class="footer-disclaimer">Advisory services are offered through STQ Capital, an investment adviser registered with the states of California and New York. Advisory services are only offered to clients or prospective clients where STQ and its representatives are properly registered or exempt from registration. The information on this site is not intended as tax, accounting or legal advice, nor is it an offer or solicitation to buy or sell, or as an endorsement of any company, security, fund, or other offering. Information provided should not be solely relied upon for decision making. Please consult your legal, tax, or accounting professional regarding your specific situation. Investments involve risk and have the potential for complete loss. It should not be assumed that any recommendations made will necessarily be profitable.</div>

@@ -8,6 +8,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 
 const PAGE = new URL('../box-spreads.html', import.meta.url);
+const RATES_PAGE = new URL('../box-spread-rates.html', import.meta.url);
 
 function feedUrl(yyyymm) {
   return `https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value_month=${yyyymm}`;
@@ -104,15 +105,45 @@ function buildBlock(c) {
   ].join('\n');
 }
 
-const curve = await getCurve();
-const html = readFileSync(PAGE, 'utf8');
-const re = /\/\* BOX_RATES_START[\s\S]*?BOX_RATES_END \*\//;
-if (!re.test(html)) throw new Error('BOX_RATES markers not found in box-spreads.html');
-const updated = html.replace(re, buildBlock(curve));
+// Static HTML table for box-spread-rates.html (rendered server-side so
+// crawlers that don't execute JS still see the numbers).
+function buildTable(c) {
+  const pct = (v) => (v * 100).toFixed(2) + '%';
+  const y4 = c.y4 ?? +((c.y3 + c.y5) / 2).toFixed(4);
+  const rows = [
+    ['1 Year', c.y1], ['2 Year', c.y2], ['3 Year', c.y3], ['4 Year', y4], ['5 Year', c.y5],
+  ].map(([l, v]) => `      <tr><td>${l}</td><td>${pct(v)}</td></tr>`).join('\n');
+  return [
+    '<!-- BOX_RATES_TABLE_START : auto-updated daily by scripts/update-box-rates.mjs (U.S. Treasury par yield curve) -->',
+    `    <p class="rates-asof">Benchmark curve as of ${c.asOf}</p>`,
+    '    <table class="rates-table">',
+    '      <tr><th>Term</th><th>U.S. Treasury par yield</th></tr>',
+    rows,
+    '    </table>',
+    '    <!-- BOX_RATES_TABLE_END -->',
+  ].join('\n');
+}
 
-if (updated === html) {
+const curve = await getCurve();
+
+const targets = [
+  { file: PAGE, re: /\/\* BOX_RATES_START[\s\S]*?BOX_RATES_END \*\//, block: buildBlock(curve), name: 'box-spreads.html' },
+  { file: RATES_PAGE, re: /<!-- BOX_RATES_TABLE_START[\s\S]*?BOX_RATES_TABLE_END -->/, block: buildTable(curve), name: 'box-spread-rates.html' },
+];
+
+let changed = false;
+for (const t of targets) {
+  const html = readFileSync(t.file, 'utf8');
+  if (!t.re.test(html)) throw new Error(`Rate markers not found in ${t.name}`);
+  const updated = html.replace(t.re, t.block);
+  if (updated !== html) {
+    writeFileSync(t.file, updated);
+    changed = true;
+    console.log(`Updated ${t.name}`);
+  }
+}
+if (!changed) {
   console.log('No change in rates.');
 } else {
-  writeFileSync(PAGE, updated);
-  console.log(`Updated to Treasury curve as of ${curve.asOf}: 1Y ${(curve.y1 * 100).toFixed(2)}%, 3Y ${(curve.y3 * 100).toFixed(2)}%, 5Y ${(curve.y5 * 100).toFixed(2)}%`);
+  console.log(`Treasury curve as of ${curve.asOf}: 1Y ${(curve.y1 * 100).toFixed(2)}%, 3Y ${(curve.y3 * 100).toFixed(2)}%, 5Y ${(curve.y5 * 100).toFixed(2)}%`);
 }
