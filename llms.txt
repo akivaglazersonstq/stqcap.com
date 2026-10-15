@@ -21,6 +21,7 @@
 - [The Two Box Spread Features Almost Everyone Overlooks](https://stqcap.com/insights/insight-box-spread-overlooked-features.html): No payments until maturity, and the implied interest books as an annual Section 1256 capital loss.
 - [A Better Way to Buy (or Build) a Home](https://stqcap.com/insights/insight-box-spread-vs-heloc-2026-06-04.html): Box spread vs HELOC for financing a home purchase or build against a portfolio instead of the house.
 - [A Better Way to Buy a House](https://stqcap.com/insights/insight-box-spread-mortgage.html): Using portfolio financing in place of a traditional mortgage.
+- [Box Spread vs SBLOC: Same Collateral, Very Different Loan](https://stqcap.com/insights/insight-box-spread-vs-sbloc.html): The head-to-head: who sets the rate, fixed vs floating, tax treatment, and where the SBLOC genuinely wins.
 - [Box Spreads Explained in Seven Slides (PDF)](https://stqcap.com/downloads/stq-box-spreads-explainer.pdf): The visual explainer: what it is, who sets the rate, tax treatment, and use cases.
 
 ## Key Insights
