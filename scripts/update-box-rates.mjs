@@ -85,7 +85,9 @@ async function getCurve() {
     year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC',
   });
 
-  return { y1, y2, y3, y4, y5, y7, y10, y20, y30, asOf };
+  const isoDate = entry.date.toISOString().slice(0, 10);
+
+  return { y1, y2, y3, y4, y5, y7, y10, y20, y30, asOf, isoDate };
 }
 
 function buildBlock(c) {
@@ -145,5 +147,18 @@ for (const t of targets) {
 if (!changed) {
   console.log('No change in rates.');
 } else {
+  // Freshness signals for search engines and AI crawlers: the Dataset's
+  // dateModified on the rates page, and <lastmod> for both rate pages.
+  const iso = curve.isoDate;
+  const rates = readFileSync(RATES_PAGE, 'utf8');
+  writeFileSync(RATES_PAGE, rates
+    .replace(/("dateModified": ")[^"]*(")/g, `$1${iso}$2`));
+  const sitemapUrl = new URL('../sitemap.xml', import.meta.url);
+  let sm = readFileSync(sitemapUrl, 'utf8');
+  for (const page of ['box-spread-rates.html', 'box-spreads.html']) {
+    const re = new RegExp(`(<loc>https://stqcap\\.com/${page.replace('.', '\\.')}</loc>\\s*<lastmod>)[^<]*(</lastmod>)`);
+    sm = sm.replace(re, `$1${iso}$2`);
+  }
+  writeFileSync(sitemapUrl, sm);
   console.log(`Treasury curve as of ${curve.asOf}: 1Y ${(curve.y1 * 100).toFixed(2)}%, 3Y ${(curve.y3 * 100).toFixed(2)}%, 5Y ${(curve.y5 * 100).toFixed(2)}%`);
 }

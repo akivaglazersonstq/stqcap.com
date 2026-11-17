@@ -34,7 +34,7 @@ jobs:
           if [[ -n "$(git status --porcelain box-spreads.html box-spread-rates.html)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add box-spreads.html box-spread-rates.html
+            git add box-spreads.html box-spread-rates.html sitemap.xml
             git commit -m "Auto-update box spread benchmark rates (Treasury curve)"
             git push
           else

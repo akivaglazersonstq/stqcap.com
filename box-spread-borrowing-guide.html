@@ -149,9 +149,26 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
     "name": "Akiva Glazerson",
     "jobTitle": "Founder",
     "url": "https://www.linkedin.com/in/akiva-g-5ba463a3",
-    "worksFor": { "@type": "FinancialService", "name": "STQ Capital", "url": "https://stqcap.com" }
+    "worksFor": {
+      "@type": "FinancialService",
+      "name": "STQ Capital",
+      "url": "https://stqcap.com",
+      "@id": "https://stqcap.com/#organization"
+    },
+    "@id": "https://stqcap.com/akiva-glazerson.html#person"
   },
-  "publisher": { "@type": "FinancialService", "name": "STQ Capital", "url": "https://stqcap.com" },
+  "publisher": {
+    "@type": "FinancialService",
+    "name": "STQ Capital",
+    "url": "https://stqcap.com",
+    "@id": "https://stqcap.com/#organization",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://stqcap.com/logo-stq-navy.png",
+      "width": 658,
+      "height": 302
+    }
+  },
   "mainEntityOfPage": "https://stqcap.com/box-spread-borrowing-guide.html",
   "articleSection": "Box Spreads",
   "about": "Box spread borrowing",
@@ -166,32 +183,50 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
     {
       "@type": "Question",
       "name": "What is a box spread?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A box spread is a four-leg options position (a bull call spread combined with a bear put spread at the same two strike prices and expiration) that has a known, fixed value at expiration equal to the distance between the strikes. Selling the box delivers cash today in exchange for repaying that fixed amount at expiration, which functions like a fixed-rate loan with no monthly payments." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A box spread is a four-leg options position (a bull call spread combined with a bear put spread at the same two strike prices and expiration) that has a known, fixed value at expiration equal to the distance between the strikes. Selling the box delivers cash today in exchange for repaying that fixed amount at expiration, which functions like a fixed-rate loan with no monthly payments."
+      }
     },
     {
       "@type": "Question",
       "name": "How is the interest rate on a box spread set?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The implied rate is set by the options market, not by a loan officer. It is the difference between the cash you receive today and the fixed amount you repay at expiration, and it typically trades close to short-term Treasury or SOFR rates because the position is fully hedged. There is no credit check and the rate does not depend on your personal credit profile." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The implied rate is set by the options market, not by a loan officer. It is the difference between the cash you receive today and the fixed amount you repay at expiration, and it typically trades close to short-term Treasury or SOFR rates because the position is fully hedged. There is no credit check and the rate does not depend on your personal credit profile."
+      }
     },
     {
       "@type": "Question",
       "name": "Is box spread interest tax deductible?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Box spreads using broad-based index options are generally Section 1256 contracts, which receive 60/40 capital gains treatment and mark-to-market accounting. The financing cost is generally realized as a capital loss, and interest incurred to carry investments may be deductible as investment interest expense, subject to limits. Tax treatment depends on your individual situation, so consult a qualified tax advisor." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Box spreads using broad-based index options are generally Section 1256 contracts, which receive 60/40 capital gains treatment and mark-to-market accounting. The financing cost is generally realized as a capital loss, and interest incurred to carry investments may be deductible as investment interest expense, subject to limits. Tax treatment depends on your individual situation, so consult a qualified tax advisor."
+      }
     },
     {
       "@type": "Question",
       "name": "How is a box spread different from an SBLOC?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Both let you borrow against a portfolio without selling, but an SBLOC charges a bank-set variable rate (often a spread over a benchmark) and can be called or repriced at the lender's discretion. A box spread borrows from the options market at a fixed, market-set rate that usually tracks Treasuries, with a defined maturity and no lender-driven repricing." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both let you borrow against a portfolio without selling, but an SBLOC charges a bank-set variable rate (often a spread over a benchmark) and can be called or repriced at the lender's discretion. A box spread borrows from the options market at a fixed, market-set rate that usually tracks Treasuries, with a defined maturity and no lender-driven repricing."
+      }
     },
     {
       "@type": "Question",
       "name": "What are the risks of box spread borrowing?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Box spread borrowing requires a margin account and liquid collateral, carries margin-call risk if the collateral value falls, must be rolled or repaid at maturity, and is marked to market in the meantime. Using European-style, cash-settled index options such as SPX avoids early-assignment risk. It is not appropriate for everyone and involves real risk of loss." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Box spread borrowing requires a margin account and liquid collateral, carries margin-call risk if the collateral value falls, must be rolled or repaid at maturity, and is marked to market in the meantime. Using European-style, cash-settled index options such as SPX avoids early-assignment risk. It is not appropriate for everyone and involves real risk of loss."
+      }
     },
     {
       "@type": "Question",
       "name": "Who is box spread borrowing for?",
-      "acceptedAnswer": { "@type": "Answer", "text": "It tends to fit investors with a sizable portfolio of liquid securities who want low-cost, flexible liquidity without selling appreciated positions or triggering capital gains. Common uses include funding a purchase, bridging a deal, paying a tax bill, or accessing cash while staying invested." }
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It tends to fit investors with a sizable portfolio of liquid securities who want low-cost, flexible liquidity without selling appreciated positions or triggering capital gains. Common uses include funding a purchase, bridging a deal, paying a tax bill, or accessing cash while staying invested."
+      }
     }
   ]
 }
@@ -407,6 +442,12 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
 
   <div class="disclaimer-box">For informational purposes only. Not investment, tax, or legal advice. Box spread borrowing involves the use of margin and options and carries risk, including the potential for loss and margin calls. Tax treatment, including Section 1256 treatment and the deductibility of investment interest, depends on your individual circumstances and current law. Consult a qualified advisor before implementing any strategy.</div>
 </div>
+
+
+<!-- STQ_RELATED_START -->
+<style>.stq-related{background:#F0EFEB;border-top:1px solid #DAD8D1;padding:48px 24px}.stq-related-inner{max-width:880px;margin:0 auto}.stq-related h2{font-family:'Chakra Petch',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#1B2E4B;margin:0 0 20px;font-weight:600}.stq-related ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}.stq-related li a{display:block;height:100%;padding:18px 20px;background:#fff;border:1px solid #DAD8D1;text-decoration:none;color:#1B2E4B;transition:border-color .2s}.stq-related li a:hover{border-color:#1B2E4B}.stq-related strong{display:block;font-family:'Chakra Petch',sans-serif;font-size:15px;font-weight:600;margin-bottom:6px;line-height:1.3}.stq-related span{font-family:'DM Sans',sans-serif;font-size:13px;color:#5a6a7e;line-height:1.5}</style>
+<section class="stq-related" aria-label="More on box spreads"><div class="stq-related-inner"><h2>More on box spreads</h2><ul><li><a href="/what-is-a-box-spread.html"><strong>What Is a Box Spread?</strong><span>The plain-English explainer, with a worked example.</span></a></li><li><a href="/box-spread-rates.html"><strong>Box Spread Rates Today</strong><span>Benchmarks updated every business day.</span></a></li><li><a href="/insights/insight-box-spread-vs-sbloc.html"><strong>Box Spread vs SBLOC</strong><span>Same collateral, very different loan.</span></a></li></ul></div></section>
+<!-- STQ_RELATED_END -->
 
 <footer>
   <div class="footer-inner">

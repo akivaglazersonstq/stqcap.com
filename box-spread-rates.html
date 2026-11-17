@@ -123,8 +123,18 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
   "name": "Box Spread Rates Today",
   "description": "Current box spread borrowing benchmarks, updated every business day from the U.S. Treasury par yield curve.",
   "url": "https://stqcap.com/box-spread-rates.html",
-  "isPartOf": { "@type": "WebSite", "name": "STQ Capital", "url": "https://stqcap.com" },
-  "publisher": { "@type": "FinancialService", "name": "STQ Capital", "url": "https://stqcap.com" }
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "STQ Capital",
+    "url": "https://stqcap.com",
+    "@id": "https://stqcap.com/#website"
+  },
+  "publisher": {
+    "@type": "FinancialService",
+    "name": "STQ Capital",
+    "url": "https://stqcap.com",
+    "@id": "https://stqcap.com/#organization"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -132,10 +142,38 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What determines box spread rates?", "acceptedAnswer": { "@type": "Answer", "text": "The options market. A box spread's implied borrowing rate is set by arbitrageurs competing to earn the risk-free rate, so it tracks U.S. Treasury yields of the same maturity, typically within a few tenths of a percent. No bank sets or marks up the rate." } },
-    { "@type": "Question", "name": "Are box spread rates fixed or variable?", "acceptedAnswer": { "@type": "Answer", "text": "Fixed. The rate is locked the moment the trade executes and does not change for the life of the position, whether that is 30 days or several years. SBLOC and margin rates, by contrast, are variable and move with the bank's reference rate." } },
-    { "@type": "Question", "name": "How close are box spread rates to Treasury yields?", "acceptedAnswer": { "@type": "Answer", "text": "Historically, implied box spread rates on broad index options have tracked Treasury yields of comparable maturity closely, usually landing within a few tenths of a percent above them. The exact spread varies with term, market conditions, and execution quality." } },
-    { "@type": "Question", "name": "Is the cost of a box spread tax-deductible?", "acceptedAnswer": { "@type": "Answer", "text": "The financing cost of a box spread on broad-based index options is generally treated as a Section 1256 capital loss rather than interest expense, which may offset capital gains regardless of how the borrowed money is used. Tax treatment depends on your circumstances; consult your tax adviser." } }
+    {
+      "@type": "Question",
+      "name": "What determines box spread rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The options market. A box spread's implied borrowing rate is set by arbitrageurs competing to earn the risk-free rate, so it tracks U.S. Treasury yields of the same maturity, typically within a few tenths of a percent. No bank sets or marks up the rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are box spread rates fixed or variable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fixed. The rate is locked the moment the trade executes and does not change for the life of the position, whether that is 30 days or several years. SBLOC and margin rates, by contrast, are variable and move with the bank's reference rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How close are box spread rates to Treasury yields?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Historically, implied box spread rates on broad index options have tracked Treasury yields of comparable maturity closely, usually landing within a few tenths of a percent above them. The exact spread varies with term, market conditions, and execution quality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the cost of a box spread tax-deductible?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The financing cost of a box spread on broad-based index options is generally treated as a Section 1256 capital loss rather than interest expense, which may offset capital gains regardless of how the borrowed money is used. Tax treatment depends on your circumstances; consult your tax adviser."
+      }
+    }
   ]
 }
 </script>
@@ -152,6 +190,50 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
     var c = e.target.closest && e.target.closest('a[href*="calendly.com"]');
     if (c) gtag('event', 'schedule_click', { link_url: c.getAttribute('href') });
   });
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": "https://stqcap.com/box-spread-rates.html#dataset",
+  "name": "STQ Capital Box Spread Borrowing Benchmarks",
+  "description": "Daily benchmark rates for box spread borrowing at 1 to 5 year terms, taken from the U.S. Treasury daily par yield curve. Box spread implied rates on broad index options have historically tracked Treasury yields of the same maturity. Published by STQ Capital and updated every business day.",
+  "url": "https://stqcap.com/box-spread-rates.html",
+  "keywords": [
+    "box spread rates",
+    "box spread borrowing",
+    "box spread financing",
+    "SPX box spread",
+    "Treasury par yield curve",
+    "portfolio borrowing rates"
+  ],
+  "creator": {
+    "@id": "https://stqcap.com/#organization",
+    "@type": "FinancialService",
+    "name": "STQ Capital",
+    "url": "https://stqcap.com"
+  },
+  "publisher": {
+    "@id": "https://stqcap.com/#organization"
+  },
+  "isBasedOn": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_par_yield_curve",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isAccessibleForFree": true,
+  "temporalCoverage": "2026-11-16/..",
+  "dateModified": "2026-11-16",
+  "variableMeasured": [
+    "1-year rate",
+    "2-year rate",
+    "3-year rate",
+    "4-year rate",
+    "5-year rate"
+  ],
+  "distribution": {
+    "@type": "DataDownload",
+    "encodingFormat": "text/html",
+    "contentUrl": "https://stqcap.com/box-spread-rates.html"
+  }
+}
 </script>
 </head>
 <body>
@@ -271,6 +353,12 @@ footer { background: var(--navy-dark); padding: 48px 0 32px; }
     <a href="mailto:info@stqcap.com?subject=Box%20Spread%20Rate%20Quote" class="btn btn-primary">See My Rate</a>
   </div>
 </div>
+
+
+<!-- STQ_RELATED_START -->
+<style>.stq-related{background:#F0EFEB;border-top:1px solid #DAD8D1;padding:48px 24px}.stq-related-inner{max-width:880px;margin:0 auto}.stq-related h2{font-family:'Chakra Petch',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#1B2E4B;margin:0 0 20px;font-weight:600}.stq-related ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}.stq-related li a{display:block;height:100%;padding:18px 20px;background:#fff;border:1px solid #DAD8D1;text-decoration:none;color:#1B2E4B;transition:border-color .2s}.stq-related li a:hover{border-color:#1B2E4B}.stq-related strong{display:block;font-family:'Chakra Petch',sans-serif;font-size:15px;font-weight:600;margin-bottom:6px;line-height:1.3}.stq-related span{font-family:'DM Sans',sans-serif;font-size:13px;color:#5a6a7e;line-height:1.5}</style>
+<section class="stq-related" aria-label="More on box spreads"><div class="stq-related-inner"><h2>More on box spreads</h2><ul><li><a href="/what-is-a-box-spread.html"><strong>What Is a Box Spread?</strong><span>The plain-English explainer, with a worked example.</span></a></li><li><a href="/box-spread-borrowing-guide.html"><strong>Box Spread Borrowing: The Complete Guide</strong><span>Mechanics, tax treatment, and risks.</span></a></li><li><a href="/insights/insight-box-spread-vs-sbloc.html"><strong>Box Spread vs SBLOC</strong><span>Same collateral, very different loan.</span></a></li></ul></div></section>
+<!-- STQ_RELATED_END -->
 
 <footer>
   <div class="footer-inner">
