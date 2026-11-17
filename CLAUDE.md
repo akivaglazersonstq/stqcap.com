@@ -45,6 +45,20 @@ Each new topic produces three assets: (1) an HTML insight page in `insights/` pl
 - Contact email is `info@stqcap.com` sitewide (unified June 30, 2026): all CTA buttons, every `insights/insight-*.html` article, the `_`-prefixed templates, contact.html, and the home-page footer. Do not use `akiva.glazerson@stqcap.com` in site copy.
 - New insight pages should follow the structure of an existing `insights/insight-*.html` file (copy one as a starting point).
 
+## SEO and AI visibility (apply to every new or edited page)
+Goal: when people ask AI tools or Google about box spreads or tax-loss harvesting, STQ comes up as a leader. Every new page must keep these signals intact.
+- **Title tag:** 65 characters max including ` | STQ Capital`. Lead with the topic keyword ("Tax-Loss Harvesting: ...", "Box Spread vs ..."). The on-page H1 and `og:title` can keep the hook headline.
+- **Meta description:** 70 to 165 characters.
+- **Required head tags:** `<html lang="en">`, canonical (`https://stqcap.com/<path>`), `og:title`, `og:description`, `og:image`, `twitter:card`, exactly one `<h1>`.
+- **Structured data (JSON-LD):** articles use `Article` with `datePublished` and `dateModified`. Always reference the shared entities by `@id`:
+  - firm: `"@id": "https://stqcap.com/#organization"` (name STQ Capital)
+  - author: `"@id": "https://stqcap.com/akiva-glazerson.html#person"` (name Akiva Glazerson)
+  Add an `FAQPage` block when the page answers explicit questions.
+- **Topic clusters:** box spread and TLH/direct indexing pages end with the related-guides block between `<!-- STQ_RELATED_START -->` and `<!-- STQ_RELATED_END -->`, placed just before `<footer>`. Copy it from an existing page in the same cluster and drop the link to the page itself.
+- **On publish:** add the page to `sitemap.xml` (lastmod = today), add it to the right section of `llms.txt`, and add a listing entry in `insights.html`.
+- **Rates page:** `box-spread-rates.html` carries a schema.org `Dataset`. The daily updater (`scripts/update-box-rates.mjs`) refreshes its `dateModified` and the sitemap lastmod for both rate pages. Don't remove the markers.
+- **Audit:** run `python3 scripts/seo-audit.py` before opening any PR. It must report "No issues."
+
 ## Session history
 - **June 2026:** Changed the contact page email (`contact.html`) from `akiva.glazerson@stqcap.com` to `info@stqcap.com` — merged to `main`, live.
 - **June 2026:** Changed the home-page (`index.html`) footer contact email to `info@stqcap.com`.
