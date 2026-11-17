@@ -23,14 +23,26 @@
 - [A Better Way to Buy (or Build) a Home](https://stqcap.com/insights/insight-box-spread-vs-heloc-2026-06-04.html): Box spread vs HELOC for financing a home purchase or build against a portfolio instead of the house.
 - [A Better Way to Buy a House](https://stqcap.com/insights/insight-box-spread-mortgage.html): Using portfolio financing in place of a traditional mortgage.
 - [Box Spread vs SBLOC: Same Collateral, Very Different Loan](https://stqcap.com/insights/insight-box-spread-vs-sbloc.html): The head-to-head: who sets the rate, fixed vs floating, tax treatment, and where the SBLOC genuinely wins.
+- [Stop Borrowing From Banks. Your Portfolio Can Do It Better.](https://stqcap.com/insights/insight-box-spreads.html): Box spread vs a securities-backed bank line on rate, speed, and tax treatment, and when the bank still wins.
+- [European vs. American Options. It's Not Geography.](https://stqcap.com/insights/insight-european-options.html): Why a box spread only works as a clean synthetic loan with European-style options, and the early-assignment risk otherwise.
 - [Box Spreads Explained in Seven Slides (PDF)](https://stqcap.com/downloads/stq-box-spreads-explainer.pdf): The visual explainer: what it is, who sets the rate, tax treatment, and use cases.
+
+## Tax-Loss Harvesting and Direct Indexing
+
+- [What Is Tax Loss Harvesting, Anyway?](https://stqcap.com/insights/insight-tlh-explainer.html): How harvesting works, why it matters, and what most investors get wrong about it.
+- [The Piggy Bank You Fill by "Losing Money."](https://stqcap.com/insights/insight-loss-harvesting.html): Harvesting as more than an annual tax move: a loss bank that is ready when you need it.
+- [A Windfall Is Coming. Start Banking Losses Now.](https://stqcap.com/insights/insight-loss-bank.html): Building a loss bank through direct indexing ahead of a business exit, RSU vest, or property sale.
+- [How to Monetize Volatility](https://stqcap.com/insights/insight-loss-inventory-2026-06-05.html): How direct indexing turns market dips into a banked tax asset.
+- [Long/Short Tax-Loss Harvesting: The Engine That Does Not Run Dry](https://stqcap.com/insights/insight-long-short-tax-loss-harvesting.html): Why long-only harvesting ossifies and how a short book fixes it.
+- [Own an S&P 500 ETF? Do This Instead.](https://stqcap.com/insights/insight-direct-indexing.html): Direct indexing vs an index fund: the same exposure plus a security-level tax engine.
+- [Not All Direct Indexing Is Created Equally](https://stqcap.com/insights/insight-direct-indexing-customization.html): What real customization looks like, from client-specific tilts to financing.
+- [Moving Into Direct Indexing Without the Tax Bill](https://stqcap.com/insights/insight-direct-indexing-transition.html): Transfer in kind, point new money at the sleeve, and let the harvest pay for the exit.
+- [Four Moves That Expire on December 31](https://stqcap.com/insights/insight-year-end-portfolio-checklist.html): The year-end checklist: harvesting, fund distributions, gifting appreciated stock, matching gains.
 
 ## Key Insights
 
 - [Duration: The One Number That Runs Your Bonds](https://stqcap.com/insights/insight-bond-duration-primer.html): A plain-English primer on bond duration, interest-rate sensitivity, and setting it to your horizon.
 - [The Year Before the Liquidity Event](https://stqcap.com/insights/insight-liquidity-event-planning.html): The pre-exit tax playbook: build the offset, give the asset not the proceeds, shape when the gain lands, design the landing.
-- [Moving Into Direct Indexing Without the Tax Bill](https://stqcap.com/insights/insight-direct-indexing-transition.html): Transfer in kind, point new money at the sleeve, and let the harvest pay for the exit.
-- [Long/Short Tax-Loss Harvesting: The Engine That Does Not Run Dry](https://stqcap.com/insights/insight-long-short-tax-loss-harvesting.html): Why long-only harvesting ossifies and how a short book fixes it.
 - [Volatility Is the Price of Stocks. Get Paid Back.](https://stqcap.com/insights/insight-volatility-tax-asset.html): How direct indexing turns market swings into a banked tax asset.
 - [351 Exchange or Exchange Fund?](https://stqcap.com/insights/insight-351-vs-exchange-fund.html): Two tax-free ways to diversify a concentrated position, compared.
 - [The Bank Will Sell You a VPF. Here Is Why We Build It.](https://stqcap.com/insights/insight-synthetic-vpf-vs-bank.html): Synthetic variable prepaid forward (collar plus box spread) vs the bank's packaged version.

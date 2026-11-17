@@ -196,10 +196,28 @@ footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px sol
     "@type": "Person",
     "name": "Akiva Glazerson",
     "jobTitle": "Founder",
-    "url": "https://stqcap.com/akiva-glazerson.html", "sameAs": "https://www.linkedin.com/in/akiva-g-5ba463a3",
-    "worksFor": { "@type": "FinancialService", "name": "STQ Capital", "url": "https://stqcap.com" }
+    "url": "https://stqcap.com/akiva-glazerson.html",
+    "sameAs": "https://www.linkedin.com/in/akiva-g-5ba463a3",
+    "worksFor": {
+      "@type": "FinancialService",
+      "name": "STQ Capital",
+      "url": "https://stqcap.com",
+      "@id": "https://stqcap.com/#organization"
+    },
+    "@id": "https://stqcap.com/akiva-glazerson.html#person"
   },
-  "publisher": { "@type": "FinancialService", "name": "STQ Capital", "url": "https://stqcap.com" },
+  "publisher": {
+    "@type": "FinancialService",
+    "name": "STQ Capital",
+    "url": "https://stqcap.com",
+    "@id": "https://stqcap.com/#organization",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://stqcap.com/logo-stq-navy.png",
+      "width": 658,
+      "height": 302
+    }
+  },
   "mainEntityOfPage": "https://stqcap.com/long-short-tax-loss-harvesting.html",
   "articleSection": "Tax Strategy",
   "keywords": "long short tax loss harvesting, tax-aware long-short, 130/30, loss harvesting capacity, ossification, tax alpha"
@@ -210,11 +228,46 @@ footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px sol
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"What is long/short tax-loss harvesting?","acceptedAnswer":{"@type":"Answer","text":"It is a tax-loss harvesting strategy that adds a short book to a long portfolio, for example $130 long and $30 short per $100 invested, while keeping the same net market exposure. Because the portfolio holds positions on both sides of the market, some positions are losing in every environment, so there are always losses available to harvest."}},
-    {"@type":"Question","name":"Does adding shorts change my market exposure?","acceptedAnswer":{"@type":"Answer","text":"Not the net exposure. In a 130/30 construction, $130 of longs minus $30 of shorts nets to the same $100 of market exposure as a long-only portfolio. The extension changes where losses come from, not how much market risk you carry, although it does add leverage and implementation risk."}},
-    {"@type":"Question","name":"Why does long-only tax-loss harvesting stop working?","acceptedAnswer":{"@type":"Answer","text":"Every harvest resets cost basis lower and every up year lifts prices further above basis. After several good years, most positions sit well above what you paid, nothing trades below basis, and there is little left to harvest. The industry term is ossification."}},
-    {"@type":"Question","name":"Is long/short harvesting riskier than long-only?","acceptedAnswer":{"@type":"Answer","text":"Yes. Shorting introduces leverage, borrow costs, and the possibility of losses on individual shorts exceeding their initial value, and the strategy must be managed tightly to keep tracking the index. It costs more to run than long-only direct indexing and is not suitable for everyone."}},
-    {"@type":"Question","name":"Who is long/short tax-loss harvesting for?","acceptedAnswer":{"@type":"Answer","text":"Investors with large, recurring capital gains to offset, such as ongoing RSU vests, business sale proceeds, or appreciated real estate, and investors whose long-only harvesting has ossified after years of appreciation. For modest or infrequent gains, long-only harvesting is usually enough."}}
+    {
+      "@type": "Question",
+      "name": "What is long/short tax-loss harvesting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a tax-loss harvesting strategy that adds a short book to a long portfolio, for example $130 long and $30 short per $100 invested, while keeping the same net market exposure. Because the portfolio holds positions on both sides of the market, some positions are losing in every environment, so there are always losses available to harvest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does adding shorts change my market exposure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not the net exposure. In a 130/30 construction, $130 of longs minus $30 of shorts nets to the same $100 of market exposure as a long-only portfolio. The extension changes where losses come from, not how much market risk you carry, although it does add leverage and implementation risk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does long-only tax-loss harvesting stop working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every harvest resets cost basis lower and every up year lifts prices further above basis. After several good years, most positions sit well above what you paid, nothing trades below basis, and there is little left to harvest. The industry term is ossification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is long/short harvesting riskier than long-only?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Shorting introduces leverage, borrow costs, and the possibility of losses on individual shorts exceeding their initial value, and the strategy must be managed tightly to keep tracking the index. It costs more to run than long-only direct indexing and is not suitable for everyone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is long/short tax-loss harvesting for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Investors with large, recurring capital gains to offset, such as ongoing RSU vests, business sale proceeds, or appreciated real estate, and investors whose long-only harvesting has ossified after years of appreciation. For modest or infrequent gains, long-only harvesting is usually enough."
+      }
+    }
   ]
 }
 </script>
@@ -458,6 +511,12 @@ footer { background: var(--navy-dark); padding: 32px 0 24px; border-top: 1px sol
     </div>
   </div>
 </section>
+
+
+<!-- STQ_RELATED_START -->
+<style>.stq-related{background:#F0EFEB;border-top:1px solid #DAD8D1;padding:48px 24px}.stq-related-inner{max-width:880px;margin:0 auto}.stq-related h2{font-family:'Chakra Petch',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#1B2E4B;margin:0 0 20px;font-weight:600}.stq-related ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}.stq-related li a{display:block;height:100%;padding:18px 20px;background:#fff;border:1px solid #DAD8D1;text-decoration:none;color:#1B2E4B;transition:border-color .2s}.stq-related li a:hover{border-color:#1B2E4B}.stq-related strong{display:block;font-family:'Chakra Petch',sans-serif;font-size:15px;font-weight:600;margin-bottom:6px;line-height:1.3}.stq-related span{font-family:'DM Sans',sans-serif;font-size:13px;color:#5a6a7e;line-height:1.5}</style>
+<section class="stq-related" aria-label="More on tax-loss harvesting"><div class="stq-related-inner"><h2>More on tax-loss harvesting</h2><ul><li><a href="/tax-loss-harvesting.html"><strong>Tax-Loss Harvesting: Building a Loss Bank</strong><span>Harvesting as a year-round engine.</span></a></li><li><a href="/how-direct-indexing-works.html"><strong>How Direct Indexing Works</strong><span>Harvest losses at the security level.</span></a></li><li><a href="/tax-aware-investing-guide.html"><strong>Tax-Aware Investing: The Complete Guide</strong><span>The full after-tax framework.</span></a></li></ul></div></section>
+<!-- STQ_RELATED_END -->
 
 <footer>
   <div class="footer-main">
