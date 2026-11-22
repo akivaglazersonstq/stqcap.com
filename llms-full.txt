@@ -93,189 +93,43 @@ High-income investors and those with large taxable accounts, because the value s
 
 We build every portfolio around after-tax return. Let's look at what a tax-aware approach could mean for your specific situation.
 
+### More on tax-loss harvesting
+
+Tax-Loss Harvesting: Building a Loss Bank Harvesting as a year-round engine.
+
+Long/Short Tax-Loss Harvesting Keeps generating losses in any market.
+
+How Direct Indexing Works Harvest losses at the security level.
+
 
 ## Tax-Loss Harvesting: Building a Loss Bank
 Source: https://stqcap.com/tax-loss-harvesting.html
 
-### Tax-Loss Harvesting: Building a Loss Bank.
+STQ STQ Research - Tax Strategy Series Tax-Loss Harvesting: Building a Loss Bank. Most advisors harvest losses once a year, in December, inside a fund that can barely do it. Done right, it is a year-round engine that banks losses to pay down the tax on your biggest gains, for years. Author Akiva Glazerson Series Tax Strategy Read time 10 minutes Section 01 What Harvesting Actually Does Tax-loss harvesting is one of the few strategies in investing that lowers your tax bill without changing what you own in any way that matters. You sell a holding that has dropped below what you paid for it, book the loss, and immediately reinvest the proceeds in something that keeps your market exposure intact. Your portfolio still does the same thing the next morning. What changed is that you now hold a realized capital loss, and that loss is worth money. A realized loss first offsets your realized capital gains, dollar for dollar. If your losses exceed your gains for the year, up to 3,000 dollars of the excess can offset ordinary income, which is taxed at the highest rates you pay. Anything left over does not vanish. It carries forward, with no expiration, to be used against gains in future years. That last part is the whole game, and it is the part most people miss. Harvesting is not really about this year's return. It is about building a stockpile of losses you can spend later, on the day you finally sell the concentrated position, the business, or the property that carries a gain large enough to matter. Section 02 The Loss Bank: Why Losses Compound Think of every harvested loss as a deposit into an account whose only purpose is to absorb future gains. We call it the loss bank. Every deposit sits there, indefinitely, until a taxable gain shows up to be offset. The balance does not shrink with time. It only grows, one harvested lot at a time, in every kind of market. $0 Expiration date on a federal capital loss carryforward. A loss you bank today can offset a gain a decade from now. Under current federal law, net capital losses carry forward indefinitely for individuals. State treatment and future tax law may differ. Not tax advice. The value of a full loss bank shows up at the moments that matter most. A founder ready to diversify a low-basis stake, a family selling a rental after decades of appreciation, an investor whose portfolio finally rebalanced into a large gain: each of these is a tax event measured in six or seven figures. A loss bank built patiently over years is what lets you meet that event with offsets already in hand, instead of writing the full check. This is also why harvesting and diversifying a concentrated position belong in the same plan. The losses you bank year after year are precisely what pay down the tax as you trim the position. We cover that sequence in our guide to concentrated stock positions . The loss bank is the engine underneath it. Section 03 Where Most Harvesting Falls Short Almost everyone agrees tax-loss harvesting is a good idea. The gap between firms is in how much of it they actually capture, and for most advisors the answer is: a small fraction. Two habits are to blame. The first is timing. Harvesting gets treated as a December chore, a once-a-year sweep done alongside the holiday rebalance. But markets do not save their declines for the fourth quarter. Individual positions dip and recover throughout the year, and a loss that existed in March is gone by the time the December review rolls around. Checking once a year means harvesting the losses that happen to be visible on one arbitrary day and missing every one that came and went in between. The second is the instrument. If you hold the market through a single index ETF or mutual fund, that fund shows a harvestable loss only when the entire index is below your basis. In a year the market finishes up, the fund shows a gain, and there is nothing to harvest, even though dozens of stocks inside that index fell hard along the way. The losses are real. The wrapper just hides them from you. Two Ways to Harvest - What You Can Actually Capture Approach Once-a-year, single fund What Gets Harvested Only losses visible on the day you look, and only when the whole index is below basis. Result Little to nothing in up years. A thin loss bank when you need it most. Approach Year-round, direct indexing What Gets Harvested Losses in individual stocks whenever they fall, monitored continuously, even in an up market. Result A steady stream of banked losses that compounds year after year. Owning the index as its individual stocks, rather than as one fund, is what fixes both problems at once. When you hold the names directly in a separately managed account, a stock that drops 15 percent can be harvested even while the index is up 10 percent. That is the difference between harvesting theater and a loss bank that actually fills. See How Direct Indexing Works for the full mechanism. Section 04 The Mechanics: Wash Sales and Substitution The one rule that governs harvesting is the wash sale rule . It disallows your loss if you buy back the same security, or one that is substantially identical, within 30 days before or after the sale. The point of the rule is to stop you from claiming a loss on paper while never really leaving the position. To harvest correctly, you have to genuinely change what you hold, at least for a window. The way through is substitution. You sell the position at a loss and immediately buy a different security that keeps your exposure close to identical without being substantially identical to what you sold. Your risk and return profile barely moves. The loss is preserved. After the 31-day window, you can return to the original holding if you choose. This is straightforward with one holding and genuinely hard across hundreds of lots at once, which is the real argument for doing it at the individual-stock level with systems built for it. A direct-indexing account tracks the basis and holding period of every lot, watches for wash sale conflicts across the whole portfolio, and executes substitutions that hold the index exposure steady. Doing that by hand, position by position, is how errors and disallowed losses creep in. One honest caveat: harvesting lowers the cost basis of the replacement holdings, so some of the benefit is deferral rather than outright avoidance. That deferral still has real value, because the tax you did not pay stays invested and compounding. And it is often more than deferral. Losses can offset short-term gains taxed at the highest ordinary rates while the deferred gain is later taxed at lower long-term rates, and the lowest-basis lots can eventually be donated or held for a step-up at death, so the gain may never be taxed at all. Section 05 The STQ Approach: Harvesting as Infrastructure We do not treat tax-loss harvesting as a feature to switch on in December. We treat it as standing infrastructure that runs underneath the whole portfolio, every day the market is open. Individual positions are monitored continuously, losses are captured as they appear, and substitutions keep your exposure where it belongs the entire time. The point of running it that way is not to score a slightly better return this year. It is to build the loss bank deliberately, so that when the large gain finally arrives, from a concentrated position you are diversifying, a property you are selling, a portfolio you are repositioning, the offsets are already sitting there waiting. Harvesting is the quiet engine that makes the rest of a tax-aware plan work. And it does not run in isolation. The losses we bank feed directly into how we unwind concentrated stock, how we time realized gains into the right years, and how we coordinate with your CPA so nothing is harvested twice or wasted. That is the difference between a checkbox on a statement and a strategy. To see how harvesting fits alongside asset location, tax-aware rebalancing, and the rest, start with our complete guide to tax-aware investing . Disclaimer: This publication is for informational and educational purposes only. It does not constitute personalized investment, tax, or legal advice, and it is not an offer or solicitation. Tax-loss harvesting involves risks, including the risk that a substitute security performs differently from the security sold, and the benefit depends on your specific tax situation. Harvesting generally lowers the cost basis of replacement holdings, deferring rather than always eliminating tax. The wash sale rule and the treatment of capital loss carryforwards are governed by tax law, which is subject to change, and state treatment may differ from federal. Investments involve risk, including the potential loss of principal. Please consult a qualified tax, legal, and financial professional regarding your situation before acting. Advisory services offered through STQ Capital, an investment adviser registered with the states of California and New York. Is Your Portfolio Actually Harvesting? We will look at how your losses are being captured today, and show you what a year-round loss bank would have banked instead. Request a Portfolio Review Schedule a Call More from STQ Research Tax Alpha How Direct Indexing Works Tax Strategy What to Do With a Concentrated Stock Position Pillar Guide The Complete Guide to Tax-Aware Investing Tax Strategy All the Right Things in All the Wrong Places More on tax-loss harvesting Long/Short Tax-Loss Harvesting Keeps generating losses in any market.
 
-Most advisors harvest losses once a year, in December, inside a fund that can barely do it. Done right, it is a year-round engine that banks losses to pay down the tax on your biggest gains, for years.
+How Direct Indexing Works Harvest losses at the security level.
 
-### What Harvesting Actually Does
-
-Tax-loss harvesting is one of the few strategies in investing that lowers your tax bill without changing what you own in any way that matters. You sell a holding that has dropped below what you paid for it, book the loss, and immediately reinvest the proceeds in something that keeps your market exposure intact. Your portfolio still does the same thing the next morning. What changed is that you now hold a realized capital loss, and that loss is worth money.
-
-A realized loss first offsets your realized capital gains, dollar for dollar. If your losses exceed your gains for the year, up to 3,000 dollars of the excess can offset ordinary income, which is taxed at the highest rates you pay. Anything left over does not vanish. It carries forward, with no expiration, to be used against gains in future years.
-
-That last part is the whole game, and it is the part most people miss. Harvesting is not really about this year's return. It is about building a stockpile of losses you can spend later, on the day you finally sell the concentrated position, the business, or the property that carries a gain large enough to matter.
-
-### The Loss Bank: Why Losses Compound
-
-Think of every harvested loss as a deposit into an account whose only purpose is to absorb future gains. We call it the loss bank. Every deposit sits there, indefinitely, until a taxable gain shows up to be offset. The balance does not shrink with time. It only grows, one harvested lot at a time, in every kind of market.
-
-The value of a full loss bank shows up at the moments that matter most. A founder ready to diversify a low-basis stake, a family selling a rental after decades of appreciation, an investor whose portfolio finally rebalanced into a large gain: each of these is a tax event measured in six or seven figures. A loss bank built patiently over years is what lets you meet that event with offsets already in hand, instead of writing the full check.
-
-This is also why harvesting and diversifying a concentrated position belong in the same plan. The losses you bank year after year are precisely what pay down the tax as you trim the position. We cover that sequence in our guide to concentrated stock positions . The loss bank is the engine underneath it.
-
-### Where Most Harvesting Falls Short
-
-Almost everyone agrees tax-loss harvesting is a good idea. The gap between firms is in how much of it they actually capture, and for most advisors the answer is: a small fraction. Two habits are to blame.
-
-The first is timing. Harvesting gets treated as a December chore, a once-a-year sweep done alongside the holiday rebalance. But markets do not save their declines for the fourth quarter. Individual positions dip and recover throughout the year, and a loss that existed in March is gone by the time the December review rolls around. Checking once a year means harvesting the losses that happen to be visible on one arbitrary day and missing every one that came and went in between.
-
-The second is the instrument. If you hold the market through a single index ETF or mutual fund, that fund shows a harvestable loss only when the entire index is below your basis. In a year the market finishes up, the fund shows a gain, and there is nothing to harvest, even though dozens of stocks inside that index fell hard along the way. The losses are real. The wrapper just hides them from you.
-
-Owning the index as its individual stocks, rather than as one fund, is what fixes both problems at once. When you hold the names directly in a separately managed account, a stock that drops 15 percent can be harvested even while the index is up 10 percent. That is the difference between harvesting theater and a loss bank that actually fills. See How Direct Indexing Works for the full mechanism.
-
-### The Mechanics: Wash Sales and Substitution
-
-The one rule that governs harvesting is the wash sale rule . It disallows your loss if you buy back the same security, or one that is substantially identical, within 30 days before or after the sale. The point of the rule is to stop you from claiming a loss on paper while never really leaving the position. To harvest correctly, you have to genuinely change what you hold, at least for a window.
-
-The way through is substitution. You sell the position at a loss and immediately buy a different security that keeps your exposure close to identical without being substantially identical to what you sold. Your risk and return profile barely moves. The loss is preserved. After the 31-day window, you can return to the original holding if you choose.
-
-This is straightforward with one holding and genuinely hard across hundreds of lots at once, which is the real argument for doing it at the individual-stock level with systems built for it. A direct-indexing account tracks the basis and holding period of every lot, watches for wash sale conflicts across the whole portfolio, and executes substitutions that hold the index exposure steady. Doing that by hand, position by position, is how errors and disallowed losses creep in.
-
-One honest caveat: harvesting lowers the cost basis of the replacement holdings, so some of the benefit is deferral rather than outright avoidance. That deferral still has real value, because the tax you did not pay stays invested and compounding. And it is often more than deferral. Losses can offset short-term gains taxed at the highest ordinary rates while the deferred gain is later taxed at lower long-term rates, and the lowest-basis lots can eventually be donated or held for a step-up at death, so the gain may never be taxed at all.
-
-### The STQ Approach: Harvesting as Infrastructure
-
-We do not treat tax-loss harvesting as a feature to switch on in December. We treat it as standing infrastructure that runs underneath the whole portfolio, every day the market is open. Individual positions are monitored continuously, losses are captured as they appear, and substitutions keep your exposure where it belongs the entire time.
-
-The point of running it that way is not to score a slightly better return this year. It is to build the loss bank deliberately, so that when the large gain finally arrives, from a concentrated position you are diversifying, a property you are selling, a portfolio you are repositioning, the offsets are already sitting there waiting. Harvesting is the quiet engine that makes the rest of a tax-aware plan work.
-
-And it does not run in isolation. The losses we bank feed directly into how we unwind concentrated stock, how we time realized gains into the right years, and how we coordinate with your CPA so nothing is harvested twice or wasted. That is the difference between a checkbox on a statement and a strategy. To see how harvesting fits alongside asset location, tax-aware rebalancing, and the rest, start with our complete guide to tax-aware investing .
-
-### Is Your Portfolio Actually Harvesting?
-
-We will look at how your losses are being captured today, and show you what a year-round loss bank would have banked instead.
-
-### More from STQ Research
+Tax-Aware Investing: The Complete Guide The full after-tax framework.
 
 
 ## Long/Short Tax-Loss Harvesting
 Source: https://stqcap.com/long-short-tax-loss-harvesting.html
 
-### Long/Short Tax-Loss Harvesting: Harvesting That Never Runs Dry.
+STQ STQ Research - Tax Strategy Series Long/Short Tax-Loss Harvesting: Harvesting That Never Runs Dry. Standard harvesting has a shelf life: after a few good years everything sits on gains and the loss engine stalls. Adding a short book keeps it producing, in bull markets, flat markets, and everything in between. Author Akiva Glazerson Series Tax Strategy Read time 9 minutes Section 01 Why Long-Only Harvesting Runs Dry Tax-loss harvesting done properly is a year-round engine: sell what dips below cost basis, bank the loss, replace the exposure. In a fresh direct indexing account it works beautifully, because every position starts at today's prices and every wobble creates a harvest. Then it succeeds itself out of a job. Every harvest resets basis lower. Every up year lifts prices further above basis. Three or four good years in, the typical long-only account holds a portfolio of embedded gains, and a stock that is up 80% on your basis can fall 20% without ever becoming a loss you can realize. The industry term is ossification . The practical translation: the loss supply dries up exactly as your gains get big. This is not a flaw in execution. It is the structural ceiling of harvesting long positions only: the strategy needs prices below basis, and time pushes prices away from basis. Section 02 The Long/Short Extension, Explained The fix is structural too. Instead of holding $100 of stocks long, the portfolio holds more than $100 long and finances a short book against it, keeping the same net exposure to the market. 130/30 The classic construction: $130 of longs, $30 of shorts, per $100 invested. Net market exposure stays at $100. What changes is that the portfolio now holds positions on both sides of the market. Extension ratios vary by mandate. Illustrative, not a recommendation. That both-sides structure is the whole point. A loss no longer requires a stock to fall below your basis. When the market rises, the shorts lose, and those losses are real, realizable, and harvestable. When the market falls, the longs supply the losses, as they always did. The engine stops depending on the market's direction. Run against an index with the same discipline as direct indexing , the result is index-like net exposure with a loss engine that does not decay as the account ages. Section 03 Losses in Every Market Here is the difference environment by environment. Where the Losses Come From - Three Market Environments Environment Strong bull year Long-Only Harvest Thin, and shrinking every year as gains build over basis. Long/Short Harvest The short book loses into the rally and keeps supplying harvestable losses. Environment Flat, choppy year Long-Only Harvest Decent early on, weaker as the account ages and basis drifts below prices. Long/Short Harvest Dispersion cuts both ways. Losers on each side of the book get harvested. Environment Down year Long-Only Harvest Rich harvest, the one environment where long-only shines. Long/Short Harvest The longs supply the losses, same as long-only, while shorts offset some decline. The asymmetry matters because of what the losses are for. Harvesting is about building a loss bank that absorbs the big gain when it lands: the business sale, the RSU vest, the property closing. Long-only harvesting front-loads its help and fades. The extension keeps depositing, year after year, which is exactly what you want when the gains in your future are recurring rather than one-time. Section 04 The Costs, the Risks, the Fine Print The power is real and so is the price. It is worth being plain about both. Leverage and shorting risk A 130/30 portfolio is levered. Individual shorts can lose more than their initial value, and the gross book is larger than your capital. Managed against an index this is a controlled, hedged structure, but it is categorically more complex than owning stocks. Borrow costs and fees Shorting costs money: stock borrow fees, financing spreads, and higher management costs than plain direct indexing. The extra tax alpha has to clear that hurdle, after tax, before the strategy earns its place. Tracking error The extension must be run so the portfolio still behaves like your index. Loosely managed, it stops being a tax strategy and becomes a bet on the manager's stock selection. The rules still apply Wash-sale discipline, substitution, and holding-period management all carry over from long-only harvesting, now on both sides of the book. The operational bar is higher, not lower. For an investor with modest, infrequent gains, none of this is worth it, and long-only harvesting inside a direct indexing account is the right tool. The extension is for the investor whose gain pipeline outruns what long-only can supply. Section 05 The STQ Approach: The Second Gear We treat the long/short extension as the second gear of one machine, not a separate product. Disciplined, year-round harvesting inside a customized direct indexing account comes first. It is simpler, cheaper, and for most investors it is enough. The extension enters the conversation in two situations: when a client's recurring gains are larger than what a long-only engine can offset, and when an account has ossified after years of appreciation and the harvest has gone quiet. In both cases we model the same question in plain numbers: does the additional after-tax benefit clear the additional cost, risk, and tracking error? If it does, we size the extension to the gain pipeline and run it. If it does not, we say so and stay in first gear. Where it fits in the bigger picture, alongside asset location, box spread financing, and exit planning, is covered in our complete guide to tax-aware investing . For informational and educational purposes only. Long/short strategies involve leverage, short selling, borrow costs, and the risk of losses exceeding those of a long-only portfolio, and are not suitable for everyone. Tax outcomes depend on your circumstances and current law, which can change. This is not personalized tax, legal, or investment advice. Disclaimer: This publication is for informational and educational purposes only. It does not constitute personalized investment, tax, or legal advice, and it is not an offer or solicitation. Tax-loss harvesting involves risks, including the risk that a substitute security performs differently from the security sold, and the benefit depends on your specific tax situation. Harvesting generally lowers the cost basis of replacement holdings, deferring rather than always eliminating tax. The wash sale rule and the treatment of capital loss carryforwards are governed by tax law, which is subject to change, and state treatment may differ from federal. Investments involve risk, including the potential loss of principal. Please consult a qualified tax, legal, and financial professional regarding your situation before acting. Advisory services offered through STQ Capital, an investment adviser registered with the states of California and New York. Has Your Harvest Gone Quiet? We will look at your gain pipeline and your current harvest, and tell you in plain numbers whether a long/short extension earns its cost. Request a Portfolio Review Schedule a Call More from STQ Research Tax Alpha How Direct Indexing Works Tax Strategy What to Do With a Concentrated Stock Position Pillar Guide The Complete Guide to Tax-Aware Investing Pillar Guide Tax-Loss Harvesting: Building a Loss Bank The long-only foundation: how losses get banked, carried forward, and spent. More on tax-loss harvesting Tax-Loss Harvesting: Building a Loss Bank Harvesting as a year-round engine.
 
-Standard harvesting has a shelf life: after a few good years everything sits on gains and the loss engine stalls. Adding a short book keeps it producing, in bull markets, flat markets, and everything in between.
+How Direct Indexing Works Harvest losses at the security level.
 
-### Why Long-Only Harvesting Runs Dry
-
-Tax-loss harvesting done properly is a year-round engine: sell what dips below cost basis, bank the loss, replace the exposure. In a fresh direct indexing account it works beautifully, because every position starts at today's prices and every wobble creates a harvest.
-
-Then it succeeds itself out of a job. Every harvest resets basis lower. Every up year lifts prices further above basis. Three or four good years in, the typical long-only account holds a portfolio of embedded gains, and a stock that is up 80% on your basis can fall 20% without ever becoming a loss you can realize. The industry term is ossification . The practical translation: the loss supply dries up exactly as your gains get big.
-
-This is not a flaw in execution. It is the structural ceiling of harvesting long positions only: the strategy needs prices below basis, and time pushes prices away from basis.
-
-### The Long/Short Extension, Explained
-
-The fix is structural too. Instead of holding $100 of stocks long, the portfolio holds more than $100 long and finances a short book against it, keeping the same net exposure to the market.
-
-That both-sides structure is the whole point. A loss no longer requires a stock to fall below your basis. When the market rises, the shorts lose, and those losses are real, realizable, and harvestable. When the market falls, the longs supply the losses, as they always did. The engine stops depending on the market's direction.
-
-Run against an index with the same discipline as direct indexing , the result is index-like net exposure with a loss engine that does not decay as the account ages.
-
-### Losses in Every Market
-
-Here is the difference environment by environment.
-
-The asymmetry matters because of what the losses are for. Harvesting is about building a loss bank that absorbs the big gain when it lands: the business sale, the RSU vest, the property closing. Long-only harvesting front-loads its help and fades. The extension keeps depositing, year after year, which is exactly what you want when the gains in your future are recurring rather than one-time.
-
-### The Costs, the Risks, the Fine Print
-
-The power is real and so is the price. It is worth being plain about both.
-
-### Leverage and shorting risk
-
-A 130/30 portfolio is levered. Individual shorts can lose more than their initial value, and the gross book is larger than your capital. Managed against an index this is a controlled, hedged structure, but it is categorically more complex than owning stocks.
-
-### Borrow costs and fees
-
-Shorting costs money: stock borrow fees, financing spreads, and higher management costs than plain direct indexing. The extra tax alpha has to clear that hurdle, after tax, before the strategy earns its place.
-
-### Tracking error
-
-The extension must be run so the portfolio still behaves like your index. Loosely managed, it stops being a tax strategy and becomes a bet on the manager's stock selection.
-
-### The rules still apply
-
-Wash-sale discipline, substitution, and holding-period management all carry over from long-only harvesting, now on both sides of the book. The operational bar is higher, not lower.
-
-For an investor with modest, infrequent gains, none of this is worth it, and long-only harvesting inside a direct indexing account is the right tool. The extension is for the investor whose gain pipeline outruns what long-only can supply.
-
-### The STQ Approach: The Second Gear
-
-We treat the long/short extension as the second gear of one machine, not a separate product. Disciplined, year-round harvesting inside a customized direct indexing account comes first. It is simpler, cheaper, and for most investors it is enough.
-
-The extension enters the conversation in two situations: when a client's recurring gains are larger than what a long-only engine can offset, and when an account has ossified after years of appreciation and the harvest has gone quiet. In both cases we model the same question in plain numbers: does the additional after-tax benefit clear the additional cost, risk, and tracking error? If it does, we size the extension to the gain pipeline and run it. If it does not, we say so and stay in first gear.
-
-Where it fits in the bigger picture, alongside asset location, box spread financing, and exit planning, is covered in our complete guide to tax-aware investing .
-
-For informational and educational purposes only. Long/short strategies involve leverage, short selling, borrow costs, and the risk of losses exceeding those of a long-only portfolio, and are not suitable for everyone. Tax outcomes depend on your circumstances and current law, which can change. This is not personalized tax, legal, or investment advice.
-
-### Has Your Harvest Gone Quiet?
-
-We will look at your gain pipeline and your current harvest, and tell you in plain numbers whether a long/short extension earns its cost.
-
-### More from STQ Research
+Tax-Aware Investing: The Complete Guide The full after-tax framework.
 
 
 ## What Is a Box Spread?
 Source: https://stqcap.com/what-is-a-box-spread.html
 
-### What Is a Box Spread?
+STQ What Is a Box Spread? Four options, one fixed payoff, and a loan with no bank in it. The plain-English explanation of how a box spread works, with a worked example and the honest list of risks. Explainer A box spread is a four-leg options position that pays a fixed, known amount at expiration no matter what the market does. It combines a bull call spread and a bear put spread on the same underlying, at the same two strike prices, with the same expiration. Because the payoff is locked the day the trade is placed, the position is not really a bet on anything. It is a synthetic loan, and the price it trades at implies an interest rate set by the options market. How four options become a loan Take two strikes on the S&P 500 index, say 5,000 and 6,000. Buy the 5,000 call, sell the 6,000 call, buy the 6,000 put, sell the 5,000 put, all expiring the same day. Work through any ending price of the index and the four payoffs always sum to exactly the distance between the strikes: 1,000 points, or $100,000 on standard SPX contracts. Above the top strike, the calls deliver it. Below the bottom strike, the puts do. In between, the pieces add up the same. The market can do anything it likes; the box is worth $100,000 at expiration. Now the question is just what that guaranteed $100,000 trades for today. The answer is a bit less, and the discount is the interest rate. Someone who pays $96,000 today to receive $100,000 in two years has lent money at about 2% a year. Someone who sells the same box has borrowed on the same terms. Long box: lending Short box: borrowing Today Pay cash for the box, slightly below its fixed value Today Receive cash for the box, slightly below its fixed value At expiration Receive the fixed value At expiration Pay the fixed value What it is A synthetic bond earning the implied rate What it is A synthetic loan costing the implied rate Who uses it Cash managers wanting a market-set yield Who uses it Investors borrowing against a portfolio without a bank Why the rate hugs the Treasury curve The box's payoff is fixed, so holding it is economically the same as holding a Treasury bill of the same maturity. If boxes ever priced to yield meaningfully more than Treasuries, arbitrage desks would buy them in size; meaningfully less, and they would sell them and buy the Treasury. That competition pins the implied rate to the Treasury curve , usually within a few tenths of a percent. No committee sets this rate. The market does, continuously. A box spread is not a bet. It is a loan wearing an options costume, priced by arbitrage instead of a bank. The details that matter European-style options only. Boxes are built on index options like SPX or XSP because they cannot be exercised early. On American-style options, such as single stocks, early assignment can tear the fixed payoff apart. This is the classic retail mistake with box spreads, and it is entirely avoidable. Margin, not magic. A short box is real leverage in a margin account. The amount you can borrow is limited by your portfolio's value, and a deep drawdown in the collateral is a real risk, the same as any borrowing against securities. Execution is part of the rate. Four legs means four bid-ask spreads. Traded carelessly, the costs eat the advantage; traded well, as a single complex order, the all-in rate stays near the benchmark. This is where professionals earn their keep. The tax wrinkle. On broad-based index options, the borrowing cost of a short box is generally treated as a Section 1256 capital loss rather than interest, with consequences worth understanding: the full explanation is here . Treatment depends on your circumstances; consult your tax adviser. What people actually use them for On the borrowing side: refinancing a securities-backed line of credit at a lower fixed rate, funding a house or a tax bill without selling appreciated stock, and general portfolio financing at near-Treasury cost. On the lending side: parking institutional cash at a market-set yield. The complete practitioner's view, including who it does not fit, is in the box spread borrowing guide and on the box spread financing page, which carries benchmarks updated every business day. Frequently asked questions What is a box spread in simple terms? Four options that together pay a fixed amount at expiration regardless of the market. Because the payoff is fixed, the position works like a loan: cash now against a known repayment later, with the interest rate set by the options market rather than a bank. What is the difference between a long box and a short box? A long box pays cash today and receives the fixed value at expiration: synthetic lending. A short box receives cash today and pays the fixed value at expiration: synthetic borrowing. Two sides of the same loan. Why European-style index options? They cannot be exercised early, which keeps the payoff truly fixed. Boxes on American-style options carry early-assignment risk that can break the structure, which is why practitioners build them on SPX or XSP. Are box spreads risk-free? The expiration payoff is fixed, but a short box is leverage: it needs a margin account, the collateral can fall, exiting early depends on market prices, and execution and structure mistakes are possible. Fixed payoff is not the same as no risk. For informational and educational purposes only. Figures and strikes are illustrative, not quotes. Borrowing against securities involves leverage and risk, including losses greater than anticipated and potential forced liquidation of collateral. Implied rates vary with market conditions and execution. Tax treatment depends on your circumstances; consult your tax adviser. This is not an offer of credit and not personalized tax, legal, or investment advice. Understand the structure and want to see it priced for your portfolio? Send your statement, or your current SBLOC rate, and we will show you the box spread quote next to it. Ask STQ More on box spreads Box Spread Rates Today Benchmarks updated every business day.
 
-Four options, one fixed payoff, and a loan with no bank in it. The plain-English explanation of how a box spread works, with a worked example and the honest list of risks.
+Box Spread Borrowing: The Complete Guide Mechanics, tax treatment, and risks.
 
-A box spread is a four-leg options position that pays a fixed, known amount at expiration no matter what the market does. It combines a bull call spread and a bear put spread on the same underlying, at the same two strike prices, with the same expiration. Because the payoff is locked the day the trade is placed, the position is not really a bet on anything. It is a synthetic loan, and the price it trades at implies an interest rate set by the options market.
-
-### How four options become a loan
-
-Take two strikes on the S&P 500 index, say 5,000 and 6,000. Buy the 5,000 call, sell the 6,000 call, buy the 6,000 put, sell the 5,000 put, all expiring the same day. Work through any ending price of the index and the four payoffs always sum to exactly the distance between the strikes: 1,000 points, or $100,000 on standard SPX contracts. Above the top strike, the calls deliver it. Below the bottom strike, the puts do. In between, the pieces add up the same. The market can do anything it likes; the box is worth $100,000 at expiration.
-
-Now the question is just what that guaranteed $100,000 trades for today. The answer is a bit less, and the discount is the interest rate. Someone who pays $96,000 today to receive $100,000 in two years has lent money at about 2% a year. Someone who sells the same box has borrowed on the same terms.
-
-### Why the rate hugs the Treasury curve
-
-The box's payoff is fixed, so holding it is economically the same as holding a Treasury bill of the same maturity. If boxes ever priced to yield meaningfully more than Treasuries, arbitrage desks would buy them in size; meaningfully less, and they would sell them and buy the Treasury. That competition pins the implied rate to the Treasury curve , usually within a few tenths of a percent. No committee sets this rate. The market does, continuously.
-
-A box spread is not a bet. It is a loan wearing an options costume, priced by arbitrage instead of a bank.
-
-### The details that matter
-
-European-style options only. Boxes are built on index options like SPX or XSP because they cannot be exercised early. On American-style options, such as single stocks, early assignment can tear the fixed payoff apart. This is the classic retail mistake with box spreads, and it is entirely avoidable.
-
-Margin, not magic. A short box is real leverage in a margin account. The amount you can borrow is limited by your portfolio's value, and a deep drawdown in the collateral is a real risk, the same as any borrowing against securities.
-
-Execution is part of the rate. Four legs means four bid-ask spreads. Traded carelessly, the costs eat the advantage; traded well, as a single complex order, the all-in rate stays near the benchmark. This is where professionals earn their keep.
-
-The tax wrinkle. On broad-based index options, the borrowing cost of a short box is generally treated as a Section 1256 capital loss rather than interest, with consequences worth understanding: the full explanation is here . Treatment depends on your circumstances; consult your tax adviser.
-
-### What people actually use them for
-
-On the borrowing side: refinancing a securities-backed line of credit at a lower fixed rate, funding a house or a tax bill without selling appreciated stock, and general portfolio financing at near-Treasury cost. On the lending side: parking institutional cash at a market-set yield. The complete practitioner's view, including who it does not fit, is in the box spread borrowing guide and on the box spread financing page, which carries benchmarks updated every business day.
-
-### Frequently asked questions
-
-### What is a box spread in simple terms?
-
-Four options that together pay a fixed amount at expiration regardless of the market. Because the payoff is fixed, the position works like a loan: cash now against a known repayment later, with the interest rate set by the options market rather than a bank.
-
-### What is the difference between a long box and a short box?
-
-A long box pays cash today and receives the fixed value at expiration: synthetic lending. A short box receives cash today and pays the fixed value at expiration: synthetic borrowing. Two sides of the same loan.
-
-### Why European-style index options?
-
-They cannot be exercised early, which keeps the payoff truly fixed. Boxes on American-style options carry early-assignment risk that can break the structure, which is why practitioners build them on SPX or XSP.
-
-### Are box spreads risk-free?
-
-The expiration payoff is fixed, but a short box is leverage: it needs a margin account, the collateral can fall, exiting early depends on market prices, and execution and structure mistakes are possible. Fixed payoff is not the same as no risk.
-
-For informational and educational purposes only. Figures and strikes are illustrative, not quotes. Borrowing against securities involves leverage and risk, including losses greater than anticipated and potential forced liquidation of collateral. Implied rates vary with market conditions and execution. Tax treatment depends on your circumstances; consult your tax adviser. This is not an offer of credit and not personalized tax, legal, or investment advice.
-
-Understand the structure and want to see it priced for your portfolio? Send your statement, or your current SBLOC rate, and we will show you the box spread quote next to it.
+Box Spread vs SBLOC Same collateral, very different loan.
 
 
 ## Box Spread Borrowing: The Complete Guide
@@ -353,153 +207,43 @@ It tends to fit investors with a sizable portfolio of liquid securities who want
 
 We run box spread borrowing as a discipline, not a one-off trade. Let's look at the rate, the structure, and the tax treatment for your specific situation.
 
+### More on box spreads
+
+What Is a Box Spread? The plain-English explainer, with a worked example.
+
+Box Spread Rates Today Benchmarks updated every business day.
+
+Box Spread vs SBLOC Same collateral, very different loan.
+
 
 ## Box Spread Financing
 Source: https://stqcap.com/box-spreads.html
 
-### No bank. No middleman. Your portfolio is the lender.
+STQ Synthetic Financing No bank. No middleman. Your portfolio is the lender. Box spread financing lets you borrow against your investments at near-Treasury rates, set by the market, not a bank. No credit check, no approval process, no forced selling. You stay fully invested while accessing the capital you need. Common Questions Schedule a Call Benchmark Rates Near-Treasury borrowing rates, updated daily. 1 Year 4.25% Treasury benchmark 3 Year 4.32% Treasury benchmark 5 Year 4.38% Treasury benchmark Benchmarked to the U.S. Treasury par yield curve as of , updated automatically each business day. Box spread financing typically prices within a few basis points of these levels; executable rates vary with market conditions and exclude fees. For a live executable quote, contact STQ directly. See today's box spread rates for the full breakdown. View full rate curve ↓ Tenor Benchmark Rate How It Works Borrow from the market, not the bank. A box spread is a four-leg options structure on the S&P 500 Index. It creates a fully hedged position with a fixed, known payoff at expiration, functioning like a zero-coupon bond. You receive cash today and repay a fixed amount at settlement. The difference is your borrowing cost, set entirely by market forces. 01 Execute the box spread STQ places a four-leg options trade on a broad index (XSP). The structure is fully hedged with no directional market exposure. 02 Receive cash upfront The net premium collected hits your account within days. Typically 95-97 cents on the dollar for a 1-year loan at current rates. 03 Use the proceeds however you want Real estate purchase, tax bill, business investment, home improvement. Unlike a HELOC or SBLOC, the deduction follows the loan, not the use. 04 Repay at expiration A fixed amount is settled at expiration. No variable rates, no bank discretion. Roll it, extend it, or pay it off. The Mechanics One trade. One fixed repayment. Here's what a $1MM box spread loan looks like from start to finish, including how the interest flows through your tax return. Today Receive $950K $50K Interest 60% Long-term Capital Loss ($30K) 40% Short-term Capital Loss ($20K) In 1 Year Repay $1MM (Fixed Amount) Illustrative example using a $1MM notional, 1-year term at ~5% implied rate. Section 1256 60/40 treatment applies to box spread contracts. Actual rates, amounts, and tax treatment depend on individual circumstances. Consult a qualified tax advisor. Calculator See what it costs you. Adjust sliders to see your cost Portfolio value $1,000,000 Loan-to-value (LTV) 50% Loan term 1 Year Federal tax bracket 37% Loan amount $500,000 Annual interest $21,250 Tax savings $6,716 Net annual cost $14,534 Stated rate 4.25% Effective rate (after tax) 2.91% Illustrative only. Loan amount capped at 85% of portfolio value for illustration purposes. Actual borrowing capacity depends on portfolio composition, account type, and market conditions. Effective rate assumes Section 1256 60/40 treatment at selected federal bracket. LTCG fixed at 20%. State taxes excluded. Consult a qualified tax advisor before implementing. How It Compares No middleman means a better deal on every dimension. vs. HELOC vs. SBLOC vs. Margin Loan Feature Box Spread (STQ) HELOC Rate benchmark ~Near Treasury SOFR + bank markup Rate type Fixed or floating Floating Collateral Investment portfolio Your home Credit check / approval None Full underwriting Interest deductibility Any use of proceeds Home use only Margin call risk None. Defined repayment None (home at risk) Time to fund Days Weeks to months Feature Box Spread (STQ) SBLOC Rate benchmark ~Near Treasury SOFR + bank spread Rate type Fixed or floating Floating (bank discretion) Interest deductibility Any use of proceeds Investment use only (IRC §163d) Margin call risk None. Defined repayment Yes, if portfolio declines Bank relationship required No Yes Tax classification Capital loss (Section 1256) Investment interest expense Feature Box Spread (STQ) Margin Loan Rate benchmark ~Near Treasury Broker rate (often 7-9%+) Rate type Fixed or floating Variable, broker-set Margin call risk None. Defined repayment Yes, can force selling Interest deductibility Any use of proceeds Investment use only Tax classification Capital loss (Section 1256) Investment interest expense Effective after-tax rate ~2.9% Typically 5-7%+ The Box Spread Library Everything we have written on box spreads. Explainer What is a box spread? Plain-English fundamentals. Complete Guide Box spread borrowing: the full practitioner's guide. Live Benchmarks Box spread rates today, updated every business day. Comparison Box spread vs SBLOC: same collateral, very different loan. Tax Treatment The two features almost everyone overlooks. Home Financing A better way to buy (or build) a home. Introduction Most people sell when they need cash. Usually wrong. PDF The seven-slide visual explainer. Common Questions Everything you want to know. The questions most people ask before their first call with STQ. Want the full picture? Read the complete box spread borrowing guide . What exactly is a box spread? A box spread is a four-leg options structure, two calls and two puts at different strike prices, on a broad index like the S&P 500 (XSP). The structure creates a fully hedged position with a known, fixed payoff at expiration. You sell the spread, receive cash upfront, and repay a fixed amount at settlement. The difference between what you receive and what you repay is the implied interest rate, set entirely by the options market, not a bank. Why are the rates so low? Because there's no middleman. Traditional lenders, banks, brokerages, borrow at near-Treasury rates and lend to you at a markup. Box spreads cut them out entirely. The rate you pay is set by arbitrageurs in the options market competing to earn the risk-free rate. The result is a borrowing cost that typically sits within a few basis points of Treasury yields, without any bank spread layered on top. How is the interest treated for taxes? Box spread contracts are Section 1256 contracts, which means the interest is classified as a capital loss, not interest expense. This has two major implications. First, the deduction applies regardless of how you use the loan proceeds. Buy a vacation home, fund a business, pay a tax bill. The deduction follows the loan, not the use. Second, the 60/40 rule applies: 60% of the loss is treated as long-term capital gain, 40% as short-term. At top federal brackets, at top federal brackets this typically reduces the effective cost to roughly 25-30% below the stated rate. Consult a qualified tax advisor regarding your specific situation. Is there a margin call risk? Box spread loans have defined repayment. A fixed amount is owed at expiration, regardless of what the market does between now and then. This is fundamentally different from a margin loan or SBLOC, where a portfolio decline can trigger a forced sale. There is no margin call in the traditional sense. The risk is that if your portfolio declines significantly and you need to exit early, unwinding the position before expiration may carry a cost. What can I use the proceeds for? Anything. Real estate, a tax bill, a business investment, home improvements, funding a trust, purchasing a vehicle, covering living expenses during a liquidity event. Unlike a HELOC (home use only) or SBLOC (investment use only for the deduction to apply), the Section 1256 capital loss classification means the tax deduction applies no matter what you do with the funds. What portfolio size do I need? Generally, a liquid, diversified investment portfolio of $250,000 or more is the starting point. Larger portfolios can access more capital and benefit more from the fixed costs of execution. STQ will assess your specific situation and help you determine whether box spread financing makes sense given your portfolio size, composition, and what you need the capital for. How long does it take to get funds? From the time the box spread is executed, funds are typically available within a few business days. The timeline from initial conversation to execution depends on onboarding, account setup, and how quickly you want to move. For clients already at Schwab with appropriate options permissions, execution can happen within days of the decision. Can I choose my loan term? Yes. Box spreads are available across a range of expirations. Terms range from approximately 30 days out to several years. Short-dated structures offer floating-rate flexibility (rates reset when you roll at expiration). Longer-dated structures lock in your borrowing cost for the full term. STQ will help you select the term that matches your liquidity timeline and rate view. The Explainer Box spreads in seven slides. The whole strategy, one swipe at a time: what it is, who sets the rate, the tax treatment, and what people actually use it for. Download the PDF Scroll or swipe → Find out how much you can borrow. A 30-minute call is all it takes. We'll walk through your portfolio, the rates available today, and whether this strategy fits your situation. Schedule a Call Get in Touch In this series How box spread borrowing works → Box spread vs a bank line of credit → Raise cash without selling your stock → Using a box spread to buy a home → Box spread vs HELOC for a home build → Why box spreads use European-style options → Step-up in basis and box spreads → The buy, borrow, die strategy → More on box spreads What Is a Box Spread? The plain-English explainer, with a worked example.
 
-Box spread financing lets you borrow against your investments at near-Treasury rates, set by the market, not a bank. No credit check, no approval process, no forced selling. You stay fully invested while accessing the capital you need.
+Box Spread Rates Today Benchmarks updated every business day.
 
-Benchmarked to the U.S. Treasury par yield curve as of , updated automatically each business day. Box spread financing typically prices within a few basis points of these levels; executable rates vary with market conditions and exclude fees. For a live executable quote, contact STQ directly. See today's box spread rates for the full breakdown.
-
-### Borrow from the market, not the bank.
-
-A box spread is a four-leg options structure on the S&P 500 Index. It creates a fully hedged position with a fixed, known payoff at expiration, functioning like a zero-coupon bond. You receive cash today and repay a fixed amount at settlement. The difference is your borrowing cost, set entirely by market forces.
-
-### Execute the box spread
-
-STQ places a four-leg options trade on a broad index (XSP). The structure is fully hedged with no directional market exposure.
-
-### Receive cash upfront
-
-The net premium collected hits your account within days. Typically 95-97 cents on the dollar for a 1-year loan at current rates.
-
-### Use the proceeds however you want
-
-Real estate purchase, tax bill, business investment, home improvement. Unlike a HELOC or SBLOC, the deduction follows the loan, not the use.
-
-### Repay at expiration
-
-A fixed amount is settled at expiration. No variable rates, no bank discretion. Roll it, extend it, or pay it off.
-
-### One trade. One fixed repayment.
-
-Here's what a $1MM box spread loan looks like from start to finish, including how the interest flows through your tax return.
-
-Receive $950K $50K Interest 60% Long-term Capital Loss ($30K) 40% Short-term Capital Loss ($20K) In 1 Year Repay $1MM (Fixed Amount) Illustrative example using a $1MM notional, 1-year term at ~5% implied rate. Section 1256 60/40 treatment applies to box spread contracts. Actual rates, amounts, and tax treatment depend on individual circumstances. Consult a qualified tax advisor.
-
-### See what it costs you.
-
-Illustrative only. Loan amount capped at 85% of portfolio value for illustration purposes. Actual borrowing capacity depends on portfolio composition, account type, and market conditions. Effective rate assumes Section 1256 60/40 treatment at selected federal bracket. LTCG fixed at 20%. State taxes excluded. Consult a qualified tax advisor before implementing.
-
-### No middleman means a better deal on every dimension.
-
-### Everything we have written on box spreads.
-
-### Everything you want to know.
-
-The questions most people ask before their first call with STQ. Want the full picture? Read the complete box spread borrowing guide .
-
-### Box spreads in seven slides.
-
-The whole strategy, one swipe at a time: what it is, who sets the rate, the tax treatment, and what people actually use it for.
-
-### Find out how much you can borrow.
-
-A 30-minute call is all it takes. We'll walk through your portfolio, the rates available today, and whether this strategy fits your situation.
+Box Spread Borrowing: The Complete Guide Mechanics, tax treatment, and risks.
 
 
 ## Box Spread Rates Today
 Source: https://stqcap.com/box-spread-rates.html
 
-### Box Spread Rates Today.
+STQ Box Spread Rates Today. Box spread borrowing costs are set by the options market, not a bank, and they track the U.S. Treasury curve. The benchmarks below refresh every business day. Live Benchmarks Benchmark curve as of November 20, 2026 Term U.S. Treasury par yield 1 Year 4.51% 2 Year 4.63% 3 Year 4.65% 4 Year 4.68% 5 Year 4.71% Source: U.S. Treasury daily par yield curve. Implied box spread borrowing rates on broad index options typically price within a few tenths of a percent of these yields; the exact rate depends on term, market conditions, and execution. These are benchmarks, not quotes. How to read this table A box spread is a loan built from S&P 500 index options: cash today, one fixed repayment at expiration. Because arbitrageurs compete to earn the risk-free rate on the other side of the trade, the implied borrowing rate tracks the Treasury yield of the matching maturity. Pick your term above, and the number next to it is approximately the market's wholesale cost of money for that period. That, give or take a small spread, is the rate a well-executed box prices at. Compare that to what banks charge against the same collateral. Securities-backed lines of credit typically run several points above Treasuries, variable. Margin loans run higher still. The box spread removes the middleman, which is the entire point. Box spread SBLOC or margin loan Rate Tracks the Treasury curve, set by the options market Rate Reference rate plus the bank's markup, typically 6.5 to 13% Rate type Fixed for the full term Rate type Variable, moves whenever the bank's rate moves Payments None until maturity, one fixed repayment Payments Ongoing interest, often monthly Cost treatment Generally a Section 1256 capital loss that may offset gains Cost treatment Personal-use interest is rarely deductible Why the rate is set by the market There is no loan officer in a box spread. The four option legs create a fixed payoff at expiration, so whoever buys the other side is simply lending at the implied rate. Index arbitrage desks do this at scale, competing with each other, and that competition pins the rate to Treasuries. A bank's rate committee never enters the picture. That is why the table above, a public government data feed, is a working benchmark for what this financing costs. What this means in dollars On $1,000,000 borrowed for a year, each percentage point of rate is $10,000. A borrower refinancing a 7.5% SBLOC into a box priced near the 1-year benchmark above keeps the difference, every year, on the same collateral. The complete guide walks through the mechanics, the risks, and who this does and does not fit, and the tax treatment is its own story: the financing cost generally books as a capital loss, which may offset gains regardless of what the money bought. Frequently asked questions What determines box spread rates? The options market. The implied rate is set by arbitrageurs competing to earn the risk-free rate, so it tracks U.S. Treasury yields of the same maturity, typically within a few tenths of a percent. No bank sets or marks up the rate. Are box spread rates fixed or variable? Fixed. The rate locks the moment the trade executes and does not change for the life of the position, whether that is 30 days or several years. SBLOC and margin rates are variable and move with the bank's reference rate. How close are box spread rates to Treasury yields? Historically, implied box rates on broad index options have landed within a few tenths of a percent of comparable-maturity Treasuries. The exact spread varies with term, market conditions, and execution quality. Is the cost tax-deductible? The financing cost is generally treated as a Section 1256 capital loss rather than interest expense, which may offset capital gains regardless of how the money is used. Tax treatment depends on your circumstances; consult your tax adviser. For informational and educational purposes only. Benchmark yields are published by the U.S. Treasury and change daily; implied box spread rates are not guaranteed and depend on market conditions and execution. Borrowing against securities involves leverage and risk, including the risk of loss greater than anticipated. This is not an offer of credit and not personalized tax, legal, or investment advice. Benchmarks are the starting point. Send your current SBLOC or margin statement and we will quote a box spread next to it: the rate, the annual difference in dollars, and the tax treatment. See My Rate More on box spreads What Is a Box Spread? The plain-English explainer, with a worked example.
 
-Box spread borrowing costs are set by the options market, not a bank, and they track the U.S. Treasury curve. The benchmarks below refresh every business day.
+Box Spread Borrowing: The Complete Guide Mechanics, tax treatment, and risks.
 
-Benchmark curve as of November 13, 2026
-
-Source: U.S. Treasury daily par yield curve. Implied box spread borrowing rates on broad index options typically price within a few tenths of a percent of these yields; the exact rate depends on term, market conditions, and execution. These are benchmarks, not quotes.
-
-### How to read this table
-
-A box spread is a loan built from S&P 500 index options: cash today, one fixed repayment at expiration. Because arbitrageurs compete to earn the risk-free rate on the other side of the trade, the implied borrowing rate tracks the Treasury yield of the matching maturity. Pick your term above, and the number next to it is approximately the market's wholesale cost of money for that period. That, give or take a small spread, is the rate a well-executed box prices at.
-
-Compare that to what banks charge against the same collateral. Securities-backed lines of credit typically run several points above Treasuries, variable. Margin loans run higher still. The box spread removes the middleman, which is the entire point.
-
-### Why the rate is set by the market
-
-There is no loan officer in a box spread. The four option legs create a fixed payoff at expiration, so whoever buys the other side is simply lending at the implied rate. Index arbitrage desks do this at scale, competing with each other, and that competition pins the rate to Treasuries. A bank's rate committee never enters the picture. That is why the table above, a public government data feed, is a working benchmark for what this financing costs.
-
-### What this means in dollars
-
-On $1,000,000 borrowed for a year, each percentage point of rate is $10,000. A borrower refinancing a 7.5% SBLOC into a box priced near the 1-year benchmark above keeps the difference, every year, on the same collateral. The complete guide walks through the mechanics, the risks, and who this does and does not fit, and the tax treatment is its own story: the financing cost generally books as a capital loss, which may offset gains regardless of what the money bought.
-
-### Frequently asked questions
-
-### What determines box spread rates?
-
-The options market. The implied rate is set by arbitrageurs competing to earn the risk-free rate, so it tracks U.S. Treasury yields of the same maturity, typically within a few tenths of a percent. No bank sets or marks up the rate.
-
-### Are box spread rates fixed or variable?
-
-Fixed. The rate locks the moment the trade executes and does not change for the life of the position, whether that is 30 days or several years. SBLOC and margin rates are variable and move with the bank's reference rate.
-
-### How close are box spread rates to Treasury yields?
-
-Historically, implied box rates on broad index options have landed within a few tenths of a percent of comparable-maturity Treasuries. The exact spread varies with term, market conditions, and execution quality.
-
-### Is the cost tax-deductible?
-
-The financing cost is generally treated as a Section 1256 capital loss rather than interest expense, which may offset capital gains regardless of how the money is used. Tax treatment depends on your circumstances; consult your tax adviser.
-
-For informational and educational purposes only. Benchmark yields are published by the U.S. Treasury and change daily; implied box spread rates are not guaranteed and depend on market conditions and execution. Borrowing against securities involves leverage and risk, including the risk of loss greater than anticipated. This is not an offer of credit and not personalized tax, legal, or investment advice.
-
-Benchmarks are the starting point. Send your current SBLOC or margin statement and we will quote a box spread next to it: the rate, the annual difference in dollars, and the tax treatment.
+Box Spread vs SBLOC Same collateral, very different loan.
 
 
 ## Box Spread vs SBLOC
 Source: https://stqcap.com/insights/insight-box-spread-vs-sbloc.html
 
-### Box Spread vs SBLOC: Same Collateral, Very Different Loan.
+STQ Box Spread vs SBLOC: Same Collateral, Very Different Loan. Both let you borrow against your portfolio with nothing sold. The rate, the payments, and the tax treatment are where they part ways. Line by line. Box Spreads AG Akiva Glazerson Founder, STQ Capital 4 min read If you hold a large portfolio at a major custodian, you have probably been offered a securities-backed line of credit. Schwab calls it a Pledged Asset Line. The pitch is real: borrow against your investments, sell nothing, trigger no gains, get the cash in days. What the pitch leaves out is that the same collateral supports a second structure that does the same job, usually at a meaningfully lower cost. Here is the honest comparison. What they have in common Both are loans against your portfolio. Nothing is sold, so no capital gain is realized, your investments keep compounding, and there is no credit check or income verification in the mortgage sense. Both can fund anything: a house, a tax bill, a business. The similarities end at the price tag. Who sets the rate An SBLOC rate is a bank's reference rate plus a markup the bank chooses, typically landing between 6.5 and 8%, higher at smaller balances. A box spread has no lender in it. It is built from S&P 500 index options, and the implied rate is set by arbitrage desks competing to earn the risk-free rate, which pins it near the Treasury yield of the matching maturity. Same collateral, but one rate includes a bank's profit margin and one does not. Fixed or floating, payments or none The SBLOC floats: when the reference rate moves, your cost moves, and interest is billed along the way. The box is the opposite animal: the rate locks the moment the trade executes, for terms from a month to several years, and nothing is paid until maturity, when one fixed repayment settles the whole loan. Borrowers who lived through rate hikes on a floating line tend to appreciate the difference. The tax treatment Borrow on an SBLOC to buy a car or pay a tax bill and the interest is, generally, just a cost. Personal-use interest is rarely deductible. The box spread's financing cost takes a different path: it is generally treated as a Section 1256 capital loss , not interest, which may offset capital gains elsewhere in the portfolio no matter what the money bought. On a large balance, that difference compounds annually. SBLOC / Pledged Asset Line Box spread Rate Reference rate plus the bank's markup, typically 6.5 to 8% Rate Set by the options market, tracks the Treasury curve Rate type Floating, moves with the bank's reference rate Rate type Fixed for the full term Payments Interest billed along the way Payments None until maturity, one fixed repayment Tax treatment Personal-use interest rarely deductible Tax treatment Generally a §1256 capital loss that may offset gains Structure Open revolver, draw and repay freely Structure Fixed lump sum for a fixed term Setup Minutes at your custodian Setup Margin account with options approval, executed for you Same collateral, two prices. One includes the bank's margin. One does not. Where the SBLOC genuinely wins Fairness matters here. If you need a revolver, drawing ten thousand this month and repaying it next, the SBLOC's flexibility is the product, and the box's fixed-lump-sum structure is the wrong shape. Small balances and very short needs rarely justify the setup. And an SBLOC exists in your custodian's app with two clicks, while a box requires a margin account with options approval and someone who executes these well, because execution quality is part of the rate you get. The refinance math Where the box earns its keep is a standing balance. A borrower carrying $1,000,000 on a line at 7.5% pays $75,000 a year, floating. Refinanced into a box priced near the Treasury curve, the same borrowing can run several percentage points cheaper, fixed. Tens of thousands of dollars a year, on the same collateral, doing the same job. That is not a market view or a forecast. It is removing a middleman. How STQ thinks about it We quote them side by side. Send the SBLOC or margin statement, and we put your actual balance against the live box rate for your term: the annual difference in dollars, the tax treatment of each, and whether your situation fits the structure at all. Sometimes the honest answer is that the line is fine. Usually, on a real balance, it is not close. For informational and educational purposes only. Rate ranges are illustrative and change with markets; implied box spread rates are not guaranteed and depend on term, market conditions, and execution. Borrowing against securities involves leverage and risk, including losses greater than anticipated and potential forced liquidation of collateral. Tax treatment, including Section 1256 characterization, depends on your circumstances; consult your tax adviser. This is not an offer of credit and not personalized tax, legal, or investment advice. Carrying a balance on an SBLOC, pledged asset line, or margin loan? Send the statement and we will quote the box spread next to it: your rate, our rate, and the difference in dollars per year. Quote It Side By Side More on box spreads What Is a Box Spread? The plain-English explainer, with a worked example.
 
-Both let you borrow against your portfolio with nothing sold. The rate, the payments, and the tax treatment are where they part ways. Line by line.
+Box Spread Rates Today Benchmarks updated every business day.
 
-If you hold a large portfolio at a major custodian, you have probably been offered a securities-backed line of credit. Schwab calls it a Pledged Asset Line. The pitch is real: borrow against your investments, sell nothing, trigger no gains, get the cash in days. What the pitch leaves out is that the same collateral supports a second structure that does the same job, usually at a meaningfully lower cost. Here is the honest comparison.
-
-### What they have in common
-
-Both are loans against your portfolio. Nothing is sold, so no capital gain is realized, your investments keep compounding, and there is no credit check or income verification in the mortgage sense. Both can fund anything: a house, a tax bill, a business. The similarities end at the price tag.
-
-### Who sets the rate
-
-An SBLOC rate is a bank's reference rate plus a markup the bank chooses, typically landing between 6.5 and 8%, higher at smaller balances. A box spread has no lender in it. It is built from S&P 500 index options, and the implied rate is set by arbitrage desks competing to earn the risk-free rate, which pins it near the Treasury yield of the matching maturity. Same collateral, but one rate includes a bank's profit margin and one does not.
-
-### Fixed or floating, payments or none
-
-The SBLOC floats: when the reference rate moves, your cost moves, and interest is billed along the way. The box is the opposite animal: the rate locks the moment the trade executes, for terms from a month to several years, and nothing is paid until maturity, when one fixed repayment settles the whole loan. Borrowers who lived through rate hikes on a floating line tend to appreciate the difference.
-
-### The tax treatment
-
-Borrow on an SBLOC to buy a car or pay a tax bill and the interest is, generally, just a cost. Personal-use interest is rarely deductible. The box spread's financing cost takes a different path: it is generally treated as a Section 1256 capital loss , not interest, which may offset capital gains elsewhere in the portfolio no matter what the money bought. On a large balance, that difference compounds annually.
-
-Same collateral, two prices. One includes the bank's margin. One does not.
-
-### Where the SBLOC genuinely wins
-
-Fairness matters here. If you need a revolver, drawing ten thousand this month and repaying it next, the SBLOC's flexibility is the product, and the box's fixed-lump-sum structure is the wrong shape. Small balances and very short needs rarely justify the setup. And an SBLOC exists in your custodian's app with two clicks, while a box requires a margin account with options approval and someone who executes these well, because execution quality is part of the rate you get.
-
-### The refinance math
-
-Where the box earns its keep is a standing balance. A borrower carrying $1,000,000 on a line at 7.5% pays $75,000 a year, floating. Refinanced into a box priced near the Treasury curve, the same borrowing can run several percentage points cheaper, fixed. Tens of thousands of dollars a year, on the same collateral, doing the same job. That is not a market view or a forecast. It is removing a middleman.
-
-### How STQ thinks about it
-
-We quote them side by side. Send the SBLOC or margin statement, and we put your actual balance against the live box rate for your term: the annual difference in dollars, the tax treatment of each, and whether your situation fits the structure at all. Sometimes the honest answer is that the line is fine. Usually, on a real balance, it is not close.
-
-For informational and educational purposes only. Rate ranges are illustrative and change with markets; implied box spread rates are not guaranteed and depend on term, market conditions, and execution. Borrowing against securities involves leverage and risk, including losses greater than anticipated and potential forced liquidation of collateral. Tax treatment, including Section 1256 characterization, depends on your circumstances; consult your tax adviser. This is not an offer of credit and not personalized tax, legal, or investment advice.
-
-Carrying a balance on an SBLOC, pledged asset line, or margin loan? Send the statement and we will quote the box spread next to it: your rate, our rate, and the difference in dollars per year.
+Box Spread Borrowing: The Complete Guide Mechanics, tax treatment, and risks.
 
 
 ## The Two Box Spread Features Almost Everyone Overlooks
@@ -573,33 +317,23 @@ Anyone without a large taxable portfolio and realized gains for the loss to offs
 
 I'd love to walk through what a tax-efficient approach could look like for your specific situation.
 
+### More on box spreads
+
+What Is a Box Spread? The plain-English explainer, with a worked example.
+
+Box Spread Rates Today Benchmarks updated every business day.
+
+Box Spread Borrowing: The Complete Guide Mechanics, tax treatment, and risks.
+
 
 ## How Direct Indexing Works
 Source: https://stqcap.com/how-direct-indexing-works.html
 
-### How Direct Indexing Works.
+STQ STQ Research - Visual Explainer How Direct Indexing Works. An index fund gives you the return. Direct indexing gives you the return and a tax engine that works in your favor every day the market is open. Here is the whole idea in twenty seconds. Loops automatically - no sound What you just watched The index return, plus a loss engine. Most investors buy the box: a single S&P 500 fund that gives them the index return and nothing else. Direct indexing buys the stocks inside that box instead, in your own account. You get the same exposure, but now every position is yours to manage for taxes. That distinction is the whole point. A fund is one line on a statement. Direct indexing is hundreds of individual lots, each one a candidate for tax-loss harvesting the moment it dips, even in a year the index finishes up. Step by step How the machine runs. 01 Own the stocks, not the fund Instead of one S&P 500 ETF, you hold the individual companies that make up the index in a separately managed account. Same market exposure, full transparency, full control. 02 Markets move, and some stocks dip In any year, even a strong one, some names fall while others rise. Inside a fund those individual declines are invisible. Held directly, each one is a tax opportunity. 03 Harvest the losses, stay invested The down positions are sold to realize the loss and immediately replaced with a similar stock. The portfolio keeps tracking the index. You never step out of the market to do it. 04 Bank the losses for when you need them Harvested losses are stored and may offset capital gains anywhere in your life: a real estate sale, a business exit, an RSU vest, or a concentrated position you finally want to trim. Where STQ is different The index is built around you. Most firms offer direct indexing as an off-the-shelf product. At STQ, the index itself is constructed around your situation: your existing holdings, your sector views, your tax picture, your concentrated positions. You can exclude your employer stock, tilt away from what you already own, and gift the winners instead of selling them. No two clients hold the same portfolio. The takeaway Same market exposure as an index fund. A steady supply of harvested losses the fund can never give you. That is the difference between owning the return and owning the return with a tax engine attached. Disclaimer: This page is for informational and educational purposes only and does not constitute personalized investment, tax, or legal advice. The animation is a simplified illustration and does not represent actual investment results. The availability and value of harvested losses depend on your individual circumstances and applicable tax law, which is subject to change. Investments involve risk, including the potential loss of principal. Please consult a qualified tax, legal, or financial professional regarding your specific situation. Advisory services offered through STQ Capital, an investment adviser registered with the states of California and New York. See Direct Indexing Built Around Your Portfolio. We will look at your holdings, your concentrated positions, and your tax picture, and show you what a custom index could do. Talk to STQ Schedule a Call Go Deeper Tax Alpha Own an S&P 500 ETF? Do This Instead. Pillar Guide The Complete Guide to Tax-Aware Investing More on tax-loss harvesting Tax-Loss Harvesting: Building a Loss Bank Harvesting as a year-round engine.
 
-An index fund gives you the return. Direct indexing gives you the return and a tax engine that works in your favor every day the market is open. Here is the whole idea in twenty seconds.
+Long/Short Tax-Loss Harvesting Keeps generating losses in any market.
 
-### The index return, plus a loss engine.
-
-Most investors buy the box: a single S&P 500 fund that gives them the index return and nothing else. Direct indexing buys the stocks inside that box instead, in your own account. You get the same exposure, but now every position is yours to manage for taxes.
-
-That distinction is the whole point. A fund is one line on a statement. Direct indexing is hundreds of individual lots, each one a candidate for tax-loss harvesting the moment it dips, even in a year the index finishes up.
-
-### How the machine runs.
-
-### The index is built around you.
-
-Most firms offer direct indexing as an off-the-shelf product. At STQ, the index itself is constructed around your situation: your existing holdings, your sector views, your tax picture, your concentrated positions. You can exclude your employer stock, tilt away from what you already own, and gift the winners instead of selling them. No two clients hold the same portfolio.
-
-Same market exposure as an index fund. A steady supply of harvested losses the fund can never give you. That is the difference between owning the return and owning the return with a tax engine attached.
-
-### See Direct Indexing Built Around Your Portfolio.
-
-We will look at your holdings, your concentrated positions, and your tax picture, and show you what a custom index could do.
-
-### Go Deeper
+Tax-Aware Investing: The Complete Guide The full after-tax framework.
 
 
 ## What to Do With a Concentrated Stock Position

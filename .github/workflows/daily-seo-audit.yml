@@ -1,0 +1,47 @@
+name: Daily SEO and AI-surface run
+
+# Every business morning: audit every public page for the signals search and
+# AI engines rely on (failing loudly if anything broke), and regenerate
+# llms-full.txt from current page text so AI crawlers always ingest fresh
+# content, including the daily rate benchmarks. A commit here triggers the
+# IndexNow workflow, which pings search engines.
+
+on:
+  schedule:
+    - cron: '47 13 * * 1-5'   # 13:47 UTC daily Mon-Fri (~6am PT)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-seo-audit
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: SEO and AI-surface audit
+        run: node scripts/seo-audit.mjs
+
+      - name: Regenerate llms-full.txt from current pages
+        run: python3 scripts/generate-llms-full.py
+
+      - name: Commit if content changed
+        run: |
+          if [[ -n "$(git status --porcelain llms-full.txt)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add llms-full.txt
+            git commit -m "Daily refresh of llms-full.txt (AI ingestion file)"
+            git push
+          else
+            echo "llms-full.txt unchanged."
+          fi
