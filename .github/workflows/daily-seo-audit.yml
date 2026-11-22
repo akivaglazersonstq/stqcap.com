@@ -29,19 +29,35 @@ jobs:
           node-version: '20'
 
       - name: SEO and AI-surface audit
-        run: node scripts/seo-audit.mjs
+        id: audit
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          node scripts/seo-audit.mjs 2>&1 | tee audit-output.txt
 
       - name: Regenerate llms-full.txt from current pages
         run: python3 scripts/generate-llms-full.py
 
+      - name: Update status dashboard
+        run: |
+          export AUDIT_RESULT="${{ steps.audit.outcome == 'success' && 'pass' || 'fail' }}"
+          export AUDIT_SUMMARY="$(tail -1 audit-output.txt)"
+          export RUN_SOURCE="${{ github.event_name == 'schedule' && 'schedule' || 'manual' }}"
+          node scripts/build-status-page.mjs
+          rm -f audit-output.txt
+
       - name: Commit if content changed
         run: |
-          if [[ -n "$(git status --porcelain llms-full.txt)" ]]; then
+          if [[ -n "$(git status --porcelain llms-full.txt seo-status.html seo-status.json)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add llms-full.txt
-            git commit -m "Daily refresh of llms-full.txt (AI ingestion file)"
+            git add llms-full.txt seo-status.html seo-status.json
+            git commit -m "Daily optimization run: refresh AI ingestion file and status dashboard"
             git push
           else
-            echo "llms-full.txt unchanged."
+            echo "No changes."
           fi
+
+      - name: Fail workflow if audit failed
+        if: steps.audit.outcome != 'success'
+        run: exit 1

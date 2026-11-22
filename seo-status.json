@@ -1,0 +1,13 @@
+[
+ {
+  "at": "2026-11-22T21:16:00.482Z",
+  "result": "pass",
+  "source": "manual",
+  "pages": 93,
+  "insights": 71,
+  "sitemapUrls": 91,
+  "llmsFull": 85963,
+  "ratesAsOf": "November 20, 2026",
+  "summary": "Audit clean: 93 pages, 71 insights, 91 sitemap URLs."
+ }
+]
