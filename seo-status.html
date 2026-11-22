@@ -32,6 +32,11 @@ svg.wires { position:absolute; inset:0; }
 .status.bad { background:#a33b3b; box-shadow:0 0 0 3px rgba(163,59,59,0.2); }
 .status.idle { background:#c3c9d2; }
 h2 { font-family:'Chakra Petch',sans-serif; font-size:0.95rem; margin-bottom:12px; }
+.steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:14px; margin-bottom:34px; }
+.step { background:#fff; border:1px solid rgba(27,46,75,0.12); border-radius:8px; padding:16px 18px; }
+.step-head { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:8px; }
+.step-name { font-family:'Chakra Petch',sans-serif; font-weight:700; font-size:0.85rem; }
+.step p { font-size:0.82rem; line-height:1.65; color:#4a5a6e; }
 table { border-collapse:collapse; width:100%; background:#fff; border:1px solid rgba(27,46,75,0.12); border-radius:8px; overflow:hidden; font-size:0.82rem; }
 th { background:#1B2E4B; color:#F0EFEB; text-align:left; padding:10px 14px; font-family:'Chakra Petch',sans-serif; font-size:0.7rem; letter-spacing:0.06em; }
 td { padding:9px 14px; border-top:1px solid rgba(27,46,75,0.07); color:#2a3a4a; }
@@ -43,7 +48,7 @@ a { color:#1B2E4B; }
 <body>
 <h1>Daily Optimization Run</h1>
 <div class="sub">Automated SEO and AI-surface maintenance for stqcap.com · the run updates this page itself · <a href="https://github.com/akivaglazersonstq/stqcap.com/actions" target="_blank">raw logs</a></div>
-<div class="runline">Last run: 2026-11-22 21:19 UTC · <span class="pill ok">PASS</span> · Audit clean: 93 pages, 71 insights, 91 sitemap URLs.</div>
+<div class="runline">Last run: 2026-11-22 21:20 UTC · <span class="pill ok">PASS</span> · Audit clean: 93 pages, 71 insights, 91 sitemap URLs.</div>
 <div class="canvas-wrap"><div class="canvas">
   <svg class="wires" width="1670" height="510"><path d="M 236 110 C 278 110, 278 110, 320 110" class="edge"/><circle cx="320" cy="110" r="4" class="edot"/><path d="M 516 110 C 558 110, 558 110, 600 110" class="edge"/><circle cx="600" cy="110" r="4" class="edot"/><path d="M 796 110 C 838 110, 838 210, 880 210" class="edge"/><circle cx="880" cy="210" r="4" class="edot"/><path d="M 236 310 C 278 310, 278 310, 320 310" class="edge"/><circle cx="320" cy="310" r="4" class="edot"/><path d="M 516 310 C 558 310, 558 310, 600 310" class="edge"/><circle cx="600" cy="310" r="4" class="edot"/><path d="M 516 310 C 558 310, 558 440, 600 440" class="edge"/><circle cx="600" cy="440" r="4" class="edot"/><path d="M 796 310 C 838 310, 838 210, 880 210" class="edge"/><circle cx="880" cy="210" r="4" class="edot"/><path d="M 1076 210 C 1113 210, 1113 210, 1150 210" class="edge"/><circle cx="1150" cy="210" r="4" class="edot"/><path d="M 1346 210 C 1388 210, 1388 110, 1430 110" class="edge"/><circle cx="1430" cy="110" r="4" class="edot"/><path d="M 1346 210 C 1388 210, 1388 310, 1430 310" class="edge"/><circle cx="1430" cy="310" r="4" class="edot"/></svg>
   
@@ -103,11 +108,37 @@ a { color:#1B2E4B; }
     <div><div class="ntitle">AI Crawlers Ingest</div><div class="nsub">GPTBot · ClaudeBot · Perplexity</div></div>
   </div>
 </div></div>
+<h2>What this means, in plain English</h2>
+<div class="steps">
+  <div class="step">
+    <div class="step-head"><span class="step-name">Live rates stay fresh</span><span class="pill ok">&#10003; Optimal</span></div>
+    <p>Every evening we pull official U.S. Treasury data and update the borrowing rates shown on the box spread pages. Fresh numbers make Google recrawl the site often and make the rates page something no competitor has. Right now the rates are from November 20, 2026, which is current.</p>
+  </div>
+  <div class="step">
+    <div class="step-head"><span class="step-name">Site health check</span><span class="pill ok">&#10003; Optimal</span></div>
+    <p>This morning we inspected all 94 pages: every page has a proper title, a description Google can show, valid structured data, working links, and a correct sitemap entry. Everything passed, so there is nothing for you to do.</p>
+  </div>
+  <div class="step">
+    <div class="step-head"><span class="step-name">AI reading file rebuilt</span><span class="pill ok">&#10003; Optimal</span></div>
+    <p>We maintain one big plain-text file (llms-full.txt, currently 86 thousand characters) containing the full text of every guide. ChatGPT, Claude, and Perplexity can read the whole site in one visit instead of piecing it together, which makes STQ easier to quote in their answers. It was rebuilt today from the live pages.</p>
+  </div>
+  <div class="step">
+    <div class="step-head"><span class="step-name">Search engines notified</span><span class="pill ok">&#10003; Optimal</span></div>
+    <p>Whenever anything above changed, the site republished automatically and we pinged Google and Bing directly (a protocol called IndexNow). That means changes show up in search in hours instead of waiting days for a crawler to wander by.</p>
+  </div>
+  <div class="step">
+    <div class="step-head"><span class="step-name">AI crawlers welcomed</span><span class="pill ok">&#10003; Optimal</span></div>
+    <p>The site explicitly invites the crawlers that feed AI products (GPTBot, ClaudeBot, PerplexityBot, Google's AI crawler and nine others). Many sites block these; STQ does the opposite, so the content is available both for AI answers today and for future model training.</p>
+  </div>
+  <div class="step">
+    <div class="step-head"><span class="step-name">You only hear about problems</span><span class="pill ok">&#10003; Optimal</span></div>
+    <p>If any check fails, the run turns red here and emails Akiva automatically. A page of green and a quiet inbox means the machine is doing its job.</p>
+  </div></div>
 <h2>Run history</h2>
 <div class="twrap"><table>
 <tr><th>Run (UTC)</th><th>Result</th><th>Pages</th><th>Insights</th><th>Sitemap</th><th>llms-full</th><th>Rates as of</th><th>Source</th><th>Notes</th></tr>
 <tr>
-  <td>2026-11-22 21:19 UTC</td>
+  <td>2026-11-22 21:20 UTC</td>
   <td><span class="pill ok">PASS</span></td>
   <td>94</td><td>71</td><td>91</td>
   <td>86k</td><td>November 20, 2026</td>

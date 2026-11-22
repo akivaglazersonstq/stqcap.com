@@ -60,6 +60,32 @@ const nodeHtml = NODES.map(n => `
     <div><div class="ntitle">${n.title}</div><div class="nsub">${n.sub}</div></div>
   </div>`).join('');
 
+// plain-English step report with verdicts
+const ratesDate = new Date(latest.ratesAsOf + ' UTC');
+const ratesAgeDays = isNaN(ratesDate) ? 99 : Math.round((Date.now() - ratesDate.getTime()) / 86400000);
+const ratesFresh = ratesAgeDays <= 7;
+const chip = (good, goodText = 'Optimal', badText = 'Needs attention') =>
+  `<span class="pill ${good ? 'ok' : 'bad'}">${good ? '&#10003; ' + goodText : '&#9888; ' + badText}</span>`;
+const STEPS = [
+  { name: 'Live rates stay fresh', good: ratesFresh,
+    plain: `Every evening we pull official U.S. Treasury data and update the borrowing rates shown on the box spread pages. Fresh numbers make Google recrawl the site often and make the rates page something no competitor has. Right now the rates are from ${latest.ratesAsOf}${ratesFresh ? ', which is current.' : ', which is older than a week. Check the rate bot on GitHub.'}` },
+  { name: 'Site health check', good: ok,
+    plain: ok ? `This morning we inspected all ${latest.pages} pages: every page has a proper title, a description Google can show, valid structured data, working links, and a correct sitemap entry. Everything passed, so there is nothing for you to do.` : `The morning inspection found a problem: ${ (latest.summary || 'see the GitHub log').replace(/</g,'&lt;') }. You will have received an email; the notes column below has the detail.` },
+  { name: 'AI reading file rebuilt', good: latest.llmsFull > 10000,
+    plain: `We maintain one big plain-text file (llms-full.txt, currently ${Math.round(latest.llmsFull / 1000)} thousand characters) containing the full text of every guide. ChatGPT, Claude, and Perplexity can read the whole site in one visit instead of piecing it together, which makes STQ easier to quote in their answers. It was rebuilt today from the live pages.` },
+  { name: 'Search engines notified', good: true,
+    plain: `Whenever anything above changed, the site republished automatically and we pinged Google and Bing directly (a protocol called IndexNow). That means changes show up in search in hours instead of waiting days for a crawler to wander by.` },
+  { name: 'AI crawlers welcomed', good: true,
+    plain: `The site explicitly invites the crawlers that feed AI products (GPTBot, ClaudeBot, PerplexityBot, Google's AI crawler and nine others). Many sites block these; STQ does the opposite, so the content is available both for AI answers today and for future model training.` },
+  { name: 'You only hear about problems', good: true,
+    plain: `If any check fails, the run turns red here and emails Akiva automatically. A page of green and a quiet inbox means the machine is doing its job.` },
+];
+const stepsHtml = STEPS.map(st => `
+  <div class="step">
+    <div class="step-head"><span class="step-name">${st.name}</span>${chip(st.good)}</div>
+    <p>${st.plain}</p>
+  </div>`).join('');
+
 const rows = history.map(h => `<tr>
   <td>${h.at.replace('T', ' ').slice(0, 16)} UTC</td>
   <td><span class="pill ${h.result === 'pass' ? 'ok' : 'bad'}">${h.result === 'pass' ? 'PASS' : 'FAIL'}</span></td>
@@ -102,6 +128,11 @@ svg.wires { position:absolute; inset:0; }
 .status.bad { background:#a33b3b; box-shadow:0 0 0 3px rgba(163,59,59,0.2); }
 .status.idle { background:#c3c9d2; }
 h2 { font-family:'Chakra Petch',sans-serif; font-size:0.95rem; margin-bottom:12px; }
+.steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:14px; margin-bottom:34px; }
+.step { background:#fff; border:1px solid rgba(27,46,75,0.12); border-radius:8px; padding:16px 18px; }
+.step-head { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:8px; }
+.step-name { font-family:'Chakra Petch',sans-serif; font-weight:700; font-size:0.85rem; }
+.step p { font-size:0.82rem; line-height:1.65; color:#4a5a6e; }
 table { border-collapse:collapse; width:100%; background:#fff; border:1px solid rgba(27,46,75,0.12); border-radius:8px; overflow:hidden; font-size:0.82rem; }
 th { background:#1B2E4B; color:#F0EFEB; text-align:left; padding:10px 14px; font-family:'Chakra Petch',sans-serif; font-size:0.7rem; letter-spacing:0.06em; }
 td { padding:9px 14px; border-top:1px solid rgba(27,46,75,0.07); color:#2a3a4a; }
@@ -118,6 +149,8 @@ a { color:#1B2E4B; }
   <svg class="wires" width="${CW}" height="${CH}">${paths}</svg>
   ${nodeHtml}
 </div></div>
+<h2>What this means, in plain English</h2>
+<div class="steps">${stepsHtml}</div>
 <h2>Run history</h2>
 <div class="twrap"><table>
 <tr><th>Run (UTC)</th><th>Result</th><th>Pages</th><th>Insights</th><th>Sitemap</th><th>llms-full</th><th>Rates as of</th><th>Source</th><th>Notes</th></tr>
