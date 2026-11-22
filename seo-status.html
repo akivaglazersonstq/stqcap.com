@@ -6,46 +6,110 @@
 <meta name="robots" content="noindex">
 <title>Daily Optimization Run | STQ Capital</title>
 <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=DM+Sans:opsz,wght@9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'DM Sans',-apple-system,sans-serif; background:#F0EFEB; color:#1B2E4B; padding:40px clamp(16px,4vw,60px) 80px; }
-h1 { font-family:'Chakra Petch',sans-serif; font-size:1.6rem; margin-bottom:4px; }
-.sub { color:#5a6a7e; font-size:0.9rem; margin-bottom:28px; }
-.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:14px; margin-bottom:32px; max-width:1200px; }
-.card { background:#fff; border:1px solid rgba(27,46,75,0.12); border-radius:8px; padding:18px 20px; }
-.card .k { font-size:0.65rem; text-transform:uppercase; letter-spacing:0.12em; color:#5a6a7e; font-weight:700; }
-.card .v { font-family:'Chakra Petch',sans-serif; font-size:1.5rem; font-weight:700; margin-top:6px; }
-.pill { font-family:'Chakra Petch',sans-serif; font-size:0.7rem; font-weight:700; padding:3px 10px; border-radius:4px; letter-spacing:0.08em; }
+body { font-family:'DM Sans',-apple-system,sans-serif; background:#F0EFEB; color:#1B2E4B; padding:36px clamp(16px,3vw,48px) 80px; }
+h1 { font-family:'Chakra Petch',sans-serif; font-size:1.55rem; }
+.sub { color:#5a6a7e; font-size:0.88rem; margin:4px 0 10px; }
+.runline { font-size:0.82rem; color:#5a6a7e; margin-bottom:20px; }
+.pill { font-family:'Chakra Petch',sans-serif; font-size:0.68rem; font-weight:700; padding:3px 10px; border-radius:4px; letter-spacing:0.08em; }
 .pill.ok { background:#e2efe6; color:#2c5a3f; } .pill.bad { background:#f3e0e0; color:#8a3b3b; }
-.what { background:#fff; border:1px solid rgba(27,46,75,0.12); border-radius:8px; padding:22px 24px; margin-bottom:32px; max-width:1200px; font-size:0.9rem; line-height:1.8; color:#2a3a4a; }
-.what b { font-family:'Chakra Petch',sans-serif; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.1em; display:block; margin-bottom:8px; color:#1B2E4B; }
-table { border-collapse:collapse; width:100%; max-width:1200px; background:#fff; border:1px solid rgba(27,46,75,0.12); border-radius:8px; overflow:hidden; font-size:0.82rem; }
-th { background:#1B2E4B; color:#F0EFEB; text-align:left; padding:10px 14px; font-family:'Chakra Petch',sans-serif; font-size:0.72rem; letter-spacing:0.06em; }
+.canvas-wrap { overflow-x:auto; border:1px solid rgba(27,46,75,0.12); border-radius:10px; background:#fff; margin-bottom:34px; }
+.canvas { position:relative; width:1670px; height:510px;
+  background-image: radial-gradient(rgba(27,46,75,0.10) 1.2px, transparent 1.2px); background-size:22px 22px; }
+svg.wires { position:absolute; inset:0; }
+.edge { fill:none; stroke:rgba(27,46,75,0.35); stroke-width:2; }
+.edot { fill:#1B2E4B; }
+.node { position:absolute; width:196px; height:80px; background:#fff; border:1px solid rgba(27,46,75,0.15); border-radius:10px; box-shadow:0 4px 14px rgba(27,46,75,0.10); display:flex; align-items:center; gap:10px; padding:0 14px; }
+.nicon { font-size:21px; flex:none; }
+.ntitle { font-family:'Chakra Petch',sans-serif; font-weight:700; font-size:13px; }
+.nsub { font-size:10.5px; color:#5a6a7e; margin-top:2px; font-weight:500; }
+.status { position:absolute; top:8px; right:9px; width:9px; height:9px; border-radius:50%; }
+.status.ok { background:#3b6d4f; box-shadow:0 0 0 3px rgba(59,109,79,0.18); }
+.status.bad { background:#a33b3b; box-shadow:0 0 0 3px rgba(163,59,59,0.2); }
+.status.idle { background:#c3c9d2; }
+h2 { font-family:'Chakra Petch',sans-serif; font-size:0.95rem; margin-bottom:12px; }
+table { border-collapse:collapse; width:100%; background:#fff; border:1px solid rgba(27,46,75,0.12); border-radius:8px; overflow:hidden; font-size:0.82rem; }
+th { background:#1B2E4B; color:#F0EFEB; text-align:left; padding:10px 14px; font-family:'Chakra Petch',sans-serif; font-size:0.7rem; letter-spacing:0.06em; }
 td { padding:9px 14px; border-top:1px solid rgba(27,46,75,0.07); color:#2a3a4a; }
 .sum { color:#5a6a7e; font-size:0.76rem; }
-.wrap { overflow-x:auto; }
+.twrap { overflow-x:auto; }
 a { color:#1B2E4B; }
 </style>
 </head>
 <body>
 <h1>Daily Optimization Run</h1>
-<div class="sub">Automated SEO and AI-surface maintenance for stqcap.com · updated by the run itself · <a href="https://github.com/akivaglazersonstq/stqcap.com/actions" target="_blank">raw logs on GitHub</a></div>
-<div class="cards">
-  <div class="card"><div class="k">Last run</div><div class="v"><span class="pill ok">PASS</span></div></div>
-  <div class="card"><div class="k">Pages audited</div><div class="v">93</div></div>
-  <div class="card"><div class="k">Insights live</div><div class="v">71</div></div>
-  <div class="card"><div class="k">Sitemap URLs</div><div class="v">91</div></div>
-  <div class="card"><div class="k">AI ingestion file</div><div class="v">86k chars</div></div>
-  <div class="card"><div class="k">Rates as of</div><div class="v" style="font-size:1rem;padding-top:8px;">November 20, 2026</div></div>
-</div>
-<div class="what"><b>What each run does</b>
-Every business morning: audits all pages for titles, meta descriptions, canonicals, social cards, structured data validity, broken links, and sitemap completeness · verifies the AI files (robots.txt crawler allows, llms.txt, llms-full.txt) · rebuilds llms-full.txt from live page text so AI crawlers ingest current content including the latest rate benchmarks · commits changes, which deploys the site and pings Google and Bing via IndexNow. Separately, every business evening the rate bot refreshes the box spread benchmarks from the U.S. Treasury curve. A FAIL emails Akiva automatically.</div>
-<div class="wrap"><table>
+<div class="sub">Automated SEO and AI-surface maintenance for stqcap.com · the run updates this page itself · <a href="https://github.com/akivaglazersonstq/stqcap.com/actions" target="_blank">raw logs</a></div>
+<div class="runline">Last run: 2026-11-22 21:19 UTC · <span class="pill ok">PASS</span> · Audit clean: 93 pages, 71 insights, 91 sitemap URLs.</div>
+<div class="canvas-wrap"><div class="canvas">
+  <svg class="wires" width="1670" height="510"><path d="M 236 110 C 278 110, 278 110, 320 110" class="edge"/><circle cx="320" cy="110" r="4" class="edot"/><path d="M 516 110 C 558 110, 558 110, 600 110" class="edge"/><circle cx="600" cy="110" r="4" class="edot"/><path d="M 796 110 C 838 110, 838 210, 880 210" class="edge"/><circle cx="880" cy="210" r="4" class="edot"/><path d="M 236 310 C 278 310, 278 310, 320 310" class="edge"/><circle cx="320" cy="310" r="4" class="edot"/><path d="M 516 310 C 558 310, 558 310, 600 310" class="edge"/><circle cx="600" cy="310" r="4" class="edot"/><path d="M 516 310 C 558 310, 558 440, 600 440" class="edge"/><circle cx="600" cy="440" r="4" class="edot"/><path d="M 796 310 C 838 310, 838 210, 880 210" class="edge"/><circle cx="880" cy="210" r="4" class="edot"/><path d="M 1076 210 C 1113 210, 1113 210, 1150 210" class="edge"/><circle cx="1150" cy="210" r="4" class="edot"/><path d="M 1346 210 C 1388 210, 1388 110, 1430 110" class="edge"/><circle cx="1430" cy="110" r="4" class="edot"/><path d="M 1346 210 C 1388 210, 1388 310, 1430 310" class="edge"/><circle cx="1430" cy="310" r="4" class="edot"/></svg>
+  
+  <div class="node" style="left:40px;top:70px;border-top:3px solid #8a6d3b;">
+    <span class="status ok"></span>
+    <div class="nicon">&#9200;</div>
+    <div><div class="ntitle">Daily Trigger</div><div class="nsub">Mon-Fri · 6:17pm ET</div></div>
+  </div>
+  <div class="node" style="left:320px;top:70px;border-top:3px solid #1B2E4B;">
+    <span class="status ok"></span>
+    <div class="nicon">&#127963;&#65039;</div>
+    <div><div class="ntitle">U.S. Treasury Feed</div><div class="nsub">Par yield curve</div></div>
+  </div>
+  <div class="node" style="left:600px;top:70px;border-top:3px solid #1B2E4B;">
+    <span class="status ok"></span>
+    <div class="nicon">&#128200;</div>
+    <div><div class="ntitle">Update Live Rates</div><div class="nsub">as of November 20, 2026</div></div>
+  </div>
+  <div class="node" style="left:40px;top:270px;border-top:3px solid #8a6d3b;">
+    <span class="status ok"></span>
+    <div class="nicon">&#9200;</div>
+    <div><div class="ntitle">Daily Trigger</div><div class="nsub">Mon-Fri · 6:47am PT</div></div>
+  </div>
+  <div class="node" style="left:320px;top:270px;border-top:3px solid #1B2E4B;">
+    <span class="status ok"></span>
+    <div class="nicon">&#128269;</div>
+    <div><div class="ntitle">SEO / AI Audit</div><div class="nsub">94 pages · 71 insights</div></div>
+  </div>
+  <div class="node" style="left:600px;top:270px;border-top:3px solid #1B2E4B;">
+    <span class="status ok"></span>
+    <div class="nicon">&#129504;</div>
+    <div><div class="ntitle">Rebuild llms-full.txt</div><div class="nsub">86k chars of live text</div></div>
+  </div>
+  <div class="node" style="left:600px;top:400px;border-top:3px solid #8a3b3b;">
+    <span class="status idle"></span>
+    <div class="nicon">&#128231;</div>
+    <div><div class="ntitle">Alert Akiva</div><div class="nsub">Idle · only on failure</div></div>
+  </div>
+  <div class="node" style="left:880px;top:170px;border-top:3px solid #1B2E4B;">
+    <span class="status ok"></span>
+    <div class="nicon">&#128640;</div>
+    <div><div class="ntitle">Deploy</div><div class="nsub">Commit → Netlify · ~60s</div></div>
+  </div>
+  <div class="node" style="left:1150px;top:170px;border-top:3px solid #1B2E4B;">
+    <span class="status ok"></span>
+    <div class="nicon">&#128225;</div>
+    <div><div class="ntitle">IndexNow Ping</div><div class="nsub">Google · Bing · engines</div></div>
+  </div>
+  <div class="node" style="left:1430px;top:70px;border-top:3px solid #3b6d4f;">
+    <span class="status ok"></span>
+    <div class="nicon">&#128270;</div>
+    <div><div class="ntitle">Search Results</div><div class="nsub">91 URLs in sitemap</div></div>
+  </div>
+  <div class="node" style="left:1430px;top:270px;border-top:3px solid #3b6d4f;">
+    <span class="status ok"></span>
+    <div class="nicon">&#129302;</div>
+    <div><div class="ntitle">AI Crawlers Ingest</div><div class="nsub">GPTBot · ClaudeBot · Perplexity</div></div>
+  </div>
+</div></div>
+<h2>Run history</h2>
+<div class="twrap"><table>
 <tr><th>Run (UTC)</th><th>Result</th><th>Pages</th><th>Insights</th><th>Sitemap</th><th>llms-full</th><th>Rates as of</th><th>Source</th><th>Notes</th></tr>
 <tr>
-  <td>2026-11-22 21:16 UTC</td>
+  <td>2026-11-22 21:19 UTC</td>
   <td><span class="pill ok">PASS</span></td>
-  <td>93</td><td>71</td><td>91</td>
+  <td>94</td><td>71</td><td>91</td>
   <td>86k</td><td>November 20, 2026</td>
   <td>manual</td><td class="sum">Audit clean: 93 pages, 71 insights, 91 sitemap URLs.</td>
 </tr>
