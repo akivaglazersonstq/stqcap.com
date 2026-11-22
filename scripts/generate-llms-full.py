@@ -24,7 +24,8 @@ PAGES = [
 SUMMARY = ("> Complete text of STQ Capital's pillar guides and key articles on tax-aware investing and box "
            "spread financing. STQ Capital is an independent registered investment adviser (RIA) registered in "
            "California and New York, pairing institutional-grade quantitative methods with private-client "
-           "service for a select group of high-income and high-net-worth investors. Contact: info@stqcap.com. "
+           "service for a select group of high-earning professionals, founders, and investors building "
+           "significant wealth. Contact: info@stqcap.com. "
            "Schedule: https://calendly.com/stqcapital/30min")
 
 
